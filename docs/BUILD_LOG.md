@@ -2,6 +2,15 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-19 — Companion brand: coding muscles + live pixel field
+
+- Studied BuildAnything showcase competitors (games/walls/mints dominate); positioned PureFlow as daily IDE for AI skill-atrophy personal problem.
+- Applied Impeccable / Spark anti-slop constraints: no gradient text, no fake metrics, no Inter monoculture, distinctive mineral+pixel brand on companion only.
+- Canvas `PixelField` with animated dither cascade (reduced-motion safe); pixel mark; problem / contrast / loop / rules narrative for 3-minute judge path.
+- Original slogan restored on public surface: **Keep your coding muscles.**
+
+Evidence: web check/build after this entry.
+
 ## 2026-07-19 — Knowledge restoration polish + product depth
 
 - Reframed Focus/Mentor as reclaiming fluency on real workspace code; unified live naming to Focus Rep (retired user-facing Pure Mode strings).

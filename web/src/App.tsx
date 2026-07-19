@@ -7,6 +7,7 @@ import {
   type NetworkStatus,
   type Verification,
 } from "./contract";
+import { PixelField } from "./PixelField";
 import { payloadText, readAttestationHash, type AttestationHash, type PreparedAttestation } from "./proof";
 
 const repoUrl = "https://github.com/yava-code/PureFlow";
@@ -25,30 +26,44 @@ const routes: { id: Route; label: string }[] = [
   { id: "monad", label: "Monad" },
 ];
 
-const capabilities = [
+const muscles = [
   {
-    id: "Workspace",
-    title: "Native project work",
-    text: "Open or create a folder, then keep using the native editor, Explorer, terminal, debugger, tasks, source control, and extensions.",
-    detail: "Normal VSCodium work is the default state.",
+    title: "Architecture in your head",
+    text: "Break a vague task into decisions without asking a model to plan the whole system first.",
   },
   {
-    id: "Mentor",
-    title: "Restore understanding",
-    text: "On an explicit selection: map control flow, rebuild design intent, quiz what you still know, open docs in the IDE, or review your reasoning.",
-    detail: "No background repository upload and no silent patching.",
+    title: "Read before rewrite",
+    text: "Navigate a real repo, hold invariants, and predict behavior before you run or regenerate.",
   },
   {
-    id: "Focus",
-    title: "Reclaim fluency",
-    text: "Optional Focus Rep on your real code: retrieve → hypothesize → verify → defend. AI mentoring stays offline while active.",
-    detail: "Not a LeetCode catalog. Not required to edit.",
+    title: "Hypothesis debugging",
+    text: "Name why something fails, prove it with tests or the debugger, reject the bad theory.",
   },
   {
-    id: "Monad",
-    title: "Live chain + honest proofs",
-    text: "Read Testnet health, inspect addresses and transactions, diagnose a project, and prepare a privacy-safe commitment for a wallet handoff.",
-    detail: "Live values come from RPC; verified requires a real receipt and registry read.",
+    title: "Explain ownership",
+    text: "Defend tradeoffs in your own words after the work — not only accept a generated patch.",
+  },
+];
+
+const loopSteps = [
+  { title: "Retrieve", text: "Write what you still remember before opening docs or calling a model." },
+  { title: "Hypothesize", text: "State the failure mode on this file — your code, not a puzzle bank." },
+  { title: "Verify", text: "Native tests, debugger, and sources you choose. Evidence is yours." },
+  { title: "Defend", text: "Answer questions on invariants and tradeoffs. Then optionally prepare a Monad commitment." },
+];
+
+const notThat = [
+  {
+    title: "Not another vibe dApp",
+    text: "Showcase is full of games, walls, and mint pages. PureFlow is a daily IDE you can open on a real repository.",
+  },
+  {
+    title: "Not local LeetCode",
+    text: "No ranked problems. Practice is optional Focus on the folder you already own.",
+  },
+  {
+    title: "Not vaporware chain",
+    text: "Live RPC reads now. Prepared proofs stay prepared until a real receipt and registry read exist.",
   },
 ];
 
@@ -118,14 +133,16 @@ export function App() {
 
   return (
     <div className="site-shell">
-      <div className="pixel-field" aria-hidden="true" />
+      <PixelField />
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="PureFlow home"><Mark /> <span>PureFlow</span></a>
+        <a className="brand" href="#top" aria-label="PureFlow home">
+          <PixelMark /> <span>PureFlow</span>
+        </a>
         <nav aria-label="Main navigation">
+          <a href="#problem">Problem</a>
           <a href="#product">Product</a>
           <a href="#rules">Rules</a>
           <a href="#monad">Monad</a>
-          <a href={repoUrl}>Source</a>
           <a className="header-action" href={releaseUrl}>Get PureFlow</a>
         </nav>
       </header>
@@ -133,56 +150,126 @@ export function App() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <p className="hero-kicker">Spark · personal problem on Monad Testnet</p>
-            <h1>Keep the skills AI quietly erodes.</h1>
-            <p>
-              PureFlow is a developer-first VSCodium distribution for real repositories.
-              Work normally in the native IDE; call Mentor when you want to rebuild understanding;
-              run an optional Focus Rep when you need no-AI practice on your own code;
-              use live Monad tools without fake verified states.
+            <p className="hero-kicker">Personal problem · Monad Testnet · Spark</p>
+            <h1>Keep your coding muscles.</h1>
+            <p className="hero-lead">
+              AI accelerates delivery. It also skips the reps that keep architecture, reading, debugging, and ownership sharp.
+              PureFlow is a real VSCodium IDE where help waits to be asked — and optional Focus Reps put the thinking back on you.
             </p>
             <div className="hero-actions">
               <a className="primary-action" href={releaseUrl}><DownloadIcon /> Download for Windows</a>
-              <a className="secondary-action" href={repoUrl}><CodeIcon /> View source</a>
+              <a className="secondary-action" href={repoUrl}><CodeIcon /> Public source</a>
+              <a className="ghost-action" href="#problem">Why this exists</a>
             </div>
-            <ul className="native-list" aria-label="Native IDE features preserved">
-              <li>Explorer</li><li>Editor</li><li>Terminal</li><li>Debugger</li><li>Source control</li>
+            <ul className="native-list" aria-label="Native IDE surfaces">
+              <li>Explorer</li>
+              <li>Editor</li>
+              <li>Terminal</li>
+              <li>Debugger</li>
+              <li>Git</li>
+              <li>Tests</li>
             </ul>
           </div>
 
-          <SidebarPreview route={route} network={network} onRoute={setRoute} />
+          <div className="hero-stage">
+            <div className="pixel-frame">
+              <span className="pixel-corner tl" />
+              <span className="pixel-corner tr" />
+              <span className="pixel-corner bl" />
+              <span className="pixel-corner br" />
+              <SidebarPreview route={route} network={network} onRoute={setRoute} />
+            </div>
+            <p className="stage-caption">Interactive sidebar preview · live Monad block when RPC is up</p>
+          </div>
+        </section>
+
+        <section id="problem" className="problem-band" aria-labelledby="problem-title">
+          <div className="problem-intro">
+            <p className="section-tag">The personal problem</p>
+            <h2 id="problem-title">I ship faster with AI — and slowly stop owning the system.</h2>
+            <p>
+              The pain is not “AI exists.” The pain is skipping decomp, reading, hypothesis, and explanation until
+              the codebase feels foreign and every fix starts as another prompt. PureFlow exists so that, on purpose,
+              I can still do those reps on my own projects.
+            </p>
+          </div>
+          <div className="muscle-grid">
+            {muscles.map((item) => (
+              <article key={item.title} className="muscle-card">
+                <div className="pixel-chip" aria-hidden="true" />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="contrast-band" aria-labelledby="contrast-title">
+          <div className="contrast-head">
+            <p className="section-tag">Against the feed</p>
+            <h2 id="contrast-title">Built for a different class of personal problem.</h2>
+            <p>
+              BuildAnything showcase is dense with games, walls, mints, and one-click demos.
+              Elegant for Spark means practical impact: open a real folder, keep fluency, stay honest onchain.
+            </p>
+          </div>
+          <div className="contrast-grid">
+            {notThat.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="product" className="loop-band" aria-labelledby="loop-title">
+          <div className="loop-intro">
+            <p className="section-tag">How it works</p>
+            <h2 id="loop-title">Daily IDE first. Restoration when you choose.</h2>
+            <p>
+              AI can still help as Mentor on an explicit selection. During Focus, generation stays out of the loop —
+              coach is offline, native tools stay. That is the original product formula: remove generation, not access to knowledge.
+            </p>
+          </div>
+          <ol className="loop-track">
+            {loopSteps.map((step, index) => (
+              <li key={step.title}>
+                <span className="loop-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className="product-split">
+            <article>
+              <h3>Mentor</h3>
+              <p>Map flow, rebuild design story, quiz what you still know, open docs in the IDE, review your model. Groq or any OpenAI-compatible coach via SecretStorage — or local guide with no key.</p>
+            </article>
+            <article>
+              <h3>Focus Rep</h3>
+              <p>Optional timebox on real code. Hypotheses, self-marked tests, defense. Not required to edit. Not a course player.</p>
+            </article>
+            <article>
+              <h3>Monad</h3>
+              <p>Live Testnet health, address/tx inspect, Project Doctor. Privacy-safe commitment prep for voluntary public attestations.</p>
+            </article>
+          </div>
         </section>
 
         <NetworkBand network={network} onRefresh={refreshNetwork} />
 
         <PreparedProof proof={proof} />
 
-        <section id="product" className="capabilities" aria-labelledby="capabilities-title">
-          <div className="section-intro">
-            <h2 id="capabilities-title">Work first. Help when you ask.</h2>
-            <p>
-              Over-reliance on generation can hollow out architecture sense and debugging fluency.
-              PureFlow keeps the IDE primary and makes deliberate relearning optional — never a forced course shell.
-            </p>
-          </div>
-          <div className="capability-list">
-            {capabilities.map((item) => (
-              <article key={item.id}>
-                <span className="capability-id">{item.id}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <small>{item.detail}</small>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section id="rules" className="rules-band" aria-labelledby="rules-title">
           <div className="rules-copy">
-            <h2 id="rules-title">Onchain practice rules</h2>
+            <p className="section-tag">Onchain practice rules</p>
+            <h2 id="rules-title">Monad holds commitments — not skill scores.</h2>
             <p>
-              Monad holds voluntary, privacy-safe commitments — not skill scores.
-              Until the registry is Safe-deployed and a real receipt is verified, proofs stay labeled prepared.
+              Judges click twice. PureFlow never shows a hardcoded verified toast.
+              Until Safe deployment and a real receipt exist, labels stay prepared.
             </p>
           </div>
           <div className="rules-columns">
@@ -190,8 +277,8 @@ export function App() {
               <h3>Can prove</h3>
               <ul>
                 <li>A wallet attested a commitment hash and self-reported counters</li>
-                <li>Transaction finality on Monad Testnet after a real receipt</li>
-                <li>Policy flags inside the local hash (mentor blocked during Focus; code offchain)</li>
+                <li>Transaction finality after a real Testnet receipt</li>
+                <li>Local policy flags inside the hash (mentor blocked during Focus; code offchain)</li>
               </ul>
             </div>
             <div>
@@ -199,7 +286,7 @@ export function App() {
               <ul>
                 <li>Skill, seniority, or that ability improved</li>
                 <li>Authorship of every line or absolute AI absence</li>
-                <li>Goals, code, filenames, or session notes (never onchain)</li>
+                <li>Goals, code, filenames, or session notes</li>
               </ul>
             </div>
           </div>
@@ -207,8 +294,12 @@ export function App() {
 
         <section className="verify-band" aria-labelledby="verify-title">
           <div className="verify-copy">
-            <h2 id="verify-title">Verify a public commitment</h2>
-            <p>The verifier reads <code>attestorOf(commitment)</code> from RepRegistry on Monad Testnet. Code, filenames, goals, and session notes are never part of this lookup.</p>
+            <p className="section-tag">Public verifier</p>
+            <h2 id="verify-title">Verify a commitment</h2>
+            <p>
+              Reads <code>attestorOf(commitment)</code> on Monad Testnet when the registry address is configured.
+              No code or goals leave this lookup.
+            </p>
           </div>
           <div className="verify-tool">
             <form onSubmit={verify}>
@@ -232,20 +323,45 @@ export function App() {
           </div>
         </section>
 
+        <section className="cta-band" aria-labelledby="cta-title">
+          <div>
+            <p className="section-tag">Try the product</p>
+            <h2 id="cta-title">Install the portable IDE. Open any folder.</h2>
+            <p>Windows portable profile ships PureFlow Mineral, keybindings, AI-surface defaults, and the extension. Extension-only VSIX also available.</p>
+          </div>
+          <div className="cta-actions">
+            <a className="primary-action" href={releaseUrl}><DownloadIcon /> Latest release</a>
+            <a className="secondary-action" href={repoUrl}><GitHubIcon /> GitHub</a>
+            <a className="secondary-action" href={explorerUrl}><RegistryIcon /> Explorer</a>
+          </div>
+        </section>
+
         <section className="open-source">
           <div className="open-source-copy">
             <h2>Open source. Private by design.</h2>
-            <p>PureFlow works without an account or a chain. Wallet publication is an explicit, optional handoff and is unavailable until the registry and Para integration are configured.</p>
+            <p>
+              Works without an account or a chain. Wallet publication is optional handoff after Safe-governed registry deploy.
+              No private keys in the IDE.
+            </p>
           </div>
-          <a className="source-link" href={repoUrl}><GitHubIcon /><span><strong>GitHub</strong><small>Source, issues, and build history</small></span></a>
-          <a className="source-link" href={explorerUrl}><RegistryIcon /><span><strong>RepRegistry</strong><small>{registryAddress ? shortAddress(registryAddress) : "Monad Testnet deployment pending"}</small></span></a>
+          <a className="source-link" href={repoUrl}>
+            <GitHubIcon />
+            <span><strong>Repository</strong><small>yava-code/PureFlow</small></span>
+          </a>
+          <a className="source-link" href={explorerUrl}>
+            <RegistryIcon />
+            <span>
+              <strong>RepRegistry</strong>
+              <small>{registryAddress ? shortAddress(registryAddress) : "Deployment pending — honest empty state"}</small>
+            </span>
+          </a>
         </section>
       </main>
 
       <footer>
-        <a className="brand" href="#top"><Mark /> <span>PureFlow</span></a>
-        <p>A familiar engineering workstation with help that waits to be asked.</p>
-        <a href={repoUrl}>MIT licensed</a>
+        <a className="brand" href="#top"><PixelMark /> <span>PureFlow</span></a>
+        <p>Keep your coding muscles. AI waits to be asked.</p>
+        <a href={repoUrl}>MIT</a>
       </footer>
     </div>
   );
@@ -271,7 +387,11 @@ function SidebarPreview({ route, network, onRoute }: { route: Route; network: Ne
 
   return (
     <div className="sidebar-preview" aria-label="Interactive PureFlow sidebar preview">
-      <div className="sidebar-title"><Mark /><div><strong>PureFlow</strong><small>pureflow · src/monad/rpc.ts</small></div><span className="live-dot" title="Sidebar ready" /></div>
+      <div className="sidebar-title">
+        <PixelMark />
+        <div><strong>PureFlow</strong><small>pureflow · src/monad/rpc.ts</small></div>
+        <span className="live-dot" title="Sidebar ready" />
+      </div>
       <div className="route-strip" role="tablist" aria-label="PureFlow sidebar routes">
         {routes.map((item, index) => (
           <button
@@ -300,7 +420,12 @@ function SidebarPreview({ route, network, onRoute }: { route: Route; network: Ne
         {route === "focus" && <FocusPreview />}
         {route === "monad" && <MonadPreview network={network} />}
       </div>
-      <div className="sidebar-status"><span>PureFlow · Ready</span><span>Monad Testnet · {network.kind === "ready" ? `#${network.value.latestBlock}` : network.kind === "loading" ? "reading…" : "unavailable"}</span></div>
+      <div className="sidebar-status">
+        <span>PureFlow · Ready</span>
+        <span>
+          Monad · {network.kind === "ready" ? `#${network.value.latestBlock}` : network.kind === "loading" ? "reading…" : "unavailable"}
+        </span>
+      </div>
     </div>
   );
 }
@@ -308,36 +433,71 @@ function SidebarPreview({ route, network, onRoute }: { route: Route; network: Ne
 function WorkspacePreview() {
   return <>
     <div className="preview-heading"><div><small>Current workspace</small><h2>pureflow</h2></div><span className="state-label">Ready</span></div>
-    <dl className="context-lines"><div><dt>File</dt><dd>src/monad/rpc.ts</dd></div><div><dt>Language</dt><dd>TypeScript</dd></div><div><dt>Branch</dt><dd>main</dd></div></dl>
-    <div className="native-actions" aria-label="Native workspace actions"><span>Open folder</span><span>New project</span><span>Terminal</span><span>Run tasks</span></div>
-    <div className="quiet-note"><strong>Native workbench first</strong><p>PureFlow delegates project work to VSCodium instead of recreating it inside this sidebar.</p></div>
+    <dl className="context-lines">
+      <div><dt>File</dt><dd>src/monad/rpc.ts</dd></div>
+      <div><dt>Language</dt><dd>TypeScript</dd></div>
+      <div><dt>Branch</dt><dd>main</dd></div>
+    </dl>
+    <div className="native-actions" aria-label="Native workspace actions">
+      <span>Open folder</span><span>New project</span><span>Terminal</span><span>Run tasks</span>
+    </div>
+    <div className="quiet-note"><strong>Native first</strong><p>Project work stays in VSCodium. PureFlow does not replace Explorer or the editor.</p></div>
   </>;
 }
 
 function MentorPreview() {
   return <>
-    <div className="preview-heading"><div><small>Explicit selection</small><h2>src/cache.ts · lines 12–24</h2></div><span className="state-label">14 lines</span></div>
-    <div className="mentor-actions"><span>Explain</span><span className="active">Explain why</span><span>Quiz me</span><span>Find docs</span></div>
-    <div className="mentor-answer"><small>Reasoning</small><p>The expiry check belongs beside the cache read because validity is an invariant of returning a cached value, not a separate cleanup concern.</p><small>Question</small><p>Which test proves that stale values never cross this boundary?</p></div>
-    <p className="privacy-line"><LockIcon /> Only the selection you explicitly send is shared.</p>
+    <div className="preview-heading"><div><small>Explicit selection</small><h2>src/cache.ts · 12–24</h2></div><span className="state-label">14 lines</span></div>
+    <div className="mentor-actions"><span>Explain</span><span className="active">Why</span><span>Quiz</span><span>Docs</span></div>
+    <div className="mentor-answer">
+      <small>Rebuild the story</small>
+      <p>Expiry belongs beside the cache read: validity is an invariant of returning a value, not a later cleanup job.</p>
+      <small>Probe</small>
+      <p>Which test proves stale values never cross this boundary?</p>
+    </div>
+    <p className="privacy-line"><LockIcon /> Only the selection you send is shared.</p>
   </>;
 }
 
 function FocusPreview() {
   return <>
-    <div className="preview-heading"><div><small>Optional practice</small><h2>No Focus Rep running</h2></div><span className="state-label">Off</span></div>
-    <div className="focus-summary"><Mark /><div><strong>Reclaim fluency on your real code.</strong><p>Retrieve → hypothesize → verify → defend. AI mentoring stays offline until you finish. Ordinary coding never requires this mode.</p></div></div>
-    <dl className="context-lines"><div><dt>During a Rep</dt><dd>AI calls disabled</dd></div><div><dt>Evidence</dt><dd>Tests · loops · sources</dd></div><div><dt>Onchain</dt><dd>Prepared, not published</dd></div></dl>
+    <div className="preview-heading"><div><small>Optional Focus</small><h2>No Rep running</h2></div><span className="state-label">Off</span></div>
+    <div className="focus-summary">
+      <PixelMark />
+      <div>
+        <strong>Reclaim fluency on real code.</strong>
+        <p>Retrieve → hypothesize → verify → defend. AI mentoring offline until you finish.</p>
+      </div>
+    </div>
+    <dl className="context-lines">
+      <div><dt>AI</dt><dd>Blocked in active Focus</dd></div>
+      <div><dt>Evidence</dt><dd>Tests · loops · sources</dd></div>
+      <div><dt>Chain</dt><dd>Prepared, not published</dd></div>
+    </dl>
   </>;
 }
 
 function MonadPreview({ network }: { network: NetworkState }) {
   return <>
-    <div className="preview-heading"><div><small>Read-only RPC</small><h2>Monad Testnet</h2></div><span className={`state-label ${network.kind === "error" ? "warn" : ""}`}>{network.kind === "ready" ? "Live" : network.kind === "loading" ? "Reading" : "Unavailable"}</span></div>
+    <div className="preview-heading">
+      <div><small>Read-only RPC</small><h2>Monad Testnet</h2></div>
+      <span className={`state-label ${network.kind === "error" ? "warn" : ""}`}>
+        {network.kind === "ready" ? "Live" : network.kind === "loading" ? "Reading" : "Unavailable"}
+      </span>
+    </div>
     {network.kind === "ready" ? (
-      <dl className="monad-mini"><div><dt>Chain</dt><dd>{network.value.chainId}</dd></div><div><dt>Latest</dt><dd>{network.value.latestBlock.toLocaleString()}</dd></div><div><dt>Safe</dt><dd>{network.value.safeBlock.toLocaleString()}</dd></div><div><dt>Latency</dt><dd>{network.value.latencyMs} ms</dd></div></dl>
-    ) : <p className="rpc-message">{network.kind === "error" ? network.message : "Reading chain, block and fee data from the public RPC…"}</p>}
-    <div className="quiet-note"><strong>Inspector and Project Doctor</strong><p>Inspect an address or transaction and check a Hardhat or Foundry project without putting a private key in the IDE.</p></div>
+      <dl className="monad-mini">
+        <div><dt>Chain</dt><dd>{network.value.chainId}</dd></div>
+        <div><dt>Latest</dt><dd>{network.value.latestBlock.toLocaleString()}</dd></div>
+        <div><dt>Safe</dt><dd>{network.value.safeBlock.toLocaleString()}</dd></div>
+        <div><dt>Latency</dt><dd>{network.value.latencyMs} ms</dd></div>
+      </dl>
+    ) : (
+      <p className="rpc-message">
+        {network.kind === "error" ? network.message : "Reading chain and fee data from public RPC…"}
+      </p>
+    )}
+    <div className="quiet-note"><strong>No key in IDE</strong><p>Inspect address/tx and scan project readiness without a wallet secret.</p></div>
   </>;
 }
 
@@ -345,8 +505,14 @@ function NetworkBand({ network, onRefresh }: { network: NetworkState; onRefresh:
   return (
     <section id="monad" className="network-band" aria-labelledby="network-title">
       <div className="network-heading">
-        <div><h2 id="network-title">Monad Testnet, read live</h2><p>Public RPC status. No cached success state.</p></div>
-        <button onClick={() => void onRefresh()} disabled={network.kind === "loading"}><RefreshIcon /> {network.kind === "loading" ? "Reading…" : "Refresh"}</button>
+        <div>
+          <p className="section-tag">Live, not mocked</p>
+          <h2 id="network-title">Monad Testnet RPC</h2>
+          <p>Public status. Failures stay failures. No cached success.</p>
+        </div>
+        <button onClick={() => void onRefresh()} disabled={network.kind === "loading"}>
+          <RefreshIcon /> {network.kind === "loading" ? "Reading…" : "Refresh"}
+        </button>
       </div>
       {network.kind === "ready" ? (
         <dl className="network-values" aria-live="polite">
@@ -360,7 +526,10 @@ function NetworkBand({ network, onRefresh }: { network: NetworkState; onRefresh:
       ) : (
         <div className={`network-message ${network.kind === "error" ? "is-error" : ""}`} role="status">
           <span className="status-symbol" />
-          <div><strong>{network.kind === "loading" ? "Reading Monad Testnet RPC…" : "Live status unavailable."}</strong>{network.kind === "error" && <p>{network.message}</p>}</div>
+          <div>
+            <strong>{network.kind === "loading" ? "Reading Monad Testnet RPC…" : "Live status unavailable."}</strong>
+            {network.kind === "error" && <p>{network.message}</p>}
+          </div>
         </div>
       )}
     </section>
@@ -376,7 +545,12 @@ function PreparedProof({ proof }: { proof: AttestationHash }) {
   useEffect(() => setCopied(false), [proof]);
   if (proof.kind === "none") return null;
   if (proof.kind === "invalid") {
-    return <section className="proof-band proof-invalid" aria-labelledby="proof-title"><div><h2 id="proof-title">Prepared proof rejected</h2><p>{proof.error}</p></div><strong>Nothing was published.</strong></section>;
+    return (
+      <section className="proof-band proof-invalid" aria-labelledby="proof-title">
+        <div><h2 id="proof-title">Prepared proof rejected</h2><p>{proof.error}</p></div>
+        <strong>Nothing was published.</strong>
+      </section>
+    );
   }
   const copy = async () => {
     await navigator.clipboard.writeText(payloadText(proof.payload));
@@ -385,8 +559,11 @@ function PreparedProof({ proof }: { proof: AttestationHash }) {
   return (
     <section className="proof-band" aria-labelledby="proof-title">
       <div className="proof-heading">
-        <div><h2 id="proof-title">Prepared, not published</h2><p>This URL contains a structurally valid, unauthenticated prepared payload for Monad Testnet. This page has not signed or submitted a transaction.</p></div>
-        <span className="prepared-state"><i /> Version {proof.payload.version}</span>
+        <div>
+          <h2 id="proof-title">Prepared, not published</h2>
+          <p>Structurally valid, unauthenticated handoff for Monad Testnet. This page did not sign or broadcast a transaction.</p>
+        </div>
+        <span className="prepared-state"><i /> v{proof.payload.version}</span>
       </div>
       <dl className="proof-values">
         <ProofValue label="Commitment" value={shortAddress(proof.payload.commitment)} title={proof.payload.commitment} />
@@ -398,7 +575,7 @@ function PreparedProof({ proof }: { proof: AttestationHash }) {
       </dl>
       <div className="proof-actions">
         <button onClick={() => void copy()}><CopyIcon /> {copied ? "Payload copied" : "Copy payload"}</button>
-        <p>Wallet publishing is unavailable until RepRegistry is deployed and the Para integration is configured. No private key is accepted here.</p>
+        <p>Wallet publish waits on Safe-deployed RepRegistry and Para. No private key is accepted here.</p>
       </div>
     </section>
   );
@@ -424,13 +601,47 @@ function VerificationResult({ verification, error }: { verification?: Verificati
     );
   }
   if (!registryAddress) {
-    return <div className="verify-result is-pending"><RegistryIcon /><div><strong>Registry deployment pending.</strong><p>The verifier is wired for a real RPC read, but this build has no configured RepRegistry address and cannot claim a result.</p></div></div>;
+    return (
+      <div className="verify-result is-pending">
+        <RegistryIcon />
+        <div>
+          <strong>Registry deployment pending.</strong>
+          <p>Verifier is wired for live RPC; this build has no configured address and will not invent a result.</p>
+        </div>
+      </div>
+    );
   }
-  return <div className="verify-result"><SearchIcon /><div><strong>Enter a commitment hash to verify.</strong><p>The lookup reveals only whether a wallet attested this commitment.</p></div></div>;
+  return (
+    <div className="verify-result">
+      <SearchIcon />
+      <div>
+        <strong>Enter a commitment hash to verify.</strong>
+        <p>Lookup only checks whether a wallet attested this commitment.</p>
+      </div>
+    </div>
+  );
 }
 
-function Mark() {
-  return <svg className="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M24.7 7.2A11 11 0 0 0 7.2 9.7M7.3 24.8a11 11 0 0 0 17.5-2.5M7.2 9.7v-5M24.8 22.3v5" /></svg>;
+function PixelMark() {
+  return (
+    <svg className="mark pixel-mark" viewBox="0 0 16 16" shapeRendering="crispEdges" aria-hidden="true">
+      <rect x="1" y="1" width="2" height="2" fill="currentColor" opacity="0.45" />
+      <rect x="4" y="1" width="2" height="2" fill="currentColor" opacity="0.75" />
+      <rect x="7" y="1" width="2" height="2" fill="currentColor" />
+      <rect x="1" y="4" width="2" height="2" fill="currentColor" opacity="0.75" />
+      <rect x="4" y="4" width="2" height="2" fill="currentColor" />
+      <rect x="10" y="4" width="2" height="2" fill="currentColor" opacity="0.55" />
+      <rect x="1" y="7" width="2" height="2" fill="currentColor" />
+      <rect x="7" y="7" width="2" height="2" fill="currentColor" opacity="0.8" />
+      <rect x="10" y="7" width="2" height="2" fill="currentColor" />
+      <rect x="13" y="7" width="2" height="2" fill="currentColor" opacity="0.4" />
+      <rect x="4" y="10" width="2" height="2" fill="currentColor" opacity="0.7" />
+      <rect x="7" y="10" width="2" height="2" fill="currentColor" />
+      <rect x="10" y="10" width="2" height="2" fill="currentColor" opacity="0.85" />
+      <rect x="7" y="13" width="2" height="2" fill="currentColor" opacity="0.55" />
+      <rect x="10" y="13" width="2" height="2" fill="currentColor" opacity="0.35" />
+    </svg>
+  );
 }
 
 function RouteIcon({ route }: { route: Route }) {

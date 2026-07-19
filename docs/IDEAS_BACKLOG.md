@@ -126,12 +126,24 @@ External anti-slop skills to re-read when redesigning:
 
 ---
 
+## Competitive notes (BuildAnything showcase, 2026-07-19)
+
+Typical Spark/showcase noise: games, walls, mints, meme factories, IQ quizzes, running apps.
+**PureFlow differentiator for judges:** personal problem is skill atrophy under AI — product is a real daily IDE + optional Focus, not a browser toy. Onchain is voluntary privacy-safe commitments with honest pending/prepared labels.
+
+Design agent rules used (Impeccable / Spark anti-slop):
+
+- Unique identity; fit viewport; no generic AI SaaS cream/Inter/gradient-text hero metrics
+- Live RPC only for chain numbers; never fake verified
+- Companion may use committed pixel atmosphere; IDE chrome stays calm mineral
+- Numbered sequence only when it is a real process (Focus loop)
+
 ## Implemented in the polish pass (do not re-do blindly)
 
 - Focus / Mentor copy reframed as knowledge restoration
 - Docs prefer in-IDE Simple Browser
 - Coach configure presets (Groq / OpenAI-compatible / custom)
 - Deeper portable settings + keybindings
-- Companion mineral pixel field
+- Companion canvas pixel field + problem/contrast/loop story
 - Honest onchain practice-rules copy + commitment policy fields
 - Naming: Focus Rep instead of Pure Mode in live paths

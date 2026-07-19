@@ -75,6 +75,16 @@ Future Monad write actions hand off to the web companion and a user-controlled w
 
 Transitions are 120–180 milliseconds and communicate route or disclosure state only. Reduced-motion mode removes transforms and animated progress. Timers update text without pulsing every second.
 
+## Public companion (brand surface)
+
+The GitHub Pages companion is allowed a **committed brand register** that the IDE chrome deliberately avoids:
+
+- Living **pixel field** (canvas dither cascade in mineral teal / violet / amber) inspired by the energy of BuildAnything marketing, not a copy of their mark.
+- Pixelated mark, hard corners, mono section tags.
+- Story-first layout for Spark judges: personal problem → not a showcase toy → Focus loop → live Monad → honest rules.
+- Anti-slop for agents (Impeccable): no gradient text, no cream SaaS palette, no hero-metric “skill scores,” no identical icon-card grids as the whole page, no Inter-as-identity default. Prefer Segoe/system + mono.
+- Chain numbers only from live RPC; prepared proofs stay prepared.
+
 ## Content
 
 Use direct engineering language: “Explain why,” “Quiz me,” “Read from Monad Testnet,” “Prepared, not published,” and “Open project.” Use `live` for successful RPC reads; reserve `published` and `verified` for a real receipt plus a follow-up contract read. Avoid “training console,” “level up,” “AI magic,” and any claim that manual practice guarantees skill recovery.
