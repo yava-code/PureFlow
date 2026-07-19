@@ -1,0 +1,19 @@
+{
+  "name": "@pureflow/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "hardhat build --build-profile production",
+    "test": "hardhat test solidity",
+    "clean": "hardhat clean"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.7",
+    "@types/node": "^22.8.5",
+    "hardhat": "^3.10.0",
+    "typescript": "~6.0.3",
+    "viem": "^2.47.6"
+  }
+}
+

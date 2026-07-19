@@ -1,0 +1,46 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-ef5cc6963341dbfe72c6b6ab01cce6e77fa592db",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "compilerType": "solc",
+  "userSourceNameMap": {
+    "src/RepRegistry.sol": "project/src/RepRegistry.sol",
+    "test/RepRegistry.t.sol": "project/test/RepRegistry.t.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/src/RepRegistry.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.28;\n\n/// @notice Public commitments to privacy-safe PureFlow Rep summaries.\ncontract RepRegistry {\n    error EmptyCommitment();\n    error AlreadyAttested();\n    error InvalidDuration();\n    error InvalidOwnership();\n\n    event RepAttested(\n        address indexed developer,\n        bytes32 indexed commitment,\n        uint32 focusedSeconds,\n        uint16 testRuns,\n        uint16 debugLoops,\n        uint8 ownership,\n        uint64 completedAt\n    );\n\n    mapping(bytes32 commitment => address developer) public attestorOf;\n    mapping(address developer => uint64 count) public repCount;\n\n    function attest(\n        bytes32 commitment,\n        uint32 focusedSeconds,\n        uint16 testRuns,\n        uint16 debugLoops,\n        uint8 ownership\n    ) external {\n        if (commitment == bytes32(0)) revert EmptyCommitment();\n        if (attestorOf[commitment] != address(0)) revert AlreadyAttested();\n        if (focusedSeconds == 0 || focusedSeconds > 24 hours) revert InvalidDuration();\n        if (ownership < 1 || ownership > 3) revert InvalidOwnership();\n\n        attestorOf[commitment] = msg.sender;\n        repCount[msg.sender]++;\n\n        emit RepAttested(\n            msg.sender,\n            commitment,\n            focusedSeconds,\n            testRuns,\n            debugLoops,\n            ownership,\n            uint64(block.timestamp)\n        );\n    }\n}\n\n"
+      },
+      "project/test/RepRegistry.t.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.28;\n\nimport {RepRegistry} from \"../src/RepRegistry.sol\";\n\ncontract RepRegistryTest {\n    RepRegistry private registry;\n\n    function setUp() public {\n        registry = new RepRegistry();\n    }\n\n    function testAttestStoresCommitmentAndCount() public {\n        bytes32 commitment = keccak256(\"privacy-safe-summary\");\n\n        registry.attest(commitment, 1518, 4, 2, 3);\n\n        require(registry.attestorOf(commitment) == address(this), \"wrong attestor\");\n        require(registry.repCount(address(this)) == 1, \"wrong count\");\n    }\n\n    function testRejectsDuplicateCommitment() public {\n        bytes32 commitment = keccak256(\"duplicate\");\n        registry.attest(commitment, 1500, 1, 1, 2);\n\n        (bool ok,) = address(registry).call(\n            abi.encodeCall(RepRegistry.attest, (commitment, 1500, 1, 1, 2))\n        );\n\n        require(!ok, \"duplicate accepted\");\n    }\n\n    function testRejectsInvalidOwnership() public {\n        (bool ok,) = address(registry).call(\n            abi.encodeCall(RepRegistry.attest, (keccak256(\"bad ownership\"), 1500, 1, 1, 4))\n        );\n\n        require(!ok, \"invalid ownership accepted\");\n    }\n\n    function testRejectsEmptyCommitment() public {\n        (bool ok,) = address(registry).call(\n            abi.encodeCall(RepRegistry.attest, (bytes32(0), 1500, 1, 1, 2))\n        );\n\n        require(!ok, \"empty commitment accepted\");\n    }\n}\n\n"
+      }
+    }
+  }
+}
