@@ -61,6 +61,15 @@ if (Test-Path -LiteralPath $target) {
 }
 
 Expand-Archive -LiteralPath $archivePath -DestinationPath $target
+$productPath = Join-Path $target 'resources\app\product.json'
+if (-not (Test-Path -LiteralPath $productPath)) {
+    throw "VSCodium product metadata was not found at $productPath"
+}
+$product = Get-Content -Raw -LiteralPath $productPath | ConvertFrom-Json
+$product.nameShort = 'PureFlow'
+$product.nameLong = 'PureFlow IDE'
+$product | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $productPath -Encoding utf8
+
 $data = Join-Path $target 'data'
 $extensions = Join-Path $data 'extensions'
 $settingsDir = Join-Path $data 'user-data\User'
@@ -81,4 +90,3 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Output "PureFlow portable distribution: $target"
 Write-Output "Launch with: $(Join-Path $target 'PureFlow.cmd')"
-
