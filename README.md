@@ -1,37 +1,54 @@
 # PureFlow
 
-PureFlow is a separate, portable VSCodium environment for deliberate coding practice. AI may prepare a focused Rep before the session and challenge your reasoning afterward; during Pure Mode, the implementation stays in your hands.
+PureFlow is a developer-first VSCodium distribution for ordinary project work. Open an existing folder or create a project, keep the native editor, Explorer, terminal, tests, debugger, and source control in the center, then call a compact sidebar when you want documentation, an explicit AI mentor action, a Focus Rep, or live Monad Testnet context.
 
-![PureFlow active Rep concept](docs/design/active-rep-concept.png)
+![PureFlow IDE workspace concept](docs/design/ide-workspace-concept.png)
 
-## Why a VSCodium distribution
+## Why a separate VSCodium distribution
 
-PureFlow is shipped as a branded portable VSCodium profile with a bundled extension. The distribution provides the clean, AI-free boundary; the extension remains the reusable product core. This keeps upstream editor compatibility while giving each Rep an isolated profile, local state, and a launcher that disables common generation extensions for the session.
+PureFlow is a separate portable IDE, but it does not maintain a deep editor fork. The distribution bundles an upstream-compatible extension, the **PureFlow Mineral** theme, restrained product branding, defaults, and an isolated profile. This gives the project its own installable identity without inheriting the long-term cost of patching Electron and the VSCodium workbench on every upstream release.
 
-## Working product
+The extension remains independently installable in VS Code or VSCodium. It uses supported extension points: an Activity Bar `WebviewView`, editor context actions, command palette commands, a status-bar item, native workspace commands, and a color theme. PureFlow never opens a full-page training webview or toggles Zen Mode.
 
-- **Start Rep:** define a goal and choose a 25-minute, 90-minute, or full-day timebox.
-- **Pure Mode:** visible AI-off boundary, timer, session timeline, local Debug Notebook, real workspace test task, Knowledge Dock, and progressive Recall Ladder.
-- **Rep Card:** privacy-safe summary with focused time, test runs, debug loops, sources, and the developer's own outcome.
-- **Senior Defense:** four gated review questions. Findings stay sealed until the developer answers; an optional OpenAI-compatible coach is only called after the Rep and only with explicitly selected context.
-- **Monad attestation:** a completed Rep can produce a local commitment for `RepRegistry`; code, filenames, goals, and notes are never written onchain.
-- **Public verifier:** the companion site performs a real read from Monad Testnet when a registry address is configured and never fakes a successful attestation.
+Selecting PureFlow opens it in the primary sidebar by default, like Explorer or Source Control. To keep Explorer and PureFlow visible together, use the view's **Move View → Secondary Side Bar** action; PureFlow does not force a global layout change.
+
+## What works today
+
+- **Native workspace:** open any folder, use the normal editor, terminal, test task, Git view, debugger, search, and extension ecosystem.
+- **Project starters:** create an empty folder, a strict Node + TypeScript project, or a Monad + Hardhat starter configured for Testnet chain ID `10143`.
+- **Compact sidebar:** Workspace, Mentor, Focus, and Monad are peer tools; none is required before editing.
+- **On-demand mentor:** Explain, Explain why, Quiz me, Find documentation, and Review reasoning operate only after an explicit action on a selection or bounded current function. The result identifies a configured coach or deterministic local guide.
+- **Focus Rep:** optional manual practice with a goal, hypotheses, user-recorded test outcomes after launching the native test task, recall prompts, local summary, Rep Card, and post-session defense. Configured AI remains blocked while a Rep is active.
+- **Live Monad workbench:** read Testnet chain health, latest/safe/finalized blocks and gas price; inspect an address or transaction; and run a read-only Project Doctor for Hardhat, Foundry, Solidity, viem, wagmi, and chain configuration.
+- **Privacy-safe proof preparation:** a completed Rep can produce a local commitment payload. It is labeled **Prepared, not published** until a user-controlled wallet submits a real transaction and the registry read confirms it.
+- **Safe-governed release tooling:** production bytecode preparation is read-only; deployment is proposed only through the installed Monskills Safe wrapper; receipt validation requires the exact `RepRegistry` runtime; and a canonical Foundry payload prepares all-explorer source verification.
 
 ## Try it
 
-### Windows portable build
+### Download the Windows release
 
-Download the latest release, extract it, and run `PureFlow.cmd`. The launcher uses an isolated profile and opens the Training Console automatically.
+Download [PureFlow v0.1.0](https://github.com/yava-code/PureFlow/releases/tag/v0.1.0), extract `PureFlow-win32-x64-0.1.0.zip`, and run `PureFlow.cmd`.
 
-To build the distribution yourself:
+Portable SHA-256:
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\distribution\build-windows.ps1
+```text
+651239343DAC42CD8D919EF78E115DE79E14983BB212F6208EC8D5C143FE13A5
 ```
 
-The builder downloads the latest official VSCodium archive, verifies its published SHA-256 checksum, packages the extension, and creates the portable folder under `release/`.
+### Build the Windows portable IDE
 
-### Extension only
+Requirements: Node.js 22+, npm 10+, Windows PowerShell 5.1+ or PowerShell 7, and Windows x64.
+
+```powershell
+git clone https://github.com/yava-code/PureFlow.git
+cd PureFlow
+$pureflowOutput = ".\release\portable-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+powershell -ExecutionPolicy Bypass -File .\distribution\build-windows.ps1 -OutputRoot $pureflowOutput
+```
+
+The builder downloads the official VSCodium archive, verifies its published SHA-256 checksum, packages the extension, applies the PureFlow defaults and branding, and writes the portable distribution under the chosen output root. It refuses to overwrite an existing build. Launch the generated `PureFlow.cmd`, then open any normal repository.
+
+### Install only the extension
 
 ```powershell
 cd extension
@@ -41,15 +58,23 @@ npm test
 npm run package
 ```
 
-Install the resulting `pureflow-0.1.0.vsix` in VS Code or VSCodium. Run **PureFlow: Open Training Console** or press `Ctrl+Alt+P`.
+Install `extension/pureflow-0.1.0.vsix` in VS Code or VSCodium. Run **PureFlow: Open Workbench** or press `Ctrl+Alt+P`.
 
-### Demo workspace
+Useful editor actions:
 
-Open `demo/cache-lab` in the portable build. Its test exposes an intentionally inverted cache-expiry comparison. Start a Rep, write a hypothesis, run the default test task, fix the bug manually, and defend the invariant.
+- `Ctrl+Alt+Y` — Explain why for the current selection.
+- `Ctrl+Alt+D` — Find the selected symbol in the documentation dock.
+- Editor context menu → **PureFlow** — Explain, quiz, review reasoning, search docs, or inspect a selected Monad address/transaction.
+
+### Create or open a project
+
+Use **PureFlow: Open Project** for an existing folder or **PureFlow: Create Project** for one of the built-in starters. PureFlow delegates folder switching, terminals, tests, and source control to native VSCodium commands instead of recreating those surfaces in React.
+
+### Optional Focus demo
+
+Open `demo/cache-lab`. Its test exposes an intentionally inverted cache-expiry comparison. Work in the native editor first; when deliberate practice is useful, start a Focus Rep, record a hypothesis, run the test task, fix the bug manually, and defend the invariant.
 
 ## Develop
-
-Requirements: Node.js 22+, npm 10+, and PowerShell 7 on Windows for the distribution builder.
 
 ```powershell
 # extension
@@ -57,6 +82,7 @@ cd extension
 npm ci
 npm run check
 npm test
+npm run build
 
 # contract
 cd ..\contracts
@@ -67,6 +93,7 @@ npm test
 # companion site
 cd ..\web
 npm ci
+npm test
 npm run build
 npm run dev
 ```
@@ -75,29 +102,38 @@ npm run dev
 
 ```mermaid
 flowchart LR
-  L["Portable VSCodium launcher"] --> E["PureFlow extension"]
-  E --> S["Local Rep state + JSONL trail"]
-  E --> K["Official docs + Stack Exchange search"]
-  E --> D["Consent-gated Senior Defense"]
-  S --> C["Privacy-safe commitment"]
-  C --> M["RepRegistry on Monad Testnet"]
-  W["Public companion"] --> M
+  D["Portable PureFlow VSCodium"] --> N["Native editor, Explorer, terminal, tests, Git"]
+  D --> E["Bundled PureFlow extension"]
+  E --> S["Compact Workspace / Mentor / Focus / Monad sidebar"]
+  E --> L["Local state and bounded project inspection"]
+  E --> R["Monad Testnet read-only RPC"]
+  L --> P["Prepared privacy-safe commitment"]
+  P -. "wallet handoff after setup" .-> W["Web companion"]
+  W -. "after deployment" .-> C["RepRegistry on Monad Testnet"]
 ```
 
-The detailed boundaries are in [docs/architecture.md](docs/architecture.md). Product intent and anti-goals are in [PRODUCT.md](PRODUCT.md).
+Read [the architecture](docs/architecture.md), [product intent](PRODUCT.md), [design system](DESIGN.md), and [end goal](docs/END_GOAL.md) before changing the product hierarchy. Current implementation, blockers, decisions, and chronological evidence live in [Project State](docs/PROJECT_STATE.md), [Decision Log](docs/DECISIONS.md), and [Build Log](docs/BUILD_LOG.md).
 
 ## Privacy and honest limits
 
-PureFlow is voluntary focus infrastructure, not anti-cheat or employee surveillance. Code, filenames, terminal content, clipboard content, goals, and explanations stay local by default. The optional onchain record proves only that a wallet published a commitment with public aggregate counters; it cannot prove how someone worked or that a session increased skill.
+PureFlow does not upload background files, absolute paths, terminal history, clipboard contents, or a repository. Mentor requests are explicit and bounded; file identity is reduced to a safe workspace-relative label or basename before it reaches a configured coach. Goals, code, filenames, notes, and answers stay offchain.
+
+The extension remains visible in Restricted Mode with limited support. Its local guide and read-only tools remain available, configured coach calls stay disabled, workspace-defined network settings are ignored, and VSCodium continues to govern trust-sensitive native actions.
+
+The `RepRegistry` contract and its tests exist, but the Testnet registry is not deployed yet. The encrypted agent wallet has 1 Testnet MON from a confirmed faucet transaction, so funding is no longer the immediate blocker. Monskills requires every contract deployment to be proposed through a Safe: creating the 2-of-3 Safe still needs two owner addresses from the project owner, and the canonical Para wallet flow requires the owner to authenticate separately. Until Safe execution, bytecode verification, and a follow-up contract read succeed, PureFlow does not claim an attestation is published or verified.
+
+PureFlow is not anti-cheat, employee surveillance, a skill score, or proof that a session improved someone. The optional record proves only that a wallet published a particular privacy-safe commitment.
 
 ## Spark hackathon
 
-The practical problem comes first: developers need a credible way to keep manual debugging, recall, and explanation skills while using agents elsewhere. The Monad component is a small, real, privacy-safe attestation registry rather than a token-shaped excuse.
+The hackathon is a launch constraint for a useful open-source developer tool, not the product's reason to exist. Monad integration is limited to work that benefits from live chain data or a durable public commitment; normal coding, mentoring, documentation, and Focus history remain local.
 
+- [Live companion](https://yava-code.github.io/PureFlow/)
 - [Spark alignment](docs/spark-alignment.md)
 - [Submission packet](docs/submission.md)
 - [Three-minute demo script](docs/demo-script.md)
 - [Build process notes](process-notes.md)
 - [Smart contract](contracts/src/RepRegistry.sol)
+- [Safe deployment and verification runbook](contracts/README.md)
 
 Built with the requested Monskills and Impeccable skill packs. Licensed under MIT.

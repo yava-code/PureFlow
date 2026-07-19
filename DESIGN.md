@@ -10,17 +10,17 @@ The reference concept is [`docs/design/ide-workspace-concept.png`](docs/design/i
 
 The native VSCodium layout remains intact:
 
-- Activity Bar and Explorer on the left.
+- Activity Bar and native primary sidebar on the user's chosen side; Explorer remains an upstream view.
 - Native editor in the center.
 - Native panel for terminal, tests, output, problems, and debug console.
-- PureFlow in a compact Activity Bar sidebar on the right or left, according to the user's layout.
-- Status Bar for one-line project, Focus, and Monad state.
+- PureFlow as an Activity Bar view in the primary sidebar by default. A user may move it to the Secondary Side Bar when they want Explorer and PureFlow visible together.
+- One compact Status Bar item for project, selection, or active Focus state.
 
 The PureFlow sidebar has four peer routes:
 
 1. **Workspace** — current folder, file, language, Git state, and native project actions.
 2. **Mentor** — Explain, Explain why, Quiz me, Find docs, and Review reasoning for an explicit selection.
-3. **Focus** — optional Rep controls and evidence, compact enough for a sidebar.
+3. **Focus** — optional Rep controls and user-recorded evidence, compact enough for a sidebar.
 4. **Monad** — Testnet health, address or transaction inspection, project diagnostics, and proof handoff.
 
 No route opens a central editor tab. No route is required before ordinary editing.
@@ -53,13 +53,13 @@ Design sidebar-first at 320 pixels and verify 240, 320, and 420 pixels. Use open
 - **Workbench header:** small mark, current workspace, current file, and a quiet live-state dot.
 - **Route strip:** Workspace, Mentor, Focus, and Monad with icon plus label; never more than four peers.
 - **Context block:** relative file path, language, line range, and selection size. No absolute path.
-- **Mentor action row:** explicit one-shot actions. Results identify whether they came from a configured model, language service, official source, community source, or local fallback.
+- **Mentor action row:** explicit one-shot actions. Results identify a configured coach or local guide; documentation results identify official or community sources.
 - **Mentor response:** concise sections for behavior, reasoning, edge cases, and questions; no Apply button.
 - **Workspace row:** native Open Folder, Create Project, Terminal, Tasks, and Source Control commands.
 - **Monad health row:** chain ID, latest/safe/finalized blocks, RPC latency, and last refresh.
-- **Inspector:** accepts a verified address or transaction hash and shows only live RPC results plus official explorer links.
+- **Inspector:** accepts a syntactically valid address or transaction hash and shows only live RPC results plus official explorer links.
 - **Focus disclosure:** collapsed by default; timer and finish action appear only while a Rep is active.
-- **Status Bar item:** compact and clickable. It shows project state normally, Focus time during a Rep, and a separate Monad live state only when enabled.
+- **Status Bar item:** compact and clickable. It opens a project with no workspace, opens PureFlow during normal work, offers Explain for a selection, and shows elapsed Focus time during a Rep.
 
 ## Interaction
 
@@ -67,7 +67,9 @@ Editor context menus and the command palette are equal entry points to the sideb
 
 Opening or creating a folder uses native VSCodium dialogs and reload behavior. Opening a terminal, tests, source control, or settings delegates to native commands. PureFlow should not reimplement mature IDE surfaces.
 
-Monad write actions hand off to the web companion and a user-controlled wallet. The IDE never stores a wallet key. Gas UI uses the estimated gas limit with at most a 10% buffer and labels pending, safe, and finalized states accurately.
+Restricted Mode leaves the sidebar, local guide, and safe read-only tools available. Configured coach calls remain disabled, workspace-defined network settings are ignored, and native VSCodium trust restrictions continue to govern terminal, task, and repository actions.
+
+Future Monad write actions hand off to the web companion and a user-controlled wallet. The IDE never stores a wallet key. When writes are implemented, gas UI must use the estimated gas limit with at most a 10% buffer and label pending, safe, and finalized states accurately.
 
 ## Motion
 
@@ -75,4 +77,4 @@ Transitions are 120–180 milliseconds and communicate route or disclosure state
 
 ## Content
 
-Use direct engineering language: “Explain why,” “Quiz me,” “Read from Monad Testnet,” “Prepared, not published,” and “Open project.” Avoid “training console,” “level up,” “AI magic,” “verified” before an RPC check, and any claim that manual practice guarantees skill recovery.
+Use direct engineering language: “Explain why,” “Quiz me,” “Read from Monad Testnet,” “Prepared, not published,” and “Open project.” Use `live` for successful RPC reads; reserve `published` and `verified` for a real receipt plus a follow-up contract read. Avoid “training console,” “level up,” “AI magic,” and any claim that manual practice guarantees skill recovery.

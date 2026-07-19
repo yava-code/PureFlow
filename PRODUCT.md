@@ -12,7 +12,7 @@ desktop IDE with a web companion
 
 PureFlow is for working developers who want a capable everyday IDE and a deliberate way to keep their own reasoning sharp while using AI. They open or create normal projects, write code in the native editor, run terminals, tests, debuggers, and source control, then call PureFlow only when they want context: documentation, a concise explanation, a question, a review of their reasoning, or an optional focused practice Rep.
 
-Monad developers are a first-class secondary audience. PureFlow should help them inspect addresses and transactions, diagnose a project, verify deployments and publish privacy-safe Rep proofs without turning the IDE into a wallet or a crypto dashboard.
+Monad developers are a first-class secondary audience. PureFlow helps them inspect live Testnet state, addresses, transactions, and project readiness without turning the IDE into a wallet or crypto dashboard. Deployment verification and privacy-safe Rep publication remain receipt-backed, user-controlled write flows.
 
 ## Product Purpose
 
@@ -28,8 +28,8 @@ Your daily IDE, with AI that waits to be asked and practice that never gets in t
 
 1. Native project work: open or create a folder, edit, search, run, test, debug, and commit.
 2. Contextual help: explain a selection, explain why it may be structured that way, quiz the developer, find documentation, and review reasoning.
-3. Monad tools: live Testnet health, address and transaction inspection, project diagnostics, deployment verification, and explicit wallet handoff for attestations.
-4. Focus Rep: an optional manual session with hypotheses, evidence, recall, and a post-session defense.
+3. Monad tools: live read-only Testnet health, address and transaction inspection, project diagnostics, then explicit wallet handoff and receipt-backed verification for future write flows.
+4. Focus Rep: an optional manual session with hypotheses, user-recorded test/debug evidence, recall, and a post-session defense.
 
 ## Brand Personality
 
@@ -45,7 +45,8 @@ PureFlow must not resemble LeetCode, a course player, a wellness timer, an emplo
 - Help on demand. Code leaves the machine only after an explicit mentor action and never during a voluntary Focus Rep.
 - Prefer sources and questions over generated patches.
 - Use live chain data and explicit states: unavailable, prepared, pending, safe, finalized, or failed.
-- Preserve privacy by default: absolute paths, clipboard content, terminal history, code, and goals stay local unless the user explicitly shares a bounded selection.
+- Preserve privacy by default: absolute paths, clipboard content, terminal history, goals, and background code stay local. An explicit mentor action may share only bounded code, language, line range, and a sanitized file label.
+- Respect Workspace Trust. Restricted Mode keeps the sidebar and safe read-only tools available, disables configured coach calls, ignores workspace-defined network settings, and leaves trust-sensitive native actions to VSCodium.
 - Make optional features visibly optional. Focus and Monad never block ordinary development.
 - Preserve VSCodium compatibility through a branded portable distribution and bundled extension instead of a source fork that must chase every upstream release.
 

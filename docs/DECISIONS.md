@@ -34,7 +34,7 @@ Durable choices live here so future agents can distinguish intentional architect
 
 ## 2026-07-19 — Minimal onchain proof
 
-**Decision:** Keep goals, code, paths, notes, and answers local. `RepRegistry` receives a commitment plus focused seconds, test runs, debug loops, ownership, and completion time. History is derived from contract events after deployment.
+**Decision:** Keep goals, code, paths, notes, and answers local. `RepRegistry.attest` receives a commitment plus focused seconds, test runs, debug loops, and ownership. Storage keeps only commitment-to-attestor and wallet-to-count mappings; the counters and chain `block.timestamp` are emitted in `RepAttested`. History is derived from those events after deployment.
 
 **Why:** Permanent chain storage is suitable for a voluntarily published proof, not sensitive developer context. The existing event is enough for a verifier and avoids inventing a token or reputation score.
 
@@ -43,3 +43,11 @@ Durable choices live here so future agents can distinguish intentional architect
 **Decision:** Use the Monskills-recommended Para flow for the web companion. Agents do not install the Para CLI or authenticate as the user.
 
 **Why:** Signing must remain user-controlled. The prerequisite is explicit: the owner runs `npm install -g @getpara/cli`, then `para login`; only afterward may an agent run project initialization and diagnostics.
+
+## 2026-07-19 — Safe-governed Monad writes
+
+**Decision:** Follow the installed Monskills wallet policy for every Monad write. Safe creation is the only direct transaction. `RepRegistry` deployment and all later calls are proposed through the supplied `wallet/utils/propose.sh` wrapper, approved by the owner, and verified from the execution receipt plus a follow-up code or contract read.
+
+**Why:** The agent wallet can prepare and co-sign a transaction without unilaterally publishing state. The required 2-of-3 Safe uses two public owner addresses plus the encrypted agent wallet, while private keys remain outside the repository and chat.
+
+**Acceptance:** Never create a custom proposer or broadcast `RepRegistry` directly. Preserve the wrapper's QR/output verbatim, request owner approval, then parse the CreateCall `ContractCreation(address)` log because a Safe deployment receipt has no top-level `contractAddress`.

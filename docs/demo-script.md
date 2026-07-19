@@ -1,33 +1,64 @@
 # Three-minute demo script
 
-## 0:00–0:20 — Problem
+## Before recording
 
-“Coding agents make me faster, but they also remove the repetitions that keep debugging and code-reading skills sharp. PureFlow gives those repetitions a protected place inside a real editor.”
+- Build the latest VSIX and portable distribution; do not use the earlier full-page Training Console build.
+- Open a small normal TypeScript repository with a test task and Git initialized.
+- Use the checked Monad Testnet fixtures below; do not paste private wallet data.
+- Confirm the RPC status is live. If it is unavailable, show the error honestly rather than substituting cached numbers.
+- Do not attempt attestation publish or verification until `RepRegistry` has a verified Testnet address and the wallet flow is configured.
 
-Show the public companion and the Before / Pure Mode / After boundary.
+Checked on 2026-07-19 from finalized block `46339905`:
 
-## 0:20–0:45 — Separate environment
+- third-party inspection fixture, **not PureFlow's `RepRegistry`**: `0xa2b0067002df61df015c11b2cf0be4f34fc41cf8` (2,227 bytes of code at `safe`);
+- successful transaction: `0x20c7f773bfaf3b60edd05443955d6168959d76cd8e4f5aa56a1a8fea041b41b0`;
+- receipt evidence: status `0x1`, gas used `224930`, four logs;
+- explorer: <https://testnet.monadscan.com/tx/0x20c7f773bfaf3b60edd05443955d6168959d76cd8e4f5aa56a1a8fea041b41b0>.
 
-Launch `PureFlow.cmd`. Point out that this is a portable VSCodium profile, not a browser IDE and not a new editor engine. The bundled extension opens automatically; common AI extensions are disabled for this session.
+## 0:00–0:25 — A normal IDE first
 
-Open `demo/cache-lab` and enter: “trace the cache expiry invariant and prove the fix with a regression test.” Start a 25-minute Rep.
+Launch `PureFlow.cmd` and open the repository.
 
-## 0:45–1:35 — Pure Mode
+Say: “PureFlow is a separate VSCodium distribution for daily development, not a browser IDE and not a coding exercise tab. The normal editor, Explorer, terminal, tests, debugger, and Git stay in charge.”
 
-Show the visible “AI is offline” boundary. Run the test task and show the failure. Record the hypothesis that the expiry comparison is inverted. Open one Knowledge Dock source or use Recall Ladder. Fix `<` to `>` manually, run the test again, and record “Tests passed.”
+Edit one line, open the integrated terminal from PureFlow, and run the native test task. Briefly show the PureFlow Mineral theme and compact sidebar; keep the code editor visible.
 
-Emphasize that PureFlow stores a local process trail, not keystrokes, clipboard contents, or surveillance telemetry.
+## 0:25–0:55 — Workspace-native actions
 
-## 1:35–2:15 — Rep Card and defense
+Open the **Workspace** route. Point out the current project, relative file, language, selection, and Git branch. Open Source Control through the sidebar to show that PureFlow delegates to the native surface.
 
-Finish the Rep in your own words and choose the ownership check-in. Show focused time, one test run, one debug loop, sources, and the local event trail. Export the privacy-safe Rep Card.
+Mention that **Create Project** can scaffold an empty folder, strict Node + TypeScript project, or Monad + Hardhat starter, then opens it as a normal workspace.
 
-Start Senior Defense without sharing repository context. Answer the first invariant question; show that findings remain sealed until the developer answers.
+## 0:55–1:30 — Help only when requested
 
-## 2:15–2:45 — Monad
+Select a small function in the editor. Right-click → **PureFlow → Why Is This Code Written This Way?** Show the sidebar moving to Mentor while the editor remains open.
 
-Prepare the commitment. Explain that `RepRegistry` stores only the hash, aggregate counters, ownership value, timestamp, and attesting wallet. Open the public verifier and verify the same commitment on Monad Testnet.
+Say: “This action sends only the explicit selection, relative file identity, language, and line range. PureFlow never uploads the repository in the background. With no coach configured, the result is clearly labeled local guide.”
 
-## 2:45–3:00 — Close
+Show **Quiz me** or **Quiz current function**, then search for one API symbol in Documentation. Do not imply the local guide is a model response.
 
-“PureFlow is useful without a wallet and honest about what the chain proves. It does not certify skill; it gives developers a repeatable way to keep the work in their hands.”
+## 1:30–2:15 — Real Monad developer tools
+
+Open **Monad**. Refresh Testnet health and show chain ID `10143`, latest/safe/finalized blocks, RPC latency, and gas price.
+
+Inspect the prepared real address or transaction hash. Point out balance/nonce/bytecode for an address, or receipt status/finality/gas/logs for a transaction, then open the official explorer link.
+
+Run **Monad Project Doctor** against a Monad project or starter. Show detected Hardhat/Foundry/Solidity/viem/wagmi signals and whether Testnet configuration was found.
+
+Say: “These are live, read-only RPC and local project results. No wallet is needed to use the workbench.”
+
+## 2:15–2:45 — Focus is optional
+
+Open `demo/cache-lab` or return to the prepared failing test. Switch to **Focus** and start a short Rep only now.
+
+Record the hypothesis that the cache-expiry comparison is inverted, run the native test task, mark its outcome yourself, fix the comparison manually, and mark the next outcome. Point out that configured AI calls are blocked while the Rep is active and that PureFlow records user-declared workflow events rather than keystrokes, clipboard contents, terminal history, or parsed test-runner output.
+
+If time is tight, stop after showing the hypothesis and test evidence. The product has already been demonstrated without requiring a Rep.
+
+## 2:45–3:00 — Honest close
+
+Show the proof section labeled **Prepared, not published**.
+
+Say: “A completed Rep can prepare a privacy-safe payload. The URL is structurally validated but is not authenticated, signed, or published. The registry is not deployed yet, so I am not showing a fake onchain success. PureFlow is useful as an IDE today; after wallet setup, a real receipt and contract read will unlock public verification.”
+
+End on the repository and public companion URLs.

@@ -1,5 +1,7 @@
 # PureFlow
 
+> Historical concept input. The implemented product was deliberately corrected from a Rep-first training mode to a daily IDE-first workbench. Future agents must use [`PRODUCT.md`](../PRODUCT.md), [`DESIGN.md`](../DESIGN.md), [`END_GOAL.md`](END_GOAL.md), and [`PROJECT_STATE.md`](PROJECT_STATE.md) as the current contract; this file is preserved for provenance only.
+
 ## Полная концепция проекта для хакатона
 
 **Рабочий слоган:** Keep your coding muscles.
