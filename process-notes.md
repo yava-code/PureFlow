@@ -24,3 +24,9 @@
 - The working state machine covers start, active practice, self-review, defense, and completion. Coach network calls are rejected during the active phase by the extension host, not merely hidden in the UI.
 - Knowledge Dock combines a curated local reference pack with live Stack Exchange API results. Rep storage is local JSONL/global storage and excludes code, clipboard data, terminal text, and filenames by default.
 - The extension passes strict TypeScript, four domain tests, a production esbuild bundle, and VSIX packaging.
+
+## Distribution and Spark companion
+
+- The Windows builder downloaded VSCodium 1.126.04524, verified the official SHA-256, created an isolated portable profile, and installed `yava-code.pureflow@0.1.0`. The release output is reproducible and intentionally excluded from Git.
+- The public companion is not a replacement for the IDE. It explains the three-phase boundary, links to the downloadable/open-source product, and verifies commitments with a real `eth_call` to `RepRegistry.attestorOf` over Monad Testnet RPC.
+- A wallet sign-in button was not faked. Monskills requires Para for that integration; it remains gated on the user's `para login`, while the read-only verifier and all static product work are complete.

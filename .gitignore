@@ -3,6 +3,7 @@ dist/
 out/
 coverage/
 *.vsix
+release/
 .env
 .env.*
 !.env.example
@@ -10,4 +11,3 @@ contracts/cache/
 contracts/out/
 contracts/broadcast/
 .DS_Store
-
