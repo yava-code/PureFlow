@@ -1,15 +1,15 @@
 {
   "name": "pureflow",
   "displayName": "PureFlow",
-  "description": "The manual practice mode for modern developers.",
+  "description": "A workspace-first VSCodium environment with focused documentation, mentoring, and proof tools.",
   "version": "0.1.0",
   "publisher": "yava-code",
   "license": "MIT",
   "engines": {
     "vscode": "^1.96.0"
   },
-  "categories": ["Education", "Other"],
-  "keywords": ["practice", "focus", "debugging", "docs", "ai-free"],
+  "categories": ["Other", "Themes"],
+  "keywords": ["ide", "workspace", "mentoring", "documentation", "practice", "monad"],
   "main": "./dist/extension.js",
   "activationEvents": ["onStartupFinished"],
   "icon": "media/extension-icon.png",
@@ -21,8 +21,52 @@
     "commands": [
       {
         "command": "pureflow.open",
-        "title": "PureFlow: Open Training Console",
-        "icon": "$(pulse)"
+        "title": "PureFlow: Open Workbench",
+        "icon": "$(layout-sidebar-left)"
+      },
+      {
+        "command": "pureflow.openProject",
+        "title": "PureFlow: Open Project"
+      },
+      {
+        "command": "pureflow.createProject",
+        "title": "PureFlow: Create Project"
+      },
+      {
+        "command": "pureflow.openTerminal",
+        "title": "PureFlow: Open Integrated Terminal"
+      },
+      {
+        "command": "pureflow.explainSelection",
+        "title": "PureFlow: Explain Selected Code"
+      },
+      {
+        "command": "pureflow.explainWhy",
+        "title": "PureFlow: Why Is This Code Written This Way?"
+      },
+      {
+        "command": "pureflow.quizSelection",
+        "title": "PureFlow: Quiz Me on Selected Code"
+      },
+      {
+        "command": "pureflow.quizCurrentFunction",
+        "title": "PureFlow: Quiz Me on Current Function"
+      },
+      {
+        "command": "pureflow.reviewReasoning",
+        "title": "PureFlow: Review My Reasoning"
+      },
+      {
+        "command": "pureflow.inspectMonadSelection",
+        "title": "PureFlow: Inspect Address or Transaction on Monad"
+      },
+      {
+        "command": "pureflow.runMonadDoctor",
+        "title": "PureFlow: Run Monad Project Doctor"
+      },
+      {
+        "command": "pureflow.openSourceControl",
+        "title": "PureFlow: Open Source Control"
       },
       {
         "command": "pureflow.startRep",
@@ -55,7 +99,59 @@
         {
           "type": "webview",
           "id": "pureflow.console",
-          "name": "Training Console"
+          "name": "Workbench"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "pureflow.editorActions",
+        "label": "PureFlow"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "pureflow.editorActions",
+          "when": "editorTextFocus",
+          "group": "navigation@90"
+        }
+      ],
+      "pureflow.editorActions": [
+        {
+          "command": "pureflow.explainSelection",
+          "when": "editorHasSelection",
+          "group": "1_mentor@1"
+        },
+        {
+          "command": "pureflow.explainWhy",
+          "when": "editorHasSelection",
+          "group": "1_mentor@2"
+        },
+        {
+          "command": "pureflow.quizSelection",
+          "when": "editorHasSelection",
+          "group": "1_mentor@3"
+        },
+        {
+          "command": "pureflow.quizCurrentFunction",
+          "when": "editorTextFocus && !editorHasSelection",
+          "group": "1_mentor@3"
+        },
+        {
+          "command": "pureflow.reviewReasoning",
+          "when": "editorHasSelection",
+          "group": "1_mentor@4"
+        },
+        {
+          "command": "pureflow.searchSelection",
+          "when": "editorHasSelection",
+          "group": "2_docs@1"
+        },
+        {
+          "command": "pureflow.inspectMonadSelection",
+          "when": "editorHasSelection",
+          "group": "3_monad@1"
         }
       ]
     },
@@ -70,6 +166,12 @@
         "key": "ctrl+alt+d",
         "mac": "cmd+alt+d",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "pureflow.explainWhy",
+        "key": "ctrl+alt+y",
+        "mac": "ctrl+alt+y",
+        "when": "editorHasSelection"
       }
     ],
     "configuration": {
@@ -83,7 +185,7 @@
         "pureflow.openOnStartup": {
           "type": "boolean",
           "default": false,
-          "description": "Open the Training Console after the editor finishes starting. Enabled in the PureFlow portable distribution."
+          "description": "Reveal the PureFlow Workbench sidebar after the editor finishes starting. Enabled in the PureFlow portable distribution."
         },
         "pureflow.coachModel": {
           "type": "string",
@@ -94,6 +196,16 @@
           "type": "string",
           "default": "",
           "description": "Deployed Monad RepRegistry address used to prepare privacy-safe attestations."
+        },
+        "pureflow.monadRpcUrl": {
+          "type": "string",
+          "default": "https://testnet-rpc.monad.xyz",
+          "description": "Monad Testnet JSON-RPC endpoint used by the read-only workspace lens. The endpoint must report chain ID 10143."
+        },
+        "pureflow.companionUrl": {
+          "type": "string",
+          "default": "https://yava-code.github.io/PureFlow/",
+          "description": "PureFlow web companion used for public verification and user-controlled wallet handoff."
         },
         "pureflow.aiExtensionIds": {
           "type": "array",
@@ -109,7 +221,14 @@
           "description": "Extension IDs reported before a Rep when present in this profile."
         }
       }
-    }
+    },
+    "themes": [
+      {
+        "label": "PureFlow Mineral",
+        "uiTheme": "vs-dark",
+        "path": "./themes/pureflow-mineral-color-theme.json"
+      }
+    ]
   },
   "scripts": {
     "build": "node esbuild.mjs",

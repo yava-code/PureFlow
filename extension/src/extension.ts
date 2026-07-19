@@ -1,19 +1,52 @@
 import * as vscode from "vscode";
 import { Coach } from "./coach";
-import { recordExternalChange } from "./domain";
+import type { MentorIntent } from "./protocol";
+import { mentorEditorContext, selectionQuery } from "./selection";
+import { PureFlowStatus } from "./status";
 import { RepStore } from "./store";
 import { PureFlowView } from "./view";
+import { WorkspaceService } from "./workspace";
 
 export function activate(context: vscode.ExtensionContext): void {
   const store = new RepStore(context);
   const coach = new Coach(context);
-  const view = new PureFlowView(context, store, coach);
+  const workspace = new WorkspaceService();
+  const status = new PureFlowStatus(store);
+  const view = new PureFlowView(context, store, coach, workspace, status);
+
+  const sendMentorContext = async (mode: MentorIntent, allowCurrentFunction = false): Promise<void> => {
+    const value = await mentorEditorContext(allowCurrentFunction);
+    if (!value) {
+      void vscode.window.showInformationMessage(allowCurrentFunction ? "Open a function or select code first." : "Select code in the editor first.");
+      return;
+    }
+    await view.requestMentor(mode, value);
+  };
 
   context.subscriptions.push(
+    status,
     vscode.window.registerWebviewViewProvider(PureFlowView.viewType, view, {
       webviewOptions: { retainContextWhenHidden: true },
     }),
-    vscode.commands.registerCommand("pureflow.open", () => view.focus()),
+    vscode.commands.registerCommand("pureflow.open", () => view.showWorkspace()),
+    vscode.commands.registerCommand("pureflow.openProject", () => workspace.openProject()),
+    vscode.commands.registerCommand("pureflow.createProject", () => workspace.createProject()),
+    vscode.commands.registerCommand("pureflow.openTerminal", () => workspace.openTerminal()),
+    vscode.commands.registerCommand("pureflow.explainSelection", () => sendMentorContext("explain")),
+    vscode.commands.registerCommand("pureflow.explainWhy", () => sendMentorContext("why")),
+    vscode.commands.registerCommand("pureflow.quizSelection", () => sendMentorContext("quiz")),
+    vscode.commands.registerCommand("pureflow.quizCurrentFunction", () => sendMentorContext("quiz", true)),
+    vscode.commands.registerCommand("pureflow.reviewReasoning", () => sendMentorContext("review")),
+    vscode.commands.registerCommand("pureflow.inspectMonadSelection", async () => {
+      const value = selectionQuery();
+      if (!value) {
+        void vscode.window.showInformationMessage("Select a Monad address or transaction hash first.");
+        return;
+      }
+      await view.inspectFromCommand(value);
+    }),
+    vscode.commands.registerCommand("pureflow.runMonadDoctor", () => view.doctorFromCommand()),
+    vscode.commands.registerCommand("pureflow.openSourceControl", () => vscode.commands.executeCommand("workbench.view.scm")),
     vscode.commands.registerCommand("pureflow.startRep", () => view.startFromCommand()),
     vscode.commands.registerCommand("pureflow.finishRep", () => view.finishFromCommand()),
     vscode.commands.registerCommand("pureflow.configureCoach", async () => {
@@ -24,10 +57,7 @@ export function activate(context: vscode.ExtensionContext): void {
       if (await coach.configure()) await view.pushState();
     }),
     vscode.commands.registerCommand("pureflow.searchSelection", async () => {
-      const editor = vscode.window.activeTextEditor;
-      const value = editor?.document.getText(editor.selection).trim();
-      const word = editor?.document.getText(editor.document.getWordRangeAtPosition(editor.selection.active));
-      await view.prefillSearch(value || word || "");
+      await view.prefillSearch(selectionQuery());
     }),
     vscode.workspace.onDidChangeConfiguration((event) => {
       if (event.affectsConfiguration("pureflow")) void view.pushState();
@@ -35,26 +65,23 @@ export function activate(context: vscode.ExtensionContext): void {
   );
 
   if (vscode.workspace.getConfiguration("pureflow").get<boolean>("openOnStartup")) {
-    void view.focus();
+    void view.showWorkspace();
   }
 
-  const recentSaves = new Map<string, number>();
-  context.subscriptions.push(
-    vscode.workspace.onDidSaveTextDocument((document) => {
-      recentSaves.set(document.uri.toString(), Date.now());
-      setTimeout(() => recentSaves.delete(document.uri.toString()), 1500);
-    }),
-  );
+  let refreshTimer: NodeJS.Timeout | undefined;
+  const scheduleRefresh = (): void => {
+    status.refresh();
+    if (refreshTimer) clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(() => void view.pushWorkspace(), 120);
+  };
 
-  const watcher = vscode.workspace.createFileSystemWatcher("**/*", false, false, false);
-  watcher.onDidChange(async (uri) => {
-    if (store.get().phase !== "active") return;
-    const savedAt = recentSaves.get(uri.toString()) ?? 0;
-    if (Date.now() - savedAt < 1500) return;
-    await store.set(recordExternalChange(store.get()));
-    await view.pushState();
-  });
-  context.subscriptions.push(watcher);
+  context.subscriptions.push(
+    vscode.workspace.onDidChangeWorkspaceFolders(scheduleRefresh),
+    vscode.window.onDidChangeActiveTextEditor(scheduleRefresh),
+    vscode.window.onDidChangeTextEditorSelection(scheduleRefresh),
+    vscode.workspace.onDidSaveTextDocument(scheduleRefresh),
+    { dispose: () => refreshTimer && clearTimeout(refreshTimer) },
+  );
 }
 
 export function deactivate(): void {}
