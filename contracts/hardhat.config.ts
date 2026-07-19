@@ -1,5 +1,5 @@
 import hardhatToolboxViemPlugin from "@nomicfoundation/hardhat-toolbox-viem";
-import { configVariable, defineConfig } from "hardhat/config";
+import { defineConfig } from "hardhat/config";
 
 export default defineConfig({
   plugins: [hardhatToolboxViemPlugin],
@@ -19,6 +19,9 @@ export default defineConfig({
             enabled: true,
             runs: 200,
           },
+          metadata: {
+            bytecodeHash: "none",
+          },
         },
       },
     },
@@ -33,8 +36,6 @@ export default defineConfig({
       chainType: "l1",
       chainId: 10143,
       url: "https://testnet-rpc.monad.xyz",
-      accounts: [configVariable("MONAD_TESTNET_PRIVATE_KEY")],
     },
   },
 });
-

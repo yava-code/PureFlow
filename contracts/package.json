@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "hardhat build --build-profile production",
-    "test": "hardhat test solidity",
+    "test": "hardhat test solidity && npm run test:tools",
+    "test:tools": "node --test test/deployment-tools.test.mjs",
+    "prepare:safe": "npm run build && node scripts/prepare-safe-deployment.mjs",
+    "verify:deployment": "npm run build && node scripts/verify-safe-deployment.mjs",
+    "prepare:verification": "npm run build && node scripts/prepare-source-verification.mjs",
     "clean": "hardhat clean"
   },
   "devDependencies": {
@@ -16,4 +20,3 @@
     "viem": "^2.47.6"
   }
 }
-
