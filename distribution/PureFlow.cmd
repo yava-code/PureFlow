@@ -14,6 +14,4 @@ start "PureFlow" "%APP%" ^
   --disable-extension continue.continue ^
   --disable-extension codeium.codeium ^
   --disable-extension tabnine.tabnine-vscode ^
-  --command pureflow.open ^
   %*
-

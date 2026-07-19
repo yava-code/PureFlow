@@ -156,12 +156,25 @@ footer > a:last-child { font-size: 0.75rem; text-decoration: underline; text-und
 
 @media (max-width: 720px) {
   .site-header { height: auto; min-height: 66px; padding: 12px 18px; }
-  .site-header nav { gap: 12px; }
+  .site-header nav { min-width: 0; gap: 12px; }
   .site-header nav > a:not(.header-action) { display: none; }
+  .header-action { padding: 8px 11px; font-size: 0.8rem; }
   .hero { grid-template-columns: minmax(0, 1fr); padding: 38px 18px 24px; }
   .hero-copy h1 { font-size: 2.75rem; }
-  .product-preview { overflow-x: auto; }
-  .phase-tabs, .editor-surface, .preview-timeline, .pure-note { min-width: 620px; }
+  .product-preview { overflow: hidden; }
+  .phase-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .phase-tabs button { min-width: 0; padding: 10px 8px; gap: 7px; }
+  .phase-tabs svg { width: 20px; height: 20px; }
+  .phase-tabs small { display: none; }
+  .editor-surface { grid-template-columns: 92px minmax(0, 1fr); }
+  .file-rail { padding-right: 6px; padding-left: 6px; }
+  .file-rail .nested { padding-left: 11px; }
+  .code-pane pre { overflow-x: auto; }
+  .code-pane code i { width: 24px; margin-right: 8px; }
+  .preview-timeline { padding-right: 10px; padding-left: 10px; }
+  .timeline-rail { margin-right: 8px; margin-left: 8px; }
+  .timeline-labels { gap: 7px; font-size: 0.6rem; }
+  .timeline-labels small { display: none; }
   .verify-band, .process, .open-source { padding-right: 18px; padding-left: 18px; }
   .verify-controls { grid-template-columns: 1fr; }
   .network { width: max-content; }
@@ -171,7 +184,14 @@ footer > a:last-child { font-size: 0.75rem; text-decoration: underline; text-und
   footer p { justify-self: start; text-align: left; }
 }
 
+@media (max-width: 390px) {
+  .brand { font-size: 1.05rem; }
+  .brand .mark { width: 27px; height: 27px; }
+  .header-action { padding: 7px 9px; font-size: 0.74rem; }
+  .hero-copy h1 { font-size: 2.45rem; }
+  .hero-actions a { width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
-

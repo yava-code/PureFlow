@@ -34,6 +34,10 @@ export function activate(context: vscode.ExtensionContext): void {
     }),
   );
 
+  if (vscode.workspace.getConfiguration("pureflow").get<boolean>("openOnStartup")) {
+    void view.focus();
+  }
+
   const recentSaves = new Map<string, number>();
   context.subscriptions.push(
     vscode.workspace.onDidSaveTextDocument((document) => {
@@ -54,4 +58,3 @@ export function activate(context: vscode.ExtensionContext): void {
 }
 
 export function deactivate(): void {}
-

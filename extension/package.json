@@ -80,6 +80,11 @@
           "default": "",
           "description": "Optional OpenAI-compatible chat completions endpoint. Never called during an active Rep."
         },
+        "pureflow.openOnStartup": {
+          "type": "boolean",
+          "default": false,
+          "description": "Open the Training Console after the editor finishes starting. Enabled in the PureFlow portable distribution."
+        },
         "pureflow.coachModel": {
           "type": "string",
           "default": "",
@@ -128,4 +133,3 @@
     "vitest": "^3.2.4"
   }
 }
-

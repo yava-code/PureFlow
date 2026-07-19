@@ -3,6 +3,7 @@ dist/
 out/
 coverage/
 *.vsix
+*.tsbuildinfo
 release/
 .env
 .env.*
@@ -11,3 +12,5 @@ contracts/cache/
 contracts/out/
 contracts/broadcast/
 .DS_Store
+web/vite.config.js
+web/vite.config.d.ts

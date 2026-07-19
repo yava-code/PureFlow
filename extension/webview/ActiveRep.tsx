@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import type { ClientState, KnowledgeResult } from "../src/types";
 import {
   Button,
@@ -189,14 +189,16 @@ function HeaderBrand() {
 }
 
 function FinishRep({ send, onCancel }: { send(message: unknown): void; onCancel(): void }) {
+  const panel = useRef<HTMLElement>(null);
   const [outcome, setOutcome] = useState("");
   const [ownership, setOwnership] = useState<1 | 2 | 3>(3);
+  useEffect(() => panel.current?.scrollIntoView({ block: "start" }), []);
   const submit = (event: FormEvent) => {
     event.preventDefault();
     send({ type: "finishRep", outcome, ownership });
   };
   return (
-    <section className="finish-band" aria-labelledby="finish-title">
+    <section ref={panel} className="finish-band" aria-labelledby="finish-title">
       <div className="finish-copy">
         <LockIcon />
         <div>
@@ -261,4 +263,3 @@ function sourceInitial(result: KnowledgeResult): string {
   if (result.source.includes("TypeScript")) return "TS";
   return "N";
 }
-
