@@ -94,9 +94,10 @@ The repository, hosted app, regular commits, real features, and release are read
 - Documentation opens via Simple Browser when available; external browser remains a secondary action.
 - Coach configure presets for Groq / OpenAI / custom; key stays in SecretStorage.
 - Portable settings + keybindings + broader AI launcher disables; builder copies keybindings and deeper product.json naming.
-- Web companion mineral pixel field + onchain practice-rules section; no fake verified states.
+- Web companion canvas pixel field, “Keep your coding muscles” judge story, contrast vs showcase toys, honest rules; no fake verified states.
 - Commitment hash includes self-reported practice policy flags.
-- `docs/IDEAS_BACKLOG.md` for owner follow-ups.
+- `docs/IDEAS_BACKLOG.md` for owner follow-ups + competitive notes.
+- Companion brand commit `9b961bf`.
 
 ## Next ordered actions
 
