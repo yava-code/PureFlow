@@ -25,6 +25,17 @@ Selecting PureFlow opens it in the primary sidebar by default, like Explorer or 
 - **Portable product profile:** not an empty VSCodium fork — Mineral theme, deep defaults (inline AI suggest off, telemetry off), PureFlow keybindings, expanded AI-extension launcher shield, and branded product names.
 - **Safe-governed release tooling:** production bytecode preparation is read-only; deployment is proposed only through the installed Monskills Safe wrapper; receipt validation requires the exact `RepRegistry` runtime; and a canonical Foundry payload prepares all-explorer source verification.
 
+## How to run (short)
+
+| Goal | Do this |
+|------|---------|
+| **Use the product** | Download [latest release](https://github.com/yava-code/PureFlow/releases/latest) → extract → run `PureFlow.cmd` → Open Folder |
+| **Web demo** | https://yava-code.github.io/PureFlow/ |
+| **Extension only** | Install VSIX from release or `cd extension && npm ci && npm run package` |
+| **Full guide** | [`docs/HOW_TO_RUN.md`](docs/HOW_TO_RUN.md) |
+
+Cover images: [`docs/design/spark-cover.jpg`](docs/design/spark-cover.jpg) (16:9), [`docs/design/spark-cover-square.jpg`](docs/design/spark-cover-square.jpg) (1:1).
+
 ## Try it
 
 ### Download the Windows release
