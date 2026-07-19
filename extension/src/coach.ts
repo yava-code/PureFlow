@@ -7,6 +7,7 @@ export class Coach {
   constructor(private readonly context: vscode.ExtensionContext) {}
 
   async configured(): Promise<boolean> {
+    if (!vscode.workspace.isTrusted) return false;
     const config = vscode.workspace.getConfiguration("pureflow");
     return Boolean(config.get<string>("coachEndpoint") && config.get<string>("coachModel") && (await this.context.secrets.get(keyName)));
   }

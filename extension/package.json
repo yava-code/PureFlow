@@ -17,6 +17,20 @@
     "type": "git",
     "url": "https://github.com/yava-code/PureFlow.git"
   },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "Local workspace and mentor tools remain available. Configured coach calls are disabled and workspace-defined network settings are ignored until the folder is trusted.",
+      "restrictedConfigurations": [
+        "pureflow.coachEndpoint",
+        "pureflow.coachModel",
+        "pureflow.monadContractAddress",
+        "pureflow.monadRpcUrl",
+        "pureflow.companionUrl",
+        "pureflow.aiExtensionIds"
+      ]
+    }
+  },
   "contributes": {
     "commands": [
       {

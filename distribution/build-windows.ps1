@@ -14,18 +14,36 @@ if (-not (Test-Path -LiteralPath $packagePath)) {
     throw "PureFlow extension package was not found at $packagePath"
 }
 
+$extensionVersion = (Get-Content -Raw -LiteralPath $packagePath | ConvertFrom-Json).version
+$vsix = Join-Path $extensionRoot "pureflow-$extensionVersion.vsix"
+if (Test-Path -LiteralPath $vsix) {
+    Remove-Item -LiteralPath $vsix
+}
+
+function Invoke-Npm {
+    param(
+        [Parameter(Mandatory)]
+        [string[]]$Arguments,
+        [Parameter(Mandatory)]
+        [string]$Step
+    )
+
+    & npm.cmd @Arguments
+    if ($LASTEXITCODE -ne 0) {
+        throw "$Step failed with exit code $LASTEXITCODE."
+    }
+}
+
 Push-Location $extensionRoot
 try {
-    npm ci --no-audit --no-fund
-    npm run check
-    npm test
-    npm run package
+    Invoke-Npm -Arguments @('ci', '--no-audit', '--no-fund') -Step 'Extension dependency install'
+    Invoke-Npm -Arguments @('run', 'check') -Step 'Extension typecheck'
+    Invoke-Npm -Arguments @('test') -Step 'Extension tests'
+    Invoke-Npm -Arguments @('run', 'package') -Step 'Extension package'
 } finally {
     Pop-Location
 }
 
-$extensionVersion = (Get-Content -Raw -LiteralPath $packagePath | ConvertFrom-Json).version
-$vsix = Join-Path $extensionRoot "pureflow-$extensionVersion.vsix"
 if (-not (Test-Path -LiteralPath $vsix)) {
     throw "VSIX build did not produce $vsix"
 }
@@ -60,7 +78,16 @@ if (Test-Path -LiteralPath $target) {
     throw "$target already exists. Move it aside or choose another OutputRoot."
 }
 
-Expand-Archive -LiteralPath $archivePath -DestinationPath $target
+$tar = Get-Command 'tar.exe' -ErrorAction SilentlyContinue
+if ($tar) {
+    New-Item -ItemType Directory -Path $target | Out-Null
+    & $tar.Source -xf $archivePath -C $target
+    if ($LASTEXITCODE -ne 0) {
+        throw "tar.exe could not extract the VSCodium archive."
+    }
+} else {
+    Expand-Archive -LiteralPath $archivePath -DestinationPath $target
+}
 $productPath = Join-Path $target 'resources\app\product.json'
 if (-not (Test-Path -LiteralPath $productPath)) {
     throw "VSCodium product metadata was not found at $productPath"

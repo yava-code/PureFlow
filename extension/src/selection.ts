@@ -1,10 +1,10 @@
 import * as vscode from "vscode";
+import { safeFileLabel } from "./privacy";
 import type { EditorContext as MentorEditorContext } from "./types";
 
 const maxContextLength = 12_000;
 
 export interface EditorContext extends MentorEditorContext {
-  documentUri: string;
   symbol?: string;
   truncated: boolean;
 }
@@ -19,13 +19,8 @@ export function editorContext(editor = vscode.window.activeTextEditor): EditorCo
   if (!raw) return undefined;
 
   const truncated = raw.length > maxContextLength;
-  const relativePath = document.isUntitled
-    ? document.fileName
-    : vscode.workspace.asRelativePath(document.uri, false);
-
   return {
-    documentUri: document.uri.toString(),
-    file: relativePath || basename(document.fileName),
+    file: documentLabel(document),
     language: document.languageId,
     code: truncated ? raw.slice(0, maxContextLength) : raw,
     symbol: wordRange ? document.getText(wordRange) : undefined,
@@ -61,10 +56,6 @@ export function selectionQuery(editor = vscode.window.activeTextEditor): string 
   return range ? editor.document.getText(range) : "";
 }
 
-function basename(path: string): string {
-  return path.replaceAll("\\", "/").split("/").at(-1) ?? path;
-}
-
 function deepestSymbol(
   symbols: Array<vscode.DocumentSymbol | vscode.SymbolInformation>,
   position: vscode.Position,
@@ -91,12 +82,8 @@ function contextFromRange(editor: vscode.TextEditor, range: vscode.Range, symbol
   const raw = editor.document.getText(range).trim();
   if (!raw) return undefined;
   const truncated = raw.length > maxContextLength;
-  const relativePath = editor.document.isUntitled
-    ? editor.document.fileName
-    : vscode.workspace.asRelativePath(editor.document.uri, false);
   return {
-    documentUri: editor.document.uri.toString(),
-    file: relativePath || basename(editor.document.fileName),
+    file: documentLabel(editor.document),
     language: editor.document.languageId,
     code: truncated ? raw.slice(0, maxContextLength) : raw,
     symbol,
@@ -104,4 +91,10 @@ function contextFromRange(editor: vscode.TextEditor, range: vscode.Range, symbol
     endLine: range.end.line + 1,
     truncated,
   };
+}
+
+function documentLabel(document: vscode.TextDocument): string {
+  const folder = document.isUntitled ? undefined : vscode.workspace.getWorkspaceFolder(document.uri);
+  const relative = folder ? vscode.workspace.asRelativePath(document.uri, false) : undefined;
+  return safeFileLabel(document.fileName, relative);
 }

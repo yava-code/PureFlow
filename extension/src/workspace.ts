@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { safeFileLabel } from "./privacy";
 import type { WorkspaceSnapshot } from "./types";
 
 export type { WorkspaceSnapshot } from "./types";
@@ -49,9 +50,7 @@ export class WorkspaceService {
       name: vscode.workspace.name ?? folders[0]?.name ?? "No project open",
       folders: folders.map((folder) => folder.name),
       currentFile: editor
-        ? editor.document.isUntitled
-          ? editor.document.fileName
-          : vscode.workspace.asRelativePath(editor.document.uri, false)
+        ? documentLabel(editor.document)
         : "",
       language: editor?.document.languageId ?? "",
       gitBranch: git?.branch ?? "",
@@ -151,6 +150,12 @@ export class WorkspaceService {
       return undefined;
     }
   }
+}
+
+function documentLabel(document: vscode.TextDocument): string {
+  const folder = document.isUntitled ? undefined : vscode.workspace.getWorkspaceFolder(document.uri);
+  const relative = folder ? vscode.workspace.asRelativePath(document.uri, false) : undefined;
+  return safeFileLabel(document.fileName, relative);
 }
 
 function validateProjectName(value: string): string | undefined {

@@ -155,7 +155,9 @@ export function App() {
         <div className="workbench-brand"><Mark size={24} /><span>PureFlow</span></div>
         <div className="workbench-context">
           <strong title={workspace?.name}>{workspace?.name || "No project"}</strong>
-          <small title={workspace?.currentFile}>{workspace?.currentFile || "Open a folder to begin"}</small>
+          <small title={workspace?.currentFile}>
+            {workspace?.currentFile || (workspace?.hasWorkspace ? "Open a file for context tools" : "Open a folder to begin")}
+          </small>
         </div>
         <span className={state.rep.phase === "active" ? "focus-indicator" : state.monad?.status === "online" ? "live-dot" : "local-dot"} title={state.rep.phase === "active" ? "Focus Rep active" : "PureFlow ready"} />
       </header>
