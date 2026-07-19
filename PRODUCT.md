@@ -6,37 +6,49 @@ product
 
 ## Platform
 
-web
+desktop IDE with a web companion
 
 ## Users
 
-PureFlow is for developers who use AI coding tools daily and want deliberate practice inside real repositories without giving up modern IDE feedback. The primary user has one to five years of experience and feels their ability to navigate, debug, recall APIs, or explain their own code weakening. Students, senior developers learning a new stack, and voluntary team practice groups are secondary users.
+PureFlow is for working developers who want a capable everyday IDE and a deliberate way to keep their own reasoning sharp while using AI. They open or create normal projects, write code in the native editor, run terminals, tests, debuggers, and source control, then call PureFlow only when they want context: documentation, a concise explanation, a question, a review of their reasoning, or an optional focused practice Rep.
+
+Monad developers are a first-class secondary audience. PureFlow should help them inspect addresses and transactions, diagnose a project, verify deployments and publish privacy-safe Rep proofs without turning the IDE into a wallet or a crypto dashboard.
 
 ## Product Purpose
 
-PureFlow packages a separate VSCodium environment in which AI prepares a focused Rep before work and challenges the developer after it, while the implementation session itself remains manual. Success is a completed Rep the developer can explain and a stronger self-reported sense of ownership, not more keystrokes or a purity score.
+PureFlow is a developer-first VSCodium distribution with an integrated mentor and Monad workbench. The editor, Explorer, terminal, debugger, tasks, and extensions remain the product's center. PureFlow adds a compact sidebar, editor actions, command palette entries, status information, a restrained visual identity, and an optional practice mode.
+
+Success means a developer can use PureFlow for an ordinary repository all day, ask for help without surrendering the editor, and choose a Focus Rep when deliberate practice is useful. Training is a mode, not the shell.
 
 ## Positioning
 
-PureFlow uses AI to choose what a developer should practice, then gets out of the way while the developer does the thinking.
+Your daily IDE, with AI that waits to be asked and practice that never gets in the way.
+
+## Product Hierarchy
+
+1. Native project work: open or create a folder, edit, search, run, test, debug, and commit.
+2. Contextual help: explain a selection, explain why it may be structured that way, quiz the developer, find documentation, and review reasoning.
+3. Monad tools: live Testnet health, address and transaction inspection, project diagnostics, deployment verification, and explicit wallet handoff for attestations.
+4. Focus Rep: an optional manual session with hypotheses, evidence, recall, and a post-session defense.
 
 ## Brand Personality
 
-Calm, rigorous, and humane. The product should feel like reliable lab equipment operated by an adult professional: focused without severity, technical without cyberpunk theater, and encouraging without gamification.
+Calm, rigorous, and professional. PureFlow should feel like a carefully tuned engineering workstation: familiar enough to trust immediately, distinct enough to recognize, and quiet enough to keep open all day. It is technical without cyberpunk theater and encouraging without gamification.
 
 ## Anti-references
 
-PureFlow must not resemble a wellness timer, employee-surveillance dashboard, competitive coding game, generic neon terminal, or AI SaaS interface covered in gradients and floating cards. It must never shame users, imply an anti-cheat guarantee, or turn practice into a developer score.
+PureFlow must not resemble LeetCode, a course player, a wellness timer, an employee-surveillance dashboard, a wallet home screen, or a generic AI chat app. It must not replace the editor with a full-page webview, force a Rep before normal work, generate patches silently, claim an onchain success before verification, or show a made-up developer score.
 
 ## Design Principles
 
-- Keep the work in the developer's hands: help should reveal sources and questions, never silently apply code.
-- Make the AI boundary visible: prepared before, absent during, invited back after explicit consent.
-- Reward explanations and evidence, not input behavior or activity volume.
-- Preserve privacy by default: code, filenames, terminal text, and clipboard content stay local and out of exports.
-- Fit the developer's existing mental model by using familiar IDE controls and keyboard-first interaction.
+- Keep the native IDE primary. Editor space is never taken over by PureFlow UI.
+- Help on demand. Code leaves the machine only after an explicit mentor action and never during a voluntary Focus Rep.
+- Prefer sources and questions over generated patches.
+- Use live chain data and explicit states: unavailable, prepared, pending, safe, finalized, or failed.
+- Preserve privacy by default: absolute paths, clipboard content, terminal history, code, and goals stay local unless the user explicitly shares a bounded selection.
+- Make optional features visibly optional. Focus and Monad never block ordinary development.
+- Preserve VSCodium compatibility through a branded portable distribution and bundled extension instead of a source fork that must chase every upstream release.
 
 ## Accessibility & Inclusion
 
-Target WCAG 2.2 AA. Every state must be identifiable without color alone, keyboard navigation must cover the complete Rep workflow, focus indicators must remain visible, and all motion must respect reduced-motion preferences. Dense IDE layouts must reflow without hiding the current goal, timer, or finish action.
-
+Target WCAG 2.2 AA. Every state is identifiable without color alone, every action is reachable from keyboard and command palette, focus indicators remain visible, and motion respects reduced-motion preferences. The sidebar must work from 240 to 420 pixels wide and at 200% zoom without hiding primary actions.
