@@ -104,7 +104,7 @@ export function MonadDock({ state, loading, inspection, report, attestation, sen
             {state.rep.phase !== "idle" && state.rep.phase !== "active" && <button className="button" onClick={() => send({ type: "prepareAttestation" })}>Prepare from last Rep</button>}
           </>
         )}
-        {!state.contractAddress && <div className="inline-warning"><strong>Registry deployment pending.</strong><span>A verified state cannot be shown until the contract is funded, deployed, and checked on Testnet.</span></div>}
+        {!state.contractAddress && <div className="inline-warning"><strong>Registry deployment pending.</strong><span>A verified state cannot be shown until the contract is Safe-deployed, source-verified, and checked on Testnet.</span></div>}
       </section>
 
       <footer className="route-footnote">Gas costs use the transaction gas limit, not only the gas consumed. Write actions will estimate tightly and add no more than a 10% buffer.</footer>
