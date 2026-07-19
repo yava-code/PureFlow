@@ -47,7 +47,7 @@ PureFlow now ships as a real portable VSCodium IDE, not a browser editor or loca
 - Desktop and 390 px mobile browser checks show no horizontal overflow or console errors.
 - Tab keyboard navigation, ARIA relationships, stale verification invalidation, payload field allowlisting, and Pages test gating are implemented.
 - The release `latest` link is live and contains two assets with checked sizes.
-- GitHub Verify and Deploy companion workflows for `1f27790` completed successfully; the deployed Pages HTML returns HTTP 200 with the IDE-first title and no old manual-practice metadata.
+- GitHub Verify completed successfully for final handoff commit `0ac01b8`; Deploy companion last ran successfully for web commit `1f27790`. The deployed Pages HTML returns HTTP 200 with the IDE-first title and no old manual-practice metadata.
 
 ## Release evidence
 
@@ -65,7 +65,7 @@ PureFlow now ships as a real portable VSCodium IDE, not a browser editor or loca
 | Portable archive | 239,233,919 bytes; 5,775 entries; launcher present | Pass |
 | Portable SHA-256 | `651239343DAC42CD8D919EF78E115DE79E14983BB212F6208EC8D5C143FE13A5` | Pass |
 | Public release | `v0.1.0`, ZIP + VSIX, `/releases/latest` HTTP 200 | Pass |
-| GitHub Actions / Pages | Verify + Deploy companion succeeded for `1f27790`; deployed IDE-first HTML checked | Pass |
+| GitHub Actions / Pages | Verify succeeded for `0ac01b8`; Deploy companion succeeded for `1f27790`; deployed IDE-first HTML checked | Pass |
 | Agent wallet funding | 1 Testnet MON; faucet receipt `0x5c7939c6e0d9798e21a3708ab8ca406a45a76b88092c0236d8895a32315d9af6` succeeded | Pass |
 | Onchain registry | no Safe proposal/execution, deployment receipt, bytecode check, or follow-up registry read | Blocked |
 
