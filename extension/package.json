@@ -84,19 +84,19 @@
       },
       {
         "command": "pureflow.startRep",
-        "title": "PureFlow: Start a Rep"
+        "title": "PureFlow: Start Focus Rep"
       },
       {
         "command": "pureflow.finishRep",
-        "title": "PureFlow: Finish Current Rep"
+        "title": "PureFlow: Finish Focus Rep"
       },
       {
         "command": "pureflow.searchSelection",
-        "title": "PureFlow: Find Selected Symbol in Knowledge Dock"
+        "title": "PureFlow: Find Selected Symbol in Documentation"
       },
       {
         "command": "pureflow.configureCoach",
-        "title": "PureFlow: Configure Optional Coach"
+        "title": "PureFlow: Configure Optional Coach (Groq / OpenAI-compatible)"
       }
     ],
     "viewsContainers": {
@@ -194,7 +194,7 @@
         "pureflow.coachEndpoint": {
           "type": "string",
           "default": "",
-          "description": "Optional OpenAI-compatible chat completions endpoint. Never called during an active Rep."
+          "description": "Optional OpenAI-compatible chat completions endpoint (e.g. https://api.groq.com/openai/v1/chat/completions). Never called during an active Focus Rep. API keys use SecretStorage, not this setting."
         },
         "pureflow.openOnStartup": {
           "type": "boolean",
@@ -204,7 +204,7 @@
         "pureflow.coachModel": {
           "type": "string",
           "default": "",
-          "description": "Model identifier for the optional coach endpoint."
+          "description": "Model identifier for the optional coach endpoint (for Groq, a current Groq model id such as llama-3.3-70b-versatile)."
         },
         "pureflow.monadContractAddress": {
           "type": "string",
@@ -227,12 +227,20 @@
           "default": [
             "github.copilot",
             "github.copilot-chat",
+            "github.copilot-chat-vscode",
             "anthropic.claude-code",
             "continue.continue",
             "codeium.codeium",
-            "tabnine.tabnine-vscode"
+            "tabnine.tabnine-vscode",
+            "sourcegraph.cody-ai",
+            "supermaven.supermaven",
+            "saoudrizwan.claude-dev",
+            "rooveterinaryinc.roo-cline",
+            "kilocode.kilo-code",
+            "amazonwebservices.amazon-q-vscode",
+            "google.geminicodeassist"
           ],
-          "description": "Extension IDs reported before a Rep when present in this profile."
+          "description": "Extension IDs reported before a Focus Rep when present in this profile. The portable launcher also disables a core set at start."
         }
       }
     },

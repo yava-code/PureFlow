@@ -194,6 +194,7 @@ export function summary(rep: RepState): string {
   ].join("\n");
 }
 
+/** Privacy-safe commitment. Goals stay inside the hash only; onchain stores the hash + aggregates. */
 export function commitment(rep: RepState): `0x${string}` {
   if (!rep.finishedAt || !rep.ownership) throw new Error("Finish the Rep before attesting it.");
   const value = stats(rep, rep.finishedAt);
@@ -205,10 +206,27 @@ export function commitment(rep: RepState): `0x${string}` {
     startedAt: rep.startedAt,
     finishedAt: rep.finishedAt,
     ownership: rep.ownership,
+    // Self-reported practice policy flags (not proof of skill or AI absence as fact).
+    policyVersion: 1,
+    mentorBlockedDuringRep: true,
+    privateCodeOffchain: true,
     ...value,
   });
   return `0x${createHash("sha256").update(canonical).digest("hex")}`;
 }
+
+export const practiceRulesCopy = {
+  title: "Onchain practice rules",
+  canProve: [
+    "A wallet published a commitment hash and self-reported aggregate counters.",
+    "The attestation transaction reached a chosen finality state on Monad Testnet.",
+  ],
+  cannotProve: [
+    "Skill level, seniority, or that the session improved ability.",
+    "Authorship of every line or that AI was never used outside this profile.",
+    "Goals, code, filenames, or notes — those stay offchain by design.",
+  ],
+} as const;
 
 export function formatDuration(seconds: number): string {
   const minutes = Math.floor(seconds / 60);

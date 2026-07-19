@@ -1,0 +1,44 @@
+[
+  {
+    "key": "ctrl+alt+p",
+    "command": "pureflow.open"
+  },
+  {
+    "key": "ctrl+alt+y",
+    "command": "pureflow.explainWhy",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "pureflow.searchSelection",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+q",
+    "command": "pureflow.quizSelection",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+alt+shift+q",
+    "command": "pureflow.quizCurrentFunction",
+    "when": "editorTextFocus && !editorHasSelection"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "pureflow.reviewReasoning",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "pureflow.startRep"
+  },
+  {
+    "key": "ctrl+alt+shift+f",
+    "command": "pureflow.finishRep"
+  },
+  {
+    "key": "ctrl+alt+m",
+    "command": "pureflow.inspectMonadSelection",
+    "when": "editorHasSelection"
+  }
+]

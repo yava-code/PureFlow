@@ -289,12 +289,49 @@ input::placeholder, textarea::placeholder { color: var(--vscode-input-placeholde
 .search-row input { border: 0; outline: 0; background: transparent; }
 .search-row button { height: 100%; border: 0; background: transparent; color: var(--muted); cursor: pointer; }
 .source-list { display: grid; }
-.source-list button { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 8px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; text-align: left; cursor: pointer; }
-.source-list button:hover strong { color: var(--accent); }
-.source-list span { min-width: 0; display: grid; gap: 2px; }
-.source-list strong, .source-list small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.source-list small { color: var(--muted); font-size: 10px; }
-.source-list svg { width: 14px; height: 14px; color: var(--muted); }
+.source-row {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.source-main {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.source-main:hover strong { color: var(--accent); }
+.source-main span { min-width: 0; display: grid; gap: 2px; }
+.source-main strong, .source-main small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.source-main small { color: var(--muted); font-size: 10px; }
+.source-external {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.source-external svg { width: 14px; height: 14px; color: var(--muted); }
+.source-external:hover svg { color: var(--accent); }
+.quiet-note-inline {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.focus-loop { list-style: decimal; padding-left: 1.2rem; }
+.focus-loop li { margin: 0.35rem 0; }
+.focus-loop strong { color: inherit; }
 
 .route-footnote { padding: 10px 12px; color: var(--muted); font-size: 10px; line-height: 1.45; display: flex; align-items: flex-start; gap: 7px; }
 .route-footnote button { margin-left: auto; border: 0; background: transparent; color: var(--vscode-textLink-foreground, var(--accent)); cursor: pointer; }

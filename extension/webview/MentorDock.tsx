@@ -17,10 +17,10 @@ interface Props {
 }
 
 const actions: Array<{ mode: MentorMode; label: string; detail: string }> = [
-  { mode: "explain", label: "Explain", detail: "Control flow and state" },
-  { mode: "why", label: "Explain why", detail: "Tradeoffs and intent" },
-  { mode: "quiz", label: "Quiz me", detail: "Questions, no answers" },
-  { mode: "review", label: "Review reasoning", detail: "Find gaps in my model" },
+  { mode: "explain", label: "Explain", detail: "Map control flow and state" },
+  { mode: "why", label: "Explain why", detail: "Rebuild the design story" },
+  { mode: "quiz", label: "Quiz me", detail: "Probe what you still know" },
+  { mode: "review", label: "Review reasoning", detail: "Compare your model to the code" },
 ];
 
 export function MentorDock({
@@ -61,7 +61,10 @@ export function MentorDock({
       <section className="route-title">
         <div className="eyebrow">On-demand help</div>
         <h2>Mentor</h2>
-        <p>PureFlow reads only the selection or current function you explicitly send.</p>
+        <p>
+          Rebuild understanding of code you own. PureFlow reads only the selection or current function you explicitly send —
+          never the whole repository in the background.
+        </p>
       </section>
 
       <section className="context-band">
@@ -99,6 +102,7 @@ export function MentorDock({
             <button className="button primary" disabled={!reasoning.trim() || !hasSelection} onClick={() => run("review")}>Review my reasoning</button>
           </div>
         )}
+        <p className="quiet-note-inline">Ready for no-AI practice on this file? Start a Focus Rep from the Focus route.</p>
       </section>
 
       {(loading || result) && (
@@ -130,10 +134,19 @@ export function MentorDock({
         {docsLoading ? <LoadingRows /> : (
           <div className="source-list">
             {results.map((item) => (
-              <button key={item.id} onClick={() => send({ type: "openSource", source: item })}>
-                <span><strong>{item.title}</strong><small>{item.source} · {item.kind}</small></span>
-                <ExternalIcon />
-              </button>
+              <div className="source-row" key={item.id}>
+                <button className="source-main" onClick={() => send({ type: "openSource", source: item })}>
+                  <span><strong>{item.title}</strong><small>{item.source} · {item.kind} · opens in IDE</small></span>
+                </button>
+                <button
+                  className="source-external"
+                  title="Open in system browser"
+                  aria-label={`Open ${item.title} in system browser`}
+                  onClick={() => send({ type: "openExternal", url: item.url })}
+                >
+                  <ExternalIcon />
+                </button>
+              </div>
             ))}
           </div>
         )}
@@ -141,7 +154,9 @@ export function MentorDock({
 
       <footer className="route-footnote">
         <span className={coachConfigured ? "live-dot" : "local-dot"} />
-        {coachConfigured ? "Configured AI is available only after an explicit action." : "Using the local guide. Configure an OpenAI-compatible coach for deeper analysis."}
+        {coachConfigured
+          ? "Configured AI is available only after an explicit action."
+          : "Using the local guide. Configure Groq or any OpenAI-compatible coach for deeper analysis."}
         {!coachConfigured && <button onClick={() => send({ type: "configureCoach" })}>Configure</button>}
       </footer>
     </div>

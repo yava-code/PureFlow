@@ -286,7 +286,7 @@ export class PureFlowView implements vscode.WebviewViewProvider {
         case "startRep": {
           if (this.detectAiExtensions().length) {
             const choice = await vscode.window.showWarningMessage(
-              "PureFlow found AI extensions in this profile. The Rep can continue, but Comfort Shield is not complete.",
+              "PureFlow found AI extensions in this profile. The Focus Rep can continue, but the AI shield is not complete.",
               "Start anyway",
               "Review extensions",
             );
@@ -296,7 +296,12 @@ export class PureFlowView implements vscode.WebviewViewProvider {
             }
             if (choice !== "Start anyway") return;
           }
-          await this.store.set(startRep(String(message.goal ?? ""), Number(message.duration ?? 25)));
+          let rep = startRep(String(message.goal ?? ""), Number(message.duration ?? 25));
+          const recallNote = String(message.recallNote ?? "").trim();
+          if (recallNote) {
+            rep = addHypothesis(rep, `Retrieve first: ${recallNote.slice(0, 500)}`);
+          }
+          await this.store.set(rep);
           await this.pushState();
           break;
         }
@@ -337,7 +342,7 @@ export class PureFlowView implements vscode.WebviewViewProvider {
           if (this.store.get().phase === "active") {
             await this.store.set(recordDoc(this.store.get(), source.source, source.title));
           }
-          await vscode.env.openExternal(vscode.Uri.parse(source.url));
+          await openDocumentation(source.url);
           await this.pushState();
           break;
         }
@@ -393,6 +398,12 @@ export class PureFlowView implements vscode.WebviewViewProvider {
               testRuns: value.testRuns,
               debugLoops: value.debugLoops,
               ownership: rep.ownership,
+              rules: {
+                policyVersion: 1,
+                mentorBlockedDuringRep: true,
+                privateCodeOffchain: true,
+                selfReportedOnly: true,
+              },
             },
           });
           break;
@@ -551,6 +562,12 @@ interface AttestationPayload {
   testRuns: number;
   debugLoops: number;
   ownership: number;
+  rules?: {
+    policyVersion: number;
+    mentorBlockedDuringRep: boolean;
+    privateCodeOffchain: boolean;
+    selfReportedOnly: boolean;
+  };
 }
 
 function mentorMode(value: unknown): MentorMode {
@@ -686,4 +703,24 @@ async function openHttpUrl(value: string): Promise<void> {
   const url = new URL(value);
   if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error("PureFlow opens only HTTP or HTTPS links.");
   await vscode.env.openExternal(vscode.Uri.parse(url.toString()));
+}
+
+/** Prefer in-IDE Simple Browser for docs; fall back to the system browser. */
+async function openDocumentation(value: string): Promise<void> {
+  const url = new URL(value);
+  if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error("PureFlow opens only HTTP or HTTPS links.");
+  const href = url.toString();
+  try {
+    await vscode.commands.executeCommand("simpleBrowser.api.open", href);
+    return;
+  } catch {
+    // simpleBrowser.api.open is not registered in every host build.
+  }
+  try {
+    await vscode.commands.executeCommand("simpleBrowser.show", href);
+    return;
+  } catch {
+    // Fall through to the system browser.
+  }
+  await vscode.env.openExternal(vscode.Uri.parse(href));
 }

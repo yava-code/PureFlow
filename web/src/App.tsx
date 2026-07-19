@@ -27,28 +27,28 @@ const routes: { id: Route; label: string }[] = [
 
 const capabilities = [
   {
-    id: "01",
-    title: "Workspace",
+    id: "Workspace",
+    title: "Native project work",
     text: "Open or create a folder, then keep using the native editor, Explorer, terminal, debugger, tasks, source control, and extensions.",
     detail: "Normal VSCodium work is the default state.",
   },
   {
-    id: "02",
-    title: "Mentor",
-    text: "Select the code you choose and explicitly ask for an explanation, a why-question, a quiz, documentation, or a review of your reasoning.",
+    id: "Mentor",
+    title: "Restore understanding",
+    text: "On an explicit selection: map control flow, rebuild design intent, quiz what you still know, open docs in the IDE, or review your reasoning.",
     detail: "No background repository upload and no silent patching.",
   },
   {
-    id: "03",
-    title: "Focus",
-    text: "Start a bounded manual Rep only when deliberate practice helps. Track hypotheses, tests, debug loops, recall, and a post-session defense.",
-    detail: "Optional, collapsed by default, and AI-disabled while active.",
+    id: "Focus",
+    title: "Reclaim fluency",
+    text: "Optional Focus Rep on your real code: retrieve → hypothesize → verify → defend. AI mentoring stays offline while active.",
+    detail: "Not a LeetCode catalog. Not required to edit.",
   },
   {
-    id: "04",
-    title: "Monad",
-    text: "Read Testnet health, inspect addresses and transactions, diagnose a project, and prepare a privacy-safe proof for a wallet handoff.",
-    detail: "Live values come from RPC; write states come from receipts.",
+    id: "Monad",
+    title: "Live chain + honest proofs",
+    text: "Read Testnet health, inspect addresses and transactions, diagnose a project, and prepare a privacy-safe commitment for a wallet handoff.",
+    detail: "Live values come from RPC; verified requires a real receipt and registry read.",
   },
 ];
 
@@ -118,10 +118,12 @@ export function App() {
 
   return (
     <div className="site-shell">
+      <div className="pixel-field" aria-hidden="true" />
       <header className="site-header">
         <a className="brand" href="#top" aria-label="PureFlow home"><Mark /> <span>PureFlow</span></a>
         <nav aria-label="Main navigation">
           <a href="#product">Product</a>
+          <a href="#rules">Rules</a>
           <a href="#monad">Monad</a>
           <a href={repoUrl}>Source</a>
           <a className="header-action" href={releaseUrl}>Get PureFlow</a>
@@ -131,8 +133,14 @@ export function App() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <h1>Your daily IDE stays an IDE.</h1>
-            <p>PureFlow is a developer-first VSCodium distribution for real repositories. The native editor stays central; a compact sidebar adds explicit AI mentoring, documentation, optional Focus Reps, and live Monad tools.</p>
+            <p className="hero-kicker">Spark · personal problem on Monad Testnet</p>
+            <h1>Keep the skills AI quietly erodes.</h1>
+            <p>
+              PureFlow is a developer-first VSCodium distribution for real repositories.
+              Work normally in the native IDE; call Mentor when you want to rebuild understanding;
+              run an optional Focus Rep when you need no-AI practice on your own code;
+              use live Monad tools without fake verified states.
+            </p>
             <div className="hero-actions">
               <a className="primary-action" href={releaseUrl}><DownloadIcon /> Download for Windows</a>
               <a className="secondary-action" href={repoUrl}><CodeIcon /> View source</a>
@@ -152,7 +160,10 @@ export function App() {
         <section id="product" className="capabilities" aria-labelledby="capabilities-title">
           <div className="section-intro">
             <h2 id="capabilities-title">Work first. Help when you ask.</h2>
-            <p>PureFlow extends familiar IDE behavior instead of replacing it with a browser exercise or a permanent AI chat.</p>
+            <p>
+              Over-reliance on generation can hollow out architecture sense and debugging fluency.
+              PureFlow keeps the IDE primary and makes deliberate relearning optional — never a forced course shell.
+            </p>
           </div>
           <div className="capability-list">
             {capabilities.map((item) => (
@@ -163,6 +174,34 @@ export function App() {
                 <small>{item.detail}</small>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section id="rules" className="rules-band" aria-labelledby="rules-title">
+          <div className="rules-copy">
+            <h2 id="rules-title">Onchain practice rules</h2>
+            <p>
+              Monad holds voluntary, privacy-safe commitments — not skill scores.
+              Until the registry is Safe-deployed and a real receipt is verified, proofs stay labeled prepared.
+            </p>
+          </div>
+          <div className="rules-columns">
+            <div>
+              <h3>Can prove</h3>
+              <ul>
+                <li>A wallet attested a commitment hash and self-reported counters</li>
+                <li>Transaction finality on Monad Testnet after a real receipt</li>
+                <li>Policy flags inside the local hash (mentor blocked during Focus; code offchain)</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Cannot prove</h3>
+              <ul>
+                <li>Skill, seniority, or that ability improved</li>
+                <li>Authorship of every line or absolute AI absence</li>
+                <li>Goals, code, filenames, or session notes (never onchain)</li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -287,8 +326,8 @@ function MentorPreview() {
 function FocusPreview() {
   return <>
     <div className="preview-heading"><div><small>Optional practice</small><h2>No Focus Rep running</h2></div><span className="state-label">Off</span></div>
-    <div className="focus-summary"><Mark /><div><strong>Start when the work merits a manual Rep.</strong><p>Define a goal, record hypotheses and evidence, then defend the result. Ordinary coding never requires this mode.</p></div></div>
-    <dl className="context-lines"><div><dt>During a Rep</dt><dd>AI calls disabled</dd></div><div><dt>Evidence</dt><dd>Tests · loops · sources</dd></div><div><dt>Finish</dt><dd>Local summary first</dd></div></dl>
+    <div className="focus-summary"><Mark /><div><strong>Reclaim fluency on your real code.</strong><p>Retrieve → hypothesize → verify → defend. AI mentoring stays offline until you finish. Ordinary coding never requires this mode.</p></div></div>
+    <dl className="context-lines"><div><dt>During a Rep</dt><dd>AI calls disabled</dd></div><div><dt>Evidence</dt><dd>Tests · loops · sources</dd></div><div><dt>Onchain</dt><dd>Prepared, not published</dd></div></dl>
   </>;
 }
 

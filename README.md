@@ -1,6 +1,6 @@
 # PureFlow
 
-PureFlow is a developer-first VSCodium distribution for ordinary project work. Open an existing folder or create a project, keep the native editor, Explorer, terminal, tests, debugger, and source control in the center, then call a compact sidebar when you want documentation, an explicit AI mentor action, a Focus Rep, or live Monad Testnet context.
+PureFlow is a developer-first VSCodium distribution for people who ship with AI but do not want to lose architecture sense, debugging fluency, and ownership of their own code. Open a real repository, keep the native editor, Explorer, terminal, tests, debugger, and source control in the center, then call a compact sidebar when you want documentation, an explicit mentor action, an optional no-AI Focus Rep, or live Monad Testnet context.
 
 ![PureFlow IDE workspace concept](docs/design/ide-workspace-concept.png)
 
@@ -17,10 +17,12 @@ Selecting PureFlow opens it in the primary sidebar by default, like Explorer or 
 - **Native workspace:** open any folder, use the normal editor, terminal, test task, Git view, debugger, search, and extension ecosystem.
 - **Project starters:** create an empty folder, a strict Node + TypeScript project, or a Monad + Hardhat starter configured for Testnet chain ID `10143`.
 - **Compact sidebar:** Workspace, Mentor, Focus, and Monad are peer tools; none is required before editing.
-- **On-demand mentor:** Explain, Explain why, Quiz me, Find documentation, and Review reasoning operate only after an explicit action on a selection or bounded current function. The result identifies a configured coach or deterministic local guide.
-- **Focus Rep:** optional manual practice with a goal, hypotheses, user-recorded test outcomes after launching the native test task, recall prompts, local summary, Rep Card, and post-session defense. Configured AI remains blocked while a Rep is active.
+- **On-demand mentor:** Explain (map control flow), Explain why (rebuild design story), Quiz me (probe what you still know), Find documentation (opens in the IDE Simple Browser when available), and Review reasoning. Each action needs an explicit selection or bounded current function. Results label a configured coach or the deterministic local guide.
+- **Optional coach:** OpenAI-compatible endpoints including **Groq**. Configure via **PureFlow: Configure Optional Coach** — endpoint + model in settings, API key in VS Code SecretStorage (not a committed `.env`). Coach calls are blocked during an active Focus Rep.
+- **Focus Rep:** optional knowledge-restoration loop on your real code — retrieve → hypothesize → verify → defend. Not a LeetCode catalog. Configured AI remains blocked while a Rep is active.
 - **Live Monad workbench:** read Testnet chain health, latest/safe/finalized blocks and gas price; inspect an address or transaction; and run a read-only Project Doctor for Hardhat, Foundry, Solidity, viem, wagmi, and chain configuration.
-- **Privacy-safe proof preparation:** a completed Rep can produce a local commitment payload. It is labeled **Prepared, not published** until a user-controlled wallet submits a real transaction and the registry read confirms it.
+- **Privacy-safe proof preparation:** a completed Rep can produce a local commitment payload with practice-policy flags (mentor blocked during Focus; private code offchain). It is labeled **Prepared, not published** until a user-controlled wallet submits a real transaction and the registry read confirms it. Onchain does not claim skill or absolute AI absence.
+- **Portable product profile:** not an empty VSCodium fork — Mineral theme, deep defaults (inline AI suggest off, telemetry off), PureFlow keybindings, expanded AI-extension launcher shield, and branded product names.
 - **Safe-governed release tooling:** production bytecode preparation is read-only; deployment is proposed only through the installed Monskills Safe wrapper; receipt validation requires the exact `RepRegistry` runtime; and a canonical Foundry payload prepares all-explorer source verification.
 
 ## Try it

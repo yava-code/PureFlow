@@ -4,9 +4,9 @@ Last updated: 2026-07-19
 
 ## Current milestone
 
-**IDE-first v0.1.0 release published; Safe-governed onchain publication, eligibility confirmation, and the final Spark video remain owner-driven.**
+**Knowledge-restoration polish on IDE-first v0.1.0; Safe-governed onchain publication, eligibility confirmation, and the final Spark video remain owner-driven.**
 
-PureFlow now ships as a real portable VSCodium IDE, not a browser editor or local coding challenge. Normal workspace work stays native. The bundled extension adds a compact Workspace/Mentor/Focus/Monad sidebar, explicit bounded mentor actions, project starters, live Monad Testnet reads, and an optional Focus workflow.
+PureFlow is a portable VSCodium product profile (not an empty fork + extension): Mineral theme, deep defaults, keybindings, AI-surface reduction, compact sidebar, explicit mentor, optional Focus Rep framed as relearning on real code, in-IDE documentation, live Monad reads, and honest prepared proofs. Owner backlog lives in `docs/IDEAS_BACKLOG.md`.
 
 - Release: <https://github.com/yava-code/PureFlow/releases/tag/v0.1.0>
 - Public companion: <https://yava-code.github.io/PureFlow/>
@@ -87,6 +87,16 @@ The repository, hosted app, regular commits, real features, and release are read
 | Registry address is unset | Companion must show deployment pending; no proof can be publicly verified | Deploy, verify bytecode, then configure the address |
 | Demo video URL is missing | Spark submission is incomplete | Owner records/uploads the sub-three-minute demo |
 | Eligibility declaration is unchecked | Submission owner eligibility is not established by repository evidence | Owner confirms age 18+ and an eligible jurisdiction against the official rules |
+
+## Recent polish (this pass)
+
+- Focus / Mentor / Workspace copy reframed as knowledge restoration (not LeetCode).
+- Documentation opens via Simple Browser when available; external browser remains a secondary action.
+- Coach configure presets for Groq / OpenAI / custom; key stays in SecretStorage.
+- Portable settings + keybindings + broader AI launcher disables; builder copies keybindings and deeper product.json naming.
+- Web companion mineral pixel field + onchain practice-rules section; no fake verified states.
+- Commitment hash includes self-reported practice policy flags.
+- `docs/IDEAS_BACKLOG.md` for owner follow-ups.
 
 ## Next ordered actions
 

@@ -2,6 +2,18 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-19 — Knowledge restoration polish + product depth
+
+- Reframed Focus/Mentor as reclaiming fluency on real workspace code; unified live naming to Focus Rep (retired user-facing Pure Mode strings).
+- Docs: prefer VS Code Simple Browser; external open remains available.
+- Coach: QuickPick presets for Groq / OpenAI / custom OpenAI-compatible; SecretStorage only for keys.
+- Distribution: deeper `settings.json` (inline suggest off, editor discipline), `keybindings.json`, broader launcher AI disables, builder product naming + keybindings copy.
+- Web companion: mineral pixel field (reduced-motion safe), practice-rules band, problem-aligned hero copy; anti-slop (no gradient text, no fake metrics).
+- Commitment policy flags in hash; Monad/Focus UI explains what onchain can and cannot prove.
+- Owner idea dump: `docs/IDEAS_BACKLOG.md` (do not treat as shipped).
+
+Evidence: commits after this entry; run `extension` check/test and `web` test/build.
+
 ## 2026-07-19 — Repository and product foundation
 
 - Initialized the public Git repository and pushed `main` to `yava-code/PureFlow`.

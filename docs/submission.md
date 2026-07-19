@@ -3,10 +3,10 @@
 ## Form fields
 
 - **Project name:** PureFlow
-- **Tagline:** Your daily IDE, with AI that waits to be asked.
-- **Description:** A daily VSCodium IDE with explicit mentoring, optional Focus Reps, and live Monad developer tools.
-- **Problem:** AI-assisted coding can quietly replace the code-reading, debugging, recall, and explanation repetitions developers want to retain.
-- **Solution:** PureFlow keeps real work in a native IDE, makes help explicit and bounded, offers optional manual evidence workflows, and adds live Monad inspection plus voluntary public commitments.
+- **Tagline:** Keep the skills AI quietly erodes — in a real IDE.
+- **Description:** A daily VSCodium IDE that keeps native work primary while optional mentoring and Focus Reps rebuild fluency lost to over-reliance on AI, with live Monad tools and honest commitments.
+- **Problem:** Working developers over-rely on AI generation and quietly lose architecture sense, debugging fluency, and ownership of their own code — without wanting a LeetCode site or a forced training shell.
+- **Solution:** PureFlow ships a portable product profile (theme, defaults, keybindings, AI-surface reduction), explicit bounded mentoring, optional no-AI Focus on real repos, in-IDE docs, and Monad practice rules that never invent verified success.
 - **Category:** Monad Testnet
 - **Public app:** <https://yava-code.github.io/PureFlow/>
 - **Repository:** <https://github.com/yava-code/PureFlow>
@@ -21,7 +21,7 @@ PureFlow is a developer-first VSCodium distribution for normal repositories. The
 
 ## Full description
 
-PureFlow is built for developers who want AI assistance without giving up the reasoning that makes them effective. Open an existing folder or create an empty, TypeScript, or Monad + Hardhat project, then work through normal VSCodium surfaces. When context is useful, select code and explicitly ask PureFlow to explain it, explain why it is structured that way, quiz you, find documentation, or review your reasoning. A deterministic local guide works without an endpoint and is labeled honestly; a configured OpenAI-compatible coach is called only on demand and remains blocked during an active Focus Rep.
+PureFlow is built for developers who ship with AI but refuse to lose the reasoning that makes them effective. Open an existing folder or create an empty, TypeScript, or Monad + Hardhat project, then work through normal VSCodium surfaces. When context is useful, select code and explicitly ask PureFlow to map control flow, rebuild design intent, quiz what you still know, open documentation in the IDE, or review your reasoning. A deterministic local guide works without an endpoint and is labeled honestly; a configured coach (Groq or any OpenAI-compatible endpoint via SecretStorage) is called only on demand and remains blocked during an active Focus Rep.
 
 The Monad workbench reads live Testnet data from the extension host. It reports chain ID, latest/safe/finalized blocks, gas price and latency, inspects addresses and transactions, links to the official explorer, and runs a bounded read-only Project Doctor for Hardhat, Foundry, Solidity, viem, wagmi, and Testnet configuration.
 

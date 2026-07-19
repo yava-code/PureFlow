@@ -13,31 +13,62 @@ export class Coach {
   }
 
   async configure(): Promise<boolean> {
+    const currentEndpoint = vscode.workspace.getConfiguration("pureflow").get<string>("coachEndpoint") ?? "";
+    const currentModel = vscode.workspace.getConfiguration("pureflow").get<string>("coachModel") ?? "";
+    const preset = await vscode.window.showQuickPick(
+      [
+        {
+          label: "Groq",
+          description: "OpenAI-compatible cloud endpoint",
+          endpoint: "https://api.groq.com/openai/v1/chat/completions",
+          model: "llama-3.3-70b-versatile",
+        },
+        {
+          label: "OpenAI",
+          description: "api.openai.com",
+          endpoint: "https://api.openai.com/v1/chat/completions",
+          model: "gpt-4o-mini",
+        },
+        {
+          label: "Custom OpenAI-compatible",
+          description: "Any chat completions URL (Ollama, proxy, etc.)",
+          endpoint: currentEndpoint || "http://127.0.0.1:11434/v1/chat/completions",
+          model: currentModel || "",
+        },
+      ],
+      {
+        title: "PureFlow Coach preset",
+        placeHolder: "Coach is never called during an active Focus Rep. API key goes to SecretStorage.",
+        ignoreFocusOut: true,
+      },
+    );
+    if (!preset) return false;
+
     const endpoint = await vscode.window.showInputBox({
       title: "PureFlow Coach endpoint",
-      prompt: "OpenAI-compatible chat completions endpoint. It is never called during Pure Mode.",
-      value: vscode.workspace.getConfiguration("pureflow").get<string>("coachEndpoint") ?? "",
+      prompt: "OpenAI-compatible chat completions URL. Never called during an active Focus Rep.",
+      value: preset.endpoint,
       ignoreFocusOut: true,
     });
     if (!endpoint) return false;
     const model = await vscode.window.showInputBox({
       title: "PureFlow Coach model",
-      prompt: "Model identifier accepted by your endpoint.",
-      value: vscode.workspace.getConfiguration("pureflow").get<string>("coachModel") ?? "",
+      prompt: "Model identifier accepted by your endpoint (for Groq, use a current Groq model id).",
+      value: preset.model || currentModel,
       ignoreFocusOut: true,
     });
     if (!model) return false;
     const apiKey = await vscode.window.showInputBox({
       title: "PureFlow Coach API key",
       password: true,
-      prompt: "Stored only in VS Code SecretStorage.",
+      prompt: "Stored only in VS Code SecretStorage — not in settings.json or the repository.",
       ignoreFocusOut: true,
     });
     if (!apiKey) return false;
 
     const config = vscode.workspace.getConfiguration("pureflow");
-    await config.update("coachEndpoint", endpoint, vscode.ConfigurationTarget.Global);
-    await config.update("coachModel", model, vscode.ConfigurationTarget.Global);
+    await config.update("coachEndpoint", endpoint.trim(), vscode.ConfigurationTarget.Global);
+    await config.update("coachModel", model.trim(), vscode.ConfigurationTarget.Global);
     await this.context.secrets.store(keyName, apiKey);
     return true;
   }

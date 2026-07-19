@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function FocusDock({ state, remaining, send }: Props) {
-  const { rep, stats } = state;
+  const { rep } = state;
   if (rep.phase === "idle") return <StartFocus aiExtensions={state.aiExtensions} send={send} />;
   if (rep.phase === "active") return <ActiveFocus state={state} remaining={remaining} send={send} />;
   return <ReviewFocus state={state} send={send} />;
@@ -17,10 +17,11 @@ export function FocusDock({ state, remaining, send }: Props) {
 
 function StartFocus({ aiExtensions, send }: { aiExtensions: string[]; send(message: unknown): void }) {
   const [goal, setGoal] = useState("");
+  const [recall, setRecall] = useState("");
   const [duration, setDuration] = useState(25);
   const submit = (event: FormEvent) => {
     event.preventDefault();
-    send({ type: "startRep", goal, duration });
+    send({ type: "startRep", goal, duration, recallNote: recall });
   };
 
   return (
@@ -28,28 +29,60 @@ function StartFocus({ aiExtensions, send }: { aiExtensions: string[]; send(messa
       <section className="route-title">
         <div className="eyebrow">Optional practice</div>
         <h2>Focus Rep</h2>
-        <p>Temporarily turn off generation, form hypotheses, test them, and explain the result. Normal IDE work never requires a Rep.</p>
+        <p>
+          Use a short manual pass on your real workspace to retrieve reasoning you no longer do by hand.
+          AI mentoring stays offline until you finish. Ordinary IDE work never requires a Rep.
+        </p>
       </section>
+
+      <section className="plain-section">
+        <h3>The loop</h3>
+        <ol className="quiet-list focus-loop">
+          <li><strong>Retrieve</strong> — write what you still remember before opening docs.</li>
+          <li><strong>Hypothesize</strong> — name the failure mode on this code, not a puzzle bank.</li>
+          <li><strong>Verify</strong> — tests, debugger, and sources you choose.</li>
+          <li><strong>Defend</strong> — explain invariants and tradeoffs in your own words.</li>
+        </ol>
+        <p className="quiet-note-inline">
+          Fuzzy model first? Use Mentor Quiz or Review. Ready for no-AI work? Start a Focus Rep.
+        </p>
+      </section>
+
       <form className="focus-start" onSubmit={submit}>
-        <label htmlFor="focus-goal">Concrete goal</label>
-        <textarea id="focus-goal" value={goal} onChange={(event) => setGoal(event.target.value)} placeholder="Diagnose why the cache returns stale data" />
+        <label htmlFor="focus-goal">What fluency are you reclaiming?</label>
+        <textarea
+          id="focus-goal"
+          value={goal}
+          onChange={(event) => setGoal(event.target.value)}
+          placeholder="Re-own the cache expiry invariant without autocomplete"
+        />
+        <label htmlFor="focus-recall">Retrieve first (optional)</label>
+        <textarea
+          id="focus-recall"
+          value={recall}
+          onChange={(event) => setRecall(event.target.value)}
+          placeholder="Before docs: what do you remember about how this should work?"
+        />
         <label htmlFor="focus-duration">Timebox</label>
         <select id="focus-duration" value={duration} onChange={(event) => setDuration(Number(event.target.value))}>
-          <option value={25}>25 minutes · focused change</option>
-          <option value={90}>90 minutes · deep debugging</option>
-          <option value={480}>Workday · long-form practice</option>
+          <option value={25}>25 minutes · one flow</option>
+          <option value={90}>90 minutes · deep debug</option>
+          <option value={480}>Workday · long reclaim</option>
         </select>
         {aiExtensions.length > 0 && (
-          <div className="inline-warning"><strong>{aiExtensions.length} AI extension{aiExtensions.length === 1 ? "" : "s"} detected.</strong><span>PureFlow will ask before starting; it does not claim to disable them automatically.</span></div>
+          <div className="inline-warning">
+            <strong>{aiExtensions.length} AI extension{aiExtensions.length === 1 ? "" : "s"} detected.</strong>
+            <span>PureFlow will ask before starting; it does not claim to disable them automatically.</span>
+          </div>
         )}
         <button className="button primary" type="submit" disabled={!goal.trim()}><FocusIcon /> Start Focus Rep</button>
       </form>
       <section className="plain-section">
         <h3>During a Rep</h3>
         <ul className="quiet-list">
-          <li>The configured mentor remains offline.</li>
-          <li>Editor, terminal, tests, debugger, and docs remain native.</li>
-          <li>Only your explicit evidence becomes part of the Rep summary.</li>
+          <li>Configured mentor and coach stay offline.</li>
+          <li>Editor, terminal, tests, debugger, and docs stay native.</li>
+          <li>Only evidence you record enters the Rep summary and commitment.</li>
         </ul>
       </section>
     </div>
@@ -70,15 +103,15 @@ function ActiveFocus({ state, remaining, send }: Props) {
   return (
     <div className="route-page focus-page">
       <section className="active-focus-head">
-        <div><span className="live-dot" /> Focus active</div>
+        <div><span className="live-dot" /> Focus Rep active</div>
         <strong>{remaining}</strong>
         <h2>{state.rep.goal}</h2>
-        <p>AI mentor is offline. Use source, tests, debugger, and explicit evidence.</p>
+        <p>AI mentor is offline. Rebuild understanding from source, tests, debugger, and evidence you choose.</p>
       </section>
 
       <section className="focus-stats">
         <div><strong>{state.stats.testRuns}</strong><span>test runs</span></div>
-        <div><strong>{state.stats.debugLoops}</strong><span>debug loops</span></div>
+        <div><strong>{state.stats.debugLoops}</strong><span>hypotheses resolved</span></div>
         <div><strong>{state.stats.sources}</strong><span>sources</span></div>
       </section>
 
@@ -89,7 +122,7 @@ function ActiveFocus({ state, remaining, send }: Props) {
           <button type="submit" disabled={!hypothesis.trim()}>Add</button>
         </form>
         <div className="hypothesis-list">
-          {state.rep.hypotheses.length === 0 && <p>No hypothesis recorded yet.</p>}
+          {state.rep.hypotheses.length === 0 && <p>No hypothesis recorded yet. Name what you believe before you prove it.</p>}
           {state.rep.hypotheses.map((item) => (
             <div key={item.id} className={item.result ? `is-${item.result}` : ""}>
               <span>{item.text}</span>
@@ -105,7 +138,7 @@ function ActiveFocus({ state, remaining, send }: Props) {
       </section>
 
       <section className="plain-section">
-        <h3>Test evidence</h3>
+        <h3>Verify with evidence</h3>
         <div className="test-actions">
           <button onClick={() => send({ type: "runTests" })}><TestIcon /> Run native tests</button>
           <button onClick={() => send({ type: "logTest", status: "passed" })}>✓ Passed</button>
@@ -118,9 +151,9 @@ function ActiveFocus({ state, remaining, send }: Props) {
       ) : (
         <section className="finish-panel">
           <h3>Finish with evidence</h3>
-          <label htmlFor="focus-outcome">What changed or what did you learn?</label>
+          <label htmlFor="focus-outcome">What changed or what did you relearn?</label>
           <textarea id="focus-outcome" value={outcome} onChange={(event) => setOutcome(event.target.value)} />
-          <label htmlFor="focus-ownership">How well could you explain it?</label>
+          <label htmlFor="focus-ownership">How well could you explain it now?</label>
           <select id="focus-ownership" value={ownership} onChange={(event) => setOwnership(Number(event.target.value) as Ownership)}>
             <option value={1}>I need to revisit parts</option>
             <option value={2}>I can explain the main decisions</option>
@@ -157,8 +190,8 @@ function ReviewFocus({ state, send }: { state: ClientState; send(message: unknow
 
       {rep.phase === "review" && !rep.defenseQuestions.length && (
         <section className="plain-section">
-          <h3>Senior defense</h3>
-          <p>Ask the configured coach—or the local question set—to challenge invariants, evidence, and tradeoffs.</p>
+          <h3>Defend what you relearned</h3>
+          <p>Answer challenges on invariants, evidence, and tradeoffs — from the local set or a configured coach after the Rep.</p>
           <button className="button primary" onClick={() => send({ type: "startDefense", share: { notes: true, tests: true, diff: false } })}>Start defense</button>
         </section>
       )}
@@ -185,8 +218,12 @@ function ReviewFocus({ state, send }: { state: ClientState; send(message: unknow
       )}
 
       <section className="plain-section">
-        <h3>Share only what you choose</h3>
-        <p>The summary contains no code or filenames. An onchain proof is prepared locally and is not “published” until a real wallet receipt is verified.</p>
+        <h3>Onchain practice rules</h3>
+        <p>
+          A privacy-safe commitment can be prepared locally. Monad can later prove that a wallet attested
+          counters and a hash — not skill, authorship of every line, or that AI was absent as a fact.
+          Code, goals, and filenames stay offchain. Label stays <strong>Prepared, not published</strong> until a real receipt and registry read.
+        </p>
         <div className="button-stack">
           <button className="button" onClick={() => send({ type: "copySummary" })}>Copy privacy-safe summary</button>
           <button className="button" onClick={() => send({ type: "prepareAttestation" })}>Prepare Monad proof</button>

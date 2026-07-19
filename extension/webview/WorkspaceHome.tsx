@@ -16,13 +16,19 @@ export function WorkspaceHome({ state, workspace, navigate, mentor, send }: Prop
         <section className="empty-workspace">
           <WorkspaceIcon />
           <h2>Open a project</h2>
-          <p>PureFlow works around normal folders, editors, terminals, tests, and source control.</p>
+          <p>
+            Keep architecture and ownership sharp while AI waits to be asked.
+            PureFlow is a normal IDE first — folders, editor, terminal, tests, and source control stay native.
+          </p>
           <button className="button primary" onClick={() => send({ type: "openProject" })}>Open folder</button>
           <button className="button" onClick={() => send({ type: "createProject" })}>Create project</button>
         </section>
         <section className="plain-section">
           <h3>Nothing is locked behind practice</h3>
-          <p>Open any existing repository and use VSCodium normally. Mentor, Focus, and Monad tools remain optional.</p>
+          <p>
+            Open any repository and work as usual. Mentor restores understanding on demand;
+            Focus is optional no-AI practice on your code; Monad tools stay read-only until you choose a wallet handoff.
+          </p>
         </section>
       </div>
     );
@@ -80,7 +86,7 @@ export function WorkspaceHome({ state, workspace, navigate, mentor, send }: Prop
         </button>
         <button onClick={() => navigate("focus")}>
           <FocusIcon />
-          <span><strong>Focus Rep</strong><small>{state.rep.phase === "active" ? state.rep.goal : "Optional deliberate practice"}</small></span>
+          <span><strong>Focus Rep</strong><small>{state.rep.phase === "active" ? state.rep.goal : "Optional: relearn on real code, AI offline"}</small></span>
           <i>›</i>
         </button>
         <button onClick={() => navigate("monad")}>

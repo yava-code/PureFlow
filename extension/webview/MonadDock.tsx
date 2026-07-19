@@ -93,6 +93,10 @@ export function MonadDock({ state, loading, inspection, report, attestation, sen
               <div><dt>Tests</dt><dd>{attestation.testRuns}</dd></div>
               <div><dt>Debug loops</dt><dd>{attestation.debugLoops}</dd></div>
             </dl>
+            <p className="quiet-note-inline">
+              Onchain can later prove a wallet attested this hash and counters — not skill or absolute AI absence.
+              Goals and code stay offchain.
+            </p>
             <div className="button-stack">
               <button className="button" onClick={() => send({ type: "copyAttestation", payload: attestation })}><CopyIcon /> Copy payload</button>
               <button className="button primary" onClick={() => send({ type: "openAttestation", payload: attestation })}>Continue in wallet companion <ExternalIcon /></button>
@@ -105,6 +109,15 @@ export function MonadDock({ state, loading, inspection, report, attestation, sen
           </>
         )}
         {!state.contractAddress && <div className="inline-warning"><strong>Registry deployment pending.</strong><span>A verified state cannot be shown until the contract is Safe-deployed, source-verified, and checked on Testnet.</span></div>}
+      </section>
+
+      <section className="plain-section">
+        <h3>Practice rules on Monad</h3>
+        <ul className="quiet-list">
+          <li>Commitment hash + self-reported counters may be attested after wallet approval.</li>
+          <li>Local policy flags: mentor blocked during Focus; private code offchain.</li>
+          <li>No skill score, rank, or fabricated verified state.</li>
+        </ul>
       </section>
 
       <footer className="route-footnote">Gas costs use the transaction gas limit, not only the gas consumed. Write actions will estimate tightly and add no more than a 10% buffer.</footer>

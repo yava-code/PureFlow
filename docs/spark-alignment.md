@@ -42,9 +42,9 @@ Still blocked:
 ## Submission fields
 
 - **Name:** PureFlow
-- **Description:** A daily VSCodium IDE with explicit mentoring, optional manual Focus Reps, and live Monad developer tools.
-- **Problem:** AI-assisted coding can reduce the code-reading, debugging, recall, and explanation repetitions that working developers want to retain.
-- **Solution:** Keep ordinary work in a native IDE, make assistance explicit and bounded, offer optional manual evidence workflows, and use Monad for live developer inspection plus voluntary public commitments.
+- **Description:** A daily VSCodium IDE that keeps native project work primary while optional mentoring and Focus Reps help rebuild fluency you lose when AI does too much of the thinking.
+- **Problem:** Working developers over-rely on AI generation and quietly lose architecture sense, debugging fluency, and ownership of their own code — without wanting a LeetCode site or a forced training shell.
+- **Solution:** Ship a real portable IDE (not an empty fork): help waits to be asked, Focus Reps restore knowledge on real repos with AI offline, docs open in-IDE, and Monad holds voluntary privacy-safe commitments with honest prepared/verified rules.
 - **Category:** Monad Testnet
 - **Public app:** <https://yava-code.github.io/PureFlow/>
 - **Repository:** <https://github.com/yava-code/PureFlow>

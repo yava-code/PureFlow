@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext): void {
     vscode.commands.registerCommand("pureflow.finishRep", () => view.finishFromCommand()),
     vscode.commands.registerCommand("pureflow.configureCoach", async () => {
       if (store.get().phase === "active") {
-        void vscode.window.showWarningMessage("Coach configuration is unavailable during Pure Mode.");
+        void vscode.window.showWarningMessage("Coach configuration is unavailable during an active Focus Rep.");
         return;
       }
       if (await coach.configure()) await view.pushState();

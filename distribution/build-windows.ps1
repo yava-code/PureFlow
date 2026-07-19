@@ -95,6 +95,11 @@ if (-not (Test-Path -LiteralPath $productPath)) {
 $product = Get-Content -Raw -LiteralPath $productPath | ConvertFrom-Json
 $product.nameShort = 'PureFlow'
 $product.nameLong = 'PureFlow IDE'
+$product.applicationName = 'pureflow'
+if ($null -ne $product.PSObject.Properties['win32MutexName']) { $product.win32MutexName = 'pureflow' }
+if ($null -ne $product.PSObject.Properties['win32DirName']) { $product.win32DirName = 'PureFlow' }
+if ($null -ne $product.PSObject.Properties['win32NameVersion']) { $product.win32NameVersion = 'PureFlow' }
+if ($null -ne $product.PSObject.Properties['dataFolderName']) { $product.dataFolderName = '.pureflow' }
 $product | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $productPath -Encoding utf8
 
 $data = Join-Path $target 'data'
@@ -102,8 +107,10 @@ $extensions = Join-Path $data 'extensions'
 $settingsDir = Join-Path $data 'user-data\User'
 New-Item -ItemType Directory -Force -Path $extensions, $settingsDir | Out-Null
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'settings.json') -Destination (Join-Path $settingsDir 'settings.json')
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'keybindings.json') -Destination (Join-Path $settingsDir 'keybindings.json')
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'PureFlow.cmd') -Destination (Join-Path $target 'PureFlow.cmd')
 Copy-Item -LiteralPath (Join-Path $repo 'LICENSE') -Destination (Join-Path $target 'PUREFLOW-LICENSE.txt')
+
 
 $codiumCli = Join-Path $target 'bin\codium.cmd'
 if (-not (Test-Path -LiteralPath $codiumCli)) {

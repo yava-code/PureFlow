@@ -17,10 +17,10 @@ export class PureFlowStatus implements vscode.Disposable {
     const rep = this.store.get();
     if (rep.phase === "active" && rep.startedAt) {
       const seconds = Math.max(0, Math.round((Date.now() - rep.startedAt) / 1000));
-      this.item.text = `$(record) Pure ${formatDuration(seconds)}`;
-      this.item.tooltip = `Pure Mode · ${rep.goal}`;
+      this.item.text = `$(record) Focus ${formatDuration(seconds)}`;
+      this.item.tooltip = `Focus Rep · ${rep.goal}`;
       this.item.command = "pureflow.finishRep";
-      this.item.accessibilityInformation = { label: `Pure Mode active for ${formatDuration(seconds)}` };
+      this.item.accessibilityInformation = { label: `Focus Rep active for ${formatDuration(seconds)}` };
       return;
     }
 
