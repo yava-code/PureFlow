@@ -1,0 +1,3 @@
+[submodule ".agents/skills/monskill/wallet/utils/lib/forge-std"]
+	path = .agents/skills/monskill/wallet/utils/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
