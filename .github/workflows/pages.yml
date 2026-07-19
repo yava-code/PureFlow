@@ -30,7 +30,8 @@ jobs:
       - name: Build
         working-directory: web
         env:
-          VITE_REP_REGISTRY_ADDRESS: ${{ vars.REP_REGISTRY_ADDRESS }}
+          # Prefer repo variable when set; otherwise the live Testnet registry.
+          VITE_REP_REGISTRY_ADDRESS: ${{ vars.REP_REGISTRY_ADDRESS || '0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8' }}
         run: |
           npm ci
           npm test

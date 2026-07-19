@@ -4,9 +4,12 @@ import { monadTestnet } from "viem/chains";
 export const monadChainId = 10_143;
 export const monadRpcUrl = "https://testnet-rpc.monad.xyz";
 
-const configuredAddress = import.meta.env.VITE_REP_REGISTRY_ADDRESS as string | undefined;
+/** Monad Testnet RepRegistry (Safe-deployed). Prefer env; fallback is the live public address. */
+const LIVE_REP_REGISTRY = "0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8";
+const configuredAddress = (import.meta.env.VITE_REP_REGISTRY_ADDRESS as string | undefined)?.trim()
+  || LIVE_REP_REGISTRY;
 
-export const registryAddress = configuredAddress && isAddress(configuredAddress)
+export const registryAddress = isAddress(configuredAddress)
   ? configuredAddress as Address
   : undefined;
 
