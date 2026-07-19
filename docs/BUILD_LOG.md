@@ -2,6 +2,15 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-20 — RepRegistry live on Monad Testnet
+
+- Safe `0x0Eb17425255d826e1FbAF5c473A238bB3EAd8a92` (2-of-3: user owners + agent).
+- User confirmed Safe tx; execution `0x276f429828678d7cc9270f8a61f55fb7bd6d8c1470728940a06c8ab1ffd92b75`.
+- `verify:deployment` → contract `0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8`, 887-byte runtime hash match.
+- Source verify API: monadscan Pass + monadvision success.
+- Configured `VITE_REP_REGISTRY_ADDRESS` (web `.env.production`) and extension/distribution defaults.
+- Spark remaining: demo video URL + form submit + eligibility.
+
 ## 2026-07-20 — Spark submit packet
 
 - Confirmed agent wallet funded (1 MON); no Safe yet (`~/.monskills/multisig.json` absent; Safe API `safes: []`).

@@ -66,6 +66,8 @@
   "security.workspace.trust.enabled": true,
   "security.workspace.trust.startupPrompt": "always",
   "pureflow.openOnStartup": true,
+  "pureflow.monadContractAddress": "0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8",
+
   "pureflow.aiExtensionIds": [
     "github.copilot",
     "github.copilot-chat",

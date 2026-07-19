@@ -10,8 +10,8 @@
 - **Project URL:** https://yava-code.github.io/PureFlow/
 - **Github repo:** https://github.com/yava-code/PureFlow
 - **Windows release:** https://github.com/yava-code/PureFlow/releases/tag/v0.1.0
-- **Contract address:** **pending** Safe creation (needs two owner public addresses) + `propose.sh` execution + bytecode verify — do not invent
-- **Demo video:** **pending** owner recording (see `docs/SUBMIT_NOW.md` and `docs/demo-script.md`)
+- **Contract address:** `0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8` (Monad Testnet; bytecode-verified from Safe execution `0x276f429828678d7cc9270f8a61f55fb7bd6d8c1470728940a06c8ab1ffd92b75`)
+- **Demo video:** **pending** owner recording (see `docs/SUBMIT_NOW.md` and `docs/demo-script.md`) — last required owner field
 - **Post URL:** optional; required only for Most Viral Solution
 
 ## Operator checklist

@@ -208,8 +208,8 @@
         },
         "pureflow.monadContractAddress": {
           "type": "string",
-          "default": "",
-          "description": "Deployed Monad RepRegistry address used to prepare privacy-safe attestations."
+          "default": "0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8",
+          "description": "Deployed Monad Testnet RepRegistry address used to prepare privacy-safe attestations."
         },
         "pureflow.monadRpcUrl": {
           "type": "string",

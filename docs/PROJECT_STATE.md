@@ -4,9 +4,13 @@ Last updated: 2026-07-20
 
 ## Current milestone
 
-**Submission-ready product polish shipped; Spark form still blocked on owner-only fields: contract address (Safe deploy) and demo video URL.**
+**RepRegistry deployed on Monad Testnet; Spark form blocked only on demo video + owner submit/eligibility.**
 
-See `docs/SUBMIT_NOW.md` for copy-paste form fields and click path.
+- Registry: `0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8`
+- Deploy tx: `0x276f429828678d7cc9270f8a61f55fb7bd6d8c1470728940a06c8ab1ffd92b75`
+- Safe: `0x0Eb17425255d826e1FbAF5c473A238bB3EAd8a92`
+
+See `docs/SUBMIT_NOW.md` for copy-paste form fields.
 
 PureFlow is a portable VSCodium product profile (not an empty fork + extension): Mineral theme, deep defaults, keybindings, AI-surface reduction, compact sidebar, explicit mentor, optional Focus Rep framed as relearning on real code, in-IDE documentation, live Monad reads, and honest prepared proofs. Owner backlog lives in `docs/IDEAS_BACKLOG.md`.
 
@@ -69,8 +73,8 @@ PureFlow is a portable VSCodium product profile (not an empty fork + extension):
 | Public release | `v0.1.0`, ZIP + VSIX, `/releases/latest` HTTP 200 | Pass |
 | GitHub Actions / Pages | Verify succeeded for `0ac01b8`; Deploy companion succeeded for `1f27790`; deployed IDE-first HTML checked | Pass |
 | Agent wallet funding | 1 Testnet MON on `0xe0D9466626be495C8ECC339E6866f72E9dad06C9` (balance read 2026-07-20: 1e18 wei) | Pass |
-| Onchain registry | no multisig.json; Safe API returns no safes for agent wallet; no deploy receipt | Blocked |
-| Demo video | no public URL | Blocked |
+| Onchain registry | Safe + bytecode-matched deploy; address configured in web/extension defaults | Pass |
+| Demo video | no public URL | Blocked (owner) |
 
 The IDE-first GUI was exercised through the accessibility tree in an earlier portable build: native editor region, PureFlow view, Workspace/Mentor/Focus/Monad routes, Restricted Mode visibility, and live Monad block were present. The fresh security-hardened portable was rebuilt and its installed manifest/bundle were inspected, but a new pixel capture and full 240/320/420 px plus 200% GUI matrix remain release-polish follow-ups.
 
