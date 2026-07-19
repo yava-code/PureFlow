@@ -1,23 +1,34 @@
 # Spark submission packet
 
-## Form fields
+## Form fields (copy into BuildAnything)
 
 - **Project name:** PureFlow
-- **Tagline:** Keep the skills AI quietly erodes — in a real IDE.
-- **Description:** A daily VSCodium IDE that keeps native work primary while optional mentoring and Focus Reps rebuild fluency lost to over-reliance on AI, with live Monad tools and honest commitments.
-- **Problem:** Working developers over-rely on AI generation and quietly lose architecture sense, debugging fluency, and ownership of their own code — without wanting a LeetCode site or a forced training shell.
-- **Solution:** PureFlow ships a portable product profile (theme, defaults, keybindings, AI-surface reduction), explicit bounded mentoring, optional no-AI Focus on real repos, in-IDE docs, and Monad practice rules that never invent verified success.
+- **Description:** A daily VSCodium IDE that keeps coding muscles sharp: native project work first, optional no-AI Focus Reps on real code, explicit mentoring, and live Monad Testnet tools with privacy-safe commitments.
+- **Problem:** I ship faster with AI, but I slowly stop owning the system: less architecture sense, weaker debugging hypotheses, and less ability to explain my own code. I do not want a LeetCode site or a forced course — I want my real IDE back as deliberate practice.
+- **Solution:** PureFlow is a portable VSCodium product (not an empty fork): normal editor/Explorer/terminal/Git stay primary. Mentor help is explicit and bounded. Optional Focus Reps reclaim fluency on my real repo with AI offline. Monad tools read live Testnet state and prepare privacy-safe commitments — never fake verified success.
 - **Category:** Monad Testnet
-- **Public app:** <https://yava-code.github.io/PureFlow/>
-- **Repository:** <https://github.com/yava-code/PureFlow>
-- **Windows release:** <https://github.com/yava-code/PureFlow/releases/tag/v0.1.0>
-- **Contract:** `RepRegistry` — address pending owner-address collection, Safe proposal/execution, and bytecode verification
-- **Demo video:** add the public URL after recording; keep it under three minutes
-- **Post URL:** add the public social URL only if entering the Most Viral Solution prize
+- **Project URL:** https://yava-code.github.io/PureFlow/
+- **Github repo:** https://github.com/yava-code/PureFlow
+- **Windows release:** https://github.com/yava-code/PureFlow/releases/tag/v0.1.0
+- **Contract address:** **pending** Safe creation (needs two owner public addresses) + `propose.sh` execution + bytecode verify — do not invent
+- **Demo video:** **pending** owner recording (see `docs/SUBMIT_NOW.md` and `docs/demo-script.md`)
+- **Post URL:** optional; required only for Most Viral Solution
+
+## Operator checklist
+
+| Item | Status |
+|------|--------|
+| Solo | Yes |
+| Public GitHub | Yes |
+| Hosted companion | Yes — Pages |
+| Live features (no fake verified) | Yes |
+| Contract address on Monad | **Blocked on owner Safe addresses + approve** |
+| Demo video URL | **Blocked on owner recording** |
+| Age/jurisdiction eligibility | **Owner on form** |
 
 ## Short description
 
-PureFlow is a developer-first VSCodium distribution for normal repositories. The native editor, Explorer, terminal, tests, debugger, and Git remain the workspace. A compact sidebar adds explicit code mentoring, documentation, optional Focus Reps, and live Monad Testnet inspection without turning the IDE into a tutorial, chat tab, or wallet dashboard.
+PureFlow is a developer-first VSCodium distribution for normal repositories. The native editor, Explorer, terminal, tests, debugger, and Git remain the workspace. A compact sidebar adds explicit mentoring, documentation, optional Focus Reps, and live Monad Testnet inspection without turning the IDE into a tutorial, chat tab, or wallet dashboard.
 
 ## Full description
 
@@ -25,41 +36,16 @@ PureFlow is built for developers who ship with AI but refuse to lose the reasoni
 
 The Monad workbench reads live Testnet data from the extension host. It reports chain ID, latest/safe/finalized blocks, gas price and latency, inspects addresses and transactions, links to the official explorer, and runs a bounded read-only Project Doctor for Hardhat, Foundry, Solidity, viem, wagmi, and Testnet configuration.
 
-Focus Rep is optional deliberate practice rather than the application shell. A completed Rep can prepare a privacy-safe commitment for `RepRegistry`; code, filenames, goals, hypotheses, notes, and answers stay local. The contract stores commitment ownership and per-wallet count; its event emits self-reported duration/test/debug/ownership counters plus the chain timestamp. The companion treats the handoff as structurally valid but unauthenticated and labels it **Prepared, not published** because the funded agent wallet still lacks the owner-configured Safe, deployment execution, and verified registry address, while the user-controlled Para flow is not authenticated. No demo state is hardcoded as successful.
+Focus Rep is optional deliberate practice rather than the application shell. A completed Rep can prepare a privacy-safe commitment for `RepRegistry`; code, filenames, goals, hypotheses, notes, and answers stay local. The contract stores commitment ownership and per-wallet count; its event emits self-reported duration/test/debug/ownership counters plus the chain timestamp. Until Safe-governed deployment and a real receipt exist, the product labels proofs **Prepared, not published**. No demo state is hardcoded as successful.
 
-## What to show reviewers
-
-1. Launch the portable PureFlow VSCodium distribution and open a normal project.
-2. Show that the editor, Explorer, terminal, tests, and source control remain native and central.
-3. Select a function and invoke **PureFlow → Explain why** or **Quiz me** from the editor context menu.
-4. Open the compact sidebar and show Workspace, Mentor, Focus, and Monad as peer routes.
-5. Read live Monad Testnet health, inspect a real address or transaction, and run Project Doctor.
-6. Open `demo/cache-lab`, fix its failing cache invariant in the native editor, and briefly show Focus Rep as an optional evidence workflow.
-7. Explain the prepared proof payload and deployment blocker. Do not claim publish or verification until a real receipt and contract read exist.
-
-## Technical evidence
-
-- Extension strict TypeScript check passes.
-- Extension unit suite passes: 13/13 tests across Focus, Monad RPC/inspection/project logic, and path privacy.
-- `RepRegistry` Solidity suite passes 4/4; Safe/receipt/bytecode/source-verification tooling passes 8/8 Node tests.
-- Hardhat and Foundry produce identical 915-byte creation and 887-byte runtime code; deployment validation rejects any runtime that is not the canonical `RepRegistry` artifact.
-- Web proof suite passes 6/6; Pages runs those tests before deployment.
-- Windows builder downloads VSCodium, verifies the official archive checksum, fails closed on build/test/package errors, and produced the clean v0.1.0 portable release.
-- The public Pages URL responds successfully and the repository has a regular, unsquashed implementation history.
-- GitHub release `v0.1.0` provides the portable ZIP and extension-only VSIX; the portable checksum is `651239343DAC42CD8D919EF78E115DE79E14983BB212F6208EC8D5C143FE13A5`.
-- The extension contains no PureFlow `WebviewPanel` path; opening the workbench reveals only the Activity Bar view.
-
-## Social post
+## Social post (optional viral track)
 
 I built PureFlow for the part of AI-assisted development nobody benchmarks: whether I can still read, debug, test, and explain the code myself.
 
 PureFlow is a developer-first VSCodium distribution, not a local LeetCode tab. Open a real repository and keep the native editor, terminal, tests, debugger, and Git. When you want help, ask explicitly from selected code. When you want deliberate practice, start an optional Focus Rep.
 
-It also includes live Monad Testnet inspection and a privacy-safe proof design that stays honest about what is local, prepared, published, and verified.
-
-Open source: https://github.com/yava-code/PureFlow
-
 Live companion: https://yava-code.github.io/PureFlow/
+Open source: https://github.com/yava-code/PureFlow
 
 #SparkHackathon #Monad #OpenSource #DevTools
 
@@ -71,17 +57,11 @@ Live companion: https://yava-code.github.io/PureFlow/
 - [x] PureFlow Mineral theme and reproducible Windows builder
 - [x] Live Testnet health, address/transaction inspection, and Project Doctor
 - [x] `RepRegistry` contract and passing tests
-- [x] Public GitHub Pages companion reachable at the submission URL
-- [x] Requested Monskills and Impeccable skills installed and used
-- [x] Honest privacy, consent, and attestation limits documented
-- [x] Rebuild, package, install, inspect, archive, and publish the security-hardened portable release
-- [x] Browser-check the companion at desktop/mobile sizes with live RPC, proof handoff, keyboard navigation, and no console errors
-- [ ] Capture a fresh security-hardened portable pixel/200% interaction matrix for post-release polish
-- [ ] Owner installs `@getpara/cli` and completes `para login`
-- [ ] Owner confirms they are 18+ and reside outside the jurisdictions excluded by the official Spark rules
-- [ ] Owner provides two public Monad-compatible wallet addresses for the 2-of-3 Safe; never provide private keys
-- [ ] Create and verify the Monad Testnet Safe, propose deployment through the supplied Monskills wrapper, then execute and verify `RepRegistry`
-- [ ] Set the final registry address in the extension/companion configuration
-- [ ] Verify one real transaction and follow-up contract read
-- [ ] Record and upload the sub-three-minute demo
-- [ ] Add final contract and video URLs to the Spark form
+- [x] Public GitHub Pages companion
+- [x] Honest privacy and attestation limits
+- [x] Portable release published
+- [ ] **Owner:** two public Safe owner addresses → create Safe → approve `RepRegistry` deploy → contract address
+- [ ] **Owner:** demo video ≤3 min public URL
+- [ ] **Owner:** submit form + eligibility declaration
+
+Step-by-step in Russian: [`docs/SUBMIT_NOW.md`](SUBMIT_NOW.md).

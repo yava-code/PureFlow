@@ -1,10 +1,12 @@
 # Project State
 
-Last updated: 2026-07-19
+Last updated: 2026-07-20
 
 ## Current milestone
 
-**Knowledge-restoration polish on IDE-first v0.1.0; Safe-governed onchain publication, eligibility confirmation, and the final Spark video remain owner-driven.**
+**Submission-ready product polish shipped; Spark form still blocked on owner-only fields: contract address (Safe deploy) and demo video URL.**
+
+See `docs/SUBMIT_NOW.md` for copy-paste form fields and click path.
 
 PureFlow is a portable VSCodium product profile (not an empty fork + extension): Mineral theme, deep defaults, keybindings, AI-surface reduction, compact sidebar, explicit mentor, optional Focus Rep framed as relearning on real code, in-IDE documentation, live Monad reads, and honest prepared proofs. Owner backlog lives in `docs/IDEAS_BACKLOG.md`.
 
@@ -66,8 +68,9 @@ PureFlow is a portable VSCodium product profile (not an empty fork + extension):
 | Portable SHA-256 | `651239343DAC42CD8D919EF78E115DE79E14983BB212F6208EC8D5C143FE13A5` | Pass |
 | Public release | `v0.1.0`, ZIP + VSIX, `/releases/latest` HTTP 200 | Pass |
 | GitHub Actions / Pages | Verify succeeded for `0ac01b8`; Deploy companion succeeded for `1f27790`; deployed IDE-first HTML checked | Pass |
-| Agent wallet funding | 1 Testnet MON; faucet receipt `0x5c7939c6e0d9798e21a3708ab8ca406a45a76b88092c0236d8895a32315d9af6` succeeded | Pass |
-| Onchain registry | no Safe proposal/execution, deployment receipt, bytecode check, or follow-up registry read | Blocked |
+| Agent wallet funding | 1 Testnet MON on `0xe0D9466626be495C8ECC339E6866f72E9dad06C9` (balance read 2026-07-20: 1e18 wei) | Pass |
+| Onchain registry | no multisig.json; Safe API returns no safes for agent wallet; no deploy receipt | Blocked |
+| Demo video | no public URL | Blocked |
 
 The IDE-first GUI was exercised through the accessibility tree in an earlier portable build: native editor region, PureFlow view, Workspace/Mentor/Focus/Monad routes, Restricted Mode visibility, and live Monad block were present. The fresh security-hardened portable was rebuilt and its installed manifest/bundle were inspected, but a new pixel capture and full 240/320/420 px plus 200% GUI matrix remain release-polish follow-ups.
 

@@ -2,6 +2,13 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-20 — Spark submit packet
+
+- Confirmed agent wallet funded (1 MON); no Safe yet (`~/.monskills/multisig.json` absent; Safe API `safes: []`).
+- Wrote `docs/SUBMIT_NOW.md` with rule checklist, form copy-paste, demo timing, and owner blockers (2 addresses + video + eligibility).
+- Updated `docs/submission.md` and demo-script close for honest contract state.
+- Product already satisfies hosted URL + public repo + live features; contract address and demo video remain owner-driven (Monskills Safe policy).
+
 ## 2026-07-19 — Companion brand: coding muscles + live pixel field
 
 - Studied BuildAnything showcase competitors (games/walls/mints dominate); positioned PureFlow as daily IDE for AI skill-atrophy personal problem.

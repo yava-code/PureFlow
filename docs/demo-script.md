@@ -59,6 +59,16 @@ If time is tight, stop after showing the hypothesis and test evidence. The produ
 
 Show the proof section labeled **Prepared, not published**.
 
-Say: “A completed Rep can prepare a privacy-safe payload. The URL is structurally validated but is not authenticated, signed, or published. The registry is not deployed yet, so I am not showing a fake onchain success. PureFlow is useful as an IDE today; after wallet setup, a real receipt and contract read will unlock public verification.”
+If `RepRegistry` is already deployed: show the real address once, and only claim verification after a successful `attestorOf` read.
 
-End on the repository and public companion URLs.
+If not deployed yet: say so out loud — do not invent a success toast.
+
+End on the companion https://yava-code.github.io/PureFlow/ and https://github.com/yava-code/PureFlow.
+
+## Ultra-short path (if under 2:30 total)
+
+1. Companion homepage + live Monad band  
+2. IDE: edit + mentor on selection  
+3. Monad inspect fixture  
+4. Focus idle loop copy  
+5. Prepared proof honesty + links
