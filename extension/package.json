@@ -1,0 +1,131 @@
+{
+  "name": "pureflow",
+  "displayName": "PureFlow",
+  "description": "The manual practice mode for modern developers.",
+  "version": "0.1.0",
+  "publisher": "yava-code",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": ["Education", "Other"],
+  "keywords": ["practice", "focus", "debugging", "docs", "ai-free"],
+  "main": "./dist/extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "icon": "media/extension-icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yava-code/PureFlow.git"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "pureflow.open",
+        "title": "PureFlow: Open Training Console",
+        "icon": "$(pulse)"
+      },
+      {
+        "command": "pureflow.startRep",
+        "title": "PureFlow: Start a Rep"
+      },
+      {
+        "command": "pureflow.finishRep",
+        "title": "PureFlow: Finish Current Rep"
+      },
+      {
+        "command": "pureflow.searchSelection",
+        "title": "PureFlow: Find Selected Symbol in Knowledge Dock"
+      },
+      {
+        "command": "pureflow.configureCoach",
+        "title": "PureFlow: Configure Optional Coach"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "pureflow",
+          "title": "PureFlow",
+          "icon": "media/activity-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "pureflow": [
+        {
+          "type": "webview",
+          "id": "pureflow.console",
+          "name": "Training Console"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "pureflow.open",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p"
+      },
+      {
+        "command": "pureflow.searchSelection",
+        "key": "ctrl+alt+d",
+        "mac": "cmd+alt+d",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "PureFlow",
+      "properties": {
+        "pureflow.coachEndpoint": {
+          "type": "string",
+          "default": "",
+          "description": "Optional OpenAI-compatible chat completions endpoint. Never called during an active Rep."
+        },
+        "pureflow.coachModel": {
+          "type": "string",
+          "default": "",
+          "description": "Model identifier for the optional coach endpoint."
+        },
+        "pureflow.monadContractAddress": {
+          "type": "string",
+          "default": "",
+          "description": "Deployed Monad RepRegistry address used to prepare privacy-safe attestations."
+        },
+        "pureflow.aiExtensionIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [
+            "github.copilot",
+            "github.copilot-chat",
+            "anthropic.claude-code",
+            "continue.continue",
+            "codeium.codeium",
+            "tabnine.tabnine-vscode"
+          ],
+          "description": "Extension IDs reported before a Rep when present in this profile."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "package": "npm run build && vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.17.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@types/vscode": "^1.96.0",
+    "@vscode/vsce": "^3.6.0",
+    "esbuild": "^0.25.9",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
+
