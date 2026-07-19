@@ -1,5 +1,8 @@
-import { createPublicClient, http, isAddress, type Address, type Hex } from "viem";
+import { createPublicClient, formatGwei, http, isAddress, type Address, type Hex } from "viem";
 import { monadTestnet } from "viem/chains";
+
+export const monadChainId = 10_143;
+export const monadRpcUrl = "https://testnet-rpc.monad.xyz";
 
 const configuredAddress = import.meta.env.VITE_REP_REGISTRY_ADDRESS as string | undefined;
 
@@ -23,14 +26,50 @@ const abi = [
 
 const client = createPublicClient({
   chain: monadTestnet,
-  transport: http("https://testnet-rpc.monad.xyz"),
+  transport: http(monadRpcUrl, { timeout: 8_000 }),
 });
+
+export interface NetworkStatus {
+  chainId: number;
+  latestBlock: bigint;
+  safeBlock: bigint;
+  finalizedBlock: bigint;
+  gasPriceGwei: string;
+  latencyMs: number;
+  checkedAt: number;
+}
 
 export interface Verification {
   commitment: Hex;
   attestor: Address;
   registered: boolean;
   registry: Address;
+}
+
+export async function getNetworkStatus(): Promise<NetworkStatus> {
+  const started = performance.now();
+  const [chainId, latest, safe, finalized, gasPrice] = await Promise.all([
+    client.getChainId(),
+    client.getBlock({ blockTag: "latest" }),
+    client.getBlock({ blockTag: "safe" }),
+    client.getBlock({ blockTag: "finalized" }),
+    client.getGasPrice(),
+  ]);
+  if (chainId !== monadChainId) {
+    throw new Error(`Expected Monad Testnet chain ${monadChainId}, RPC returned ${chainId}.`);
+  }
+  if (latest.number === null || safe.number === null || finalized.number === null) {
+    throw new Error("Monad RPC returned a block without a number.");
+  }
+  return {
+    chainId,
+    latestBlock: latest.number,
+    safeBlock: safe.number,
+    finalizedBlock: finalized.number,
+    gasPriceGwei: trimDecimal(formatGwei(gasPrice), 6),
+    latencyMs: Math.round(performance.now() - started),
+    checkedAt: Date.now(),
+  };
 }
 
 export async function verifyCommitment(value: string): Promise<Verification> {
@@ -51,3 +90,8 @@ export async function verifyCommitment(value: string): Promise<Verification> {
   };
 }
 
+function trimDecimal(value: string, precision: number) {
+  const [whole, decimal = ""] = value.split(".");
+  const fraction = decimal.slice(0, precision).replace(/0+$/, "");
+  return fraction ? `${whole}.${fraction}` : whole;
+}

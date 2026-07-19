@@ -33,6 +33,7 @@ jobs:
           VITE_REP_REGISTRY_ADDRESS: ${{ vars.REP_REGISTRY_ADDRESS }}
         run: |
           npm ci
+          npm test
           npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
