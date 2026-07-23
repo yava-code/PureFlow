@@ -1,17 +1,26 @@
 {
   "_format": "hh3-sol-build-info-1",
-  "id": "solc-0_8_28-ef5cc6963341dbfe72c6b6ab01cce6e77fa592db",
+  "id": "solc-0_8_28-7516f4c419d5061fa88079e5f2701571a58dba3b",
   "solcVersion": "0.8.28",
   "solcLongVersion": "0.8.28+commit.7893614a",
   "compilerType": "solc",
+  "toolVersions": {
+    "hardhat": "3.10.0"
+  },
   "userSourceNameMap": {
-    "src/RepRegistry.sol": "project/src/RepRegistry.sol",
     "test/RepRegistry.t.sol": "project/test/RepRegistry.t.sol"
   },
   "input": {
     "language": "Solidity",
     "settings": {
       "evmVersion": "cancun",
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
       "outputSelection": {
         "*": {
           "": [
