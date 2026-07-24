@@ -16,14 +16,13 @@ export function PixelField() {
     let cell = 10;
 
     const palette = [
-      [14, 28, 30],
-      [18, 52, 56],
-      [32, 110, 112],
-      [58, 170, 168],
-      [88, 92, 180],
-      [160, 96, 72],
-      [42, 36, 70],
-      [8, 12, 14],
+      [30, 30, 30],       // 0: very dark grey
+      [50, 50, 50],       // 1: dark grey
+      [80, 80, 80],       // 2: grey
+      [120, 120, 120],    // 3: light grey
+      [24, 76, 54],       // 4: dark green
+      [46, 142, 94],      // 5: green
+      [74, 214, 142],     // 6: bright green
     ] as const;
 
     const resize = () => {
@@ -56,26 +55,34 @@ export function PixelField() {
 
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
-          // Focus density toward the right hero edge (BA-like cascade).
+          // A sweeping curve similar to Trae hero image
+          // Originates from bottom left, swoops up to middle right
           const nx = x / cols;
           const ny = y / rows;
-          const focus = Math.pow(Math.max(0, nx - 0.28) / 0.72, 1.15) * (1 - Math.abs(ny - 0.38) * 0.9);
-          const wave = Math.sin(x * 0.21 + y * 0.13 + time * 6) * 0.5 + 0.5;
-          const spark = Math.sin(x * 0.07 - y * 0.11 + time * 3.2) * 0.5 + 0.5;
-          const n = hash(x, y + Math.floor(time * 4));
-          const energy = focus * (0.45 + wave * 0.35 + spark * 0.2) * (0.55 + n * 0.55);
+
+          const curve = 0.5 + Math.sin((nx - 0.2) * Math.PI) * 0.3;
+          const dist = Math.abs(ny - curve);
+
+          // Width of the band
+          const focus = Math.max(0, 1.0 - dist * 2.5) * (0.2 + nx * 0.8);
+
+          const wave = Math.sin(x * 0.12 + y * 0.18 + time * 4) * 0.5 + 0.5;
+          const spark = Math.sin(x * 0.09 - y * 0.07 + time * 5) * 0.5 + 0.5;
+          const n = hash(x, y + Math.floor(time * 6));
+
+          const energy = focus * (0.4 + wave * 0.4 + spark * 0.2) * (0.4 + n * 0.6);
 
           if (energy < 0.12) continue;
 
           let idx = 0;
-          if (energy > 0.78) idx = n > 0.7 ? 5 : 3;
-          else if (energy > 0.58) idx = n > 0.55 ? 4 : 3;
-          else if (energy > 0.4) idx = 2;
+          if (energy > 0.8) idx = n > 0.7 ? 6 : (n > 0.4 ? 5 : 4);
+          else if (energy > 0.6) idx = n > 0.8 ? 5 : (n > 0.5 ? 4 : 3);
+          else if (energy > 0.4) idx = n > 0.9 ? 4 : 2;
           else if (energy > 0.25) idx = 1;
-          else idx = n > 0.5 ? 6 : 0;
+          else idx = 0;
 
           const [r, g, b] = palette[idx]!;
-          const a = Math.min(0.95, 0.18 + energy * 0.85);
+          const a = Math.min(0.95, 0.2 + energy * 1.5);
           ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
           // Slight size jitter for living field without blur/glass.
           const s = energy > 0.7 ? cell : cell - 1;
