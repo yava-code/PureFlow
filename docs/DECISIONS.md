@@ -51,3 +51,8 @@ Durable choices live here so future agents can distinguish intentional architect
 **Why:** The agent wallet can prepare and co-sign a transaction without unilaterally publishing state. The required 2-of-3 Safe uses two public owner addresses plus the encrypted agent wallet, while private keys remain outside the repository and chat.
 
 **Acceptance:** Never create a custom proposer or broadcast `RepRegistry` directly. Preserve the wrapper's QR/output verbatim, request owner approval, then parse the CreateCall `ContractCreation(address)` log because a Safe deployment receipt has no top-level `contractAddress`.
+
+### Decision: Side-by-side Docs & Focus Recall Gate
+*   **Context:** `IDEAS_BACKLOG.md` proposed two improvements: placing the Simple Browser side-by-side with the editor, and a "write what you remember" gate before opening docs during Focus mode.
+*   **Decision:** We updated `view.ts` to pass `vscode.ViewColumn.Beside` into `simpleBrowser.show`. We also added `vscode.window.showInputBox` to intercept `search` and `openSource` actions if `store.get().phase === "active"`.
+*   **Consequence:** Enhances "recall-first" learning mechanics during Focus without completely blocking access to documentation.

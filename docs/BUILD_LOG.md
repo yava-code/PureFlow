@@ -194,3 +194,8 @@ Append an entry after each material milestone with:
 - tests or runtime evidence;
 - commit or public URL;
 - honest blocker or remaining risk.
+
+### Milestone: Documentation Layout and Focus Safety
+
+- Added `openDocsSideBySide` configuration using `vscode.ViewColumn.Beside`.
+- Created safety gate requiring developers to manually record recall context before loading external documentation during an active Focus Rep.
