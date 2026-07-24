@@ -716,13 +716,25 @@ function attestationPayload(value: unknown): AttestationPayload {
   return payload as AttestationPayload;
 }
 
+/**
+ * Opens an HTTP or HTTPS URL externally.
+ *
+ * @param value - The URL to open
+ * @throws If `value` is invalid or does not use HTTP or HTTPS
+ */
 async function openHttpUrl(value: string): Promise<void> {
   const url = new URL(value);
   if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error("PureFlow opens only HTTP or HTTPS links.");
   await vscode.env.openExternal(vscode.Uri.parse(url.toString()));
 }
 
-/** Prefer in-IDE Simple Browser for docs; fall back to the system browser. */
+/**
+ * Opens an HTTP or HTTPS documentation link in the IDE or system browser.
+ *
+ * @param value - The documentation URL to open
+ * @param viewColumn - The editor column for the IDE browser, when specified
+ * @throws If `value` is not an HTTP or HTTPS URL
+ */
 async function openDocumentation(value: string, viewColumn?: vscode.ViewColumn): Promise<void> {
   const url = new URL(value);
   if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error("PureFlow opens only HTTP or HTTPS links.");
