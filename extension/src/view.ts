@@ -340,9 +340,15 @@ export class PureFlowView implements vscode.WebviewViewProvider {
         case "openSource": {
           const source = message.source as KnowledgeResult;
           if (this.store.get().phase === "active") {
+            const recall = await vscode.window.showInputBox({
+              prompt: "Focus Rep active: What do you remember about this before opening docs?",
+              placeHolder: "I think it returns...",
+              ignoreFocusOut: true,
+            });
+            if (!recall) return;
             await this.store.set(recordDoc(this.store.get(), source.source, source.title));
           }
-          await openDocumentation(source.url);
+          await openDocumentation(source.url, vscode.ViewColumn.Beside);
           await this.pushState();
           break;
         }
@@ -416,6 +422,17 @@ export class PureFlowView implements vscode.WebviewViewProvider {
   }
 
   private async search(query: string): Promise<void> {
+    if (this.store.get().phase === "active") {
+      const recall = await vscode.window.showInputBox({
+        prompt: "Focus Rep active: What do you remember about this before we search?",
+        placeHolder: "I think it returns...",
+        ignoreFocusOut: true,
+      });
+      if (!recall) {
+        await this.post({ type: "knowledgeResults", query, results: [] });
+        return;
+      }
+    }
     await this.post({ type: "knowledgeLoading" });
     const results = await searchKnowledge(query);
     await this.post({ type: "knowledgeResults", query, results });
@@ -706,18 +723,26 @@ async function openHttpUrl(value: string): Promise<void> {
 }
 
 /** Prefer in-IDE Simple Browser for docs; fall back to the system browser. */
-async function openDocumentation(value: string): Promise<void> {
+async function openDocumentation(value: string, viewColumn?: vscode.ViewColumn): Promise<void> {
   const url = new URL(value);
   if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error("PureFlow opens only HTTP or HTTPS links.");
   const href = url.toString();
   try {
-    await vscode.commands.executeCommand("simpleBrowser.api.open", href);
+    if (viewColumn !== undefined) {
+      await vscode.commands.executeCommand("simpleBrowser.api.open", href, { viewColumn });
+    } else {
+      await vscode.commands.executeCommand("simpleBrowser.api.open", href);
+    }
     return;
   } catch {
     // simpleBrowser.api.open is not registered in every host build.
   }
   try {
-    await vscode.commands.executeCommand("simpleBrowser.show", href);
+    if (viewColumn !== undefined) {
+      await vscode.commands.executeCommand("simpleBrowser.show", href, { viewColumn });
+    } else {
+      await vscode.commands.executeCommand("simpleBrowser.show", href);
+    }
     return;
   } catch {
     // Fall through to the system browser.

@@ -135,3 +135,7 @@ The repository, hosted app, regular commits, real features, and release are read
 4. Treat this verification matrix as evidence with a date, not a permanent claim.
 5. Check the blockers before attempting wallet or deployment work.
 6. Append `docs/BUILD_LOG.md` and update this file after every material milestone, blocker, public URL, deployment, receipt, or runtime result.
+
+### Recent Implementations (Jules)
+- **Documentation side-by-side mode**: Updated the VSCodium `simpleBrowser.show` invocation to accept `vscode.ViewColumn.Beside`, helping developers read docs alongside their code without losing context.
+- **Focus Safety Gate**: Hooked into `view.ts` messages `openSource` and `search` to prompt users to type what they recall before docs or AI hints are exposed if a Focus Rep is active.
