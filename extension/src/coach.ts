@@ -67,7 +67,6 @@ export class Coach {
     });
     if (!apiKey) return false;
 
-    const config = vscode.workspace.getConfiguration("pureflow");
     await config.update("coachEndpoint", endpoint.trim(), vscode.ConfigurationTarget.Global);
     await config.update("coachModel", model.trim(), vscode.ConfigurationTarget.Global);
     await this.context.secrets.store(keyName, apiKey);
