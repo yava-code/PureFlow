@@ -194,6 +194,7 @@
         "pureflow.coachEndpoint": {
           "type": "string",
           "default": "",
+          "scope": "machine",
           "description": "Optional OpenAI-compatible chat completions endpoint (e.g. https://api.groq.com/openai/v1/chat/completions). Never called during an active Focus Rep. API keys use SecretStorage, not this setting."
         },
         "pureflow.openOnStartup": {
@@ -204,6 +205,7 @@
         "pureflow.coachModel": {
           "type": "string",
           "default": "",
+          "scope": "machine",
           "description": "Model identifier for the optional coach endpoint (for Groq, a current Groq model id such as llama-3.3-70b-versatile)."
         },
         "pureflow.monadContractAddress": {

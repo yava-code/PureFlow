@@ -13,8 +13,9 @@ export class Coach {
   }
 
   async configure(): Promise<boolean> {
-    const currentEndpoint = vscode.workspace.getConfiguration("pureflow").get<string>("coachEndpoint") ?? "";
-    const currentModel = vscode.workspace.getConfiguration("pureflow").get<string>("coachModel") ?? "";
+    const config = vscode.workspace.getConfiguration("pureflow");
+    const currentEndpoint = config.get<string>("coachEndpoint") ?? "";
+    const currentModel = config.get<string>("coachModel") ?? "";
     const preset = await vscode.window.showQuickPick(
       [
         {
