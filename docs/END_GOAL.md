@@ -1,5 +1,7 @@
 # PureFlow End Goal
 
+> **v0.2 branch note:** This is the released v0.1 end goal. For the proposed autonomous-agent pivot, read [`../prd.md`](../prd.md) and [`v0.2/GOAL.md`](v0.2/GOAL.md). Existing v0.1 behavior remains intact until the v0.2 R&D gates pass.
+
 ## North star
 
 A senior developer can install or launch PureFlow, open a real repository, and use it as their primary IDE without feeling that they entered a tutorial. They write and debug in the native editor, call a bounded mentor only when wanted, practice deliberately when useful, and inspect or prove Monad work with live, verifiable data.

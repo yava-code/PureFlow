@@ -2,6 +2,8 @@
 
 PureFlow is a developer-first VSCodium distribution for people who ship with AI but do not want to lose architecture sense, debugging fluency, and ownership of their own code. Open a real repository, keep the native editor, Explorer, terminal, tests, debugger, and source control in the center, then call a compact sidebar when you want documentation, an explicit mentor action, an optional no-AI Focus Rep, or live Monad Testnet context.
 
+> **v0.2 R&D branch:** This branch preserves the released v0.1 implementation and proposes a new core: agents execute autonomously while an Ownership Compiler turns their work into semantic changes, evidence-backed claims, risk seams, and optional prediction/takeover checks. Start with the [v0.2 PRD](prd.md), [goal](docs/v0.2/GOAL.md), [runtime ADR](docs/v0.2/ADR-001-agent-runtime.md), and [R&D plan](docs/v0.2/RND_PLAN.md).
+
 ![PureFlow IDE workspace concept](docs/design/ide-workspace-concept.png)
 
 ## Why a separate VSCodium distribution

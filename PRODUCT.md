@@ -1,5 +1,7 @@
 # Product
 
+> **v0.2 branch note:** This file describes the released v0.1 product. The proposed ownership-preserving autonomous product is defined in [`prd.md`](prd.md) and [`docs/v0.2/`](docs/v0.2/). The proposal does not claim those mechanisms are shipped.
+
 ## Register
 
 product

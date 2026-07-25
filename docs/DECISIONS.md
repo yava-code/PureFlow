@@ -56,3 +56,25 @@ Durable choices live here so future agents can distinguish intentional architect
 *   **Context:** `IDEAS_BACKLOG.md` proposed two improvements: placing the Simple Browser side-by-side with the editor, and a "write what you remember" gate before opening docs during Focus mode.
 *   **Decision:** We updated `view.ts` to pass `vscode.ViewColumn.Beside` into `simpleBrowser.show`. We also added `vscode.window.showInputBox` to intercept `search` and `openSource` actions if `store.get().phase === "active"`.
 *   **Consequence:** Enhances "recall-first" learning mechanics during Focus without completely blocking access to documentation.
+
+## 2026-07-25 — Proposed v0.2 pivot: autonomy plus operational ownership
+
+**Status:** Proposed on `codex/v0.2-ownership-compiler`; v0.1 remains the released product.
+
+**Decision:** Replace the v0.1 manual/no-AI product core for future v0.2 work. Let agents implement and verify changes autonomously. Put the human in the intent, mental-model, risk, prediction, diagnosis, and direction loop rather than the keystroke or raw-diff loop.
+
+**Why:** Requiring manual code discards the leverage users want, while asking them to read every generated line does not scale with agent throughput. The product should preserve the ability to predict behavior, locate responsibility, debug failure, evaluate trade-offs, and direct a fresh agent.
+
+**Boundaries:** Ownership checks remain voluntary and never block ordinary development or merges. PureFlow must not infer understanding from keystrokes, answer length, time, self-rating, or a universal score. Claims require structural or executable evidence; LLM explanations remain inference.
+
+**Validation:** The pivot is a product hypothesis until delayed takeover measures beat a passive AI summary with acceptable delivery overhead. See `prd.md` and `docs/v0.2/RND_PLAN.md`.
+
+## 2026-07-25 — Proposed runtime strategy: reuse execution, own the control plane
+
+**Status:** Proposed pending a five-day integration spike.
+
+**Decision:** Keep the VSCodium distribution and extension. Reuse a pinned headless agent SDK behind a PureFlow-owned `AgentDriver`, add Codex/ACP adapters incrementally, and fork only a thin runtime layer if a required event cannot be exposed upstream. Do not build a complete agent engine or maintain a deep editor fork.
+
+**Why:** File editing, shell execution, checkpoints, model routing, MCP, and swarm orchestration are necessary commodity capabilities. PureFlow's differentiating work is the event/evidence ledger, deterministic semantic delta, claim compiler, independent challenger, and local ownership model.
+
+**Acceptance:** Adopt a runtime only if the spike proves worktree isolation, streamed tool/file/test provenance, cancellation, restart reconstruction, redaction, subagent relationships, and adapter-level contract tests. See `docs/v0.2/ADR-001-agent-runtime.md`.

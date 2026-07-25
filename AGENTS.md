@@ -2,6 +2,12 @@
 
 This file is the first stop for any AI or human continuing the project. Read it together with `PRODUCT.md`, `DESIGN.md`, `docs/END_GOAL.md`, and `docs/PROJECT_STATE.md` before changing architecture or UI.
 
+## v0.2 R&D branch authority
+
+On `codex/v0.2-ownership-compiler`, also read `prd.md` and every file under `docs/v0.2/`. Those documents define a proposed product pivot: autonomous agent execution remains maximal, while PureFlow compiles runs into semantic, evidence-backed handoffs and optional takeover checks. They supersede the v0.1 manual/no-AI product thesis for new v0.2 work, but they do not claim that the new runtime or Ownership Compiler is already implemented.
+
+Preserve the native IDE, upstream-compatibility, privacy, SecretStorage, Workspace Trust, and honest-evidence boundaries below. Treat existing Focus and Monad code as released v0.1 behavior until a separately reviewed implementation milestone replaces or extracts it.
+
 ## Product in one sentence
 
 PureFlow is a developer-first VSCodium distribution: normal project work stays in the native IDE, while a compact sidebar provides explicit AI mentoring, documentation, optional Focus Reps, and live read-only Monad tools.

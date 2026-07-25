@@ -199,3 +199,14 @@ Append an entry after each material milestone with:
 
 - Added `openDocsSideBySide` configuration using `vscode.ViewColumn.Beside`.
 - Created safety gate requiring developers to manually record recall context before loading external documentation during an active Focus Rep.
+
+## 2026-07-25 — v0.2 ownership-preserving autonomy proposal
+
+- Created branch `codex/v0.2-ownership-compiler` from current remote `main`.
+- Preserved the released v0.1 implementation and documented why its manual/no-AI core no longer matches the clarified product thesis.
+- Added the canonical `prd.md`, v0.2 goal, runtime ADR, R&D plan, and prioritized brainstorm.
+- Chose the proposed strategy “reuse the agent runtime, own the cognitive control plane,” pending a time-boxed adapter spike.
+- Defined delayed prediction, boundary localization, cold-agent handoff, evidence coverage, delivery overhead, pivot criteria, and stop criteria.
+- Kept all numerical thresholds explicitly labeled as unvalidated design targets.
+
+Evidence: documentation-only branch milestone; no v0.2 runtime or UI claimed as implemented.

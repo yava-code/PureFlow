@@ -1,6 +1,18 @@
 # Project State
 
-Last updated: 2026-07-20
+Last updated: 2026-07-25
+
+## v0.2 R&D branch
+
+`codex/v0.2-ownership-compiler` is a planning branch for a product pivot. It preserves the shipped v0.1 code and adds:
+
+- a canonical v0.2 PRD;
+- a goal and final vision;
+- a build-versus-reuse runtime ADR;
+- a falsifiable R&D and measurement plan;
+- a prioritized brainstorm and anti-idea graveyard.
+
+No v0.2 agent runtime, semantic indexer, Ownership Compiler, or takeover UI is implemented yet. Targets in these documents are proposed thresholds, not measured results. v0.1 release and Monad evidence below remain historical implementation state.
 
 ## Current milestone
 
