@@ -13,8 +13,9 @@ export class Coach {
   }
 
   async configure(): Promise<boolean> {
-    const currentEndpoint = vscode.workspace.getConfiguration("pureflow").get<string>("coachEndpoint") ?? "";
-    const currentModel = vscode.workspace.getConfiguration("pureflow").get<string>("coachModel") ?? "";
+    const config = vscode.workspace.getConfiguration("pureflow");
+    const currentEndpoint = config.get<string>("coachEndpoint") ?? "";
+    const currentModel = config.get<string>("coachModel") ?? "";
     const preset = await vscode.window.showQuickPick(
       [
         {
@@ -66,7 +67,6 @@ export class Coach {
     });
     if (!apiKey) return false;
 
-    const config = vscode.workspace.getConfiguration("pureflow");
     await config.update("coachEndpoint", endpoint.trim(), vscode.ConfigurationTarget.Global);
     await config.update("coachModel", model.trim(), vscode.ConfigurationTarget.Global);
     await this.context.secrets.store(keyName, apiKey);
