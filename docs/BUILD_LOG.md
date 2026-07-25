@@ -194,3 +194,16 @@ Append an entry after each material milestone with:
 - tests or runtime evidence;
 - commit or public URL;
 - honest blocker or remaining risk.
+
+### Milestone: Documentation Layout and Focus Safety
+
+- Added `openDocsSideBySide` configuration using `vscode.ViewColumn.Beside`.
+- Created safety gate requiring developers to manually record recall context before loading external documentation during an active Focus Rep.
+
+### Milestone: Vibe Code with Comprehension Gate
+
+- Added the `"vibecode"` mode to the AI Mentor (`coach.ts` and `types.ts`).
+- Modified `MentorDock.tsx` to include the "Vibe Code" action, allowing users to type a prompt to generate code.
+- Displayed the AI's generated `codeSnippet` alongside an `understandingQuestion`.
+- Added an input text box requiring the developer to answer the comprehension question before the "Apply to Editor" button is enabled.
+- Updated `view.ts` with the `applyCode` message handler to replace the selected code with the generated code snippet via `vscode.window.activeTextEditor.edit`.

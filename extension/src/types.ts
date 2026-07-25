@@ -72,7 +72,7 @@ export interface KnowledgeResult {
 }
 
 export type SidebarRoute = "workspace" | "mentor" | "focus" | "monad";
-export type MentorMode = "explain" | "why" | "quiz" | "review";
+export type MentorMode = "explain" | "why" | "quiz" | "review" | "vibecode";
 
 export interface WorkspaceSnapshot {
   hasWorkspace: boolean;
@@ -111,6 +111,8 @@ export interface MentorResponse {
   summary: string;
   sections: MentorSection[];
   source: "configured coach" | "local guide";
+  codeSnippet?: string;
+  understandingQuestion?: string;
 }
 
 export interface MonadHealth {

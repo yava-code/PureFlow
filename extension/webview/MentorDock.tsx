@@ -21,6 +21,7 @@ const actions: Array<{ mode: MentorMode; label: string; detail: string }> = [
   { mode: "why", label: "Explain why", detail: "Rebuild the design story" },
   { mode: "quiz", label: "Quiz me", detail: "Probe what you still know" },
   { mode: "review", label: "Review reasoning", detail: "Compare your model to the code" },
+  { mode: "vibecode", label: "Vibe Code", detail: "Generate code but pass a comprehension gate" },
 ];
 
 export function MentorDock({
@@ -37,6 +38,7 @@ export function MentorDock({
   send,
 }: Props) {
   const [reasoning, setReasoning] = useState("");
+  const [vibecodeAnswer, setVibecodeAnswer] = useState("");
   const [docsQuery, setDocsQuery] = useState(query);
   const [active, setActive] = useState<MentorMode | undefined>(initialMode);
 
@@ -88,18 +90,18 @@ export function MentorDock({
               key={action.mode}
               className={active === action.mode ? "is-active" : ""}
               disabled={!canUseContext || (action.mode !== "quiz" && !hasSelection)}
-              onClick={() => action.mode === "review" ? setActive("review") : run(action.mode)}
+              onClick={() => (action.mode === "review" || action.mode === "vibecode") ? setActive(action.mode) : run(action.mode)}
             >
               {action.mode === "quiz" ? <SparkIcon /> : <MentorIcon />}
               <span><strong>{action.label}</strong><small>{action.detail}</small></span>
             </button>
           ))}
         </div>
-        {active === "review" && (
+        {(active === "review" || active === "vibecode") && (
           <div className="reasoning-box">
-            <label htmlFor="reasoning">What do you think this code is doing, and why?</label>
-            <textarea id="reasoning" value={reasoning} onChange={(event) => setReasoning(event.target.value)} placeholder="Write your model before asking for a review…" />
-            <button className="button primary" disabled={!reasoning.trim() || !hasSelection} onClick={() => run("review")}>Review my reasoning</button>
+            <label htmlFor="reasoning">{active === "vibecode" ? "What are you trying to accomplish?" : "What do you think this code is doing, and why?"}</label>
+            <textarea id="reasoning" value={reasoning} onChange={(event) => setReasoning(event.target.value)} placeholder={active === "vibecode" ? "Write your prompt for the code change..." : "Write your model before asking for a review…"} />
+            <button className="button primary" disabled={!reasoning.trim() || !hasSelection} onClick={() => run(active)}>{active === "vibecode" ? "Vibe Code" : "Review my reasoning"}</button>
           </div>
         )}
         <p className="quiet-note-inline">Ready for no-AI practice on this file? Start a Focus Rep from the Focus route.</p>
@@ -119,6 +121,30 @@ export function MentorDock({
                   <ul>{section.points.map((point) => <li key={point}>{point}</li>)}</ul>
                 </div>
               ))}
+              {result.mode === "vibecode" && result.codeSnippet && result.understandingQuestion && (
+                <div className="response-section vibecode-section">
+                  <h4>Proposed Implementation</h4>
+                  <pre><code>{result.codeSnippet}</code></pre>
+
+                  <h4>Comprehension Gate</h4>
+                  <p className="understanding-question">{result.understandingQuestion}</p>
+
+                  <div className="reasoning-box">
+                    <textarea
+                      placeholder="Answer the question above to unlock the code..."
+                      value={vibecodeAnswer}
+                      onChange={(e) => setVibecodeAnswer(e.target.value)}
+                    />
+                    <button
+                      className="button primary"
+                      disabled={vibecodeAnswer.trim().length < 5}
+                      onClick={() => send({ type: "applyCode", code: result.codeSnippet })}
+                    >
+                      Apply to Editor
+                    </button>
+                  </div>
+                </div>
+              )}
             </>
           )}
         </section>

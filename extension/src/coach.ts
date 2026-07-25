@@ -172,17 +172,18 @@ function mentorPrompt(mode: MentorRequest["mode"]): string {
     why: "Infer plausible design reasons and tradeoffs. Clearly distinguish evidence from inference.",
     quiz: "Write 3-5 concise questions that test understanding. Do not include answers.",
     review: "Review the developer's reasoning against the code. Identify sound claims, gaps, and one next check.",
+    vibecode: "Generate concise pseudo-code or partial implementation that fulfills the developer's request (using the provided reasoning as the prompt). Provide a challenging question that tests if the user understands the generated code snippet.",
   }[mode];
   return [
     "You are a concise senior engineer mentoring inside an IDE.",
     intent,
-    "Do not generate a patch, replacement code, or markdown.",
-    "Return JSON: {title, summary, sections:[{title, points:string[]}]}. Use at most 3 sections and 4 points per section.",
+    mode !== "vibecode" ? "Do not generate a patch, replacement code, or markdown." : "",
+    mode === "vibecode" ? "Return JSON: {title, summary, codeSnippet, understandingQuestion, sections:[{title, points:string[]}]}." : "Return JSON: {title, summary, sections:[{title, points:string[]}]}. Use at most 3 sections and 4 points per section.",
   ].join(" ");
 }
 
 function parseMentorResponse(content: string, mode: MentorRequest["mode"]): MentorResponse {
-  const parsed = JSON.parse(content) as { title?: unknown; summary?: unknown; sections?: unknown };
+  const parsed = JSON.parse(content) as { title?: unknown; summary?: unknown; sections?: unknown; codeSnippet?: unknown; understandingQuestion?: unknown };
   const sections = Array.isArray(parsed.sections)
     ? parsed.sections.flatMap((value): MentorSection[] => {
         if (!value || typeof value !== "object") return [];
@@ -258,6 +259,11 @@ function localMentor(request: MentorRequest): MentorResponse {
         : "Add your reasoning to compare it with the visible code. The local guide does not invent author intent.",
       section: "Checks",
     },
+    vibecode: {
+      title: "Vibe Code (Local Stub)",
+      summary: "Connect an API key to generate code. This is a local placeholder.",
+      section: "Placeholder",
+    },
   }[request.mode];
   return {
     mode: request.mode,
@@ -273,6 +279,8 @@ function localMentor(request: MentorRequest): MentorResponse {
           : ["Trace one normal input and one failure input through the selection, then confirm both with a test or debugger."],
       },
     ],
+    codeSnippet: request.mode === "vibecode" ? "// Mock generated code snippet\nfunction mockVibeCode() {\n  return 'Configure coach to see real code!';\n}" : undefined,
+    understandingQuestion: request.mode === "vibecode" ? "What must you do to configure the coach?" : undefined,
   };
 }
 
