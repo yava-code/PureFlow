@@ -8,10 +8,22 @@
   "engines": {
     "vscode": "^1.96.0"
   },
-  "categories": ["Other", "Themes"],
-  "keywords": ["ide", "workspace", "mentoring", "documentation", "practice", "monad"],
+  "categories": [
+    "Other",
+    "Themes"
+  ],
+  "keywords": [
+    "ide",
+    "workspace",
+    "mentoring",
+    "documentation",
+    "practice",
+    "monad"
+  ],
   "main": "./dist/extension.js",
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "icon": "media/extension-icon.png",
   "repository": {
     "type": "git",
@@ -225,7 +237,9 @@
         },
         "pureflow.aiExtensionIds": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "default": [
             "github.copilot",
             "github.copilot-chat",
@@ -262,6 +276,7 @@
     "package": "npm run build && vsce package --no-dependencies"
   },
   "dependencies": {
+    "@cline/sdk": "^0.0.65",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
