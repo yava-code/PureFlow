@@ -290,4 +290,3 @@ jobs:
             exit 1
           fi
           echo "Started $session_name for $NEXT_STEP${session_url:+ — $session_url}" >> "$GITHUB_STEP_SUMMARY"
-
