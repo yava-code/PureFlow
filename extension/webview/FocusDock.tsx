@@ -1,17 +1,16 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import type { ClientState, Ownership } from "../src/types";
 import { FocusIcon, TestIcon } from "./SidebarIcons";
 
 interface Props {
   state: ClientState;
-  remaining: string;
   send(message: unknown): void;
 }
 
-export function FocusDock({ state, remaining, send }: Props) {
+export function FocusDock({ state, send }: Props) {
   const { rep } = state;
   if (rep.phase === "idle") return <StartFocus aiExtensions={state.aiExtensions} send={send} />;
-  if (rep.phase === "active") return <ActiveFocus state={state} remaining={remaining} send={send} />;
+  if (rep.phase === "active") return <ActiveFocus state={state} send={send} />;
   return <ReviewFocus state={state} send={send} />;
 }
 
@@ -89,11 +88,28 @@ function StartFocus({ aiExtensions, send }: { aiExtensions: string[]; send(messa
   );
 }
 
-function ActiveFocus({ state, remaining, send }: Props) {
+function ActiveFocus({ state, send }: Props) {
   const [hypothesis, setHypothesis] = useState("");
   const [finishing, setFinishing] = useState(false);
   const [outcome, setOutcome] = useState("");
   const [ownership, setOwnership] = useState<Ownership>(2);
+  const [now, setNow] = useState(Date.now());
+
+  // ⚡ Bolt: Moved 1-second interval timer and `remaining` state down from App.tsx into ActiveFocus.
+  // Expected impact: Eliminates forced 1-second application-wide re-renders in App.tsx when Focus Rep is active.
+
+  useEffect(() => {
+    if (state?.rep.phase !== "active") return;
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, [state?.rep.phase]);
+
+  const remaining = useMemo(() => {
+    if (!state?.rep.startedAt) return "00:00";
+    const end = state.rep.startedAt + state.rep.durationMinutes * 60_000;
+    const seconds = Math.max(0, Math.ceil((end - now) / 1000));
+    return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+  }, [state?.rep.startedAt, state?.rep.durationMinutes, now]);
   const add = (event: FormEvent) => {
     event.preventDefault();
     send({ type: "addHypothesis", text: hypothesis });

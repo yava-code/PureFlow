@@ -47,7 +47,6 @@ export function App() {
   const [projectReport, setProjectReport] = useState<MonadProjectReport>();
   const [attestation, setAttestation] = useState<Attestation>();
   const [notice, setNotice] = useState<{ tone: "error" | "ok"; message: string }>();
-  const [now, setNow] = useState(Date.now());
   const send = (message: unknown) => vscode.postMessage(message);
 
   useEffect(() => {
@@ -117,12 +116,6 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    if (state?.rep.phase !== "active") return;
-    const timer = window.setInterval(() => setNow(Date.now()), 1000);
-    return () => window.clearInterval(timer);
-  }, [state?.rep.phase]);
-
-  useEffect(() => {
     if (!notice) return;
     const timeout = window.setTimeout(() => setNotice(undefined), 4500);
     return () => window.clearTimeout(timeout);
@@ -140,13 +133,6 @@ export function App() {
     setMentorResult(undefined);
     send({ type: "mentor", mode, reasoning });
   };
-  const remaining = useMemo(() => {
-    if (!state?.rep.startedAt) return "00:00";
-    const end = state.rep.startedAt + state.rep.durationMinutes * 60_000;
-    const seconds = Math.max(0, Math.ceil((end - now) / 1000));
-    return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
-  }, [state?.rep.startedAt, state?.rep.durationMinutes, now]);
-
   if (!state) return <LoadingScreen />;
 
   return (
@@ -188,7 +174,7 @@ export function App() {
             send={send}
           />
         )}
-        {route === "focus" && <FocusDock state={state} remaining={remaining} send={send} />}
+        {route === "focus" && <FocusDock state={state} send={send} />}
         {route === "monad" && <MonadDock state={state} loading={monadLoading} inspection={inspection} report={projectReport} attestation={attestation} send={send} />}
       </main>
 
