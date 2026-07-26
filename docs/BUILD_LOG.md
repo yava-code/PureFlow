@@ -13,6 +13,7 @@ This is a concise chronological record of material implementation work and runti
 - Added ten tests with the official RFC 8785 serialization and UTF-16 ordering vectors, number edges, SHA-256 and PureFlow golden hashes, domain separation, portable-path rejection, exact-schema enforcement, state-scoped commands, canonical set ordering, timestamp validation, and runtime mismatch rejection.
 - Pinned GitHub verification to Node `22.17.0` on Linux and Windows. Local `npm run check` and all 23 extension tests passed. The committed fixture/factory and standalone runtime artifact remain R0b work; no arbitrary code execution or complete R0 claim was made.
 - Preserved superseded v0.2 and obsolete Jules histories as archive tags, then deleted their remote branches. `main` and `codex/shadow-cockpit-rnd` are the only intended persistent branches after infrastructure PR #8 is explicitly merged and removed.
+- Activated a second exact-branch GitHub ruleset for `codex/shadow-cockpit-rnd`: PR-only integration, no deletion or force-push, up-to-date base, conversation resolution, and five GitHub Actions checks including Windows and the Jules R&D policy. This ledger update is the first short-lived-head canary of that flow.
 
 Evidence: `docs/v0.3/ADR-004-EPISTEMIC-CHECKPOINTS.md`, `docs/v0.3/CONTRACTS.md`, `extension/test/canonical.test.ts`, extension check/test output, and remote archive tags.
 
