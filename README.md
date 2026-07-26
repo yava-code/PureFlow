@@ -1,5 +1,7 @@
 # PureFlow
 
+> **v0.3 R&D branch:** PureFlow is being re-architected as a dual-control AI IDE: production agents keep building while an Experience Compiler turns the same work into executable human takeover episodes. Start with [`prd.md`](prd.md) and [`docs/v0.3/`](docs/v0.3/). This mechanism is a research hypothesis; it is not implemented or validated yet.
+
 PureFlow is a developer-first VSCodium distribution for people who ship with AI but do not want to lose architecture sense, debugging fluency, and ownership of their own code. Open a real repository, keep the native editor, Explorer, terminal, tests, debugger, and source control in the center, then call a compact sidebar when you want documentation, an explicit mentor action, an optional no-AI Focus Rep, or live Monad Testnet context.
 
 ![PureFlow IDE workspace concept](docs/design/ide-workspace-concept.png)
@@ -133,7 +135,7 @@ PureFlow does not upload background files, absolute paths, terminal history, cli
 
 The extension remains visible in Restricted Mode with limited support. Its local guide and read-only tools remain available, configured coach calls stay disabled, workspace-defined network settings are ignored, and VSCodium continues to govern trust-sensitive native actions.
 
-The `RepRegistry` contract and its tests exist, but the Testnet registry is not deployed yet. The encrypted agent wallet has 1 Testnet MON from a confirmed faucet transaction, so funding is no longer the immediate blocker. Monskills requires every contract deployment to be proposed through a Safe: creating the 2-of-3 Safe still needs two owner addresses from the project owner, and the canonical Para wallet flow requires the owner to authenticate separately. Until Safe execution, bytecode verification, and a follow-up contract read succeed, PureFlow does not claim an attestation is published or verified.
+`RepRegistry` is deployed and bytecode-verified on Monad Testnet at `0xB51B276e6Ee9Cad8181C368bbF6d6efB82c154c8` through the project's 2-of-3 Safe. The IDE still labels each proof by its real state: preparing a local payload is not publication, and a write is not `verified` until its receipt and follow-up registry read succeed. Wallet keys remain outside the IDE.
 
 PureFlow is not anti-cheat, employee surveillance, a skill score, or proof that a session improved someone. The optional record proves only that a wallet published a particular privacy-safe commitment.
 

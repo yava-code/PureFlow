@@ -1,0 +1,292 @@
+name: Jules R&D loop
+
+on:
+  push:
+    branches: [codex/shadow-cockpit-rnd]
+  schedule:
+    - cron: '13,43 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  statuses: read
+
+concurrency:
+  group: jules-rnd-loop
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    if: vars.JULES_RND_LOOP_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      RND_BRANCH: codex/shadow-cockpit-rnd
+    steps:
+      - name: Verify configuration
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: |
+          test -n "$JULES_API_KEY"
+          test "$GITHUB_REPOSITORY" = "yava-code/PureFlow"
+
+      - name: Check for work already in flight
+        id: preflight
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: |
+          set -euo pipefail
+
+          open_prs=$(gh api --paginate \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -X GET \
+            "repos/$GITHUB_REPOSITORY/pulls" \
+            -f state=open \
+            -f base="$RND_BRANCH" \
+            -f per_page=100 \
+            --jq '.[].number' | wc -l)
+
+          closed_pages=$(gh api --paginate --slurp \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -X GET \
+            "repos/$GITHUB_REPOSITORY/pulls" \
+            -f state=closed \
+            -f base="$RND_BRANCH" \
+            -f per_page=100)
+
+          steps=(R0 R1 R2 R3 R4)
+          queue_pos=0
+          while IFS=$'\t' read -r number title head_repo head_ref head_sha; do
+            case "$title" in
+              "[PureFlow v0.3 R0]"*) marker_step=R0 ;;
+              "[PureFlow v0.3 R1]"*) marker_step=R1 ;;
+              "[PureFlow v0.3 R2]"*) marker_step=R2 ;;
+              "[PureFlow v0.3 R3]"*) marker_step=R3 ;;
+              "[PureFlow v0.3 R4]"*) marker_step=R4 ;;
+              "[PureFlow v0.3 "*) echo "Unexpected queue marker on merged PR #$number: $title" >&2; exit 1 ;;
+              *) continue ;;
+            esac
+
+            if [[ "$head_repo" != "$GITHUB_REPOSITORY" || "$head_ref" != jules-* ]]; then
+              echo "Queue marker lacks same-repository Jules provenance on PR #$number" >&2
+              exit 1
+            fi
+            if (( queue_pos >= ${#steps[@]} )) || [[ "$marker_step" != "${steps[$queue_pos]}" ]]; then
+              echo "Duplicate or out-of-order queue marker on PR #$number: $marker_step" >&2
+              exit 1
+            fi
+
+            policy_status=$(gh api \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              -X GET \
+              "repos/$GITHUB_REPOSITORY/commits/$head_sha/status" \
+              -f per_page=100 \
+              --jq '[.statuses[]? | select(.context == "pureflow/jules-rnd-policy" and .state == "success")] | length')
+            if (( policy_status == 0 )); then
+              echo "Queue marker has no successful PureFlow controller policy on PR #$number" >&2
+              exit 1
+            fi
+            queue_pos=$(( queue_pos + 1 ))
+          done < <(jq -r '
+            [.[][] | select(.merged_at != null)]
+            | sort_by(.merged_at)[]
+            | [.number, .title, (.head.repo.full_name // ""), .head.ref, .head.sha]
+            | @tsv
+          ' <<<"$closed_pages")
+
+          next_step=
+          if (( queue_pos < ${#steps[@]} )); then
+            next_step=${steps[$queue_pos]}
+          fi
+
+          if [[ -z "$next_step" ]]; then
+            echo "dispatch=false" >> "$GITHUB_OUTPUT"
+            echo "Queue complete: R0-R4 have merged evidence PRs" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          if (( open_prs > 0 )); then
+            echo "dispatch=false" >> "$GITHUB_OUTPUT"
+            echo "Waiting: open_prs=$open_prs next_step=$next_step" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          matching_sources=()
+          page_token=
+          page_count=0
+          while :; do
+            url="https://jules.googleapis.com/v1alpha/sources?pageSize=100"
+            if [[ -n "$page_token" ]]; then
+              encoded_token=$(jq -rn --arg token "$page_token" '$token | @uri')
+              url="$url&pageToken=$encoded_token"
+            fi
+            sources=$(curl --fail --silent --show-error \
+              --retry 3 \
+              -H "X-Goog-Api-Key: $JULES_API_KEY" \
+              "$url")
+            while IFS= read -r source; do
+              [[ -n "$source" ]] && matching_sources+=("$source")
+            done < <(jq -r \
+              --arg branch "$RND_BRANCH" \
+              '.sources[]? | select(
+                .githubRepo.owner == "yava-code" and
+                .githubRepo.repo == "PureFlow" and
+                any(.githubRepo.branches[]?; .displayName == $branch)
+              ) | .name' \
+              <<<"$sources")
+            page_token=$(jq -r '.nextPageToken // empty' <<<"$sources")
+            page_count=$(( page_count + 1 ))
+            if (( page_count > 100 )); then
+              echo "Jules source pagination exceeded 100 pages" >&2
+              exit 1
+            fi
+            [[ -z "$page_token" ]] && break
+          done
+
+          if (( ${#matching_sources[@]} != 1 )); then
+            echo "Expected exactly one Jules source exposing yava-code/PureFlow:$RND_BRANCH" >&2
+            exit 1
+          fi
+          source_name=${matching_sources[0]}
+
+          active_sessions=0
+          terminal_attempts=0
+          session_title="PureFlow v0.3 $next_step gated slice"
+          page_token=
+          page_count=0
+          while :; do
+            url="https://jules.googleapis.com/v1alpha/sessions?pageSize=100"
+            if [[ -n "$page_token" ]]; then
+              encoded_token=$(jq -rn --arg token "$page_token" '$token | @uri')
+              url="$url&pageToken=$encoded_token"
+            fi
+            sessions=$(curl --fail --silent --show-error \
+              --retry 3 \
+              -H "X-Goog-Api-Key: $JULES_API_KEY" \
+              "$url")
+            active_on_page=$(jq \
+              --arg source "$source_name" \
+              --arg branch "$RND_BRANCH" \
+              '[.sessions[]? | select(
+                .sourceContext.source == $source and
+                .sourceContext.githubRepoContext.startingBranch == $branch and
+                (.state != "COMPLETED" and .state != "FAILED")
+              )] | length' <<<"$sessions")
+            active_sessions=$(( active_sessions + active_on_page ))
+            terminal_on_page=$(jq \
+              --arg source "$source_name" \
+              --arg branch "$RND_BRANCH" \
+              --arg title "$session_title" \
+              '[.sessions[]? | select(
+                .sourceContext.source == $source and
+                .sourceContext.githubRepoContext.startingBranch == $branch and
+                .title == $title and
+                (.state == "COMPLETED" or .state == "FAILED")
+              )] | length' <<<"$sessions")
+            terminal_attempts=$(( terminal_attempts + terminal_on_page ))
+            page_token=$(jq -r '.nextPageToken // empty' <<<"$sessions")
+            page_count=$(( page_count + 1 ))
+            if (( page_count > 100 )); then
+              echo "Jules session pagination exceeded 100 pages" >&2
+              exit 1
+            fi
+            [[ -z "$page_token" ]] && break
+          done
+
+          if (( active_sessions > 0 )); then
+            echo "dispatch=false" >> "$GITHUB_OUTPUT"
+            echo "Waiting: active_sessions=$active_sessions next_step=$next_step" >> "$GITHUB_STEP_SUMMARY"
+          elif (( terminal_attempts > 0 )); then
+            echo "dispatch=false" >> "$GITHUB_OUTPUT"
+            echo "Stopped: $next_step has a terminal Jules session but no merged marker; inspect it before retrying" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "dispatch=true" >> "$GITHUB_OUTPUT"
+            echo "source=$source_name" >> "$GITHUB_OUTPUT"
+            echo "step=$next_step" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Start one Jules session
+        if: steps.preflight.outputs.dispatch == 'true'
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          JULES_SOURCE: ${{ steps.preflight.outputs.source }}
+          NEXT_STEP: ${{ steps.preflight.outputs.step }}
+          REQUIRE_PLAN_APPROVAL: ${{ vars.JULES_RND_REQUIRE_PLAN_APPROVAL }}
+        run: |
+          set -euo pipefail
+
+          prompt_template=$(cat <<'PROMPT'
+          Continue PureFlow v0.3 on codex/shadow-cockpit-rnd.
+
+          Read AGENTS.md, prd.md, every file in docs/v0.3/, docs/PROJECT_STATE.md,
+          docs/BUILD_LOG.md, and the current extension source/tests before editing.
+
+          Implement exactly workstream __NEXT_STEP__ from docs/v0.3/AGENT_EXECUTION.md.
+          Do not implement, partially begin, or mark complete any other workstream.
+
+          Hard boundaries:
+          - R0-R4 are trusted-fixture only. Never execute workspace, participant, agent-authored,
+            downloaded, or corpus code through TrustedFixtureRunner.
+          - Do not begin R5, R6, R7, R8, UI expansion, an external live-agent adapter, or ADR-003.
+          - Do not edit .github/**, AGENTS.md, prd.md, docs/v0.3/**, contracts/**,
+            distribution/**, web/**, secrets, or release artifacts.
+          - Allowed changes are extension/** plus evidence-only updates to
+            docs/PROJECT_STATE.md and docs/BUILD_LOG.md.
+          - Preserve v0.1 behavior. Do not fabricate runtime evidence or completed acceptance.
+
+          Run the relevant extension checks. Open a PR only when the slice is coherent,
+          its declared acceptance checks pass, and total changed lines stay under 2500.
+          The PR title must start exactly with [PureFlow v0.3 __NEXT_STEP__]. If this
+          workstream is blocked, make no code change and explain the blocker in the Jules
+          session instead of inventing work or starting the next workstream.
+          PROMPT
+          )
+          prompt=${prompt_template//__NEXT_STEP__/$NEXT_STEP}
+
+          require_plan_approval=true
+          if [[ "$REQUIRE_PLAN_APPROVAL" == "false" ]]; then
+            require_plan_approval=false
+          fi
+
+          payload=$(jq -n \
+            --arg prompt "$prompt" \
+            --arg title "PureFlow v0.3 $NEXT_STEP gated slice" \
+            --arg branch "$RND_BRANCH" \
+            --arg source "$JULES_SOURCE" \
+            --argjson require_plan_approval "$require_plan_approval" \
+            '{
+              title: $title,
+              prompt: $prompt,
+              sourceContext: {
+                source: $source,
+                githubRepoContext: { startingBranch: $branch }
+              },
+              requirePlanApproval: $require_plan_approval,
+              automationMode: "AUTO_CREATE_PR"
+            }')
+
+          response=$(curl --fail --silent --show-error \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-Goog-Api-Key: $JULES_API_KEY" \
+            -d "$payload" \
+            "https://jules.googleapis.com/v1alpha/sessions")
+
+          session_name=$(jq -er '.name | select(type == "string") | select(test("^sessions/[^/]+$"))' <<<"$response")
+          returned_title=$(jq -er '.title | select(type == "string")' <<<"$response")
+          returned_source=$(jq -er '.sourceContext.source | select(type == "string")' <<<"$response")
+          returned_branch=$(jq -er '.sourceContext.githubRepoContext.startingBranch | select(type == "string")' <<<"$response")
+          [[ "$returned_title" == "PureFlow v0.3 $NEXT_STEP gated slice" ]]
+          [[ "$returned_source" == "$JULES_SOURCE" ]]
+          [[ "$returned_branch" == "$RND_BRANCH" ]]
+          session_url=$(jq -r '.url // empty' <<<"$response")
+          if [[ -n "$session_url" && "$session_url" != https://* ]]; then
+            echo "Jules returned an invalid session URL" >&2
+            exit 1
+          fi
+          echo "Started $session_name for $NEXT_STEP${session_url:+ — $session_url}" >> "$GITHUB_STEP_SUMMARY"

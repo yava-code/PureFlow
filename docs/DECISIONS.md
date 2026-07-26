@@ -56,3 +56,17 @@ Durable choices live here so future agents can distinguish intentional architect
 *   **Context:** `IDEAS_BACKLOG.md` proposed two improvements: placing the Simple Browser side-by-side with the editor, and a "write what you remember" gate before opening docs during Focus mode.
 *   **Decision:** We updated `view.ts` to pass `vscode.ViewColumn.Beside` into `simpleBrowser.show`. We also added `vscode.window.showInputBox` to intercept `search` and `openSource` actions if `store.get().phase === "active"`.
 *   **Consequence:** Enhances "recall-first" learning mechanics during Focus without completely blocking access to documentation.
+
+## 2026-07-25 — Dual-Control Development replaces the tutor thesis for v0.3 R&D
+
+**Context:** The released IDE and proposed follow-up mechanisms centered explanations, questions, recall gates, and optional manual work. Claude Code Learning, codebase tutor skills, generated repository courses, and bug-injection games already cover those primitives. More importantly, they do not restore the closed engineering loop removed by autonomous agents: prediction, evidence selection, diagnosis, intervention, consequence, and recovery.
+
+**Decision:** For new work on `codex/shadow-cockpit-rnd`, PureFlow will test a dual-control architecture. Existing coding-agent runtimes form the build plane. A PureFlow-owned readiness plane captures observable run events, selects a high-value semantic seam, creates a disposable executable Takeover Twin, judges a human control episode with real tests/runtime evidence, and stores local scoped evidence for delayed transfer and future delegation.
+
+**Options rejected:** Another comprehension gate, a fixed manual-coding quota, a standalone debugging game, and building a generic Cursor clone before validating the human-control mechanism.
+
+**Trade-off:** This preserves the production critical path and creates a falsifiable behavioral outcome, but automatic scenario compilation is substantially harder than generating explanations and may fail for complex environments.
+
+**Consequences:** v0.1 remains released behavior, not the v0.3 product thesis. No skill-retention claim is allowed before delayed AI-off transfer is measured. Start with one agent adapter, one tested TypeScript seam, one recovery twin, and a deterministic judge. Details and stop gates live in `prd.md` and `docs/v0.3/`.
+
+**Action items:** Execute R0–R4 in `docs/v0.3/AGENT_EXECUTION.md`, run the technical corpus audit, then accept, revise, or reject ADR-001 before expanding UI, languages, or agent orchestration.

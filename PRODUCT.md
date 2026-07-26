@@ -1,5 +1,7 @@
 # Product
 
+> **Released v0.1 product record.** On `codex/shadow-cockpit-rnd`, [`prd.md`](prd.md) and [`docs/v0.3/`](docs/v0.3/) supersede this Mentor/Focus thesis for new product work. The behavior below remains the implemented runtime baseline only.
+
 ## Register
 
 product

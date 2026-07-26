@@ -2,6 +2,29 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-26 — v0.3 contract hardening and handoff audit
+
+- Ran four independent go/no-go passes over the R0–R4 handoff and closed every P0/P1 documentation blocker found.
+- Split the finite, repository-owned `TrustedFixtureRunner` from the future untrusted-code `SandboxRunner`; no arbitrary participant or corpus code can execute before ADR-003 proves the required isolation capabilities.
+- Added immutable sanitized snapshots, a trusted fixture catalog, manifest and command-registry identities, unique per-invocation `ExecutionId`, bounded/redacted evidence metadata, RFC 8785 domain-separated hashing, explicit extraction failure types, external oracle handling, and concurrency/cancellation semantics.
+- Removed the R0→R3 acceptance cycle and fixed the dependency graph to `R0 → R1/R2/R3 → R4`.
+- Added a finite R0→R4 Jules work queue with paginated active-session/open-PR preflight, one non-retried session create, same-repository policy provenance, strict path/file/byte/line policy, pinned Actions, and Linux/Windows verification. Plan approval is on by default; merge remains manual until an independent immutable verifier exists. Scheduled continuation remains inactive until its separate infrastructure PR reaches the default branch.
+- Final audit verdict: `GO` for the fixture-only R0–R4 mechanism. No runtime was implemented; real-repository feasibility and human takeover remain unproven and gated.
+
+Evidence: `docs/v0.3/CONTRACTS.md`, `ADR-002-EXECUTION-PHASES.md`, `AGENT_EXECUTION.md`, and `docs/PROJECT_STATE.md`.
+
+## 2026-07-25 — v0.3 Dual-Control R&D reset
+
+- Rejected explanations, post-run questions, comprehension gates, and manual `TODO` handoffs as the product core; reviewed products already implement those primitives and they do not restore full causal control.
+- Reviewed human-automation, skill-retention, active-learning, coding-specific, code-review, and operational-drill evidence. Recorded primary sources and limitations in `docs/v0.3/RESEARCH.md`.
+- Compared six distinct product mechanisms and selected a dual-output Experience Compiler: autonomous agents produce the software patch while a parallel readiness plane produces an executable human control episode.
+- Defined the Takeover Twin, Evidence Judge, local readiness ledger, attention scheduler, line-level evidence graph, and feedback into future delegation.
+- Added a falsifiable experiment program centered on delayed AI-off adjacent-task success, not confidence or quiz scores.
+- Added an agent-executable vertical-slice plan with exact modules, contracts, acceptance checks, safety boundaries, dependencies, and stop gates.
+- Created the work on a clean `codex/shadow-cockpit-rnd` branch from `origin/main`. No v0.3 runtime was implemented and no target metric was represented as observed evidence.
+
+Evidence: `prd.md`, `docs/v0.3/THESIS.md`, `RESEARCH.md`, `CONCEPTS.md`, `ADR-001-DUAL-CONTROL.md`, `CONTRACTS.md`, `EXPERIMENTS.md`, and `AGENT_EXECUTION.md`.
+
 ## 2026-07-20 — RepRegistry live on Monad Testnet
 
 - Safe `0x0Eb17425255d826e1FbAF5c473A238bB3EAd8a92` (2-of-3: user owners + agent).

@@ -1,0 +1,4 @@
+prd.md text eol=lf
+docs/v0.3/*.md text eol=lf
+.github/workflows/*.yml text eol=lf
+extension/test/fixtures/v0.3/** text eol=lf

@@ -1,5 +1,7 @@
 # PureFlow Design System
 
+> **Released v0.1 design record.** On `codex/shadow-cockpit-rnd`, the v0.3 cockpit is intentionally unspecified until the Experience Compiler vertical slice passes its technical gate. Preserve these native-IDE constraints, but do not treat the four legacy routes as the future product architecture.
+
 ## Intent
 
 PureFlow is a familiar VSCodium workstation refined for long engineering sessions. Near-black structure carries the editor; mineral teal marks the current tool or trusted live state; amber is reserved for uncertainty and warnings. The experience should read as one IDE, not a website embedded inside one.

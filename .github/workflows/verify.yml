@@ -11,12 +11,13 @@ permissions:
 jobs:
   extension:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: extension
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
@@ -26,14 +27,33 @@ jobs:
       - run: npm test
       - run: npm run package
 
+  extension_windows:
+    name: extension-windows
+    runs-on: windows-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: extension
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+
   contract:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: contracts
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
@@ -44,12 +64,13 @@ jobs:
 
   web:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: web
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
@@ -57,3 +78,182 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+
+  jules-rnd-policy:
+    if: always() && github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'codex/shadow-cockpit-rnd'
+    needs: [extension, extension_windows, contract, web]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+      statuses: write
+    steps:
+      - name: Require the normal verification jobs
+        env:
+          EXTENSION_RESULT: ${{ needs.extension.result }}
+          EXTENSION_WINDOWS_RESULT: ${{ needs.extension_windows.result }}
+          CONTRACT_RESULT: ${{ needs.contract.result }}
+          WEB_RESULT: ${{ needs.web.result }}
+        run: |
+          test "$EXTENSION_RESULT" = "success"
+          test "$EXTENSION_WINDOWS_RESULT" = "success"
+          test "$CONTRACT_RESULT" = "success"
+          test "$WEB_RESULT" = "success"
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Bound Jules changes
+        if: startsWith(github.event.pull_request.head.ref, 'jules-') && github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          RND_BRANCH: codex/shadow-cockpit-rnd
+        run: |
+          set -euo pipefail
+
+          git diff --check "$BASE_SHA" "$HEAD_SHA"
+
+          closed_pages=$(gh api --paginate --slurp \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -X GET \
+            "repos/$GITHUB_REPOSITORY/pulls" \
+            -f state=closed \
+            -f base="$RND_BRANCH" \
+            -f per_page=100)
+
+          steps=(R0 R1 R2 R3 R4)
+          queue_pos=0
+          while IFS=$'\t' read -r number title head_repo head_ref head_sha; do
+            case "$title" in
+              "[PureFlow v0.3 R0]"*) marker_step=R0 ;;
+              "[PureFlow v0.3 R1]"*) marker_step=R1 ;;
+              "[PureFlow v0.3 R2]"*) marker_step=R2 ;;
+              "[PureFlow v0.3 R3]"*) marker_step=R3 ;;
+              "[PureFlow v0.3 R4]"*) marker_step=R4 ;;
+              "[PureFlow v0.3 "*) echo "Unexpected queue marker on merged PR #$number: $title" >&2; exit 1 ;;
+              *) continue ;;
+            esac
+
+            if [[ "$head_repo" != "$GITHUB_REPOSITORY" || "$head_ref" != jules-* ]]; then
+              echo "Queue marker lacks same-repository Jules provenance on PR #$number" >&2
+              exit 1
+            fi
+            if (( queue_pos >= ${#steps[@]} )) || [[ "$marker_step" != "${steps[$queue_pos]}" ]]; then
+              echo "Duplicate or out-of-order queue marker on PR #$number: $marker_step" >&2
+              exit 1
+            fi
+
+            policy_status=$(gh api \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              -X GET \
+              "repos/$GITHUB_REPOSITORY/commits/$head_sha/status" \
+              -f per_page=100 \
+              --jq '[.statuses[]? | select(.context == "pureflow/jules-rnd-policy" and .state == "success")] | length')
+            if (( policy_status == 0 )); then
+              echo "Queue marker has no successful PureFlow controller policy on PR #$number" >&2
+              exit 1
+            fi
+            queue_pos=$(( queue_pos + 1 ))
+          done < <(jq -r '
+            [.[][] | select(.merged_at != null)]
+            | sort_by(.merged_at)[]
+            | [.number, .title, (.head.repo.full_name // ""), .head.ref, .head.sha]
+            | @tsv
+          ' <<<"$closed_pages")
+
+          if (( queue_pos >= ${#steps[@]} )); then
+            echo "The finite Jules R0-R4 queue is already complete" >&2
+            exit 1
+          fi
+          expected_step=${steps[$queue_pos]}
+          expected_marker="[PureFlow v0.3 $expected_step]"
+          if [[ "$PR_TITLE" != "$expected_marker"* ]]; then
+            echo "Expected Jules PR title to start with $expected_marker" >&2
+            exit 1
+          fi
+
+          mapfile -d '' -t files < <(git diff --name-only --no-renames -z "$BASE_SHA" "$HEAD_SHA")
+          if (( ${#files[@]} == 0 )); then
+            echo "Jules PR has no changed files" >&2
+            exit 1
+          fi
+
+          if (( ${#files[@]} > 80 )); then
+            echo "Jules PR exceeds the 80-file autonomy budget: ${#files[@]}" >&2
+            exit 1
+          fi
+
+          has_extension=false
+          total_bytes=0
+          for file in "${files[@]}"; do
+            case "$file" in
+              extension/*) has_extension=true ;;
+              docs/PROJECT_STATE.md|docs/BUILD_LOG.md) ;;
+              *) echo "Jules path is outside the R&D implementation boundary: $file" >&2; exit 1 ;;
+            esac
+
+            case "$file" in
+              extension/package.json|extension/package-lock.json|extension/esbuild.mjs|extension/tsconfig*.json|extension/test/domain.test.ts|extension/test/monad.test.ts|extension/test/privacy.test.ts)
+                echo "Jules cannot change an R&D control or released regression file: $file" >&2
+                exit 1
+                ;;
+            esac
+
+            mode=$(git ls-tree "$HEAD_SHA" -- "$file" | awk '{ print $1 }')
+            if [[ "$mode" == "120000" || "$mode" == "160000" ]]; then
+              echo "Symlinks and gitlinks are not eligible for autonomous merge: $file" >&2
+              exit 1
+            fi
+
+            object="$HEAD_SHA:$file"
+            if git cat-file -e "$object" 2>/dev/null; then
+              size=$(git cat-file -s "$object")
+              total_bytes=$(( total_bytes + size ))
+            fi
+          done
+
+          if [[ "$has_extension" != "true" ]]; then
+            echo "Jules PR must contain an extension change" >&2
+            exit 1
+          fi
+
+          if (( total_bytes > 2000000 )); then
+            echo "Jules PR exceeds the 2 MB resulting-file budget: $total_bytes bytes" >&2
+            exit 1
+          fi
+
+          changed_lines=0
+          while IFS=$'\t' read -r -d '' added deleted file; do
+            if [[ "$added" == "-" || "$deleted" == "-" ]]; then
+              echo "Binary changes are not eligible for autonomous merge: $file" >&2
+              exit 1
+            fi
+            changed_lines=$(( changed_lines + added + deleted ))
+          done < <(git diff --numstat --no-renames -z "$BASE_SHA" "$HEAD_SHA")
+
+          if (( changed_lines > 2500 )); then
+            echo "Jules change exceeds the 2500-line autonomy budget: $changed_lines" >&2
+            exit 1
+          fi
+
+      - name: Record controller policy provenance
+        if: startsWith(github.event.pull_request.head.ref, 'jules-') && github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          gh api \
+            --method POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "repos/$GITHUB_REPOSITORY/statuses/$HEAD_SHA" \
+            -f state=success \
+            -f context=pureflow/jules-rnd-policy \
+            -f description='PureFlow R&D controller policy passed'
