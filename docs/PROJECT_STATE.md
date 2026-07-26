@@ -15,6 +15,8 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A four-pass independent handoff audit reached `GO` for fixture-only R0–R4 after the runner, snapshot, command identity, canonical hashing, oracle, and dependency boundaries were closed. This is a documentation/contract verdict, not runtime evidence.
 - A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
+- The R&D branch is published at `origin/codex/shadow-cockpit-rnd`. Its first Jules workflow run was correctly skipped because `JULES_RND_LOOP_ENABLED` is not enabled; no Jules session was created.
+- Draft PR [#8](https://github.com/yava-code/PureFlow/pull/8) contains only the default-branch scheduler. It is not merged. GitHub branch rules are not yet active because GitHub requested owner reauthentication while saving them.
 
 The v0.1 runtime below remains released evidence and a reusable IDE shell. Its Mentor, Quiz, and Focus behavior is not the v0.3 product core.
 
@@ -108,6 +110,7 @@ The repository contains no verified evidence that the owner submitted the final 
 | Untrusted-code sandbox backend is not selected | R7 corpus and human pilots cannot execute third-party or arbitrary participant code; R0–R4 can validate only the finite reviewed fixture states and controller-owned known repair | After the fixture slice, select and verify a Windows-capable backend in a separate ADR; never fall back to direct execution |
 | Technical patch corpus is not assembled | Automatic episode-generation rate cannot be measured | Collect at least 30 consented or open-source test-backed TypeScript patches for R7 |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
+| GitHub owner reauthentication is pending | The prepared `main` ruleset was not saved, the R&D ruleset cannot yet be created, and the Jules loop must remain disabled | Owner confirms GitHub Mobile/authenticator access; then save both PR-only/no-force/no-delete rulesets before enabling the canary |
 
 No external input blocks the fixture-only R0–R4 mechanism in `docs/v0.3/AGENT_EXECUTION.md`. That slice cannot execute or judge arbitrary human/agent code and must not be represented as an interactive takeover product.
 
