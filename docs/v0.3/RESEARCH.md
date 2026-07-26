@@ -107,6 +107,12 @@ An experiment with professional developers in [“Code Review of Changesets”](
 
 These studies do not evaluate modern agent swarms directly. They do reinforce that “just read every diff” is not a credible scaling strategy.
 
+### Explanations can amplify false confidence
+
+A 2026 controlled experiment with 86 Python programmers, [“Programmers Are Poor and Overconfident Judges of LLM-Generated Assertions”](https://arxiv.org/abs/2607.08885), reported 74% accuracy when judging correct assertions but 49% for incorrect assertions despite similar confidence. Natural-language explanations provided no overall accuracy benefit; low-quality explanations reduced accuracy while increasing confidence.
+
+The study concerns generated postconditions rather than full agent patches, so it does not directly validate PureFlow. It does falsify the assumption that another plausible explanation is a sufficient review or teaching mechanism. Control Pulses therefore end in executable evidence, not model agreement.
+
 ## 4. Current product landscape
 
 ### Mainstream AI coding systems
@@ -134,6 +140,7 @@ The table describes public documentation reviewed in July 2026. Absence from pub
 
 | Product or project | Useful overlap | Why it is not the same product |
 | --- | --- | --- |
+| [Atrophy](https://github.com/ashutosh-rath02/atrophy) | Local unaided drills, per-axis ratings, confidence bands, weekly streak, AI-on gap, and opt-in leaderboard | Generic exercises measure a useful baseline but do not establish ownership of the developer's current agent-built project |
 | [Comprende](https://www.comprende.dev/) | Markets generation pauses, comprehension questions, and function/file/session scores | This is the discarded gate-and-score architecture; public docs did not substantiate a working executable system at review time |
 | [Learning Opportunities](https://github.com/DrCatHicks/learning-opportunities) | Project-local prediction, generation, retrieval, and spaced-repetition exercises | A skill-development layer, not an autonomous build plane coupled to deterministic takeover twins |
 | [learn-codebase](https://github.com/ktaletsk/learn-codebase) | Socratic tutor, active recall, and a persistent learning journal | Codebase study rather than concurrent production and control transfer |
@@ -144,6 +151,10 @@ The table describes public documentation reviewed in July 2026. Absence from pub
 | [PlayerZero Sim-1](https://playerzero.ai/research/sim-1) | Semantic dependencies, generated scenarios, and simulation traces | Uses simulation to reason about the software; it does not document training the human operator |
 
 The existence of these products invalidates any novelty claim based on questions, active recall, codebase lessons, dependency maps, or bug injection alone.
+
+Atrophy is especially useful as a product boundary. PureFlow may borrow spaced retrieval, uncertainty widening, and voluntary continuity, but not treat a generic Elo or leaderboard as project readiness. Random function questions, streaks, and public individual rankings are already available elsewhere and are easy to game.
+
+An observational natural experiment on GitHub contribution streaks, [“How Gamification Affects Software Developers”](https://arxiv.org/abs/2006.02371), found that removing the streak counter changed contribution behavior. This supports streaks as a strong engagement lever and warns that developers will optimize the displayed proxy. PureFlow therefore limits any streak to weekly participation and keeps it separate from capability evidence.
 
 ## 5. Adjacent precedent: operational drills
 

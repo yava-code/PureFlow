@@ -24,6 +24,10 @@ Scoped evidence from previous episodes will predict later adjacent-task success 
 
 A narrow compiler can generate coherent, deterministic episodes from normal test-backed TypeScript changes without a human authoring each scenario.
 
+### H5 — Semantic checkpoints beat random comprehension prompts
+
+An event-triggered Explain-to-Break pulse selected from a causally important seam will produce better delayed adjacent-task performance per minute of attention than asking the developer to explain a randomly selected function.
+
 ## What does not count as success
 
 - more questions answered correctly immediately after generation;
@@ -96,6 +100,7 @@ patch + test evidence
 → reproducible failing evidence
 → hidden-answer repair
 → deterministic judge
+→ bounded semantic probe + executable falsifier
 ```
 
 ### Measures
@@ -106,6 +111,8 @@ patch + test evidence
 - cleanup failures or production-worktree contamination;
 - median setup time and disk cost;
 - expert rating of causal relevance, not just syntactic validity.
+- percentage of patches yielding a bounded, causally relevant Explain-to-Break probe with no model-authored executable material;
+- capsule redaction/rejection and unauthorized-execution attempts;
 - false-pass and false-fail rates against a protected oracle;
 - 95% confidence intervals for every rate;
 - agreement between two independent expert raters, with adjudication reported;
@@ -114,15 +121,18 @@ patch + test evidence
 ### Pass targets
 
 - valid episode for at least 80% of every eligible held-out patch inside the preregistered support envelope;
+- valid executable semantic probe for at least 70% of every eligible held-out patch inside that same envelope;
 - reproducible setup and judge result for at least 95% of generated episodes;
 - at least 90% agreement with an expert-labeled outcome;
 - zero observed false passes in the pilot, with the confidence interval reported rather than interpreted as proof that the true rate is zero;
 - zero writes to the production worktree;
+- zero accepted controller/oracle leaks or model/developer-authored executable inputs in the adversarial capsule/probe suite;
 - median local setup under two minutes after dependencies are present.
 
 ### Kill or narrow criteria
 
 - fewer than 60% valid episodes after two compiler iterations;
+- fewer than 50% valid semantic probes after two compiler iterations;
 - reliance on hand-authored tasks for most patches;
 - frequent tests that validate the same incorrect assumption as the generated code;
 - irreducible need to clone a full production environment for ordinary supported cases.
@@ -179,6 +189,20 @@ A recovery episode can exist only after its source checkpoint passes. Therefore 
 5. telemetry must contain an agent event from N+1 between `experience.started(N)` and `judge.completed(N)`.
 
 Compare total pipeline makespan and human active time against the same two checkpoints with normal agent use.
+
+### Control Pulse comparison
+
+Randomize eligible checkpoints within participant across three prompt policies:
+
+1. random function explanation;
+2. semantic-seam explanation scored by a small model;
+3. semantic-seam Explain-to-Break with an executable falsifier.
+
+Keep prompt count and active-time budget matched. Measure valid-falsifier rate, prediction accuracy, evidence selection, opt-out, interruption cost, and delayed adjacent transfer. An LLM score is recorded only as a provisional annotation and never as the outcome oracle.
+
+This pilot is a feasibility and variance-estimation gate, not a confirmatory test of H5. Policy 3 may advance only if it produces valid executable falsifiers at acceptable interruption/abandonment cost and shows no preregistered harm signal on delayed transfer. Evidence-selection quality is secondary and can never compensate for flat or worse delayed transfer.
+
+H5 requires a separately powered confirmatory comparison of policy 1 versus policy 3 using regression-free delayed adjacent-task completion as the primary outcome and attention time as a non-inferiority constraint. Before enrollment, preregister the minimum worthwhile transfer difference from pilot variance and the attention margin. H5 passes only if the transfer estimate exceeds that margin with the planned confidence bound and attention stays within its margin. If policy 2 performs as well as executable probing, narrow the mechanism claim; if the confirmatory policies perform alike, remove mid-run prompts from the core.
 
 ## Experiment 3 — Controlled delayed-transfer study
 

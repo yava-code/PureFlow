@@ -32,7 +32,7 @@ observable agent run
 
 Each phase ends in a coherent commit with tests. A downstream phase may start only when its acceptance checks pass.
 
-Workstream IDs are stable references, not permission to execute in numeric order. The dependency graph is authoritative: R7 is the gate between the R0–R4 technical mechanism and R5/R6 product-state/UI work.
+Workstream IDs are stable references, not permission to execute in numeric order. The dependency graph is authoritative: R4.5 follows the guarded R0–R4 mechanism, and R7 gates all R5/R6 product-state/UI work.
 
 ## Target repository shape
 
@@ -44,6 +44,7 @@ extension/src/
   chronicle/      normalized event model and local event store
   change/         changed-symbol and evidence extraction
   experience/     candidate selection and manifest compiler
+  pulse/          post-R4 claim, capsule, and catalog-probe contracts
   twin/           sanitized snapshot and standalone twin lifecycle
   judge/          executable checks and result model
   readiness/      local evidence ledger and derived state
@@ -60,6 +61,8 @@ extension/test/
 ```
 
 Do not mix experimental code into Monad, contract, or proof modules. Legacy Mentor/Focus code remains intact until a later extraction decision.
+
+Event-driven Control Pulses, Side Coach calls, streaks, achievements, and any leaderboard remain outside R0–R4. After R4, only the R4.5 contract gate below may add a deterministic fixture-only Explain-to-Break probe. Persistent state and cockpit presentation still require the R7 gate; motivation features require human-pilot evidence.
 
 ## Workstream R0 — Baseline and fixture contract
 
@@ -174,7 +177,7 @@ If the vertical slice requires a generalized knowledge graph before it can ident
 - Resolve and validate the controller repository and target revision without exposing either to participant code.
 - Export the target tree without Git metadata, apply the exercise change, then initialize the standalone one-commit participant repository required by the hidden-answer protocol in `CONTRACTS.md`.
 - Create a uniquely named temporary twin and evaluation directory outside the production worktree; neither may use Git alternates or a shared object database.
-- Implement the immutable command-registry snapshot, extension-owned `TrustedFixtureCatalog`, and `TrustedFixtureRunner` from `CONTRACTS.md`: open only by committed `fixtureId + manifestHash`, resolve `controller-node` to the verified `process.execPath`, require an exact full-tree hash match against a declared fixture state, and use argument arrays, `shell: false`, a scrubbed environment, bounded output/time, full Windows process-tree termination, and no package installation.
+- Implement the immutable command-registry snapshot, extension-owned `TrustedFixtureCatalog`, and `TrustedFixtureRunner` from `CONTRACTS.md`: open only by committed `fixtureId + manifestHash`, resolve `fixture-node` through the runner-owned catalog to a hash-verified standalone Node artifact (never `process.execPath` or ambient `PATH`), require an exact full-tree hash match against a declared fixture state, and use argument arrays, `shell: false`, a scrubbed environment, bounded output/time, full Windows process-tree termination, and no package installation.
 - Expose non-fixture execution as `unsupported` until a separate ADR selects and verifies a `SandboxRunner` with network, host-filesystem, oracle-mount, process-tree, and resource isolation. Do not silently fall back to the trusted-fixture path.
 - Expose lifecycle states: `preparing`, `ready`, `running`, `completed`, `failed`, `cleaning`, `cleaned`.
 - On cleanup, verify the exact resolved twin and evaluation directories before removing either one.
@@ -233,6 +236,49 @@ If the vertical slice requires a generalized knowledge graph before it can ident
 ### Kill signal
 
 If a coherent episode cannot be produced without hand-writing logic for each patch, pause UI work and run Experiment 1 over the corpus.
+
+## Workstream R4.5 — Fixture-only Control Pulse gate
+
+**Entry gate:** R4 passes. This workstream is required before R7, but it cannot weaken R0–R4 or expand the guarded Jules queue beyond its reviewed stopping point.
+
+**Goal:** prove one bounded Explain-to-Break interaction without adding arbitrary execution, network authority, or readiness claims.
+
+### Files
+
+- `extension/src/pulse/types.ts`
+- `extension/src/pulse/validate.ts`
+- `extension/src/pulse/capsule.ts`
+- `extension/src/pulse/catalog.ts`
+- corresponding tests
+
+### Tasks
+
+- Implement the exact `ChangeClaim`, Side Coach, catalog probe, attempt, and result schemas from `CONTRACTS.md` §8.5 with domain-separated hashes and golden vectors.
+- Commit the bounded developer-visible prompt and input labels inside the internal-probe hash; derive participant and Side Coach surfaces only as exact projections of that reopened object.
+- Reject unknown fields, oversized text/arrays, absolute paths, unsorted or duplicate evidence, unknown/cross-project refs, non-participant visibility, unstable checkpoints, and mismatched hashes.
+- Build a redacted capsule locally and prove that controller/oracle evidence, evidence IDs, absolute paths, secret fixtures, terminal history, and repository-wide source cannot enter it.
+- Add a finite extension-owned probe catalog for the reviewed fixture. Each probe may select only an existing declared state/check pair; it cannot supply code, a patch, command arguments, environment, or a new test.
+- Precommit the participant attempt hash before execution, run the selected pair through `TrustedFixtureRunner`, and store the bounded observation separately from any model annotation.
+- Bind every attempt once to its controller-issued ID, project, internal probe, claim hash, fixture manifest, catalog allowlist, and a sorted subset of the claim evidence. Tombstone all terminal attempts and reject replay or cross-project/hash reuse.
+- Treat timeout, cancellation, setup/launch failure, missing output, and runner error as `execution-error`; none may confirm a prediction that the check would fail.
+- Start with the deterministic no-model path. A configured Side Coach adapter may be added only after the same validator and capsule tests pass; its output remains an untrusted catalog selection or clarification.
+- Keep results in the experiment layer. Do not persist or display readiness before the R7→R5/R6 gates.
+
+### Acceptance
+
+- serialization round-trips and Windows/Linux golden hashes match;
+- every malicious or malformed claim/capsule fixture fails closed before a network call;
+- a model proposal containing code, args, paths, an unknown probe ID, or an oracle/controller ID cannot affect execution;
+- the runner receives exactly one catalog-owned fixture state/check pair and no model/developer-authored executable material;
+- prediction is committed before observation; skip/reveal/late/integrity-failed paths cannot yield passed evidence;
+- prompt, label, input-order, or participant-projection drift fails integrity before an attempt;
+- timeout, cancellation, setup/runner failure, replay, and identity mismatch cannot yield passed evidence;
+- changing prose quality while keeping the same committed prediction and executable observation cannot change the result;
+- no external model is required for tests, and production agent execution remains non-blocking.
+
+### Stop condition
+
+If the fixture-only probe needs arbitrary participant code or model-generated tests, stop R4.5 and wait for the R7 sandbox decision rather than widening Phase A.
 
 ## Workstream R5 — Readiness evidence ledger
 
@@ -301,15 +347,16 @@ If a coherent episode cannot be produced without hand-writing logic for each pat
 
 **Goal:** run Experiment 1 before expanding features.
 
-**Entry gate:** select one concrete Windows-capable `SandboxRunner` in a new ADR. The ADR must document prerequisite detection/provisioning, a hash-pinned image or offline dependency cache, network-none and host-filesystem tests, mount policy, read-only oracle delivery, resource limits, and Windows process-tree cleanup. If no backend is available, R7 is blocked; R0–R4 evidence remains fixture-only.
+**Entry gate:** R4.5 passes and one concrete Windows-capable `SandboxRunner` is selected in a new ADR. The ADR must document prerequisite detection/provisioning, a hash-pinned image or offline dependency cache, network-none and host-filesystem tests, mount policy, read-only oracle delivery, resource limits, and Windows process-tree cleanup. If no backend is available, R7 is blocked; R0–R4.5 evidence remains fixture-only.
 
 ### Tasks
 
 - Preregister patch eligibility, repository sampling, unsupported-case rules, and exact primary metrics before inspecting compiler outcomes.
 - Collect a development corpus and a separate held-out corpus of at least 30 eligible consented or open-source test-backed TypeScript patches in total; never redefine “supported” after seeing failures.
-- Freeze the compiler before running the held-out set and make no per-patch code changes.
+- Freeze both the recovery compiler and semantic-probe compiler before running the held-out set and make no per-patch code changes.
 - Use two independent expert raters, blind to compiler outcome, for causal relevance and expected judge result; adjudicate disagreements and report inter-rater agreement.
-- Report valid-episode rate, false-pass rate, false-fail rate, and confidence intervals separately.
+- Compile both a recovery episode and an Explain-to-Break probe for each eligible patch. Dynamic probes implement the Phase-B `SandboxControlProbe` contract: frozen sanitized snapshot/tree, immutable command-registry hash, approved command or controller-generated deterministic oracle, read-only mounts, and selected sandbox. They may never pass model output directly into code, tests, commands, arguments, paths, mounts, or environment.
+- Report valid-episode rate, valid-probe rate, capsule rejection/leakage results, false-pass rate, false-fail rate, and confidence intervals separately.
 - Run the held-out audit on Windows as well as Linux, including paths with spaces, concurrent twins, cancellation, locked files, and cleanup.
 - Publish aggregate results, failures, supported patterns, and excluded cases in a new `docs/v0.3/results/` file.
 
@@ -348,7 +395,8 @@ flowchart LR
     R1 --> R4["R4 Compiler + Judge"]
     R2 --> R4
     R3 --> R4
-    R4 --> R7["R7 Corpus audit"]
+    R4 --> R45["R4.5 Control Pulse gate"]
+    R45 --> R7["R7 Recovery + probe corpus audit"]
     R7 --> R5["R5 Evidence ledger"]
     R7 --> R6["R6 Cockpit"]
     R5 --> R6
@@ -356,11 +404,11 @@ flowchart LR
     R6 --> R8
 ```
 
-R1, R2, and R3 may run in parallel only after R0 contracts are committed. R4 is the integration owner. R7 must pass before R5 or R6 starts. Avoid a free-running swarm editing the same contracts.
+R1, R2, and R3 may run in parallel only after R0 contracts are committed. R4 is the integration owner; R4.5 is the required Pulse boundary after that integration and remains outside the guarded Jules queue. R7 must pass before R5 or R6 starts. Avoid a free-running swarm editing the same contracts.
 
 ## Definitions of done
 
-### Technical mechanism slice — R0–R4
+### Technical mechanism slice — R0–R4.5
 
 The mechanism is ready for the corpus audit when all of this is true:
 
@@ -373,8 +421,10 @@ The mechanism is ready for the corpus audit when all of this is true:
 7. untrusted non-fixture workspaces, unknown commands, credential inheritance, missing required network isolation, timeout, and cancellation fail closed;
 8. production files, index, HEAD, refs, remotes, and pre-existing worktrees satisfy the invariants in `CONTRACTS.md` after cleanup;
 9. Windows and Linux checks pass for the pinned fixture.
+10. one bounded claim becomes a sanitized capsule with no controller/oracle identifiers, secrets, or absolute paths;
+11. one precommitted prediction executes only a catalog-owned fixture state/check pair, while replay, timeout, cancellation, and model-supplied executable material fail closed.
 
-This definition proves the fixture-only compiler and judge boundary, not an interactive human takeover. Arbitrary participant or corpus code remains unsupported until the R7 `SandboxRunner` gate passes.
+This definition proves the fixture-only compiler, judge, and Control Pulse boundary, not skill retention or arbitrary-code safety. Arbitrary participant or corpus code remains unsupported until the R7 `SandboxRunner` gate passes.
 
 ### Product vertical slice — after R7, R5, and R6
 
@@ -386,5 +436,6 @@ The first product slice is meaningful when the technical corpus gate passes and:
 4. scoped capability evidence is stored locally, exportable, and deletable;
 5. immediate recovery is never labeled verified readiness;
 6. all states are labeled R&D, with no claim of preserved skill.
+7. an event-triggered Pulse can be answered or skipped without pausing the production agent, and only executable evidence affects its result.
 
 Anything less than the technical slice is infrastructure. Anything much more before the corpus and human gates is premature expansion.

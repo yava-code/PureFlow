@@ -16,6 +16,7 @@ type ExecutionId = string;
 type WorktreeId = string;
 type ExperienceId = string;
 type EvidenceId = string;
+type TestId = string;
 type GitOid = string;
 type Sha256 = string;
 type RelPath = string;
@@ -40,12 +41,20 @@ interface EvidenceInputMeta {
   truncated: boolean;
   redactions: Array<{ ruleId: string; count: number }>;
 }
+
+interface FixtureBlobRef {
+  id: string;
+  sha256: Sha256;
+  storedBytes: number;
+  mediaType: string;
+  visibility: "controller" | "oracle";
+}
 ```
 
 Invariants:
 
 - `ProjectId` is a random local identifier stored by the extension. It is not derived from an absolute path or remote URL.
-- `RelPath` is normalized with `/`, must not be absolute, and must not contain a `..` segment.
+- `RelPath` is normalized with `/`, must not be absolute, and must not contain a `..` segment. R0 fixture paths use the stricter portable subset `[A-Za-z0-9._@+-]` per segment and reject Windows device names, so the same manifest materializes on Windows and Linux.
 - `GitOid` is a full object ID resolved and verified in the controller repository before use.
 - `ExecutionId` is a controller-issued random identifier for one command invocation. It is never reused, even when the same command runs again.
 - timestamps are UTC ISO-8601 with milliseconds;
@@ -62,7 +71,26 @@ Canonical object digests and raw byte hashes use one explicitly separated scheme
 - `canonicalHash(domain, value)` is lowercase hex SHA-256 over `UTF8("pureflow/v0.3/" + domain + "\n") || UTF8(JCS(value))`;
 - fields named `sha256` contain lowercase hex raw `SHA-256(bytes)` for the exact stored bytes; Git OIDs retain Git's native object algorithm and are never placed in a `Sha256` field;
 - a file manifest is sorted by the UTF-8 byte order of normalized `path`, rejects duplicate or case-colliding paths, and hashes `[{ path, mode, sha256 }]` with domain `tree`;
-- `FixtureManifest` uses domain `fixture-manifest`, command registry snapshots use `command-registry`, task intents use `task-intent`, participant diffs use `candidate-diff`, judge results use `judge-result`, capability records use `capability-evidence`, and readiness records use `verified-readiness`; a value omits its own digest field before hashing.
+- `FixtureManifest` uses domain `fixture-manifest`, command registry snapshots use `command-registry`, task intents use `task-intent`, participant diffs use `candidate-diff`, command results use `command-result`, judge results use `judge-result`, Control Pulse claims use `control-claim`, internal probes use `control-probe`, probe attempts use `control-probe-attempt`, probe results use `control-probe-result`, capability records use `capability-evidence`, and readiness records use `verified-readiness`; a value omits its own digest field before hashing.
+
+`candidate-diff` never hashes Git's formatted patch output. It hashes this normalized value, with `changes` sorted by UTF-8 bytes of `path` and duplicate or case-colliding paths rejected:
+
+```ts
+interface CandidateDiff {
+  schemaVersion: SchemaVersion;
+  baseTreeHash: Sha256;
+  resultTreeHash: Sha256;
+  changes: Array<{
+    path: RelPath;
+    beforeSha256: Sha256 | null;
+    afterSha256: Sha256 | null;
+    beforeMode: "100644" | "100755" | null;
+    afterMode: "100644" | "100755" | null;
+  }>;
+}
+```
+
+The patch bytes used to apply a change are a separate `FixtureBlobRef`. A patch blob is transport; `CandidateDiff` is the canonical statement of the before/after tree transition.
 
 Implementations must ship cross-platform golden vectors for every domain before the corresponding store is accepted. No module may substitute `JSON.stringify`, Git tree IDs, filesystem enumeration order, or a second canonicalizer.
 
@@ -221,9 +249,14 @@ interface CommandBase {
 type TrustedFixtureCommand = CommandBase & {
   runner: "trusted-fixture";
   fixtureId: string;
-  toolchainHandle: "controller-node";
+  toolchainHandle: "fixture-node";
   network: "not-enforced-reviewed-fixture";
 };
+
+interface TrustedFixtureCheck {
+  id: TestId;
+  commandId: string;
+}
 
 type IsolatedCommand = CommandBase & {
   runner: "sandbox";
@@ -279,11 +312,13 @@ interface SandboxRunner {
 }
 ```
 
+`CommandResult` has exact keys. Its `stdout` and `stderr` refs must reopen in the same project with exact stored hashes and sizes; each redaction list is sorted by UTF-8 `ruleId` and rejects duplicates. `commandResultHash` means `canonicalHash("command-result", commandResult)` over this exact bounded object. Every runner implementation ships the same fixed golden vector before its results may enter a judge or Control Pulse evidence chain.
+
 Rules:
 
 - the registry is created from a fixture manifest or an explicit user-approved project configuration;
 - `CommandRegistrySnapshot.sha256` is `canonicalHash("command-registry", { schemaVersion, projectId, commands })`; commands are ordered by ID and duplicate IDs are rejected; a command change creates a new snapshot rather than mutating an existing one;
-- `toolchainHandle` is resolved only through a runner-owned catalog and is never interpreted as a filesystem path or executable supplied by a task, manifest payload, webview, or LLM. `controller-node` resolves to the extension host's verified `process.execPath` and must exactly match the fixture's declared Node version; sandbox handles resolve inside the hash-pinned backend image selected by ADR-003;
+- `toolchainHandle` is resolved only through a runner-owned catalog and is never interpreted as a filesystem path or executable supplied by a task, manifest payload, webview, or LLM. `fixture-node` resolves to a PureFlow-owned standalone Node runtime whose exact version matches the manifest and whose platform artifact hash is verified by the catalog. It never aliases the VSCodium/Electron executable or an ambient `node` on `PATH`; sandbox handles resolve inside the hash-pinned backend image selected by ADR-003;
 - execution uses an argument array with `shell: false` and a hidden window;
 - `cwd` resolves inside the twin root after canonicalization;
 - `timeoutMs` is between 1 second and 10 minutes for R&D;
@@ -314,9 +349,13 @@ interface TrustedFixtureRequest {
 interface TrustedFixtureRecord {
   manifestHash: Sha256;
   manifest: FixtureManifest;
-  node: { handle: "controller-node"; version: string };
-  harness: { localHandle: string; sha256: Sha256 };
-  oracle: { localHandle: string; sha256: Sha256 };
+  node: { handle: "fixture-node"; version: string; executableSha256: Sha256 };
+  blobs: {
+    harness: { localHandle: string; ref: FixtureBlobRef };
+    oracle: { localHandle: string; ref: FixtureBlobRef };
+    mutation: { localHandle: string; ref: FixtureBlobRef };
+    repair: { localHandle: string; ref: FixtureBlobRef };
+  };
 }
 
 interface TrustedFixtureCatalog {
@@ -329,7 +368,7 @@ interface TrustedFixtureRunner {
 }
 ```
 
-`TrustedFixtureCatalog` is constructed by the extension from an implementation-owned allowlist of committed fixture IDs and manifest hashes; neither callers nor workspace files can register or replace a record. `open` recomputes `canonicalHash("fixture-manifest", manifest)`, verifies the catalog-owned harness/oracle blobs, and fails closed on any mismatch. `TrustedFixtureRunner` opens that catalog by `fixtureId + manifestHash` and never accepts a caller-provided manifest, executable, harness, or oracle handle. Catalog records and local handles remain controller-only.
+`TrustedFixtureCatalog` is constructed by the extension from an implementation-owned allowlist of committed fixture IDs and manifest hashes; neither callers nor workspace files can register or replace a record. `open` recomputes `canonicalHash("fixture-manifest", manifest)`, verifies every catalog-owned blob and the selected runtime artifact, and fails closed on any mismatch. The returned blob refs must exactly equal the manifest's harness, oracle, mutation, and repair refs. `TrustedFixtureRunner` opens that catalog by `fixtureId + manifestHash` and never accepts a caller-provided manifest, executable, harness, oracle, patch, or local handle. Catalog records and local handles remain controller-only.
 
 The runner is not a security sandbox and must never accept a workspace project, downloaded corpus patch, user-authored command, participant or agent-authored code, symlink/reparse point, submodule, or runtime-created executable. `twinHandle` is an opaque key resolved through the extension-owned Twin Manager, never a caller-interpreted path. Before each command the runner hashes the complete materialized candidate tree and requires an exact match with the named `FixtureState`; it also requires that command ID to appear in that state's `commandIds`. Any other tree or command pair is rejected without execution. It uses `shell: false`, the catalog-resolved Node/harness/oracle, a scrubbed environment, bounded output/time, and process-tree termination. Its existence lets R0–R4 validate contracts and the protected-judge data flow against a finite reviewed state set without pretending to evaluate arbitrary human work.
 
@@ -356,16 +395,18 @@ interface FixtureManifest {
   targetRevision: GitOid;
   changedSymbols: Array<{ path: RelPath; symbol: string }>;
   commands: TrustedFixtureCommand[];
-  baseChecks: string[];
-  targetChecks: string[];
+  checks: TrustedFixtureCheck[];
+  baseChecks: TestId[];
+  targetChecks: TestId[];
   mutation: {
     id: string;
-    changeRef: EvidenceRef;
-    expectedFailingChecks: string[];
+    changeRef: FixtureBlobRef;
+    expectedFailingChecks: TestId[];
     editablePaths: RelPath[];
   };
   knownRepair: {
-    changeRef: EvidenceRef;
+    changeRef: FixtureBlobRef;
+    candidateDiff: CandidateDiff;
     candidateDiffHash: Sha256;
     resultingState: "target";
   };
@@ -377,17 +418,24 @@ interface FixtureManifest {
     userEmail: "fixture@pureflow.invalid";
     authorDate: IsoTime;
     committerDate: IsoTime;
+    objectFormat: "sha1";
   };
   toolchain: {
     nodeVersion: string;
     dependencies: "none";
-    harness: EvidenceRef;
-    harnessSha256: Sha256;
+    harness: FixtureBlobRef;
+    oracle: FixtureBlobRef;
   };
 }
 ```
 
-R0 owns this schema. The manifest contains exactly one `base`, one `target`, and one `mutated` state. `target` is the completed agent checkpoint, `mutated` is the exercise start, and applying `knownRepair` to `mutated` must reproduce the declared `target.treeHash` byte-for-byte. Fixtures use LF in source, fixed Git identity and timestamps, `main` as the initial branch, a pinned Node executable, no package installation or network dependency, and a controller-owned hash-pinned test/compile harness. The fixture may contain TypeScript source, but the harness and its already-installed compiler belong to the reviewed extension test toolchain rather than the participant repository. `.gitattributes` must pin fixture text endings before Windows CI is considered deterministic.
+R0 owns this schema. The manifest contains exactly one `base`, one `target`, and one `mutated` state. `baseChecks`, `targetChecks`, and `expectedFailingChecks` contain `TrustedFixtureCheck.id` values; commands remain independently addressed by `FixtureState.commandIds`. Every check references one declared command, and unknown check or command IDs fail validation.
+
+`target` is the completed agent checkpoint, `mutated` is the exercise start, and applying the controller-owned `knownRepair.changeRef` to `mutated` must reproduce the declared `target.treeHash` byte-for-byte. `knownRepair.candidateDiff` must describe that same `mutated → target` transition and its canonical `candidate-diff` hash must equal `candidateDiffHash`. `mutation.changeRef` describes `target → mutated`; both patch refs are resolved only from the catalog record.
+
+Fixtures use LF in source, fixed Git identity and timestamps, `main` as the initial branch, `git init --object-format=sha1 --initial-branch=main`, `core.autocrlf=false`, an empty Git template directory, the standalone Node `v22.17.0` runtime behind `fixture-node`, no package installation or network dependency, and controller-owned hash-pinned harness/oracle blobs. CI pins Node `22.17.0` on Windows and Linux. The future portable distribution must provision and verify that runtime before `TrustedFixtureRunner` can claim support. The fixture may contain TypeScript source, but the harness and its already-installed compiler belong to the reviewed controller toolchain rather than the participant repository. `.gitattributes` must pin fixture text endings before Windows CI is considered deterministic.
+
+For manifest hashing, `commands` and `checks` are sorted by UTF-8 bytes of ID, `changedSymbols` by path then symbol, state file lists by path, check-ID lists and every set-like ID/path list by UTF-8 bytes, and `states` are ordered `base`, `target`, `mutated`. A validator rejects a semantically equivalent but differently ordered manifest instead of silently rewriting it. Every schema object rejects unknown or missing fields; adding a field requires a versioned schema change.
 
 ## 6. Change-evidence boundary
 
@@ -559,6 +607,174 @@ interface JudgeSpec {
 Only `ParticipantExperience` crosses into the cockpit or participant agent context. `sourceRunId`, source revisions, judge internals, setup changes, oracle references, and hidden answers remain in the controller process.
 
 At compile time R4 freezes every referenced command into one `CommandRegistrySnapshot`. `InternalExperience.commandRegistryHash` and `JudgeSpec.commandRegistryHash` must match that snapshot. The judge reopens the snapshot by project ID and hash immediately before execution; a missing, changed, or differently ordered registry is `failed-integrity`.
+
+## 8.5. Post-R4 Control Pulse contract
+
+R4.5 is a separate fixture-only mechanism gate. It does not add another `InternalExperience.kind`, accept arbitrary code, or weaken the Phase A runner. These exact schemas must exist before any Control Pulse or Side Coach prototype is called implemented.
+
+```ts
+interface ChangeClaim {
+  schemaVersion: SchemaVersion;
+  checkpointId: string;
+  intent: string;
+  changedBehavior: string;
+  boundary: { path: RelPath; symbol: string };
+  invariant: string;
+  evidenceRefs: Array<{ id: EvidenceId; sha256: Sha256; visibility: "participant" }>;
+  unresolvedAssumption?: string;
+}
+
+interface SideCoachCapsule {
+  schemaVersion: SchemaVersion;
+  claimHash: Sha256;
+  claim: {
+    intent: string;
+    changedBehavior: string;
+    boundary: { path: RelPath; symbol: string };
+    invariant: string;
+    unresolvedAssumption?: string;
+  };
+  evidence: Array<{
+    kind: EvidenceRef["kind"];
+    sha256: Sha256;
+    mediaType: string;
+    excerpt: string;
+  }>;
+  probe: ParticipantProbeSurface;
+  developerAnswer: string;
+}
+
+interface SideCoachProposal {
+  schemaVersion: SchemaVersion;
+  hypothesis: string;
+  probeInputId?: string;
+  clarification?: string;
+}
+
+interface CatalogControlProbe {
+  schemaVersion: SchemaVersion;
+  id: string;
+  fixtureId: string;
+  fixtureManifestHash: Sha256;
+  state: "target" | "mutated";
+  checkId: TestId;
+  prompt: string;
+  expectedObservation: "passes" | "fails";
+}
+
+interface ParticipantProbeSurface {
+  prompt: string;
+  inputs: Array<{ id: string; label: string }>;
+}
+
+interface FixtureControlProbe {
+  schemaVersion: SchemaVersion;
+  mode: "fixture";
+  id: string;
+  projectId: ProjectId;
+  claimHash: Sha256;
+  sourceTreeHash: Sha256;
+  fixtureId: string;
+  fixtureManifestHash: Sha256;
+  participant: ParticipantProbeSurface;
+}
+
+type SandboxProbeInput =
+  | {
+      schemaVersion: SchemaVersion;
+      id: string;
+      kind: "approved-command";
+      commandId: string;
+      expectedObservation: "passes" | "fails";
+    }
+  | {
+      schemaVersion: SchemaVersion;
+      id: string;
+      kind: "deterministic-oracle";
+      commandId: string;
+      expectedObservation: "passes" | "fails";
+      generator: { id: string; version: string; inputHash: Sha256 };
+      oracle: EvidenceRef & { visibility: "oracle" };
+      mountAt: RelPath;
+    };
+
+interface SandboxControlProbe {
+  schemaVersion: SchemaVersion;
+  mode: "sandbox";
+  id: string;
+  projectId: ProjectId;
+  claimHash: Sha256;
+  sourceTreeHash: Sha256;
+  snapshotId: SanitizedSnapshot["id"];
+  snapshotTreeHash: Sha256;
+  commandRegistryHash: Sha256;
+  inputs: SandboxProbeInput[];
+  writablePaths: RelPath[];
+  participant: ParticipantProbeSurface;
+}
+
+type InternalControlProbe = FixtureControlProbe | SandboxControlProbe;
+
+interface ParticipantControlProbe {
+  schemaVersion: SchemaVersion;
+  id: string;
+  internalProbeHash: Sha256;
+  claim: ChangeClaim;
+  participant: ParticipantProbeSurface;
+}
+
+interface ControlProbeAttempt {
+  schemaVersion: SchemaVersion;
+  id: string;
+  projectId: ProjectId;
+  probeId: string;
+  internalProbeHash: Sha256;
+  claimHash: Sha256;
+  sourceTreeHash: Sha256;
+  selectedProbeInputId: string;
+  prediction: "passes" | "fails";
+  selectedEvidenceIds: EvidenceId[];
+  explanation: string;
+  committedAt: IsoTime;
+}
+
+interface ControlProbeResult {
+  schemaVersion: SchemaVersion;
+  projectId: ProjectId;
+  probeId: string;
+  internalProbeHash: Sha256;
+  claimHash: Sha256;
+  sourceTreeHash: Sha256;
+  attemptHash: Sha256;
+  probeInputId: string;
+  checkId: TestId | null;
+  commandId: string;
+  observation: "passes" | "fails" | "execution-error" | "failed-integrity";
+  commandStatus: { exitCode: number | null; timedOut: boolean; cancelled: boolean };
+  predictionResult: "confirmed" | "falsified" | "invalid";
+  commandResultHash: Sha256 | null;
+  resultHash: Sha256;
+}
+```
+
+Validation and privacy rules:
+
+- `ChangeClaim` has exact keys. `checkpointId` is at most 128 UTF-8 bytes; `boundary.path` is a normalized workspace-relative `RelPath` of at most 1 KiB; `boundary.symbol` is at most 256 bytes; each prose field is at most 1 KiB; `evidenceRefs` contains at most eight unique refs sorted by UTF-8 ID; and the complete canonical claim is at most 8 KiB.
+- The controller reopens every claim ref by project and ID, requires exact hash equality and `visibility: "participant"`, and rejects controller/oracle refs, unknown IDs, cross-project refs, or a claim emitted before its checkpoint has a stable passing revision. `claimHash` is `canonicalHash("control-claim", claim)`.
+- `ParticipantControlProbe` contains no fixture path, command ID, source revision, oracle ref, hidden answer, controller handle, or local absolute path. A participant-visible evidence ID cannot be resolved through a controller API exposed to the webview or model.
+- `ParticipantProbeSurface.prompt` is at most 2 KiB; it contains at most eight inputs sorted by UTF-8 ID, with unique IDs of at most 128 bytes and labels of at most 512 bytes. Both internal probe variants include this exact surface before hashing. `ParticipantControlProbe` is an exact deterministic projection of the reopened claim and internal probe; changing its prompt, labels, IDs, order, or claim is an integrity failure.
+- The capsule builder accepts only a validated `ParticipantControlProbe` plus a developer answer of at most 4 KiB. It resolves at most four participant-visible refs, emits at most 2 KiB of allowlisted/redacted text per ref, strips local evidence IDs, copies the exact committed probe surface, rejects unresolved absolute paths or known secret fixtures, and caps canonical `SideCoachCapsule` bytes at 16 KiB. Only this capsule may cross the configured model boundary.
+- `SideCoachProposal` is exact, at most 4 KiB canonical, and untrusted. Its text never becomes code, a path, patch, command, argument, environment value, or test. `probeInputId`, when present, must exactly match an ID in the committed capsule surface; otherwise the proposal is discarded.
+- Every `InternalControlProbe` is immutable after publication. `internalProbeHash` is `canonicalHash("control-probe", internalProbe)`. The participant object exposes that hash and only the committed claim/surface, never the fixture binding, snapshot, registry, commands, oracle, generator, or writable paths.
+- For `mode: "fixture"`, every participant-surface input ID resolves to an extension-owned immutable `CatalogControlProbe` allowlisted by `fixtureId + fixtureManifestHash`. Its state and `checkId` must exist in that manifest, and the check's command must appear in the selected state's `commandIds`. Phase A executes only that declared state/check pair through `TrustedFixtureRunner`; it accepts no new arguments, source, candidate diff, or model-generated test.
+- For `mode: "sandbox"`, the controller reopens the exact sanitized snapshot/tree and immutable command registry named by the probe. `inputs` and `writablePaths` are sorted and duplicate-free, and the participant-surface ID set must exactly equal the internal input ID set. Every input command must resolve to an `IsolatedCommand` in that registry. An `approved-command` adds no executable material. A `deterministic-oracle` is produced only by a versioned controller-owned generator allowlist, is regenerated to the exact oracle hash before use, and is mounted read-only at its fixed `mountAt`; its generator, mount, command, and expected observation are frozen before the participant attempt. Neither input kind may originate from model text.
+- Phase B builds `SandboxRequest` only from the reopened snapshot, registry command, frozen writable paths, and controller-resolved oracle handle. `hostMountAllowlist` contains only those exact oracle handles, all five sandbox capabilities and per-project execution consent must be current, and the production checkout remains absent. Any input, hash, registry, generator, mount, capability, or consent mismatch fails before execution.
+- Before accepting an attempt, the controller reopens `InternalControlProbe` by `projectId + probeId + internalProbeHash`, recreates the exact participant projection, and requires exact project, claim, source-tree, prompt, labels, and input IDs. `selectedProbeInputId` must be in the committed participant surface and resolve to the reopened fixture catalog or sandbox input set. `selectedEvidenceIds` must be a sorted unique subset of the validated claim refs. Attempt IDs are controller-issued, single-use, and tombstoned after any terminal result; a replay or cross-project/hash mismatch is rejected before execution.
+- The controller stores `canonicalHash("control-probe-attempt", attempt)` before revealing or running the selected input. `ControlProbeResult` repeats the bound project/probe/claim/source-tree/internal-probe identity and must match the reopened attempt and resolved input. `commandId` must be the command reached through that input; `checkId` is the fixture check for Phase A and null for a Phase-B command. `passes` means a clean exit code of zero and `fails` means a clean nonzero exit. Either is assigned only when the command started, `timedOut === false`, `cancelled === false`, `exitCode !== null`, and no setup, runner, catalog, registry, sandbox, or integrity error occurred. Timeout, cancellation, launch/setup failure, missing output, or runner error is `execution-error`; it can never confirm a `fails` prediction. `commandResultHash` equals the normative `command-result` hash when a result exists and is null only when no `CommandResult` was produced. `ControlProbeResult.resultHash` is `canonicalHash("control-probe-result", result without resultHash)`.
+- A skipped, late, replayed, execution-error, invalid, integrity-failed, or revealed attempt produces no passed prediction evidence.
+- A confirmed, precommitted prediction may later map to raw `CapabilityEvidence` with `capability: "predicted"` and `judgeResultHash = ControlProbeResult.resultHash`; assistance records whether the Side Coach clarified the answer. It can never create `intervened`, `recovered`, or `VerifiedReadiness` evidence by itself.
+
+R4.5 is not implemented by these declarations. It becomes executable only after its validator, capsule builder, immutable catalog, serialization isolation, and Windows/Linux golden-vector tests pass.
 
 ## 9. Hidden-answer isolation
 

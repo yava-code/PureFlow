@@ -16,7 +16,7 @@ For v0.3 work:
 - keep readiness evidence local, project-scoped, time-stamped, and deletable;
 - adapt an existing coding-agent runtime before building a generic agent loop;
 - stop at the research gates in `docs/v0.3/EXPERIMENTS.md` and `docs/v0.3/AGENT_EXECUTION.md`.
-- commit and push v0.3 work only to `codex/shadow-cockpit-rnd`; never merge into or push `main` without explicit owner approval.
+- integrate v0.3 work only into `codex/shadow-cockpit-rnd`; it is the sole persistent coding branch. When its ruleset requires PRs, Codex uses a short-lived `codex/*` head and Jules uses a short-lived `jules-*` head with base `codex/shadow-cockpit-rnd`, then deletes the head after merge. Never merge into or push `main` without explicit owner approval.
 - Jules automation is limited to the guarded R0–R4 queue in `docs/v0.3/JULES_LOOP.md`. It may edit `extension/**` and honest milestone evidence in `docs/PROJECT_STATE.md` / `docs/BUILD_LOG.md`; it must not edit workflows, this file, `prd.md`, normative `docs/v0.3/**`, or start R5–R8.
 
 The remaining product description below documents released v0.1 behavior and remains true for the current runtime until v0.3 code is implemented.

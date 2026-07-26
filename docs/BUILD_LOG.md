@@ -2,6 +2,20 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-26 — Control Pulse architecture and R0a foundation
+
+- Pivoted the random-function idea into semantic Recall Probes: randomness is allowed only inside a high-value seam set selected by blast radius, surprise, evidence, novelty, and future takeover value.
+- Accepted event-driven, non-blocking Control Pulses and Explain-to-Break. Agents continue working; a bounded Side Coach can structure a developer answer or propose a falsifier, but only executable evidence can adjudicate it.
+- Rejected points for manual lines and a public understanding leaderboard. Deferred a weekly participation streak and evidence-backed Flight Log achievements until a human pilot shows they do not reward easy-task farming.
+- Closed five R0 contract ambiguities found by an independent implementation audit: structured candidate diffs, catalog-owned fixture blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git object format.
+- Added a separate R4.5 gate so Control Pulses cannot bypass the recovery contracts: claims/capsules are bounded and sanitized, external model output is non-executable, and fixture probes can select only catalog-owned state/check pairs. Reframed the first H5 interaction pilot as feasibility-only; delayed transfer is mandatory in the powered decision.
+- Implemented RFC 8785 canonical JSON, raw and domain-separated SHA-256, UTF-8 tree ordering, exact fixture types, candidate/manifest hashing, and fail-closed validation under `extension/src/rnd` and `extension/src/twin`.
+- Added ten tests with the official RFC 8785 serialization and UTF-16 ordering vectors, number edges, SHA-256 and PureFlow golden hashes, domain separation, portable-path rejection, exact-schema enforcement, state-scoped commands, canonical set ordering, timestamp validation, and runtime mismatch rejection.
+- Pinned GitHub verification to Node `22.17.0` on Linux and Windows. Local `npm run check` and all 23 extension tests passed. The committed fixture/factory and standalone runtime artifact remain R0b work; no arbitrary code execution or complete R0 claim was made.
+- Preserved superseded v0.2 and obsolete Jules histories as archive tags, then deleted their remote branches. `main` and `codex/shadow-cockpit-rnd` are the only intended persistent branches after infrastructure PR #8 is explicitly merged and removed.
+
+Evidence: `docs/v0.3/ADR-004-EPISTEMIC-CHECKPOINTS.md`, `docs/v0.3/CONTRACTS.md`, `extension/test/canonical.test.ts`, extension check/test output, and remote archive tags.
+
 ## 2026-07-26 — v0.3 contract hardening and handoff audit
 
 - Ran four independent go/no-go passes over the R0–R4 handoff and closed every P0/P1 documentation blocker found.

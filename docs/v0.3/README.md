@@ -10,15 +10,16 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 4. [`CONCEPTS.md`](CONCEPTS.md) — alternative architectures and selection.
 5. [`ADR-001-DUAL-CONTROL.md`](ADR-001-DUAL-CONTROL.md) — system decision.
 6. [`ADR-002-EXECUTION-PHASES.md`](ADR-002-EXECUTION-PHASES.md) — trusted-fixture slice versus the untrusted-code sandbox gate.
-7. [`CONTRACTS.md`](CONTRACTS.md) — normative schemas, hidden-answer isolation, oracle integrity, and command boundary.
-8. [`EXPERIMENTS.md`](EXPERIMENTS.md) — hypotheses, metrics, and kill criteria.
-9. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
-10. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
+7. [`ADR-004-EPISTEMIC-CHECKPOINTS.md`](ADR-004-EPISTEMIC-CHECKPOINTS.md) — event-driven Control Pulses, Explain-to-Break, Side Coach, and honest motivation mechanics.
+8. [`CONTRACTS.md`](CONTRACTS.md) — normative schemas, hidden-answer isolation, oracle integrity, and command boundary.
+9. [`EXPERIMENTS.md`](EXPERIMENTS.md) — hypotheses, metrics, and kill criteria.
+10. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
+11. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
 
 ## Current truth
 
 - The released v0.1 VSCodium IDE exists and remains the runtime baseline.
-- The v0.3 Dual-Control architecture is documented but not implemented.
+- The v0.3 Dual-Control product runtime is not implemented. R0a now contains only canonical hashing and fail-closed fixture-contract validation.
 - No retention, takeover, productivity, or usability target has been measured.
 - The first valid build is one test-backed vertical slice, not a full Cursor clone.
 - R0–R4 may execute only finite, repository-owned fixture states. Arbitrary participant or corpus code remains blocked until ADR-003 selects and runtime-verifies a real sandbox backend.

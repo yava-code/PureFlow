@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-26
 
-## Current branch milestone — v0.3 mechanism defined, runtime not implemented
+## Current branch milestone — R0a fixture foundation implemented
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -10,13 +10,16 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - The selected research mechanism is an Experience Compiler that creates a parallel executable Takeover Twin from a high-value seam in the current agent change.
 - Tests and runtime behavior judge human prediction, intervention, recovery, and delayed transfer.
 - Scoped readiness evidence is intended to influence future experience selection and later delegation policy.
+- ADR-004 defines event-driven Control Pulses: agents keep working while a developer predicts, falsifies, chooses evidence, or defends one high-value seam. A bounded Side Coach may structure the answer but cannot create readiness evidence.
 - Research, alternative concepts, ADR, experiments, and an agent-executable vertical-slice plan are recorded in `prd.md` and `docs/v0.3/`.
-- No `AgentDriver`, Chronicle, semantic extractor, Experience Compiler, Takeover Twin, Evidence Judge, readiness ledger, or v0.3 cockpit exists on this branch yet.
+- R0a now implements RFC 8785 canonical JSON, domain-separated SHA-256, UTF-8 path ordering, tree/candidate/manifest hashes, the versioned fixture types, and fail-closed manifest validation. Ten R0a tests pass on this Windows checkout, bringing the extension suite to 23/23.
+- The deterministic Git fixture, fixture factory, pinned standalone Node artifact, `TrustedFixtureRunner`, `AgentDriver`, Chronicle, semantic extractor, Experience Compiler, Takeover Twin, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. R0 is therefore incomplete.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
-- A four-pass independent handoff audit reached `GO` for fixture-only R0–R4 after the runner, snapshot, command identity, canonical hashing, oracle, and dependency boundaries were closed. This is a documentation/contract verdict, not runtime evidence.
+- A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract now closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization. This is implemented only at the R0a contract/hash layer.
 - A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
 - The R&D branch is published at `origin/codex/shadow-cockpit-rnd`. Its first Jules workflow run was correctly skipped because `JULES_RND_LOOP_ENABLED` is not enabled; no Jules session was created.
-- Draft PR [#8](https://github.com/yava-code/PureFlow/pull/8) contains only the default-branch scheduler. It is not merged. GitHub branch rules are not yet active because GitHub requested owner reauthentication while saving them.
+- `Protect main` is active: PR, conversation resolution, strict `extension`/`contract`/`web` checks, up-to-date base, deletion protection, and force-push protection are enforced with zero required approvals for the sole owner.
+- Superseded `codex/v0.2-ownership-compiler` and the obsolete Jules vibe-gate branch were preserved as dated archive tags and deleted as branches. `codex/shadow-cockpit-rnd` is the only persistent coding branch; draft PR [#8](https://github.com/yava-code/PureFlow/pull/8) temporarily retains the default-branch scheduler until the owner explicitly authorizes its merge into `main`.
 
 The v0.1 runtime below remains released evidence and a reusable IDE shell. Its Mentor, Quiz, and Focus behavior is not the v0.3 product core.
 
@@ -107,12 +110,12 @@ The repository contains no verified evidence that the owner submitted the final 
 | Input | Impact | Resolution |
 | --- | --- | --- |
 | First external agent adapter is not selected | Live Chronicle integration cannot start, but replay-based R&D can proceed | Run R1 replay first, compare current supported agent APIs, then record the choice in an ADR |
-| Untrusted-code sandbox backend is not selected | R7 corpus and human pilots cannot execute third-party or arbitrary participant code; R0–R4 can validate only the finite reviewed fixture states and controller-owned known repair | After the fixture slice, select and verify a Windows-capable backend in a separate ADR; never fall back to direct execution |
+| Untrusted-code sandbox backend is not selected | R7 corpus and human pilots cannot execute third-party or arbitrary participant code; R0–R4.5 can validate only finite reviewed fixture states, controller-owned repair, and catalog probes | After the fixture slice, select and verify a Windows-capable backend in a separate ADR; never fall back to direct execution |
 | Technical patch corpus is not assembled | Automatic episode-generation rate cannot be measured | Collect at least 30 consented or open-source test-backed TypeScript patches for R7 |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
-| GitHub owner reauthentication is pending | The prepared `main` ruleset was not saved, the R&D ruleset cannot yet be created, and the Jules loop must remain disabled | Owner confirms GitHub Mobile/authenticator access; then save both PR-only/no-force/no-delete rulesets before enabling the canary |
+| Default-branch Jules scheduler awaits explicit merge approval | Scheduled/manual continuation is not installed on `main`; draft PR #8 remains isolated and the enable variable stays off | Owner explicitly says `merge #8`; then merge through protected `main`, remove the temporary infrastructure branch, create the R&D ruleset, and run one guarded canary |
 
-No external input blocks the fixture-only R0–R4 mechanism in `docs/v0.3/AGENT_EXECUTION.md`. That slice cannot execute or judge arbitrary human/agent code and must not be represented as an interactive takeover product.
+No external input blocks the repository-owned fixture R0–R4.5 mechanism in `docs/v0.3/AGENT_EXECUTION.md`. It cannot execute or judge arbitrary human/agent code and must not be represented as a general-project takeover product.
 
 ## Recent polish (this pass)
 
@@ -127,12 +130,13 @@ No external input blocks the fixture-only R0–R4 mechanism in `docs/v0.3/AGENT_
 
 ## Next ordered actions
 
-1. Implement R0: deterministic TypeScript/Git fixture with a known test-backed behavior change and mutation.
+1. Finish R0b: commit the deterministic tenant-cache-key Git fixture/factory, provision the pinned standalone Node artifact, and prove identical revisions and tree hashes on Windows/Linux.
 2. Implement R1–R3 behind stable contracts: replay AgentDriver plus Chronicle, change-evidence extractor, and safe Takeover Twin lifecycle.
 3. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
-4. Run the 30-patch technical corpus audit before expanding the product surface.
-5. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
-6. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
+4. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
+5. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
+6. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
+7. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 

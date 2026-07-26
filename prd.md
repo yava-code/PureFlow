@@ -214,6 +214,30 @@ This router is the feedback link between learning evidence and future agent dele
 
 The interaction should feel like driving a simulator built from today's route while the autonomous vehicle continues the trip—not like completing homework before the car starts.
 
+## Control Pulses during agent work
+
+PureFlow turns useful agent progress updates into optional, event-driven **Control Pulses**. The agent does not expose private chain-of-thought and does not stop on a timer. At a stable checkpoint it publishes a compact observable capsule: intent, changed behavior, owning boundary, claimed invariant, evidence, and one unresolved assumption.
+
+The Experience Compiler selects a seam from a high-value eligible set and may randomize within that set. It never samples an arbitrary function from the repository. The developer receives one short prompt such as:
+
+- predict the output for a concrete input before the implementation is revealed;
+- name the failure that would falsify the claimed invariant;
+- choose which trace or test would distinguish two hypotheses;
+- justify a boundary against one plausible alternative;
+- direct a cold agent with a hypothesis, expected observation, and two conditional next actions.
+
+The first protocol is **Explain-to-Break**: a bounded Side Coach converts the developer's answer into a candidate falsifier, the compiler validates it, and the Takeover Twin executes it. The small model may parse and coach; only executable evidence can adjudicate the claim. The production agent continues with the next checkpoint or unrelated work. Skipping creates no readiness evidence but does not stop delivery.
+
+### Motivation without fake ownership
+
+The later product may include a local Flight Log:
+
+- a weekly continuity streak for completing at least one evidence-backed control episode;
+- rare achievements for catching a false agent claim, recovering after a wrong hypothesis, directing a cold agent, proving rollback, or passing delayed transfer;
+- a scoped visual map of fresh and stale takeover evidence.
+
+PureFlow will not award points for manually typed lines, commits, time in the editor, or the number of questions answered. It will not publish a leaderboard of developer “understanding.” Those proxies reward typing, easy-task farming, and surveillance rather than maximum automation plus real control. Optional community recognition may rank validated scenario contributions, not people.
+
 ## MVP
 
 The first experiment is deliberately narrower than a new Cursor clone.
