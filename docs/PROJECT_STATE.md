@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-31
 
-## Current branch milestone — R1 replay and Flight Recorder complete
+## Current branch milestone — R2 change-evidence candidate
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -17,7 +17,9 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - The full local Windows extension suite passes 27/27 with `npm run check`, build, and VSIX packaging. Protected PR #10 run `30663623200` independently reproduced the exact fixture/runtime behavior on Linux and Windows; all five required checks passed, so R0 acceptance is complete.
 - R1 implements the schema-v1 `AgentDriver` boundary, checked replay driver, canonical task-intent storage, and append-only local Flight Recorder behind injected storage and evidence-ownership interfaces. Ten R1 tests cover deterministic replay, canonical round trips, sequence/execution/identity violations, cross-project evidence, path and size bounds, failed/cancelled honesty, persistence, range reads, and secret/local-handle omission.
 - The full local Windows extension suite passes 37/37 with `npm run check`; the production bundle and VSIX package also pass. Protected PR #11 run `30665384997` independently passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R1 acceptance is complete.
-- The semantic extractor, Experience Compiler, Takeover Twin lifecycle, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. `TrustedFixtureRunner` exists for the closed R0 fixture substrate.
+- Short-lived branch `codex/r2-change-evidence` now implements bounded Git revision diffs, zero-context changed-line extraction, TypeScript compiler-API symbol resolution, explicit fixture check linkage, Flight Recorder hash/attribution validation, and exact `ExtractionResult` / `SemanticUnit` / `CandidateSeam` outputs. It fails to `partial` or `unsupported` for missing links, syntax failures, unsupported languages, or incomplete coverage instead of inventing an invariant.
+- Six R2 tests cover the real cache-key fixture, cross-run determinism and golden IDs, file rename, multi-file changes, added/deleted functions, class boundaries, Git hunk parsing, unsupported syntax/language, missing checks, unsafe paths, and revision/run drift. The full local Windows extension suite passes 43/43 with TypeScript, build, and VSIX packaging; protected cross-platform CI is pending.
+- The Experience Compiler, Takeover Twin lifecycle, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. `TrustedFixtureRunner` exists for the closed R0 fixture substrate.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
 - A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
@@ -135,12 +137,13 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Implement R2 and R3 behind the accepted contracts: deterministic change-evidence extraction and the safe Takeover Twin lifecycle.
-2. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
-3. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
-4. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
-5. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
-6. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
+1. Publish the R2 short-lived branch, pass the five protected Linux/Windows checks, merge it into `codex/shadow-cockpit-rnd`, and delete the head.
+2. Implement R3 behind the accepted contract: safe Takeover Twin snapshot, lifecycle, catalog, and command boundaries.
+3. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
+4. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
+5. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
+6. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
+7. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 
