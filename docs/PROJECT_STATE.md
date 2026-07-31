@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-31
 
-## Current branch milestone — R3 Takeover Twin complete
+## Current branch milestone — R4 Experience Compiler and Judge accepted
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -21,7 +21,10 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - Six R2 tests cover the real cache-key fixture, cross-run determinism and golden IDs, file rename, multi-file changes, added/deleted functions, class boundaries, Git hunk parsing, unsupported syntax/language, missing checks, unsafe paths, and revision/run drift. The full local Windows extension suite passes 43/43 with TypeScript, build, and VSIX packaging. Protected PR #12 run `30666648522` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R2 acceptance is complete.
 - R3 now implements the fixture-only sanitized snapshot store, standalone one-commit participant repository, opaque Twin Manager, immutable command-registry snapshots, extension-owned trusted catalog, and `TrustedFixtureRunner`. The runner accepts only the pinned manifest, exact declared state/tree, catalog command, hash-verified standalone Node runtime, and opaque twin handle; non-fixture execution remains explicitly unsupported.
 - Seven R3 tests cover production file/index/HEAD/ref/remote/worktree invariants, hidden-answer and source-history absence, cross-project ownership, exact-state execution, tamper/unknown-command rejection, concurrent execution IDs, single-run cancellation, immutable command snapshots, Windows paths with spaces, descendant-process termination, and exact cleanup. The full local Windows extension suite passes 50/50; build and VSIX packaging pass, and the runtime fixture assets are present in the VSIX. Protected PR #13 run `30668675359` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R3 acceptance is complete.
-- The Experience Compiler, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. R3 proves only the closed reviewed-fixture boundary; it does not execute arbitrary participant or workspace code.
+- R4 now compiles one fully attributed, bounded, test-backed seam from real R1 replay plus R2 change evidence into separate internal and participant recovery manifests. The participant projection excludes source revisions, run identity, judge internals, setup, hidden repair, production paths, and controller handles.
+- The Phase-A Evidence Judge reopens the immutable snapshot and command registry, verifies the standalone Git boundary, computes the participant diff, rejects protected or out-of-scope changes, and evaluates only the exact catalog-owned known repair in a clean evaluation twin. No-op and unrelated candidates fail without execution; reveal and abandonment produce no executable readiness evidence.
+- Seven R4 tests cover deterministic compilation, strict projection/schema rejection, unsupported and fixture-drift rejection, protected-path integrity, no-op/unrelated non-execution, three identical clean replays, reveal/abandon honesty, and project-scoped persistent command evidence with tamper detection. The full local Windows extension suite passes 57/57; `npm run check`, production build, and VSIX packaging pass. Protected PR #14 run `30670322126` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R4 acceptance is complete.
+- The Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. R4 remains a closed reviewed-fixture mechanism and does not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
 - A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
@@ -139,11 +142,10 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
-2. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
-3. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
-4. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
-5. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
+1. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
+2. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
+3. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
+4. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 
