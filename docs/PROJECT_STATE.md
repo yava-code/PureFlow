@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-31
 
-## Current branch milestone — R1 replay and Flight Recorder candidate
+## Current branch milestone — R1 replay and Flight Recorder complete
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -15,8 +15,8 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - R0a now implements RFC 8785 canonical JSON, domain-separated SHA-256, UTF-8 path ordering, tree/candidate/manifest hashes, the versioned fixture types, and fail-closed manifest validation. Ten R0a tests pass on this Windows checkout, bringing the extension suite to 23/23.
 - R0b now has a committed dependency-free `tenant-cache-key` fixture, deterministic Git factory, fixed base/target revisions and state-tree hashes, controller-owned mutation/repair/harness/oracle blobs, and a separately downloaded hash-pinned Node `v22.17.0` runtime. On this Windows checkout, base and target checks pass, the mutation fails the declared tenant-isolation check, the known repair returns the exact target tree to green, and cleanup preserves the source repository snapshot.
 - The full local Windows extension suite passes 27/27 with `npm run check`, build, and VSIX packaging. Protected PR #10 run `30663623200` independently reproduced the exact fixture/runtime behavior on Linux and Windows; all five required checks passed, so R0 acceptance is complete.
-- Short-lived branch `codex/r1-flight-recorder` now implements the schema-v1 `AgentDriver` boundary, checked replay driver, canonical task-intent storage, and append-only local Flight Recorder behind injected storage and evidence-ownership interfaces. Ten R1 tests cover deterministic replay, canonical round trips, sequence/execution/identity violations, cross-project evidence, path and size bounds, failed/cancelled honesty, persistence, range reads, and secret/local-handle omission.
-- The full local Windows extension suite passes 37/37 with `npm run check`; the production bundle and VSIX package also pass. Cross-platform CI and protected integration are still pending, so R1 is a candidate rather than an accepted branch milestone.
+- R1 implements the schema-v1 `AgentDriver` boundary, checked replay driver, canonical task-intent storage, and append-only local Flight Recorder behind injected storage and evidence-ownership interfaces. Ten R1 tests cover deterministic replay, canonical round trips, sequence/execution/identity violations, cross-project evidence, path and size bounds, failed/cancelled honesty, persistence, range reads, and secret/local-handle omission.
+- The full local Windows extension suite passes 37/37 with `npm run check`; the production bundle and VSIX package also pass. Protected PR #11 run `30665384997` independently passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R1 acceptance is complete.
 - The semantic extractor, Experience Compiler, Takeover Twin lifecycle, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. `TrustedFixtureRunner` exists for the closed R0 fixture substrate.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
@@ -135,13 +135,12 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Publish the R1 short-lived branch, pass the five protected Linux/Windows checks, merge it into `codex/shadow-cockpit-rnd`, and delete the head.
-2. Implement R2 and R3 behind the accepted contracts: deterministic change-evidence extraction and the safe Takeover Twin lifecycle.
-3. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
-4. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
-5. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
-6. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
-7. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
+1. Implement R2 and R3 behind the accepted contracts: deterministic change-evidence extraction and the safe Takeover Twin lifecycle.
+2. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
+3. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
+4. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
+5. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
+6. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 
