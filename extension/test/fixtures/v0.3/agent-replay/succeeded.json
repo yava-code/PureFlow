@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "driverId": "pureflow.replay.v1",
+  "task": {
+    "schemaVersion": 1,
+    "taskId": "task_tenant_cache",
+    "intent": {
+      "summary": "Add tenant-scoped cache keys",
+      "acceptance": [
+        "cache keys isolate identical IDs across tenants",
+        "the declared controller check passes"
+      ]
+    },
+    "requestedAt": "2026-07-31T20:00:00.000Z"
+  },
+  "run": {
+    "schemaVersion": 1,
+    "runId": "run_tenant_cache",
+    "taskId": "task_tenant_cache",
+    "projectId": "project_r0_fixture",
+    "driverId": "pureflow.replay.v1",
+    "baseRevision": "dbb7f641fc6215cbeefa8a100645e1caa5b3d0a7",
+    "status": "succeeded",
+    "startedAt": "2026-07-31T20:00:01.000Z",
+    "finishedAt": "2026-07-31T20:00:06.000Z",
+    "targetRevision": "449bc18f0e0cb635f36e726affc42a7ae1df0211"
+  },
+  "events": [
+    {
+      "schemaVersion": 1,
+      "projectId": "project_r0_fixture",
+      "runId": "run_tenant_cache",
+      "seq": 1,
+      "at": "2026-07-31T20:00:01.000Z",
+      "event": {
+        "type": "task.started",
+        "taskId": "task_tenant_cache",
+        "baseRevision": "dbb7f641fc6215cbeefa8a100645e1caa5b3d0a7",
+        "intentHash": "630908dfe4286f1b22a28f531f36bfb01ed28743f722cbbff2ef19b0c476960c"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "projectId": "project_r0_fixture",
+      "runId": "run_tenant_cache",
+      "seq": 2,
+      "at": "2026-07-31T20:00:02.000Z",
+      "event": {
+        "type": "plan.recorded",
+        "plan": {
+          "id": "evidence_plan_1",
+          "kind": "plan",
+          "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+          "storedBytes": 64,
+          "originalBytes": 64,
+          "truncated": false,
+          "redactions": [],
+          "mediaType": "text/markdown",
+          "visibility": "controller"
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "projectId": "project_r0_fixture",
+      "runId": "run_tenant_cache",
+      "seq": 3,
+      "at": "2026-07-31T20:00:03.000Z",
+      "event": {
+        "type": "command.started",
+        "executionId": "execution_fixture_check_1",
+        "commandId": "fixture.tenant-cache.check"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "projectId": "project_r0_fixture",
+      "runId": "run_tenant_cache",
+      "seq": 4,
+      "at": "2026-07-31T20:00:04.000Z",
+      "event": {
+        "type": "test.finished",
+        "executionId": "execution_fixture_check_1",
+        "commandId": "fixture.tenant-cache.check",
+        "testId": "tenant-isolation",
+        "status": "passed",
+        "output": {
+          "id": "evidence_test_1",
+          "kind": "test-output",
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "storedBytes": 48,
+          "originalBytes": 48,
+          "truncated": false,
+          "redactions": [],
+          "mediaType": "application/json",
+          "visibility": "controller"
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "projectId": "project_r0_fixture",
+      "runId": "run_tenant_cache",
+      "seq": 5,
+      "at": "2026-07-31T20:00:05.000Z",
+      "event": {
+        "type": "command.finished",
+        "executionId": "execution_fixture_check_1",
+        "commandId": "fixture.tenant-cache.check",
+        "exitCode": 0,
+        "timedOut": false,
+        "cancelled": false,
+        "output": {
+          "id": "evidence_command_1",
+          "kind": "command-output",
+          "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+          "storedBytes": 96,
+          "originalBytes": 96,
+          "truncated": false,
+          "redactions": [],
+          "mediaType": "text/plain",
+          "visibility": "controller"
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "projectId": "project_r0_fixture",
+      "runId": "run_tenant_cache",
+      "seq": 6,
+      "at": "2026-07-31T20:00:05.500Z",
+      "event": {
+        "type": "file.changed",
+        "path": "src/cache-key.ts",
+        "beforeSha256": "4444444444444444444444444444444444444444444444444444444444444444",
+        "afterSha256": "5555555555555555555555555555555555555555555555555555555555555555",
+        "diff": {
+          "id": "evidence_diff_1",
+          "kind": "diff",
+          "sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+          "storedBytes": 128,
+          "originalBytes": 128,
+          "truncated": false,
+          "redactions": [],
+          "mediaType": "text/x-diff",
+          "visibility": "controller"
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "projectId": "project_r0_fixture",
+      "runId": "run_tenant_cache",
+      "seq": 7,
+      "at": "2026-07-31T20:00:06.000Z",
+      "event": {
+        "type": "run.finished",
+        "status": "succeeded",
+        "targetRevision": "449bc18f0e0cb635f36e726affc42a7ae1df0211"
+      }
+    }
+  ]
+}
