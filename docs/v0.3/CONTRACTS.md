@@ -71,7 +71,7 @@ Canonical object digests and raw byte hashes use one explicitly separated scheme
 - `canonicalHash(domain, value)` is lowercase hex SHA-256 over `UTF8("pureflow/v0.3/" + domain + "\n") || UTF8(JCS(value))`;
 - fields named `sha256` contain lowercase hex raw `SHA-256(bytes)` for the exact stored bytes; Git OIDs retain Git's native object algorithm and are never placed in a `Sha256` field;
 - a file manifest is sorted by the UTF-8 byte order of normalized `path`, rejects duplicate or case-colliding paths, and hashes `[{ path, mode, sha256 }]` with domain `tree`;
-- `FixtureManifest` uses domain `fixture-manifest`, command registry snapshots use `command-registry`, task intents use `task-intent`, participant diffs use `candidate-diff`, command results use `command-result`, judge results use `judge-result`, Control Pulse claims use `control-claim`, internal probes use `control-probe`, probe attempts use `control-probe-attempt`, probe results use `control-probe-result`, capability records use `capability-evidence`, and readiness records use `verified-readiness`; a value omits its own digest field before hashing.
+- `FixtureManifest` uses domain `fixture-manifest`, command registry snapshots use `command-registry`, task intents use `task-intent`, semantic units use `semantic-unit`, candidate seams use `candidate-seam`, participant diffs use `candidate-diff`, command results use `command-result`, judge results use `judge-result`, Control Pulse claims use `control-claim`, internal probes use `control-probe`, probe attempts use `control-probe-attempt`, probe results use `control-probe-result`, capability records use `capability-evidence`, and readiness records use `verified-readiness`; a value omits its own digest field before hashing.
 
 `candidate-diff` never hashes Git's formatted patch output. It hashes this normalized value, with `changes` sorted by UTF-8 bytes of `path` and duplicate or case-colliding paths rejected:
 
@@ -506,6 +506,19 @@ type ExtractionResult = ExtractionContext &
 R2 owns this boundary. It may mark a unit unattributed or a factor unknown; it must not use an LLM narrative as observed intent, invariant, coverage, or runtime evidence. R4 consumes candidates only from a `supported` result without reopening vendor-specific agent events. `supported` contains at least one seam and every seam has at least one linked check; `partial` is stored for diagnostics and experiment accounting but cannot automatically compile an episode; `unsupported` always has an empty seam list.
 
 Known factor values are normalized to `[0, 1]`; `null` means unavailable, not zero. `estimatedAttentionMinutes` is an integer from 1 to 30 in R&D. Selection records the factor values and deterministic tie-breaker (`CandidateSeam.id` ascending) used for the choice.
+
+The first R2 implementation is deliberately narrow and deterministic:
+
+- Git changes are read by full verified base/target OID with `--name-status -z`, rename detection, and zero-context patches; paths are normalized workspace-relative values, source files are capped at 1 MiB, and a revision pair is capped at 256 changed files.
+- Only `.ts` and `.tsx` implementation files are parsed with the TypeScript compiler API. Declaration files and syntactically invalid sources are unsupported; unrecognized changed code returns an explicit reason rather than an inferred symbol.
+- Fixture check linkage is explicit from the committed fixture manifest. R2 never guesses a test from a filename, import, or LLM narrative.
+- `changedLineSha256` is the sorted unique list of raw SHA-256 hashes of the exact UTF-8 logical line bytes, excluding the line terminator, for removed base lines and added target lines that intersect the unit. An unchanged file rename may therefore have an empty list.
+- `SemanticUnit.id` is `unit_` plus `canonicalHash("semantic-unit", { schemaVersion, path, symbol, kind, changedLineSha256 })`.
+- `CandidateSeam.id` is `seam_` plus `canonicalHash("candidate-seam", { schemaVersion, projectId, sourceRunId, baseRevision, targetRevision, unitId, linkedChecks })`; `linkedChecks` is sorted and unique.
+- R2 verifies a matching Flight Recorder file event against the exact before/after file bytes. Attribution exists only when that event and `task.started.intentHash` exist; otherwise the unit is explicitly unattributed.
+- Until R5 exists, `blastRadius`, `novelty`, and `capabilityAgeMs` are `null`. `evidenceGap` is the fraction of missing observable slots across one file-change reference plus every linked test result. The fixture slice uses a fixed five-minute attention estimate rather than pretending to have a calibrated model.
+
+Cross-platform golden tests pin the first fixture's semantic-unit and candidate-seam IDs. Any change to these rules requires a schema-version decision rather than silently changing existing identities.
 
 ## 7. Sanitized snapshot boundary
 
