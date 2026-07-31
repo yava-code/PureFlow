@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "version": "v22.17.0",
+  "artifacts": {
+    "linux-x64": {
+      "url": "https://nodejs.org/dist/v22.17.0/node-v22.17.0-linux-x64.tar.xz",
+      "downloadSha256": "325c0f1261e0c61bcae369a1274028e9cfb7ab7949c05512c5b1e630f7e80e12",
+      "executableSha256": "8071ae0fca095a272ad698a90c7061801a86fb6392ddb81e922b68a91a4374b9",
+      "format": "tar-xz",
+      "entry": "node-v22.17.0-linux-x64/bin/node"
+    },
+    "win32-x64": {
+      "url": "https://nodejs.org/dist/v22.17.0/win-x64/node.exe",
+      "downloadSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "executableSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "format": "binary",
+      "entry": null
+    }
+  }
+}

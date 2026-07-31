@@ -1,8 +1,8 @@
 # Project State
 
-Last updated: 2026-07-26
+Last updated: 2026-07-31
 
-## Current branch milestone — R0a fixture foundation implemented
+## Current branch milestone — R0 deterministic substrate complete
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -13,9 +13,11 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - ADR-004 defines event-driven Control Pulses: agents keep working while a developer predicts, falsifies, chooses evidence, or defends one high-value seam. A bounded Side Coach may structure the answer but cannot create readiness evidence.
 - Research, alternative concepts, ADR, experiments, and an agent-executable vertical-slice plan are recorded in `prd.md` and `docs/v0.3/`.
 - R0a now implements RFC 8785 canonical JSON, domain-separated SHA-256, UTF-8 path ordering, tree/candidate/manifest hashes, the versioned fixture types, and fail-closed manifest validation. Ten R0a tests pass on this Windows checkout, bringing the extension suite to 23/23.
-- The deterministic Git fixture, fixture factory, pinned standalone Node artifact, `TrustedFixtureRunner`, `AgentDriver`, Chronicle, semantic extractor, Experience Compiler, Takeover Twin, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. R0 is therefore incomplete.
+- R0b now has a committed dependency-free `tenant-cache-key` fixture, deterministic Git factory, fixed base/target revisions and state-tree hashes, controller-owned mutation/repair/harness/oracle blobs, and a separately downloaded hash-pinned Node `v22.17.0` runtime. On this Windows checkout, base and target checks pass, the mutation fails the declared tenant-isolation check, the known repair returns the exact target tree to green, and cleanup preserves the source repository snapshot.
+- The full local Windows extension suite passes 27/27 with `npm run check`, build, and VSIX packaging. Protected PR #10 run `30663623200` independently reproduced the exact fixture/runtime behavior on Linux and Windows; all five required checks passed, so R0 acceptance is complete.
+- `TrustedFixtureRunner`, `AgentDriver`, Chronicle, semantic extractor, Experience Compiler, Takeover Twin, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
-- A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract now closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization. This is implemented only at the R0a contract/hash layer.
+- A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
 - A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
 - The R&D branch is published at `origin/codex/shadow-cockpit-rnd`. Its first Jules workflow run was correctly skipped because `JULES_RND_LOOP_ENABLED` is not enabled; no Jules session was created.
 - `Protect main` is active: PR, conversation resolution, strict `extension`/`contract`/`web` checks, up-to-date base, deletion protection, and force-push protection are enforced with zero required approvals for the sole owner.
@@ -131,8 +133,8 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Finish R0b: commit the deterministic tenant-cache-key Git fixture/factory, provision the pinned standalone Node artifact, and prove identical revisions and tree hashes on Windows/Linux.
-2. Implement R1–R3 behind stable contracts: replay AgentDriver plus Chronicle, change-evidence extractor, and safe Takeover Twin lifecycle.
+1. Merge protected PR #10 into `codex/shadow-cockpit-rnd` after the final documentation commit repeats the five required checks.
+2. Implement R1–R3 behind stable contracts: replay AgentDriver plus Chronicle, change-evidence extractor, and safe Takeover Twin lifecycle. R1 should record whether real agent near-miss replay has enough observable checkpoint evidence to justify a versioned contract proposal.
 3. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
 4. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
 5. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.

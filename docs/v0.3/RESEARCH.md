@@ -16,7 +16,7 @@ Product pages establish what a tool claims or documents, not that it improves le
 
 ### Landscape method
 
-The public-product review was run on 2026-07-25 and refreshed on 2026-07-26. It used official documentation or first-party product pages where available. Search families included:
+The public-product review was run on 2026-07-25, refreshed on 2026-07-26, and received a mechanism-focused research refresh on 2026-07-31. It used official documentation or first-party product pages where available. Search families included:
 
 ```text
 AI coding IDE developer skill retention
@@ -112,6 +112,22 @@ These studies do not evaluate modern agent swarms directly. They do reinforce th
 A 2026 controlled experiment with 86 Python programmers, [“Programmers Are Poor and Overconfident Judges of LLM-Generated Assertions”](https://arxiv.org/abs/2607.08885), reported 74% accuracy when judging correct assertions but 49% for incorrect assertions despite similar confidence. Natural-language explanations provided no overall accuracy benefit; low-quality explanations reduced accuracy while increasing confidence.
 
 The study concerns generated postconditions rather than full agent patches, so it does not directly validate PureFlow. It does falsify the assumption that another plausible explanation is a sufficient review or teaching mechanism. Control Pulses therefore end in executable evidence, not model agreement.
+
+### Cognitive forcing reduces overreliance but can damage the experience
+
+Buçinca, Malaya, and Gajos compared three cognitive-forcing designs with simple explanation interfaces and a no-AI baseline in [an experiment with 199 participants](https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca2021trust.shtml). The forcing designs reduced overreliance on incorrect AI advice, but participants rated the most effective interventions least favorably, and benefits varied with motivation for effortful thinking.
+
+This is a warning against a compulsory checkpoint after every agent action. PureFlow should spend a user-selected attention budget only at causally important seams, let production continue, and measure voluntary return rather than assuming that more friction is better.
+
+### Adaptive support is a separate optimization problem
+
+A 2026 TOCHI paper, [“Offline Reinforcement Learning for Adaptive Support in AI-Assisted Decision-Making”](https://discovery.ucl.ac.uk/id/eprint/10226721/), learned support policies across two experiments with 316 and 964 participants. Accuracy-optimized policies improved joint decision accuracy; learning-optimized policies improved learning only at times. The authors explicitly treat task performance and human skill improvement as different objectives.
+
+The direct implication is architectural: the future Autonomy Router must not optimize clicks, completion, or software throughput alone. A learned policy is a later possibility only after PureFlow has enough behavioral and delayed-transfer data, a predeclared multi-objective loss, and an interpretable deterministic baseline. R0–R8 keep the router transparent and rule-based.
+
+### Throughput is real value worth preserving
+
+Three randomized field experiments covering 4,867 developers reported a noisy but combined [26.08% increase in completed tasks](https://doi.org/10.1287/mnsc.2025.00535) from access to AI code-completion assistance, with larger adoption and gains among less experienced developers. Code completion is not an autonomous swarm, and completed tasks are not a skill measure. The result still supports treating automation speed as product value rather than deliberately removing the tool developers now rely on.
 
 ## 4. Current product landscape
 

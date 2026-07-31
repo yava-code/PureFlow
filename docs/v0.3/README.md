@@ -19,7 +19,7 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 ## Current truth
 
 - The released v0.1 VSCodium IDE exists and remains the runtime baseline.
-- The v0.3 Dual-Control product runtime is not implemented. R0a now contains only canonical hashing and fail-closed fixture-contract validation.
+- The v0.3 Dual-Control product runtime is not implemented. R0 is complete: R0a provides canonical hashing and fail-closed fixture-contract validation, while R0b provides the deterministic fixture, standalone hash-pinned runtime, external oracle, mutation, and exact repair. Protected PR #10 run `30663623200` reproduced the golden behavior on Linux and Windows.
 - No retention, takeover, productivity, or usability target has been measured.
 - The first valid build is one test-backed vertical slice, not a full Cursor clone.
 - R0–R4 may execute only finite, repository-owned fixture states. Arbitrary participant or corpus code remains blocked until ADR-003 selects and runtime-verifies a real sandbox backend.

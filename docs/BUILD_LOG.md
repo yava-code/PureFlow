@@ -2,6 +2,16 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-31 — R0 deterministic fixture accepted
+
+- Added the dependency-free `tenant-cache-key` fixture with fixed base, target, and mutated trees; controller-owned harness, oracle, mutation, and known repair; fixed SHA-1 Git identity, timestamps, branch, LF policy, and golden revisions/hashes.
+- Added a fixture factory that creates a standalone repository from an empty temp directory, proves base/target/mutation/repair behavior through the pinned runtime, and removes only its validated temp root while preserving the source repository snapshot.
+- Added an official Node `v22.17.0` artifact catalog and provisioner for Windows x64 and Linux x64. Download and executable hashes are pinned; the runtime is stored outside Git/VSIX payloads, rehashed on open, executes `--version`, and must not alias `process.execPath`.
+- Local Windows evidence: `npm run check` passed, all 27 extension tests passed, production build passed, and the VSIX packaged at 668 KB. Protected PR #10 run `30663623200` then passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`; Linux and Windows both provisioned their pinned standalone runtime and reproduced the fixture behavior. R0 acceptance is complete.
+- Refreshed research on cognitive forcing, adaptive support, and AI productivity. Added agent near-miss replay, evidence escrow, decision-stage rotation, control reserve, and a deferred learned autonomy policy as falsifiable concepts. None is represented as implemented or effective.
+
+Evidence: `extension/test/fixture.test.ts`, `extension/src/twin/fixture-factory.ts`, `extension/src/twin/fixture-runtime.ts`, `extension/fixture-node-artifacts.json`, local command output on 2026-07-31, and protected GitHub Actions run `30663623200` on PR #10.
+
 ## 2026-07-26 — Control Pulse architecture and R0a foundation
 
 - Pivoted the random-function idea into semantic Recall Probes: randomness is allowed only inside a high-value seam set selected by blast radius, surprise, evidence, novelty, and future takeover value.
