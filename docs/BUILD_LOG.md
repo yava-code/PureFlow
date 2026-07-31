@@ -2,6 +2,15 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-31 — R7 sandbox selection and corpus preregistration
+
+- Selected digest-pinned Linux containers through Docker Desktop/WSL2 as the first replaceable Phase-B backend in ADR-003. The decision fixes prerequisite detection, explicit provisioning, mount policy, read-only oracle delivery, resource limits, cancellation/cleanup, image identity, and fail-closed behavior.
+- Started Docker Desktop through its supported CLI and ran a real disposable Windows capability audit against `node@sha256:b04ce4ae4e95b522112c2e5c52f781471a5cbc3b594527bcddedee9bc48c03a0`. The probe observed network failure under `network=none`, read-only root, no undeclared mounts, `EROFS` on the oracle with unchanged host hash, 128 MiB/0.5 CPU/64 PID limits, all capabilities dropped, `no-new-privileges`, terminal container kill, and exact removal.
+- Froze the R7 sampling and analysis protocol before compiler outcomes: deterministic first-parent eligibility, 30 patches across at least three repositories, hash-assigned 12-patch development and 18-patch held-out sets, two independent human raters, Wilson intervals, adversarial cases, thresholds, and explicit narrowing rules.
+- No Docker `SandboxRunner`, corpus patch, compiler result, or human rating exists yet. Arbitrary code remains disabled and R7 has not passed.
+
+Evidence: `docs/v0.3/ADR-003-DOCKER-DESKTOP-SANDBOX.md`, `docs/v0.3/R7_PREREGISTRATION.md`, local Docker Desktop/Engine/image inspection, and the disposable capability output recorded in ADR-003.
+
 ## 2026-07-31 — R4.5 fixture-only Control Pulse accepted
 
 - Implemented exact bounded Change Claim, participant/internal probe, Side Coach capsule/proposal, attempt, and result contracts. Claim, probe, attempt, command result, and probe result identities use their normative domain-separated hashes.

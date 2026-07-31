@@ -10,21 +10,23 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 4. [`CONCEPTS.md`](CONCEPTS.md) — alternative architectures and selection.
 5. [`ADR-001-DUAL-CONTROL.md`](ADR-001-DUAL-CONTROL.md) — system decision.
 6. [`ADR-002-EXECUTION-PHASES.md`](ADR-002-EXECUTION-PHASES.md) — trusted-fixture slice versus the untrusted-code sandbox gate.
-7. [`ADR-004-EPISTEMIC-CHECKPOINTS.md`](ADR-004-EPISTEMIC-CHECKPOINTS.md) — event-driven Control Pulses, Explain-to-Break, Side Coach, and honest motivation mechanics.
-8. [`ADR-005-FLIGHT-RECORDER-NAME.md`](ADR-005-FLIGHT-RECORDER-NAME.md) — collision-free name and raw-ledger boundary.
-9. [`ADR-006-CODEX-APP-SERVER-ADAPTER.md`](ADR-006-CODEX-APP-SERVER-ADAPTER.md) — first live runtime choice and portability path.
-10. [`CONTRACTS.md`](CONTRACTS.md) — normative schemas, hidden-answer isolation, oracle integrity, and command boundary.
-11. [`EXPERIMENTS.md`](EXPERIMENTS.md) — hypotheses, metrics, and kill criteria.
-12. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
-13. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
+7. [`ADR-003-DOCKER-DESKTOP-SANDBOX.md`](ADR-003-DOCKER-DESKTOP-SANDBOX.md) — selected Phase-B backend, capability evidence, and remaining gate.
+8. [`ADR-004-EPISTEMIC-CHECKPOINTS.md`](ADR-004-EPISTEMIC-CHECKPOINTS.md) — event-driven Control Pulses, Explain-to-Break, Side Coach, and honest motivation mechanics.
+9. [`ADR-005-FLIGHT-RECORDER-NAME.md`](ADR-005-FLIGHT-RECORDER-NAME.md) — collision-free name and raw-ledger boundary.
+10. [`ADR-006-CODEX-APP-SERVER-ADAPTER.md`](ADR-006-CODEX-APP-SERVER-ADAPTER.md) — first live runtime choice and portability path.
+11. [`CONTRACTS.md`](CONTRACTS.md) — normative schemas, hidden-answer isolation, oracle integrity, and command boundary.
+12. [`EXPERIMENTS.md`](EXPERIMENTS.md) — hypotheses, metrics, and kill criteria.
+13. [`R7_PREREGISTRATION.md`](R7_PREREGISTRATION.md) — frozen 30-patch sampling, metrics, and analysis protocol.
+14. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
+15. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
 
 ## Current truth
 
 - The released v0.1 VSCodium IDE exists and remains the runtime baseline.
-- The complete v0.3 Dual-Control product runtime is not implemented. R0 provides canonical hashing, fail-closed fixture contracts, the deterministic fixture, standalone hash-pinned runtime, external oracle, mutation, and exact repair. R1 adds the checked replay `AgentDriver` and append-only Flight Recorder. R2 adds deterministic Git/TypeScript change-evidence extraction and explicit fixture check linkage; protected PR #12 run `30666648522` passed the required Linux and Windows checks.
+- The complete v0.3 Dual-Control product runtime is not implemented. R0–R4.5 implement and protect the reviewed-fixture path from canonical evidence through recovery judging and a precommitted Control Pulse. The readiness ledger, cockpit, arbitrary-code sandbox runner, corpus audit, and human pilot remain gated.
 - No retention, takeover, productivity, or usability target has been measured.
 - The first valid build is one test-backed vertical slice, not a full Cursor clone.
-- R0–R4 may execute only finite, repository-owned fixture states. Arbitrary participant or corpus code remains blocked until ADR-003 selects and runtime-verifies a real sandbox backend.
+- R0–R4.5 may execute only finite, repository-owned fixture states. ADR-003 selects Docker Desktop/WSL2 and records one local Windows primitive audit, but arbitrary participant or corpus code remains blocked until the exact `SandboxRunner` passes protected Linux/Windows tests.
 
 ## Architecture shorthand
 

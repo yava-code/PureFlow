@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-31
 
-## Current branch milestone — R4.5 fixture-only Control Pulse accepted
+## Current branch milestone — R7 sandbox selected and corpus protocol frozen
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -27,6 +27,9 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - R4.5 now implements bounded `ChangeClaim`, participant/internal probe, Side Coach capsule/proposal, attempt, and result contracts with exact schemas and domain-separated hashes. The deterministic no-model path commits a developer prediction before observation and resolves only one extension-owned fixture state/check pair.
 - Participant serialization contains no fixture binding, command, state, revision, oracle, controller handle, or production path. Capsule construction reopens only participant-visible project evidence, caps and scrubs excerpts, and treats every model proposal as non-executable text plus an optional existing input ID.
 - Six R4.5 tests cover cross-platform golden claim/probe/attempt hashes, strict projection and catalog isolation, unstable/cross-project/hidden/malformed evidence rejection, capsule path/secret/ID redaction, precommitted prediction, prose-invariant observation, replay/late/identity failures, and timeout/cancellation/runner-error invalidation. The full local Windows extension suite passes 63/63; `npm run check`, production build, and VSIX packaging pass. Protected PR #15 run `30671499103` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R4.5 acceptance is complete.
+- ADR-003 selects digest-pinned Linux containers through Docker Desktop/WSL2 as the replaceable Phase-B backend. A real local Windows probe verified outbound network failure, a read-only root, zero undeclared mounts, an unchanged `EROFS` oracle, memory/CPU/PID limits, dropped capabilities, `no-new-privileges`, descendant-container kill, and exact removal on Docker Desktop 4.61 / Engine 29.2.1.
+- `R7_PREREGISTRATION.md` freezes the repository/patch sampling algorithm, eligibility and exclusions, 12/18 development/held-out split, two-rater protocol, metrics, confidence intervals, adversarial cases, thresholds, and narrowing rules before corpus outcomes are inspected.
+- The Docker `SandboxRunner` itself and the 30-patch corpus are not implemented. The local primitive probe is backend-selection evidence, not permission to execute arbitrary participant or repository code.
 - The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
@@ -125,7 +128,7 @@ The repository contains no verified evidence that the owner submitted the final 
 | Input | Impact | Resolution |
 | --- | --- | --- |
 | The first live adapter is selected but no accessible Codex CLI is configured for this checkout | ADR-006 selects Codex App Server over local stdio, but the Microsoft Store packaged executable discovered here returns `Access denied` when launched from the repository shell | Keep replay R&D independent; the live spike must preflight a separately accessible, exact-version user-installed Codex CLI and fail closed when unavailable |
-| Untrusted-code sandbox backend is not selected | R7 corpus and human pilots cannot execute third-party or arbitrary participant code; R0–R4.5 can validate only finite reviewed fixture states, controller-owned repair, and catalog probes | After the fixture slice, select and verify a Windows-capable backend in a separate ADR; never fall back to direct execution |
+| Docker backend is selected but `SandboxRunner` is not implemented or protected-tested | R7 corpus and human pilots still cannot execute third-party or arbitrary participant code; R0–R4.5 remain fixture-only | Implement ADR-003 request validation, digest catalog, mounts, consent, evidence, timeout/cancel, and Linux/Windows capability tests; never fall back to host execution |
 | Technical patch corpus is not assembled | Automatic episode-generation rate cannot be measured | Collect at least 30 consented or open-source test-backed TypeScript patches for R7 |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
 | Default-branch Jules scheduler awaits explicit merge approval | Scheduled/manual continuation is not installed on `main`; draft PR #8 remains isolated and the enable variable stays off | Owner explicitly says `merge #8`; then merge through protected `main`, remove the temporary infrastructure branch, and run one guarded canary through the protected R&D branch |
@@ -145,8 +148,8 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
-2. Select and verify the Windows-capable Phase-B sandbox required by R7; fail closed if none meets ADR-003.
+1. Implement and protected-test the ADR-003 Docker `SandboxRunner` without a host-execution fallback.
+2. Collect and freeze the preregistered 30 eligible patches, then run the recovery-plus-probe audit.
 3. Add the local readiness ledger and minimal cockpit only after the R7 gate passes.
 4. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
