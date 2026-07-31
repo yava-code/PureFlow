@@ -2,8 +2,9 @@ import { randomUUID } from "node:crypto";
 import { execFile, spawn, type ChildProcess } from "node:child_process";
 import { join, resolve, sep } from "node:path";
 import { assertToken } from "../agent/types";
-import { canonicalHash, compareUtf8, rawSha256, treeHash } from "../rnd/canonical";
-import type { EvidenceRef } from "../recorder/events";
+import { canonicalHash, canonicalJson, compareUtf8, rawSha256, treeHash } from "../rnd/canonical";
+import { assertEvidenceRef, type EvidenceRef } from "../recorder/events";
+import type { LocalTextStorage } from "../recorder/store";
 import { BuiltinFixtureCatalog } from "./catalog";
 import { TwinManager } from "./manager";
 import { readCandidateTree } from "./snapshot";
@@ -20,23 +21,32 @@ interface StoredOutput {
   content: string;
 }
 
-export class MemoryCommandEvidenceStore {
+export interface CommandEvidenceStore {
+  put(projectId: string, content: Buffer, originalBytes: number): Promise<EvidenceRef>;
+  putNamed(projectId: string, id: string, content: Buffer, originalBytes: number): Promise<EvidenceRef>;
+  open(projectId: string, ref: EvidenceRef): Promise<string | undefined>;
+}
+
+export class MemoryCommandEvidenceStore implements CommandEvidenceStore {
   private readonly values = new Map<string, StoredOutput>();
 
   async put(projectId: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
     assertToken(projectId, "projectId");
     const id = randomUUID().replaceAll("-", "");
-    const ref: EvidenceRef = {
-      id,
-      kind: "command-output",
-      sha256: rawSha256(content),
-      storedBytes: content.byteLength,
-      originalBytes,
-      truncated: content.byteLength < originalBytes,
-      redactions: [],
-      mediaType: "text/plain",
-      visibility: "controller",
-    };
+    return this.putNamed(projectId, id, content, originalBytes);
+  }
+
+  async putNamed(projectId: string, id: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
+    assertToken(projectId, "projectId");
+    assertToken(id, "evidenceId");
+    const ref = outputRef(id, content, originalBytes);
+    const current = this.values.get(id);
+    if (current) {
+      if (current.projectId !== projectId || canonicalHash("evidence-ref", current.ref) !== canonicalHash("evidence-ref", ref) || current.content !== content.toString("utf8")) {
+        throw new Error("Named command evidence already exists with different content");
+      }
+      return structuredClone(current.ref);
+    }
     this.values.set(id, { projectId, ref, content: content.toString("utf8") });
     return structuredClone(ref);
   }
@@ -47,6 +57,57 @@ export class MemoryCommandEvidenceStore {
       return undefined;
     }
     return value.content;
+  }
+}
+
+export class LocalCommandEvidenceStore implements CommandEvidenceStore {
+  constructor(private readonly storage: LocalTextStorage) {}
+
+  async put(projectId: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
+    return this.putNamed(projectId, randomUUID().replaceAll("-", ""), content, originalBytes);
+  }
+
+  async putNamed(projectId: string, id: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
+    assertToken(projectId, "projectId");
+    assertToken(id, "evidenceId");
+    const ref = outputRef(id, content, originalBytes);
+    const path = outputPath(projectId, id);
+    const current = await this.storage.readText(`${path}.json`);
+    if (current !== undefined) {
+      const parsed = JSON.parse(current) as EvidenceRef;
+      assertEvidenceRef(parsed, "command-output");
+      if (canonicalJson(parsed) !== current || canonicalJson(parsed) !== canonicalJson(ref)) {
+        throw new Error("Named command evidence already exists with different metadata");
+      }
+      const stored = await this.storage.readText(`${path}.b64`);
+      if (stored !== content.toString("base64")) throw new Error("Named command evidence already exists with different content");
+      return structuredClone(parsed);
+    }
+    await this.storage.writeText(`${path}.b64`, content.toString("base64"));
+    await this.storage.writeText(`${path}.json`, canonicalJson(ref));
+    return structuredClone(ref);
+  }
+
+  async open(projectId: string, ref: EvidenceRef): Promise<string | undefined> {
+    assertToken(projectId, "projectId");
+    assertEvidenceRef(ref, "command-output");
+    const path = outputPath(projectId, ref.id);
+    const [meta, encoded] = await Promise.all([
+      this.storage.readText(`${path}.json`),
+      this.storage.readText(`${path}.b64`),
+    ]);
+    if (meta === undefined && encoded === undefined) return undefined;
+    if (meta === undefined || encoded === undefined) throw new Error("Stored command evidence is incomplete");
+    const parsed = JSON.parse(meta) as EvidenceRef;
+    assertEvidenceRef(parsed, "command-output");
+    if (canonicalJson(parsed) !== meta || canonicalJson(parsed) !== canonicalJson(ref)) {
+      throw new Error("Stored command evidence metadata failed integrity");
+    }
+    const bytes = Buffer.from(encoded, "base64");
+    if (bytes.byteLength !== ref.storedBytes || rawSha256(bytes) !== ref.sha256) {
+      throw new Error("Stored command evidence content failed integrity");
+    }
+    return bytes.toString("utf8");
   }
 }
 
@@ -63,7 +124,7 @@ export class TrustedFixtureProcessRunner {
   constructor(
     private readonly catalog: BuiltinFixtureCatalog,
     private readonly twins: TwinManager,
-    private readonly evidence: MemoryCommandEvidenceStore,
+    private readonly evidence: CommandEvidenceStore,
   ) {}
 
   async run(request: TrustedFixtureRequest): Promise<CommandResult> {
@@ -322,4 +383,27 @@ function validateRequest(request: TrustedFixtureRequest): void {
   assertToken(request.commandId, "commandId");
   assertToken(request.twinHandle, "twinHandle");
   if (!["base", "target", "mutated"].includes(request.stateId)) throw new Error("Unknown fixture state");
+}
+
+function outputRef(id: string, content: Buffer, originalBytes: number): EvidenceRef {
+  if (!Number.isSafeInteger(originalBytes) || originalBytes < content.byteLength) {
+    throw new Error("Command evidence original byte count is invalid");
+  }
+  const ref: EvidenceRef = {
+    id,
+    kind: "command-output",
+    sha256: rawSha256(content),
+    storedBytes: content.byteLength,
+    originalBytes,
+    truncated: content.byteLength < originalBytes,
+    redactions: [],
+    mediaType: "text/plain",
+    visibility: "controller",
+  };
+  assertEvidenceRef(ref, "command-output");
+  return ref;
+}
+
+function outputPath(projectId: string, id: string): string {
+  return `command-evidence/${projectId}/${id}`;
 }

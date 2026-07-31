@@ -209,6 +209,12 @@ export async function verifyStandaloneRepo(
   participantCommit: string,
   files: readonly TreeFile[],
 ): Promise<void> {
+  await verifyParticipantGitBoundary(root, participantCommit);
+  const actual = await readCandidateTree(root);
+  if (treeHash(actual) !== treeHash(files)) throw new Error("Participant tree does not match its snapshot");
+}
+
+export async function verifyParticipantGitBoundary(root: string, participantCommit: string): Promise<void> {
   if ((await git(root, ["rev-parse", "HEAD"])) !== participantCommit) {
     throw new Error("Participant commit changed");
   }
@@ -223,8 +229,6 @@ export async function verifyStandaloneRepo(
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
   }
-  const actual = await readCandidateTree(root);
-  if (treeHash(actual) !== treeHash(files)) throw new Error("Participant tree does not match its snapshot");
 }
 
 async function assertTree(root: string, expected: string, label: string): Promise<void> {

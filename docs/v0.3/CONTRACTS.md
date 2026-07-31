@@ -840,6 +840,8 @@ interface JudgeResult {
 }
 ```
 
+`JudgeResult.resultHash` is `canonicalHash("judge-result", result without resultHash)`.
+
 The judge establishes only the declared behavior under the declared oracle. It is not proof of total correctness or human mastery.
 
 ## 11. Readiness evidence versus verified readiness
