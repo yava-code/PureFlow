@@ -11,10 +11,12 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 5. [`ADR-001-DUAL-CONTROL.md`](ADR-001-DUAL-CONTROL.md) — system decision.
 6. [`ADR-002-EXECUTION-PHASES.md`](ADR-002-EXECUTION-PHASES.md) — trusted-fixture slice versus the untrusted-code sandbox gate.
 7. [`ADR-004-EPISTEMIC-CHECKPOINTS.md`](ADR-004-EPISTEMIC-CHECKPOINTS.md) — event-driven Control Pulses, Explain-to-Break, Side Coach, and honest motivation mechanics.
-8. [`CONTRACTS.md`](CONTRACTS.md) — normative schemas, hidden-answer isolation, oracle integrity, and command boundary.
-9. [`EXPERIMENTS.md`](EXPERIMENTS.md) — hypotheses, metrics, and kill criteria.
-10. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
-11. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
+8. [`ADR-005-FLIGHT-RECORDER-NAME.md`](ADR-005-FLIGHT-RECORDER-NAME.md) — collision-free name and raw-ledger boundary.
+9. [`ADR-006-CODEX-APP-SERVER-ADAPTER.md`](ADR-006-CODEX-APP-SERVER-ADAPTER.md) — first live runtime choice and portability path.
+10. [`CONTRACTS.md`](CONTRACTS.md) — normative schemas, hidden-answer isolation, oracle integrity, and command boundary.
+11. [`EXPERIMENTS.md`](EXPERIMENTS.md) — hypotheses, metrics, and kill criteria.
+12. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
+13. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
 
 ## Current truth
 
@@ -28,7 +30,7 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 
 ```text
 production agent run
-→ observable Chronicle
+→ observable Flight Recorder
 → high-value changed seam
 → disposable Takeover Twin
 → human prediction / diagnosis / intervention / recovery

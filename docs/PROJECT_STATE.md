@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-31
 
-## Current branch milestone — R0 deterministic substrate complete
+## Current branch milestone — R1 replay and Flight Recorder candidate
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -15,7 +15,9 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - R0a now implements RFC 8785 canonical JSON, domain-separated SHA-256, UTF-8 path ordering, tree/candidate/manifest hashes, the versioned fixture types, and fail-closed manifest validation. Ten R0a tests pass on this Windows checkout, bringing the extension suite to 23/23.
 - R0b now has a committed dependency-free `tenant-cache-key` fixture, deterministic Git factory, fixed base/target revisions and state-tree hashes, controller-owned mutation/repair/harness/oracle blobs, and a separately downloaded hash-pinned Node `v22.17.0` runtime. On this Windows checkout, base and target checks pass, the mutation fails the declared tenant-isolation check, the known repair returns the exact target tree to green, and cleanup preserves the source repository snapshot.
 - The full local Windows extension suite passes 27/27 with `npm run check`, build, and VSIX packaging. Protected PR #10 run `30663623200` independently reproduced the exact fixture/runtime behavior on Linux and Windows; all five required checks passed, so R0 acceptance is complete.
-- `TrustedFixtureRunner`, `AgentDriver`, Chronicle, semantic extractor, Experience Compiler, Takeover Twin, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet.
+- Short-lived branch `codex/r1-flight-recorder` now implements the schema-v1 `AgentDriver` boundary, checked replay driver, canonical task-intent storage, and append-only local Flight Recorder behind injected storage and evidence-ownership interfaces. Ten R1 tests cover deterministic replay, canonical round trips, sequence/execution/identity violations, cross-project evidence, path and size bounds, failed/cancelled honesty, persistence, range reads, and secret/local-handle omission.
+- The full local Windows extension suite passes 37/37 with `npm run check`; the production bundle and VSIX package also pass. Cross-platform CI and protected integration are still pending, so R1 is a candidate rather than an accepted branch milestone.
+- The semantic extractor, Experience Compiler, Takeover Twin lifecycle, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. `TrustedFixtureRunner` exists for the closed R0 fixture substrate.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
 - A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
@@ -112,7 +114,7 @@ The repository contains no verified evidence that the owner submitted the final 
 
 | Input | Impact | Resolution |
 | --- | --- | --- |
-| First external agent adapter is not selected | Live Chronicle integration cannot start, but replay-based R&D can proceed | Run R1 replay first, compare current supported agent APIs, then record the choice in an ADR |
+| The first live adapter is selected but no accessible Codex CLI is configured for this checkout | ADR-006 selects Codex App Server over local stdio, but the Microsoft Store packaged executable discovered here returns `Access denied` when launched from the repository shell | Keep replay R&D independent; the live spike must preflight a separately accessible, exact-version user-installed Codex CLI and fail closed when unavailable |
 | Untrusted-code sandbox backend is not selected | R7 corpus and human pilots cannot execute third-party or arbitrary participant code; R0–R4.5 can validate only finite reviewed fixture states, controller-owned repair, and catalog probes | After the fixture slice, select and verify a Windows-capable backend in a separate ADR; never fall back to direct execution |
 | Technical patch corpus is not assembled | Automatic episode-generation rate cannot be measured | Collect at least 30 consented or open-source test-backed TypeScript patches for R7 |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
@@ -133,8 +135,8 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Merge protected PR #10 into `codex/shadow-cockpit-rnd` after the final documentation commit repeats the five required checks.
-2. Implement R1–R3 behind stable contracts: replay AgentDriver plus Chronicle, change-evidence extractor, and safe Takeover Twin lifecycle. R1 should record whether real agent near-miss replay has enough observable checkpoint evidence to justify a versioned contract proposal.
+1. Publish the R1 short-lived branch, pass the five protected Linux/Windows checks, merge it into `codex/shadow-cockpit-rnd`, and delete the head.
+2. Implement R2 and R3 behind the accepted contracts: deterministic change-evidence extraction and the safe Takeover Twin lifecycle.
 3. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
 4. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
 5. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.

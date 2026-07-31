@@ -172,6 +172,20 @@ Atrophy is especially useful as a product boundary. PureFlow may borrow spaced r
 
 An observational natural experiment on GitHub contribution streaks, [“How Gamification Affects Software Developers”](https://arxiv.org/abs/2006.02371), found that removing the streak counter changed contribution behavior. This supports streaks as a strong engagement lever and warns that developers will optimize the displayed proxy. PureFlow therefore limits any streak to weekly participation and keeps it separate from capability evidence.
 
+### Integration substrate refresh — 2026-07-31
+
+The first adapter should reuse an agent runtime, but its event model must not become PureFlow's architecture.
+
+- [Codex App Server](https://learn.chatgpt.com/docs/app-server) is the strongest first local rich-client boundary: it documents JSONL-over-stdio, exact-version schema generation, thread and turn control, authoritative command/file-change item completion, approvals, steering, and interruption.
+- [Agent Client Protocol](https://agentclientprotocol.com/updates) is the strongest second portability boundary. Its current lifecycle and [typed session updates](https://agentclientprotocol.github.io/typescript-sdk/types/SessionUpdate.html) cover tools, plans, permissions, and usage, but ACP is a protocol rather than an agent runtime.
+- The [Cline SDK](https://docs.cline.bot/sdk/overview) exposes the same open-source harness used by its IDE and CLI plus [runtime/tool events](https://docs.cline.bot/sdk/events). It is a credible fallback runtime if a narrower App Server adapter cannot yield enough evidence.
+- [OpenCode's server](https://opencode.ai/docs/server/) exposes an OpenAPI document and an event stream with a typed SDK. Its embedded v2 SDK is not yet the stable public boundary, so it remains a later adapter candidate.
+- [Claude Managed Agents](https://platform.claude.com/docs/en/managed-agents/events-and-streaming) has a rich persisted event stream, steering, interruption, tool calls, and subagent threads, but it is hosted beta infrastructure rather than a local IDE integration surface.
+
+This comparison leads to ADR-006: spike Codex App Server first over local stdio, then test ACP as the portability layer. Every adapter normalizes into the same Flight Recorder contract and drops raw reasoning, absolute paths, credentials, and vendor-only fields before storage.
+
+The research refresh also found a naming collision. OpenAI now uses [Chronicle](https://learn.chatgpt.com/docs/customization/chronicle) for screen-derived Codex memory. ADR-005 therefore renames PureFlow's observable run ledger to **Flight Recorder** before R1 data or a public wire format ships.
+
 ## 5. Adjacent precedent: operational drills
 
 Reliability engineering already treats human response as something to exercise:

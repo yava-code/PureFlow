@@ -2,6 +2,17 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-31 — R1 replay and Flight Recorder candidate
+
+- Implemented the exact schema-v1 `AgentTask`, `AgentWorkspace`, `AgentRun`, `AgentDriver`, `RunEvent`, `RunEnvelope`, `RunRecorder`, and `TaskStore` boundaries behind a checked, credential-free replay driver.
+- Added canonical JSONL serialization, strict sequence and terminal ordering, execution identity checks, project-scoped evidence ownership, bounded evidence metadata, task-intent hashing, opaque local-handle omission, range reads, and extension-owned filesystem persistence.
+- Added a checked seven-event fixture transcript and ten R1 tests. The tests reject sequence gaps/duplicates, late events, command identity mismatches, cross-project evidence, absolute paths, identity drift, noncanonical lines, unsorted redactions, oversized stored evidence, unknown fields, and unbounded task intent. Failed and cancelled runs do not invent a target revision.
+- Renamed the raw event layer from `Chronicle` to **Flight Recorder** before publication because OpenAI now uses Chronicle for screen-derived Codex memory. ADR-005 distinguishes the raw controller ledger from a possible participant-facing Flight Log.
+- Compared current official Codex App Server, ACP, Cline SDK, OpenCode server, and Claude Managed Agents interfaces. ADR-006 selects exact-version Codex App Server over local stdio for the first live spike and ACP as the next portability boundary; no generic agent loop or vendor event union enters the domain contract.
+- Local Windows evidence: `npm run check`, all 37 extension tests, production build, and VSIX packaging passed. The packaged Microsoft Store Codex executable was discoverable but returned `Access denied` from the repository shell, so no live adapter success is claimed; its future preflight must require an accessible exact-version CLI and fail closed otherwise.
+
+Evidence: `extension/src/agent/`, `extension/src/recorder/`, `extension/test/flight-recorder.test.ts`, `docs/v0.3/ADR-005-FLIGHT-RECORDER-NAME.md`, `docs/v0.3/ADR-006-CODEX-APP-SERVER-ADAPTER.md`, and local command output on 2026-07-31. Protected cross-platform CI and merge are pending.
+
 ## 2026-07-31 — R0 deterministic fixture accepted
 
 - Added the dependency-free `tenant-cache-key` fixture with fixed base, target, and mutated trees; controller-owned harness, oracle, mutation, and known repair; fixed SHA-1 Git identity, timestamps, branch, LF policy, and golden revisions/hashes.
