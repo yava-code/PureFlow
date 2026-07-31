@@ -2,14 +2,14 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
-## 2026-07-31 — R4.5 fixture-only Control Pulse local candidate
+## 2026-07-31 — R4.5 fixture-only Control Pulse accepted
 
 - Implemented exact bounded Change Claim, participant/internal probe, Side Coach capsule/proposal, attempt, and result contracts. Claim, probe, attempt, command result, and probe result identities use their normative domain-separated hashes.
 - Added one immutable Explain-to-Break catalog input for the reviewed tenant-isolation fixture. The participant commits a prediction before observation; execution can resolve only the catalog-owned `mutated` state and declared tenant-isolation check through `TrustedFixtureRunner`.
 - Kept controller bindings out of participant serialization and model context. The Side Coach receives only capped participant-visible excerpts with evidence IDs, local paths, and known credential shapes removed; its output cannot become code, paths, arguments, environment, or tests.
-- Six R4.5 tests pass locally on Windows. They cover golden hashes, exact projection, evidence/privacy bounds, model proposal isolation, precommit ordering, result invariance to prose, catalog-only execution, replay/cross-project/late rejection, and timeout/cancellation/runner-error invalidation. The complete extension suite passes 63/63; TypeScript, production build, and VSIX packaging pass. Protected Linux/Windows verification is pending.
+- Six R4.5 tests pass locally on Windows. They cover golden hashes, exact projection, evidence/privacy bounds, model proposal isolation, precommit ordering, result invariance to prose, catalog-only execution, replay/cross-project/late rejection, and timeout/cancellation/runner-error invalidation. The complete extension suite passes 63/63; TypeScript, production build, and VSIX packaging pass. Protected PR #15 run `30671499103` passed the required Linux, Windows, contract, web, and policy checks, so R4.5 acceptance is complete.
 
-Evidence: `extension/src/pulse/`, `extension/test/control-pulse.test.ts`, and local command/package output on 2026-07-31.
+Evidence: `extension/src/pulse/`, `extension/test/control-pulse.test.ts`, local command/package output on 2026-07-31, and protected GitHub Actions run `30671499103` on PR #15.
 
 ## 2026-07-31 — R4 Experience Compiler and Phase-A Judge accepted
 
