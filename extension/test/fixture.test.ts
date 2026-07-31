@@ -97,7 +97,7 @@ async function createFixture(): Promise<TenantCacheKeyFixture> {
 async function sourceRepoSnapshot(): Promise<string[]> {
   const commands = [
     ["status", "--porcelain=v1"],
-    ["symbolic-ref", "-q", "HEAD"],
+    ["rev-parse", "--symbolic-full-name", "HEAD"],
     ["rev-parse", "HEAD"],
     ["for-each-ref", "--format=%(refname):%(objectname)", "refs/heads"],
     ["remote", "-v"],
