@@ -50,8 +50,11 @@ extension/src/
   readiness/      local evidence ledger and derived state
   cockpit/        host-to-webview messages for v0.3 UI
 
+extension/fixtures/v0.3/
+  tenant-cache-key/  packaged finite candidate states and controller assets
+
 extension/test/
-  fixtures/v0.3/  tiny deterministic Git repositories or fixture builders
+  fixtures/v0.3/  replay transcripts and other test-only evidence
   agent.test.ts
   flight-recorder.test.ts
   experience.test.ts

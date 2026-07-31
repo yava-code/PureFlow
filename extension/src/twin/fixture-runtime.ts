@@ -1,13 +1,13 @@
 import { execFile } from "node:child_process";
+import { existsSync } from "node:fs";
 import { readFile, realpath, stat } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { assertExactKeys, assertSha256, rawSha256 } from "../rnd/canonical";
 import { R0_NODE_VERSION, type FixtureRuntime } from "./fixture-contract";
 
 const runFile = promisify(execFile);
-const extensionRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+const extensionRoot = findExtensionRoot();
 
 interface Artifact {
   url: string;
@@ -113,4 +113,11 @@ function validateArtifact(artifact: Artifact): void {
 
 async function readJson<T>(path: string): Promise<T> {
   return JSON.parse(await readFile(path, "utf8")) as T;
+}
+
+function findExtensionRoot(): string {
+  const candidates = [resolve(__dirname, "../.."), resolve(__dirname, "..")];
+  const found = candidates.find((candidate) => existsSync(join(candidate, "fixture-node-artifacts.json")));
+  if (!found) throw new Error("PureFlow extension root does not contain the fixture runtime catalog");
+  return found;
 }

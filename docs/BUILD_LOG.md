@@ -2,6 +2,16 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-07-31 — R3 Takeover Twin local candidate
+
+- Implemented a controller-owned `SnapshotStore` that starts from the verified fixture target, applies the catalog mutation, creates a sanitized standalone one-commit participant repository, and re-verifies tree hashes, commit identity, ownership, remotes, reflogs, and Git alternates before materialization.
+- Added an opaque Twin Manager with separate uniquely named twin/evaluation directories and explicit `preparing → ready → running → completed/failed → cleaning → cleaned` lifecycle. Cleanup resolves and checks both exact controller-owned paths before recursive removal.
+- Added the immutable fixture command registry, extension-owned catalog, hash-pinned `fixture-node` resolution, bounded command evidence, tombstoned execution IDs, independent cancellation, scrubbed child environment, and full process-tree termination. Every non-fixture request, caller manifest/runtime/path, unknown command, and undeclared tree state fails before execution.
+- Moved the committed fixture from the excluded test tree into packaged extension assets after a VSIX audit found it would otherwise be absent at runtime. The package now contains all three candidate states plus controller-only mutation, repair, harness, and oracle assets.
+- Seven R3 tests pass locally on Windows, including a real descendant-process kill in a path with spaces. The complete extension suite passes 50/50; `npm run check`, production build, and VSIX packaging pass. Protected Linux/Windows CI has not yet accepted this candidate.
+
+Evidence: `extension/src/twin/{types,catalog,snapshot,manager,commands}.ts`, `extension/fixtures/v0.3/tenant-cache-key/`, `extension/test/twin.test.ts`, and local command/package output on 2026-07-31.
+
 ## 2026-07-31 — R2 change evidence accepted
 
 - Added a bounded read-only Git revision reader that verifies full base/target commit IDs, parses NUL-delimited name status plus zero-context hunks, detects renames, caps source and revision size, and keeps every emitted path workspace-relative.
