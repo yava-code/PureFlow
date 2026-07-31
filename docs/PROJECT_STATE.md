@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-31
 
-## Current branch milestone — R4 Experience Compiler and Judge accepted
+## Current branch milestone — R4.5 fixture-only Control Pulse local candidate
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -24,7 +24,10 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - R4 now compiles one fully attributed, bounded, test-backed seam from real R1 replay plus R2 change evidence into separate internal and participant recovery manifests. The participant projection excludes source revisions, run identity, judge internals, setup, hidden repair, production paths, and controller handles.
 - The Phase-A Evidence Judge reopens the immutable snapshot and command registry, verifies the standalone Git boundary, computes the participant diff, rejects protected or out-of-scope changes, and evaluates only the exact catalog-owned known repair in a clean evaluation twin. No-op and unrelated candidates fail without execution; reveal and abandonment produce no executable readiness evidence.
 - Seven R4 tests cover deterministic compilation, strict projection/schema rejection, unsupported and fixture-drift rejection, protected-path integrity, no-op/unrelated non-execution, three identical clean replays, reveal/abandon honesty, and project-scoped persistent command evidence with tamper detection. The full local Windows extension suite passes 57/57; `npm run check`, production build, and VSIX packaging pass. Protected PR #14 run `30670322126` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R4 acceptance is complete.
-- The Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. R4 remains a closed reviewed-fixture mechanism and does not execute arbitrary participant or workspace code.
+- R4.5 now implements bounded `ChangeClaim`, participant/internal probe, Side Coach capsule/proposal, attempt, and result contracts with exact schemas and domain-separated hashes. The deterministic no-model path commits a developer prediction before observation and resolves only one extension-owned fixture state/check pair.
+- Participant serialization contains no fixture binding, command, state, revision, oracle, controller handle, or production path. Capsule construction reopens only participant-visible project evidence, caps and scrubs excerpts, and treats every model proposal as non-executable text plus an optional existing input ID.
+- Six R4.5 tests cover cross-platform golden claim/probe/attempt hashes, strict projection and catalog isolation, unstable/cross-project/hidden/malformed evidence rejection, capsule path/secret/ID redaction, precommitted prediction, prose-invariant observation, replay/late/identity failures, and timeout/cancellation/runner-error invalidation. The full local Windows extension suite passes 63/63; `npm run check`, production build, and VSIX packaging pass. Protected branch verification is pending.
+- The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
 - A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
@@ -142,7 +145,7 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
+1. Obtain protected Linux/Windows acceptance for the R4.5 Explain-to-Break Control Pulse.
 2. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
 3. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
 4. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
