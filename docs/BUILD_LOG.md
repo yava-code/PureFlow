@@ -2,16 +2,16 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
-## 2026-07-31 — R2 change-evidence candidate
+## 2026-07-31 — R2 change evidence accepted
 
 - Added a bounded read-only Git revision reader that verifies full base/target commit IDs, parses NUL-delimited name status plus zero-context hunks, detects renames, caps source and revision size, and keeps every emitted path workspace-relative.
 - Added TypeScript compiler-API extraction for functions, arrow/function variables, classes, methods, and explicit module boundaries. Removed and added logical lines are hashed rather than stored; syntax failures and unsupported languages remain explicit results.
 - Added deterministic evidence assembly behind the exact `ExtractionResult`, `SemanticUnit`, and `CandidateSeam` contracts. Fixture-manifest check links are authoritative, matching Flight Recorder before/after hashes and evidence refs are verified, unknown readiness factors stay `null`, and missing evidence becomes a gap rather than a fabricated score.
 - Corrected the checked replay transcript's file hashes, command ID, and test ID to the actual R0 fixture identities so R1→R2 integration can be verified rather than merely shaped correctly.
 - Added six R2 tests covering the real cache-key revision pair, golden unit/seam IDs, file rename, multi-file changes, added/deleted functions, a class boundary, Git hunk parsing, unsupported syntax/language, missing links, unsafe paths, and revision/run identity drift.
-- Local Windows evidence: `npm run check`, all 43 extension tests, production build, and VSIX packaging passed. Cross-platform protected CI and merge are pending.
+- Local Windows evidence: `npm run check`, all 43 extension tests, production build, and VSIX packaging passed. Protected PR #12 run `30666648522` then passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`.
 
-Evidence: `extension/src/change/`, `extension/test/change-evidence.test.ts`, the checked agent transcript, `docs/v0.3/CONTRACTS.md`, and local command output on 2026-07-31.
+Evidence: `extension/src/change/`, `extension/test/change-evidence.test.ts`, the checked agent transcript, `docs/v0.3/CONTRACTS.md`, local command output on 2026-07-31, and protected GitHub Actions run `30666648522` on PR #12.
 
 ## 2026-07-31 — R1 replay and Flight Recorder accepted
 
