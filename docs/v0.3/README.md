@@ -17,16 +17,18 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 11. [`CONTRACTS.md`](CONTRACTS.md) — normative schemas, hidden-answer isolation, oracle integrity, and command boundary.
 12. [`EXPERIMENTS.md`](EXPERIMENTS.md) — hypotheses, metrics, and kill criteria.
 13. [`R7_PREREGISTRATION.md`](R7_PREREGISTRATION.md) — frozen 30-patch sampling, metrics, and analysis protocol.
-14. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
-15. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
+14. [`SANDBOX_RUNNER_SPEC.md`](SANDBOX_RUNNER_SPEC.md) — exact Phase-B runner acceptance and negative contract.
+15. [`CONCEPT_LAB_CONTROLLABILITY.md`](CONCEPT_LAB_CONTROLLABILITY.md) — post-R7 control-surface, cold-relay, and dissent hypotheses.
+16. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
+17. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
 
 ## Current truth
 
 - The released v0.1 VSCodium IDE exists and remains the runtime baseline.
-- The complete v0.3 Dual-Control product runtime is not implemented. R0–R4.5 implement and protect the reviewed-fixture path from canonical evidence through recovery judging and a precommitted Control Pulse. The readiness ledger, cockpit, arbitrary-code sandbox runner, corpus audit, and human pilot remain gated.
+- The complete v0.3 Dual-Control product runtime is not implemented. R0–R4.5 implement and protect the reviewed-fixture path from canonical evidence through recovery judging and a precommitted Control Pulse. A Docker `SandboxRunner` candidate is locally implemented on a short-lived branch but is not accepted until protected checks pass. The readiness ledger, cockpit, corpus audit, and human pilot remain gated.
 - No retention, takeover, productivity, or usability target has been measured.
 - The first valid build is one test-backed vertical slice, not a full Cursor clone.
-- R0–R4.5 may execute only finite, repository-owned fixture states. ADR-003 selects Docker Desktop/WSL2 and records one local Windows primitive audit, but arbitrary participant or corpus code remains blocked until the exact `SandboxRunner` passes protected Linux/Windows tests.
+- R0–R4.5 may execute only finite, repository-owned fixture states. ADR-003 selects Docker Desktop/WSL2; the candidate runner and local Windows integration suite are implementation evidence, but arbitrary participant or corpus code remains blocked until protected checks and the R7 collection gate pass.
 
 ## Architecture shorthand
 
