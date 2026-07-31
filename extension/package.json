@@ -258,7 +258,8 @@
     "build": "node esbuild.mjs",
     "watch": "node esbuild.mjs --watch",
     "check": "tsc --noEmit",
-    "test": "vitest run",
+    "fixture:runtime": "node scripts/provision-fixture-node.mjs",
+    "test": "npm run fixture:runtime && vitest run",
     "package": "npm run build && vsce package --no-dependencies"
   },
   "dependencies": {

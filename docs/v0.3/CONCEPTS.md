@@ -171,6 +171,58 @@ These are candidate experience formats, not commitments:
 - **Future-self handoff:** after a delay, present the developer's own project as an unfamiliar incident with the original generation transcript hidden.
 - **Real intervention credit:** if the developer's twin solution is better and passes the production evidence, allow it to replace the agent solution through a normal reviewed merge.
 
+## July 2026 mechanism refresh
+
+The next concepts change where the experience comes from and what the human controls. They are not extra quiz formats.
+
+### Agent near-miss replay
+
+Prefer an agent's real failed hypothesis, red test, rollback, or abandoned implementation branch over a synthetic mutation when the Chronicle contains one. PureFlow rewinds to the first observable divergence, escrows the later repair, and asks the developer to choose evidence and recover the checkpoint.
+
+This is more project-authentic than a generic seeded bug and makes routine agent self-repair produce operator practice as a second output. It also reduces mutation-pattern gaming. The risk is selection bias: clean first-pass runs produce no near miss, and a failed agent path may be irrelevant rather than instructive. Synthetic change-derived mutations remain the fallback.
+
+**Status:** promote to an R1 Chronicle and R7 corpus hypothesis. Adding intermediate checkpoint revisions requires a versioned Chronicle contract change before implementation.
+
+### Evidence escrow
+
+The controller stores the successful trace, repair, and decisive observation but initially exposes only the symptom and a bounded evidence index. The developer requests the next test, log, trace, symbol, or counterfactual. Assistance progressively reveals evidence, not a prose solution.
+
+This restores the information-acquisition and diagnosis stages that agent explanations normally collapse. Requested evidence becomes observable behavior for later calibration; merely opening a diff does not.
+
+**Status:** promote as the default interaction policy for recovery episodes after the protected judge exists. It must never hide production incident evidence or block normal delivery.
+
+### Decision-stage rotation
+
+Automation can remove information acquisition, analysis, option selection, and implementation separately. Rather than repeatedly testing code recall, the scheduler rotates the irreducible human action across those stages: choose evidence, rank causes, select a lever, predict a consequence, or direct a cold agent.
+
+**Status:** test as an episode-family factor. Rotation occurs only inside eligible high-value seams and does not guarantee equal quotas.
+
+### Control reserve
+
+Expose a local forecast of which project boundaries have fresh recovery and transfer evidence, which are stale, and which have never been exercised. This is closer to an aircraft's operational envelope than a developer score: it answers “where could I plausibly take over?” and always shows the underlying attempts, age, assistance, and uncertainty.
+
+**Status:** naming and visualization hypothesis for R5/R6. It cannot exist before the corpus gate and must not collapse evidence into a global number.
+
+### Learned autonomy policy
+
+A later router could learn when to offer no intervention, evidence escrow, a recovery twin, live steering, or a delayed transfer task while jointly optimizing software throughput, human attention, opt-out, and later takeover. Current adaptive-support research shows that optimizing immediate accuracy and optimizing learning are not interchangeable.
+
+**Status:** defer until after a longitudinal pilot. R0–R8 use an inspectable deterministic policy; engagement alone is never the reward.
+
+## Refined priority
+
+The preferred episode-source order is now:
+
+```text
+real agent near miss
+→ real unresolved design fork
+→ change-derived counterfactual
+→ intent-derived mutation
+→ no episode when evidence is weak
+```
+
+This is a meaningful constraint: PureFlow should sometimes produce nothing rather than manufacture an easy question. The common interaction is evidence escrow plus executable recovery; a random function explanation remains only an experiment baseline.
+
 ## Naming decision
 
 Avoid `Shadow Workspace`; Cursor already uses it for an AI validation environment.

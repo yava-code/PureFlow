@@ -1,0 +1,18 @@
+{
+  "cache-key.legacy": [
+    {
+      "args": ["account-42"],
+      "expected": "account-42"
+    }
+  ],
+  "cache-key.tenant-isolation": [
+    {
+      "args": ["tenant-a", "account-42"],
+      "expected": "tenant-a:account-42"
+    },
+    {
+      "args": ["tenant-b", "account-42"],
+      "expected": "tenant-b:account-42"
+    }
+  ]
+}

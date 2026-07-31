@@ -5,6 +5,7 @@ coverage/
 *.vsix
 *.tsbuildinfo
 release/
+extension/.pureflow-runtime/
 .env
 .env.*
 !.env.example
