@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-31
 
-## Current branch milestone — R3 Takeover Twin candidate complete
+## Current branch milestone — R3 Takeover Twin complete
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -20,7 +20,7 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - R2 implements bounded Git revision diffs, zero-context changed-line extraction, TypeScript compiler-API symbol resolution, explicit fixture check linkage, Flight Recorder hash/attribution validation, and exact `ExtractionResult` / `SemanticUnit` / `CandidateSeam` outputs. It fails to `partial` or `unsupported` for missing links, syntax failures, unsupported languages, or incomplete coverage instead of inventing an invariant.
 - Six R2 tests cover the real cache-key fixture, cross-run determinism and golden IDs, file rename, multi-file changes, added/deleted functions, class boundaries, Git hunk parsing, unsupported syntax/language, missing checks, unsafe paths, and revision/run drift. The full local Windows extension suite passes 43/43 with TypeScript, build, and VSIX packaging. Protected PR #12 run `30666648522` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R2 acceptance is complete.
 - R3 now implements the fixture-only sanitized snapshot store, standalone one-commit participant repository, opaque Twin Manager, immutable command-registry snapshots, extension-owned trusted catalog, and `TrustedFixtureRunner`. The runner accepts only the pinned manifest, exact declared state/tree, catalog command, hash-verified standalone Node runtime, and opaque twin handle; non-fixture execution remains explicitly unsupported.
-- Seven R3 tests cover production file/index/HEAD/ref/remote/worktree invariants, hidden-answer and source-history absence, cross-project ownership, exact-state execution, tamper/unknown-command rejection, concurrent execution IDs, single-run cancellation, immutable command snapshots, Windows paths with spaces, descendant-process termination, and exact cleanup. The full local Windows extension suite passes 50/50; build and VSIX packaging pass, and the runtime fixture assets are present in the VSIX. Protected Linux/Windows acceptance is still pending for the current short-lived R3 branch.
+- Seven R3 tests cover production file/index/HEAD/ref/remote/worktree invariants, hidden-answer and source-history absence, cross-project ownership, exact-state execution, tamper/unknown-command rejection, concurrent execution IDs, single-run cancellation, immutable command snapshots, Windows paths with spaces, descendant-process termination, and exact cleanup. The full local Windows extension suite passes 50/50; build and VSIX packaging pass, and the runtime fixture assets are present in the VSIX. Protected PR #13 run `30668675359` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R3 acceptance is complete.
 - The Experience Compiler, Evidence Judge, Control Pulse runtime, readiness ledger, and v0.3 cockpit do not exist yet. R3 proves only the closed reviewed-fixture boundary; it does not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
@@ -139,12 +139,11 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Obtain protected Linux/Windows acceptance for the R3 Takeover Twin candidate.
-2. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
-3. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
-4. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
-5. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
-6. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
+1. Integrate R4: one compiled recovery episode and deterministic Evidence Judge.
+2. Pass R4.5: one bounded, catalog-only Explain-to-Break Pulse with replay/error fail-closed tests.
+3. Run the 30-patch recovery-plus-probe technical corpus audit before expanding the product surface.
+4. Add the local readiness ledger and minimal cockpit only after the vertical slice is reliable.
+5. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 

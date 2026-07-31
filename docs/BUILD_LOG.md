@@ -8,9 +8,9 @@ This is a concise chronological record of material implementation work and runti
 - Added an opaque Twin Manager with separate uniquely named twin/evaluation directories and explicit `preparing → ready → running → completed/failed → cleaning → cleaned` lifecycle. Cleanup resolves and checks both exact controller-owned paths before recursive removal.
 - Added the immutable fixture command registry, extension-owned catalog, hash-pinned `fixture-node` resolution, bounded command evidence, tombstoned execution IDs, independent cancellation, scrubbed child environment, and full process-tree termination. Every non-fixture request, caller manifest/runtime/path, unknown command, and undeclared tree state fails before execution.
 - Moved the committed fixture from the excluded test tree into packaged extension assets after a VSIX audit found it would otherwise be absent at runtime. The package now contains all three candidate states plus controller-only mutation, repair, harness, and oracle assets.
-- Seven R3 tests pass locally on Windows, including a real descendant-process kill in a path with spaces. The complete extension suite passes 50/50; `npm run check`, production build, and VSIX packaging pass. Protected Linux/Windows CI has not yet accepted this candidate.
+- Seven R3 tests pass locally on Windows, including a real descendant-process kill in a path with spaces. The complete extension suite passes 50/50; `npm run check`, production build, and VSIX packaging pass. The first protected Windows run exposed missing LF policy after the fixture moved from `test/` to packaged assets; `.gitattributes` now pins the new path. Protected PR #13 run `30668675359` then passed all required Linux, Windows, contract, web, and policy checks, so R3 acceptance is complete.
 
-Evidence: `extension/src/twin/{types,catalog,snapshot,manager,commands}.ts`, `extension/fixtures/v0.3/tenant-cache-key/`, `extension/test/twin.test.ts`, and local command/package output on 2026-07-31.
+Evidence: `extension/src/twin/{types,catalog,snapshot,manager,commands}.ts`, `extension/fixtures/v0.3/tenant-cache-key/`, `extension/test/twin.test.ts`, local command/package output on 2026-07-31, and protected GitHub Actions run `30668675359` on PR #13.
 
 ## 2026-07-31 — R2 change evidence accepted
 
