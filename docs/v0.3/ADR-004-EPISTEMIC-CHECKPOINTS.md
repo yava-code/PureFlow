@@ -112,7 +112,7 @@ PureFlow may later add a local **Flight Log**, but it must not equate activity w
 
 ### Costs and risks
 
-- useful trigger precision requires a Chronicle and stable evidence model;
+- useful trigger precision requires a Flight Recorder and stable evidence model;
 - model-generated falsifiers can be invalid and must be rejected before execution;
 - even good pulses can become annoying, so attention budget and opt-out rate are release metrics;
 - achievements can distort behavior and remain out of the technical MVP.

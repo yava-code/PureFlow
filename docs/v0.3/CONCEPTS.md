@@ -177,11 +177,11 @@ The next concepts change where the experience comes from and what the human cont
 
 ### Agent near-miss replay
 
-Prefer an agent's real failed hypothesis, red test, rollback, or abandoned implementation branch over a synthetic mutation when the Chronicle contains one. PureFlow rewinds to the first observable divergence, escrows the later repair, and asks the developer to choose evidence and recover the checkpoint.
+Prefer an agent's real failed hypothesis, red test, rollback, or abandoned implementation branch over a synthetic mutation when the Flight Recorder contains one. PureFlow rewinds to the first observable divergence, escrows the later repair, and asks the developer to choose evidence and recover the checkpoint.
 
 This is more project-authentic than a generic seeded bug and makes routine agent self-repair produce operator practice as a second output. It also reduces mutation-pattern gaming. The risk is selection bias: clean first-pass runs produce no near miss, and a failed agent path may be irrelevant rather than instructive. Synthetic change-derived mutations remain the fallback.
 
-**Status:** promote to an R1 Chronicle and R7 corpus hypothesis. Adding intermediate checkpoint revisions requires a versioned Chronicle contract change before implementation.
+**Status:** promote to an R1 Flight Recorder and R7 corpus hypothesis. Adding intermediate checkpoint revisions requires a versioned Flight Recorder contract change before implementation.
 
 ### Evidence escrow
 

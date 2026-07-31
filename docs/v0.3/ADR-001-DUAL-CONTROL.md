@@ -50,7 +50,7 @@ flowchart TB
     end
 
     subgraph RP["Readiness Plane"]
-        C["Run Chronicle"] --> G["Semantic Change Graph"]
+        C["Flight Recorder"] --> G["Semantic Change Graph"]
         G --> X["Experience Compiler"]
         R["Readiness Store"] --> X
         X --> T["Takeover Twin"]
@@ -76,7 +76,7 @@ The normative `AgentTask`, `AgentWorkspace`, `AgentRun`, `AgentDriver`, event-or
 
 The initial spike supports one driver. Multi-agent routing is not required to validate the readiness mechanism.
 
-### 2. Run Chronicle
+### 2. Flight Recorder
 
 An append-only local event log records only observable facts:
 
@@ -88,7 +88,7 @@ An append-only local event log records only observable facts:
 - explicit agent plans or decisions when emitted;
 - merge and rollback events.
 
-The Chronicle must not fabricate rationale or depend on private model reasoning traces.
+The Flight Recorder must not fabricate rationale or depend on private model reasoning traces.
 
 Raw terminal output, absolute paths, secrets, and unbounded repository content are not automatically persisted.
 
@@ -199,14 +199,14 @@ After recovery episodes validate the mechanism, the next router experiment is sp
 - PureFlow is no longer positioned as “AI that waits to be asked.” Autonomous agents are a first-class build plane.
 - Mentor explanations and Focus Reps become legacy v0.1 capabilities, not the v0.3 thesis.
 - No new quiz, comprehension score, or manual coding gate should be implemented unless it is part of a complete control episode.
-- The first code milestone is an agent adapter plus Chronicle and Takeover Twin spike, not UI polish.
+- The first code milestone is an agent adapter plus Flight Recorder and Takeover Twin spike, not UI polish.
 - Product claims must use `target`, `hypothesis`, or `pilot result` until delayed transfer is measured.
 - `Shadow Workspace` must not be used as a PureFlow name because Cursor already owns that term in this category.
 
 ## Action items
 
 1. Implement the smallest observable `AgentDriver` for one existing runtime.
-2. Capture a normalized Chronicle for at least ten representative test-backed patches.
+2. Capture a normalized Flight Recorder stream for at least ten representative test-backed patches.
 3. Build a deterministic standalone sanitized twin that applies one change-derived mutation and exposes a failing test without sharing source Git objects.
 4. Validate that the Evidence Judge reproduces expert-labeled outcomes.
 5. Run the technical and human pilots in [`EXPERIMENTS.md`](EXPERIMENTS.md).

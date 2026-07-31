@@ -60,7 +60,7 @@ Invariants:
 - timestamps are UTC ISO-8601 with milliseconds;
 - task summaries are at most 4 KiB; each acceptance item is at most 1 KiB and there are at most 32;
 - an individual stored evidence blob is at most 1 MiB in the R&D slice; larger command output records original size and explicit truncation/redaction metadata;
-- Chronicle events contain references and hashes, not raw source files or terminal streams.
+- Flight Recorder events contain references and hashes, not raw source files or terminal streams.
 
 ### Canonical hashing
 
@@ -133,7 +133,7 @@ interface AgentDriver {
   start(task: AgentTask, workspace: AgentWorkspace): Promise<AgentRun>;
   followUp(runId: RunId, message: string): Promise<void>;
   cancel(runId: RunId): Promise<void>;
-  events(runId: RunId): AsyncIterable<ChronicleEnvelope>;
+  events(runId: RunId): AsyncIterable<RunEnvelope>;
 }
 
 interface TaskStore {
@@ -143,7 +143,7 @@ interface TaskStore {
 }
 ```
 
-`localHandle` is an opaque runtime lookup into an extension-owned workspace registry. It must never be serialized into the Chronicle, webview messages, research export, or logs. Vendor-specific events end at the adapter; downstream modules consume only the normalized Chronicle.
+`localHandle` is an opaque runtime lookup into an extension-owned workspace registry. It must never be serialized into the Flight Recorder, webview messages, research export, or logs. Vendor-specific events end at the adapter; downstream modules consume only normalized Flight Recorder events.
 
 `trusted` records the state at agent start for audit. It is not an authorization token: the command runner rechecks live `vscode.workspace.isTrusted` immediately before every non-fixture execution and cancels if trust was revoked.
 
@@ -151,10 +151,10 @@ An adapter may record an explicit plan emitted by an agent. It must never reques
 
 `TaskStore.put` validates the limits above and returns `canonicalHash("task-intent", task)`; `task.started.intentHash` must equal that value. The full bounded intent stays controller-local and is never included in a participant manifest by default.
 
-## 3. Chronicle envelope and ordering
+## 3. Flight Recorder envelope and ordering
 
 ```ts
-interface ChronicleEnvelope {
+interface RunEnvelope {
   schemaVersion: SchemaVersion;
   projectId: ProjectId;
   runId: RunId;
@@ -210,9 +210,9 @@ Ordering rules:
 - wall-clock timestamps are descriptive; `seq` is authoritative for order.
 
 ```ts
-interface ChronicleStore {
-  append(event: ChronicleEnvelope): Promise<void>;
-  read(runId: RunId, afterSeq?: number): AsyncIterable<ChronicleEnvelope>;
+interface RunRecorder {
+  append(event: RunEnvelope): Promise<void>;
+  read(runId: RunId, afterSeq?: number): AsyncIterable<RunEnvelope>;
   lastSeq(runId: RunId): Promise<number>;
 }
 
@@ -865,9 +865,9 @@ Only a delayed adjacent task can create `VerifiedReadiness`. Immediate `predicte
 
 | Component | May read | May emit | Must not access |
 | --- | --- | --- | --- |
-| Agent adapter | vendor events, local workspace handle | normalized Chronicle | readiness state, hidden oracle |
-| Chronicle | envelopes, evidence refs | append-only run history | hidden answer, participant UI |
-| Change extractor | controller Git revisions, Chronicle refs | candidate seams | readiness mutation |
+| Agent adapter | vendor events, local workspace handle | normalized Flight Recorder stream | readiness state, hidden oracle |
+| Flight Recorder | envelopes, evidence refs | append-only run history | hidden answer, participant UI |
+| Change extractor | controller Git revisions, Flight Recorder refs | candidate seams | readiness mutation |
 | Experience Compiler | candidate seams, capability evidence | `InternalExperience` | participant process |
 | Snapshot Store / Twin Manager | controller source revision during create; sanitized snapshot afterward | verified snapshot and isolated twin handle | hidden answer, oracle, unrelated host files |
 | Cockpit | `ParticipantExperience`, visible evidence | participant actions | internal revisions, judge spec, hidden answer |

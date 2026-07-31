@@ -78,7 +78,7 @@ They want the AI to do the volume work and spend a small, deliberate attention b
 
 The developer describes an outcome. One or more coding agents plan, edit, run commands, test, and repair in isolated worktrees.
 
-### 2. Chronicle
+### 2. Flight Recorder
 
 PureFlow records a bounded local event stream: task intent, agent decisions that were made explicit, file changes, commands, test results, traces, and merge state. It does not require storing hidden model reasoning.
 
@@ -127,7 +127,7 @@ flowchart LR
     I["Developer intent"] --> B["Build plane"]
     B --> A["Agent swarm"]
     A --> P["Tested patch"]
-    A --> C["Run chronicle"]
+    A --> C["Flight Recorder"]
     P --> C
     C --> S["Semantic change graph"]
     S --> E["Experience Compiler"]
@@ -178,7 +178,7 @@ States decay with time and meaningful code changes. The UI shows evidence and ag
 
 ## Line-level accountability
 
-The Chronicle groups generated lines into supported semantic units. Each unit may link to:
+The Flight Recorder groups generated lines into supported semantic units. Each unit may link to:
 
 - the user intent or requirement it serves;
 - the invariant or public behavior it changes;
@@ -275,7 +275,7 @@ The R&D architecture is:
 
 - VSCodium plus a bundled extension for the product surface;
 - adapters over existing coding-agent runtimes for the build plane;
-- PureFlow-owned Chronicle, Experience Compiler, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
+- PureFlow-owned Flight Recorder, Experience Compiler, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
 
 This keeps the differentiating layer portable and avoids tying the thesis to a commercial editor fork. A deeper editor fork is justified only if a validated control experience requires unsupported workbench primitives.
 

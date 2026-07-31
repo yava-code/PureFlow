@@ -22,7 +22,7 @@ Use a small sequential pipeline for the first vertical slice. Parallel agent swa
 
 ```text
 observable agent run
-→ normalized Chronicle
+→ normalized Flight Recorder
 → one test-backed seam
 → disposable Takeover Twin
 → deterministic judge
@@ -41,7 +41,7 @@ New v0.3 runtime code should live under focused modules:
 ```text
 extension/src/
   agent/          agent-driver contract and first adapter
-  chronicle/      normalized event model and local event store
+  recorder/       normalized event model and local event store
   change/         changed-symbol and evidence extraction
   experience/     candidate selection and manifest compiler
   pulse/          post-R4 claim, capsule, and catalog-probe contracts
@@ -53,7 +53,7 @@ extension/src/
 extension/test/
   fixtures/v0.3/  tiny deterministic Git repositories or fixture builders
   agent.test.ts
-  chronicle.test.ts
+  flight-recorder.test.ts
   experience.test.ts
   twin.test.ts
   judge.test.ts
@@ -92,7 +92,7 @@ Event-driven Control Pulses, Side Coach calls, streaks, achievements, and any le
 
 Do not build the UI or agent adapter if a deterministic disposable Git fixture cannot be made reliable on Windows.
 
-## Workstream R1 — AgentDriver and Chronicle
+## Workstream R1 — AgentDriver and Flight Recorder
 
 **Goal:** capture observable evidence from one real or simulated coding-agent run behind a stable adapter.
 
@@ -101,8 +101,8 @@ Do not build the UI or agent adapter if a deterministic disposable Git fixture c
 - `extension/src/agent/types.ts`
 - `extension/src/agent/driver.ts`
 - `extension/src/agent/replay-driver.ts`
-- `extension/src/chronicle/events.ts`
-- `extension/src/chronicle/store.ts`
+- `extension/src/recorder/events.ts`
+- `extension/src/recorder/store.ts`
 - corresponding tests
 
 ### Tasks
@@ -223,7 +223,7 @@ If the vertical slice requires a generalized knowledge graph before it can ident
 
 ### Acceptance
 
-- the compiler creates the expected fixture episode from Chronicle plus change evidence;
+- the compiler creates the expected fixture episode from Flight Recorder data plus change evidence;
 - user-facing serialization contains none of the source run/revision, setup, judge, oracle, or hidden-answer fields;
 - `git show`, reflog, remotes, object enumeration, and environment inspection inside the twin cannot recover the target commit or production path;
 - the declared `mutated` state fails, the controller-applied known repair reproduces `target.treeHash` and passes, and every non-declared candidate tree is rejected without execution;
@@ -389,7 +389,7 @@ Do not call PureFlow a skill-retention product until the controlled delayed-tran
 
 ```mermaid
 flowchart LR
-    R0["R0 Fixture"] --> R1["R1 Driver + Chronicle"]
+    R0["R0 Fixture"] --> R1["R1 Driver + Flight Recorder"]
     R0 --> R2["R2 Change evidence"]
     R0 --> R3["R3 Twin lifecycle"]
     R1 --> R4["R4 Compiler + Judge"]
@@ -412,7 +412,7 @@ R1, R2, and R3 may run in parallel only after R0 contracts are committed. R4 is 
 
 The mechanism is ready for the corpus audit when all of this is true:
 
-1. a replayed agent run produces a versioned, ordered, normalized Chronicle with bounded evidence refs;
+1. a replayed agent run produces a versioned, ordered, normalized Flight Recorder stream with bounded evidence refs;
 2. a test-backed changed boundary is identified;
 3. PureFlow creates a sanitized standalone twin with no source Git objects, production path, oracle, or hidden answer;
 4. the participant-facing payload and materialized twin contain no target answer, source revision, oracle, or production path;
