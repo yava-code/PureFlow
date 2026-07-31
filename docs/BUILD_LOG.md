@@ -2,14 +2,14 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
-## 2026-07-31 — R4 Experience Compiler and Phase-A Judge local candidate
+## 2026-07-31 — R4 Experience Compiler and Phase-A Judge accepted
 
 - Added deterministic seam selection over fully supported R2 evidence and compiled the real R1/R2 fixture path into separate internal and participant recovery manifests. The participant projection is exact-schema and omits source revisions, run identity, setup, judge internals, hidden repair, production paths, and controller handles.
 - Added a Phase-A judge that reopens the project-scoped snapshot and immutable command registry, verifies the participant Git boundary, computes the candidate diff, rejects protected or out-of-scope edits, and evaluates only an exact catalog-owned known repair in a separate clean evaluation twin. No-op and unrelated candidates never reach command execution.
 - Added project-scoped command-evidence persistence with canonical metadata, bounded base64 payloads, hash/size verification, and tamper rejection. Reveal and abandonment remain explicit outcomes without executable readiness evidence.
-- Seven R4 tests pass locally on Windows, including three byte-identical judge replays and evidence-store reopening/tamper cases. The complete extension suite passes 57/57; `npm run check`, production build, and VSIX packaging pass. Protected Linux/Windows verification is pending, so no R4 acceptance claim is made yet.
+- Seven R4 tests pass locally on Windows, including three byte-identical judge replays and evidence-store reopening/tamper cases. The complete extension suite passes 57/57; `npm run check`, production build, and VSIX packaging pass. Protected PR #14 run `30670322126` passed the required Linux, Windows, contract, web, and policy checks, so R4 acceptance is complete.
 
-Evidence: `extension/src/experience/`, `extension/src/judge/`, `extension/src/twin/{commands,snapshot}.ts`, `extension/test/experience-judge.test.ts`, and local command/package output on 2026-07-31.
+Evidence: `extension/src/experience/`, `extension/src/judge/`, `extension/src/twin/{commands,snapshot}.ts`, `extension/test/experience-judge.test.ts`, local command/package output on 2026-07-31, and protected GitHub Actions run `30670322126` on PR #14.
 
 ## 2026-07-31 — R3 Takeover Twin local candidate
 
