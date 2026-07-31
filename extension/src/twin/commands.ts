@@ -22,24 +22,24 @@ interface StoredOutput {
 }
 
 export interface CommandEvidenceStore {
-  put(projectId: string, content: Buffer, originalBytes: number): Promise<EvidenceRef>;
-  putNamed(projectId: string, id: string, content: Buffer, originalBytes: number): Promise<EvidenceRef>;
+  put(projectId: string, content: Buffer, originalBytes: number, redactions?: EvidenceRef["redactions"]): Promise<EvidenceRef>;
+  putNamed(projectId: string, id: string, content: Buffer, originalBytes: number, redactions?: EvidenceRef["redactions"]): Promise<EvidenceRef>;
   open(projectId: string, ref: EvidenceRef): Promise<string | undefined>;
 }
 
 export class MemoryCommandEvidenceStore implements CommandEvidenceStore {
   private readonly values = new Map<string, StoredOutput>();
 
-  async put(projectId: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
+  async put(projectId: string, content: Buffer, originalBytes: number, redactions: EvidenceRef["redactions"] = []): Promise<EvidenceRef> {
     assertToken(projectId, "projectId");
     const id = randomUUID().replaceAll("-", "");
-    return this.putNamed(projectId, id, content, originalBytes);
+    return this.putNamed(projectId, id, content, originalBytes, redactions);
   }
 
-  async putNamed(projectId: string, id: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
+  async putNamed(projectId: string, id: string, content: Buffer, originalBytes: number, redactions: EvidenceRef["redactions"] = []): Promise<EvidenceRef> {
     assertToken(projectId, "projectId");
     assertToken(id, "evidenceId");
-    const ref = outputRef(id, content, originalBytes);
+    const ref = outputRef(id, content, originalBytes, redactions);
     const current = this.values.get(id);
     if (current) {
       if (current.projectId !== projectId || canonicalHash("evidence-ref", current.ref) !== canonicalHash("evidence-ref", ref) || current.content !== content.toString("utf8")) {
@@ -63,14 +63,14 @@ export class MemoryCommandEvidenceStore implements CommandEvidenceStore {
 export class LocalCommandEvidenceStore implements CommandEvidenceStore {
   constructor(private readonly storage: LocalTextStorage) {}
 
-  async put(projectId: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
-    return this.putNamed(projectId, randomUUID().replaceAll("-", ""), content, originalBytes);
+  async put(projectId: string, content: Buffer, originalBytes: number, redactions: EvidenceRef["redactions"] = []): Promise<EvidenceRef> {
+    return this.putNamed(projectId, randomUUID().replaceAll("-", ""), content, originalBytes, redactions);
   }
 
-  async putNamed(projectId: string, id: string, content: Buffer, originalBytes: number): Promise<EvidenceRef> {
+  async putNamed(projectId: string, id: string, content: Buffer, originalBytes: number, redactions: EvidenceRef["redactions"] = []): Promise<EvidenceRef> {
     assertToken(projectId, "projectId");
     assertToken(id, "evidenceId");
-    const ref = outputRef(id, content, originalBytes);
+    const ref = outputRef(id, content, originalBytes, redactions);
     const path = outputPath(projectId, id);
     const current = await this.storage.readText(`${path}.json`);
     if (current !== undefined) {
@@ -385,7 +385,7 @@ function validateRequest(request: TrustedFixtureRequest): void {
   if (!["base", "target", "mutated"].includes(request.stateId)) throw new Error("Unknown fixture state");
 }
 
-function outputRef(id: string, content: Buffer, originalBytes: number): EvidenceRef {
+function outputRef(id: string, content: Buffer, originalBytes: number, redactions: EvidenceRef["redactions"] = []): EvidenceRef {
   if (!Number.isSafeInteger(originalBytes) || originalBytes < content.byteLength) {
     throw new Error("Command evidence original byte count is invalid");
   }
@@ -396,7 +396,7 @@ function outputRef(id: string, content: Buffer, originalBytes: number): Evidence
     storedBytes: content.byteLength,
     originalBytes,
     truncated: content.byteLength < originalBytes,
-    redactions: [],
+    redactions,
     mediaType: "text/plain",
     visibility: "controller",
   };

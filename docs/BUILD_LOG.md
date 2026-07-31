@@ -2,6 +2,17 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-08-01 — R7 Docker SandboxRunner local candidate
+
+- Wrote `SANDBOX_RUNNER_SPEC.md` first and passed the strict spec validator at 100/100 before implementation. The contract fixes command authority, trust/consent, opaque handles, image identity, isolation flags, mountpoints, oracle integrity, evidence bounds, single-use IDs, cancellation, cleanup, and fail-closed behavior.
+- Recorded a RED test failure for the absent sandbox module, then implemented exact validators, in-memory test authorities, the fixed Node 22 toolchain catalog, `DockerSandboxRunner`, and a shell-free Docker CLI backend. No caller value selects the executable, image, host path, container name, environment catalog, or Docker option.
+- Added sixteen deterministic tests for schema drift, ordering and bounds, immutable-command drift, workspace trust, consent, isolation profile, mount allowlist and exact-source hash integrity, required mountpoints, hard links, UTF-8-safe independent redaction/truncation, tombstones, concurrency, exact cancellation, timeout, cleanup failure, Docker setup failures, and refusal to target caller-named containers.
+- Added two explicitly provisioned integration tests. On this Windows Docker Desktop backend the active network/root/oracle/resource/descendant-kill probe passed, and the runner executed a frozen command from a path containing spaces with only controller constants in its environment, then removed the exact container. No `pureflow-r7-*` container remained.
+- The default local extension suite passes 79/79 with the provisioned-backend suite skipped, `npm run check` passes, and the production bundle builds. The protected Linux extension job now explicitly provisions the exact digest and runs the real backend suite; protected results and VSIX packaging are still pending.
+- Recorded `CONCEPT_LAB_CONTROLLABILITY.md`: after R7, test a Controllability Compiler, Takeover Cut Set, Context-Starved Relay, and Dissent Engine. These preserve autonomous code writing while making evidence selection and recovery decisions executable human work; no effectiveness claim is made.
+
+Evidence: `docs/v0.3/SANDBOX_RUNNER_SPEC.md`, `extension/src/sandbox/`, `extension/test/sandbox*.test.ts`, local TypeScript/test/build output on 2026-08-01. Candidate branch only; not yet accepted into `codex/shadow-cockpit-rnd`.
+
 ## 2026-07-31 — R7 sandbox selection and corpus preregistration
 
 - Selected digest-pinned Linux containers through Docker Desktop/WSL2 as the first replaceable Phase-B backend in ADR-003. The decision fixes prerequisite detection, explicit provisioning, mount policy, read-only oracle delivery, resource limits, cancellation/cleanup, image identity, and fail-closed behavior.
