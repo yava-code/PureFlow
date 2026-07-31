@@ -69,7 +69,7 @@
       "event": {
         "type": "command.started",
         "executionId": "execution_fixture_check_1",
-        "commandId": "fixture.tenant-cache.check"
+        "commandId": "cache-key.tenant-isolation"
       }
     },
     {
@@ -81,8 +81,8 @@
       "event": {
         "type": "test.finished",
         "executionId": "execution_fixture_check_1",
-        "commandId": "fixture.tenant-cache.check",
-        "testId": "tenant-isolation",
+        "commandId": "cache-key.tenant-isolation",
+        "testId": "cache-key.tenant-isolation",
         "status": "passed",
         "output": {
           "id": "evidence_test_1",
@@ -106,7 +106,7 @@
       "event": {
         "type": "command.finished",
         "executionId": "execution_fixture_check_1",
-        "commandId": "fixture.tenant-cache.check",
+        "commandId": "cache-key.tenant-isolation",
         "exitCode": 0,
         "timedOut": false,
         "cancelled": false,
@@ -132,8 +132,8 @@
       "event": {
         "type": "file.changed",
         "path": "src/cache-key.ts",
-        "beforeSha256": "4444444444444444444444444444444444444444444444444444444444444444",
-        "afterSha256": "5555555555555555555555555555555555555555555555555555555555555555",
+        "beforeSha256": "2381020b502df0c8933b27fa7993314d582bb917f979b80221afb701f9bd1f95",
+        "afterSha256": "3dbf02c83ba6d311f5cd2f8b8ef20072d8fdfac720287a5059169d8dd1a3a4e7",
         "diff": {
           "id": "evidence_diff_1",
           "kind": "diff",
