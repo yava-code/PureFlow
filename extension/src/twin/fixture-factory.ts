@@ -3,7 +3,7 @@ import { spawn } from "node:child_process";
 import { mkdir, mkdtemp, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, dirname, join, relative, resolve, sep } from "node:path";
-import { fileURLToPath } from "node:url";
+import { existsSync } from "node:fs";
 import { rawSha256, treeHash, type TreeFile } from "../rnd/canonical";
 import {
   candidateDiffHash,
@@ -15,7 +15,7 @@ import {
 } from "./fixture-contract";
 import { openFixtureNodeRuntime, type InstalledFixtureRuntime } from "./fixture-runtime";
 
-const assets = fileURLToPath(new URL("../../test/fixtures/v0.3/tenant-cache-key/", import.meta.url));
+const assets = fixtureAssetsRoot();
 const gitDate = "2026-01-01T00:00:00.000Z";
 
 export const EXPECTED_TENANT_CACHE_KEY = {
@@ -49,6 +49,41 @@ export interface TenantCacheKeyFixture {
   runCheck(checkId: string): Promise<FixtureCommandResult>;
   treeHash(): Promise<string>;
   dispose(): Promise<void>;
+}
+
+export interface TenantCacheKeyControllerAssets {
+  harness: string;
+  oracle: string;
+  mutation: string;
+  repair: string;
+}
+
+export async function loadTenantCacheKeyManifest(): Promise<FixtureManifest> {
+  const manifest = await buildManifest(
+    EXPECTED_TENANT_CACHE_KEY.baseRevision,
+    EXPECTED_TENANT_CACHE_KEY.targetRevision,
+  );
+  validateFixtureManifest(manifest);
+  if (fixtureManifestHash(manifest) !== EXPECTED_TENANT_CACHE_KEY.manifestHash) {
+    throw new Error("Committed tenant-cache-key fixture does not match its pinned manifest hash");
+  }
+  return manifest;
+}
+
+export function tenantCacheKeyControllerAssets(): TenantCacheKeyControllerAssets {
+  return {
+    harness: join(assets, "controller", "harness.mjs"),
+    oracle: join(assets, "controller", "oracle.json"),
+    mutation: join(assets, "controller", "mutation.patch"),
+    repair: join(assets, "controller", "repair.patch"),
+  };
+}
+
+export async function materializeTenantCacheKeyState(
+  state: FixtureState["id"],
+  destination: string,
+): Promise<void> {
+  await copyTree(join(assets, state), destination);
 }
 
 export async function createTenantCacheKeyFixture(destination: string): Promise<TenantCacheKeyFixture> {
@@ -401,4 +436,14 @@ function verifiedTempRoot(path: string): string {
 async function removeFixtureRoot(root: string): Promise<void> {
   verifiedTempRoot(root);
   await rm(root, { recursive: true, force: true, maxRetries: 3, retryDelay: 50 });
+}
+
+function fixtureAssetsRoot(): string {
+  const candidates = [
+    resolve(__dirname, "../../fixtures/v0.3/tenant-cache-key"),
+    resolve(__dirname, "../fixtures/v0.3/tenant-cache-key"),
+  ];
+  const found = candidates.find((candidate) => existsSync(join(candidate, "controller", "harness.mjs")));
+  if (!found) throw new Error("Committed tenant-cache-key fixture assets are missing");
+  return found;
 }

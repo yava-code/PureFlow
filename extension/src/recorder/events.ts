@@ -201,7 +201,7 @@ function assertRunEvent(value: unknown): asserts value is RunEvent {
   }
 }
 
-function assertEvidenceRef(value: unknown, expectedKind: EvidenceKind): asserts value is EvidenceRef {
+export function assertEvidenceRef(value: unknown, expectedKind: EvidenceKind): asserts value is EvidenceRef {
   assertRecord(value, "evidence ref");
   assertExactKeys(
     value,
