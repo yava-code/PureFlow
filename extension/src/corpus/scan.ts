@@ -79,20 +79,50 @@ export async function scanRepository(
     .split(/\r?\n/)
     .filter(Boolean);
   if (history[0] !== registration.pinnedTip) throw new Error("Candidate history does not start at the pinned tip");
+  const historyArgs = registration.candidateHistoryArgv.slice(2);
+  const parentLines = (await git(root, ["rev-list", "--parents", ...historyArgs]))
+    .split(/\r?\n/)
+    .filter(Boolean);
+  const parentsByCommit = new Map(parentLines.map((line) => {
+    const parents = line.split(" ");
+    return [parents[0]!, parents] as const;
+  }));
+  const pathsByCommit = parseHistoryPaths(await git(root, [
+    "log",
+    ...historyArgs,
+    "--format=%x1e%H%x00",
+    "--name-only",
+    "--diff-merges=first-parent",
+    "-z",
+  ], false));
 
   const drafts: CandidatePreflight[] = [];
   let ordinal = 0;
   for (const targetCommit of history) {
-    const parents = (await git(root, ["rev-list", "--parents", "-n", "1", targetCommit])).split(" ");
+    const parents = parentsByCommit.get(targetCommit);
+    if (parents === undefined) throw new Error(`Missing parent record for ${targetCommit}`);
     if (parents.length < 2) continue;
     const baseCommit = parents[1]!;
-    const paths = splitNul(await git(root, ["diff", "--name-only", "-z", baseCommit, targetCommit], false));
+    const paths = pathsByCommit.get(targetCommit);
+    if (paths === undefined) throw new Error(`Missing changed-path record for ${targetCommit}`);
     if (!isCoarseCandidate(paths)) continue;
     ordinal += 1;
     if (ordinal > 60) break;
     drafts.push(await inspectCandidate(root, registration.repositoryId, approvedLicense(registration.licenseSpdx), ordinal, baseCommit, targetCommit, parents, paths));
   }
   return drafts;
+}
+
+function parseHistoryPaths(value: string): Map<string, string[]> {
+  const result = new Map<string, string[]>();
+  for (const record of value.split("\x1e")) {
+    if (record.length === 0) continue;
+    const fields = splitNul(record.replace(/^\r?\n/, ""));
+    const commit = fields.shift();
+    if (commit === undefined || !/^[0-9a-f]{40}$/.test(commit)) throw new Error("Malformed Git history record");
+    result.set(commit, fields.map((field) => field.replace(/^[\r\n]+/, "")).filter(Boolean));
+  }
+  return result;
 }
 
 export function completeCandidate(draft: CandidatePreflight, evidence: ProvisionEvidence): CandidateFacts {
