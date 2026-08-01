@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { completeCandidate, deferCandidate, scanRepository, type CandidatePreflight, type ProvisionEvidence } from "./scan";
 import { freezeCorpus, type CandidateFacts, type RepositoryRegistration } from "./freeze";
+import { provisionRepository } from "./provision";
 
 void main();
 
@@ -15,6 +16,14 @@ async function main(): Promise<void> {
     const drafts = await scanRepository(resolve(args[2]!), registration);
     await writeNewJson(args[3]!, drafts);
     process.stdout.write(`Scanned ${drafts.length} coarse candidates for ${registration.repositoryId}.\n`);
+  } else if (command === "provision" && args.length === 5) {
+    const repositories = await readJson<RepositoryRegistration[]>(args[0]!);
+    const registration = repositories.find(({ repositoryId }) => repositoryId === args[1]);
+    if (registration === undefined) throw new Error(`Unknown repository registration: ${args[1]}`);
+    const drafts = await readJson<CandidatePreflight[]>(args[2]!);
+    const evidence = await provisionRepository(resolve(args[3]!), registration, drafts);
+    await writeNewJson(args[4]!, evidence);
+    process.stdout.write(`Provisioned ${Object.keys(evidence).length} candidates for ${registration.repositoryId}.\n`);
   } else if (command === "complete" && args.length === 3) {
     const drafts = await readJson<CandidatePreflight[]>(args[0]!);
     const evidence = await readJson<Record<string, ProvisionEvidence>>(args[1]!);
@@ -34,6 +43,7 @@ async function main(): Promise<void> {
     process.stderr.write([
       "Usage:",
       "  npm run r7:corpus -- scan <repositories.json> <repository-id> <git-repository> <preflight.json>",
+      "  npm run r7:corpus -- provision <repositories.json> <repository-id> <preflight.json> <git-repository> <evidence.json>",
       "  npm run r7:corpus -- complete <preflight.json> <provision-evidence.json> <candidates.json>",
       "  npm run r7:corpus -- freeze <repositories.json> <candidates.json> <manifest.json>",
       "",

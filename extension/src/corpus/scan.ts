@@ -36,7 +36,6 @@ export interface ProvisionEvidence {
   executionNeedsNetwork: boolean;
   basePassed: boolean;
   targetPassed: boolean;
-  deterministicReplayCount: number;
   provisionEvidenceSha256: string;
 }
 
@@ -47,7 +46,6 @@ const provisionKeys = [
   "executionNeedsNetwork",
   "basePassed",
   "targetPassed",
-  "deterministicReplayCount",
   "provisionEvidenceSha256",
 ] as const;
 
@@ -89,9 +87,6 @@ export function completeCandidate(draft: CandidatePreflight, evidence: Provision
   assertExactKeys(evidence, provisionKeys, "provision evidence");
   if (evidence.schemaVersion !== 1) throw new Error("Unsupported provision evidence schema");
   if (!Number.isSafeInteger(evidence.sanitizedBytes) || evidence.sanitizedBytes < 0) throw new Error("Invalid sanitizedBytes");
-  if (!Number.isSafeInteger(evidence.deterministicReplayCount) || evidence.deterministicReplayCount < 0) {
-    throw new Error("Invalid deterministicReplayCount");
-  }
   assertSha256(evidence.provisionEvidenceSha256, "provisionEvidenceSha256");
   const facts = {
     schemaVersion: 1 as const,
@@ -112,7 +107,6 @@ export function completeCandidate(draft: CandidatePreflight, evidence: Provision
     executionNeedsNetwork: evidence.executionNeedsNetwork,
     basePassed: evidence.basePassed,
     targetPassed: evidence.targetPassed,
-    deterministicReplayCount: evidence.deterministicReplayCount,
   };
   return {
     ...facts,
@@ -144,7 +138,6 @@ export function deferCandidate(draft: CandidatePreflight): CandidateFacts {
     executionNeedsNetwork: null,
     basePassed: null,
     targetPassed: null,
-    deterministicReplayCount: null,
   };
   return {
     ...facts,

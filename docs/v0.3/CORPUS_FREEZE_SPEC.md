@@ -34,9 +34,10 @@ The corpus freezer converts repository registrations and independently collected
 11. `network-required-at-execution`
 12. `base-provision-or-test-failed`
 13. `target-provision-or-test-failed`
-14. `replay-not-deterministic`
 
 The order is deliberately structural-first: cheap immutable failures are classified before provisioning failures. Changing the order requires a new protocol version, never an edit after outcomes are known.
+
+Three-run replay belongs to compiler evaluation after the corpus is frozen; it is not an eligibility field and cannot influence corpus membership.
 
 ## Non-goals
 

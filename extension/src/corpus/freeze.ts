@@ -15,8 +15,7 @@ export type ExclusionCode =
   | "requires-production-capability"
   | "network-required-at-execution"
   | "base-provision-or-test-failed"
-  | "target-provision-or-test-failed"
-  | "replay-not-deterministic";
+  | "target-provision-or-test-failed";
 
 export interface RepositoryRegistration {
   schemaVersion: 1;
@@ -51,7 +50,6 @@ export interface CandidateFacts {
   executionNeedsNetwork: boolean | null;
   basePassed: boolean | null;
   targetPassed: boolean | null;
-  deterministicReplayCount: number | null;
   evidenceSha256: string;
 }
 
@@ -123,7 +121,6 @@ const candidateKeys = [
   "executionNeedsNetwork",
   "basePassed",
   "targetPassed",
-  "deterministicReplayCount",
   "evidenceSha256",
 ] as const;
 
@@ -142,8 +139,7 @@ export function classifyCandidate(candidate: CandidateFacts): CandidateClassific
     candidate.requiresProductionCapability === null ||
     candidate.executionNeedsNetwork === null ||
     candidate.basePassed === null ||
-    candidate.targetPassed === null ||
-    candidate.deterministicReplayCount === null
+    candidate.targetPassed === null
   ) {
     throw new Error(`Missing provision evidence for structurally eligible candidate ${candidate.repositoryId}/${candidate.targetCommit}`);
   }
@@ -151,7 +147,6 @@ export function classifyCandidate(candidate: CandidateFacts): CandidateClassific
   if (candidate.executionNeedsNetwork) return excluded("network-required-at-execution");
   if (!candidate.basePassed) return excluded("base-provision-or-test-failed");
   if (!candidate.targetPassed) return excluded("target-provision-or-test-failed");
-  if (candidate.deterministicReplayCount !== 3) return excluded("replay-not-deterministic");
   return { status: "eligible" };
 }
 
@@ -289,9 +284,6 @@ function validateCandidate(candidate: CandidateFacts): void {
   if (candidate.baseCommit === candidate.targetCommit) throw new Error("Candidate revisions must differ");
   if (!Number.isSafeInteger(candidate.changedLines) || candidate.changedLines < 0) throw new Error("Invalid changedLines");
   if (!Number.isSafeInteger(candidate.sanitizedBytes) || candidate.sanitizedBytes < 0) throw new Error("Invalid sanitizedBytes");
-  if (candidate.deterministicReplayCount !== null && (!Number.isSafeInteger(candidate.deterministicReplayCount) || candidate.deterministicReplayCount < 0)) {
-    throw new Error("Invalid deterministicReplayCount");
-  }
   if (!/^[0-9a-f]{64}$/.test(candidate.evidenceSha256)) throw new Error("Invalid evidenceSha256");
 }
 

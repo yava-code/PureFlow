@@ -140,7 +140,6 @@ function candidate(repositoryId: string, ordinal: number, seed = ordinal): Candi
     executionNeedsNetwork: false,
     basePassed: true,
     targetPassed: true,
-    deterministicReplayCount: 3,
     evidenceSha256: seed.toString(16).padStart(64, "0"),
   };
 }

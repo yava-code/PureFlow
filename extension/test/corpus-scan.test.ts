@@ -65,7 +65,6 @@ describe("R7 corpus scanner", () => {
       executionNeedsNetwork: false,
       basePassed: true,
       targetPassed: true,
-      deterministicReplayCount: 3,
       provisionEvidenceSha256: "f".repeat(64),
     };
 
@@ -75,7 +74,6 @@ describe("R7 corpus scanner", () => {
       repositoryId: "fixture-repo",
       basePassed: true,
       targetPassed: true,
-      deterministicReplayCount: 3,
     });
     expect(completed.evidenceSha256).toMatch(/^[0-9a-f]{64}$/);
     expect(() => completeCandidate(draft!, { ...evidence, targetPassed: false, judgePassed: true } as ProvisionEvidence)).toThrow(
