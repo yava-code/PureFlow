@@ -416,3 +416,14 @@ Evidence: `docs/v0.3/ADR-010-DUAL-SOURCE-OPERATOR-SOURCE.md` and synchronized PR
 - Verified the real frozen 18-packet index through CLI init/status/next, then passed `npm run check`, 114/114 runnable extension tests, production build, and VSIX packaging; two Docker-only tests remained skipped in the local Windows run.
 
 This removes clerical friction from the R7 human gate without replacing expert judgment or exposing automatic outcomes. Full R7 remains pending until two experienced TypeScript raters and the blinded adjudicator return real bundles.
+
+## 2026-08-01 — Standalone R7 blind kit
+
+- Added a deterministic offline-kit builder that copies the frozen packet bytes unchanged and prebundles the rating CLI into one Node.js file.
+- Added an allowlisted `kit.json` manifest binding every file, byte size, SHA-256, packet-index hash, and the full `kitSha256`; timestamps and repository paths are excluded.
+- Added standalone `verify-kit`, strict missing/extra/symlink/special-file rejection, and a protocol allowlist that still rejects `outcome.json` after a malicious manifest rehash.
+- Added reproducibility, CLI-tamper, manifest-rewrite, no-overwrite, and no-checkout/no-npm execution tests.
+- Built the real 18-packet kit twice on Windows with identical hash `a209f22938a3c4744a1decd80ffb14bd0681b0a111aa50fdd535f88443fbf643`, then ran its bundled verifier and `init/status` outside the repository. This is local build evidence; the hash becomes a study artifact only when the owner freezes and communicates a chosen kit out of band.
+- Passed `npm run check`, 119/119 runnable extension tests, production build, and VSIX packaging; two Docker-only tests remained skipped in the local Windows run.
+
+The kit changes no frozen packet byte, question, rating field, compiler result, or threshold. It reduces setup and unblinding risk but cannot act as a human rater.

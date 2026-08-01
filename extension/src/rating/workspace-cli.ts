@@ -1,4 +1,5 @@
 import type { ExpertRating } from "./r7";
+import { verifyBlindKit } from "./kit";
 import { adjudicationDisagreement, createAdjudicationWorkspace, createRaterWorkspace, exportRatingBundle, ratingProgress, saveRating, type RaterPacket } from "./workspace";
 import { loadPacketSet, readRatingBundle, readWorkspace, replaceJson, writeNewJson } from "./workspace-files";
 
@@ -6,8 +7,16 @@ void main();
 
 async function main(): Promise<void> {
   try {
+    const nodeMajor = Number(process.versions.node.split(".")[0]);
+    if (!Number.isInteger(nodeMajor) || nodeMajor < 22) throw new Error("R7 blind rating requires Node.js 22 or newer");
     const [command, packetDir, ...args] = process.argv.slice(2);
     if (!command || !packetDir) return usage();
+    if (command === "verify-kit") {
+      if (args.length) return usage();
+      const manifest = await verifyBlindKit(packetDir);
+      process.stdout.write(`Verified blind kit ${manifest.kitSha256} for packet index ${manifest.packetIndexSha256}.\n`);
+      return;
+    }
     const set = await loadPacketSet(packetDir);
     if (command === "init") {
       if (args.length !== 2) return usage();
@@ -95,6 +104,7 @@ function printProgress(total: number, complete: number, nextPacketId: string | n
 function usage(): void {
   process.stderr.write([
     "Usage:",
+    "  node r7-rater.cjs verify-kit <kit-dir>",
     "  node scripts/r7-rater.mjs init <packet-dir> <rater-id> <new-workspace.json>",
     "  node scripts/r7-rater.mjs next <packet-dir> <workspace.json>",
     "  node scripts/r7-rater.mjs answer <packet-dir> <workspace.json> <packet-id> <yes|no|uncertain> <pass|fail|uncertain> <pass|fail|uncertain> <none|repair|compiler-status|observed-outcome|other> <1-5> <reason>",
