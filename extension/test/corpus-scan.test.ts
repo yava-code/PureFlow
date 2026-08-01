@@ -40,6 +40,7 @@ describe("R7 corpus scanner", () => {
       ordinal: 1,
       targetCommit: tip,
       adjacentFirstParent: true,
+      licenseApproved: true,
       lockfilePresent: true,
       dependencyOrLockfileChanged: false,
       unsupportedArtifactPresent: false,
@@ -59,7 +60,6 @@ describe("R7 corpus scanner", () => {
     const [draft] = await scanRepository(root, repository(tip));
     const evidence: ProvisionEvidence = {
       schemaVersion: 1,
-      licenseApproved: true,
       sanitizedBytes: 4096,
       requiresProductionCapability: false,
       executionNeedsNetwork: false,

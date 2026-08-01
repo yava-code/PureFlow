@@ -47,11 +47,11 @@ export interface CandidateFacts {
   sanitizedBytes: number;
   supportedTypescriptBoundary: boolean;
   hasAttributedTest: boolean;
-  requiresProductionCapability: boolean;
-  executionNeedsNetwork: boolean;
-  basePassed: boolean;
-  targetPassed: boolean;
-  deterministicReplayCount: number;
+  requiresProductionCapability: boolean | null;
+  executionNeedsNetwork: boolean | null;
+  basePassed: boolean | null;
+  targetPassed: boolean | null;
+  deterministicReplayCount: number | null;
   evidenceSha256: string;
 }
 
@@ -138,6 +138,15 @@ export function classifyCandidate(candidate: CandidateFacts): CandidateClassific
   if (candidate.sanitizedBytes > 25 * 1024 * 1024) return excluded("snapshot-too-large");
   if (!candidate.supportedTypescriptBoundary) return excluded("unsupported-typescript-boundary");
   if (!candidate.hasAttributedTest) return excluded("missing-attributed-test");
+  if (
+    candidate.requiresProductionCapability === null ||
+    candidate.executionNeedsNetwork === null ||
+    candidate.basePassed === null ||
+    candidate.targetPassed === null ||
+    candidate.deterministicReplayCount === null
+  ) {
+    throw new Error(`Missing provision evidence for structurally eligible candidate ${candidate.repositoryId}/${candidate.targetCommit}`);
+  }
   if (candidate.requiresProductionCapability) return excluded("requires-production-capability");
   if (candidate.executionNeedsNetwork) return excluded("network-required-at-execution");
   if (!candidate.basePassed) return excluded("base-provision-or-test-failed");
@@ -280,7 +289,7 @@ function validateCandidate(candidate: CandidateFacts): void {
   if (candidate.baseCommit === candidate.targetCommit) throw new Error("Candidate revisions must differ");
   if (!Number.isSafeInteger(candidate.changedLines) || candidate.changedLines < 0) throw new Error("Invalid changedLines");
   if (!Number.isSafeInteger(candidate.sanitizedBytes) || candidate.sanitizedBytes < 0) throw new Error("Invalid sanitizedBytes");
-  if (!Number.isSafeInteger(candidate.deterministicReplayCount) || candidate.deterministicReplayCount < 0) {
+  if (candidate.deterministicReplayCount !== null && (!Number.isSafeInteger(candidate.deterministicReplayCount) || candidate.deterministicReplayCount < 0)) {
     throw new Error("Invalid deterministicReplayCount");
   }
   if (!/^[0-9a-f]{64}$/.test(candidate.evidenceSha256)) throw new Error("Invalid evidenceSha256");

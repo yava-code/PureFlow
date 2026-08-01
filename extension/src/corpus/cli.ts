@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { completeCandidate, scanRepository, type CandidatePreflight, type ProvisionEvidence } from "./scan";
+import { completeCandidate, deferCandidate, scanRepository, type CandidatePreflight, type ProvisionEvidence } from "./scan";
 import { freezeCorpus, type CandidateFacts, type RepositoryRegistration } from "./freeze";
 
 void main();
@@ -20,8 +20,7 @@ async function main(): Promise<void> {
     const evidence = await readJson<Record<string, ProvisionEvidence>>(args[1]!);
     const completed = drafts.map((draft) => {
       const item = evidence[draft.targetCommit];
-      if (item === undefined) throw new Error(`Missing provision evidence for ${draft.targetCommit}`);
-      return completeCandidate(draft, item);
+      return item === undefined ? deferCandidate(draft) : completeCandidate(draft, item);
     });
     await writeNewJson(args[2]!, completed);
     process.stdout.write(`Completed ${completed.length} eligibility records.\n`);

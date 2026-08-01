@@ -16,6 +16,7 @@ export interface CandidatePreflight {
   baseCommit: string;
   targetCommit: string;
   adjacentFirstParent: boolean;
+  licenseApproved: boolean;
   lockfilePresent: boolean;
   dependencyOrLockfileChanged: boolean;
   unsupportedArtifactPresent: boolean;
@@ -30,7 +31,6 @@ export interface CandidatePreflight {
 
 export interface ProvisionEvidence {
   schemaVersion: 1;
-  licenseApproved: boolean;
   sanitizedBytes: number;
   requiresProductionCapability: boolean;
   executionNeedsNetwork: boolean;
@@ -42,7 +42,6 @@ export interface ProvisionEvidence {
 
 const provisionKeys = [
   "schemaVersion",
-  "licenseApproved",
   "sanitizedBytes",
   "requiresProductionCapability",
   "executionNeedsNetwork",
@@ -81,7 +80,7 @@ export async function scanRepository(
     if (!isCoarseCandidate(paths)) continue;
     ordinal += 1;
     if (ordinal > 60) break;
-    drafts.push(await inspectCandidate(root, registration.repositoryId, ordinal, baseCommit, targetCommit, parents, paths));
+    drafts.push(await inspectCandidate(root, registration.repositoryId, approvedLicense(registration.licenseSpdx), ordinal, baseCommit, targetCommit, parents, paths));
   }
   return drafts;
 }
@@ -101,7 +100,7 @@ export function completeCandidate(draft: CandidatePreflight, evidence: Provision
     baseCommit: draft.baseCommit,
     targetCommit: draft.targetCommit,
     adjacentFirstParent: draft.adjacentFirstParent,
-    licenseApproved: evidence.licenseApproved,
+    licenseApproved: draft.licenseApproved,
     lockfilePresent: draft.lockfilePresent,
     dependencyOrLockfileChanged: draft.dependencyOrLockfileChanged,
     unsupportedArtifactPresent: draft.unsupportedArtifactPresent,
@@ -125,9 +124,42 @@ export function completeCandidate(draft: CandidatePreflight, evidence: Provision
   };
 }
 
+export function deferCandidate(draft: CandidatePreflight): CandidateFacts {
+  const facts = {
+    schemaVersion: 1 as const,
+    repositoryId: draft.repositoryId,
+    ordinal: draft.ordinal,
+    baseCommit: draft.baseCommit,
+    targetCommit: draft.targetCommit,
+    adjacentFirstParent: draft.adjacentFirstParent,
+    licenseApproved: draft.licenseApproved,
+    lockfilePresent: draft.lockfilePresent,
+    dependencyOrLockfileChanged: draft.dependencyOrLockfileChanged,
+    unsupportedArtifactPresent: draft.unsupportedArtifactPresent,
+    changedLines: draft.changedLines,
+    sanitizedBytes: draft.sourceTreeBytes,
+    supportedTypescriptBoundary: draft.supportedTypescriptBoundary,
+    hasAttributedTest: draft.hasAttributedTest,
+    requiresProductionCapability: null,
+    executionNeedsNetwork: null,
+    basePassed: null,
+    targetPassed: null,
+    deterministicReplayCount: null,
+  };
+  return {
+    ...facts,
+    evidenceSha256: rawSha256(`pureflow/r7-candidate-evidence-v1\n${canonicalJson({
+      facts,
+      preflightSha256: draft.preflightSha256,
+      provisionEvidenceSha256: null,
+    })}`),
+  };
+}
+
 async function inspectCandidate(
   root: string,
   repositoryId: string,
+  licenseApproved: boolean,
   ordinal: number,
   baseCommit: string,
   targetCommit: string,
@@ -174,6 +206,7 @@ async function inspectCandidate(
     baseCommit,
     targetCommit,
     adjacentFirstParent: parents[0] === targetCommit && parents[1] === baseCommit,
+    licenseApproved,
     lockfilePresent: sharedLocks.length > 0,
     dependencyOrLockfileChanged,
     unsupportedArtifactPresent: extractionFailed || stats.binary || baseTree.unsupported || targetTree.unsupported,
@@ -254,6 +287,10 @@ function isUnsupportedPath(path: string): boolean {
 
 function isSnapshotPath(path: string): boolean {
   return /(?:^|\/)(?:__snapshots__)(?:\/|$)/i.test(path) || /\.snap$/i.test(path);
+}
+
+function approvedLicense(value: string): boolean {
+  return ["0BSD", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "MIT"].includes(value);
 }
 
 function sourceStem(path: string): string {
