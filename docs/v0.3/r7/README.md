@@ -27,6 +27,8 @@ Resume evidence is immutable input, never overwritten. The provisioner skips rec
 
 The optional `eligible-limit` lowers that ceiling when earlier registrations leave fewer than ten global corpus slots. It must be between 1 and 10 and follows an explicit prior-evidence input, which may be `empty-evidence.json`; this keeps the stop reason auditable.
 
+For a registered `npm run <script>` or package-manager equivalent, the controller checks both committed `package.json` files before installation. A missing script is an immutable command-unavailable failure: the exact command cannot pass after dependency installation, so the provisioner records a domain-separated failure receipt without executing repository code or spending network setup. Direct executable commands and present scripts still require the full isolated base/target Docker run.
+
 The first registration pass found no lockfile-backed coarse candidates in `p-queue` or `ajv`. Under the preregistered replacement rule, `ofetch`, `defu`, and `hookable` were appended before any compiler outcome was inspected. Registration array order is sampling order; the freezer stops once 30 eligible patches exist and never uses more than 10 from one repository.
 
 That replacement pass produced 19 eligible patches: 10 from `ts-pattern`, 3 from `ofetch`, 2 from `defu`, and 4 from `hookable`. Before inspecting any compiler outcome, `class-transformer` and `class-validator` were appended in that order as MIT-licensed npm replacements with committed lockfiles and deterministic, non-browser Jest commands. Their history is inspected only after this registration change is committed.

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   buildCorpusDockerArgs,
+  hasRegisteredTestScript,
   provisionBatchSize,
   selectProvisionCandidates,
   type CorpusDockerInvocation,
@@ -13,6 +14,13 @@ describe("R7 corpus provisioning", () => {
     expect(provisionBatchSize(1, 2)).toBe(1);
     expect(provisionBatchSize(2, 2)).toBe(0);
     expect(() => provisionBatchSize(0, 0)).toThrow("between 1 and 10");
+  });
+
+  it("detects a deterministically unavailable registered package script", () => {
+    const pkg = JSON.stringify({ scripts: { test: "vitest run" } });
+    expect(hasRegisteredTestScript(pkg, ["npm", "run", "test"])).toBe(true);
+    expect(hasRegisteredTestScript(pkg, ["npm", "run", "vitest"])).toBe(false);
+    expect(hasRegisteredTestScript(pkg, ["corepack", "pnpm", "exec", "vitest", "run"])).toBeNull();
   });
 
   it("selects only the first ten structurally viable candidates", () => {

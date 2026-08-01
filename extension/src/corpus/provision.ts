@@ -61,6 +61,13 @@ export function provisionBatchSize(accepted: number, eligibleLimit = 10): number
   return Math.min(3, Math.max(0, eligibleLimit - accepted));
 }
 
+export function hasRegisteredTestScript(packageJson: string, argv: readonly string[]): boolean | null {
+  const script = registeredScriptName(argv);
+  if (script === null) return null;
+  const value = JSON.parse(packageJson) as { scripts?: Record<string, unknown> };
+  return typeof value.scripts?.[script] === "string" && value.scripts[script].length > 0;
+}
+
 export function buildCorpusDockerArgs(invocation: CorpusDockerInvocation): string[] {
   if (!/^pureflow-r7-corpus-[0-9a-f]{24}$/.test(invocation.containerName)) throw new Error("Invalid corpus container name");
   if (invocation.network !== "bridge" && invocation.network !== "none") throw new Error("Invalid corpus network mode");
@@ -136,6 +143,31 @@ async function provisionCandidate(
   registration: RepositoryRegistration,
   draft: CandidatePreflight,
 ): Promise<ProvisionEvidence> {
+  const [baseScriptPresent, targetScriptPresent] = await Promise.all([
+    inspectRegisteredTestScript(repository, draft.baseCommit, registration.testArgv),
+    inspectRegisteredTestScript(repository, draft.targetCommit, registration.testArgv),
+  ]);
+  if (baseScriptPresent === false || targetScriptPresent === false) {
+    const record = {
+      schemaVersion: 1,
+      reason: "registered-test-script-unavailable",
+      repositoryId: draft.repositoryId,
+      baseCommit: draft.baseCommit,
+      targetCommit: draft.targetCommit,
+      testArgv: registration.testArgv,
+      baseScriptPresent,
+      targetScriptPresent,
+    };
+    return {
+      schemaVersion: 1,
+      sanitizedBytes: draft.sourceTreeBytes,
+      requiresProductionCapability: false,
+      executionNeedsNetwork: false,
+      basePassed: false,
+      targetPassed: false,
+      provisionEvidenceSha256: rawSha256(`pureflow/r7-provision-evidence-v1\n${canonicalJson(record)}`),
+    };
+  }
   const root = await mkdtemp(join(tmpdir(), "pureflow-r7-provision-"));
   const corepackVolume = volumeName("c");
   await createVolume(corepackVolume);
@@ -172,6 +204,34 @@ async function provisionCandidate(
   } finally {
     await removeVolume(corepackVolume);
     await rm(root, { recursive: true, force: true });
+  }
+}
+
+function registeredScriptName(argv: readonly string[]): string | null {
+  if (argv[0] === "npm" && argv[1] === "run" && argv.length >= 3) return argv[2]!;
+  if (argv[0] === "corepack" && ["npm", "pnpm", "yarn"].includes(argv[1]!) && argv[2] === "run" && argv.length >= 4) {
+    return argv[3]!;
+  }
+  return null;
+}
+
+async function inspectRegisteredTestScript(
+  repository: string,
+  revision: string,
+  argv: readonly string[],
+): Promise<boolean | null> {
+  if (registeredScriptName(argv) === null) return null;
+  try {
+    const { stdout } = await runFile("git", ["show", `${revision}:package.json`], {
+      cwd: repository,
+      encoding: "utf8",
+      windowsHide: true,
+      env: hostEnvironment(),
+      maxBuffer: 1024 * 1024,
+    });
+    return hasRegisteredTestScript(stdout, argv);
+  } catch {
+    return false;
   }
 }
 
