@@ -35,7 +35,7 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - `CONCEPT_LAB_CONTROLLABILITY.md` records a post-R7 category extension: compile an executable `observe → actuate → recover` human control surface, select takeover cut sets, and let a context-starved agent continue writing code from human-selected evidence and directives. Dissent cases and control dividends remain hypotheses with explicit falsifiers, not implemented features.
 - The preregistered R7 collector froze 30 eligible patches from six repositories after evaluating 457 bounded eligibility records. Manifest `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149` contains 12 development and 18 held-out patches; `docs/v0.3/results/R7_CORPUS_COLLECTION.md` reports repository and first-match exclusion counts. No compiler or human outcome influenced selection.
 - The frozen R7 automatic audit passed its preregistered automatic threshold: 17/18 held-out identities compiled and 16/18 were valid end-to-end. The frozen blind expert packet set and deterministic rating join exist, but two independent ratings and adjudication remain pending. Full R7 has not passed; R5/R6 stay gated.
-- ADR-007 proposes an Executable Operator Model and shadow-control protocol. ADR-008 adds a bidirectional Intent Ledger that reconciles every changed line to a bounded semantic unit and an honest attribution state. Together they separate artifact accountability from behaviorally demonstrated human control; neither proposal is implementation evidence.
+- ADR-007 proposes an Executable Operator Model and shadow-control protocol. ADR-008 adds a bidirectional Intent Ledger for artifact accountability. ADR-009 adds Decision Futures and a Takeover Envelope so an on-time pre-reveal human commitment can determine a live integrated branch while agents retain implementation. Together they cover artifact accountability, demonstrated control, and real decision authority; none is implementation evidence.
 - `GOAL_COMPLETION_AUDIT.md` maps the original product goal to current evidence. It explicitly records that the live agent plane, v0.3 cockpit, cold relay, delayed-transfer study, and skill-preservation claim remain incomplete.
 - The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
@@ -155,7 +155,7 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 ## Next ordered actions
 
 1. Obtain and adjudicate two independent blind expert ratings for packet index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`.
-2. If full R7 passes, review ADR-007 and ADR-008 together, then freeze the Operator Model and Intent Ledger schemas, hash domains, projections, evidence authorities, and selector ablations before implementation.
+2. If full R7 passes, review ADR-007, ADR-008, and ADR-009 together, then freeze the Operator Model, Intent Ledger, Decision Future, and Takeover Envelope schemas, hash domains, projections, evidence authorities, timing policy, and selector ablations before implementation.
 3. Add the local readiness ledger and minimal cockpit only after the complete R7 expert gate passes.
 4. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 

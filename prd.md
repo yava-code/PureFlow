@@ -115,6 +115,14 @@ Control episodes have two classes:
 
 This distinction prevents the product from becoming a simulated game. Some human decisions must genuinely steer the software, while lower-frequency recovery practice can stay entirely off the critical path.
 
+### Decision Futures
+
+Live steering uses a versioned **Decision Future**, not plan approval. When agents encounter a real high-leverage fork, they speculatively implement viable alternatives and continue unrelated work. PureFlow freezes the autonomous default, evidence catalog, and bounded integration deadline before asking the developer to predict a consequence, select a discriminating observation, or choose a path.
+
+An on-time commitment can determine the integrated branch without requiring the developer to write its implementation. A skipped or late commitment leaves the autonomous policy in control; a late choice may still run as a counterfactual, but never receives retroactive live-influence credit. False forks, cosmetic alternatives, and post-reveal rubber stamps produce no decision evidence.
+
+Decision Futures maintain a **Takeover Envelope** beside the agent Autonomy Envelope. The former lists critical seams with current human control and transfer evidence; the latter lists seams the agents can operate. PureFlow highlights their divergence rather than collapsing it into a developer score or restricting full agentic coding. ADR-009 defines the protocol, authority, timing, and falsifiers.
+
 ### 5. Judge
 
 The episode runs against executable evidence. PureFlow records what the developer inspected, predicted, changed, and recovered. An LLM may coach after the attempt, but it is not the sole grader.
@@ -203,7 +211,7 @@ It is not an AI-generated repository summary. A claim can become fresh only thro
 
 This gives the IDE a concrete answer to “what should the developer think about while agents keep coding?” It chooses the smallest action that reduces divergence between the running software and the operator's demonstrated model. A successful action should create a control dividend such as a regression probe, observation recipe, rollback path, or reusable recovery handle.
 
-The Operator Model is specified in `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`. It remains a post-R7 hypothesis until the complete expert gate and human experiments pass.
+The Operator Model is specified in `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`. Decision Futures and the Takeover Envelope are specified in `docs/v0.3/ADR-009-DECISION-FUTURES.md`. Both remain post-R7 hypotheses until the complete expert gate and human experiments pass.
 
 ## Autonomy Router
 
@@ -292,7 +300,7 @@ The R&D architecture is:
 
 - VSCodium plus a bundled extension for the product surface;
 - adapters over existing coding-agent runtimes for the build plane;
-- PureFlow-owned Flight Recorder, Intent Ledger, Controllability and Experience Compilers, Executable Operator Model, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
+- PureFlow-owned Flight Recorder, Intent Ledger, Controllability and Experience Compilers, Decision Futures, Executable Operator Model, Takeover Envelope, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
 
 This keeps the differentiating layer portable and avoids tying the thesis to a commercial editor fork. A deeper editor fork is justified only if a validated control experience requires unsupported workbench primitives.
 

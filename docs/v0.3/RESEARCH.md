@@ -57,6 +57,14 @@ The [Onnasch et al. meta-analysis](https://doi.org/10.1177/0018720813501549) syn
 
 This supports the central trade-off but does not determine the correct IDE interaction.
 
+### Negotiated initiative and interruption cost — 2026-08-01
+
+Classic [mixed-initiative interaction](https://www.microsoft.com/en-us/research/publication/mixed-initiative-interaction/) rejects a binary choice between total automation and constant user control. It instead assigns initiative to the human or machine at the moment each contribution is valuable. NASA's [human-autonomy teaming](https://ntrs.nasa.gov/api/citations/20170010163/downloads/20170010163.pdf) work similarly identifies negotiated decisions and greater interaction as responses to brittle automation and out-of-the-loop situation-awareness loss.
+
+Interaction is not free. [Collaborative interruption research](https://www.microsoft.com/en-us/research/publication/modeling-information-exchange-opportunities-for-effective-human-computer-teamwork/) models when information from a person is valuable enough to justify interruption, while [task-interruption field work](https://www.microsoft.com/en-us/research/publication/conversations-amidst-computing-a-study-of-interruptions-and-recovery-of-task-activity/) documents the resumption cost after attention switches. Recent [interviews with science journalists](https://www.microsoft.com/en-us/research/publication/helping-me-versus-doing-it-for-me-designing-for-agency-in-llm-infused-writing-tools-for-science-journalism/) found that automating information gathering or feedback could preserve agency when core editorial judgment remained human, whereas automating core ideation and drafting was perceived as threatening autonomy and skill development.
+
+The design implication is narrower than “keep the human in the loop.” PureFlow should transfer initiative only at real, high-leverage decision forks; execute alternatives speculatively; offer the choice at a low-cost task boundary; and record whether the decision actually affected integration. ADR-009 calls this a Decision Future. The cited work motivates the mechanism but does not validate it for programming.
+
 ## 2. Learning: active operation is different from reading
 
 ### Generation and self-explanation
@@ -209,20 +217,21 @@ These are important precedents for takeover muscle. They are periodic team event
 
 ## 6. Differentiation statement
 
-In the reviewed public landscape, no system was found that documents all six properties together:
+In the reviewed public landscape, no system was found that documents all seven properties together:
 
 1. the production agent swarm continues without waiting for training;
 2. every changed line reconciles to a bounded semantic unit and an honest attribution state;
 3. a semantic compiler selects a causal seam from the current real change;
 4. the human receives a concurrent executable fault or counterfactual twin;
 5. tests and runtime evidence judge the action rather than an LLM response alone;
-6. delayed adjacent transfer updates a module-scoped readiness model that influences future delegation.
+6. an on-time pre-reveal human decision can determine the live integrated branch while agents retain implementation;
+7. delayed adjacent transfer updates a module-scoped readiness model that influences future delegation.
 
 This is meaningful differentiation within the reviewed landscape, not proof of absolute global or patent novelty.
 
 The defensible product core is therefore the combination:
 
-> bidirectional Intent Ledger + semantic scenario compiler + attention scheduler + executable evidence judge + longitudinal takeover model
+> bidirectional Intent Ledger + Decision Futures + semantic scenario compiler + interruption-aware scheduler + executable evidence judge + longitudinal Takeover Envelope
 
 If PureFlow collapses back to explanations, questions, code tours, manual `TODO`s, or isolated bug games, it enters an already occupied category.
 

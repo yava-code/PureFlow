@@ -8,14 +8,14 @@ The original goal is broader than a compiler benchmark or an explanatory extensi
 | Requirement from the goal | Current evidence | Status | Evidence required for completion |
 | --- | --- | --- | --- |
 | Full agentic coding remains available | v0.1 is an IDE shell; v0.3 has a replay `AgentDriver`; ADR-006 selects a future live adapter | Incomplete | a live supported agent can plan, edit, test, and repair through the IDE on a real repository |
-| Developer is not reduced to reading generated diffs | PRD, THESIS, Takeover Twin, Control Pulse, and ADR-007 reject passive review as the mechanism | Architecture only | production UX demonstrates prediction, evidence selection, intervention, and recovery without requiring line-by-line review |
+| Developer is not reduced to reading generated diffs | PRD, THESIS, ADR-007, ADR-008, and ADR-009 replace passive review with accountable generation, shadow control, and bounded live decisions | Architecture only | production UX demonstrates prediction, evidence selection, live influence, intervention, and recovery without requiring line-by-line review |
 | Developer understands what the system does | R2 maps changed units to evidence; ADR-008 specifies total line reconciliation and explicit attribution debt | Partially represented, not proven | Intent Ledger exposes the current change account while the Executable Operator Model shows demonstrated causal claims, uncovered seams, contradictions, and delayed transfer |
-| Developer continues making engineering decisions | Live steering, dissent, cold relay, and shadow control are specified | Not implemented | real decisions affect an integrated path or a judged cold relay, with an autonomous-policy comparator |
+| Developer continues making engineering decisions | ADR-009 specifies Decision Futures, bounded live influence, dissent, and a Takeover Envelope | Not implemented | an on-time pre-reveal commitment determines a real integrated path and later predicts adjacent takeover better than shadow-only control |
 | AI can coach and question during work | Fixture-only precommitted Control Pulse exists; configured Side Coach remains bounded | Narrow fixture only | event-driven side interaction works during a live agent run and executable evidence, not an LLM score, adjudicates it |
 | AI may still write almost all code | Context-starved relay architecture explicitly allows this | Not implemented | a fresh agent writes a complete intervention from human-selected evidence and directive in the sandbox |
 | Skills remain available if AI disappears | Delayed AI-off adjacent takeover is the north-star metric | Unmeasured | preregistered controlled human study clears the delayed-transfer gate and later field evidence survives novelty |
-| The product is more than a quiz/extension | Dual planes, SandboxRunner, compiler, judge, controllability layer, and Operator Model are designed | No v0.3 product runtime | readiness ledger, cockpit, live agent adapter, shadow-control flow, and local deletion/export work end-to-end |
-| Autonomy speed is preserved | architecture keeps episodes off the production critical path by default | Unmeasured | production critical-path non-inferiority and bounded attention pass the preregistered study |
+| The product is more than a quiz/extension | Dual planes, SandboxRunner, Intent Ledger, compiler, judge, Operator Model, Decision Futures, and Takeover Envelope are designed | No v0.3 product runtime | readiness ledger, cockpit, live agent adapter, shadow/live-control flows, and local deletion/export work end-to-end |
+| Autonomy speed is preserved | continuity rehearsal stays off-path; Decision Futures delay only one bounded integration boundary while agents execute alternatives and unrelated work | Unmeasured | production critical-path non-inferiority, speculative compute, and bounded attention pass the preregistered study |
 | Every generated line is accountable | PRD and ADR-008 require deterministic reconciliation to `supported`, `claimed`, `unattributed`, `contradicted`, or `stale` units | Architecture plus narrow TypeScript evidence only | real agent changes pass total line reconciliation and held-out expert attribution checks without invented provenance |
 
 ## What is complete
@@ -25,7 +25,7 @@ The original goal is broader than a compiler benchmark or an explanatory extensi
 - frozen 30-patch corpus and preregistered automatic R7 audit;
 - automatic held-out result of 16/18 end-to-end valid episodes;
 - blind packet generation and deterministic two-rater join tooling;
-- falsifiable product thesis and the proposed Operator Model plus Intent Ledger extensions.
+- falsifiable product thesis and the proposed Operator Model, Intent Ledger, Decision Futures, and Takeover Envelope extensions.
 
 ## What is not complete
 
@@ -33,6 +33,7 @@ The original goal is broader than a compiler benchmark or an explanatory extensi
 - post-gate readiness ledger and v0.3 cockpit;
 - live Codex/Claude/OpenCode adapter accessible from this checkout;
 - context-starved relay on arbitrary supported project code;
+- Decision Futures with real bounded integration authority and an honest Takeover Envelope;
 - delayed-transfer human experiment;
 - longitudinal evidence of skill preservation;
 - evidence that developers voluntarily keep a non-zero attention budget;
@@ -45,7 +46,7 @@ The active goal may be marked complete only when all of these are true:
 1. a developer can use a real coding agent through PureFlow for ordinary project work;
 2. the agent can write the implementation without a manual-code quota;
 3. PureFlow compiles project-derived shadow control with no hidden-answer or production-worktree leak;
-4. the developer can predict, choose evidence, direct a cold agent, recover, and produce a reusable control artifact;
+4. the developer can predict, choose evidence, direct a cold agent, recover, and make at least one pre-reveal decision that actually determines an integrated path;
 5. local Operator Model state invalidates correctly as the code changes;
 6. every changed line resolves through the local Intent Ledger to a bounded unit and an honest attribution state;
 7. a delayed adjacent task demonstrates takeover without answer-generating AI;

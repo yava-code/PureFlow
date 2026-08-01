@@ -372,3 +372,14 @@ Evidence: merged PRs [#18](https://github.com/yava-code/PureFlow/pull/18) and [#
 - Distinguished the proposal from domain DSLs, requirements traceability, proof-carrying code, and generated explanations. No product-effectiveness or skill-retention result is claimed.
 
 Evidence: `docs/v0.3/ADR-008-EVIDENCE-CARRYING-GENERATION.md`; updated PRD, thesis, project state, completion audit, and v0.3 index. Implementation remains gated by the complete two-rater R7 expert audit.
+
+## 2026-08-01 — Decision Futures and Takeover Envelope proposal
+
+- Closed the remaining architecture gap between off-path takeover practice and real live engineering authority.
+- Proposed ADR-009: agents speculatively implement viable alternatives and continue unrelated work while a bounded, precommitted Decision Future offers one high-leverage human choice at a low-cost breakpoint.
+- Distinguished on-time live influence from late counterfactual practice, autonomous default, skip, and integrity failure. A late agreement can never be upgraded into production-decision evidence.
+- Added false-fork abstention, immutable deadline/default authority, comparable-alternative rules, interruption-cost scheduling, and executable integration evidence.
+- Defined separate Autonomy and Takeover Envelopes so full agentic coding remains available while uncovered or stale human-control seams stay explicit.
+- Added a three-arm ablation against autonomous explanation and shadow-only prediction. No product-effectiveness, live-influence, or skill-retention result is claimed.
+
+Evidence: `docs/v0.3/ADR-009-DECISION-FUTURES.md`; updated PRD, thesis, research, project state, completion audit, and v0.3 index. Implementation remains gated by the complete two-rater R7 expert audit.

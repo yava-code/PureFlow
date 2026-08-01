@@ -100,6 +100,7 @@ This combines four supporting mechanisms:
 
 - evidence-carrying generation supplies attribution and seam candidates;
 - an attention scheduler chooses the smallest valuable human episode;
+- Decision Futures let a bounded pre-reveal human choice determine a live integrated path while agents implement alternatives;
 - executable fault/counterfactual practice produces behavioral evidence;
 - a readiness-based router closes the loop with future delegation.
 
@@ -154,7 +155,8 @@ Bug injection is only one possible experience backend. The architecture differs 
 2. production agents continue working in parallel;
 3. the selector chooses the seam from readiness and future takeover value;
 4. the episode may be prediction, counterfactual steering, diagnosis, intervention, or recovery—not only a seeded bug;
-5. delayed evidence influences later task delegation.
+5. selected genuine forks may give an on-time human commitment real integration authority without manual implementation;
+6. delayed evidence influences later task delegation.
 
 Removing any two of those links risks collapsing the product into an existing category.
 
