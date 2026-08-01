@@ -205,6 +205,18 @@ The artifact-accountability problem has credible neighbors, so PureFlow cannot c
 
 ADR-008 therefore narrows the contribution to a combined mechanism: total changed-line reconciliation, untrusted agent claim references, executable evidence joins, visible attribution debt, and a separate Operator Model that only human actions can refresh. That combination remains a hypothesis until held-out expert attribution and delayed-transfer studies pass.
 
+### Shared representations and the Operator Projection boundary
+
+[Microsoft Programming with Representations](https://www.microsoft.com/en-us/research/project/pwr/) uses a domain-specific representation with built-in guardrails to translate natural-language intent into programs, explicitly aiming to reduce the coding expertise required of downstream users. [Apple Athena](https://machinelearning.apple.com/research/athena) uses shared intermediate representations such as storyboards, data models, and GUI skeletons to scaffold iterative application generation. Bidirectional-programming research studies lawful synchronization between a source and an editable view.
+
+These precedents invalidate a novelty claim based on “an intermediate representation between prompts and code.” They also expose a different opportunity. PureFlow targets arbitrary existing repositories and aims to preserve professional takeover expertise rather than decouple users from it. ADR-010 therefore proposes Operator Source as a sparse view over immutable commitments and existing evidence authorities, not a domain DSL, full alternative program, or new source of truth. Its value must be tested against the existing Intent Ledger and Operator Model views under matched evidence and attention.
+
+### Community remedies and why they are comparators
+
+Current practitioner advice clusters around generation-then-explanation, ownership rituals, AI-free coding quotas, smaller iterations, contract-first work, spaced repetition, and a second AI reviewer. Anthropic's randomized study makes the concern concrete: participants using AI assistance on an unfamiliar library scored lower on immediate concept mastery, with debugging comprehension particularly affected. The same study also observed better outcomes when people used AI to build understanding rather than merely request an answer.
+
+These are useful baselines, not the PureFlow mechanism. Explanation and AI review can improve navigation or code quality without proving human control; retyping, quizzes, and AI-free quotas sacrifice the autonomy constraint; contract-first workflows cover only work where the human can specify the contract in advance. R8 therefore includes a strong post-hoc explanation/question comparator while PureFlow requires pre-reveal commitments, executable observation and recovery, and delayed adjacent transfer.
+
 ## 5. Adjacent precedent: operational drills
 
 Reliability engineering already treats human response as something to exercise:
@@ -231,7 +243,7 @@ This is meaningful differentiation within the reviewed landscape, not proof of a
 
 The defensible product core is therefore the combination:
 
-> bidirectional Intent Ledger + Decision Futures + semantic scenario compiler + interruption-aware scheduler + executable evidence judge + longitudinal Takeover Envelope
+> Intent Ledger + Decision Futures + semantic scenario compiler + interruption-aware scheduler + executable evidence judge + longitudinal Takeover Envelope, optionally rendered through a validated Operator Projection
 
 If PureFlow collapses back to explanations, questions, code tours, manual `TODO`s, or isolated bug games, it enters an already occupied category.
 

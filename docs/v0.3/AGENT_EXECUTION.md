@@ -32,7 +32,7 @@ observable agent run
 
 Each phase ends in a coherent commit with tests. A downstream phase may start only when its acceptance checks pass.
 
-Workstream IDs are stable references, not permission to execute in numeric order. The dependency graph is authoritative: R4.5 follows the guarded R0–R4 mechanism, and R7 gates all R5/R6 product-state/UI work.
+Workstream IDs are stable references, not permission to execute in numeric order. The dependency graph is authoritative: R4.5 follows the guarded R0–R4 mechanism, and R7 gates all R5/R5.1/R5.2/R6 product-state/UI work.
 
 ## Target repository shape
 
@@ -265,7 +265,7 @@ If a coherent episode cannot be produced without hand-writing logic for each pat
 - Bind every attempt once to its controller-issued ID, project, internal probe, claim hash, fixture manifest, catalog allowlist, and a sorted subset of the claim evidence. Tombstone all terminal attempts and reject replay or cross-project/hash reuse.
 - Treat timeout, cancellation, setup/launch failure, missing output, and runner error as `execution-error`; none may confirm a prediction that the check would fail.
 - Start with the deterministic no-model path. A configured Side Coach adapter may be added only after the same validator and capsule tests pass; its output remains an untrusted catalog selection or clarification.
-- Keep results in the experiment layer. Do not persist or display readiness before the R7→R5/R6 gates.
+- Keep results in the experiment layer. Do not persist or display readiness before the R7→R5/R5.1/R5.2/R6 gates.
 
 ### Acceptance
 
@@ -312,9 +312,53 @@ If the fixture-only probe needs arbitrary participant code or model-generated te
 - relevant code changes mark previous evidence stale;
 - delete removes all local evidence for the selected project.
 
+## Workstream R5.1 — Accountability and operator derivation
+
+**Entry gate:** R7 passes and ADR-007/008 evidence authorities are adjudicated.
+
+**Goal:** implement the Intent Ledger and Executable Operator Model as deterministic derivations, without an LLM certifying its own work.
+
+### Tasks
+
+- Persist immutable generation claims, source receipts, human commitment events, capability evidence, and invalidation events under one project-scoped event authority.
+- Reconcile every changed text line to one primary semantic unit or label it `accountability-unavailable`; the label blocks accountability/readiness claims but does not block autonomous production.
+- Derive operator-model nodes only from controller-owned actions and evidence hashes.
+- Expose pure, versioned read APIs for ledger navigation, model snapshots, and invalidation deltas.
+- Add canonicalization, domain-separated hash, stale-base commitment, overlapping-commit conflict, delete, and export fixtures.
+
+### Acceptance
+
+- an agent claim alone never becomes `supported`, committed, demonstrated, or transferred;
+- omitted, overlapping, stale, contradicted, and unknown units remain visible;
+- `commit(proposalHash, baseProjectionHash, payload)` rejects a stale base and never rewrites an earlier human event;
+- a source/evidence change deterministically stales the affected derived view;
+- budget zero preserves autonomous delivery while emitting honest accountability debt.
+
+## Workstream R5.2 — Decision Future controller
+
+**Entry gate:** R7 passes and ADR-009 timing/integration rules are adjudicated.
+
+**Goal:** make one pre-reveal human commitment capable of selecting a live integration path without putting the production swarm on the human critical path by default.
+
+### Tasks
+
+- Freeze comparable alternative hashes, autonomous default, evidence catalog, deadline, speculative budget, and integration rule before revealing outcomes or agent preference.
+- Keep speculative heads isolated and make the controller—not an agent message—the sole integration authority.
+- Record on-time, late, skipped, defaulted, integrated, discarded, and counterfactual outcomes without upgrading post-reveal agreement.
+- Provide the same frozen alternative set for Shadow and Full experimental modes; vary only whether the commitment is binding.
+- Add branch cleanup, crash recovery, duplicate-event, deadline, and concurrent-future fixtures.
+
+### Acceptance
+
+- a valid on-time commitment changes the integrated artifact exactly when the frozen rule says it should;
+- skipped, late, invalid, or unavailable choices resolve to the frozen autonomous default;
+- agent output cannot change the deadline, default, evidence catalog, or merge rule;
+- base production cost and capped speculative cost are measured separately;
+- unrelated production work does not wait for a human response.
+
 ## Workstream R6 — Minimal cockpit
 
-**Entry gate:** R7 technical corpus audit passes its preregistered threshold.
+**Entry gate:** R7 passes; R5, R5.1, and R5.2 pass their technical fixtures; R7.5 selects or rejects the optional Operator Projection.
 
 **Goal:** expose the mechanism inside native IDE surfaces without turning the editor into a course.
 
@@ -367,6 +411,24 @@ If the fixture-only probe needs arbitrary participant code or model-generated te
 
 Use the thresholds in `EXPERIMENTS.md`. If the compiler misses the gate, narrow or pivot before implementing prediction, counterfactual, multiple languages, or a full swarm manager.
 
+## Workstream R7.5 — Operator Projection representation gate
+
+**Goal:** determine whether the Dual Source product metaphor is a useful projection or generated architecture theatre.
+
+This workstream starts only after full R7 and R5.1. It does not authorize the full cockpit. Build one offline pure projection over equivalent unfamiliar TypeScript fixtures with two views: Intent Ledger plus Operator Model, and the same evidence rendered as Operator Source plus Operator Delta. The projection owns no event, readiness state, or mutable authority.
+
+### Required artifacts
+
+- frozen participant projections with identical underlying evidence;
+- preregistered causal-localization task, oracle, attention budget, and minimum worthwhile effect;
+- deliberate `proposed`, `stale`, `contradicted`, and `unknown` nodes;
+- no-self-certification and invalidation negative fixtures;
+- de-identified result report separating navigation, confidence, and executable behavior.
+
+### Gate
+
+Operator Source may become the R6 default view only if Experiment 2.5 clears H9. Otherwise remove the projection and continue with the Intent Ledger and Operator Model directly. A better-looking diagram or higher preference score cannot pass this gate.
+
 ## Workstream R8 — Human pilot
 
 **Goal:** test delayed transfer, not merely usability.
@@ -378,8 +440,9 @@ Use [`R8_COMBINED_PILOT_PROTOCOL.md`](R8_COMBINED_PILOT_PROTOCOL.md) as the prer
 ### Entry gate
 
 - complete the frozen R7 expert ratings and adjudication;
-- implement one versioned R5/R6 runtime capable of all four conditions;
-- freeze ADR-007–009 schemas, hash domains, evidence authorities, invalidation, and timing rules;
+- implement one versioned R5/R5.1/R5.2/R6 runtime capable of all four conditions;
+- review ADR-007–010 together, then freeze the selected schemas, hash domains, evidence authorities, invalidation, and timing rules;
+- run the matched Operator Source representation pilot; remove the dual-source projection if it does not improve causal localization per active minute;
 - pass technical fixtures for total changed-line reconciliation, operator-model invalidation, Decision Future integration integrity, and delayed-task isolation;
 - freeze the protocol, analysis code, task pairs, exclusions, and artifact hashes before enrollment.
 
@@ -393,7 +456,7 @@ Use [`R8_COMBINED_PILOT_PROTOCOL.md`](R8_COMBINED_PILOT_PROTOCOL.md) as the prer
 - blinded scoring rubric;
 - raw-data minimization plan;
 - frozen four-condition protocol and ordered mechanism contrasts;
-- Intent Ledger, Operator Model, Decision Future, and Takeover Envelope event schemas;
+- Intent Ledger, Operator Model, selected Operator Source projection, Decision Future, and Takeover Envelope event schemas;
 - result report separating pilot targets from observed values.
 
 ### Gate
@@ -412,15 +475,20 @@ flowchart LR
     R3 --> R4
     R4 --> R45["R4.5 Control Pulse gate"]
     R45 --> R7["R7 Recovery + probe corpus audit"]
-    R7 --> R5["R5 Evidence ledger"]
-    R7 --> R6["R6 Cockpit"]
+    R7 --> R5["R5 Readiness evidence ledger"]
+    R7 --> R51["R5.1 Accountability + operator derivation"]
+    R7 --> R52["R5.2 Decision Future controller"]
+    R51 --> R75["R7.5 Operator Projection gate"]
+    R75 --> R6["R6 Cockpit"]
     R5 --> R6
+    R51 --> R6
+    R52 --> R6
     R7 --> R8["R8 Human pilot"]
     R5 --> R8
     R6 --> R8
 ```
 
-R1, R2, and R3 may run in parallel only after R0 contracts are committed. R4 is the integration owner; R4.5 is the required Pulse boundary after that integration and remains outside the guarded Jules queue. R7 must pass before R5 or R6 starts. Avoid a free-running swarm editing the same contracts.
+R1, R2, and R3 may run in parallel only after R0 contracts are committed. R4 is the integration owner; R4.5 is the required Pulse boundary after that integration and remains outside the guarded Jules queue. R7 must pass before R5, R5.1, or R5.2 starts; R5.1 precedes R7.5, and R7.5 selects or rejects the optional human projection before R6. Avoid a free-running swarm editing the same contracts.
 
 ## Definitions of done
 

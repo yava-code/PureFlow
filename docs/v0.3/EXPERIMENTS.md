@@ -40,6 +40,10 @@ Project-scoped, time-stamped control evidence will predict delayed AI-off takeov
 
 The Intent Ledger will let developers locate the relevant intent, invariant, and evidence in generated changes faster than raw diffs or AI summaries, without false `supported` provenance. Navigation success is an accountability outcome, not proof of skill retention.
 
+### H9 — Operator Projection improves causal orientation
+
+Rendering the same evidence through an Operator Projection and Operator Delta will reduce time to the first valid causal hypothesis on an adjacent fault compared with the existing Intent Ledger plus Operator Model views, without increasing false confidence or active attention.
+
 ## What does not count as success
 
 - more questions answered correctly immediately after generation;
@@ -218,6 +222,39 @@ This pilot is a feasibility and variance-estimation gate, not a confirmatory tes
 
 H5 requires a separately powered confirmatory comparison of policy 1 versus policy 3 using regression-free delayed adjacent-task completion as the primary outcome and attention time as a non-inferiority constraint. Before enrollment, preregister the minimum worthwhile transfer difference from pilot variance and the attention margin. H5 passes only if the transfer estimate exceeds that margin with the planned confidence bound and attention stays within its margin. If policy 2 performs as well as executable probing, narrow the mechanism claim; if the confirmatory policies perform alike, remove mid-run prompts from the core.
 
+## Experiment 2.5 — Operator Projection representation pilot
+
+### Question
+
+Does the Operator Projection make existing control evidence more operational, or merely produce a more persuasive project summary?
+
+### Entry gate
+
+Run only after the complete R7 expert gate. Freeze one offline representation prototype, tasks, evidence, scoring, and active-time budget before participants see it. This pilot may gate the R6 projection but cannot establish skill preservation.
+
+### Conditions
+
+Use matched unfamiliar TypeScript modules and identical underlying evidence:
+
+1. Intent Ledger navigation plus an Executable Operator Model snapshot;
+2. the same ledger/model data rendered as Operator Source nodes through a revision-bound Operator Projection and Operator Delta.
+
+Do not add extra tests, hints, explanations, or control episodes to condition 2. The representation is the only factor.
+
+### Outcomes
+
+- **Primary:** time to first valid causal hypothesis on an unseen adjacent fault;
+- regression-free adjacent completion;
+- time to locate controlling intent, evidence, and recovery route;
+- incorrect causal claims and confidence calibration;
+- stale-node detection and missed invalidation;
+- active attention and maintenance cost;
+- rubber-stamp acceptance of agent-proposed nodes.
+
+### Decision rule
+
+Freeze the minimum worthwhile time improvement and non-inferiority margins from a usability pilot before the confirmatory comparison. H9 fails if the projection does not improve causal localization per active minute, increases false confidence, hides unknown areas, or requires manual specification work. On failure, retain the Intent Ledger and Operator Model directly and remove Dual Source from the product category claim.
+
 ## Experiment 3 — Controlled delayed-transfer study
 
 The complete preregistration template is [`R8_COMBINED_PILOT_PROTOCOL.md`](R8_COMBINED_PILOT_PROTOCOL.md). Freeze it before enrollment; this section is the decision summary.
@@ -373,6 +410,10 @@ intent_ledger.opened
 intent_ledger.unit_selected
 intent_ledger.evidence_opened
 operator_model.snapshot
+operator_source.snapshot
+operator_delta.compiled
+operator_source.node_committed
+operator_source.node_invalidated
 takeover_envelope.snapshot
 decision_future.offered
 decision_future.committed

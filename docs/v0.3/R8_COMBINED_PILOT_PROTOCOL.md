@@ -1,6 +1,6 @@
 # R8 combined human-control pilot protocol
 
-**Status:** Draft. Freeze before enrollment. No participant run is authorized until the complete R7 expert gate passes and the R5/R6 runtime implements the tested conditions.
+**Status:** Draft. Freeze before enrollment. No participant run is authorized until the complete R7 expert gate passes and the R5/R5.1/R5.2/R6 runtime implements the tested conditions.
 
 **Purpose:** test whether PureFlow can preserve autonomous coding speed while producing measurable project takeover ability, accountable understanding, and real engineering agency.
 
@@ -37,10 +37,11 @@ Therefore R8 measures delayed executable behavior. It does not use confidence, e
 Enrollment may begin only after all of the following are true:
 
 1. the two independent R7 ratings and adjudication clear the frozen expert gate;
-2. R5/R6 implement all four conditions from one versioned runtime;
-3. ADR-007, ADR-008, and ADR-009 schemas, hash domains, evidence authorities, timing rules, and invalidation rules are frozen;
-4. held-out fixtures pass hidden-answer, production-isolation, line-reconciliation, and deterministic-oracle checks;
-5. the protocol, analysis code, exclusions, minimum worthwhile effects, task pairs, and raw artifact hashes are frozen before condition outcomes are opened.
+2. R5/R5.1/R5.2/R6 implement all four conditions from one versioned runtime;
+3. ADR-007–010 selected schemas, hash domains, evidence authorities, timing rules, and invalidation rules are frozen without introducing a second readiness authority;
+4. the matched Operator Source representation pilot either passes its frozen feasibility gate or removes ADR-010 from the tested projection;
+5. held-out fixtures pass hidden-answer, production-isolation, line-reconciliation, and deterministic-oracle checks;
+6. the protocol, analysis code, exclusions, minimum worthwhile effects, task pairs, and raw artifact hashes are frozen before condition outcomes are opened.
 
 The pilot estimates feasibility and variance. A power analysis based on blinded pilot aggregates must freeze the confirmatory enrollment size. A small convenience sample cannot clear the product claim.
 
@@ -58,7 +59,7 @@ Randomize fixture/task-pair order with a preregistered balanced schedule. Partic
 
 ## 5. Four conditions
 
-All conditions use the same agent model and version, task prompt, repository state, tests, documentation access, total production window, and token budget.
+All conditions use the same agent model and version, task prompt, repository state, tests, documentation access, total production window, and base production token budget. Any speculative alternatives consume a separate capped budget and are reported as product cost.
 
 ### A. Autonomous / Cursor-like
 
@@ -73,18 +74,18 @@ The same autonomous agent plus a fixed ten-minute post-hoc protocol: the same di
 The same autonomous agent plus:
 
 - Intent Ledger navigation;
-- an Executable Operator Model snapshot;
+- the selected Executable Operator Model projection, with Operator Source used only if its prior matched representation pilot passes;
 - one matched prediction, discriminating-observation, diagnosis, and recovery episode in a disposable twin.
 
 The participant's choice cannot alter the production branch. This isolates executable control practice from live authority.
 
 ### D. Full PureFlow / Decision Futures
 
-Everything in Shadow control plus one genuine Decision Future. Before any outcome or autonomous preference is revealed, the system freezes comparable alternatives, an autonomous default, evidence catalog, deadline, and integration rule. An on-time participant commitment can determine the integrated production path.
+Everything in Shadow control plus one genuine Decision Future. Before any outcome or autonomous preference is revealed, the controller prebuilds and freezes the same comparable alternative set, autonomous default, evidence catalog, deadline, and integration rule used to construct the matched Shadow fixture. An on-time participant commitment can determine the integrated production path.
 
 Late, skipped, defaulted, or counterfactual choices are recorded honestly and never upgraded to live-influence evidence.
 
-Conditions B–D receive the same maximum ten minutes of active attention. The system may continue unrelated agent work while C or D is active. Speculative compute and any merge delay are reported separately from human attention.
+Conditions B–D receive the same maximum ten minutes of active attention. The system may continue unrelated agent work while C or D is active. Shadow and Full receive the same frozen alternatives; randomization changes only whether the precommitted choice has live integration authority. Speculative compute and any merge delay are reported separately from human attention and from the identical base production budget.
 
 ## 6. Procedure
 
@@ -115,7 +116,7 @@ After 48 hours, within a preregistered ±4-hour window:
 - give 45 minutes for a regression-free adjacent task;
 - require direct human diagnosis and editing because this phase models AI disappearance.
 
-The transfer task shares an invariant, dependency seam, or data path with Phase A but uses a different failure family and cannot be solved by replaying the practiced mutation.
+The transfer task shares an invariant, dependency seam, or data path with Phase A but uses a different failure family and cannot be solved by replaying the practiced mutation. Because Full may integrate a different alternative, transfer tasks must be branch-independent or each branch-specific form must pass a frozen blinded difficulty-equivalence pilot before enrollment.
 
 ### Phase C — Longer-delay subset
 
@@ -196,6 +197,10 @@ intent_ledger.opened
 intent_ledger.unit_selected
 intent_ledger.evidence_opened
 operator_model.snapshot
+operator_source.snapshot
+operator_delta.compiled
+operator_source.node_committed
+operator_source.node_invalidated
 takeover_envelope.snapshot
 decision_future.offered
 decision_future.committed
