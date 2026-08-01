@@ -340,3 +340,13 @@ Append an entry after each material milestone with:
 - Frozen 16 compiler/config inputs in `docs/v0.3/r7/compiler-freeze-v1.json`; raw freeze-file SHA-256: `605b645e9cc27653515665ac002a4b1d9c1e6f36c6ddf3bffbf2be4d2081a81b`.
 
 Evidence: `docs/v0.3/results/R7_DEVELOPMENT_AUDIT.md` and immutable JSON receipts. R7 remains blocked on the frozen 18-patch held-out run and two independent blind expert ratings; no retention or product-effectiveness claim is made.
+
+## 2026-08-01 — R7 held-out automatic audit
+
+- Committed compiler freeze `ab1ea56`, verified all 16 freeze-manifest file hashes, and opened the 18 held-out identities only after that boundary.
+- Compiled 17/18 held-out patches, emitted one structural abstention, and executed every compiled patch with the frozen one-control/three-mutation/three-repair protocol.
+- Recorded 16/18 end-to-end valid recovery episodes and probes (88.9%, Wilson 95% CI 67.2–96.9%); one compiled mutation correctly emitted `mutation-did-not-fail`.
+- Passed the preregistered automatic thresholds without modifying compiler code/config. Summary hash: `fe561009447e187e8c085ac499d62496816f2714fc4dcabccdb064ca97708942`.
+- Generated all 18 blind rating packets before outcomes, with index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`, and verified zero remaining audit containers/volumes.
+
+Evidence: `docs/v0.3/results/R7_HELD_OUT_AUDIT.md`, immutable execution receipts, and blind packet bundle. Full R7 remains blocked on two independent experienced TypeScript ratings and adjudication; R5/R6 have not started.

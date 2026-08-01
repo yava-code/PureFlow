@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "held-out",
+  "patch": {
+    "repositoryId": "ts-pattern",
+    "ordinal": 10,
+    "baseCommit": "b2e7566e1906068cba911825f27d76e6d53fc6c2",
+    "targetCommit": "99aa90e9248600b7f4a6bd2f85d294802164d7b5",
+    "evidenceSha256": "0c48f57a8266a6eca8620feefcdf12c8f07a53dcee9351f7a887b10983c7fd11",
+    "splitKey": "7fb5331a9bc3c0c65ccc1e01de1ffcb9c55400907597d2528ea886d459995e5d",
+    "cohort": "held-out"
+  },
+  "compileResult": {
+    "status": "compiled",
+    "participant": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "repositoryId": "ts-pattern",
+      "seam": {
+        "path": "src/errors.ts",
+        "symbol": "ExhaustiveError",
+        "kind": "class"
+      },
+      "writablePaths": [
+        "src/errors.ts",
+        "src/index.ts",
+        "src/match.ts"
+      ],
+      "attributedTestPaths": [
+        "tests/exhaustive-match.test.ts"
+      ],
+      "attentionBudgetSeconds": 600,
+      "observationLabel": "registered-check-outcome",
+      "experienceId": "836522e237460e43c24ad4ef5f73af3fb45bec093b957bb934cd89456f8e47c4"
+    },
+    "internal": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+      "patchEvidenceSha256": "0c48f57a8266a6eca8620feefcdf12c8f07a53dcee9351f7a887b10983c7fd11",
+      "repositoryId": "ts-pattern",
+      "ordinal": 10,
+      "baseCommit": "b2e7566e1906068cba911825f27d76e6d53fc6c2",
+      "targetCommit": "99aa90e9248600b7f4a6bd2f85d294802164d7b5",
+      "nodeVersion": "22.17.0",
+      "packageManager": "npm",
+      "packageManagerVersion": "10.9.2",
+      "installArgv": [
+        "npm",
+        "ci",
+        "--ignore-scripts"
+      ],
+      "testArgv": [
+        "npm",
+        "test",
+        "--",
+        "--runInBand"
+      ],
+      "sources": [
+        {
+          "path": "src/errors.ts",
+          "baseBlobSha1": "18fd104c6a75e1aad8147a9618ff4e30d8d33843",
+          "targetBlobSha1": "bdb7890562685b6f6b0d546ada5cf8abe12193c9"
+        },
+        {
+          "path": "src/index.ts",
+          "baseBlobSha1": "010886ca090c6c336769b1efe325c75f4e8c7cc2",
+          "targetBlobSha1": "39959c8746d200cc9f292527744c4b7bdf502f02"
+        },
+        {
+          "path": "src/match.ts",
+          "baseBlobSha1": "bcd27b10e14232fc5b4f1dc641e8c84fcddbe9f7",
+          "targetBlobSha1": "6c801aa8bfc7adf0b116d711c65f92e0071a64cd"
+        }
+      ],
+      "attributedTestPaths": [
+        "tests/exhaustive-match.test.ts"
+      ],
+      "semantic": {
+        "path": "src/errors.ts",
+        "symbol": "ExhaustiveError",
+        "kind": "class",
+        "changedLineSha256": [
+          "4608102bb6c38cf2ad0c5f68005344e51b0f1768dbcaf1e7a17ababa0bad42d5"
+        ]
+      },
+      "mutationOperator": "whole-file-base-rewind",
+      "participantProjectionSha256": "b38534b83f14be871d19bef7f0fd90233e46a7803067fb6035cdb55dd7d19536",
+      "internalPlanSha256": "a00b72f716e8249e2549cfebdfc149488847094b3bcc7cf1c524934c70274629"
+    }
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "compilerProtocol": "r7-rewind-v1",
+    "internalPlanSha256": "a00b72f716e8249e2549cfebdfc149488847094b3bcc7cf1c524934c70274629",
+    "status": "valid",
+    "recoveryValid": true,
+    "probeValid": true,
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 38501,
+      "stdoutBytes": 352,
+      "stderrBytes": 508,
+      "stdoutSha256": "778b36e4caf21775b03f5c1e1e085e29358fd3fb601a2b401a2e583ff773ec2c",
+      "stderrSha256": "281a60045940ee9f7706a1e3b2dff971a22a534ccf2062863de0fd77a38999ff"
+    },
+    "targetControl": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 93409,
+      "stdoutBytes": 45,
+      "stderrBytes": 1585,
+      "stdoutSha256": "8c2f334509f3b528dd8f5db5e6b7a01ef338ec82d33ed3f553760b36709fec3f",
+      "stderrSha256": "f89f873e1e622ed733899f6aedfde9570179b5f231cf8e12cd5e200e28f53f5e"
+    },
+    "mutation": [
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 109625,
+        "stdoutBytes": 45,
+        "stderrBytes": 2359,
+        "stdoutSha256": "8c2f334509f3b528dd8f5db5e6b7a01ef338ec82d33ed3f553760b36709fec3f",
+        "stderrSha256": "d8f6b9c347f228b59d60751ae7cd2a4cb2e799c9df46ba15201d486bdcef1f41"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 92866,
+        "stdoutBytes": 45,
+        "stderrBytes": 2359,
+        "stdoutSha256": "8c2f334509f3b528dd8f5db5e6b7a01ef338ec82d33ed3f553760b36709fec3f",
+        "stderrSha256": "11b8a79ce7b45681c32fbab82f7c485c0e0ac4c3c9b657ccdbc7b0069fbafb9e"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 108187,
+        "stdoutBytes": 45,
+        "stderrBytes": 2360,
+        "stdoutSha256": "8c2f334509f3b528dd8f5db5e6b7a01ef338ec82d33ed3f553760b36709fec3f",
+        "stderrSha256": "9e7d461bba05ba8e6cdb15f6611b0117a91ad7a08b3dc47ea0f0c9b1b5fbb12d"
+      }
+    ],
+    "repair": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 102044,
+        "stdoutBytes": 45,
+        "stderrBytes": 1606,
+        "stdoutSha256": "8c2f334509f3b528dd8f5db5e6b7a01ef338ec82d33ed3f553760b36709fec3f",
+        "stderrSha256": "8e8e01e1d86abe2e8d4314dc5a22dbf70edd91e0e076d3ae438af654398b57ee"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 107490,
+        "stdoutBytes": 45,
+        "stderrBytes": 1607,
+        "stdoutSha256": "8c2f334509f3b528dd8f5db5e6b7a01ef338ec82d33ed3f553760b36709fec3f",
+        "stderrSha256": "f98758199b324747acf137f914d1566c490a88ed120a3dff14c16ab01f9287bf"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 113881,
+        "stdoutBytes": 45,
+        "stderrBytes": 1616,
+        "stdoutSha256": "8c2f334509f3b528dd8f5db5e6b7a01ef338ec82d33ed3f553760b36709fec3f",
+        "stderrSha256": "0d0f9dc4fedcfa09eca5cf71e2eaa430d75b2db83243b3752154acaed371a2d3"
+      }
+    ],
+    "setupMs": [
+      5771,
+      6137,
+      10262,
+      9083,
+      22363,
+      7641,
+      17225
+    ],
+    "targetArchiveSha256": "17cb5143c99c4844f72773c2289747313b3a141890f50d86f4fd310a358a42de",
+    "rewindArchiveSha256": "e1a7df00ba7584a668e94505ac5014a7d92854e10ae07cbd59d46a5d5c44bf5f",
+    "repairArchiveSha256": "955e89d1435c09fa5aa000421dca8d211152141488afb268ad701eb7952b9864",
+    "targetArchiveBytes": 1976320,
+    "rewindArchiveBytes": 10240,
+    "repairArchiveBytes": 10240,
+    "productionInvariantPassed": true,
+    "cleanupPassed": true,
+    "reportSha256": "de08ef885acf80e8ab9deeb4d164ca0a3076cf79c759951bb11455bf649e9875"
+  }
+}
