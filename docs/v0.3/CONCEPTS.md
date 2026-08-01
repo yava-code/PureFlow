@@ -99,6 +99,7 @@ The production swarm builds normally. In parallel, the IDE compiles a high-value
 This combines four supporting mechanisms:
 
 - evidence-carrying generation supplies attribution and seam candidates;
+- an optional Operator Projection renders commitments and bounded control evidence beside the complete agent-written Software Source, but only if its matched representation gate passes;
 - an attention scheduler chooses the smallest valuable human episode;
 - Decision Futures let a bounded pre-reveal human choice determine a live integrated path while agents implement alternatives;
 - executable fault/counterfactual practice produces behavioral evidence;
@@ -224,6 +225,28 @@ real agent near miss
 ```
 
 This is a meaningful constraint: PureFlow should sometimes produce nothing rather than manufacture an easy question. The common interaction is evidence escrow plus executable recovery; a random function explanation remains only an experiment baseline.
+
+## August 2026 concept triage
+
+The latest practitioner proposals are useful only when separated by the outcome they can establish:
+
+| Idea | Keep | Reject as product core | PureFlow adaptation |
+| --- | --- | --- | --- |
+| generation → explanation | fast orientation | fluency can masquerade as control | Active-comparator condition; never readiness evidence |
+| random function question | cheap retrieval sample | arbitrary recall, interruption, easy gaming | low-cost probe baseline sampled only from current changed seams |
+| second AI reviewer | code-quality redundancy | two models still cannot prove human understanding | autonomous build-plane verifier with no human-evidence authority |
+| AI-free/retyping quota | exercises unaided recall | removes throughput and rewards typing | brief delayed AI-off takeover only as an outcome measurement |
+| contract-first | preserves high-level choices | assumes the human can specify an unfamiliar system up front | pre-reveal Decision Future over bounded viable alternatives |
+| spaced repetition / streaks | continuity and forgetting refresh | generic cards and engagement scores drift from project control | resurface stale high-criticality evidence; streak never enters readiness |
+| “simplify to code I could write” | reveals accidental complexity | style familiarity is not causal control | compile the smallest observable/actuatable/recoverable seam, not a rewrite quota |
+
+Three new product hypotheses survive this triage:
+
+1. **Causal checksum:** at a meaningful checkpoint, one pre-reveal prediction plus its discriminating observation acts as a compact checksum of the operator's model. The executable result—not wording quality—determines whether it matched.
+2. **Maintenance escrow:** the successful trace and repair remain sealed until the developer requests bounded evidence or exhausts the recovery ladder. This converts agent self-repair into future takeover practice without stopping production.
+3. **Projection compiler:** “Operator Source” is only a pure rendering of immutable commitments and existing evidence. It is deleted if the matched H9 representation study does not beat direct Intent Ledger/Operator Model navigation.
+
+The architecture does not adopt “AI as a junior” as its operating model. Production agents may remain superhuman and fully autonomous; PureFlow preserves the human's ability to form causal models, select evidence, exercise consequential judgment, and recover the system.
 
 ## Naming decision
 

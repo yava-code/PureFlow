@@ -392,4 +392,17 @@ Evidence: `docs/v0.3/ADR-009-DECISION-FUTURES.md`; updated PRD, thesis, research
 - Added delayed AI-off transfer, longer-delay and field boundaries, privacy/minimization rules, ordered analysis, event contracts, and kill criteria that remove mechanisms when they do not add behavioral value.
 - Grounded the design in current coding-skill and human-agency research without treating immediate quizzes, surveys, interviews, or target thresholds as product evidence.
 
-Evidence: `docs/v0.3/R8_COMBINED_PILOT_PROTOCOL.md` and updated experiment/execution handoff documents. No participants were enrolled, no target was measured, and implementation remains gated by the complete R7 expert audit plus R5/R6 runtime.
+Evidence: `docs/v0.3/R8_COMBINED_PILOT_PROTOCOL.md` and updated experiment/execution handoff documents. No participants were enrolled, no target was measured, and implementation remains gated by the complete R7 expert audit plus R5/R5.1/R5.2/R6 runtime.
+
+## 2026-08-01 — Operator Projection / Dual Source hypothesis
+
+- Identified the remaining category gap: Intent Ledger, Operator Model, and Decision Futures were individually specified but the repository still appeared to be the only source of truth for both agents and humans.
+- Proposed ADR-010: agents maintain the complete Software Source while a pure Operator Projection renders immutable human commitments, decisions, invariants, control handles, and bounded control evidence for critical seams.
+- Defined a one-way event algebra, stale-base/concurrency rules, forward agent obligations, reverse Operator Deltas, derived display states, no-self-certification laws, deterministic invalidation, and a participant projection that does not require maintaining a DSL or reading a full diff.
+- Distinguished the proposal from Microsoft Programming with Representations, Apple Athena, bidirectional views, tests, AI-generated architecture graphs, and model-driven development.
+- Added a matched representation pilot. Operator Source is removed from the product core if it does not improve causal localization per active minute over the existing Intent Ledger and Operator Model projection.
+- Triaged current practitioner remedies—generation/explanation, random code questions, second-agent review, AI-free quotas, contract-first work, spaced repetition, and simplification—into comparators or bounded supporting tactics. Added causal checksum and maintenance escrow as executable adaptations rather than comprehension rituals.
+
+An adversarial architecture review rejected a second mutable source and duplicate readiness state. The revised ADR makes “Dual Source” a falsifiable product metaphor over one event authority, separates stable node identity from immutable revision projections, keeps accountability failure off the production critical path, adds explicit R5.1/R5.2 runtime workstreams, and isolates live authority in R8 with matched prebuilt alternatives and separate speculative cost.
+
+Evidence: `docs/v0.3/ADR-010-DUAL-SOURCE-OPERATOR-SOURCE.md` and synchronized PRD, thesis, research, experiment, completion-audit, and handoff documents. This is a proposed projection and experiment, not implementation or skill-preservation evidence; full R7 remains the entry gate.

@@ -203,6 +203,19 @@ This is **evidence-carrying generation**, not proof of correctness. The Intent L
 
 The full decision, integrity rules, and falsifiable evaluation are specified in `docs/v0.3/ADR-008-EVIDENCE-CARRYING-GENERATION.md`. Like the Operator Model, it remains a post-R7 hypothesis.
 
+## Operator Projection / Dual Source hypothesis
+
+PureFlow will test whether an agentic project is easier to own when shown through two coupled views. **Software Source** is the complete executable repository and may be written almost entirely by agents. **Operator Source** is the product name for a compact, revision-bound `OperatorProjection` of human-committed intent, decisions, invariants, observations, control handles, and recovery policies for critical seams.
+
+Operator Source is not a DSL, generated architecture document, separate mutable database, or second evidence authority. A pure compiler derives it from immutable commitment events, the Intent Ledger, Operator Model, Decision Future evidence, and the sole `VerifiedReadiness` derivation. Agent-generated nodes remain proposals. Pre-reveal commitment and executable evidence create only bounded claims; code and evidence changes deterministically derive affected projections as stale or contradicted.
+
+The bidirectional compiler therefore produces two deltas after a checkpoint:
+
+- a total Software Source account for every generated line;
+- an Operator Delta showing which human commitments and bounded-control claims remain supported, became stale, were contradicted, or now leave a critical seam uncovered.
+
+This may give the developer a human-scale project view without asking them to maintain a specification language or read every physical line. ADR-010 defines the one-way event algebra, laws, prior-art boundary, and matched representation ablation. “Dual Source” remains a proposed category hypothesis until that ablation improves executable causal orientation over the existing views.
+
 ## Executable Operator Model
 
 PureFlow maintains a second, local versioned view beside the program: the causal claims the developer has actually demonstrated for this project.
@@ -211,7 +224,7 @@ It is not an AI-generated repository summary. A claim can become fresh only thro
 
 This gives the IDE a concrete answer to “what should the developer think about while agents keep coding?” It chooses the smallest action that reduces divergence between the running software and the operator's demonstrated model. A successful action should create a control dividend such as a regression probe, observation recipe, rollback path, or reusable recovery handle.
 
-The Operator Model is specified in `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`. Decision Futures and the Takeover Envelope are specified in `docs/v0.3/ADR-009-DECISION-FUTURES.md`. Both remain post-R7 hypotheses until the complete expert gate and human experiments pass.
+The Operator Model is specified in `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`. Decision Futures and the Takeover Envelope are specified in `docs/v0.3/ADR-009-DECISION-FUTURES.md`. ADR-010 proposes an optional human-facing projection over them, not another authority. All remain post-R7 hypotheses until the complete expert gate and human experiments pass.
 
 ## Autonomy Router
 
@@ -300,7 +313,7 @@ The R&D architecture is:
 
 - VSCodium plus a bundled extension for the product surface;
 - adapters over existing coding-agent runtimes for the build plane;
-- PureFlow-owned Flight Recorder, Intent Ledger, Controllability and Experience Compilers, Decision Futures, Executable Operator Model, Takeover Envelope, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
+- PureFlow-owned Flight Recorder, Intent Ledger, Controllability and Experience Compilers, Decision Futures, Executable Operator Model, Takeover Envelope, Takeover Twin, Evidence Judge, Readiness Map, Autonomy Router, and—only if H9 passes—a pure Operator Projection Compiler.
 
 This keeps the differentiating layer portable and avoids tying the thesis to a commercial editor fork. A deeper editor fork is justified only if a validated control experience requires unsupported workbench primitives.
 

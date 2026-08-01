@@ -407,7 +407,7 @@ Preserves autonomous implementation and unrelated progress while giving a small 
 This ADR does not authorize R5/R6 implementation. Before acceptance:
 
 1. complete and adjudicate the two-rater R7 expert audit;
-2. review ADR-007, ADR-008, and ADR-009 as one architecture;
+2. review ADR-007–010 as one architecture and either accept Operator Source as their shared projection or remove the extra abstraction;
 3. freeze Decision Future projections, hash domains, alternative validity, deadline semantics, and integration authority in `CONTRACTS.md`;
 4. compile one offline natural disagreement fixture with a false-fork negative control;
 5. compare shadow-only and live-influence modes before expanding the cockpit;

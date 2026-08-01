@@ -149,6 +149,12 @@ Every changed line is either covered by a supported semantic unit with available
 
 ADR-008 makes this concrete as a bidirectional Intent Ledger. Agent-emitted intent links are untrusted claims; the ledger independently reconciles every changed line to a bounded semantic unit and labels the link `supported`, `claimed`, `unattributed`, `contradicted`, or `stale`. Derived artifacts may bind to a deterministic generation receipt. This creates navigable accountability without claiming that the developer read or memorized every token.
 
+### Operator Projection / Dual Source hypothesis
+
+Code optimized for machine execution is not necessarily the best view for continuous human control. ADR-010 proposes testing two coupled views: the complete Software Source written largely by agents and a compact Operator Source projection containing human commitments, decisions, invariants, and control policies for critical seams.
+
+Operator Source does not replace code, own evidence, or let prose self-certify. It is a pure view over immutable commitments and the existing evidence authorities. The Intent Ledger reconciles every generated line; executable actions provide bounded control evidence; the projection exposes drift without silently rewriting commitments. The product hypothesis is stronger than “show the developer what changed” only if a matched experiment shows better causal orientation and delayed takeover than the underlying ledger/model views.
+
 ### Readiness of the operator
 
 For a critical seam, the developer can:

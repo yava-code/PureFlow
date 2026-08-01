@@ -36,7 +36,8 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - The preregistered R7 collector froze 30 eligible patches from six repositories after evaluating 457 bounded eligibility records. Manifest `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149` contains 12 development and 18 held-out patches; `docs/v0.3/results/R7_CORPUS_COLLECTION.md` reports repository and first-match exclusion counts. No compiler or human outcome influenced selection.
 - The frozen R7 automatic audit passed its preregistered automatic threshold: 17/18 held-out identities compiled and 16/18 were valid end-to-end. The frozen blind expert packet set and deterministic rating join exist, but two independent ratings and adjudication remain pending. Full R7 has not passed; R5/R6 stay gated.
 - ADR-007 proposes an Executable Operator Model and shadow-control protocol. ADR-008 adds a bidirectional Intent Ledger for artifact accountability. ADR-009 adds Decision Futures and a Takeover Envelope so an on-time pre-reveal human commitment can determine a live integrated branch while agents retain implementation. Together they cover artifact accountability, demonstrated control, and real decision authority; none is implementation evidence.
-- `docs/v0.3/R8_COMBINED_PILOT_PROTOCOL.md` now defines the draft four-condition human study needed to test the combined architecture against ordinary autonomous use and a fixed active-review comparator. It has no participants or measured outcomes and cannot be frozen until full R7 and the R5/R6 runtime exist.
+- ADR-010 proposes Dual Source only as a falsifiable product metaphor: agents maintain the complete Software Source while a pure, sparse Operator Projection renders immutable human commitments and bounded control evidence. It owns no state or readiness authority and must beat the existing representation in a matched pilot before becoming core.
+- `docs/v0.3/R8_COMBINED_PILOT_PROTOCOL.md` now defines the draft four-condition human study needed to test the combined architecture against ordinary autonomous use and a fixed active-review comparator. It has no participants or measured outcomes and cannot be frozen until full R7 and the R5/R5.1/R5.2/R6 runtime exist.
 - `GOAL_COMPLETION_AUDIT.md` maps the original product goal to current evidence. It explicitly records that the live agent plane, v0.3 cockpit, cold relay, delayed-transfer study, and skill-preservation claim remain incomplete.
 - The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
@@ -156,9 +157,9 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 ## Next ordered actions
 
 1. Obtain and adjudicate two independent blind expert ratings for packet index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`.
-2. If full R7 passes, review ADR-007, ADR-008, ADR-009, and the R8 combined protocol together, then freeze the Operator Model, Intent Ledger, Decision Future, and Takeover Envelope schemas, hash domains, projections, evidence authorities, timing policy, selector ablations, and four-condition study contrasts before implementation.
-3. Add the local readiness ledger and minimal cockpit only after the complete R7 expert gate passes.
-4. Freeze and run the four-condition delayed-transfer pilot only after the technical runtime can instantiate every condition; run the longitudinal field pilot before making a sustained skill-retention claim.
+2. If full R7 passes, review ADR-007–010 and the R8 combined protocol together, then freeze the baseline ledger/model schemas and one offline Operator Source prototype.
+3. Implement the local R5 evidence ledger and run Experiment 2.5 with identical evidence in both projections; make Operator Source the R6 default only if it improves causal localization per active minute without increasing false confidence.
+4. Build the minimal cockpit with the surviving projection, then freeze and run the four-condition delayed-transfer pilot; run the longitudinal field pilot before making a sustained skill-retention claim.
 
 ## Recent milestone commits
 
