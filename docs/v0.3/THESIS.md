@@ -141,6 +141,8 @@ Parallelism preserves throughput. It does not cause learning by itself. The epis
 
 Every changed line is either covered by a supported semantic unit with available provenance or visibly unattributed. PureFlow must not infer a convincing invariant for a line when the build plane and executable evidence do not provide one.
 
+ADR-008 makes this concrete as a bidirectional Intent Ledger. Agent-emitted intent links are untrusted claims; the ledger independently reconciles every changed line to a bounded semantic unit and labels the link `supported`, `claimed`, `unattributed`, `contradicted`, or `stale`. Derived artifacts may bind to a deterministic generation receipt. This creates navigable accountability without claiming that the developer read or memorized every token.
+
 ### Readiness of the operator
 
 For a critical seam, the developer can:

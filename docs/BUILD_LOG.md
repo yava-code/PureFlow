@@ -362,3 +362,13 @@ Evidence: `docs/v0.3/results/R7_HELD_OUT_AUDIT.md`, immutable execution receipts
 - Updated the PRD and v0.3 index so attention is selected from operator-model divergence and uncovered recovery routes rather than random functions, timer prompts, or question counts.
 
 Evidence: merged PRs [#18](https://github.com/yava-code/PureFlow/pull/18) and [#8](https://github.com/yava-code/PureFlow/pull/8); `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`; `docs/v0.3/OPERATOR_MODEL_SPEC.md`; `docs/v0.3/GOAL_COMPLETION_AUDIT.md`. ADR-007 remains proposed and implementation remains gated by two independent R7 expert ratings.
+
+## 2026-08-01 — Evidence-Carrying Generation proposal
+
+- Closed the remaining architecture gap between critical-seam takeover evidence and accountability for the rest of a large generated change.
+- Proposed ADR-008: a bidirectional Intent Ledger reconciles every changed line to a bounded semantic unit and labels its attribution `supported`, `claimed`, `unattributed`, `contradicted`, or `stale`.
+- Kept agent-emitted intent references untrusted, required independent structural/evidence joins, and prohibited ledger coverage from updating human readiness.
+- Added deterministic handling for generated artifacts, total changed-line reconciliation, negative trace-washing rules, a compact change-account UX, and a held-out ablation against raw diffs, AI summaries, and AST navigation.
+- Distinguished the proposal from domain DSLs, requirements traceability, proof-carrying code, and generated explanations. No product-effectiveness or skill-retention result is claimed.
+
+Evidence: `docs/v0.3/ADR-008-EVIDENCE-CARRYING-GENERATION.md`; updated PRD, thesis, project state, completion audit, and v0.3 index. Implementation remains gated by the complete two-rater R7 expert audit.

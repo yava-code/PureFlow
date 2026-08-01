@@ -181,7 +181,7 @@ States decay with time and meaningful code changes. The UI shows evidence and ag
 
 ## Line-level accountability
 
-The Flight Recorder groups generated lines into supported semantic units. Each unit may link to:
+The Flight Recorder and Intent Ledger group generated lines into supported semantic units. Each unit may link to:
 
 - the user intent or requirement it serves;
 - the invariant or public behavior it changes;
@@ -189,7 +189,11 @@ The Flight Recorder groups generated lines into supported semantic units. Each u
 - the tests, traces, benchmarks, or receipts that cover it;
 - unresolved assumptions or evidence gaps.
 
-Agent adapters cannot reliably infer an invariant or intent for every line from Git history alone. A build plane may emit structured claim IDs to improve attribution; otherwise PureFlow shows unattributed lines as a gap rather than inventing a causal story. This is **evidence-carrying generation**, not proof of correctness. The graph makes a large patch navigable and supplies raw material for the Experience Compiler; it does not pretend that a graph teaches the human by itself.
+Agent adapters cannot reliably infer an invariant or intent for every line from Git history alone. A build plane may emit structured claim IDs to improve attribution, but its own references begin as `claimed`. Only a deterministic structural join with allowed evidence can mark an attribution `supported`; contradictions, stale links, and unattributed units remain visible. Mechanical output may be covered by a reproducible generator receipt instead of thousands of fake decisions.
+
+This is **evidence-carrying generation**, not proof of correctness. The Intent Ledger reconciles every changed line, makes a large patch navigable, and supplies raw material for the Experience Compiler; it does not pretend that a graph teaches the human by itself. The bidirectional flow is `committed intent → agent obligations → actual patch/evidence → intent delta`, so the system can expose when generated behavior drifted from the account rather than merely produce another summary.
+
+The full decision, integrity rules, and falsifiable evaluation are specified in `docs/v0.3/ADR-008-EVIDENCE-CARRYING-GENERATION.md`. Like the Operator Model, it remains a post-R7 hypothesis.
 
 ## Executable Operator Model
 
@@ -288,7 +292,7 @@ The R&D architecture is:
 
 - VSCodium plus a bundled extension for the product surface;
 - adapters over existing coding-agent runtimes for the build plane;
-- PureFlow-owned Flight Recorder, Controllability and Experience Compilers, Executable Operator Model, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
+- PureFlow-owned Flight Recorder, Intent Ledger, Controllability and Experience Compilers, Executable Operator Model, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
 
 This keeps the differentiating layer portable and avoids tying the thesis to a commercial editor fork. A deeper editor fork is justified only if a validated control experience requires unsupported workbench primitives.
 
