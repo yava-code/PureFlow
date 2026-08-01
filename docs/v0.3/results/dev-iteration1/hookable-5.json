@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "development",
+  "patch": {
+    "repositoryId": "hookable",
+    "ordinal": 5,
+    "baseCommit": "e58f2e7ff8b75eb51ef0bb4b7f938862bd88c428",
+    "targetCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+    "evidenceSha256": "3f13a081e34a4bfbf103a02873e01ec189257006a0bb4712ff01d3138abfe724",
+    "splitKey": "04a94168b863a6b7b3494efdfe5db7a005e34f7fcf375564f0f5b5968fcdd6f0",
+    "cohort": "development"
+  },
+  "compileResult": {
+    "status": "compiled",
+    "participant": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "repositoryId": "hookable",
+      "seam": {
+        "path": "src/hookable.ts",
+        "symbol": "HookableCore.callHook",
+        "kind": "method"
+      },
+      "writablePaths": [
+        "src/hookable.ts",
+        "src/index.ts",
+        "src/utils.ts"
+      ],
+      "attributedTestPaths": [
+        "test/bundle.test.ts",
+        "test/hookable.test.ts"
+      ],
+      "attentionBudgetSeconds": 600,
+      "observationLabel": "registered-check-outcome",
+      "experienceId": "a5ab8d910c5d31766fe5d9955e3f050596ba87cb20b30cca8527cf031db1b35d"
+    },
+    "internal": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+      "patchEvidenceSha256": "3f13a081e34a4bfbf103a02873e01ec189257006a0bb4712ff01d3138abfe724",
+      "repositoryId": "hookable",
+      "ordinal": 5,
+      "baseCommit": "e58f2e7ff8b75eb51ef0bb4b7f938862bd88c428",
+      "targetCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+      "nodeVersion": "22.17.0",
+      "packageManager": "pnpm",
+      "packageManagerVersion": "10.33.0",
+      "installArgv": [
+        "corepack",
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--ignore-scripts"
+      ],
+      "testArgv": [
+        "corepack",
+        "pnpm",
+        "test"
+      ],
+      "sources": [
+        {
+          "path": "src/hookable.ts",
+          "baseBlobSha1": "a5e592e98f6aa79479294676fc98b218a36a9350",
+          "targetBlobSha1": "46a098c3bc2f873e25429db9fb7fff42deb78cd6"
+        },
+        {
+          "path": "src/index.ts",
+          "baseBlobSha1": "1e74af2cc0e65fa87be67a5ed41a42bb04eab795",
+          "targetBlobSha1": "65d9479eb24e0b25d398236032244eea6a74f26f"
+        },
+        {
+          "path": "src/utils.ts",
+          "baseBlobSha1": "ad4fa31d1f35d7e3bac48469375b31d798e0f2c7",
+          "targetBlobSha1": "1aea7c09d15fa4a6938633deb4e92008cf2393bd"
+        }
+      ],
+      "attributedTestPaths": [
+        "test/bundle.test.ts",
+        "test/hookable.test.ts"
+      ],
+      "semantic": {
+        "path": "src/hookable.ts",
+        "symbol": "HookableCore.callHook",
+        "kind": "method",
+        "changedLineSha256": [
+          "0c1711cd691113273d0e0137c9d2a853ac9602da7daa61364b72b2e88524a250",
+          "18bf18df26a8cd0f1b69a0351b9ab6ab0794312f1c5d7e150041e7e068c73c5b",
+          "274e461fb61c889a459cfd503b4d3cd2d634fb3783983133e5b7bdfb82f9a670",
+          "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af",
+          "4878e03531071f15a5862a289c5cf56c430208969ddfb3a799b3b14192cb1348",
+          "5a0df30d5cbc4e9234632b106e1ba74cd6a3ae5c3e586df8f30a4b764872bfa5",
+          "67694c125cca8ca0a62725dfef58e8526eab4d227697d733f055295d901fc772",
+          "6c4e85bd9478e20211fe5bf9f88e1705ab9628196b39c630b68173db29457ae1",
+          "6cf23ec891c1d7aa1c0e82fa41a543cbab6ff8fc86b1be7f8a97684188810d0a",
+          "737db166c79ae98e44bbe5ad43e03bf3774f7b3696068842d56a72e863dfeb20",
+          "752be9ac672b41e045e784e68727ac0b5a152a7715dc79d247f91804e01f7e9d",
+          "89d6e2b2009953d7d3823f7d33c8da3f9579be963658b301e542ca67f31e77a3",
+          "a911b0ecf121d34a0a51af64e4d4488bdb3199862565435b20f0344c20390f26",
+          "b150b5c975daee1bdf3a752127a04dd0a586717a7af6798f9926a3161717adde",
+          "d79a597c979a0db753254ae2f2c0d78ae47a2f56bdb5eb97cfc54cdf7e770944",
+          "d9a0fbcc153ea4bfb0430a8de97bed38ca2cd3fa83866948f9194eb29bbd8a64",
+          "e0e5008e83f96cd2cae456581faec3b6f48709d26996ad24dfde16a36453fcc0"
+        ]
+      },
+      "mutationOperator": "whole-file-base-rewind",
+      "participantProjectionSha256": "5210a30fce1f10866876bce29b6e81e336198c9226a97578ca471a40a170de6e",
+      "internalPlanSha256": "1885ea6150f07bf1f5fed5c2e195a779086b447b6a92a7e45fa201c4324b490f"
+    }
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "compilerProtocol": "r7-rewind-v1",
+    "internalPlanSha256": "1885ea6150f07bf1f5fed5c2e195a779086b447b6a92a7e45fa201c4324b490f",
+    "status": "valid",
+    "recoveryValid": true,
+    "probeValid": true,
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 15632,
+      "stdoutBytes": 1137,
+      "stderrBytes": 0,
+      "stdoutSha256": "f2099ea2fb2ddad82e07a8e9a765cefd3520a3ab7dcc1ce04f9573c2a4e4fba7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "targetControl": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 31762,
+      "stdoutBytes": 1153,
+      "stderrBytes": 168,
+      "stdoutSha256": "ffa04f32a1b0ba562b12140c773d317175621e6c191b3679412234dbfa842422",
+      "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+    },
+    "mutation": [
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 15046,
+        "stdoutBytes": 3349,
+        "stderrBytes": 2783,
+        "stdoutSha256": "395604c1fbd0725366b91aae0c2113760e7b67f28dbd60d97ee46aa592026e6c",
+        "stderrSha256": "ec8accd9b7baa31fa36fd7711655c13f1d7f9577a6e461e25bff99b371113a46"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 13476,
+        "stdoutBytes": 3350,
+        "stderrBytes": 2783,
+        "stdoutSha256": "c74489aac17f577d77c889fec6e3c63bd37e322479233eb1ca7928153246b3f7",
+        "stderrSha256": "ec8accd9b7baa31fa36fd7711655c13f1d7f9577a6e461e25bff99b371113a46"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 17984,
+        "stdoutBytes": 3351,
+        "stderrBytes": 2783,
+        "stdoutSha256": "d864840d334aa30b08d992ce921630b6063ff985c32517901735c49dd9e88cff",
+        "stderrSha256": "ec8accd9b7baa31fa36fd7711655c13f1d7f9577a6e461e25bff99b371113a46"
+      }
+    ],
+    "repair": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 15350,
+        "stdoutBytes": 1152,
+        "stderrBytes": 168,
+        "stdoutSha256": "33695956cb313444083b318973a53ebfe77c220e6279723261830f059f92ae70",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 18557,
+        "stdoutBytes": 1152,
+        "stderrBytes": 168,
+        "stdoutSha256": "9d0f01247734508140e31922a50fc3e4379a6ae11036bb3f803bf4d67871886f",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 18823,
+        "stdoutBytes": 1155,
+        "stderrBytes": 168,
+        "stdoutSha256": "8365000c88d8201110954b4a580436db1071a92e0171a1d380689dc24dc52f28",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      }
+    ],
+    "setupMs": [
+      20572,
+      5723,
+      8055,
+      6027,
+      6817,
+      14281,
+      12797
+    ],
+    "targetArchiveSha256": "bf309abba28c8623cf14531f8bb81f9d368574fac002817f3fcfb19c87b2a7cf",
+    "rewindArchiveSha256": "37281f0148fc1f06e9b5ffe07802620e0e5ee849eac3fb1306ea2f4c1f90bc2b",
+    "repairArchiveSha256": "170d3c69a1fe0109dee010e69847848948ea3ca2a97920c4a94c84dfe8871757",
+    "targetArchiveBytes": 204800,
+    "rewindArchiveBytes": 20480,
+    "repairArchiveBytes": 20480,
+    "productionInvariantPassed": true,
+    "cleanupPassed": true,
+    "reportSha256": "b45dcb62c44f3f8948423a86b8d0ee122c14250e7ff20f61959d4fb1e6232806"
+  }
+}

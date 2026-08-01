@@ -1,5 +1,7 @@
 # PureFlow End Goal
 
+> **Released v0.1 end goal.** On `codex/shadow-cockpit-rnd`, `prd.md` and `docs/v0.3/` define the active R&D goal. This file remains evidence of the implemented v0.1 contract, not the target for new architecture.
+
 ## North star
 
 A senior developer can install or launch PureFlow, open a real repository, and use it as their primary IDE without feeling that they entered a tutorial. They write and debug in the native editor, call a bounded mentor only when wanted, practice deliberately when useful, and inspect or prove Monad work with live, verifiable data.

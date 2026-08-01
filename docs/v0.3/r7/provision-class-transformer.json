@@ -1,0 +1,80 @@
+{
+  "a073b5ea218dd4da9325fe980f15c1538980500e": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 884102,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": false,
+    "baseTestPassed": false,
+    "targetInstallPassed": false,
+    "targetTestPassed": false,
+    "basePassed": false,
+    "targetPassed": false,
+    "provisionEvidenceSha256": "d735715f781602b58831d361a895954cf8b1b797cd35c510787191f2a12a8d83"
+  },
+  "15d6bdb5efca6dcdbae1b7ba13e3751c4d5fd96a": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 480486,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": false,
+    "targetInstallPassed": true,
+    "targetTestPassed": false,
+    "basePassed": false,
+    "targetPassed": false,
+    "provisionEvidenceSha256": "4115b9727f04ff41b84e8ec8478b175baea2f52e3682543bc650d2bfa408a677"
+  },
+  "824e27e1826ae6b4afe30c8b681bd4e885089c52": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 477702,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": false,
+    "targetInstallPassed": true,
+    "targetTestPassed": false,
+    "basePassed": false,
+    "targetPassed": false,
+    "provisionEvidenceSha256": "e08eb29c3cb9f0ee555acbde9c57ffa7ec5ed5a0dc22e5d20721b8a380172914"
+  },
+  "ff5fcefb163bde31a70d2f7792fe4022ba6c95c0": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 390646,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": false,
+    "targetInstallPassed": true,
+    "targetTestPassed": false,
+    "basePassed": false,
+    "targetPassed": false,
+    "provisionEvidenceSha256": "3588f71ca18cceb567b5014c772a1e6a12136380daf3f916ac8ccf955e8bda6c"
+  },
+  "0cd39edc4a8f02afa5246710dd212361ce2e0dcf": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 384736,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": false,
+    "targetInstallPassed": true,
+    "targetTestPassed": false,
+    "basePassed": false,
+    "targetPassed": false,
+    "provisionEvidenceSha256": "c3d5102d36ff514aa4fd8781cc49dd6901a96f3e8ee90c26cf200212421d6bd9"
+  },
+  "6bd5e9e0bb4161a91ae2e657f80d530f0934d24d": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 383766,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": false,
+    "targetInstallPassed": true,
+    "targetTestPassed": false,
+    "basePassed": false,
+    "targetPassed": false,
+    "provisionEvidenceSha256": "d45c506eeddda3ab5d4b03917d486a77df01c81beefaed3b206c627071596a43"
+  }
+}

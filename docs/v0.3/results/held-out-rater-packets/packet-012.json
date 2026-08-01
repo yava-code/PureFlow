@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "protocol": "r7-blind-expert-v1",
+  "packetId": "bd7e76514fab73a0ab51b181",
+  "projectAlias": "project-254e2f3e",
+  "seam": {
+    "path": "src/decorator/string/IsPhoneNumber.ts",
+    "symbol": "isPhoneNumber",
+    "kind": "function"
+  },
+  "writablePaths": [
+    "src/decorator/string/IsPhoneNumber.ts"
+  ],
+  "attributedTestPaths": [
+    "src/decorator/string/IsPhoneNumber.spec.ts"
+  ],
+  "mutationRule": "Keep the target snapshot and target tests. Replace every listed source path with its complete adjacent-base version; if no base version exists, the replay removes that path.",
+  "observation": "Run the repository's preregistered check and classify only its process outcome.",
+  "sourceAndTestDiff": "diff --git a/src/decorator/string/IsPhoneNumber.spec.ts b/src/decorator/string/IsPhoneNumber.spec.ts\nnew file mode 100644\n--- /dev/null\n+++ b/src/decorator/string/IsPhoneNumber.spec.ts\n@@ -0,0 +1,33 @@\n+import { isPhoneNumber } from './IsPhoneNumber';\n+\n+describe('@IsPhoneNumber decorator implementation', () => {\n+  describe('isPhoneNumber validator', () => {\n+    it('should accept valid values', () => {\n+      expect(isPhoneNumber('+36 20 111 1111', 'HU')).toBe(true);\n+    });\n+\n+    describe('should not accept invalid values', () => {\n+      it('when country code invalid', () => {\n+        expect(isPhoneNumber('+1 20 111 1111', 'HU')).toBe(false);\n+      });\n+\n+      it('when country code does not match locale', () => {\n+        expect(isPhoneNumber('+36 00 111 1111', 'HU')).toBe(false);\n+      });\n+\n+      it('when phone number length is incorrect', () => {\n+        expect(isPhoneNumber('+36 20 111 111', 'HU')).toBe(false);\n+      });\n+\n+      it('when there are letters after or before the phone number', () => {\n+        expect(isPhoneNumber('abc +36 20 111 111', 'HU')).toBe(false);\n+        expect(isPhoneNumber('+36 20 111 111 abc', 'HU')).toBe(false);\n+      });\n+    });\n+\n+    it('should not accept values with extra whitespace', () => {\n+      expect(isPhoneNumber('  +36 20 111 1111', 'HU')).toBe(false);\n+      expect(isPhoneNumber('+36 20 111 1111  ', 'HU')).toBe(false);\n+    });\n+  });\n+});\ndiff --git a/src/decorator/string/IsPhoneNumber.ts b/src/decorator/string/IsPhoneNumber.ts\n--- a/src/decorator/string/IsPhoneNumber.ts\n+++ b/src/decorator/string/IsPhoneNumber.ts\n@@ -1,48 +1,45 @@\n import { ValidationOptions } from '../ValidationOptions';\n import { buildMessage, ValidateBy } from '../common/ValidateBy';\n-import { parsePhoneNumberFromString, CountryCode } from 'libphonenumber-js';\n+import { isValidPhoneNumber, CountryCode } from 'libphonenumber-js/max';\n \n export const IS_PHONE_NUMBER = 'isPhoneNumber';\n \n /**\n  * Checks if the string is a valid phone number. To successfully validate any phone number the text must include\n  * the intl. calling code, if the calling code wont be provided then the region must be set.\n  *\n  * @param value the potential phone number string to test\n  * @param region 2 characters uppercase country code (e.g. DE, US, CH) for country specific validation.\n  * If text doesn't start with the international calling code (e.g. +41), then you must set this parameter.\n  */\n export function isPhoneNumber(value: string, region?: CountryCode): boolean {\n-  try {\n-    const phoneNum = parsePhoneNumberFromString(value, region);\n-    const result = phoneNum?.isValid();\n-    return !!result;\n-  } catch (error) {\n-    // logging?\n+  if (typeof value !== 'string' || value.trim() !== value) {\n     return false;\n   }\n+\n+  return isValidPhoneNumber(value, region);\n }\n \n /**\n  * Checks if the string is a valid phone number. To successfully validate any phone number the text must include\n  * the intl. calling code, if the calling code wont be provided then the region must be set.\n  *\n  * @param region 2 characters uppercase country code (e.g. DE, US, CH) for country specific validation.\n  * If text doesn't start with the international calling code (e.g. +41), then you must set this parameter.\n  */\n export function IsPhoneNumber(region?: CountryCode, validationOptions?: ValidationOptions): PropertyDecorator {\n   return ValidateBy(\n     {\n       name: IS_PHONE_NUMBER,\n       constraints: [region],\n       validator: {\n         validate: (value, args): boolean => isPhoneNumber(value, args?.constraints[0]),\n         defaultMessage: buildMessage(\n           eachPrefix => eachPrefix + '$property must be a valid phone number',\n           validationOptions\n         ),\n       },\n     },\n     validationOptions\n   );\n }\n",
+  "questions": [
+    "Is the proposed rewind causally relevant to the changed behavior?",
+    "Should the preregistered check pass on the target snapshot?",
+    "Should the preregistered check fail after the proposed rewind?",
+    "Does this packet expose a protected repair, compiler status, or observed outcome?"
+  ],
+  "packetSha256": "84a0ced6ae1d9453b0537e24561b55868bcef0ff5079125b4f8133b7192438e6"
+}

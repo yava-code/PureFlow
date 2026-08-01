@@ -2,6 +2,25 @@
 
 This file is the first stop for any AI or human continuing the project. Read it together with `PRODUCT.md`, `DESIGN.md`, `docs/END_GOAL.md`, and `docs/PROJECT_STATE.md` before changing architecture or UI.
 
+## v0.3 R&D branch authority
+
+On `codex/shadow-cockpit-rnd`, also read `prd.md` and every file under `docs/v0.3/`. Those documents define the current product hypothesis: autonomous coding remains first-class, while a parallel readiness plane compiles live agent work into executable human control episodes. They supersede the v0.1 Mentor/Focus product thesis and any post-run question/gate proposal for new v0.3 work.
+
+This branch contains an architecture and falsifiable execution plan, not an implemented Experience Compiler, Takeover Twin, readiness model, or autonomous agent plane. Preserve the released v0.1 code as a baseline until an explicitly accepted vertical slice replaces or extracts it. Do not describe target metrics as measured results.
+
+For v0.3 work:
+
+- do not implement another quiz, explanation layer, comprehension score, or manual-code quota as the product core;
+- keep production agents off the human-practice critical path by default;
+- require executable evidence for recovery and transfer claims;
+- keep readiness evidence local, project-scoped, time-stamped, and deletable;
+- adapt an existing coding-agent runtime before building a generic agent loop;
+- stop at the research gates in `docs/v0.3/EXPERIMENTS.md` and `docs/v0.3/AGENT_EXECUTION.md`.
+- integrate v0.3 work only into `codex/shadow-cockpit-rnd`; it is the sole persistent coding branch. When its ruleset requires PRs, Codex uses a short-lived `codex/*` head and Jules uses a short-lived `jules-*` head with base `codex/shadow-cockpit-rnd`, then deletes the head after merge. Never merge into or push `main` without explicit owner approval.
+- Jules automation is limited to the guarded R0–R4 queue in `docs/v0.3/JULES_LOOP.md`. It may edit `extension/**` and honest milestone evidence in `docs/PROJECT_STATE.md` / `docs/BUILD_LOG.md`; it must not edit workflows, this file, `prd.md`, normative `docs/v0.3/**`, or start R5–R8.
+
+The remaining product description below documents released v0.1 behavior and remains true for the current runtime until v0.3 code is implemented.
+
 ## Product in one sentence
 
 PureFlow is a developer-first VSCodium distribution: normal project work stays in the native IDE, while a compact sidebar provides explicit AI mentoring, documentation, optional Focus Reps, and live read-only Monad tools.
@@ -71,7 +90,7 @@ Use a fresh output root for each smoke build; the builder deliberately refuses t
 
 ## Git discipline
 
-The hackathon asks for visible, regular progress. Make coherent commits after architecture, host integration, sidebar UX, Monad work, and verification. Run relevant checks before each commit and push `main` to `https://github.com/yava-code/PureFlow.git`. Do not rewrite or squash the public history unless the owner explicitly asks.
+Make coherent commits after architecture, host integration, sidebar UX, Monad work, and verification. Run relevant checks before each commit. Released v0.1 work historically landed on `main`; branch-specific authority above overrides that history for v0.3. Do not rewrite or squash public history, merge a research branch, or push `main` unless the owner explicitly asks.
 
 ## Current external blockers
 

@@ -1,0 +1,424 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 1,
+    "baseCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+    "targetCommit": "11ba02213d4b1c6b02dd686041f75edc479c98e9",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 23,
+    "sourceTreeBytes": 393562,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "4a33449a43df497e9ad9060b1e65418bd815ad7da129b49d0434ce9da1eceb7c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 2,
+    "baseCommit": "d3ef16dabe861713192ba8679c5db8e0ac143f9b",
+    "targetCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 8,
+    "sourceTreeBytes": 392948,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "1974a073d0d1598e43a25c57204a6a4894374b4cddbb044a8e30b83258390ace"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 3,
+    "baseCommit": "70cffe5bd32b6ef510ae129f9a1faa66df633b46",
+    "targetCommit": "23cc432b40509c952c39c4eba0b7def3f57fdb41",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 8127,
+    "sourceTreeBytes": 392769,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "c855186314f1ec1bf77587d9fa93e0567e853d37eaf16b9869f1c3074e34537a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 4,
+    "baseCommit": "7c7a9a48ed675990c222101e623ccb7ba317d16e",
+    "targetCommit": "1b9fcab2c1479f0295a5f867c6ec36a01fda2dfb",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 28,
+    "sourceTreeBytes": 393784,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/_utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts",
+      "test/fixtures/index.ts",
+      "test/fixtures/nested.ts"
+    ],
+    "preflightSha256": "0cf690356250aab6006fb8bdb9e72293b2d749ee6b3f9e965877982ba50b3b3c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 5,
+    "baseCommit": "59d0f6a367e34cdf29f5663c642b6e750a6d5d8d",
+    "targetCommit": "4111333b7f830712947b3d48c127f23061569620",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 41,
+    "sourceTreeBytes": 372474,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "fd9d792e9e0f1c9068ca34cb6b67371edfaabde72c5311d6443bb4ba717eb3ae"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 6,
+    "baseCommit": "63d0e8e6296421371a85f657dc25e3958c102f01",
+    "targetCommit": "32650f1039e0fcdc88c4c80275e605faadfcde06",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 90,
+    "sourceTreeBytes": 371241,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "277fc1b825649edf312ac20471e9ae500bdd2430f66506b9deb6fd2aa88c470c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 7,
+    "baseCommit": "6b7a3f7160d3e0ef9e0640f33aa0831d453e49aa",
+    "targetCommit": "26477edcf11ee961f01e04937b47caef1f0f420d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 510,
+    "sourceTreeBytes": 372865,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "5bc1bad732f99937e5e84b3490b6107554f2063d3ff4ac6de90dd807b6ad14c3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 8,
+    "baseCommit": "8ac7409d4c79f823b1f434e75af75b28f75af241",
+    "targetCommit": "c7226f971740966282530745030123aa07ff7b17",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 55,
+    "sourceTreeBytes": 353896,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "7b7873353ffa2161ec1703518a8a7328dcfeb9615f5306e271d7fd463a11b00e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 9,
+    "baseCommit": "c912d885184738a770592028e145a19ac561e67f",
+    "targetCommit": "1f3a701bc3fd839344359ad5c2b358fbefd978cc",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 27,
+    "sourceTreeBytes": 350335,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "49167988f3de63be6a5900dbe5b21f925f5c0625e69d0dbb9279c9020e62de85"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 10,
+    "baseCommit": "f6df314c26540591c3ac6534c6942edc3b06384f",
+    "targetCommit": "4a8fc52c228d82949384a50efe8f0052e9eaba68",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 72,
+    "sourceTreeBytes": 349500,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "62adfaabdd2209303bddfd086b2beb1738099366379668b4bb95eef569c08558"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 11,
+    "baseCommit": "2a1c94d8d3957c0aeb4843b9e8e9016d43a5cdf5",
+    "targetCommit": "f6df314c26540591c3ac6534c6942edc3b06384f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 10,
+    "sourceTreeBytes": 349539,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "b8218e402afe12de0ef486b4251c75de136c997e8c0641a9393d0c52e0f9d663"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 12,
+    "baseCommit": "934d736da31f4824d9e135d925cece361b73c533",
+    "targetCommit": "6bd7ef59ce3e94b68108355942dba9ac49284523",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 45,
+    "sourceTreeBytes": 272311,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "a983429fe4c4d938189b3e5307f751a40de296c53c39a558afde0e8addfedf0a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 13,
+    "baseCommit": "40a00cc95abccaa4c80e6a1e2a71c8c138819d07",
+    "targetCommit": "934d736da31f4824d9e135d925cece361b73c533",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 146,
+    "sourceTreeBytes": 271537,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "3604ee636f8398e3a2b6931e09427ef89be4f0d56e6a221fc2626f02f115f65d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 14,
+    "baseCommit": "e949864d9f200a50aae050c45c578ebf11c99a8a",
+    "targetCommit": "df05ed04088d6e0f0bc1a8cd9603fae46fb59268",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 130,
+    "sourceTreeBytes": 354800,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "852ac38f293662e3aaf2eee22017ce53116e168d5fd5e0e99f7564afe6205c9d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 15,
+    "baseCommit": "4f3ac4a839c7b256befd8884ac5d39c5d6b67812",
+    "targetCommit": "493223278840132a6de2c3291b60f7b00b3fa477",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 88,
+    "sourceTreeBytes": 352638,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "52b5897776e7cbf29f38a5b066e4ea68f03bf990ac0763afeb5ef4c98e0fa0ef"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 16,
+    "baseCommit": "b07e4bed6be2195f1bc9b98fe300340adb6a4a75",
+    "targetCommit": "22c631e354d9bc50380ce7beb8914bd44feb2309",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 47,
+    "sourceTreeBytes": 348640,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "4247044a00dd62e19c7dcb5dd7ecbf8fd5f6025e0c3e1202e6d93724b86ea08e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 17,
+    "baseCommit": "9c906e64459da64d77124224edb66034ce92f20c",
+    "targetCommit": "89ef702736b49cd48ca99a0dc64aa6ef3bd74e2d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 24,
+    "sourceTreeBytes": 281532,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts"
+    ],
+    "preflightSha256": "5b86e6f97ca2fb44594f6d14d4b652771202df8fa5a60215a6bd053fd8b4917e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "ordinal": 18,
+    "baseCommit": "10c791e347731b09f9a3ece37d651c500b798208",
+    "targetCommit": "9c906e64459da64d77124224edb66034ce92f20c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 5715,
+    "sourceTreeBytes": 281191,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/defu.ts"
+    ],
+    "changedTestPaths": [
+      "test/defu.test.ts",
+      "test/tsconfig.json"
+    ],
+    "preflightSha256": "88277efbcbd73fb4ea92e7532ad9ed9523a47822cc46c80fa176b041d504f384"
+  }
+]

@@ -1,0 +1,694 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 1,
+    "baseCommit": "eebb67ffc383d2017a10d789df53a1b9a6041d13",
+    "targetCommit": "66a8adf0e5da259f92346b39830a3a8e8f98c55b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 44,
+    "sourceTreeBytes": 205886,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/bundle.test.ts",
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "ea8081071a9d7281bd1a8f8830e49a383d2d86ad1c1269d711bd4c35a07d2685"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 2,
+    "baseCommit": "24e006b89b3b2fdbef97a1a2bd605a1b4c9c68d2",
+    "targetCommit": "56c67fbfee5b4f385049c5baad862ec99c15d9d0",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 469,
+    "sourceTreeBytes": 200963,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/debugger.ts",
+      "src/hookable.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/bench.ts",
+      "test/debuger.test.ts",
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "cf89164eaf87af18d1704b45f71aa29f713d49fd6947d63592568386ab2cdb1f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 3,
+    "baseCommit": "28f9af2bb566aff1481d66e8805282a23bede9dd",
+    "targetCommit": "269dd0299cff5cb666e1670bba954e663b47ff07",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 24,
+    "sourceTreeBytes": 175427,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "01b0a87935ffbd9666f5cd0c119a5d04f94d34da7812832c378d7ca036e584cc"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 4,
+    "baseCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+    "targetCommit": "0bf8fdd8c091516720a971b7e9868376b569bc52",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 52,
+    "sourceTreeBytes": 181066,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/bundle.test.ts",
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "69bcd5fd00352dc265be8e2295ab0e3e4c432f35234b0159d8363bb1a7d724ff"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 5,
+    "baseCommit": "e58f2e7ff8b75eb51ef0bb4b7f938862bd88c428",
+    "targetCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 183,
+    "sourceTreeBytes": 181187,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/index.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/bundle.test.ts",
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "38476a27891e6399484b45f8c704551810831a0b6c7a51d045eaaf7f9fa2d8a0"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 6,
+    "baseCommit": "04b5916307bafd7d30e1813001919e57366fbd90",
+    "targetCommit": "9bf51b2a92123f855287a5b57e4d11c7d601c5f8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 418,
+    "sourceTreeBytes": 177457,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.bench.ts"
+    ],
+    "preflightSha256": "23e6cc67604cf17e872b8f026644bb6e3b6bc140b8bd78e78f8c288928a779cd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 7,
+    "baseCommit": "93e5d41f8667bc092707a607093c60bcc678365c",
+    "targetCommit": "37568875dd05d688f60554faac4c30fec4952241",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 119,
+    "sourceTreeBytes": 170585,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/debugger.ts",
+      "src/hookable.ts",
+      "src/index.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/debuger.test.ts",
+      "test/hookable.test.ts",
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "777cc8ff0e8bd287b3136f692cac9c3d0f3a2a0a40842ef2b13f5a83df0c762d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 8,
+    "baseCommit": "00f1b706abc643a5d1c1c95ccbb693a6da151c46",
+    "targetCommit": "d05704690fcbc638d662d5fc29f777f8af640f9f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 450,
+    "sourceTreeBytes": 190433,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/debugger.ts",
+      "src/hookable.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/debuger.test.ts",
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "2b471f97307d64cd28cfb0093b784be0e637a4a41ea23f1c4fbc1ca94477472b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 9,
+    "baseCommit": "aff2fa515bd0a7520ac0e547652c577a85eb1a4f",
+    "targetCommit": "4e7ab0818718a733f02e7ddca332ecea2c7ded21",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 35,
+    "sourceTreeBytes": 183235,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "c56395773a56f7491c573027a3a40c5fce837a2fbaddb8f7c347dfabb60df94a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 10,
+    "baseCommit": "13b0c9062fbd5b8a06bd1472a85d791fc414052f",
+    "targetCommit": "88f0e960eddc12fbea57cf2e7129e5cad165d63c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 24,
+    "sourceTreeBytes": 186206,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "8df1969e77d2567b771b87933df0168aa918ce54568187c9f14b00d2c94eec21"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 11,
+    "baseCommit": "369a2fe38453862bd1db78d739038e4d982042c0",
+    "targetCommit": "3deefd1012f01aa8bed59569e75422a88d32fbf3",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 29,
+    "sourceTreeBytes": 184720,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "f0ae2f48055ee80309b1fed18c28454d78240576943fa9148b82ffa1ac3c9f6f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 12,
+    "baseCommit": "50136dee0b71e32d0e09cccc24d33ee2039c1757",
+    "targetCommit": "369a2fe38453862bd1db78d739038e4d982042c0",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 45,
+    "sourceTreeBytes": 184165,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "95e7e9a34186ceb0c37315e414a44ae78b8a2fe390f17d145821c85194773959"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 13,
+    "baseCommit": "c3c24139464118175a55564ab779515d4cae69fe",
+    "targetCommit": "17d707fbdece35759a8a407cb1af6e624e26b198",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1699,
+    "sourceTreeBytes": 195597,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/debugger.ts",
+      "src/hookable.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "src/utils.ts",
+      "vite.config.ts"
+    ],
+    "changedTestPaths": [
+      "test/debuger.test.ts",
+      "test/hookable.test.ts",
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "5eda4933453783c9de0af3d36da3c4d88ab19faf0774e2984c54938d4a734808"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 14,
+    "baseCommit": "a61f4945a036bb93284f5ef9ded269175899fcd3",
+    "targetCommit": "76db216845cedfb8dcace949711ba455b7b9b0a8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 156,
+    "sourceTreeBytes": 189169,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/debugger.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/debuger.test.ts"
+    ],
+    "preflightSha256": "9f4380f8a7a409668f9389ef70eb15627f005fed08275cc0fe6af51a038f2e13"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 15,
+    "baseCommit": "f6d4475166a5941f6fba16f836c2c8e91971b974",
+    "targetCommit": "ee64dc8299d15367eb2c62806c5b96eb1f88db32",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 38,
+    "sourceTreeBytes": 189386,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "0cfbbea7e231e4846aaae8d489e2475e130f2179161f76d0ab5f3b841e12edf2"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 16,
+    "baseCommit": "22a2f778617ca66b448fe509fa0a0cb52775cb65",
+    "targetCommit": "021eb34d999b61d8189cc1c10116252588dba34f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 152,
+    "sourceTreeBytes": 184845,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/index.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/utils.test.ts"
+    ],
+    "preflightSha256": "473b1bfe44e8a93ef4c64b2a741ed7321e0a510afa5985086138ba613d99106b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 17,
+    "baseCommit": "526e4dc821e6edae51245f0cd44f0ba938719776",
+    "targetCommit": "0fcd787fd2fd0fd8b660dda8706b90cc4bf14ba8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 11,
+    "sourceTreeBytes": 180077,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "35e3b4403859f97e164e244a84a50892df030bbd45ec0c2ed858b3a489eb0a7a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 18,
+    "baseCommit": "daf5c96564dff2cec92018fc3efd801f3157ce59",
+    "targetCommit": "526e4dc821e6edae51245f0cd44f0ba938719776",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 48,
+    "sourceTreeBytes": 179791,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "61c47f386974edafbad9df61cc722f3d2aee9b2949fb2c9a5d7613639d665250"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 19,
+    "baseCommit": "949d8b76817dfc47e6b1ce4ed09204e7c33d0ec1",
+    "targetCommit": "0c4fef0d39ccd123efca29a9506854f01ae685f7",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 9,
+    "sourceTreeBytes": 178620,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts"
+    ],
+    "changedTestPaths": [
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "d6ad1bf05a2fba8b3b94e1bb65a4520bd2d72a57d6da8abc4a66884a51456639"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 20,
+    "baseCommit": "40dccc333dfc9c5a91cfbb578b3108b718c785bb",
+    "targetCommit": "949d8b76817dfc47e6b1ce4ed09204e7c33d0ec1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 117,
+    "sourceTreeBytes": 178431,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/index.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts",
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "05c99c3bf829e0b03973ed8f23bce88f8de4b3e1fe7ba6e4f7979f20c8b0b4a9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 21,
+    "baseCommit": "0d56527299bc5ad7280bf2e2d3729eeb7ce545a8",
+    "targetCommit": "23d9ff4f1313148942990e5e078d91838f78e8c2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 18,
+    "sourceTreeBytes": 172434,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "8e4f32b9955d2193c37f37f45aad7213f0f6ffd44a9c68b66b125fcd8856cccd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 22,
+    "baseCommit": "4a8cc538a4fb938bfdf13d70a9158714b3d603b9",
+    "targetCommit": "50f00046f7dee0a99055a2fe8c44af3cbd99d443",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 2829,
+    "sourceTreeBytes": 263266,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/index.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "68f25894a7218d65f72515065e945522ead385aecceab72b592293514bcdfa7f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 23,
+    "baseCommit": "f05c66c9159123d8061eca804058187c604aeacc",
+    "targetCommit": "4a8cc538a4fb938bfdf13d70a9158714b3d603b9",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 53,
+    "sourceTreeBytes": 257559,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "b36e32763064b850e8829654cf02b30cdb2d99c33bf0167db1f9491cffe066a0"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 24,
+    "baseCommit": "077cd79ea31966b3454ffe70e183b5e73594e4cf",
+    "targetCommit": "a0d9146c40fb9767842564225444c6c5a7dce70f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 85,
+    "sourceTreeBytes": 255644,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/types.test.ts"
+    ],
+    "preflightSha256": "ed4a7d92a208b3740dabb14c6d4b5d13c8530dd5bb48d7b583d88bb1e90a45b3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 25,
+    "baseCommit": "fadfcbd07c3e2fa6905d0e31deabc37fc55d8317",
+    "targetCommit": "ee6ea87ad0e15a52252389b9b3112060bd411330",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 77,
+    "sourceTreeBytes": 250140,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "af6287b11e03d57eb0bb533db903c684f3d5d67a02971f555a3d4451af5c4041"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 26,
+    "baseCommit": "d50af595d3cb05be8fb5060374f4e28b3d6259fa",
+    "targetCommit": "fadfcbd07c3e2fa6905d0e31deabc37fc55d8317",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 104,
+    "sourceTreeBytes": 251344,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "894e435aec5d2dcfadadf256384686d32e2aa24b352b4d23597470c71acecaaa"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 27,
+    "baseCommit": "7393a92599d7bd16dbb07a5739e27a3c7fd5ce1b",
+    "targetCommit": "8c52d034aa1a40bafb13d0b847c72593c51fcba5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 86,
+    "sourceTreeBytes": 317730,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "d21e220bc95593959d47b4dc86a2b10d177f21792ccab325560058b93a0875bd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "ordinal": 28,
+    "baseCommit": "7800190feb82134be5dd089ca184a18a6644da19",
+    "targetCommit": "225fa8af85e1a504916c357f57b047143b6bc5ab",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 41,
+    "sourceTreeBytes": 315725,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/hookable.ts"
+    ],
+    "changedTestPaths": [
+      "test/hookable.test.ts"
+    ],
+    "preflightSha256": "508a0295bd4eb8d1eb3751df9b213acd829ab9081e3a0bb2a8b5e49e3ab4e6ab"
+  }
+]

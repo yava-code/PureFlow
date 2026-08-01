@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "compilerProtocol": "r7-rewind-v1",
+  "frozenAt": "2026-08-01",
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "developmentSummarySha256": "d4457d21be7939eee4e205d0b559e7e7ef01973df5f0a072f8d2ae4adfcc070b",
+  "nodeImage": "node@sha256:b04ce4ae4e95b522112c2e5c52f781471a5cbc3b594527bcddedee9bc48c03a0",
+  "mutationOperator": "whole-file-base-rewind",
+  "replayCounts": {
+    "target": 1,
+    "mutation": 3,
+    "repair": 3
+  },
+  "networkPolicy": {
+    "install": "bridge",
+    "test": "none"
+  },
+  "files": [
+    {
+      "path": "docs/v0.3/R7_COMPILER_SPEC.md",
+      "sha256": "cdd9469d2f3279dc9c81851aeb0ecefcbd33f825350a7ea0af29c5ab8e1f419b"
+    },
+    {
+      "path": "docs/v0.3/r7/corpus-manifest.json",
+      "sha256": "bbc133ff257e09576cc25bda97c112164a6efdbb85396fe2b60cfd9d42bbb279"
+    },
+    {
+      "path": "docs/v0.3/r7/repositories.json",
+      "sha256": "239f3ba751ee7b403d634598c9936576edb8d0af69ddb83240e79805e42e496c"
+    },
+    {
+      "path": "docs/v0.3/results/R7_DEVELOPMENT_SUMMARY_ITERATION1.json",
+      "sha256": "680a6064572d9aed81735263909e053788c5c126f5fb123930c8e06f7e6d3314"
+    },
+    {
+      "path": "docs/v0.3/results/r7-development-plans-iteration1.json",
+      "sha256": "6508d53737c3ed49495509c1ad9273b241e33f35a36e2e4ac35160091023122a"
+    },
+    {
+      "path": "extension/scripts/r7-audit.mjs",
+      "sha256": "f0fdb41cff023bb98e87be4690276d5d2c1720d190762c70e572aea000a03dbe"
+    },
+    {
+      "path": "extension/src/audit/cli.ts",
+      "sha256": "8c2dd84185260384c1a54037b5a1ecbd930f68deae60e25eb9793177cebbf46e"
+    },
+    {
+      "path": "extension/src/audit/rewind-execute.ts",
+      "sha256": "e5ebd6be4cde79254ca29536642ef235f149b370a1946d26290d2cd345f81ad4"
+    },
+    {
+      "path": "extension/src/audit/rewind-plan.ts",
+      "sha256": "45389311b4bdfdd19a18cba6af76e67f8521e7dafc55191c593548d1fddf44c6"
+    },
+    {
+      "path": "extension/src/audit/rewind-prepare.ts",
+      "sha256": "c38e8aa0164ee8089abb3709c152ecc16d45ceb17ee060724bf047f53e7de547"
+    },
+    {
+      "path": "extension/src/audit/rewind-runner.ts",
+      "sha256": "79397c374559c946d0c39f8200c3544715f0ab540053ff79b79ff60ff870ae0c"
+    },
+    {
+      "path": "extension/src/audit/rewind-summary.ts",
+      "sha256": "0d0f5d81e7b9dd8ad1c71888b3e4e853ea21e0e8aa94624457bdc310cfed7a15"
+    },
+    {
+      "path": "extension/src/change/diff.ts",
+      "sha256": "1a44a096ec9c51f219812bee945c0da8262ded79a338c846e9b3d004f09e948a"
+    },
+    {
+      "path": "extension/src/change/symbols.ts",
+      "sha256": "664563d8cccc6a5fb1fdd694ac643563ba1280e595e1b3529a708d3a44cc7ac2"
+    },
+    {
+      "path": "extension/src/rnd/canonical.ts",
+      "sha256": "0c171c02af8af04295ed2eac30f4a7b8e2f4e17d2cfe0809f679b751d511173d"
+    },
+    {
+      "path": "extension/src/sandbox/toolchains.ts",
+      "sha256": "c69a0168d3528942f21c0b2628a1c630ecd2b586db287f6fb4c58450fd51192f"
+    }
+  ]
+}

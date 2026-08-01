@@ -1,0 +1,1795 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 1,
+    "baseCommit": "616583de0198632cad7820ed8701b15f654c7fd2",
+    "targetCommit": "1236c93e2d969b85d5fba909915fe3d3eccd8085",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 146,
+    "sourceTreeBytes": 1300913,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/helpers.ts",
+      "test/2.1.x/record.ts"
+    ],
+    "preflightSha256": "be770a7f17a43c5fcc400649dfb24c1bb5252054f633d2342ef1ccd1601d4841"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 2,
+    "baseCommit": "dedb64e05328417ecd3d87e00008d9e72130374a",
+    "targetCommit": "0baeb15266c55fa74b812eca9ff9a30cf1859fe2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 25090,
+    "sourceTreeBytes": 1226911,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.9/Codec.ts",
+      "dtslint/ts3.9/Decoder.ts",
+      "dtslint/ts3.9/Encoder.ts",
+      "dtslint/ts3.9/Eq.ts",
+      "dtslint/ts3.9/Guard.ts",
+      "dtslint/ts3.9/Schema.ts",
+      "dtslint/ts3.9/TaskDecoder.ts",
+      "dtslint/ts3.9/Type.ts",
+      "dtslint/ts3.9/index.ts",
+      "scripts/FileSystem.ts",
+      "scripts/build.ts",
+      "scripts/pre-publish.ts",
+      "scripts/release.ts",
+      "src/Codec.ts",
+      "src/DecodeError.ts",
+      "src/Decoder.ts",
+      "src/Encoder.ts",
+      "src/Eq.ts",
+      "src/FreeSemigroup.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/PathReporter.ts",
+      "src/Schema.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/ThrowReporter.ts",
+      "src/Type.ts",
+      "src/index.ts",
+      "vite.config.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/PathReporter.ts",
+      "test/2.1.x/ThrowReporter.ts",
+      "test/2.1.x/TypeClass.ts",
+      "test/2.1.x/array.ts",
+      "test/2.1.x/brand.ts",
+      "test/2.1.x/default-types.ts",
+      "test/2.1.x/exact.ts",
+      "test/2.1.x/helpers.ts",
+      "test/2.1.x/intersection.ts",
+      "test/2.1.x/keyof.ts",
+      "test/2.1.x/literal.ts",
+      "test/2.1.x/partial.ts",
+      "test/2.1.x/readonly.ts",
+      "test/2.1.x/readonlyArray.ts",
+      "test/2.1.x/record.ts",
+      "test/2.1.x/recursion.ts",
+      "test/2.1.x/refinement.ts",
+      "test/2.1.x/strict.ts",
+      "test/2.1.x/strictInterfaceWithOptionals.ts",
+      "test/2.1.x/taggedUnion.ts",
+      "test/2.1.x/tuple.ts",
+      "test/2.1.x/type.ts",
+      "test/2.1.x/union.ts",
+      "test/Arbitrary.ts",
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Encoder.ts",
+      "test/Eq.ts",
+      "test/FreeSemigroup.ts",
+      "test/Guard.ts",
+      "test/JsonSchema.test.ts",
+      "test/JsonSchema.ts",
+      "test/Schema.ts",
+      "test/Schemable.ts",
+      "test/TaskDecoder.ts",
+      "test/Type.ts",
+      "test/helpers.ts"
+    ],
+    "preflightSha256": "fc9c6b891e10047cef64915b06fd6fc7001a69838039500866e4a89c9da32130"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 3,
+    "baseCommit": "4b85202e9cd9058d039d1d76e79f01417ea360f4",
+    "targetCommit": "bdaf80448c5d9326d45e8381f88fd0f11c2dcf73",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 110,
+    "sourceTreeBytes": 1441072,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/default-types.ts",
+      "test/2.1.x/exact.ts",
+      "test/2.1.x/helpers.ts",
+      "test/2.1.x/record.ts",
+      "test/2.1.x/refinement.ts",
+      "test/2.1.x/union.ts"
+    ],
+    "preflightSha256": "481f2225c685d32fc29c6e7bb3745d87297ee603e19d42f513b1c0b9adae2a6b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 4,
+    "baseCommit": "e312a81c795d2ef79e429b5af23668930da5f252",
+    "targetCommit": "4b85202e9cd9058d039d1d76e79f01417ea360f4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 77,
+    "sourceTreeBytes": 1441747,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/default-types.ts",
+      "test/2.1.x/record.ts"
+    ],
+    "preflightSha256": "5a982b30537095f806f9f89606be484e958f8378df0d3b7642dd12d1da57811a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 5,
+    "baseCommit": "e508b89448c0a4354b318774b0f2b83424a10429",
+    "targetCommit": "e312a81c795d2ef79e429b5af23668930da5f252",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 80,
+    "sourceTreeBytes": 1442821,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/default-types.ts"
+    ],
+    "preflightSha256": "ba446338ca411602406f7044ba37c81031b28b3c442f0e54c6b221d8a1e44b1a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 6,
+    "baseCommit": "e619fb1a769afb0dde3b17f4fc3ae28caa004466",
+    "targetCommit": "e508b89448c0a4354b318774b0f2b83424a10429",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 21,
+    "sourceTreeBytes": 1443353,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/default-types.ts"
+    ],
+    "preflightSha256": "6b38b9c07c3c03e8403ede8d2ec6a5a40132a8a4c361d8d93c0f2003df95e18e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 7,
+    "baseCommit": "7069ed04e04ca046d699ba4cf01b75c1515c6635",
+    "targetCommit": "4edbeb35f2c808156b31bb11aaf6a0cb783e8963",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 13,
+    "sourceTreeBytes": 1443405,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/default-types.ts",
+      "test/2.1.x/record.ts"
+    ],
+    "preflightSha256": "da2140e5917078b53dbea5e182f303702ae19e3e5c6d19069485b0e0567fcc25"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 8,
+    "baseCommit": "63eea029773595b6a9cff9d70894935ae7a20e7e",
+    "targetCommit": "9e8ef0e0398dc2b0c15556a8db128666c6fa7203",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 11398,
+    "sourceTreeBytes": 1443698,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/Schema.ts",
+      "dtslint/ts3.5/index.ts",
+      "src/Codec.ts",
+      "src/DecodeError.ts",
+      "src/Decoder.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts",
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Decoder.ts",
+      "test/JsonSchema.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "ece679f43f50fa1434d052922c6f5c13d94b978630245a5e454dc95f04077e51"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 9,
+    "baseCommit": "1f23c7c4936690506eda3e1f7ad0066e84aa8bb1",
+    "targetCommit": "73d0ea7f8d4d6dcea41132317b7c20680f22cf67",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 6,
+    "sourceTreeBytes": 1042453,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/Kleisli.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder.ts"
+    ],
+    "preflightSha256": "c949413dae403e09db2b3af8632a64b04598ad5d1bb55bafc3fe0796409282a6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 10,
+    "baseCommit": "1f1fb851f3b0fe46f9ca41beea7f4ae2f04b3325",
+    "targetCommit": "c2456669d7ffcd5fbb4edea4a862fad2f41e7e27",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 87,
+    "sourceTreeBytes": 1041118,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "scripts/FileSystem.ts",
+      "scripts/build.ts",
+      "scripts/pre-publish.ts",
+      "scripts/release.ts",
+      "scripts/run.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Eq.ts",
+      "test/JsonSchema.test.ts",
+      "test/JsonSchema.ts"
+    ],
+    "preflightSha256": "0edce1934ec85937aa281e083f10534936e20d3ad4e2b1a5d66d5f58fa8092d3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 11,
+    "baseCommit": "2dc13a8204df42a7929d19af3307cda036dba402",
+    "targetCommit": "f6691cd693f7ab9102490c347d7b9917a63c6300",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 867,
+    "sourceTreeBytes": 1040305,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Codec.ts",
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/Encoder.ts",
+      "dtslint/ts3.5/Eq.ts",
+      "dtslint/ts3.5/Guard.ts",
+      "dtslint/ts3.5/Schema.ts",
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "dtslint/ts3.5/Type.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Encoder.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Encoder.ts",
+      "test/Guard.ts",
+      "test/JsonSchema.test.ts",
+      "test/JsonSchema.ts",
+      "test/Schema.ts",
+      "test/TaskDecoder.ts",
+      "test/Type.ts"
+    ],
+    "preflightSha256": "867cd9b73f374569f30ac134b8891686a3dfdbfb207051da66e90448b3b4a161"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 12,
+    "baseCommit": "a7952a62a65168008b1d5a23025447ddc3311d59",
+    "targetCommit": "2dc13a8204df42a7929d19af3307cda036dba402",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 197,
+    "sourceTreeBytes": 1035011,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/Eq.ts",
+      "dtslint/ts3.5/Guard.ts",
+      "dtslint/ts3.5/Schema.ts",
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "dtslint/ts3.5/Type.ts",
+      "src/Decoder.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/JsonSchema.ts"
+    ],
+    "preflightSha256": "373e7e0db9ebf451969dd74a8c3898492d143748991971cae28ff351094b2b10"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 13,
+    "baseCommit": "eedc19781bc1cc40789fbd360e627e794499ab22",
+    "targetCommit": "41c5e107df1865ecb98914c63baf0d0b8abd0600",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 15,
+    "sourceTreeBytes": 1019478,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Guard.ts"
+    ],
+    "changedTestPaths": [
+      "test/Guard.ts"
+    ],
+    "preflightSha256": "7c69c52486bac651cd60d1375b0a3bfd4dada928d3fa4ea4004034de14da6e6f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 14,
+    "baseCommit": "cd5a1b089e39b1b0c2b1b3a555f5267a9d6f4710",
+    "targetCommit": "eedc19781bc1cc40789fbd360e627e794499ab22",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 15,
+    "sourceTreeBytes": 1019135,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Guard.ts"
+    ],
+    "changedTestPaths": [
+      "test/Guard.ts"
+    ],
+    "preflightSha256": "55739746e49d3a84651778028aa538a8e48b467c2c0d8cb69a2b2e0ee3a15568"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 15,
+    "baseCommit": "30a4115c75375dbd02954bac793a34cc06be45c3",
+    "targetCommit": "0163b6ce7fc008e623c73c99d336d717b9335fa7",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 40,
+    "sourceTreeBytes": 1018735,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Guard.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts"
+    ],
+    "preflightSha256": "55559815f2494d18ed3669a1e32c2aff3fe973c0a8c137d7af356439080cf7d3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 16,
+    "baseCommit": "1de671bc453aab546b71202d89faa89a00d7f8f7",
+    "targetCommit": "2881d940b34fa7803e586262520b0c0795329287",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 22,
+    "sourceTreeBytes": 983870,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/intersection.ts"
+    ],
+    "preflightSha256": "9f313939aef50158753bdd95a3837ba211de58f2ba002c4897ab84a7eb04f141"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 17,
+    "baseCommit": "46999babe78b08765a573a1a56d5c16233d99f0b",
+    "targetCommit": "ff59c8b389431f7bf55556b761e71993d9a28b35",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 238,
+    "sourceTreeBytes": 983024,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Codec.ts",
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/Eq.ts",
+      "dtslint/ts3.5/Guard.ts",
+      "dtslint/ts3.5/Schema.ts",
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Decoder.ts",
+      "test/Guard.ts"
+    ],
+    "preflightSha256": "cb2bb6b7c0985240ac00a63a4dc41dc99eff4847a2c104154758d798da75d575"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 18,
+    "baseCommit": "3a4dd717049c0a1864aef23629bc693e48bd1cd4",
+    "targetCommit": "5fa346263b78d5d519957dd9ba79421860b52837",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 55,
+    "sourceTreeBytes": 980072,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder.ts",
+      "test/FreeSemigroup.ts"
+    ],
+    "preflightSha256": "5128302e4a6bdbb7df468ca67b1bde78fa0b7a0a224511b438da6946e351482b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 19,
+    "baseCommit": "a7283bd146b52803ab2e748cd174945723b426c5",
+    "targetCommit": "923bd59c480aae68c29d0a5e8754543d0b31ca91",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 144,
+    "sourceTreeBytes": 973586,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/DecodeError.ts",
+      "src/Decoder.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "9de3dc86ef4c4de304f46e01c38958272c65bfe87077e7fa27024015c47e7dc4"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 20,
+    "baseCommit": "c385e713326d7f7334d504aafbcbff83426a1651",
+    "targetCommit": "a7283bd146b52803ab2e748cd174945723b426c5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 95,
+    "sourceTreeBytes": 970408,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/2.1.x/readonly.ts",
+      "test/2.1.x/readonlyArray.ts"
+    ],
+    "preflightSha256": "9e946d0e832877cc9db4ed7f2b54b0c891263d260cd64ed6b3071e9a5c317dbd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 21,
+    "baseCommit": "79cfe76ad8aaa0f6e081b2c5f67894c28cf75389",
+    "targetCommit": "44789f484ac4f10d920ab1d08ffecfcfc0ee51e9",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 334,
+    "sourceTreeBytes": 972167,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Eq.ts",
+      "test/Type.ts"
+    ],
+    "preflightSha256": "093e693862d6fd3db6b30511275e499bae2bcf99ea915d4c2649ddfcc3a5f7db"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 22,
+    "baseCommit": "6f6c567b0678fbe4c7c9023a4859272c23bbde85",
+    "targetCommit": "0fbe4ae55fdd852bac35c8aad4c13da3cb52e62b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 644,
+    "sourceTreeBytes": 967964,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Codec.ts",
+      "dtslint/ts3.5/Decoder.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts"
+    ],
+    "preflightSha256": "46440374aeaed06987a5aaf8f93c80c0c8d0ec64550dcf590610bb9e1e57c703"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 23,
+    "baseCommit": "dcb0817d0aa8afbd7c060923719602314b55186b",
+    "targetCommit": "7e19969b087929bf07450cf1fe12f79c5ade112f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 77,
+    "sourceTreeBytes": 961235,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "src/Decoder.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "90a264a0159edd2f2349d1cf0c86bfc084946a030126a5676876a0d70128da39"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 24,
+    "baseCommit": "5761b6991485640277c43529839eadfb93c41c79",
+    "targetCommit": "dcb0817d0aa8afbd7c060923719602314b55186b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 595,
+    "sourceTreeBytes": 961607,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/JsonEncoder.ts",
+      "src/JsonEncoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/JsonEncoder.ts",
+      "test/Schema.ts"
+    ],
+    "preflightSha256": "bbb00a17adfd1c06a11c9b2288f1a88f13859ac2cc5601be98c8c74976ea0a51"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 25,
+    "baseCommit": "c53c707e012f00f079ce016ad2a0055f65841dda",
+    "targetCommit": "5761b6991485640277c43529839eadfb93c41c79",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 671,
+    "sourceTreeBytes": 972517,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Codec.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Encoder.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Encoder.ts",
+      "test/helpers.ts"
+    ],
+    "preflightSha256": "e21b9d4396b08d2f6ceb197ffeb728c05c76e7cb2e71342764e8043b89823dbb"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 26,
+    "baseCommit": "d79767ec23bac98d66c8cb448ea0b1d9f60d6389",
+    "targetCommit": "327cd9ae8271074a3acad4141fdd0fda90082e6f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 144,
+    "sourceTreeBytes": 970028,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "src/Decoder.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "7008089fccaf465ce8ec2d185b4bed921a079acdecfd61652e3d803ae59d1972"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 27,
+    "baseCommit": "9d23727b037e67e05dbcc1cc8c0356cbf9c633ae",
+    "targetCommit": "599256481249797dfc90127a73e2850a9844b0e3",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 25,
+    "sourceTreeBytes": 972496,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Guard.ts"
+    ],
+    "changedTestPaths": [
+      "test/Guard.ts"
+    ],
+    "preflightSha256": "f6b7112f47175c793b3890b05eac20ac91bbeaf98209de35e21c0468036bda3c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 28,
+    "baseCommit": "35a946bc1c5546d0c12dafb33fe85004f3b1603e",
+    "targetCommit": "9d23727b037e67e05dbcc1cc8c0356cbf9c633ae",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 593,
+    "sourceTreeBytes": 972092,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/JsonCodec.ts",
+      "src/JsonCodec.ts"
+    ],
+    "changedTestPaths": [
+      "test/Schema.ts"
+    ],
+    "preflightSha256": "dca79899654bf1fdbfbdb0319fc773024beb7a9461477667df88688bd6f92fbd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 29,
+    "baseCommit": "a56ef36a157df63e8a462ef8d932303b70cecba5",
+    "targetCommit": "41bd78bd9402364c4809de65ce8da9bc212261de",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 270,
+    "sourceTreeBytes": 982297,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Guard.ts",
+      "src/Decoder.ts",
+      "src/Guard.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Guard.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "fe71a696ac85918ccaa79b72128fbae6b4e566b93f22ae506fe0498e34fc2acb"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 30,
+    "baseCommit": "0eb0207edcb7678ffdd5009e4ef40aa9189fe0d7",
+    "targetCommit": "faf0419e803fb58be1e30aec15fefa32311e110e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 117,
+    "sourceTreeBytes": 977596,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts",
+      "src/Guard.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "63e45c68154e4da321cf5010568dbb4777094314b362b909e5fd4963bed98ad1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 31,
+    "baseCommit": "f628d1aa6ed0f04a9ed8143ff317d9e238bf8bd5",
+    "targetCommit": "9d1356dcbb1b63fa4c04fc762a43f39b0926c05e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 198,
+    "sourceTreeBytes": 977999,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "src/Decoder.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "4ce4b099b199282eefb39aa0776ab9664adedf5f5b8fe9eefc11c72c1b5bb08a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 32,
+    "baseCommit": "645c6070d72883b0f84b852559dc5456f9a22e6b",
+    "targetCommit": "f628d1aa6ed0f04a9ed8143ff317d9e238bf8bd5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 276,
+    "sourceTreeBytes": 977902,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/Kleisli.ts",
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "src/Decoder.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "84eaa203418f98b39197dbb3a04e5f63d9099541da5ead9b81042204f826b02e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 33,
+    "baseCommit": "e4541ace2d407763fb775e353d5ae518ed963ef4",
+    "targetCommit": "645c6070d72883b0f84b852559dc5456f9a22e6b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 80,
+    "sourceTreeBytes": 979150,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Encoder.ts",
+      "src/Guard.ts",
+      "src/JsonCodec.ts",
+      "src/JsonEncoder.ts",
+      "src/Kleisli.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts"
+    ],
+    "preflightSha256": "d632883fbd6f510240226c789496ca2a819a5821cd25cbd381aa79b4c0f8850f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 34,
+    "baseCommit": "af5333e12f656207b66af73b2d9f0ce1b6c6235d",
+    "targetCommit": "e4541ace2d407763fb775e353d5ae518ed963ef4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1466,
+    "sourceTreeBytes": 979195,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/UnknownTaskDecoder.ts",
+      "src/UnknownTaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/UnknownTaskDecoder.ts"
+    ],
+    "preflightSha256": "c16f4376b66629b70b0cf2261a4e6326fac7336fd0b6a3bb60808fd597e51fa8"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 35,
+    "baseCommit": "8185618eba70aa3b1b96c0fc63ea9bdd9410b828",
+    "targetCommit": "af5333e12f656207b66af73b2d9f0ce1b6c6235d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1476,
+    "sourceTreeBytes": 1017535,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/UnknownDecoder.ts",
+      "src/UnknownDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/UnknownDecoder.ts"
+    ],
+    "preflightSha256": "7c8279c467ebe83f01be7a2d1d36b4d9637d9b2a0bd30471b693f2e87e4babea"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 36,
+    "baseCommit": "7c058b828592f7bcb7a885a36a7cccbb5316cf38",
+    "targetCommit": "8185618eba70aa3b1b96c0fc63ea9bdd9410b828",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1254,
+    "sourceTreeBytes": 1055661,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "src/TaskDecoder.ts",
+      "src/UnknownTaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "878a4489ba05074c8ad5a2f352ff8caeb59122f452e19c211152df13242a80af"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 37,
+    "baseCommit": "fa86e53dde075e54e6f136c794b1b3872f635a78",
+    "targetCommit": "7c058b828592f7bcb7a885a36a7cccbb5316cf38",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1607,
+    "sourceTreeBytes": 1024698,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/JsonCodec.ts",
+      "src/Schema.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/UnknownTaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Type.ts"
+    ],
+    "preflightSha256": "b19537cf383e56bca6a5d09e97dbbc4e42b997907d862f2cbd6dc90de33c0f8c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 38,
+    "baseCommit": "dfe652232fe49208fb968ab161fd9a91873ba4f8",
+    "targetCommit": "fa86e53dde075e54e6f136c794b1b3872f635a78",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 7085,
+    "sourceTreeBytes": 988508,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/KleisliDecoder.ts",
+      "dtslint/ts3.5/KleisliTaskDecoder.ts",
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "dtslint/ts3.5/UnknownDecoder.ts",
+      "dtslint/ts3.5/UnknownTaskDecoder.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Encoder.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/JsonCodec.ts",
+      "src/JsonEncoder.ts",
+      "src/KleisliDecoder.ts",
+      "src/KleisliTaskDecoder.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts",
+      "src/UnknownDecoder.ts",
+      "src/UnknownTaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Eq.ts",
+      "test/Guard.ts",
+      "test/JsonEncoder.ts",
+      "test/KleisliDecoder.ts",
+      "test/KleisliTaskDecoder.ts",
+      "test/Schema.ts",
+      "test/TaskDecoder.ts",
+      "test/Type.ts",
+      "test/UnknownDecoder.ts",
+      "test/UnknownTaskDecoder.ts"
+    ],
+    "preflightSha256": "a16b591acc1bb306186270f6d5133be583cb05df901e7bd3bc2cecf1fbd373d6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 39,
+    "baseCommit": "b1b704e613c326c3b68345cd044ee944f5934867",
+    "targetCommit": "ac43c19ad761867b285cca3d8e12c336f7e31910",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 88,
+    "sourceTreeBytes": 973677,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Guard.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder.ts",
+      "test/Guard.ts",
+      "test/Type.ts"
+    ],
+    "preflightSha256": "ec4425eada78daea3e63bb6089cf23ceac851e10a006e82717e67abb98a3dd08"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 40,
+    "baseCommit": "1cc97816833f4470961f8984f0c3de604ba97cac",
+    "targetCommit": "9692015ab792e2d858e45636653a7b70377c4fb1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 49,
+    "sourceTreeBytes": 972568,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts",
+      "src/Guard.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "e0e2756a0c075cac04ce98c972a1cc4b28f40cd58fb80e10dd05f0315db9aa84"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 41,
+    "baseCommit": "c8ea010625c01243cf966f5f1f5b6b3c947dd994",
+    "targetCommit": "c3e01fda32f5fedcb11975fc7c2c48076e5e509f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 2478,
+    "sourceTreeBytes": 966983,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Decoder.ts",
+      "dtslint/ts3.5/Guard.ts",
+      "dtslint/ts3.5/TaskDecoder.ts",
+      "perf/Decoder.ts",
+      "perf/Decoder2.ts",
+      "src/Decoder.ts",
+      "src/Encoder.ts",
+      "src/Kleisli.ts",
+      "src/KleisliDecoder.ts",
+      "src/KleisliTaskDecoder.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/KleisliDecoder.ts",
+      "test/KleisliTaskDecoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "d644c97db9fb5a3c96d455ab82b6f393a3126e655f53fec5b03daaddb3cdac54"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 42,
+    "baseCommit": "011f8e8802d11041953571bc8bfc8dce89469c91",
+    "targetCommit": "1fde6262832646ddaf23824bde7bcdbf8127d97d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 237,
+    "sourceTreeBytes": 939503,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts",
+      "src/Kleisli2.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "7b654df4caccfb146fb5833220548ec9440c8652e2083e5d3b8757a2ef514666"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 43,
+    "baseCommit": "fb2c6d605eb7f867fd788d156f472afd86bebc8c",
+    "targetCommit": "ebd7c166982701c9dba5bf7c439f73197b8990c1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 203,
+    "sourceTreeBytes": 938399,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/JsonCodec.ts",
+      "src/Kleisli.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "2f9ed983d6d4a3d9af2e9d22afe027883d703c4dc008e3e65b3b1bca6806f3e2"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 44,
+    "baseCommit": "6f1957d6c7723bee8f3daac42560350ac6b887dd",
+    "targetCommit": "bc91d4e67ffa9ce75c33258e4a1b298aef6878d9",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 2990,
+    "sourceTreeBytes": 938774,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "perf/Decoder2.ts",
+      "src/Decoder.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/Encoder.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Decoder2.ts",
+      "test/DecoderT.ts",
+      "test/Schemable.ts"
+    ],
+    "preflightSha256": "e7099d8d9a1b0b5823486e201e991ebf5c28cbb080a069584171e0598a3c517b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 45,
+    "baseCommit": "c499186689a29050a7d670c8d2fbf2ffca78b2b1",
+    "targetCommit": "6f1957d6c7723bee8f3daac42560350ac6b887dd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 438,
+    "sourceTreeBytes": 963923,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Schema.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/JsonCodec.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Codec.ts",
+      "test/Decoder2.ts",
+      "test/Eq.ts",
+      "test/Guard.ts",
+      "test/TaskDecoder.ts",
+      "test/Type.ts"
+    ],
+    "preflightSha256": "6fa3b26dc2fdcb9036592ad0c92f9a165f2198100b0149cc3e830c5a0f628d2c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 46,
+    "baseCommit": "3626a74c6102af78aad24f3ef8362661d9d3f269",
+    "targetCommit": "c499186689a29050a7d670c8d2fbf2ffca78b2b1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 40,
+    "sourceTreeBytes": 963912,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "588378df93df9f09ff821866f66b09d585810479c899e99beedf0806560386bd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 47,
+    "baseCommit": "2f306a9242c742bd7ef61a24dfb6d4750224bded",
+    "targetCommit": "3626a74c6102af78aad24f3ef8362661d9d3f269",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 498,
+    "sourceTreeBytes": 963830,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Encoder.ts",
+      "dtslint/ts3.5/Schema.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/Encoder.ts",
+      "src/Eq.ts",
+      "src/Guard.ts",
+      "src/JsonCodec.ts",
+      "src/JsonEncoder.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Codec.ts",
+      "test/Decoder.ts",
+      "test/Decoder2.ts",
+      "test/DecoderT.ts",
+      "test/Encoder.ts",
+      "test/Eq.ts",
+      "test/Guard.ts",
+      "test/Schema.ts",
+      "test/TaskDecoder.ts",
+      "test/Type.ts"
+    ],
+    "preflightSha256": "09508a41035fc85507af34c0e5c1f96de1e1fd5a23ffecbd33da05e75635c251"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 48,
+    "baseCommit": "c1b5afffee5d80c699b0e4afabf3a0c37dd162c7",
+    "targetCommit": "2f306a9242c742bd7ef61a24dfb6d4750224bded",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 367,
+    "sourceTreeBytes": 963802,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "5026c7fc08dede3f5cb4634d19da94fd595a99a72a91026370a767826285c3ef"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 49,
+    "baseCommit": "7f295fa185405aa994527d0d82869813e50c9afe",
+    "targetCommit": "c1b5afffee5d80c699b0e4afabf3a0c37dd162c7",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 565,
+    "sourceTreeBytes": 962958,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts",
+      "src/Decoder2.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "439b033d012f4bc1d481bc5d336f4f20d5e1f9040c92eca530246b1060e78230"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 50,
+    "baseCommit": "4fd7dabfbdd3f512ecc76d67ad47ccd80cb52a22",
+    "targetCommit": "7f295fa185405aa994527d0d82869813e50c9afe",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 124,
+    "sourceTreeBytes": 953701,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "dca99c9164384146e5a0ad6a3a3081e92d2d5cfed73a634cd94644d201c106aa"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 51,
+    "baseCommit": "b3460febe9955a7e05be1a54e4487dada977ddc4",
+    "targetCommit": "4fd7dabfbdd3f512ecc76d67ad47ccd80cb52a22",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 83,
+    "sourceTreeBytes": 952447,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "8f80d8dc94ea281bd94082a81abaa2baf741467b2c363a54f05d96f22751e363"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 52,
+    "baseCommit": "e46ddccdea95d0d5b83b3d49e2c825181d3c7b3d",
+    "targetCommit": "b3460febe9955a7e05be1a54e4487dada977ddc4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 87,
+    "sourceTreeBytes": 950331,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder.ts",
+      "src/Decoder2.ts",
+      "src/Guard.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "e72ed5a00bc8f850945d33f551f796aec8b5ba1bc5f44eeea9490cac7c4d6048"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 53,
+    "baseCommit": "b4e5e8e01ca6916e5546fb9536421c855fc14058",
+    "targetCommit": "02fe8a6f9fcaa55be99cef9b868c89158b0156f6",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 362,
+    "sourceTreeBytes": 950521,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/DecodeError.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "68d942db4176d9d8b13ab0c0ae22ced9caba128ef42e582167adecd2c3fef402"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 54,
+    "baseCommit": "6f48433a7278aa8221df6d524b85a84ef1a1ed8f",
+    "targetCommit": "b4e5e8e01ca6916e5546fb9536421c855fc14058",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 150,
+    "sourceTreeBytes": 944435,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder2.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "cc679ba443128f633a0f17b0774679e25b91f3eb99618b329421d213f96381c6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 55,
+    "baseCommit": "17e9a9a44ab79161128588f93a4a9a631af37c4b",
+    "targetCommit": "6f48433a7278aa8221df6d524b85a84ef1a1ed8f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 608,
+    "sourceTreeBytes": 939816,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Schema.ts",
+      "src/Decoder.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/Guard.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Arbitrary.ts",
+      "test/Decoder.ts",
+      "test/Decoder2.ts",
+      "test/DecoderT.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "8a75e78b21627cce12ac722fc3a717d0afcbd28ef4c85d3de8a4f2af34a4a38e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 56,
+    "baseCommit": "ead054d495b720cd5b6f371cc0fab7df611ef85e",
+    "targetCommit": "17e9a9a44ab79161128588f93a4a9a631af37c4b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 276,
+    "sourceTreeBytes": 926385,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Schema.ts",
+      "src/DecodeError.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/Decoder2.ts",
+      "test/Guard.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "ef7bf673c18d66c00712be853248d05f6b9c56fb8640b76f1f899f29463b881a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 57,
+    "baseCommit": "a56b46eb9527d9edea1caf0f6bf87348b387a176",
+    "targetCommit": "ead054d495b720cd5b6f371cc0fab7df611ef85e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1136,
+    "sourceTreeBytes": 921507,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "perf/Decoder2.ts",
+      "perf/DecoderT.ts",
+      "src/Decoder2.ts",
+      "src/DecoderT.ts"
+    ],
+    "changedTestPaths": [
+      "test/Decoder2.ts",
+      "test/DecoderT.ts"
+    ],
+    "preflightSha256": "19665b8a87e38ed6e95fa01219c4d8b8b1fa501e6f254efd5beab16bf564e8ff"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 58,
+    "baseCommit": "635bc8db69f17ade4778ce8b674237f15e3ed16c",
+    "targetCommit": "a56b46eb9527d9edea1caf0f6bf87348b387a176",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 75,
+    "sourceTreeBytes": 905994,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "dtslint/ts3.5/Schema.ts",
+      "src/Codec.ts",
+      "src/Decoder.ts",
+      "src/DecoderT.ts",
+      "src/Guard.ts",
+      "src/JsonCodec.ts",
+      "src/Schemable.ts",
+      "src/TaskDecoder.ts",
+      "src/Type.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "ddb76709509e3050e52161f7a828e2dd529e9b09a10f8b00a1619feaa1185238"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 59,
+    "baseCommit": "b4dacd92df82ec6a8af4f1d359e8b176fc369bba",
+    "targetCommit": "635bc8db69f17ade4778ce8b674237f15e3ed16c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1230,
+    "sourceTreeBytes": 905543,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "perf/DecoderT.ts",
+      "src/DecodeError.ts",
+      "src/Decoder.ts",
+      "src/DecoderT.ts",
+      "src/TaskDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/Codec.ts",
+      "test/DecoderT.ts",
+      "test/TaskDecoder.ts"
+    ],
+    "preflightSha256": "93f60ec96ac4980a47120046b3d5d17a759fa2e56bdba0f8b5656c0108132140"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "ordinal": 60,
+    "baseCommit": "2302447023a91e1bdc26e0775205f908bac776fa",
+    "targetCommit": "b4dacd92df82ec6a8af4f1d359e8b176fc369bba",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 269,
+    "sourceTreeBytes": 888306,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "perf/DecoderT.ts",
+      "src/DecodeError.ts",
+      "src/FreeDecoder.ts"
+    ],
+    "changedTestPaths": [
+      "test/FreeDecoder.ts"
+    ],
+    "preflightSha256": "6326811997c24cd4e3f2b125915765a89a816c688ce751d45d469db9a25f31cd"
+  }
+]

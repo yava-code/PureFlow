@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "development",
+  "patch": {
+    "repositoryId": "ts-pattern",
+    "ordinal": 26,
+    "baseCommit": "3a7fcbfbbf66b651648c6e7433b4a640f8543b88",
+    "targetCommit": "e6c9090172d86cfebbaeb7d5c7896b037909d90f",
+    "evidenceSha256": "a0f467ae9b369e8ae2c587d5b18c1364c7580176ecb70db99d901a91e4b60adc",
+    "splitKey": "4a57b51700d38173c9e465d22e5ce9de8e802e8377431f8cc986cb0e09b06fe9",
+    "cohort": "development"
+  },
+  "compileResult": {
+    "status": "compiled",
+    "participant": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "repositoryId": "ts-pattern",
+      "seam": {
+        "path": "src/match.ts",
+        "symbol": "match",
+        "kind": "function"
+      },
+      "writablePaths": [
+        "src/match.ts"
+      ],
+      "attributedTestPaths": [
+        "tests/exhaustive-match.test.ts",
+        "tests/tuples.test.ts"
+      ],
+      "attentionBudgetSeconds": 600,
+      "observationLabel": "registered-check-outcome",
+      "experienceId": "eb4e408605f3ab80510ac3d2fb4bd13a520f85710fe87160c8d7c6c8d207090c"
+    },
+    "internal": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+      "patchEvidenceSha256": "a0f467ae9b369e8ae2c587d5b18c1364c7580176ecb70db99d901a91e4b60adc",
+      "repositoryId": "ts-pattern",
+      "ordinal": 26,
+      "baseCommit": "3a7fcbfbbf66b651648c6e7433b4a640f8543b88",
+      "targetCommit": "e6c9090172d86cfebbaeb7d5c7896b037909d90f",
+      "nodeVersion": "22.17.0",
+      "packageManager": "npm",
+      "packageManagerVersion": "10.9.2",
+      "installArgv": [
+        "npm",
+        "ci",
+        "--ignore-scripts"
+      ],
+      "testArgv": [
+        "npm",
+        "test",
+        "--",
+        "--runInBand"
+      ],
+      "sources": [
+        {
+          "path": "src/match.ts",
+          "baseBlobSha1": "3adc3aa0a7a2edc2cc3f410ce5e82db2c1d91225",
+          "targetBlobSha1": "8ebeefc0feed160e3bc0d16a760f00acfdf97950"
+        }
+      ],
+      "attributedTestPaths": [
+        "tests/exhaustive-match.test.ts",
+        "tests/tuples.test.ts"
+      ],
+      "semantic": {
+        "path": "src/match.ts",
+        "symbol": "match",
+        "kind": "function",
+        "changedLineSha256": [
+          "1ec8e42d878e667d61c2c0aca2ddd2a6de9c6ce74fe339a163d043a9a2f5d422",
+          "2bf5b7b85a0e55c343c96c36eeb745c52f2b42974806d0118bc809f663d91f1b",
+          "3aadf9ac79922088eb3f9956bad6a0f7e83d6e272cf7d963cfb3a16b39bd8fa6",
+          "69932d72b4574abb9399817c3723ee76335e1d8039df2a338c8c27f87a9f1fc2",
+          "7397e01cf7ed72cb465fc50be581430b3b25978b4577250686df91453378a2e2",
+          "85a68736d2383de8c75446bed1189fbab22419f109595b5f8a5724ac242b8acf",
+          "a3037457a39cdb68dffff43672fb25f193f14fa96c278d0ff702439a807fa182",
+          "d10b36aa74a59bcf4a88185837f658afaf3646eff2bb16c3928d0e9335e945d2",
+          "febcd671cca3b053510d9f4c057f0fe38c223f987448e5010509190ef38ec80a"
+        ]
+      },
+      "mutationOperator": "whole-file-base-rewind",
+      "participantProjectionSha256": "50d2390a113e81eeea03a90c2e7a7ff4a3ea9505b81adb0ed29feb163aff5257",
+      "internalPlanSha256": "e51c10890fa5b182dd78dfba6184610eca79d4f976e16236af352b37691b4624"
+    }
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "compilerProtocol": "r7-rewind-v1",
+    "internalPlanSha256": "e51c10890fa5b182dd78dfba6184610eca79d4f976e16236af352b37691b4624",
+    "status": "valid",
+    "recoveryValid": true,
+    "probeValid": true,
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 38248,
+      "stdoutBytes": 364,
+      "stderrBytes": 0,
+      "stdoutSha256": "acd7ac7ad4b52616e3f8a12ac01e83dd14968a982d540a672252f1857efb3a5c",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "targetControl": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 54218,
+      "stdoutBytes": 50,
+      "stderrBytes": 1302,
+      "stdoutSha256": "f1f930e39004812aa58540dffea5cf9ada0e637e9a4a1bc511d0b7c83be8e79f",
+      "stderrSha256": "cb581a75d55e4b748290e52fbe7885fa837ef35352793f7bede06eb2d4ff3c35"
+    },
+    "mutation": [
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 59881,
+        "stdoutBytes": 50,
+        "stderrBytes": 2633,
+        "stdoutSha256": "f1f930e39004812aa58540dffea5cf9ada0e637e9a4a1bc511d0b7c83be8e79f",
+        "stderrSha256": "0d0a1331fcdf63fe8b215eea262101bd08000c720163b9d393bd36050563f449"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 55050,
+        "stdoutBytes": 50,
+        "stderrBytes": 2622,
+        "stdoutSha256": "f1f930e39004812aa58540dffea5cf9ada0e637e9a4a1bc511d0b7c83be8e79f",
+        "stderrSha256": "dafa0757fbe697ee112e79c745ed5d16eab85b68f77dd05d7af61f5abf6d99bf"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 54600,
+        "stdoutBytes": 50,
+        "stderrBytes": 2623,
+        "stdoutSha256": "f1f930e39004812aa58540dffea5cf9ada0e637e9a4a1bc511d0b7c83be8e79f",
+        "stderrSha256": "0657c2cefeb6659a345afd8b65eaa79786491811f97a9bf1ded3bdfac316fc53"
+      }
+    ],
+    "repair": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 59411,
+        "stdoutBytes": 50,
+        "stderrBytes": 1312,
+        "stdoutSha256": "f1f930e39004812aa58540dffea5cf9ada0e637e9a4a1bc511d0b7c83be8e79f",
+        "stderrSha256": "ee98af00d74b8983141a8fd4c0d8542e965d7f981bdc1f0468078b32a829ee93"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 53436,
+        "stdoutBytes": 50,
+        "stderrBytes": 1302,
+        "stdoutSha256": "f1f930e39004812aa58540dffea5cf9ada0e637e9a4a1bc511d0b7c83be8e79f",
+        "stderrSha256": "b4359065e220a419e7bc2251879716c9385548a450d526ed142af3899b1c34e0"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 54801,
+        "stdoutBytes": 50,
+        "stderrBytes": 1301,
+        "stdoutSha256": "f1f930e39004812aa58540dffea5cf9ada0e637e9a4a1bc511d0b7c83be8e79f",
+        "stderrSha256": "59c120288d1656327be54df56b44fdc50a66e7f9358862a7f8590f4c1ad150a7"
+      }
+    ],
+    "setupMs": [
+      5935,
+      7015,
+      6766,
+      7326,
+      9614,
+      7841,
+      14729
+    ],
+    "targetArchiveSha256": "2996da0e6e34982b78f903a7628242ded17543a024c19e8e3431def3c827294b",
+    "rewindArchiveSha256": "e32c118d2374189d8268dda38c71b5fd20d2d10fa256b1e3e4353d1bb26f0e0c",
+    "repairArchiveSha256": "bdaae13281fa6bd7e327e67001f81217eed4aa915947af82a17e8a51d4ef5ba5",
+    "targetArchiveBytes": 1269760,
+    "rewindArchiveBytes": 10240,
+    "repairArchiveBytes": 10240,
+    "productionInvariantPassed": true,
+    "cleanupPassed": true,
+    "reportSha256": "4e1e0560c4b840c1b186612541b1dd576b5e632da07efda55f179e13cb7eb39d"
+  }
+}

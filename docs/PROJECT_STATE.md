@@ -1,8 +1,52 @@
 # Project State
 
-Last updated: 2026-07-20
+Last updated: 2026-08-01
 
-## Current milestone
+## Current branch milestone — R7 corpus frozen; compiler audit pending
+
+Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
+
+- Autonomous coding remains the production engine.
+- The selected research mechanism is an Experience Compiler that creates a parallel executable Takeover Twin from a high-value seam in the current agent change.
+- Tests and runtime behavior judge human prediction, intervention, recovery, and delayed transfer.
+- Scoped readiness evidence is intended to influence future experience selection and later delegation policy.
+- ADR-004 defines event-driven Control Pulses: agents keep working while a developer predicts, falsifies, chooses evidence, or defends one high-value seam. A bounded Side Coach may structure the answer but cannot create readiness evidence.
+- Research, alternative concepts, ADR, experiments, and an agent-executable vertical-slice plan are recorded in `prd.md` and `docs/v0.3/`.
+- R0a now implements RFC 8785 canonical JSON, domain-separated SHA-256, UTF-8 path ordering, tree/candidate/manifest hashes, the versioned fixture types, and fail-closed manifest validation. Ten R0a tests pass on this Windows checkout, bringing the extension suite to 23/23.
+- R0b now has a committed dependency-free `tenant-cache-key` fixture, deterministic Git factory, fixed base/target revisions and state-tree hashes, controller-owned mutation/repair/harness/oracle blobs, and a separately downloaded hash-pinned Node `v22.17.0` runtime. On this Windows checkout, base and target checks pass, the mutation fails the declared tenant-isolation check, the known repair returns the exact target tree to green, and cleanup preserves the source repository snapshot.
+- The full local Windows extension suite passes 27/27 with `npm run check`, build, and VSIX packaging. Protected PR #10 run `30663623200` independently reproduced the exact fixture/runtime behavior on Linux and Windows; all five required checks passed, so R0 acceptance is complete.
+- R1 implements the schema-v1 `AgentDriver` boundary, checked replay driver, canonical task-intent storage, and append-only local Flight Recorder behind injected storage and evidence-ownership interfaces. Ten R1 tests cover deterministic replay, canonical round trips, sequence/execution/identity violations, cross-project evidence, path and size bounds, failed/cancelled honesty, persistence, range reads, and secret/local-handle omission.
+- The full local Windows extension suite passes 37/37 with `npm run check`; the production bundle and VSIX package also pass. Protected PR #11 run `30665384997` independently passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R1 acceptance is complete.
+- R2 implements bounded Git revision diffs, zero-context changed-line extraction, TypeScript compiler-API symbol resolution, explicit fixture check linkage, Flight Recorder hash/attribution validation, and exact `ExtractionResult` / `SemanticUnit` / `CandidateSeam` outputs. It fails to `partial` or `unsupported` for missing links, syntax failures, unsupported languages, or incomplete coverage instead of inventing an invariant.
+- Six R2 tests cover the real cache-key fixture, cross-run determinism and golden IDs, file rename, multi-file changes, added/deleted functions, class boundaries, Git hunk parsing, unsupported syntax/language, missing checks, unsafe paths, and revision/run drift. The full local Windows extension suite passes 43/43 with TypeScript, build, and VSIX packaging. Protected PR #12 run `30666648522` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R2 acceptance is complete.
+- R3 now implements the fixture-only sanitized snapshot store, standalone one-commit participant repository, opaque Twin Manager, immutable command-registry snapshots, extension-owned trusted catalog, and `TrustedFixtureRunner`. The runner accepts only the pinned manifest, exact declared state/tree, catalog command, hash-verified standalone Node runtime, and opaque twin handle; non-fixture execution remains explicitly unsupported.
+- Seven R3 tests cover production file/index/HEAD/ref/remote/worktree invariants, hidden-answer and source-history absence, cross-project ownership, exact-state execution, tamper/unknown-command rejection, concurrent execution IDs, single-run cancellation, immutable command snapshots, Windows paths with spaces, descendant-process termination, and exact cleanup. The full local Windows extension suite passes 50/50; build and VSIX packaging pass, and the runtime fixture assets are present in the VSIX. Protected PR #13 run `30668675359` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R3 acceptance is complete.
+- R4 now compiles one fully attributed, bounded, test-backed seam from real R1 replay plus R2 change evidence into separate internal and participant recovery manifests. The participant projection excludes source revisions, run identity, judge internals, setup, hidden repair, production paths, and controller handles.
+- The Phase-A Evidence Judge reopens the immutable snapshot and command registry, verifies the standalone Git boundary, computes the participant diff, rejects protected or out-of-scope changes, and evaluates only the exact catalog-owned known repair in a clean evaluation twin. No-op and unrelated candidates fail without execution; reveal and abandonment produce no executable readiness evidence.
+- Seven R4 tests cover deterministic compilation, strict projection/schema rejection, unsupported and fixture-drift rejection, protected-path integrity, no-op/unrelated non-execution, three identical clean replays, reveal/abandon honesty, and project-scoped persistent command evidence with tamper detection. The full local Windows extension suite passes 57/57; `npm run check`, production build, and VSIX packaging pass. Protected PR #14 run `30670322126` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R4 acceptance is complete.
+- R4.5 now implements bounded `ChangeClaim`, participant/internal probe, Side Coach capsule/proposal, attempt, and result contracts with exact schemas and domain-separated hashes. The deterministic no-model path commits a developer prediction before observation and resolves only one extension-owned fixture state/check pair.
+- Participant serialization contains no fixture binding, command, state, revision, oracle, controller handle, or production path. Capsule construction reopens only participant-visible project evidence, caps and scrubs excerpts, and treats every model proposal as non-executable text plus an optional existing input ID.
+- Six R4.5 tests cover cross-platform golden claim/probe/attempt hashes, strict projection and catalog isolation, unstable/cross-project/hidden/malformed evidence rejection, capsule path/secret/ID redaction, precommitted prediction, prose-invariant observation, replay/late/identity failures, and timeout/cancellation/runner-error invalidation. The full local Windows extension suite passes 63/63; `npm run check`, production build, and VSIX packaging pass. Protected PR #15 run `30671499103` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R4.5 acceptance is complete.
+- ADR-003 selects digest-pinned Linux containers through Docker Desktop/WSL2 as the replaceable Phase-B backend. A real local Windows probe verified outbound network failure, a read-only root, zero undeclared mounts, an unchanged `EROFS` oracle, memory/CPU/PID limits, dropped capabilities, `no-new-privileges`, descendant-container kill, and exact removal on Docker Desktop 4.61 / Engine 29.2.1.
+- `R7_PREREGISTRATION.md` freezes the repository/patch sampling algorithm, eligibility and exclusions, 12/18 development/held-out split, two-rater protocol, metrics, confidence intervals, adversarial cases, thresholds, and narrowing rules before corpus outcomes are inspected. Protected PR #16 run `30672257419` passed the required Linux, Windows, contract, web, and policy checks for the ADR/protocol change.
+- The Docker `SandboxRunner` validates exact requests and immutable commands, requires trust plus explicit project consent, resolves only opaque controller handles, verifies the pinned image and five live capabilities, emits the fixed network-none/read-only/resource-limited profile, checks the exact oracle sources before and after, bounds and redacts evidence, tombstones execution IDs, and performs exact-name cancellation/cleanup without host fallback.
+- Sixteen deterministic sandbox contract tests pass locally on Windows. A separate explicit Docker integration suite passed 2/2 against the selected digest on Docker Desktop: the active capability probe and a real frozen command in a path with spaces. The complete default extension suite passes 79/79 with the two provisioned-backend tests skipped; TypeScript, production build, and VSIX packaging pass.
+- Protected PR #17 run `30674334938` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`. The Linux extension job explicitly provisioned the exact digest and passed the real Docker backend suite; Windows independently passed the deterministic contract suite. The R7 sandbox implementation gate is complete.
+- `CONCEPT_LAB_CONTROLLABILITY.md` records a post-R7 category extension: compile an executable `observe → actuate → recover` human control surface, select takeover cut sets, and let a context-starved agent continue writing code from human-selected evidence and directives. Dissent cases and control dividends remain hypotheses with explicit falsifiers, not implemented features.
+- The preregistered R7 collector froze 30 eligible patches from six repositories after evaluating 457 bounded eligibility records. Manifest `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149` contains 12 development and 18 held-out patches; `docs/v0.3/results/R7_CORPUS_COLLECTION.md` reports repository and first-match exclusion counts. No compiler or human outcome influenced selection.
+- R7 has not passed. The recovery/probe compiler audit, three-run evidence, protected parity/adversarial runs, and two independent human ratings remain pending; R5/R6 stay gated.
+- The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
+- No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
+- A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
+- A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
+- The R&D branch is published at `origin/codex/shadow-cockpit-rnd`. Its first Jules workflow run was correctly skipped because `JULES_RND_LOOP_ENABLED` is not enabled; no Jules session was created.
+- `Protect main` is active: PR, conversation resolution, strict `extension`/`contract`/`web` checks, up-to-date base, deletion protection, and force-push protection are enforced with zero required approvals for the sole owner.
+- `Protect R&D integration` is active on exact branch `codex/shadow-cockpit-rnd`: PR-only updates, conversation resolution, strict `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy` GitHub Actions checks, up-to-date base, deletion protection, and force-push protection. Codex and Jules now integrate through short-lived heads.
+- Superseded `codex/v0.2-ownership-compiler` and the obsolete Jules vibe-gate branch were preserved as dated archive tags and deleted as branches. `codex/shadow-cockpit-rnd` is the only persistent coding branch; draft PR [#8](https://github.com/yava-code/PureFlow/pull/8) temporarily retains the default-branch scheduler until the owner explicitly authorizes its merge into `main`.
+
+The v0.1 runtime below remains released evidence and a reusable IDE shell. Its Mentor, Quiz, and Focus behavior is not the v0.3 product core.
+
+## Released v0.1 milestone (historical runtime state)
 
 **RepRegistry deployed on Monad Testnet; Spark form blocked only on demo video + owner submit/eligibility.**
 
@@ -78,22 +122,22 @@ PureFlow is a portable VSCodium product profile (not an empty fork + extension):
 
 The IDE-first GUI was exercised through the accessibility tree in an earlier portable build: native editor region, PureFlow view, Workspace/Mentor/Focus/Monad routes, Restricted Mode visibility, and live Monad block were present. The fresh security-hardened portable was rebuilt and its installed manifest/bundle were inspected, but a new pixel capture and full 240/320/420 px plus 200% GUI matrix remain release-polish follow-ups.
 
-## Spark deadline and required fields
+## Historical Spark state
 
-The [official Spark page](https://buildanything.so/hackathons/spark) closes submissions on **2026-07-19 at 23:59 UTC**. Required fields include Name, Description, Problem, Solution, hosted Project URL, public GitHub repository, Monad Mainnet/Testnet category, deployed contract address, and a public demo video no longer than three minutes. A social post URL is required only for the Most Viral Solution prize.
+The Spark deadline was 2026-07-19. The earlier blocker table in this file became stale after `RepRegistry` was deployed and verified on 2026-07-20. The live registry and Safe addresses at the top of this document supersede any older “Safe missing,” “deployment pending,” or “registry unset” entry in Git history.
 
-The repository, hosted app, regular commits, real features, and release are ready. Contract address and demo video are not complete and must not be represented as complete. The owner must personally confirm the age and jurisdiction eligibility conditions on the official page; locale and timezone are not evidence of eligibility.
+The repository contains no verified evidence that the owner submitted the final form, uploaded the required demo video, or completed a real user-wallet proof. Those remain historical v0.1 submission facts, not v0.3 R&D blockers.
 
-## Known blockers and owner actions
+## Current v0.3 blockers and owner actions
 
-| Blocker | Impact | Resolution owner |
+| Input | Impact | Resolution |
 | --- | --- | --- |
-| Two public Safe-owner addresses are missing | Cannot create the required 2-of-3 Safe or propose `RepRegistry` deployment | Owner provides two Monad-compatible public addresses; agent uses the installed Monskills Safe workflow |
-| Safe approval/execution is pending | An agent cannot unilaterally publish `RepRegistry` | Agent proposes through `propose.sh`; owner reviews, co-signs, executes, and returns the transaction hash |
-| Para CLI is not installed/authenticated | Cannot implement the canonical user-wallet publication flow | Owner runs `npm install -g @getpara/cli`, then `para login` |
-| Registry address is unset | Companion must show deployment pending; no proof can be publicly verified | Deploy, verify bytecode, then configure the address |
-| Demo video URL is missing | Spark submission is incomplete | Owner records/uploads the sub-three-minute demo |
-| Eligibility declaration is unchecked | Submission owner eligibility is not established by repository evidence | Owner confirms age 18+ and an eligible jurisdiction against the official rules |
+| The first live adapter is selected but no accessible Codex CLI is configured for this checkout | ADR-006 selects Codex App Server over local stdio, but the Microsoft Store packaged executable discovered here returns `Access denied` when launched from the repository shell | Keep replay R&D independent; the live spike must preflight a separately accessible, exact-version user-installed Codex CLI and fail closed when unavailable |
+| R7 expert audit is not complete | Frozen held-out automatic audit passed at 16/18 end-to-end, but independent causal-relevance ratings are not yet measured | Give `docs/v0.3/results/held-out-rater-packets/` to two experienced TypeScript raters using `docs/v0.3/R7_EXPERT_RATING.md`, then adjudicate and report agreement |
+| Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
+| Default-branch Jules scheduler awaits explicit merge approval | Scheduled/manual continuation is not installed on `main`; draft PR #8 remains isolated and the enable variable stays off | Owner explicitly says `merge #8`; then merge through protected `main`, remove the temporary infrastructure branch, and run one guarded canary through the protected R&D branch |
+
+No external input blocks the repository-owned fixture R0–R4.5 mechanism in `docs/v0.3/AGENT_EXECUTION.md`. It cannot execute or judge arbitrary human/agent code and must not be represented as a general-project takeover product.
 
 ## Recent polish (this pass)
 
@@ -108,12 +152,9 @@ The repository, hosted app, regular commits, real features, and release are read
 
 ## Next ordered actions
 
-1. Owner confirms Spark age/jurisdiction eligibility and provides two public Monad-compatible Safe-owner addresses.
-2. Create and verify the 2-of-3 Testnet Safe, then prepare and propose `RepRegistry` deployment only through the installed Monskills `propose.sh` wrapper.
-3. Owner reviews, co-signs, executes, and returns the execution transaction hash; parse the CreateCall log, check deployed bytecode, complete explorer source verification, and configure the registry address.
-4. Owner authenticates Para; submit one real proof, wait for receipt/finality, and confirm `attestorOf(commitment)` with a follow-up read.
-5. Record the demo using the checked third-party inspection fixtures plus the final PureFlow registry evidence, upload it publicly, and replace pending submission fields.
-6. Add a public social post URL only if targeting Most Viral Solution.
+1. Obtain and adjudicate two independent blind expert ratings for packet index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`.
+2. Add the local readiness ledger and minimal cockpit only after the complete R7 expert gate passes.
+3. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 

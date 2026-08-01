@@ -1,0 +1,1625 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 1,
+    "baseCommit": "29fbd3aae7313962867a5a5be46373976e9d95bc",
+    "targetCommit": "07fb919a70459af15588da1df87bda77da63e49c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 5784,
+    "sourceTreeBytes": 1235983,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/patterns.ts",
+      "src/types/FindSelected.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/Pattern.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/objects.test.ts",
+      "tests/record.test.ts",
+      "tests/records.test.ts"
+    ],
+    "preflightSha256": "189e6f8dbb8fbbce70f7fcf5aa9c4b16927495e5ce90fe7b870538d85ab0cefe"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 2,
+    "baseCommit": "38aa25dec41bcfab461c5027ff8df5794d7922b3",
+    "targetCommit": "999128b1c34c5dce4141eb64e4e35818cf7a5dba",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 89,
+    "sourceTreeBytes": 1163973,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/match.ts",
+      "src/types/Match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/narrow.test.ts"
+    ],
+    "preflightSha256": "acbb09ff7994770e99050cb715b998aad9d004e478e09d757b6c1befcf759ce6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 3,
+    "baseCommit": "03e8898b417a46b03d04bf77f40d66a1ec050894",
+    "targetCommit": "8517f7f3ce8c08ac306931164dac232b10a47c58",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 145,
+    "sourceTreeBytes": 1174186,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/BuildMany.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/deep-exclude.test.ts",
+      "tests/exhaustive-match.test.ts",
+      "tests/optional-props.test.ts"
+    ],
+    "preflightSha256": "604427799afc96bfdc9b065bdabe43166ea151973f1534840672eaf7f7dc9348"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 4,
+    "baseCommit": "672b5efdb9d095b069055451a43c01e1f1082460",
+    "targetCommit": "60af2168cf998c3d6a50fc8735a50a5009cc86bf",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 134,
+    "sourceTreeBytes": 1170283,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/match.ts",
+      "src/types/Match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-fallback.test.ts"
+    ],
+    "preflightSha256": "a868513154fc516e74981cccd6e07ae57d0b3a0f4f06e0480047b0481d49778e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 5,
+    "baseCommit": "4651f69aa339fa657ab4c5f982965f1f52a99fa3",
+    "targetCommit": "672b5efdb9d095b069055451a43c01e1f1082460",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 31,
+    "sourceTreeBytes": 1166390,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/is-matching.ts",
+      "src/patterns.ts"
+    ],
+    "changedTestPaths": [
+      "tests/is-matching.test.ts",
+      "tests/objects.test.ts"
+    ],
+    "preflightSha256": "d42371b45d67b2f26e48758bf53cf6cce2da26e0eea86256eca537a98c16e1fc"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 6,
+    "baseCommit": "1520b57b070235a5603eb53112c1452d970db307",
+    "targetCommit": "75e3967cb74ef59a64bf2c025b3ce6399d534892",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 78,
+    "sourceTreeBytes": 1164838,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/is-matching.ts"
+    ],
+    "changedTestPaths": [
+      "tests/is-matching.test.ts"
+    ],
+    "preflightSha256": "7ecae607c84ef196f169cff49ba021499986e1ffe59e6edd20911fc505349dc3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 7,
+    "baseCommit": "34f7a41d337e19f65ad5506ec50d135e7ca6c970",
+    "targetCommit": "c415e0c0dd0037f24819af57db5a3d9a6ace6d1d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 52,
+    "sourceTreeBytes": 1163165,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/is-matching.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/is-matching.test.ts"
+    ],
+    "preflightSha256": "7da3788bfd1f2d3e7b022d399b888740d4a97f7e95975bdb7c673d2190980613"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 8,
+    "baseCommit": "b5aa458c031c08150689be8c4a2d0dc0c2b10093",
+    "targetCommit": "ba71cf1f9a6f5ff966c913410f86627205aba72e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 84,
+    "sourceTreeBytes": 1162846,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/is-matching.ts",
+      "src/patterns.ts",
+      "src/types/FindSelected.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/infer.test.ts",
+      "tests/is-matching.test.ts",
+      "tests/matcher-protocol.test.ts",
+      "tests/not.test.ts"
+    ],
+    "preflightSha256": "eaef2b5f30f1e7575c864305e6a83e1377c11715113e1ea17b511180614e963b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 9,
+    "baseCommit": "c5778f3f9e8c0e9bcf05a1d14dda310977b57765",
+    "targetCommit": "e7fd119a910d77d55d2f65c367807057e94dcb80",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 16,
+    "sourceTreeBytes": 1882031,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/types/InvertPattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts"
+    ],
+    "preflightSha256": "340fbac16ea3e8af3d33e2f8d3918819a29f2ceb2681397d18d4d23937c96261"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 10,
+    "baseCommit": "b2e7566e1906068cba911825f27d76e6d53fc6c2",
+    "targetCommit": "99aa90e9248600b7f4a6bd2f85d294802164d7b5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 20,
+    "sourceTreeBytes": 1881689,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/errors.ts",
+      "src/index.ts",
+      "src/match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts"
+    ],
+    "preflightSha256": "f41c02598b34ad14fbcdfa0261204115fa4af45aaf96e4e5a78ff2f3d19fe379"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 11,
+    "baseCommit": "3f5978a0f36f6a602d3bb1dcc3c1974cb64077e7",
+    "targetCommit": "e74557d9aca8179ca11ecc9b71820c19c99d6602",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 58,
+    "sourceTreeBytes": 1880017,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/internals/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/objects.test.ts"
+    ],
+    "preflightSha256": "80aa603464322c2a283336941e205c2dc7994a57b22ff18aa9dfce324a6b01e6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 12,
+    "baseCommit": "1c81e6eb0185c2a5931edb3075e1ed5377f48c1a",
+    "targetCommit": "b0ae86bbccb84e18411e39a35fa80f523cc2075f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 77,
+    "sourceTreeBytes": 1878527,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/errors.ts",
+      "src/index.ts",
+      "src/match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts"
+    ],
+    "preflightSha256": "dd2a6b721fae7bb3c6a1fb61ab8a3b27aa11f38887b7df2c82ba0114b2ba2ae8"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 13,
+    "baseCommit": "7d0813115a8e8eb7743c6b53c983beb2378e90a0",
+    "targetCommit": "1a568a5fa2bb80637b5b768f852f949694d8aed5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 60,
+    "sourceTreeBytes": 1876512,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/patterns.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/strings.test.ts"
+    ],
+    "preflightSha256": "d5ce800ae0c2587045b9f14f5ced9997b6e3b4e8d8a865baf7883cf952e3fcfa"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 14,
+    "baseCommit": "43035d123ba19e30f466b254889b9d66f2d3868c",
+    "targetCommit": "cacf19a8dccdd1e7ad75aba2bd963d08974c1b9b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 39,
+    "sourceTreeBytes": 1874750,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/IsMatching.ts"
+    ],
+    "changedTestPaths": [
+      "tests/type-is-matching.test.ts",
+      "tests/wildcards.test.ts"
+    ],
+    "preflightSha256": "5a94d2d15dcc05d6704bd7d2ef55eb68bc20b4d397caedd57126cef9d8d0b511"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 15,
+    "baseCommit": "72e1079d6647690166ad83107223f3bb08e15e92",
+    "targetCommit": "19ae81e39e026dfd8475404af5513bda123160af",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 255,
+    "sourceTreeBytes": 1147623,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/extract-precise-value.test.ts",
+      "tests/helpers.test.ts",
+      "tests/type-error.test.ts",
+      "tests/wildcards.test.ts"
+    ],
+    "preflightSha256": "7fa3345f55c503b4d09237296846c9595fc01d25bf9cdd31cf8509ae383b3245"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 16,
+    "baseCommit": "ccb52b5638e399099fe67c0be2a59cf1dddd0e33",
+    "targetCommit": "36b85ea872d254c319acc0cb8e88ba0fa3c2f9fc",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 81,
+    "sourceTreeBytes": 1145379,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/patterns.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/wildcards.test.ts"
+    ],
+    "preflightSha256": "9609b25c75ac9a3c0d06d02a3106ba976067a31ea3321afcc2a72cfd3592d001"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 17,
+    "baseCommit": "2352f00bfe2f29cb6ec0d0dc792a03fea703d3de",
+    "targetCommit": "a287f412ae987d471883d1c60f0b0d4ba0c1980a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1925,
+    "sourceTreeBytes": 1143550,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/is-matching.ts"
+    ],
+    "changedTestPaths": [
+      "tests/is-matching.test.ts",
+      "tests/tsconfig.json"
+    ],
+    "preflightSha256": "765ae3c13c19d8749c9c30a50e5cae298ae9a0ba3fe311e33e7197007506e4a6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 18,
+    "baseCommit": "8f2158ff45ca051328479ef1d94105634ad0035d",
+    "targetCommit": "b6dfe6808721e7ac82b4daa99b196c872ce6637c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 119,
+    "sourceTreeBytes": 1144285,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/types/BuildMany.ts"
+    ],
+    "changedTestPaths": [
+      "tests/large-exhaustive.test.ts"
+    ],
+    "preflightSha256": "a277d49382d1502608a5c52353eb4e87d87e15fe68ef8dc519924ce9c0f7a096"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 19,
+    "baseCommit": "e36debeaf57f227e0b30d418beb8f0800b8d0335",
+    "targetCommit": "8f2158ff45ca051328479ef1d94105634ad0035d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 38,
+    "sourceTreeBytes": 1142683,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/Match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/readonly.test.ts"
+    ],
+    "preflightSha256": "fd85bb590ea32b0bee9fa00e447f3fce19ea917a8c78e310a0731cf537273459"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 20,
+    "baseCommit": "369e88ca75a0518bd7a46207d7531fccf8e4895c",
+    "targetCommit": "37f4a1b243159bd57243e20aa459711c8a69f89d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 36,
+    "sourceTreeBytes": 1109689,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/branded-nominal-types.test.ts"
+    ],
+    "preflightSha256": "e00c4a4b319b909e76ca3b22ae8f6c338360744fa9bbdfeff45792e4bd7b7fe9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 21,
+    "baseCommit": "8e9e3302db42d82addc5f94997b2c4d5db3ee273",
+    "targetCommit": "a612fa290555b3aa35244182ef520a2cb0281d8c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1119,
+    "sourceTreeBytes": 1108818,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/internals/symbols.ts",
+      "src/patterns.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/narrow.test.ts"
+    ],
+    "preflightSha256": "feb72c236dfc0e17e95b95dd123c2b52d537d21cf3f0983d383f45c35f4d93fd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 22,
+    "baseCommit": "30ba1f06fd9043948c928115664e954f675130f9",
+    "targetCommit": "c52af6a2fa75ac37d8b8e1a1b9832445e4c4f580",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 46,
+    "sourceTreeBytes": 1106544,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/InvertPattern.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/infer.test.ts",
+      "tests/readonly.test.ts"
+    ],
+    "preflightSha256": "feff4b985c2fbcbb5d667d0db3f403201bc2736332b79cb52938ec497e552504"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 23,
+    "baseCommit": "f147f96b0efaa5778c6955e7c598a7fd5ae5733c",
+    "targetCommit": "803554db92e81ab22f049019266e5d2ddb00de5b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 11785,
+    "sourceTreeBytes": 1105120,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "examples/one-file-demo.ts",
+      "src/internals/helpers.ts",
+      "src/internals/symbols.ts",
+      "src/is-matching.ts",
+      "src/match.ts",
+      "src/patterns.ts",
+      "src/types/BuildMany.ts",
+      "src/types/DistributeUnions.ts",
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/FindSelected.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/IsMatching.ts",
+      "src/types/Match.ts",
+      "src/types/Pattern.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/bigints.test.ts",
+      "tests/chainable.test.ts",
+      "tests/deep-exclude.test.ts",
+      "tests/distribute-unions.test.ts",
+      "tests/exhaustive-match.test.ts",
+      "tests/extract-precise-value.test.ts",
+      "tests/find-selected.test.ts",
+      "tests/generics.test.ts",
+      "tests/helpers.test.ts",
+      "tests/intersection-and-union.test.ts",
+      "tests/invert-pattern.test.ts",
+      "tests/large-exhaustive.test.ts",
+      "tests/lists.test.ts",
+      "tests/maps.test.ts",
+      "tests/matcher-protocol.test.ts",
+      "tests/multiple-patterns.test.ts",
+      "tests/nesting.test.ts",
+      "tests/numbers.test.ts",
+      "tests/optional.test.ts",
+      "tests/otherwise.test.ts",
+      "tests/pattern.test.ts",
+      "tests/readonly.test.ts",
+      "tests/real-world.test.ts",
+      "tests/records.test.ts",
+      "tests/return-type.test.ts",
+      "tests/select.test.ts",
+      "tests/sets.test.ts",
+      "tests/strings.test.ts",
+      "tests/tuples.test.ts",
+      "tests/type-error.test.ts",
+      "tests/type-is-matching.test.ts",
+      "tests/types-catalog/utils.ts",
+      "tests/types.test.ts",
+      "tests/unions.test.ts",
+      "tests/variadic-tuples.test.ts",
+      "tests/when.test.ts"
+    ],
+    "preflightSha256": "7b13ee38566d45e821e1a55abf62c7605d08ea1aa9d8c2ddbb325317e209fabe"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 24,
+    "baseCommit": "ec38eace0c87baf65c042044cf41b491f5730014",
+    "targetCommit": "3c36992ee97193993d34d770216b5d637fefb6b1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 42,
+    "sourceTreeBytes": 1199261,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/types/ExtractPreciseValue.ts"
+    ],
+    "changedTestPaths": [
+      "tests/optional-props.test.ts"
+    ],
+    "preflightSha256": "e8016a3254f22ed22e18cc988d4a30eba510ea163c912328558ca0f3156df4b7"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 25,
+    "baseCommit": "52ba83cf113248c07928c9d9a8c0a09c5afc77d9",
+    "targetCommit": "9274acadc8cda428f2149fecbe5f949d422c96e3",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 21,
+    "sourceTreeBytes": 1198229,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/patterns.ts"
+    ],
+    "changedTestPaths": [
+      "tests/lists.test.ts"
+    ],
+    "preflightSha256": "e9b9988d54eaea2e720763ed29d8063fdd72e53d72c8d293fd57d3ac82e6aa0e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 26,
+    "baseCommit": "3a7fcbfbbf66b651648c6e7433b4a640f8543b88",
+    "targetCommit": "e6c9090172d86cfebbaeb7d5c7896b037909d90f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 16,
+    "sourceTreeBytes": 1197651,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts",
+      "tests/tuples.test.ts"
+    ],
+    "preflightSha256": "17b8987b59dd2f0db17cbe48f10540a32c9c6a833e235e1ac3ab782d6c5fe09d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 27,
+    "baseCommit": "64a07228601afff366aa129c8995bb958d2f0d58",
+    "targetCommit": "12aa9d38e935e181d8e49418d0df59742bf9a3ff",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 91,
+    "sourceTreeBytes": 1197434,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/patterns.ts",
+      "src/types/Match.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/not.test.ts",
+      "tests/types.test.ts"
+    ],
+    "preflightSha256": "c729649a6bb1f627a798064146df5872335912312c908302d08a4dc709504722"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 28,
+    "baseCommit": "2aa12fa7c5aa1dfcbac7bb547453166b6b8f7c26",
+    "targetCommit": "62e6fa774ab850f1e9a37abc830b1f7d0da3a914",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 45,
+    "sourceTreeBytes": 1195251,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/InvertPattern.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/not.test.ts"
+    ],
+    "preflightSha256": "96e2eb8a12ee9d333447054aafd6f1c3f6be0de0b9aad0988bfcf05afe38abc9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 29,
+    "baseCommit": "5a025f496cc4141a7285f414ee182372ea7f2c31",
+    "targetCommit": "4c55fdb4b5bd454410d98643e3725963aa3447bd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 58,
+    "sourceTreeBytes": 1193999,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/InvertPattern.ts",
+      "src/types/Match.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts",
+      "tests/types.test.ts"
+    ],
+    "preflightSha256": "c564bb1ee536f5d4af1ac5ce6569e5faac3d92a8866dcb6f4ee83da51b2f8f7b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 30,
+    "baseCommit": "33c521bd33914754871fbe021be3fb0e02d4e163",
+    "targetCommit": "5a025f496cc4141a7285f414ee182372ea7f2c31",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 670,
+    "sourceTreeBytes": 1193522,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/InvertPattern.ts",
+      "src/types/Match.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/instance-of.test.ts",
+      "tests/intersection-and-union.test.ts",
+      "tests/multiple-patterns.test.ts",
+      "tests/not.test.ts",
+      "tests/optional.test.ts",
+      "tests/real-world.test.ts",
+      "tests/tuples.test.ts",
+      "tests/type-error.test.ts",
+      "tests/types.test.ts",
+      "tests/unions.test.ts"
+    ],
+    "preflightSha256": "8fe2c8f98f81262659a04c5f935eba38f33bdec530bcac483e80ecd4c600afb7"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 31,
+    "baseCommit": "61608ee6849c3bf98379166fa930e73da47039fc",
+    "targetCommit": "252ce5bc04b08a9e4c0377ea82c97c12d30621e6",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 74,
+    "sourceTreeBytes": 951056,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/BuildMany.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/helpers.test.ts",
+      "tests/intersection-and-union.test.ts"
+    ],
+    "preflightSha256": "36c2325b9e66cb70ebb2c2d0e3b1d4e03651be5364206378ef1b68446c856642"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 32,
+    "baseCommit": "33567840ed5e5809c2df85b9e7df5c996910280f",
+    "targetCommit": "54a39c03dd35f150d1da321e039b94b98c9d01dd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 42,
+    "sourceTreeBytes": 946154,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/patterns.ts"
+    ],
+    "changedTestPaths": [
+      "tests/select.test.ts"
+    ],
+    "preflightSha256": "b743763fa2fe68ef77db51d9f658e6429ea14a23178ade1828838ad1da698cfa"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 33,
+    "baseCommit": "2d2575e1c185e0bcd092c082744300a4ef44c9a1",
+    "targetCommit": "3910835823759471bafc30f5314a5145fe2bfc9e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 20624,
+    "sourceTreeBytes": 933924,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "examples/one-file-demo.ts",
+      "src/guards.ts",
+      "src/index.ts",
+      "src/internals/helpers.ts",
+      "src/internals/symbols.ts",
+      "src/is-matching.ts",
+      "src/match.ts",
+      "src/patterns.ts",
+      "src/symbols.ts",
+      "src/types/BuildMany.ts",
+      "src/types/DistributeUnions.ts",
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/FindSelected.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/IsMatching.ts",
+      "src/types/Match.ts",
+      "src/types/Pattern.ts",
+      "src/types/helpers.ts",
+      "src/wildcards.ts"
+    ],
+    "changedTestPaths": [
+      "tests/branded-nominal-types.test.ts",
+      "tests/build-many.test.ts",
+      "tests/deep-exclude.test.ts",
+      "tests/distribute-unions.test.ts",
+      "tests/exhaustive-match.test.ts",
+      "tests/extract-precise-value.test.ts",
+      "tests/find-selected.test.ts",
+      "tests/generics.test.ts",
+      "tests/helpers.test.ts",
+      "tests/instance-of.test.ts",
+      "tests/intersection-and-union.test.ts",
+      "tests/invert-pattern.test.ts",
+      "tests/is-matching.test.ts",
+      "tests/large-exhaustive.test.ts",
+      "tests/lists.test.ts",
+      "tests/maps.test.ts",
+      "tests/multiple-patterns.test.ts",
+      "tests/nesting.test.ts",
+      "tests/not.test.ts",
+      "tests/numbers.test.ts",
+      "tests/optional-props.test.ts",
+      "tests/optional.test.ts",
+      "tests/otherwise.test.ts",
+      "tests/output-type.test.ts",
+      "tests/pattern.test.ts",
+      "tests/primitive-values.test.ts",
+      "tests/real-world.test.ts",
+      "tests/records.test.ts",
+      "tests/select.test.ts",
+      "tests/sets.test.ts",
+      "tests/tsconfig.json",
+      "tests/tuples.test.ts",
+      "tests/type-error.test.ts",
+      "tests/type-is-matching.test.ts",
+      "tests/types-catalog/definition.ts",
+      "tests/types-catalog/utils.ts",
+      "tests/types.test.ts",
+      "tests/unions.test.ts",
+      "tests/when.test.ts",
+      "tests/wildcards.test.ts"
+    ],
+    "preflightSha256": "a4bb4dbfa0a3b9a18dc06e4093408963ce0d9c0eaec7e0a3b8e502377cf69316"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 34,
+    "baseCommit": "88c41a297973e4ca209eb2d07aab6d3536de0ae4",
+    "targetCommit": "2d750742d95d38e4cab5ff1f2915050f2081441a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 42,
+    "sourceTreeBytes": 535711,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/types/Match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/types.test.ts"
+    ],
+    "preflightSha256": "1c163a18047986bf5e6a34b73f9823506d4dfd4f943fb266a1ea1eecf9b23aae"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 35,
+    "baseCommit": "d2887def75208543ee5e7720f0206b0adff8bdb5",
+    "targetCommit": "919ed46af1281d5c7d2da7f80ef4994a67c72175",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 143,
+    "sourceTreeBytes": 535224,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/guards.ts",
+      "src/index.ts",
+      "src/symbols.ts",
+      "src/types/FindSelected.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/find-selected.test.ts"
+    ],
+    "preflightSha256": "99869cc46c95fe00c5c70b2c01975a6253acccc7ccffbd422e6772da766a75c1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 36,
+    "baseCommit": "569d73cf824ffbe19dbfd8a70653d9d51a7c2fba",
+    "targetCommit": "111e61e649165cb7fd12d1b007b4c036c6365709",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 53,
+    "sourceTreeBytes": 536174,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/extract-precise-value.test.ts",
+      "tests/helpers.test.ts",
+      "tests/instance-of.test.ts"
+    ],
+    "preflightSha256": "779f36b12d082f64f38fef5c8c939ab2524c204c2ec7d588c6d542f38c3ca368"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 37,
+    "baseCommit": "3839cf642459c1654b48957cc63f25344caecc8b",
+    "targetCommit": "7c3af7273daceb5fdae2dde31eff28d4f9870017",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 48,
+    "sourceTreeBytes": 535306,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/extract-precise-value.test.ts",
+      "tests/instance-of.test.ts"
+    ],
+    "preflightSha256": "aa744624a1a4e6926ff3cdce5e50298a8b4ac6cd3f762483b8cbbf3fc95f0b6c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 38,
+    "baseCommit": "e0fbc373a09f31a51bd5f3af4dc507778677a76f",
+    "targetCommit": "fac944b2d109fba28c255fde36b08170e4fa25e8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 78,
+    "sourceTreeBytes": 532882,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/FindSelected.ts"
+    ],
+    "changedTestPaths": [
+      "tests/find-selected.test.ts",
+      "tests/nesting.test.ts",
+      "tests/not.test.ts"
+    ],
+    "preflightSha256": "90bbd33aa1d6c2c7d4f29496ab9a0cde9f3fe8998107c3b3fd6fe15d9f7e8a77"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 39,
+    "baseCommit": "8f0057ac06b45ff9e86697edafa67b3ce1d42c01",
+    "targetCommit": "16348e030dce9c3b5468af739bd7a3e5658bb408",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 19,
+    "sourceTreeBytes": 613019,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/wildcards.ts"
+    ],
+    "changedTestPaths": [
+      "tests/numbers.test.ts"
+    ],
+    "preflightSha256": "de94c21c19f05695741f0379162e39a27880bdb4491f7d3a73ec7e3ea3effdc0"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 40,
+    "baseCommit": "717e4a926e64e62228e9620e4993345c0fb28a33",
+    "targetCommit": "259abb8b9082c27e6ee5ed70aa4242399a0f11af",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 21,
+    "sourceTreeBytes": 612859,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/wildcards.ts"
+    ],
+    "changedTestPaths": [
+      "tests/numbers.test.ts"
+    ],
+    "preflightSha256": "76c983f27afa1484c235a88fa72b34597195e7662c87149a1662a77efde14c8c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 41,
+    "baseCommit": "5c0faacffa6b1f7b91d56890fa5f51e1561cfa90",
+    "targetCommit": "f43e324da10f6dbba6f1885fc3ac850847917350",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 53,
+    "sourceTreeBytes": 611907,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/InvertPattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts",
+      "tests/invert-pattern.test.ts"
+    ],
+    "preflightSha256": "0e7a336de61d269da8de0992d0c1563158deaf8f671861a7f0d8d464f3fb835e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 42,
+    "baseCommit": "5bfb9bc54df40a8af5eb52bf8f4ddb4b2429f771",
+    "targetCommit": "68be8c860b51fbc0fbbc9c8975728f4197cdfb26",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 18,
+    "sourceTreeBytes": 610248,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/index.ts",
+      "src/types/Match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/otherwise.test.ts"
+    ],
+    "preflightSha256": "dbbe850af52e4c5931fd84a036ba35f7531387e3d40baa35383ce59b70005f5b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 43,
+    "baseCommit": "8b7ed3378861fac6d718088f42063f3a67f9e8a2",
+    "targetCommit": "ffbe0635cc331dfc624d8aaef9937351ffc9ea92",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 32,
+    "sourceTreeBytes": 609901,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/unions.test.ts"
+    ],
+    "preflightSha256": "f12aac8972f29812cae28b2a3a7ac5101bfe735829ab41f8a291d74bc6fc0dd9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 44,
+    "baseCommit": "b07c2aefa1bb46e43eca63cf5f1695c104b93f6e",
+    "targetCommit": "6093de9d48ccc8ba38f00eaf25f1dc78a3a1fa6a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 31,
+    "sourceTreeBytes": 609098,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "tests/wildcards.test.ts"
+    ],
+    "preflightSha256": "54a8ee3ce115fc36ed393fb0bbada85427867f5d5b6208303d82a4c8ede2a065"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 45,
+    "baseCommit": "1ed386f72f936566fd46b102ac85f36666a2ce59",
+    "targetCommit": "35453e1857e9e511cf4ea6c9868da4a5a32eb14d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 172,
+    "sourceTreeBytes": 608621,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "tests/is-matching.test.ts"
+    ],
+    "preflightSha256": "0560157ce2ffd96d0eb6a62addaad78b107229edd40c435e57853a7692a0b550"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 46,
+    "baseCommit": "36679df67b9fd1c84f5465c208f06904dbbdc488",
+    "targetCommit": "90e75a75f7662aca390517652e57a57b84530b8d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 105,
+    "sourceTreeBytes": 604379,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/guards.ts",
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "tests/extract-precise-value.test.ts",
+      "tests/instance-of.test.ts"
+    ],
+    "preflightSha256": "10b31257f28e18fb9e1405391f07a121eddf775554fbed4a3d9eddc34ed1dd19"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 47,
+    "baseCommit": "8abd70eddce26cc9b8ac6c4e45cc2328be5202d8",
+    "targetCommit": "3f56327dbfe8ed64ac3fe926b8d905070d4bdcda",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 392,
+    "sourceTreeBytes": 601971,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/PatternType.ts",
+      "src/guards.ts",
+      "src/index.ts",
+      "src/symbols.ts",
+      "src/types/FindSelected.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/Pattern.ts",
+      "src/wildcards.ts"
+    ],
+    "changedTestPaths": [
+      "tests/invert-pattern.test.ts",
+      "tests/not.test.ts",
+      "tests/pattern.test.ts",
+      "tests/wildcards.test.ts"
+    ],
+    "preflightSha256": "0eb5ae45a0208d60da9ed9206c8c12b644d6de2afab8f35bf433a02f910e88f0"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 48,
+    "baseCommit": "b4dcc2b0183e5269a8eec92038cb08d0d4238326",
+    "targetCommit": "2857f7a932809ad4e72e12a92127204638cd5f4c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 69,
+    "sourceTreeBytes": 598658,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/branded-nominal-types.test.ts",
+      "tests/extract-precise-value.test.ts"
+    ],
+    "preflightSha256": "edf91ef8fd0bb69e508f9be403f20925ca2410fbf5b03824cafa65e022fc464f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 49,
+    "baseCommit": "d56608f388fbfde7a427433125e873327f3e1405",
+    "targetCommit": "5761a5e8103f627d4798de07aa8fd656e45a5de7",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 106,
+    "sourceTreeBytes": 637750,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "tests/primitive-values.test.ts"
+    ],
+    "preflightSha256": "c289e06d27e01dc6ec2ba0e49f1cd3b40432b43163d27626f8c5a1344b8421b1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 50,
+    "baseCommit": "ed1cf62b75e4858d338d96deb7339638bb95b960",
+    "targetCommit": "c55ba4a2791c7fc29e3130e98b4854f9e0d49305",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 241,
+    "sourceTreeBytes": 637145,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "tests/extract-precise-value.test.ts",
+      "tests/select.test.ts"
+    ],
+    "preflightSha256": "81138087d255e02002703385cceae3b9ffc9ff23c55d85f648e2256376505841"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 51,
+    "baseCommit": "081c3e8cefa3dc9e7d131cf9c938601070ae60f5",
+    "targetCommit": "b6b162cfbacd203b47938267be644b509832b096",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 28,
+    "sourceTreeBytes": 637095,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/index.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/not.test.ts"
+    ],
+    "preflightSha256": "c5fbd6b2a88b7b1519cc882136c6274a1c5c328901f54a88a05b5a9b143ed6e1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 52,
+    "baseCommit": "108a707914994593da738e68a2039ebb4b66cb8d",
+    "targetCommit": "4f9c143c51c9182c56ceda4e273b43eaf2b98ae5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 244,
+    "sourceTreeBytes": 621425,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/nesting.test.ts"
+    ],
+    "preflightSha256": "dae96ebaeae9392270e69e0c43a3e8e96668d49c2fb7aaa679657550e3a9cd28"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 53,
+    "baseCommit": "131824a864078a6c4205cce115ffc92489721db1",
+    "targetCommit": "e42438faa300c956cc54b2dc4c4f7e9bd8f08514",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 214,
+    "sourceTreeBytes": 410648,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/Match.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/multiple-patterns.test.ts",
+      "tests/output-type.test.ts"
+    ],
+    "preflightSha256": "fa0a73d49f668e0894cf9caccc4445d1ff1ccedb6d9da67a891f920d25eaf6ee"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 54,
+    "baseCommit": "0d54652eba06dce37dc76fd12622a1544061cd81",
+    "targetCommit": "d35a7c60011922f60b42548eef00d51ca7ce2517",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 117,
+    "sourceTreeBytes": 403795,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/build-many.test.ts",
+      "tests/deep-exclude.test.ts",
+      "tests/exhaustive-match.test.ts",
+      "tests/helpers.test.ts"
+    ],
+    "preflightSha256": "550470a5a87a02830bc6feb84d984d3fcfc32497d0a085817791021a75473f1c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 55,
+    "baseCommit": "26ccc5ba726068bfe0e6d06620f8e8c2ea74ad17",
+    "targetCommit": "bee623d1c1a8d850053ae6fd1692c0416eb15a9c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 99,
+    "sourceTreeBytes": 399996,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/extract-precise-value.test.ts",
+      "tests/optional-props.test.ts",
+      "tests/records.test.ts",
+      "tests/types.test.ts"
+    ],
+    "preflightSha256": "f08a6f0ed615f74a86668b1e42af28b2292ffb6fd3adeb4219a824581e9cb2f5"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 56,
+    "baseCommit": "df27ae261953420b14aed98efa546b6d36eb73a2",
+    "targetCommit": "96fa0823bb1e4778bf5971de42c60c00c456dd2d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 67,
+    "sourceTreeBytes": 397159,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/types/Match.ts"
+    ],
+    "changedTestPaths": [
+      "tests/when.test.ts"
+    ],
+    "preflightSha256": "5d9eea293cfe00f13efef18be13b0127685059e84b57cea16e1a3e36c1ff6115"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 57,
+    "baseCommit": "ebafd5fa7ad34db5aa2895fe8ce7e4c46431ff0a",
+    "targetCommit": "df27ae261953420b14aed98efa546b6d36eb73a2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 2239,
+    "sourceTreeBytes": 395782,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/PatternType.ts",
+      "src/index.ts",
+      "src/types/DistributeUnions.ts",
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/FindSelected.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/IsMatching.ts",
+      "src/types/Match.ts",
+      "src/types/Pattern.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/deep-exclude.test.ts",
+      "tests/distribute-unions.test.ts",
+      "tests/exhaustive-match.test.ts",
+      "tests/extract-precise-value.test.ts",
+      "tests/find-selected.test.ts",
+      "tests/generics.test.ts",
+      "tests/helpers.test.ts",
+      "tests/multiple-patterns.test.ts",
+      "tests/nesting.test.ts",
+      "tests/pattern.test.ts",
+      "tests/readonly.test.ts",
+      "tests/select.test.ts",
+      "tests/unions.test.ts",
+      "tests/when.test.ts"
+    ],
+    "preflightSha256": "969ff6fe5e8b81391e67a3aae11ce30090f43bdec4f0e8572c4026ab4b616130"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 58,
+    "baseCommit": "1f1ebc011eab4c82f9e282cf844b758520e26ce2",
+    "targetCommit": "cd1e0525ff8013ea54c265d5d837c0af717f77ab",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 193,
+    "sourceTreeBytes": 374195,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/Match.ts",
+      "src/types/Pattern.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts",
+      "tests/multiple-patterns.test.ts"
+    ],
+    "preflightSha256": "1782d6d6cd82f166b5a7e9699e360f84ecf6f7b457273e171ba6e1c5e1b3a58d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 59,
+    "baseCommit": "6aa3456b6839e3da32614fc68b057d9be0840f19",
+    "targetCommit": "0bd50927fc1e49d55e27851a3406569dfb00a1c5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 798,
+    "sourceTreeBytes": 375721,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/BuildMany.ts",
+      "src/types/DeepExclude.ts",
+      "src/types/DistributeUnions.ts",
+      "src/types/ExtractPreciseValue.ts",
+      "src/types/FindSelected.ts",
+      "src/types/InvertPattern.ts",
+      "src/types/IsMatching.ts",
+      "src/types/Match.ts",
+      "src/types/Pattern.ts",
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/deep-exclude.test.ts",
+      "tests/distribute-unions.test.ts",
+      "tests/extract-precise-value.test.ts",
+      "tests/invert-pattern.test.ts",
+      "tests/multiple-patterns.test.ts",
+      "tests/readonly.test.ts"
+    ],
+    "preflightSha256": "28df50d93c0ea9e24ac2af096258b56759c97245c58ff19b479fa3805d4a776b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "ordinal": 60,
+    "baseCommit": "c978708605eec578a76aba35d87c30157a08aa3b",
+    "targetCommit": "6aa3456b6839e3da32614fc68b057d9be0840f19",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 78,
+    "sourceTreeBytes": 369671,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/types/helpers.ts"
+    ],
+    "changedTestPaths": [
+      "tests/exhaustive-match.test.ts",
+      "tests/multiple-patterns.test.ts"
+    ],
+    "preflightSha256": "f92ce7d38596f6a536dafcc6d1be76bcc9f5fd15a6d62986306ff1c15b7c716d"
+  }
+]
