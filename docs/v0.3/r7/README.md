@@ -11,7 +11,7 @@ From `extension/`:
 
 ```powershell
 npm run r7:corpus -- scan <repositories.json> <repository-id> <external-git-clone> <new-preflight.json>
-npm run r7:corpus -- provision <repositories.json> <repository-id> <preflight.json> <external-git-clone> <new-evidence.json> [prior-evidence.json]
+npm run r7:corpus -- provision <repositories.json> <repository-id> <preflight.json> <external-git-clone> <new-evidence.json> [prior-evidence.json] [eligible-limit]
 npm run r7:corpus -- complete <preflight.json> <provision-evidence.json> <new-candidates.json>
 npm run r7:corpus -- merge <candidates.json> <candidates.json> [...] <new-candidates.json>
 npm run r7:corpus -- freeze <repositories.json> <candidates.json> <new-manifest.json>
@@ -24,6 +24,8 @@ Provisioning uses at most three isolated native Docker-volume workspaces concurr
 For pnpm repositories, the controller installs the registered pnpm version into the candidate's Corepack cache, disables project-version substitution, creates `/work/.pureflow-bin` with an exact shell-free `mkdir` invocation, and enables a disposable shim there. This bootstrap is hashed separately from the unchanged registered install/test argv. Provision artifacts expose typed install/test booleans for diagnosis while retaining command output only as bounded hashes.
 
 Resume evidence is immutable input, never overwritten. The provisioner skips recorded targets, advances in ordinal order, and sizes each batch to the remaining eligible slots so it never executes a candidate after the tenth passing base/target pair.
+
+The optional `eligible-limit` lowers that ceiling when earlier registrations leave fewer than ten global corpus slots. It must be between 1 and 10 and follows an explicit prior-evidence input, which may be `empty-evidence.json`; this keeps the stop reason auditable.
 
 The first registration pass found no lockfile-backed coarse candidates in `p-queue` or `ajv`. Under the preregistered replacement rule, `ofetch`, `defu`, and `hookable` were appended before any compiler outcome was inspected. Registration array order is sampling order; the freezer stops once 30 eligible patches exist and never uses more than 10 from one repository.
 

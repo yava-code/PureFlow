@@ -1,12 +1,20 @@
 import { describe, expect, it } from "vitest";
 import {
   buildCorpusDockerArgs,
+  provisionBatchSize,
   selectProvisionCandidates,
   type CorpusDockerInvocation,
 } from "../src/corpus/provision";
 import type { CandidatePreflight } from "../src/corpus/scan";
 
 describe("R7 corpus provisioning", () => {
+  it("bounds a repository run to the remaining global corpus slots", () => {
+    expect(provisionBatchSize(0, 2)).toBe(2);
+    expect(provisionBatchSize(1, 2)).toBe(1);
+    expect(provisionBatchSize(2, 2)).toBe(0);
+    expect(() => provisionBatchSize(0, 0)).toThrow("between 1 and 10");
+  });
+
   it("selects only the first ten structurally viable candidates", () => {
     const drafts = Array.from({ length: 15 }, (_, index) => draft(index + 1));
     drafts[0]!.lockfilePresent = false;

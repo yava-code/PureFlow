@@ -53,6 +53,14 @@ export function selectProvisionCandidates(drafts: readonly CandidatePreflight[])
   return selected;
 }
 
+export function provisionBatchSize(accepted: number, eligibleLimit = 10): number {
+  if (!Number.isSafeInteger(eligibleLimit) || eligibleLimit < 1 || eligibleLimit > 10) {
+    throw new Error("eligibleLimit must be between 1 and 10");
+  }
+  if (!Number.isSafeInteger(accepted) || accepted < 0) throw new Error("accepted count is invalid");
+  return Math.min(3, Math.max(0, eligibleLimit - accepted));
+}
+
 export function buildCorpusDockerArgs(invocation: CorpusDockerInvocation): string[] {
   if (!/^pureflow-r7-corpus-[0-9a-f]{24}$/.test(invocation.containerName)) throw new Error("Invalid corpus container name");
   if (invocation.network !== "bridge" && invocation.network !== "none") throw new Error("Invalid corpus network mode");
@@ -96,6 +104,7 @@ export async function provisionRepository(
   registration: RepositoryRegistration,
   drafts: readonly CandidatePreflight[],
   prior: Readonly<Record<string, ProvisionEvidence>> = {},
+  eligibleLimit = 10,
 ): Promise<Record<string, ProvisionEvidence>> {
   const selected = selectProvisionCandidates(drafts);
   const evidence: Record<string, ProvisionEvidence> = structuredClone(prior);
@@ -104,8 +113,10 @@ export async function provisionRepository(
     return item?.basePassed === true && item.targetPassed === true;
   }).length;
   const pending = selected.filter(({ targetCommit }) => evidence[targetCommit] === undefined);
-  for (let offset = 0; offset < pending.length && accepted < 10;) {
-    const batchSize = Math.min(3, 10 - accepted);
+  provisionBatchSize(accepted, eligibleLimit);
+  if (accepted > eligibleLimit) throw new Error("Prior evidence exceeds the eligible limit");
+  for (let offset = 0; offset < pending.length && accepted < eligibleLimit;) {
+    const batchSize = provisionBatchSize(accepted, eligibleLimit);
     const batch = pending.slice(offset, offset + batchSize);
     offset += batch.length;
     const results = await Promise.all(batch.map(async (draft) => ({
