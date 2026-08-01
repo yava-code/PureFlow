@@ -81,6 +81,8 @@ export function buildCorpusDockerArgs(invocation: CorpusDockerInvocation): strin
     "--env", "CI=1",
     "--env", "HOME=/tmp",
     "--env", "COREPACK_HOME=/corepack",
+    "--env", "COREPACK_ENABLE_PROJECT_SPEC=0",
+    "--env", "PATH=/work/.pureflow-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
     "--env", "npm_config_update_notifier=false",
     "--entrypoint", invocation.argv[0]!,
     R7_NODE_IMAGE,
@@ -153,7 +155,7 @@ async function provisionRevision(
   revision: string,
   registration: RepositoryRegistration,
   corepackVolume: string,
-): Promise<{ install: CommandReceipt; test: CommandReceipt | null }> {
+): Promise<{ bootstrap: CommandReceipt[]; install: CommandReceipt; test: CommandReceipt | null }> {
   const archive = join(root, `${label}.tar`);
   await runFile("git", ["archive", "--format=tar", `--output=${archive}`, revision], {
     cwd: repository,
@@ -165,13 +167,34 @@ async function provisionRevision(
   await createVolume(workspaceVolume);
   try {
     await seedVolume(workspaceVolume, archive);
-    const install = await runDocker({
+    const bootstrap: CommandReceipt[] = [];
+    if (registration.packageManager === "pnpm") {
+      bootstrap.push(await runDocker({
+        containerName: containerName(),
+        workspaceVolume,
+        corepackVolume,
+        network: "bridge",
+        argv: ["corepack", "install", "--global", `pnpm@${registration.packageManagerVersion}`],
+      }, 2 * 60_000));
+      if (bootstrap[0]!.exitCode === 0) {
+        bootstrap.push(await runDocker({
+          containerName: containerName(),
+          workspaceVolume,
+          corepackVolume,
+          network: "none",
+          argv: ["corepack", "enable", "--install-directory", "/work/.pureflow-bin", "pnpm"],
+        }, 60_000));
+      }
+    }
+    const bootstrapPassed = bootstrap.every(({ exitCode }) => exitCode === 0) &&
+      (registration.packageManager !== "pnpm" || bootstrap.length === 2);
+    const install = bootstrapPassed ? await runDocker({
       containerName: containerName(),
       workspaceVolume,
       corepackVolume,
       network: "bridge",
       argv: registration.installArgv,
-    }, 8 * 60_000);
+    }, 8 * 60_000) : failedPrerequisite();
     const test = install.exitCode === 0
       ? await runDocker({
           containerName: containerName(),
@@ -181,7 +204,7 @@ async function provisionRevision(
           argv: registration.testArgv,
         }, 8 * 60_000)
       : null;
-    return { install, test };
+    return { bootstrap, install, test };
   } finally {
     await removeVolume(workspaceVolume);
   }
@@ -216,6 +239,11 @@ function receipt(exitCode: number | null, timedOut: boolean, started: number, st
     stdoutSha256: rawSha256(stdout),
     stderrSha256: rawSha256(stderr),
   };
+}
+
+function failedPrerequisite(): CommandReceipt {
+  const empty = Buffer.alloc(0);
+  return receipt(null, false, Date.now(), empty, Buffer.from("controller bootstrap failed"));
 }
 
 function containerName(): string {

@@ -28,6 +28,7 @@ describe("R7 corpus provisioning", () => {
     expect(testArgs).toContain("--read-only");
     expect(testArgs).toContain("no-new-privileges");
     expect(testArgs).toContain("ALL");
+    expect(testArgs).toContain("PATH=/work/.pureflow-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin");
     expect(testArgs.slice(-3)).toEqual([expect.stringMatching(/^node@sha256:/), "pnpm", "test"]);
     expect(testArgs).not.toContain("sh");
     expect(testArgs).not.toContain("bash");
