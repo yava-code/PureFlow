@@ -383,3 +383,13 @@ Evidence: `docs/v0.3/ADR-008-EVIDENCE-CARRYING-GENERATION.md`; updated PRD, thes
 - Added a three-arm ablation against autonomous explanation and shadow-only prediction. No product-effectiveness, live-influence, or skill-retention result is claimed.
 
 Evidence: `docs/v0.3/ADR-009-DECISION-FUTURES.md`; updated PRD, thesis, research, project state, completion audit, and v0.3 index. Implementation remains gated by the complete two-rater R7 expert audit.
+
+## 2026-08-01 — Combined R8 human-control protocol
+
+- Replaced the outdated three-condition delayed-transfer design with a draft four-condition protocol: Autonomous, fixed Active comparator, Shadow control, and Full PureFlow with genuine Decision Futures.
+- Mapped the original product goal to behavioral evidence for autonomy throughput, total change accountability, executable control, real integration authority, voluntary attention, and AI-off takeover.
+- Defined an intention-to-treat primary contrast of Full PureFlow versus Active comparator, followed by frozen mechanism tests of Full versus Shadow and Takeover Envelope calibration against confidence/exposure baselines.
+- Added delayed AI-off transfer, longer-delay and field boundaries, privacy/minimization rules, ordered analysis, event contracts, and kill criteria that remove mechanisms when they do not add behavioral value.
+- Grounded the design in current coding-skill and human-agency research without treating immediate quizzes, surveys, interviews, or target thresholds as product evidence.
+
+Evidence: `docs/v0.3/R8_COMBINED_PILOT_PROTOCOL.md` and updated experiment/execution handoff documents. No participants were enrolled, no target was measured, and implementation remains gated by the complete R7 expert audit plus R5/R6 runtime.
