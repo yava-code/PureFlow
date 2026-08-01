@@ -141,6 +141,8 @@ The router accepts the user's attention budget and readiness evidence. In v0.3 i
 
 After recovery episodes validate the mechanism, the next router experiment is speculative live steering: fork two viable designs, collect comparable executable evidence, and let the human's choice determine the integrated branch without requiring them to type the implementation.
 
+ADR-009 formalizes that later experiment as a Decision Future with a precommitted autonomous default, bounded integration deadline, false-fork abstention, live-influence evidence, and a Takeover Envelope. It remains gated and does not change the implemented R0–R4.5 path.
+
 ## Options considered
 
 ### Option 1: Extend the v0.1 Mentor and Focus Rep

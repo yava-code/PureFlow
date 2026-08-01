@@ -83,6 +83,12 @@ Retrieval questions can improve retention. They usually exercise recall or recog
 
 Approval is cheap to rubber-stamp, especially while several agents are running. A real design fork becomes useful only when the developer predicts trade-offs and later sees evidence from the chosen or counterfactual path.
 
+### Decision Futures
+
+PureFlow converts a small number of genuine live forks into bounded Decision Futures. Agents implement alternatives speculatively and continue unrelated work. Before decisive evidence is revealed, the developer predicts a consequence, chooses a discriminating observation, and may determine the branch that is actually integrated. A late or skipped choice never receives retroactive live-influence credit.
+
+This is the missing link between practice and ownership: the human makes the causal or architectural decision while the AI retains implementation work. Shadow control remains necessary for recovery practice, but it cannot substitute for all live authority.
+
 ### Manual coding quotas
 
 A fixed quota puts human work on the critical path and can allocate it to trivial glue. One five-minute diagnosis of a high-blast-radius invariant may create more useful ownership than manually typing hundreds of predictable lines.
@@ -141,6 +147,8 @@ Parallelism preserves throughput. It does not cause learning by itself. The epis
 
 Every changed line is either covered by a supported semantic unit with available provenance or visibly unattributed. PureFlow must not infer a convincing invariant for a line when the build plane and executable evidence do not provide one.
 
+ADR-008 makes this concrete as a bidirectional Intent Ledger. Agent-emitted intent links are untrusted claims; the ledger independently reconciles every changed line to a bounded semantic unit and labels the link `supported`, `claimed`, `unattributed`, `contradicted`, or `stale`. Derived artifacts may bind to a deterministic generation receipt. This creates navigable accountability without claiming that the developer read or memorized every token.
+
 ### Readiness of the operator
 
 For a critical seam, the developer can:
@@ -151,6 +159,8 @@ For a critical seam, the developer can:
 - safely modify the behavior;
 - recover a failure;
 - transfer the model to an adjacent task later.
+
+The Takeover Envelope lists where those claims remain current and contrasts them with the Autonomy Envelope where agents can execute. Divergence is visible by critical seam; it is not hidden behind one readiness percentage.
 
 The second property requires behavior, not self-report.
 

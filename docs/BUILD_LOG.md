@@ -350,3 +350,36 @@ Evidence: `docs/v0.3/results/R7_DEVELOPMENT_AUDIT.md` and immutable JSON receipt
 - Generated all 18 blind rating packets before outcomes, with index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`, and verified zero remaining audit containers/volumes.
 
 Evidence: `docs/v0.3/results/R7_HELD_OUT_AUDIT.md`, immutable execution receipts, and blind packet bundle. Full R7 remains blocked on two independent experienced TypeScript ratings and adjudication; R5/R6 have not started.
+
+## 2026-08-01 — R&D integration and Executable Operator Model proposal
+
+- Merged protected PR #18 into `codex/shadow-cockpit-rnd` after all five GitHub checks passed, then deleted the short-lived R7 head locally and from origin.
+- Retargeted the stale Jules infrastructure PR #8 away from `main` and into R&D, updated it from the current base, passed all five checks, merged it, and deleted the short-lived remote head. `main` remained untouched; origin now has only `main` and the single persistent coding branch `codex/shadow-cockpit-rnd`.
+- Audited the original product goal against current runtime evidence. The live agent plane, v0.3 cockpit, cold relay, delayed-transfer study, and skill-preservation claim remain incomplete; the automatic compiler gate is not substituted for product completion.
+- Proposed ADR-007: every meaningful agent checkpoint can produce tested software, an executable `observe → actuate → recover` surface, and a local Executable Operator Model containing only behaviorally supported causal claims.
+- Added the draft post-R7 specification with deterministic invalidation, shadow-control, context-starved relay, control-dividend, privacy, isolation, and ablation requirements.
+- Ran the spec-driven strict validator after correcting its required heading and traceability format: 98/100, no errors. Its only warning expects an HTTP method/path; the spec explicitly keeps this boundary local and injected in the extension host instead of inventing a network API.
+- Updated the PRD and v0.3 index so attention is selected from operator-model divergence and uncovered recovery routes rather than random functions, timer prompts, or question counts.
+
+Evidence: merged PRs [#18](https://github.com/yava-code/PureFlow/pull/18) and [#8](https://github.com/yava-code/PureFlow/pull/8); `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`; `docs/v0.3/OPERATOR_MODEL_SPEC.md`; `docs/v0.3/GOAL_COMPLETION_AUDIT.md`. ADR-007 remains proposed and implementation remains gated by two independent R7 expert ratings.
+
+## 2026-08-01 — Evidence-Carrying Generation proposal
+
+- Closed the remaining architecture gap between critical-seam takeover evidence and accountability for the rest of a large generated change.
+- Proposed ADR-008: a bidirectional Intent Ledger reconciles every changed line to a bounded semantic unit and labels its attribution `supported`, `claimed`, `unattributed`, `contradicted`, or `stale`.
+- Kept agent-emitted intent references untrusted, required independent structural/evidence joins, and prohibited ledger coverage from updating human readiness.
+- Added deterministic handling for generated artifacts, total changed-line reconciliation, negative trace-washing rules, a compact change-account UX, and a held-out ablation against raw diffs, AI summaries, and AST navigation.
+- Distinguished the proposal from domain DSLs, requirements traceability, proof-carrying code, and generated explanations. No product-effectiveness or skill-retention result is claimed.
+
+Evidence: `docs/v0.3/ADR-008-EVIDENCE-CARRYING-GENERATION.md`; updated PRD, thesis, project state, completion audit, and v0.3 index. Implementation remains gated by the complete two-rater R7 expert audit.
+
+## 2026-08-01 — Decision Futures and Takeover Envelope proposal
+
+- Closed the remaining architecture gap between off-path takeover practice and real live engineering authority.
+- Proposed ADR-009: agents speculatively implement viable alternatives and continue unrelated work while a bounded, precommitted Decision Future offers one high-leverage human choice at a low-cost breakpoint.
+- Distinguished on-time live influence from late counterfactual practice, autonomous default, skip, and integrity failure. A late agreement can never be upgraded into production-decision evidence.
+- Added false-fork abstention, immutable deadline/default authority, comparable-alternative rules, interruption-cost scheduling, and executable integration evidence.
+- Defined separate Autonomy and Takeover Envelopes so full agentic coding remains available while uncovered or stale human-control seams stay explicit.
+- Added a three-arm ablation against autonomous explanation and shadow-only prediction. No product-effectiveness, live-influence, or skill-retention result is claimed.
+
+Evidence: `docs/v0.3/ADR-009-DECISION-FUTURES.md`; updated PRD, thesis, research, project state, completion audit, and v0.3 index. Implementation remains gated by the complete two-rater R7 expert audit.
