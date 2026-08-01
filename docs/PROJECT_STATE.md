@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-01
 
-## Current branch milestone — R7 sandbox selected and corpus protocol frozen
+## Current branch milestone — R7 sandbox accepted; corpus protocol frozen
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -29,8 +29,9 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - Six R4.5 tests cover cross-platform golden claim/probe/attempt hashes, strict projection and catalog isolation, unstable/cross-project/hidden/malformed evidence rejection, capsule path/secret/ID redaction, precommitted prediction, prose-invariant observation, replay/late/identity failures, and timeout/cancellation/runner-error invalidation. The full local Windows extension suite passes 63/63; `npm run check`, production build, and VSIX packaging pass. Protected PR #15 run `30671499103` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`, so R4.5 acceptance is complete.
 - ADR-003 selects digest-pinned Linux containers through Docker Desktop/WSL2 as the replaceable Phase-B backend. A real local Windows probe verified outbound network failure, a read-only root, zero undeclared mounts, an unchanged `EROFS` oracle, memory/CPU/PID limits, dropped capabilities, `no-new-privileges`, descendant-container kill, and exact removal on Docker Desktop 4.61 / Engine 29.2.1.
 - `R7_PREREGISTRATION.md` freezes the repository/patch sampling algorithm, eligibility and exclusions, 12/18 development/held-out split, two-rater protocol, metrics, confidence intervals, adversarial cases, thresholds, and narrowing rules before corpus outcomes are inspected. Protected PR #16 run `30672257419` passed the required Linux, Windows, contract, web, and policy checks for the ADR/protocol change.
-- A Docker `SandboxRunner` candidate now exists on short-lived branch `codex/r7-docker-sandbox`. It validates exact requests and immutable commands, requires trust plus explicit project consent, resolves only opaque controller handles, verifies the pinned image and five live capabilities, emits the fixed network-none/read-only/resource-limited profile, checks oracle hashes before and after, bounds and redacts evidence, tombstones execution IDs, and performs exact-name cancellation/cleanup without host fallback.
-- Sixteen deterministic sandbox contract tests pass locally on Windows. A separate explicit Docker integration suite passed 2/2 against the selected digest on Docker Desktop: the active capability probe and a real frozen command in a path with spaces. The complete default extension suite passes 79/79 with the two provisioned-backend tests skipped; TypeScript and production build pass. Protected Linux/Windows PR evidence is still pending, so the runner is not accepted into the R&D branch yet.
+- The Docker `SandboxRunner` validates exact requests and immutable commands, requires trust plus explicit project consent, resolves only opaque controller handles, verifies the pinned image and five live capabilities, emits the fixed network-none/read-only/resource-limited profile, checks the exact oracle sources before and after, bounds and redacts evidence, tombstones execution IDs, and performs exact-name cancellation/cleanup without host fallback.
+- Sixteen deterministic sandbox contract tests pass locally on Windows. A separate explicit Docker integration suite passed 2/2 against the selected digest on Docker Desktop: the active capability probe and a real frozen command in a path with spaces. The complete default extension suite passes 79/79 with the two provisioned-backend tests skipped; TypeScript, production build, and VSIX packaging pass.
+- Protected PR #17 run `30674334938` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`. The Linux extension job explicitly provisioned the exact digest and passed the real Docker backend suite; Windows independently passed the deterministic contract suite. The R7 sandbox implementation gate is complete.
 - `CONCEPT_LAB_CONTROLLABILITY.md` records a post-R7 category extension: compile an executable `observe → actuate → recover` human control surface, select takeover cut sets, and let a context-starved agent continue writing code from human-selected evidence and directives. Dissent cases and control dividends remain hypotheses with explicit falsifiers, not implemented features.
 - The 30-patch corpus is not assembled. The runner candidate and local probe are not permission to begin corpus or participant execution before protected checks and R7 eligibility infrastructure pass.
 - The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
@@ -131,7 +132,6 @@ The repository contains no verified evidence that the owner submitted the final 
 | Input | Impact | Resolution |
 | --- | --- | --- |
 | The first live adapter is selected but no accessible Codex CLI is configured for this checkout | ADR-006 selects Codex App Server over local stdio, but the Microsoft Store packaged executable discovered here returns `Access denied` when launched from the repository shell | Keep replay R&D independent; the live spike must preflight a separately accessible, exact-version user-installed Codex CLI and fail closed when unavailable |
-| Docker `SandboxRunner` candidate is locally implemented but not merged or protected-tested | R7 corpus and human pilots still cannot execute third-party or arbitrary participant code; R0–R4.5 remain the accepted evidence boundary | Review and merge the short-lived R7 PR only after real protected Linux Docker plus Windows contract checks pass; never fall back to host execution |
 | Technical patch corpus is not assembled | Automatic episode-generation rate cannot be measured | Collect at least 30 consented or open-source test-backed TypeScript patches for R7 |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
 | Default-branch Jules scheduler awaits explicit merge approval | Scheduled/manual continuation is not installed on `main`; draft PR #8 remains isolated and the enable variable stays off | Owner explicitly says `merge #8`; then merge through protected `main`, remove the temporary infrastructure branch, and run one guarded canary through the protected R&D branch |
@@ -151,10 +151,9 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Complete protected review of the ADR-003 Docker `SandboxRunner` candidate without a host-execution fallback.
-2. Collect and freeze the preregistered 30 eligible patches, then run the recovery-plus-probe audit.
-3. Add the local readiness ledger and minimal cockpit only after the R7 gate passes.
-4. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
+1. Collect and freeze the preregistered 30 eligible patches, then run the recovery-plus-probe audit.
+2. Add the local readiness ledger and minimal cockpit only after the R7 corpus gate passes.
+3. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 

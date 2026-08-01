@@ -25,10 +25,10 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 ## Current truth
 
 - The released v0.1 VSCodium IDE exists and remains the runtime baseline.
-- The complete v0.3 Dual-Control product runtime is not implemented. R0–R4.5 implement and protect the reviewed-fixture path from canonical evidence through recovery judging and a precommitted Control Pulse. A Docker `SandboxRunner` candidate is locally implemented on a short-lived branch but is not accepted until protected checks pass. The readiness ledger, cockpit, corpus audit, and human pilot remain gated.
+- The complete v0.3 Dual-Control product runtime is not implemented. R0–R4.5 implement and protect the reviewed-fixture path from canonical evidence through recovery judging and a precommitted Control Pulse. The digest-pinned Docker `SandboxRunner` has passed local Windows and protected Linux/Windows gates. The readiness ledger, cockpit, corpus audit, and human pilot remain gated.
 - No retention, takeover, productivity, or usability target has been measured.
 - The first valid build is one test-backed vertical slice, not a full Cursor clone.
-- R0–R4.5 may execute only finite, repository-owned fixture states. ADR-003 selects Docker Desktop/WSL2; the candidate runner and local Windows integration suite are implementation evidence, but arbitrary participant or corpus code remains blocked until protected checks and the R7 collection gate pass.
+- R0–R4.5 remain the only completed product evidence path. ADR-003's sandbox implementation gate has passed, but arbitrary participant or corpus execution remains blocked until the preregistered collection, eligibility, and freeze artifacts exist.
 
 ## Architecture shorthand
 
