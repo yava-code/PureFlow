@@ -1,0 +1,18 @@
+# R7 corpus artifacts
+
+This directory contains metadata and hashes only. Third-party source, dependencies, logs with absolute paths, and compiler outcomes do not belong here.
+
+- `repositories.json` is the registration frozen before eligibility inspection.
+- `preflight-<repository>.json` is emitted by the read-only Git scanner.
+- provisioning evidence is collected separately from clean base/target environments.
+- `corpus-manifest.json` may be created only after exactly 30 candidates have complete evidence.
+
+From `extension/`:
+
+```powershell
+npm run r7:corpus -- scan <repositories.json> <repository-id> <external-git-clone> <new-preflight.json>
+npm run r7:corpus -- complete <preflight.json> <provision-evidence.json> <new-candidates.json>
+npm run r7:corpus -- freeze <repositories.json> <candidates.json> <new-manifest.json>
+```
+
+Every output command refuses to overwrite an existing artifact. The scanner never checks out a revision or runs repository code. Provisioning and execution remain separate so a static scan cannot manufacture a passing test result.

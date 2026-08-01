@@ -1,0 +1,41 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "p-queue",
+    "url": "https://github.com/sindresorhus/p-queue.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "180ab9e25cd10b6f548767d7176076b50d25e188",
+    "nodeVersion": "22.18.0",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.9.3",
+    "installArgv": ["npm", "ci", "--ignore-scripts"],
+    "testArgv": ["npm", "test"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "180ab9e25cd10b6f548767d7176076b50d25e188"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ts-pattern",
+    "url": "https://github.com/gvergnaud/ts-pattern.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "c92ca435c7e1827e0fd55c539080ef1bfd6fe3f0",
+    "nodeVersion": "22.18.0",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.9.3",
+    "installArgv": ["npm", "ci", "--ignore-scripts"],
+    "testArgv": ["npm", "test", "--", "--runInBand"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "c92ca435c7e1827e0fd55c539080ef1bfd6fe3f0"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "url": "https://github.com/ajv-validator/ajv.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "f177fe323420ccb23e1a79445fd470cbf80aee7c",
+    "nodeVersion": "22.18.0",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.9.3",
+    "installArgv": ["npm", "ci", "--ignore-scripts"],
+    "testArgv": ["npm", "run", "test-spec", "--", "--forbid-only"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "f177fe323420ccb23e1a79445fd470cbf80aee7c"]
+  }
+]
