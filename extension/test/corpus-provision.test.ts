@@ -35,15 +35,15 @@ describe("R7 corpus provisioning", () => {
 
   it("rejects unsafe mount and executable material", () => {
     expect(() => buildCorpusDockerArgs(invocation("none", ["sh", "-c", "npm test"]))).toThrow("executable");
-    expect(() => buildCorpusDockerArgs({ ...invocation("none", ["npm", "test"]), workspace: "C:\\bad,path" })).toThrow("mount");
+    expect(() => buildCorpusDockerArgs({ ...invocation("none", ["npm", "test"]), workspaceVolume: "bad-volume" })).toThrow("mount");
   });
 });
 
 function invocation(network: "bridge" | "none", argv: string[]): CorpusDockerInvocation {
   return {
     containerName: "pureflow-r7-corpus-0123456789abcdef01234567",
-    workspace: "C:\\tmp\\corpus",
-    corepackHome: "C:\\tmp\\corepack",
+    workspaceVolume: "pureflow-r7-corpus-w-0123456789abcdef01234567",
+    corepackVolume: "pureflow-r7-corpus-c-0123456789abcdef01234567",
     network,
     argv,
   };

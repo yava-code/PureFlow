@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { execFile } from "node:child_process";
-import { mkdir, mkdtemp, rm } from "node:fs/promises";
+import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { promisify } from "node:util";
@@ -13,12 +13,11 @@ const runFile = promisify(execFile);
 const dockerExecutable = process.platform === "win32"
   ? "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe"
   : "/usr/bin/docker";
-const tarExecutable = process.platform === "win32" ? "C:\\Windows\\System32\\tar.exe" : "/usr/bin/tar";
 
 export interface CorpusDockerInvocation {
   containerName: string;
-  workspace: string;
-  corepackHome: string;
+  workspaceVolume: string;
+  corepackVolume: string;
   network: "bridge" | "none";
   argv: string[];
 }
@@ -58,8 +57,8 @@ export function selectProvisionCandidates(drafts: readonly CandidatePreflight[])
 export function buildCorpusDockerArgs(invocation: CorpusDockerInvocation): string[] {
   if (!/^pureflow-r7-corpus-[0-9a-f]{24}$/.test(invocation.containerName)) throw new Error("Invalid corpus container name");
   if (invocation.network !== "bridge" && invocation.network !== "none") throw new Error("Invalid corpus network mode");
-  assertMount(invocation.workspace);
-  assertMount(invocation.corepackHome);
+  assertVolume(invocation.workspaceVolume);
+  assertVolume(invocation.corepackVolume);
   if (invocation.argv.length < 2 || !["npm", "corepack"].includes(invocation.argv[0]!)) {
     throw new Error("Corpus executable is not registered");
   }
@@ -76,8 +75,8 @@ export function buildCorpusDockerArgs(invocation: CorpusDockerInvocation): strin
     "--cpus", "2",
     "--pids-limit", "512",
     "--tmpfs", "/tmp:rw,noexec,nosuid,size=256m",
-    "--mount", bindMount(invocation.workspace, "/work"),
-    "--mount", bindMount(invocation.corepackHome, "/corepack"),
+    "--mount", volumeMount(invocation.workspaceVolume, "/work"),
+    "--mount", volumeMount(invocation.corepackVolume, "/corepack"),
     "--workdir", "/work",
     "--env", "CI=1",
     "--env", "HOME=/tmp",
@@ -113,11 +112,11 @@ async function provisionCandidate(
   draft: CandidatePreflight,
 ): Promise<ProvisionEvidence> {
   const root = await mkdtemp(join(tmpdir(), "pureflow-r7-provision-"));
-  const corepackHome = join(root, "corepack");
-  await mkdir(corepackHome);
+  const corepackVolume = volumeName("c");
+  await createVolume(corepackVolume);
   try {
-    const base = await provisionRevision(repository, root, "base", draft.baseCommit, registration, corepackHome);
-    const target = await provisionRevision(repository, root, "target", draft.targetCommit, registration, corepackHome);
+    const base = await provisionRevision(repository, root, "base", draft.baseCommit, registration, corepackVolume);
+    const target = await provisionRevision(repository, root, "target", draft.targetCommit, registration, corepackVolume);
     const record = {
       schemaVersion: 1,
       image: R7_NODE_IMAGE,
@@ -142,6 +141,7 @@ async function provisionCandidate(
       provisionEvidenceSha256: rawSha256(`pureflow/r7-provision-evidence-v1\n${canonicalJson(record)}`),
     };
   } finally {
+    await removeVolume(corepackVolume);
     await rm(root, { recursive: true, force: true });
   }
 }
@@ -152,39 +152,39 @@ async function provisionRevision(
   label: "base" | "target",
   revision: string,
   registration: RepositoryRegistration,
-  corepackHome: string,
+  corepackVolume: string,
 ): Promise<{ install: CommandReceipt; test: CommandReceipt | null }> {
-  const workspace = join(root, label);
   const archive = join(root, `${label}.tar`);
-  await mkdir(workspace);
   await runFile("git", ["archive", "--format=tar", `--output=${archive}`, revision], {
     cwd: repository,
     windowsHide: true,
     env: hostEnvironment(),
     maxBuffer: 1024 * 1024,
   });
-  await runFile(tarExecutable, ["-xf", archive, "-C", workspace], {
-    windowsHide: true,
-    env: hostEnvironment(),
-    maxBuffer: 1024 * 1024,
-  });
-  const install = await runDocker({
-    containerName: containerName(),
-    workspace,
-    corepackHome,
-    network: "bridge",
-    argv: registration.installArgv,
-  }, 8 * 60_000);
-  const test = install.exitCode === 0
-    ? await runDocker({
-        containerName: containerName(),
-        workspace,
-        corepackHome,
-        network: "none",
-        argv: registration.testArgv,
-      }, 8 * 60_000)
-    : null;
-  return { install, test };
+  const workspaceVolume = volumeName("w");
+  await createVolume(workspaceVolume);
+  try {
+    await seedVolume(workspaceVolume, archive);
+    const install = await runDocker({
+      containerName: containerName(),
+      workspaceVolume,
+      corepackVolume,
+      network: "bridge",
+      argv: registration.installArgv,
+    }, 8 * 60_000);
+    const test = install.exitCode === 0
+      ? await runDocker({
+          containerName: containerName(),
+          workspaceVolume,
+          corepackVolume,
+          network: "none",
+          argv: registration.testArgv,
+        }, 8 * 60_000)
+      : null;
+    return { install, test };
+  } finally {
+    await removeVolume(workspaceVolume);
+  }
 }
 
 async function runDocker(invocation: CorpusDockerInvocation, timeoutMs: number): Promise<CommandReceipt> {
@@ -222,12 +222,56 @@ function containerName(): string {
   return `pureflow-r7-corpus-${randomUUID().replaceAll("-", "").slice(0, 24)}`;
 }
 
-function bindMount(source: string, target: string): string {
-  return `type=bind,src=${source},dst=${target}`;
+function volumeMount(source: string, target: string): string {
+  return `type=volume,src=${source},dst=${target}`;
 }
 
-function assertMount(path: string): void {
-  if (!resolve(path) || /[,\0\r\n]/.test(path)) throw new Error("Unsafe corpus mount path");
+function assertVolume(value: string): void {
+  if (!/^pureflow-r7-corpus-[cw]-[0-9a-f]{24}$/.test(value)) throw new Error("Unsafe corpus volume mount");
+}
+
+function volumeName(kind: "c" | "w"): string {
+  return `pureflow-r7-corpus-${kind}-${randomUUID().replaceAll("-", "").slice(0, 24)}`;
+}
+
+async function createVolume(name: string): Promise<void> {
+  assertVolume(name);
+  await runFile(dockerExecutable, ["volume", "create", name], {
+    windowsHide: true,
+    env: dockerEnvironment(),
+    timeout: 15_000,
+    maxBuffer: 1024 * 1024,
+  });
+}
+
+async function removeVolume(name: string): Promise<void> {
+  assertVolume(name);
+  await runFile(dockerExecutable, ["volume", "rm", "--force", name], {
+    windowsHide: true,
+    env: dockerEnvironment(),
+    timeout: 15_000,
+    maxBuffer: 1024 * 1024,
+  }).catch(() => undefined);
+}
+
+async function seedVolume(volume: string, archive: string): Promise<void> {
+  assertVolume(volume);
+  if (/[,\0\r\n]/.test(archive)) throw new Error("Unsafe corpus archive mount");
+  const args = [
+    "container", "run", "--rm", "--name", containerName(),
+    "--network", "none", "--read-only",
+    "--cap-drop", "ALL", "--security-opt", "no-new-privileges",
+    "--memory", "256m", "--memory-swap", "256m", "--cpus", "1", "--pids-limit", "64",
+    "--mount", volumeMount(volume, "/work"),
+    "--mount", `type=bind,src=${archive},dst=/source.tar,readonly`,
+    "--entrypoint", "tar", R7_NODE_IMAGE, "-xf", "/source.tar", "-C", "/work",
+  ];
+  await runFile(dockerExecutable, args, {
+    windowsHide: true,
+    env: dockerEnvironment(),
+    timeout: 60_000,
+    maxBuffer: 1024 * 1024,
+  });
 }
 
 function hostEnvironment(): NodeJS.ProcessEnv {
