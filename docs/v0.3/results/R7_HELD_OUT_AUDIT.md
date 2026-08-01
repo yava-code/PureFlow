@@ -1,9 +1,13 @@
 # R7 held-out automatic audit
 
-**Date:** 2026-08-01  
-**Compiler freeze commit:** `ab1ea56`  
-**Freeze file:** `605b645e9cc27653515665ac002a4b1d9c1e6f36c6ddf3bffbf2be4d2081a81b`  
-**Held-out plan file:** `ff7e17e59b90f022379105bf116f7aaf158159d3b76001f600f01afc12304e40`  
+**Date:** 2026-08-01
+
+**Compiler freeze commit:** `ab1ea56`
+
+**Freeze file:** `605b645e9cc27653515665ac002a4b1d9c1e6f36c6ddf3bffbf2be4d2081a81b`
+
+**Held-out plan file:** `ff7e17e59b90f022379105bf116f7aaf158159d3b76001f600f01afc12304e40`
+
 **Summary:** `fe561009447e187e8c085ac499d62496816f2714fc4dcabccdb064ca97708942`
 
 ## Automatic result
