@@ -23,9 +23,10 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 17. [`OPERATOR_MODEL_SPEC.md`](OPERATOR_MODEL_SPEC.md) — draft post-R7 vertical-slice requirements, contracts, and ablations.
 18. [`ADR-008-EVIDENCE-CARRYING-GENERATION.md`](ADR-008-EVIDENCE-CARRYING-GENERATION.md) — proposed bidirectional Intent Ledger for total change accountability without passive full-diff review.
 19. [`ADR-009-DECISION-FUTURES.md`](ADR-009-DECISION-FUTURES.md) — proposed speculative live-steering protocol and project-scoped Takeover Envelope.
-20. [`GOAL_COMPLETION_AUDIT.md`](GOAL_COMPLETION_AUDIT.md) — requirement-by-requirement evidence separating infrastructure from the requested final product.
-21. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
-22. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
+20. [`R8_COMBINED_PILOT_PROTOCOL.md`](R8_COMBINED_PILOT_PROTOCOL.md) — draft four-condition human protocol for delayed takeover, live authority, accountability, and readiness calibration.
+21. [`GOAL_COMPLETION_AUDIT.md`](GOAL_COMPLETION_AUDIT.md) — requirement-by-requirement evidence separating infrastructure from the requested final product.
+22. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
+23. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
 
 ## Current truth
 
@@ -38,6 +39,7 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 - ADR-007 proposes an Executable Operator Model so episodes update a durable map of demonstrated control instead of remaining isolated exercises. It is architecture, not implemented evidence.
 - ADR-008 proposes an Intent Ledger that reconciles every changed line to supported, claimed, stale, contradicted, or explicitly unattributed semantic units. It is also architecture, not implemented evidence.
 - ADR-009 proposes Decision Futures so a bounded pre-reveal human commitment can determine a live integrated branch while agents implement alternatives and continue unrelated work. It is architecture, not implemented evidence.
+- The draft R8 protocol now tests those mechanisms in four conditions. It is a preregistration template, not participant evidence, and remains blocked by full R7 plus the R5/R6 runtime.
 
 ## Architecture shorthand
 

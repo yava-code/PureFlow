@@ -34,7 +34,7 @@ The original goal is broader than a compiler benchmark or an explanatory extensi
 - live Codex/Claude/OpenCode adapter accessible from this checkout;
 - context-starved relay on arbitrary supported project code;
 - Decision Futures with real bounded integration authority and an honest Takeover Envelope;
-- delayed-transfer human experiment;
+- frozen four-condition delayed-transfer human experiment and participant evidence;
 - longitudinal evidence of skill preservation;
 - evidence that developers voluntarily keep a non-zero attention budget;
 - any honest basis for saying PureFlow already preserves skills.
@@ -50,7 +50,7 @@ The active goal may be marked complete only when all of these are true:
 5. local Operator Model state invalidates correctly as the code changes;
 6. every changed line resolves through the local Intent Ledger to a bounded unit and an honest attribution state;
 7. a delayed adjacent task demonstrates takeover without answer-generating AI;
-8. a controlled study beats the active diff/explanation/question comparator while preserving production speed;
+8. the Full PureFlow condition beats the active diff/explanation/question comparator while preserving production speed, and its planned comparison with matched Shadow control isolates whether live decision authority adds value;
 9. the runtime, deletion/export, packaging, and protected CI pass on supported platforms.
 
 Green unit tests for any individual component are necessary evidence, not completion of this goal.

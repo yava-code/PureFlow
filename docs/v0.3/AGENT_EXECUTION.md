@@ -373,6 +373,16 @@ Use the thresholds in `EXPERIMENTS.md`. If the compiler misses the gate, narrow 
 
 Agents may prepare fixtures, instrumentation, recruitment copy, randomization code, and analysis notebooks. A real human study, consent, outcome labeling, and claims cannot be automated away.
 
+Use [`R8_COMBINED_PILOT_PROTOCOL.md`](R8_COMBINED_PILOT_PROTOCOL.md) as the preregistration template. It compares Autonomous, Active comparator, Shadow control, and Full PureFlow so executable practice, live decision authority, accountability, and readiness prediction can be falsified separately.
+
+### Entry gate
+
+- complete the frozen R7 expert ratings and adjudication;
+- implement one versioned R5/R6 runtime capable of all four conditions;
+- freeze ADR-007–009 schemas, hash domains, evidence authorities, invalidation, and timing rules;
+- pass technical fixtures for total changed-line reconciliation, operator-model invalidation, Decision Future integration integrity, and delayed-task isolation;
+- freeze the protocol, analysis code, task pairs, exclusions, and artifact hashes before enrollment.
+
 ### Required artifacts
 
 - preregistered hypotheses and exclusions;
@@ -382,6 +392,8 @@ Agents may prepare fixtures, instrumentation, recruitment copy, randomization co
 - delayed adjacent-task oracle;
 - blinded scoring rubric;
 - raw-data minimization plan;
+- frozen four-condition protocol and ordered mechanism contrasts;
+- Intent Ledger, Operator Model, Decision Future, and Takeover Envelope event schemas;
 - result report separating pilot targets from observed values.
 
 ### Gate
@@ -404,6 +416,7 @@ flowchart LR
     R7 --> R6["R6 Cockpit"]
     R5 --> R6
     R7 --> R8["R8 Human pilot"]
+    R5 --> R8
     R6 --> R8
 ```
 

@@ -28,6 +28,18 @@ A narrow compiler can generate coherent, deterministic episodes from normal test
 
 An event-triggered Explain-to-Break pulse selected from a causally important seam will produce better delayed adjacent-task performance per minute of attention than asking the developer to explain a randomly selected function.
 
+### H6 — Live decision authority adds value beyond shadow control
+
+A pre-reveal Decision Future that can determine a real integrated path will improve delayed takeover and calibrated engineering agency beyond an otherwise identical shadow-control episode, without breaching the production-speed or attention margins.
+
+### H7 — The Takeover Envelope predicts blackout performance
+
+Project-scoped, time-stamped control evidence will predict delayed AI-off takeover better than self-confidence, diff exposure, episode count, or immediate explanation quality.
+
+### H8 — Evidence-carrying generation makes large changes accountable
+
+The Intent Ledger will let developers locate the relevant intent, invariant, and evidence in generated changes faster than raw diffs or AI summaries, without false `supported` provenance. Navigation success is an accountability outcome, not proof of skill retention.
+
 ## What does not count as success
 
 - more questions answered correctly immediately after generation;
@@ -157,6 +169,8 @@ Each participant completes three short project-derived episodes:
 2. diagnose and repair a change-derived fault;
 3. direct an intervention through a cold agent that receives only requested evidence.
 
+Across the set, include one Intent Ledger evidence-navigation task and one genuine Decision Future whose on-time pre-reveal commitment can alter the integrated path. These additions test interaction integrity only; this small pilot cannot establish H6–H8.
+
 The production agent runs a separate real task concurrently to test interruption and attention switching.
 
 ### Measures
@@ -206,6 +220,8 @@ H5 requires a separately powered confirmatory comparison of policy 1 versus poli
 
 ## Experiment 3 — Controlled delayed-transfer study
 
+The complete preregistration template is [`R8_COMBINED_PILOT_PROTOCOL.md`](R8_COMBINED_PILOT_PROTOCOL.md). Freeze it before enrollment; this section is the decision summary.
+
 ### Research design
 
 Run a randomized controlled study on unfamiliar but realistic modules. Use a power analysis after the pilot to choose sample size; do not present a small convenience sample as definitive.
@@ -214,9 +230,10 @@ Run a randomized controlled study on unfamiliar but realistic modules. Use a pow
 
 1. **Autonomous:** full agent execution plus normal result view.
 2. **Active comparator:** autonomous agent plus a fixed 10-minute protocol containing the same diff, a standardized explanation, and three preregistered post-hoc questions. Do not substitute a manual seam after seeing results.
-3. **Dual control:** autonomous agent plus a compiled prediction–diagnosis–recovery episode.
+3. **Shadow control:** autonomous agent plus Intent Ledger navigation, an Operator Model snapshot, and a compiled prediction–diagnosis–recovery episode that cannot affect production.
+4. **Full PureFlow:** the same shadow-control mechanisms plus one genuine Decision Future whose on-time pre-reveal commitment can determine the integrated production path.
 
-All groups get the same agent model, task, time budget, repository state, and production tests.
+All groups get the same agent model, task, time and token budgets, repository state, documentation access, and production tests. Active comparator, Shadow control, and Full PureFlow receive the same maximum active-attention budget.
 
 ### Phase A — Production task
 
@@ -236,7 +253,7 @@ The task must share the underlying invariant or data path but not the exact prac
 
 ### Primary outcomes
 
-- **Primary estimand:** intention-to-treat risk difference between Dual control and Active comparator in the proportion completing a regression-free adjacent change within 45 minutes;
+- **Primary estimand:** intention-to-treat risk difference between Full PureFlow and Active comparator in the proportion completing a regression-free adjacent change within 45 minutes;
 - successful regression-free adjacent change in the Autonomous condition is exploratory;
 - time to first valid causal hypothesis;
 - fault localization;
@@ -247,6 +264,9 @@ The task must share the underlying invariant or data path but not the exact prac
 
 - confidence calibration;
 - architecture explanation scored blind by experts;
+- Intent Ledger navigation accuracy and false-provenance rate;
+- live-influence, false-fork, skip, late, default, and speculative-compute rates;
+- Takeover Envelope calibration against confidence and exposure baselines;
 - retention after an additional delay;
 - subjective workload and product preference.
 
@@ -260,8 +280,18 @@ The task must share the underlying invariant or data path but not the exact prac
 - distinguish immediate performance from delayed transfer.
 - randomize before the production task and analyze participants in their assigned condition;
 - count missing primary outcomes as unsuccessful in the conservative primary analysis and report a preregistered missing-data sensitivity analysis;
-- cap both Active comparator and Dual control at 10 active minutes during Phase A so attention, not just elapsed time, is comparable;
+- cap Active comparator, Shadow control, and Full PureFlow at 10 active minutes during Phase A so attention, not just elapsed time, is comparable;
 - standardize the delay and task timeout above rather than selecting them post hoc.
+
+### Ordered mechanism tests
+
+Run comparisons in this frozen order:
+
+1. Full PureFlow versus Active comparator tests the combined product claim;
+2. Full PureFlow versus Shadow control tests whether real live authority adds value beyond matched executable practice;
+3. the Takeover Envelope is compared with self-confidence, diff exposure, and episode-count baselines.
+
+The pilot estimates variance. Freeze the confirmatory sample size, minimum worthwhile Full-versus-Shadow effect, and predictive-calibration margin before enrollment. Do not select the best arm post hoc.
 
 ### Mechanism ablation
 
@@ -275,14 +305,14 @@ This tests whether prediction and evidence selection add transfer beyond executi
 
 ### Product gate
 
-Proceed to a longitudinal field pilot only if dual control:
+Proceed to a longitudinal field pilot only if Full PureFlow:
 
 - improves delayed adjacent-task success over the fixed Active comparator by at least 20 percentage points and the 95% confidence interval for the primary risk difference excludes zero;
 - does not increase median production critical-path time by more than 5% and p90 by more than 10%;
 - stays within a median 10-minute human attention budget;
 - outperforms the active comparator on behavior, not just confidence.
 
-If only immediate recall improves, reclassify the feature as a tutor and reject the revolutionary-IDE claim.
+If Full PureFlow and Shadow control are equivalent within the frozen worthwhile-effect margin, remove Decision Futures from the product core or retain them only as an optional agency feature. If the Takeover Envelope does not outperform simple confidence/exposure baselines, remove readiness and routing claims. If only immediate recall improves, reclassify the feature as a tutor and reject the revolutionary-IDE claim.
 
 ## Experiment 4 — Longitudinal field pilot
 
@@ -339,6 +369,17 @@ Every generated episode must pass these checks before presentation:
 The pilot should capture event types, not raw private content by default:
 
 ```text
+intent_ledger.opened
+intent_ledger.unit_selected
+intent_ledger.evidence_opened
+operator_model.snapshot
+takeover_envelope.snapshot
+decision_future.offered
+decision_future.committed
+decision_future.integrated
+decision_future.auto_defaulted
+decision_future.skipped
+decision_future.late
 experience.offered
 experience.started
 prediction.recorded
