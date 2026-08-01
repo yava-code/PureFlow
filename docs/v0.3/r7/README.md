@@ -18,6 +18,8 @@ npm run r7:corpus -- freeze <repositories.json> <candidates.json> <new-manifest.
 
 Every output command refuses to overwrite an existing artifact. The scanner never checks out a revision or runs repository code. Provisioning and execution remain separate so a static scan cannot manufacture a passing test result.
 
+Provisioning uses at most three isolated candidate workspaces concurrently. This bound is a throughput setting, not a sampling rule; each container retains its own workspace, exact registered argv, resource limits, and network mode.
+
 The first registration pass found no lockfile-backed coarse candidates in `p-queue` or `ajv`. Under the preregistered replacement rule, `ofetch`, `defu`, and `hookable` were appended before any compiler outcome was inspected. Registration array order is sampling order; the freezer stops once 30 eligible patches exist and never uses more than 10 from one repository.
 
 Before provisioning, the selected digest was capability-probed as Node `22.17.0`, npm `10.9.2`, and Corepack `0.33.0`; the registration metadata was corrected from the planned Node/npm patch versions to those observed immutable-image versions. No repository tests or PureFlow compiler outcomes had been run.

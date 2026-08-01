@@ -96,8 +96,13 @@ export async function provisionRepository(
 ): Promise<Record<string, ProvisionEvidence>> {
   const selected = selectProvisionCandidates(drafts);
   const evidence: Record<string, ProvisionEvidence> = {};
-  for (const draft of selected) {
-    evidence[draft.targetCommit] = await provisionCandidate(resolve(repositoryPath), registration, draft);
+  for (let offset = 0; offset < selected.length; offset += 3) {
+    const batch = selected.slice(offset, offset + 3);
+    const results = await Promise.all(batch.map(async (draft) => ({
+      targetCommit: draft.targetCommit,
+      evidence: await provisionCandidate(resolve(repositoryPath), registration, draft),
+    })));
+    for (const result of results) evidence[result.targetCommit] = result.evidence;
   }
   return evidence;
 }
