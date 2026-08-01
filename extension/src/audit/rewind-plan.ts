@@ -58,7 +58,7 @@ export interface InternalRewindPlan {
   packageManagerVersion: string;
   installArgv: string[];
   testArgv: string[];
-  sources: Array<Required<RewindSource>>;
+  sources: Array<{ path: string; baseBlobSha1: string; targetBlobSha1: string }>;
   attributedTestPaths: string[];
   semantic: RewindSemanticRef;
   mutationOperator: "whole-file-base-rewind";
@@ -114,7 +114,7 @@ export function compileRewindPlan(input: RewindCompilerInput): RewindCompileResu
     packageManagerVersion: input.packageManagerVersion,
     installArgv: [...input.installArgv],
     testArgv: [...input.testArgv],
-    sources: sources as Array<Required<RewindSource>>,
+    sources: sources as Array<{ path: string; baseBlobSha1: string; targetBlobSha1: string }>,
     attributedTestPaths: [...participant.attributedTestPaths],
     semantic: structuredClone(input.semantic),
     mutationOperator: "whole-file-base-rewind" as const,
@@ -128,6 +128,14 @@ export function compileRewindPlan(input: RewindCompilerInput): RewindCompileResu
       internalPlanSha256: canonicalHash("r7-rewind-plan", internalCore),
     },
   };
+}
+
+export function assertRewindPlanIntegrity(plan: InternalRewindPlan): void {
+  assertSha256(plan.internalPlanSha256, "internalPlanSha256");
+  const { internalPlanSha256, ...core } = plan;
+  if (canonicalHash("r7-rewind-plan", core) !== internalPlanSha256) {
+    throw new Error("R7 rewind plan hash mismatch");
+  }
 }
 
 function validateInput(input: RewindCompilerInput): void {

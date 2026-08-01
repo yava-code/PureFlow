@@ -87,3 +87,9 @@ Typed outcomes are:
 Iteration 1 is evaluated on all 12 development patches. If recovery validity is below 60% or probe validity below 50%, one iteration-2 change may be made using aggregate failure categories only. No patch-specific rule is allowed. If iteration 1 clears those floors, freeze compiler source/config immediately rather than optimizing against development identities.
 
 Held-out execution is forbidden until the freeze commit and config hash are recorded. Human rating packets must be generated for all patches without compiler status or outcomes.
+
+## Post-run conformance record
+
+Development iteration 1 completed on 2026-08-01 without patch-specific rules. Nine of twelve patches produced valid episodes and probes, two emitted `unsupported-source-rewind`, and one emitted `mutation-did-not-fail`. The immutable summary hash is `d4457d21be7939eee4e205d0b559e7e7ef01973df5f0a072f8d2ae4adfcc070b`. Both development floors passed, so iteration 2 is forbidden and the implementation proceeds directly to a source/config freeze.
+
+One implementation deviation was found before the held-out freeze: target, rewind, and repair archive SHA-256 values are recorded in the hash-bound execution report instead of the pre-execution compile plan. The compile plan still binds the full target/base commits, every source blob OID, exact argv, corpus evidence, participant projection, and compiler protocol; the executor creates archives only from those bound Git objects, records each archive SHA-256 and byte length, verifies source blob identities before and after every test, and hashes the complete report. This placement does not change support, mutation, probe, repair, or outcome rules. It is disclosed rather than retroactively changing iteration 1 or rerunning an outcome-tuned compiler.

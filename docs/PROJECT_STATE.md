@@ -133,7 +133,7 @@ The repository contains no verified evidence that the owner submitted the final 
 | Input | Impact | Resolution |
 | --- | --- | --- |
 | The first live adapter is selected but no accessible Codex CLI is configured for this checkout | ADR-006 selects Codex App Server over local stdio, but the Microsoft Store packaged executable discovered here returns `Access denied` when launched from the repository shell | Keep replay R&D independent; the live spike must preflight a separately accessible, exact-version user-installed Codex CLI and fail closed when unavailable |
-| R7 compiler and expert audit is not complete | Automatic episode/probe validity and causal relevance are not measured | Run the frozen development/held-out compiler audit, then obtain two independent experienced TypeScript ratings and adjudication |
+| R7 held-out and expert audit is not complete | Development iteration 1 passed at 9/12 end-to-end, but held-out generalization and causal relevance are not yet measured | Freeze the passing compiler, run the untouched 18-patch held-out cohort, then obtain two independent experienced TypeScript ratings and adjudication |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
 | Default-branch Jules scheduler awaits explicit merge approval | Scheduled/manual continuation is not installed on `main`; draft PR #8 remains isolated and the enable variable stays off | Owner explicitly says `merge #8`; then merge through protected `main`, remove the temporary infrastructure branch, and run one guarded canary through the protected R&D branch |
 
@@ -152,7 +152,7 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Run the frozen 30-patch recovery-plus-probe audit without patch-specific rules; publish automated results and blind rater packets.
+1. Commit compiler freeze `605b645e9cc27653515665ac002a4b1d9c1e6f36c6ddf3bffbf2be4d2081a81b`, run the untouched 18-patch held-out recovery-plus-probe audit, and publish blind rater packets.
 2. Add the local readiness ledger and minimal cockpit only after the R7 corpus gate passes.
 3. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 

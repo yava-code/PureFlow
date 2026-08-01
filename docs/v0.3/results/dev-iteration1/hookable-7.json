@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "development",
+  "patch": {
+    "repositoryId": "hookable",
+    "ordinal": 7,
+    "baseCommit": "93e5d41f8667bc092707a607093c60bcc678365c",
+    "targetCommit": "37568875dd05d688f60554faac4c30fec4952241",
+    "evidenceSha256": "ef1ba5b7c559fc7305e767112da2463422ba7301759b624fa5e0611f26077eb2",
+    "splitKey": "4f077df3ee0adea961014b94a5be0bc68fc9393f6e268e3c3a8980fd1ea8a792",
+    "cohort": "development"
+  },
+  "compileResult": {
+    "status": "compiled",
+    "participant": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "repositoryId": "hookable",
+      "seam": {
+        "path": "src/debugger.ts",
+        "symbol": "createDebugger",
+        "kind": "function"
+      },
+      "writablePaths": [
+        "src/debugger.ts",
+        "src/hookable.ts",
+        "src/index.ts",
+        "src/utils.ts"
+      ],
+      "attributedTestPaths": [
+        "test/debuger.test.ts",
+        "test/hookable.test.ts",
+        "test/types.test.ts"
+      ],
+      "attentionBudgetSeconds": 600,
+      "observationLabel": "registered-check-outcome",
+      "experienceId": "46c9ed6193a3b792ea92cf9cf893ae3444bf30ddc2f3477beae5f7ba8a298c50"
+    },
+    "internal": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+      "patchEvidenceSha256": "ef1ba5b7c559fc7305e767112da2463422ba7301759b624fa5e0611f26077eb2",
+      "repositoryId": "hookable",
+      "ordinal": 7,
+      "baseCommit": "93e5d41f8667bc092707a607093c60bcc678365c",
+      "targetCommit": "37568875dd05d688f60554faac4c30fec4952241",
+      "nodeVersion": "22.17.0",
+      "packageManager": "pnpm",
+      "packageManagerVersion": "10.33.0",
+      "installArgv": [
+        "corepack",
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--ignore-scripts"
+      ],
+      "testArgv": [
+        "corepack",
+        "pnpm",
+        "test"
+      ],
+      "sources": [
+        {
+          "path": "src/debugger.ts",
+          "baseBlobSha1": "1c2d7fd0d667df200e22f0a2537fc8beb47b6205",
+          "targetBlobSha1": "e889fba53ad07a29cf557ba9174bc30b4d8a801f"
+        },
+        {
+          "path": "src/hookable.ts",
+          "baseBlobSha1": "6ff6921895cebfcec60fe81e853f237aea0ad356",
+          "targetBlobSha1": "1bdeeeb7a15856d31f148605cc14a0309a22a0ee"
+        },
+        {
+          "path": "src/index.ts",
+          "baseBlobSha1": "d7d8c7516e7acc887f0974900cc7139525e15e73",
+          "targetBlobSha1": "1e74af2cc0e65fa87be67a5ed41a42bb04eab795"
+        },
+        {
+          "path": "src/utils.ts",
+          "baseBlobSha1": "442c3bc967e9be6f21767399d4fe5d4611c03baf",
+          "targetBlobSha1": "ea7d59f8d48ceffd2251e24a5d4ee18d534180a6"
+        }
+      ],
+      "attributedTestPaths": [
+        "test/debuger.test.ts",
+        "test/hookable.test.ts",
+        "test/types.test.ts"
+      ],
+      "semantic": {
+        "path": "src/debugger.ts",
+        "symbol": "createDebugger",
+        "kind": "function",
+        "changedLineSha256": [
+          "4e1a146e36c6b4cfa0d1161221ba082c4085e3fefb8a63714b608d87c685ca5f",
+          "5d1674014064106bb57ae03dcddaf939e965f5dcab619fbeeb2c4f824698d7b7",
+          "abfa59370983ca52fbab3823eb970ba6f336b6cdb702d15fb183e6cdcb5e4661",
+          "aee9a72ff62f25a5f1fcbb311888b8016d7722f2d54a719960d7469acd1873a3",
+          "c8b127458fa9b203775fce106497793a4b3e904bfc62c550abedea299233ec4f"
+        ]
+      },
+      "mutationOperator": "whole-file-base-rewind",
+      "participantProjectionSha256": "6a04fb4aa5c428e5868516aaee8e58c8441f4918f78b9059ca2b683b11610856",
+      "internalPlanSha256": "ab0518b0fc3978a5cb5d64e918886658f755cf37b485226d67ae772e96185078"
+    }
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "compilerProtocol": "r7-rewind-v1",
+    "internalPlanSha256": "ab0518b0fc3978a5cb5d64e918886658f755cf37b485226d67ae772e96185078",
+    "status": "mutation-did-not-fail",
+    "recoveryValid": false,
+    "probeValid": false,
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 13509,
+      "stdoutBytes": 1060,
+      "stderrBytes": 0,
+      "stdoutSha256": "9b7a8cc5b34f9465593a2741589599ff966e62c8b176b6ca6167a41646ee6695",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "targetControl": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 15166,
+      "stdoutBytes": 843,
+      "stderrBytes": 168,
+      "stdoutSha256": "e84fa04fc7bb5a8958683becc7066b4ef1c51b9620a14728c591430d9f657529",
+      "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+    },
+    "mutation": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 13613,
+        "stdoutBytes": 843,
+        "stderrBytes": 168,
+        "stdoutSha256": "d954f6d6a830662bab9f0ba3c421057ce084ee971a46022baf3555df8bd3b899",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 18527,
+        "stdoutBytes": 846,
+        "stderrBytes": 168,
+        "stdoutSha256": "0ce28a570f690da0bc69ab584e449e3b10eb4946a610a34ff4b6833430c1af8d",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 16828,
+        "stdoutBytes": 844,
+        "stderrBytes": 168,
+        "stdoutSha256": "b27655a1986855182a2daaea14a7cea525a311def0fc7b5178220ff98a6e849e",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      }
+    ],
+    "repair": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 13465,
+        "stdoutBytes": 843,
+        "stderrBytes": 168,
+        "stdoutSha256": "21f4062e62498c23cc3b42817ae4ef036ecbbcc9157e0c6247e11bfe9aa931ea",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 15935,
+        "stdoutBytes": 843,
+        "stderrBytes": 168,
+        "stdoutSha256": "0f9c284d97714398515cab4973f6c851ed55f0dd4c37740ad8e5e65326704e49",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 15272,
+        "stdoutBytes": 843,
+        "stderrBytes": 168,
+        "stdoutSha256": "73d51dc0e0d731f6472c91b08cadbd6e44ed6b201947c171e12460f4fb137db5",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      }
+    ],
+    "setupMs": [
+      12551,
+      13521,
+      6426,
+      7160,
+      7093,
+      8676,
+      10084
+    ],
+    "targetArchiveSha256": "d9be8f2bdcc0bc9a6e91c3a26058e5d0ef521d630d708a6319f0e4db7b7e0c0a",
+    "rewindArchiveSha256": "54455fb58688becc314b5e9b86f41db4cb8dd3dcdcc67f9798083a074203431f",
+    "repairArchiveSha256": "5df2df658c862c0569778ddb15de506c614384e8e0444574b5dd8dd784e6445e",
+    "targetArchiveBytes": 194560,
+    "rewindArchiveBytes": 20480,
+    "repairArchiveBytes": 20480,
+    "productionInvariantPassed": true,
+    "cleanupPassed": true,
+    "reportSha256": "1e3b87ca3979f0f691389776f9d3eca3ccf232c110fc7cedd4c56618a147792a"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "compilerProtocol": "r7-rewind-v1",
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "development",
+  "totalPatches": 12,
+  "compiledPatches": 10,
+  "compileAbstentions": 2,
+  "validEpisodes": 9,
+  "validProbes": 9,
+  "compileRate": {
+    "numerator": 10,
+    "denominator": 12,
+    "value": 0.8333333333333334
+  },
+  "executableValidityRate": {
+    "numerator": 9,
+    "denominator": 10,
+    "value": 0.9
+  },
+  "endToEndEpisodeRate": {
+    "numerator": 9,
+    "denominator": 12,
+    "value": 0.75
+  },
+  "endToEndProbeRate": {
+    "numerator": 9,
+    "denominator": 12,
+    "value": 0.75
+  },
+  "statusCounts": {
+    "compiled": 10,
+    "mutation-did-not-fail": 1,
+    "unsupported-source-rewind": 2,
+    "valid": 9
+  },
+  "medianExecutionMs": 360742,
+  "totalExecutionMs": 4273101,
+  "developmentFloorPassed": true,
+  "resultReportSha256s": [
+    "0b68c55208cdf55cc85c5d3905f23ca5accb40bc57a964b977916cccadd2ae7c",
+    "1e3b87ca3979f0f691389776f9d3eca3ccf232c110fc7cedd4c56618a147792a",
+    "2b802c965c16eb0ba43e20b1b7fcd37f69e1c51a71fe5e14ea884f91a5523ba4",
+    "4e1e0560c4b840c1b186612541b1dd576b5e632da07efda55f179e13cb7eb39d",
+    "65a4c9b7f6ef053de5cb45804343d0816524243a019f7ce86ba1ce288d9bb9d3",
+    "8b0cc79cade53d6f8addc0cfbbe905df05229ae51379c5a59b988fb35dd85c42",
+    "aa90e52810d7a3a9e2cdd47538f65c2daf64162b553a553b86216dd4da8e9be7",
+    "b3a82d3ccfc203a4d82f12cf6e16c5e8907d5d87b6a85620afcf3a461a4fb189",
+    "b45dcb62c44f3f8948423a86b8d0ee122c14250e7ff20f61959d4fb1e6232806",
+    "ca387dfafa045be4db1d47790313bfcea12b7dcd1970543dfa7a954624ad31f3"
+  ],
+  "summarySha256": "d4457d21be7939eee4e205d0b559e7e7ef01973df5f0a072f8d2ae4adfcc070b"
+}

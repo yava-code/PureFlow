@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { compileRewindPlan, type RewindCompilerInput } from "../src/audit/rewind-plan";
+import { assertRewindPlanIntegrity, compileRewindPlan, type RewindCompilerInput } from "../src/audit/rewind-plan";
 
 describe("R7 rewind compiler plan", () => {
   it("compiles a deterministic hidden-repair plan and strict participant projection", () => {
@@ -39,6 +39,16 @@ describe("R7 rewind compiler plan", () => {
     value.semantic = null;
 
     expect(compileRewindPlan(value)).toEqual({ status: "unsupported-semantic-boundary" });
+  });
+
+  it("rejects a plan changed after compilation", () => {
+    const result = compileRewindPlan(input());
+    expect(result.status).toBe("compiled");
+    if (result.status !== "compiled") return;
+    assertRewindPlanIntegrity(result.internal);
+    const changed = structuredClone(result.internal);
+    changed.testArgv = ["npm", "run", "different-test"];
+    expect(() => assertRewindPlanIntegrity(changed)).toThrow("plan hash mismatch");
   });
 });
 

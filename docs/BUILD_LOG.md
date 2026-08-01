@@ -329,3 +329,14 @@ Append an entry after each material milestone with:
 
 - Added `openDocsSideBySide` configuration using `vscode.ViewColumn.Beside`.
 - Created safety gate requiring developers to manually record recall context before loading external documentation during an active Focus Rep.
+
+## 2026-08-01 — R7 development compiler audit
+
+- Implemented the deterministic `r7-rewind-v1` plan compiler, Git-backed preparation, digest-pinned Docker executor, typed outcome classifier, immutable per-patch receipts, and cohort summarizer.
+- Froze and executed all 12 development identities from corpus `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149`: 10 compiled, 2 abstained because a complete base source blob did not exist, 9 were executable-valid, and 1 correctly rejected because the rewind did not fail the registered observation.
+- Recorded 75% end-to-end recovery/probe yield and 90% validity among compiled cases. Summary hash: `d4457d21be7939eee4e205d0b559e7e7ef01973df5f0a072f8d2ae4adfcc070b`.
+- Verified unique plan/report hashes, unchanged external repository snapshots, source blob integrity around every test, and zero remaining audit containers or volumes.
+- Added 13 focused compiler/preparation/classification/summary tests and passed TypeScript checking. Disclosed the archive-hash placement deviation before the held-out freeze.
+- Frozen 16 compiler/config inputs in `docs/v0.3/r7/compiler-freeze-v1.json`; raw freeze-file SHA-256: `605b645e9cc27653515665ac002a4b1d9c1e6f36c6ddf3bffbf2be4d2081a81b`.
+
+Evidence: `docs/v0.3/results/R7_DEVELOPMENT_AUDIT.md` and immutable JSON receipts. R7 remains blocked on the frozen 18-patch held-out run and two independent blind expert ratings; no retention or product-effectiveness claim is made.
