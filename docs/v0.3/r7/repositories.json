@@ -115,5 +115,18 @@
     "installArgv": ["npm", "ci", "--ignore-scripts"],
     "testArgv": ["npm", "run", "vitest"],
     "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "864a3a2f03c5d7b974afeb1da0faf46c21758779"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ufo",
+    "url": "https://github.com/unjs/ufo.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "f06c800d0c59f2a4a1b9ba65eb6cb61a84419be6",
+    "nodeVersion": "22.17.0",
+    "packageManager": "pnpm",
+    "packageManagerVersion": "10.33.2",
+    "installArgv": ["corepack", "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"],
+    "testArgv": ["corepack", "pnpm", "exec", "vitest", "run", "--typecheck"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "f06c800d0c59f2a4a1b9ba65eb6cb61a84419be6"]
   }
 ]
