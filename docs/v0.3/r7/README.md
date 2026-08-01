@@ -26,4 +26,6 @@ Resume evidence is immutable input, never overwritten. The provisioner skips rec
 
 The first registration pass found no lockfile-backed coarse candidates in `p-queue` or `ajv`. Under the preregistered replacement rule, `ofetch`, `defu`, and `hookable` were appended before any compiler outcome was inspected. Registration array order is sampling order; the freezer stops once 30 eligible patches exist and never uses more than 10 from one repository.
 
+That replacement pass produced 19 eligible patches: 10 from `ts-pattern`, 3 from `ofetch`, 2 from `defu`, and 4 from `hookable`. Before inspecting any compiler outcome, `class-transformer` and `class-validator` were appended in that order as MIT-licensed npm replacements with committed lockfiles and deterministic, non-browser Jest commands. Their history is inspected only after this registration change is committed.
+
 Before provisioning, the selected digest was capability-probed as Node `22.17.0`, npm `10.9.2`, and Corepack `0.33.0`; the registration metadata was corrected from the planned Node/npm patch versions to those observed immutable-image versions. No repository tests or PureFlow compiler outcomes had been run.

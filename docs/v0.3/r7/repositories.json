@@ -76,5 +76,31 @@
     "installArgv": ["corepack", "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"],
     "testArgv": ["corepack", "pnpm", "test"],
     "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "b77477c027039362ee0ec4f39b8998c4f1b21707"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "url": "https://github.com/typestack/class-transformer.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "a2734a5d154c9b0beb9a10555a04416bc371de06",
+    "nodeVersion": "22.17.0",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.9.2",
+    "installArgv": ["npm", "ci", "--ignore-scripts"],
+    "testArgv": ["npm", "run", "test:ci", "--", "--coverage=false"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "a2734a5d154c9b0beb9a10555a04416bc371de06"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-validator",
+    "url": "https://github.com/typestack/class-validator.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "2e1a5c27dbd65b80e27fe96b49bd6e6641fa3603",
+    "nodeVersion": "22.17.0",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.9.2",
+    "installArgv": ["npm", "ci", "--ignore-scripts"],
+    "testArgv": ["npm", "run", "test:ci", "--", "--coverage=false"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "2e1a5c27dbd65b80e27fe96b49bd6e6641fa3603"]
   }
 ]
