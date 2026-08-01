@@ -402,6 +402,7 @@ If the fixture-only probe needs arbitrary participant code or model-generated te
 - Collect a development corpus and a separate held-out corpus of at least 30 eligible consented or open-source test-backed TypeScript patches in total; never redefine “supported” after seeing failures.
 - Freeze both the recovery compiler and semantic-probe compiler before running the held-out set and make no per-patch code changes.
 - Use two independent expert raters, blind to compiler outcome, for causal relevance and expected judge result; adjudicate disagreements and report inter-rater agreement.
+- Use the hash-verified local rater workspace from `R7_EXPERT_RATING.md` so packet integrity, exact coverage, resume, bundle export, identity separation, and consensus-only adjudication prefill are machine-checked while causal decisions remain human.
 - Compile both a recovery episode and an Explain-to-Break probe for each eligible patch. Dynamic probes implement the Phase-B `SandboxControlProbe` contract: frozen sanitized snapshot/tree, immutable command-registry hash, approved command or controller-generated deterministic oracle, read-only mounts, and selected sandbox. They may never pass model output directly into code, tests, commands, arguments, paths, mounts, or environment.
 - Report valid-episode rate, valid-probe rate, capsule rejection/leakage results, false-pass rate, false-fail rate, and confidence intervals separately.
 - Run the held-out audit on Windows as well as Linux, including paths with spaces, concurrent twins, cancellation, locked files, and cleanup.

@@ -406,3 +406,13 @@ Evidence: `docs/v0.3/R8_COMBINED_PILOT_PROTOCOL.md` and updated experiment/execu
 An adversarial architecture review rejected a second mutable source and duplicate readiness state. The revised ADR makes “Dual Source” a falsifiable product metaphor over one event authority, separates stable node identity from immutable revision projections, keeps accountability failure off the production critical path, adds explicit R5.1/R5.2 runtime workstreams, and isolates live authority in R8 with matched prebuilt alternatives and separate speculative cost.
 
 Evidence: `docs/v0.3/ADR-010-DUAL-SOURCE-OPERATOR-SOURCE.md` and synchronized PRD, thesis, research, experiment, completion-audit, and handoff documents. This is a proposed projection and experiment, not implementation or skill-preservation evidence; full R7 remains the entry gate.
+
+## 2026-08-01 — Hash-verified R7 expert workspace
+
+- Added a local blind-rating CLI that verifies the frozen packet index and every packet hash before displaying a diff.
+- Added resumable rater workspaces, exact-coverage export, strict categorical/confidence/reason validation, and refusal of unexpected material in the blind directory.
+- Added an adjudication workspace that validates independent identities, carries both blinded source bundles, prefills only exact categorical consensus, and leaves disagreements for a distinct human panel decision.
+- Added negative tests for tampered packets and outcome-like files plus coverage, resume, export, and adjudication tests.
+- Verified the real frozen 18-packet index through CLI init/status/next, then passed `npm run check`, 114/114 runnable extension tests, production build, and VSIX packaging; two Docker-only tests remained skipped in the local Windows run.
+
+This removes clerical friction from the R7 human gate without replacing expert judgment or exposing automatic outcomes. Full R7 remains pending until two experienced TypeScript raters and the blinded adjudicator return real bundles.
