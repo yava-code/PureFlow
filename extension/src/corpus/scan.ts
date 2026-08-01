@@ -34,6 +34,10 @@ export interface ProvisionEvidence {
   sanitizedBytes: number;
   requiresProductionCapability: boolean;
   executionNeedsNetwork: boolean;
+  baseInstallPassed: boolean;
+  baseTestPassed: boolean;
+  targetInstallPassed: boolean;
+  targetTestPassed: boolean;
   basePassed: boolean;
   targetPassed: boolean;
   provisionEvidenceSha256: string;
@@ -44,6 +48,10 @@ const provisionKeys = [
   "sanitizedBytes",
   "requiresProductionCapability",
   "executionNeedsNetwork",
+  "baseInstallPassed",
+  "baseTestPassed",
+  "targetInstallPassed",
+  "targetTestPassed",
   "basePassed",
   "targetPassed",
   "provisionEvidenceSha256",

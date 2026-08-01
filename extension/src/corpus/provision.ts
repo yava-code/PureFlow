@@ -59,7 +59,9 @@ export function buildCorpusDockerArgs(invocation: CorpusDockerInvocation): strin
   if (invocation.network !== "bridge" && invocation.network !== "none") throw new Error("Invalid corpus network mode");
   assertVolume(invocation.workspaceVolume);
   assertVolume(invocation.corepackVolume);
-  if (invocation.argv.length < 2 || !["npm", "corepack"].includes(invocation.argv[0]!)) {
+  const mkdir = invocation.argv[0] === "mkdir" &&
+    invocation.argv.length === 3 && invocation.argv[1] === "-p" && invocation.argv[2] === "/work/.pureflow-bin";
+  if (invocation.argv.length < 2 || (!mkdir && !["npm", "corepack"].includes(invocation.argv[0]!))) {
     throw new Error("Corpus executable is not registered");
   }
   if (invocation.argv.some((part) => !part || /[\0\r\n]/.test(part))) throw new Error("Invalid corpus argument");
@@ -138,6 +140,10 @@ async function provisionCandidate(
       sanitizedBytes: draft.sourceTreeBytes,
       requiresProductionCapability: false,
       executionNeedsNetwork: false,
+      baseInstallPassed: base.install.exitCode === 0,
+      baseTestPassed: base.test?.exitCode === 0,
+      targetInstallPassed: target.install.exitCode === 0,
+      targetTestPassed: target.test?.exitCode === 0,
       basePassed: base.install.exitCode === 0 && base.test?.exitCode === 0,
       targetPassed: target.install.exitCode === 0 && target.test?.exitCode === 0,
       provisionEvidenceSha256: rawSha256(`pureflow/r7-provision-evidence-v1\n${canonicalJson(record)}`),
@@ -182,12 +188,21 @@ async function provisionRevision(
           workspaceVolume,
           corepackVolume,
           network: "none",
+          argv: ["mkdir", "-p", "/work/.pureflow-bin"],
+        }, 60_000));
+      }
+      if (bootstrap[1]?.exitCode === 0) {
+        bootstrap.push(await runDocker({
+          containerName: containerName(),
+          workspaceVolume,
+          corepackVolume,
+          network: "none",
           argv: ["corepack", "enable", "--install-directory", "/work/.pureflow-bin", "pnpm"],
         }, 60_000));
       }
     }
     const bootstrapPassed = bootstrap.every(({ exitCode }) => exitCode === 0) &&
-      (registration.packageManager !== "pnpm" || bootstrap.length === 2);
+      (registration.packageManager !== "pnpm" || bootstrap.length === 3);
     const install = bootstrapPassed ? await runDocker({
       containerName: containerName(),
       workspaceVolume,
