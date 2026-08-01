@@ -59,10 +59,10 @@ export function summarizeR7Ratings(
   second: RatingBundle,
   adjudication: RatingBundle,
 ): R7RatingSummary {
-  const ids = validateIndex(index);
-  validateBundle(first, ids);
-  validateBundle(second, ids);
-  validateBundle(adjudication, ids);
+  const ids = validateRatingIndex(index);
+  validateRatingBundle(first, ids);
+  validateRatingBundle(second, ids);
+  validateRatingBundle(adjudication, ids);
   if (first.raterId === second.raterId) throw new Error("R7 requires two independent rater IDs");
   if (adjudication.raterId === first.raterId || adjudication.raterId === second.raterId) {
     throw new Error("R7 adjudicator ID must be distinct from both raters");
@@ -101,7 +101,7 @@ export function summarizeR7Ratings(
   return { ...core, summarySha256: canonicalHash("r7-rating-summary", core) };
 }
 
-function validateIndex(index: RatingIndex): string[] {
+export function validateRatingIndex(index: RatingIndex): string[] {
   if (
     index.schemaVersion !== 1
     || index.protocol !== "r7-blind-expert-v1"
@@ -129,22 +129,34 @@ function validateIndex(index: RatingIndex): string[] {
   return ids;
 }
 
-function validateBundle(bundle: RatingBundle, expectedIds: string[]): void {
-  if (bundle.schemaVersion !== 1 || bundle.protocol !== "r7-blind-expert-v1" || !/^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$/.test(bundle.raterId)) {
+export function validateRaterId(raterId: string): void {
+  if (!/^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$/.test(raterId)) {
+    throw new Error("Invalid R7 rater ID");
+  }
+}
+
+export function validateExpertRating(rating: ExpertRating): void {
+  if (!/^[0-9a-f]{24}$/.test(rating.packetId)) throw new Error(`Invalid rating packet ID: ${rating.packetId}`);
+  if (!relevance.includes(rating.causalRelevance) || !expectation.includes(rating.targetExpected) || !expectation.includes(rating.rewindExpected)) {
+    throw new Error(`Invalid categorical rating: ${rating.packetId}`);
+  }
+  if (!leakage.includes(rating.leakage) || !Number.isInteger(rating.confidence) || rating.confidence < 1 || rating.confidence > 5) {
+    throw new Error(`Invalid leakage or confidence rating: ${rating.packetId}`);
+  }
+  if (rating.reason.trim().length < 10 || rating.reason.length > 1_000) throw new Error(`Invalid rating reason: ${rating.packetId}`);
+}
+
+export function validateRatingBundle(bundle: RatingBundle, expectedIds: string[]): void {
+  if (bundle.schemaVersion !== 1 || bundle.protocol !== "r7-blind-expert-v1") {
     throw new Error("Invalid R7 rating bundle identity");
   }
+  validateRaterId(bundle.raterId);
   const ids = bundle.ratings.map(({ packetId }) => packetId).sort(compareUtf8);
   if (ids.length !== expectedIds.length || ids.some((id, index) => id !== expectedIds[index])) {
     throw new Error(`Rating bundle ${bundle.raterId} does not cover the exact packet index`);
   }
   for (const rating of bundle.ratings) {
-    if (!relevance.includes(rating.causalRelevance) || !expectation.includes(rating.targetExpected) || !expectation.includes(rating.rewindExpected)) {
-      throw new Error(`Invalid categorical rating: ${rating.packetId}`);
-    }
-    if (!leakage.includes(rating.leakage) || !Number.isInteger(rating.confidence) || rating.confidence < 1 || rating.confidence > 5) {
-      throw new Error(`Invalid leakage or confidence rating: ${rating.packetId}`);
-    }
-    if (rating.reason.trim().length < 10 || rating.reason.length > 1_000) throw new Error(`Invalid rating reason: ${rating.packetId}`);
+    validateExpertRating(rating);
   }
 }
 
