@@ -28,4 +28,6 @@ The first registration pass found no lockfile-backed coarse candidates in `p-que
 
 That replacement pass produced 19 eligible patches: 10 from `ts-pattern`, 3 from `ofetch`, 2 from `defu`, and 4 from `hookable`. Before inspecting any compiler outcome, `class-transformer` and `class-validator` were appended in that order as MIT-licensed npm replacements with committed lockfiles and deterministic, non-browser Jest commands. Their history is inspected only after this registration change is committed.
 
+Provisioning then showed that all six structurally viable `class-transformer` candidates fail the frozen runtime/test boundary, so none can enter the corpus. Before any compiler execution, `io-ts` was appended after `class-validator` as the next MIT-licensed npm replacement. Its registered command runs only the repository's deterministic Vitest suite; lint, documentation generation, release tasks, and performance tests are outside the R7 execution boundary.
+
 Before provisioning, the selected digest was capability-probed as Node `22.17.0`, npm `10.9.2`, and Corepack `0.33.0`; the registration metadata was corrected from the planned Node/npm patch versions to those observed immutable-image versions. No repository tests or PureFlow compiler outcomes had been run.

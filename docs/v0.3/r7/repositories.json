@@ -102,5 +102,18 @@
     "installArgv": ["npm", "ci", "--ignore-scripts"],
     "testArgv": ["npm", "run", "test:ci", "--", "--coverage=false"],
     "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "2e1a5c27dbd65b80e27fe96b49bd6e6641fa3603"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "io-ts",
+    "url": "https://github.com/gcanti/io-ts.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "864a3a2f03c5d7b974afeb1da0faf46c21758779",
+    "nodeVersion": "22.17.0",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.9.2",
+    "installArgv": ["npm", "ci", "--ignore-scripts"],
+    "testArgv": ["npm", "run", "vitest"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "864a3a2f03c5d7b974afeb1da0faf46c21758779"]
   }
 ]
