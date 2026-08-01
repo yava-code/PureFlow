@@ -1,0 +1,772 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 1,
+    "baseCommit": "c0ec22a83494dbcb3d441e83a3bc08143fb47ad3",
+    "targetCommit": "a073b5ea218dd4da9325fe980f15c1538980500e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 59,
+    "sourceTreeBytes": 884102,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts"
+    ],
+    "preflightSha256": "641dfe370e3048cac95b10e2503946e3743d3097b74b8ca3b750d014ab4b20ce"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 2,
+    "baseCommit": "ab093a355be420978273b675d3bbd3a520d1918d",
+    "targetCommit": "9c9d7f66acafaf711c096685767ffb6209ef012a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 13772,
+    "sourceTreeBytes": 852882,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformer.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/decorators/index.ts",
+      "src/decorators/transform-instance-to-instance.decorator.ts",
+      "src/decorators/transform-instance-to-plain.decorator.ts",
+      "src/decorators/transform-plain-to-instance.decorator.ts",
+      "src/index.ts",
+      "src/interfaces/class-transformer-options.interface.ts",
+      "src/interfaces/decorator-options/expose-options.interface.ts",
+      "src/interfaces/decorator-options/transform-options.interface.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/circular-reference-problem.spec.ts",
+      "test/functional/custom-transform.spec.ts",
+      "test/functional/default-values.spec.ts",
+      "test/functional/es6-data-types.spec.ts",
+      "test/functional/ignore-decorators.spec.ts",
+      "test/functional/implicit-type-declarations.spec.ts",
+      "test/functional/inheritence.spec.ts",
+      "test/functional/prevent-array-bomb.spec.ts",
+      "test/functional/promise-field.spec.ts",
+      "test/functional/specify-maps.spec.ts",
+      "test/functional/transformation-option.spec.ts",
+      "test/functional/transformer-method.spec.ts",
+      "test/functional/transformer-order.spec.ts"
+    ],
+    "preflightSha256": "fb745567a303689ea6bc6529cdfeda38dfe5d7ed904fc8b44dabc1878fc4eff5"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 3,
+    "baseCommit": "16a050652c7506deb9dc490e627c23a8245ca3c8",
+    "targetCommit": "ab093a355be420978273b675d3bbd3a520d1918d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 3981,
+    "sourceTreeBytes": 534144,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformer.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/constants/default-options.constant.ts",
+      "src/interfaces/class-transformer-options.interface.ts",
+      "src/interfaces/metadata/transform-fn-params.interface.ts",
+      "src/utils/index.ts",
+      "src/utils/is-promise.util.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/custom-transform.spec.ts",
+      "test/functional/promise-field.spec.ts",
+      "test/functional/transformation-option.spec.ts"
+    ],
+    "preflightSha256": "c0c55faa71c32dfe541f66749c86f1de21be43e8f015e0a76026e377669033ed"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 4,
+    "baseCommit": "7020a72bca9765d08a6e91f2fd1152c0012c426c",
+    "targetCommit": "16a050652c7506deb9dc490e627c23a8245ca3c8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 3437,
+    "sourceTreeBytes": 563833,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformer.ts",
+      "src/MetadataStorage.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/decorators/exclude.decorator.ts",
+      "src/decorators/expose.decorator.ts",
+      "src/decorators/index.ts",
+      "src/decorators/transform-class-to-class.decorator.ts",
+      "src/decorators/transform-class-to-plain.decorator.ts",
+      "src/decorators/transform-plain-to-class.decorator.ts",
+      "src/decorators/transform.decorator.ts",
+      "src/decorators/type.decorator.ts",
+      "src/index.ts",
+      "src/interfaces/class-constructor.type.ts",
+      "src/interfaces/class-transformer-options.interface.ts",
+      "src/interfaces/decorator-options/exclude-options.interface.ts",
+      "src/interfaces/decorator-options/expose-options.interface.ts",
+      "src/interfaces/decorator-options/transform-options.interface.ts",
+      "src/interfaces/decorator-options/type-discriminator-descriptor.interface.ts",
+      "src/interfaces/decorator-options/type-options.interface.ts",
+      "src/interfaces/index.ts",
+      "src/interfaces/metadata/exclude-metadata.interface.ts",
+      "src/interfaces/metadata/expose-metadata.interface.ts",
+      "src/interfaces/metadata/transform-fn-params.interface.ts",
+      "src/interfaces/metadata/transform-metadata.interface.ts",
+      "src/interfaces/metadata/type-metadata.interface.ts",
+      "src/interfaces/target-map.interface.ts",
+      "src/interfaces/type-help-options.interface.ts",
+      "src/metadata/ExcludeMetadata.ts",
+      "src/metadata/ExposeExcludeOptions.ts",
+      "src/metadata/ExposeMetadata.ts",
+      "src/metadata/TransformMetadata.ts",
+      "src/metadata/TypeMetadata.ts",
+      "src/storage.ts",
+      "src/utils/get-global.util.spect.ts",
+      "src/utils/get-global.util.ts",
+      "src/utils/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/custom-transform.spec.ts",
+      "test/functional/default-values.spec.ts",
+      "test/functional/es6-data-types.spec.ts",
+      "test/functional/inheritence.spec.ts"
+    ],
+    "preflightSha256": "d675bf7d9b2d1e99ac5f825ffc18d2df8d29fba658164101211793ce4966cc6e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 5,
+    "baseCommit": "15d6bdb5efca6dcdbae1b7ba13e3751c4d5fd96a",
+    "targetCommit": "7020a72bca9765d08a6e91f2fd1152c0012c426c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 19972,
+    "sourceTreeBytes": 522783,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "sample/sample1-simple-usage/Album.ts",
+      "sample/sample1-simple-usage/Photo.ts",
+      "sample/sample1-simple-usage/User.ts",
+      "sample/sample1-simple-usage/app.ts",
+      "sample/sample2-iheritance/Album.ts",
+      "sample/sample2-iheritance/Authorable.ts",
+      "sample/sample2-iheritance/Photo.ts",
+      "sample/sample2-iheritance/User.ts",
+      "sample/sample2-iheritance/app.ts",
+      "sample/sample3-custom-arrays/Album.ts",
+      "sample/sample3-custom-arrays/AlbumArray.ts",
+      "sample/sample3-custom-arrays/Photo.ts",
+      "sample/sample3-custom-arrays/app.ts",
+      "sample/sample4-generics/SimpleCollection.ts",
+      "sample/sample4-generics/SuperCollection.ts",
+      "sample/sample4-generics/User.ts",
+      "sample/sample4-generics/app.ts",
+      "sample/sample5-custom-transformer/User.ts",
+      "sample/sample5-custom-transformer/app.ts",
+      "src/ClassTransformOptions.ts",
+      "src/ClassTransformer.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/enums/index.ts",
+      "src/enums/transformation-type.enum.ts",
+      "src/index.ts",
+      "src/metadata/ExcludeMetadata.ts",
+      "src/metadata/ExposeExcludeOptions.ts",
+      "src/metadata/ExposeMetadata.ts",
+      "src/metadata/MetadataStorage.ts",
+      "src/metadata/TransformMetadata.ts",
+      "src/metadata/TypeMetadata.ts",
+      "src/storage.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/circular-reference-problem.spec.ts",
+      "test/functional/custom-transform.spec.ts",
+      "test/functional/es6-data-types.spec.ts",
+      "test/functional/ignore-decorators.spec.ts",
+      "test/functional/implicit-type-declarations.spec.ts",
+      "test/functional/inheritence.spec.ts",
+      "test/functional/serialization-deserialization.spec.ts",
+      "test/functional/specify-maps.spec.ts",
+      "test/functional/transformation-option.spec.ts",
+      "test/functional/transformer-method.spec.ts",
+      "test/functional/transformer-order.spec.ts"
+    ],
+    "preflightSha256": "f31142c134da92a29b28eec868ee5cc20ca074426e276df2d3bd3c96feca46c3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 6,
+    "baseCommit": "94db7dc7543cfd3e546fa947d2676e4833497054",
+    "targetCommit": "15d6bdb5efca6dcdbae1b7ba13e3751c4d5fd96a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 18,
+    "sourceTreeBytes": 480486,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts"
+    ],
+    "preflightSha256": "871a7188607ee187cbfc28196dafa496756d9d8953d1c7f7ca9a1cbada763cd6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 7,
+    "baseCommit": "cdd78ad6c5f2d7c0dac45b9b258062d86763766e",
+    "targetCommit": "94db7dc7543cfd3e546fa947d2676e4833497054",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 10684,
+    "sourceTreeBytes": 479727,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "gulpfile.ts",
+      "src/ClassTransformer.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/index.ts",
+      "src/metadata/ExposeExcludeOptions.ts",
+      "src/metadata/MetadataStorage.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/circular-reference-problem.spec.ts",
+      "test/functional/custom-transform.spec.ts",
+      "test/functional/es6-data-types.spec.ts",
+      "test/functional/ignore-decorators.spec.ts",
+      "test/functional/implicit-type-declarations.spec.ts",
+      "test/functional/inheritence.spec.ts",
+      "test/functional/prototype-inheritance.spec.ts",
+      "test/functional/serialization-deserialization.spec.ts",
+      "test/functional/specify-maps.spec.ts",
+      "test/functional/transformation-option.spec.ts",
+      "test/functional/transformer-method.spec.ts"
+    ],
+    "preflightSha256": "7e69f029099c7eb37a63a8f05abbc9dd1c32825281c3ab66131e95a6145ef2f8"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 8,
+    "baseCommit": "824e27e1826ae6b4afe30c8b681bd4e885089c52",
+    "targetCommit": "3e01791b1d965829d9172db769c991e88b3f83d2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 208,
+    "sourceTreeBytes": 480938,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/ClassTransformOptions.ts",
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/implicit-type-declarations.spec.ts",
+      "test/functional/prototype-inheritance.spec.ts",
+      "test/functional/serialization-deserialization.spec.ts"
+    ],
+    "preflightSha256": "906f53b58f6251308bbaf914a7d98137366355aafebf5e6244537c67cfb3a6ae"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 9,
+    "baseCommit": "60aa96cbd5fcb26e060c3edc43c377da6ac9f01f",
+    "targetCommit": "824e27e1826ae6b4afe30c8b681bd4e885089c52",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 168,
+    "sourceTreeBytes": 477702,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/implicit-type-declarations.spec.ts",
+      "test/functional/serialization-deserialization.spec.ts"
+    ],
+    "preflightSha256": "a00af8c5d83fb6183cc00ee8f961724801c4f109e2c77aa8d66e76dcaa5047de"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 10,
+    "baseCommit": "dff2aff4a55d34118905b89894fd7b4c27efa0c5",
+    "targetCommit": "697724f12e94ec8b93fd30b8d9de430f2bd06339",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 417,
+    "sourceTreeBytes": 472198,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformOptions.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts"
+    ],
+    "preflightSha256": "2a48df9cd87591d23184e641181c009bd2e68c0eb7a2216d175f7bae15d9ecfc"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 11,
+    "baseCommit": "d61a97a6d14017338ce43dffc10a70bf1df1fc84",
+    "targetCommit": "e6e8b8265148026b17cada08589f302e297617ac",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 926,
+    "sourceTreeBytes": 463331,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/metadata/ExposeExcludeOptions.ts",
+      "src/metadata/TypeMetadata.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/circular-reference-problem.spec.ts",
+      "test/functional/custom-transform.spec.ts",
+      "test/functional/transformer-method.spec.ts"
+    ],
+    "preflightSha256": "d8b229a60aee7d60b4de1c3107df172455ea28e965bff61deea21ec6b13d3430"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 12,
+    "baseCommit": "c3d0030bb1c63ab7876b0ba384b17debb9570579",
+    "targetCommit": "ff5fcefb163bde31a70d2f7792fe4022ba6c95c0",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 173,
+    "sourceTreeBytes": 390646,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/metadata/MetadataStorage.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/inheritence.spec.ts"
+    ],
+    "preflightSha256": "7df56e2cf869c8221f0a323ceb6c812c0f4f714a714a188022bb443350686948"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 13,
+    "baseCommit": "ac92126c174b3656539054c7dd6e6bc048d8c8e8",
+    "targetCommit": "0cd39edc4a8f02afa5246710dd212361ce2e0dcf",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 17,
+    "sourceTreeBytes": 384736,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts"
+    ],
+    "preflightSha256": "6b3062e6152d12871ce82bddaacb4a07e72937fefb3b9156fff01c14637ebba1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 14,
+    "baseCommit": "7f2ad5bc196cd368e4264185dbdc289563a872a7",
+    "targetCommit": "6bd5e9e0bb4161a91ae2e657f80d530f0934d24d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 65,
+    "sourceTreeBytes": 383766,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/metadata/MetadataStorage.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/custom-transform.spec.ts"
+    ],
+    "preflightSha256": "debc7a25f06b644ba37ace89c5063057e0c4a0333a66c8c9a0bfd14573446736"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 15,
+    "baseCommit": "7343716b96f466d54e905fabc50371bbc71c56ea",
+    "targetCommit": "a87e56d6c7caf29101de11675f836314759e3704",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 199,
+    "sourceTreeBytes": 220196,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformer.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/index.ts",
+      "src/metadata/MetadataStorage.ts",
+      "src/metadata/TransformMetadata.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/circular-reference-problem.spec.ts",
+      "test/functional/custom-transform.spec.ts"
+    ],
+    "preflightSha256": "347f74d986f105e69620d07b644dfbba947042b8ed75c45d32ca2c8a39709c36"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 16,
+    "baseCommit": "52cd394331092b8a00ff445a76de479a1874e729",
+    "targetCommit": "9e8754bee00e30360a1055c4ac6c0103c5a1ae04",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 69,
+    "sourceTreeBytes": 217413,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformOptions.ts",
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/circular-reference-problem.spec.ts"
+    ],
+    "preflightSha256": "3a10f5ef1e5fb7e00f2257d4a2ed36a0dde9f8333e625d4785c0934352df1b8c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 17,
+    "baseCommit": "48a6ef297950c6413e30c7dfdbde53aac643a3bd",
+    "targetCommit": "5e76ab610b178058172441ab162050e8cf4c3510",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 314,
+    "sourceTreeBytes": 211747,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/decorators.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/transformer-method.spec.ts"
+    ],
+    "preflightSha256": "b8da842a53451b38285eae08c223e0d70f99e5d1152757e218e1fa2a03afca5f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 18,
+    "baseCommit": "201e6217efe618c913c22e557c8e17f0177459b1",
+    "targetCommit": "48a6ef297950c6413e30c7dfdbde53aac643a3bd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 21,
+    "sourceTreeBytes": 202856,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/custom-transform.spec.ts"
+    ],
+    "preflightSha256": "20b78f08746def031dd93abfc0884c3ae3d1048f1dfeef125f273a084c30d6d9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 19,
+    "baseCommit": "4e7b12e65f1a22445ae47f3977209e651c2ffe94",
+    "targetCommit": "5facdcbc7df717eacddc9fa05afc5d4a69bccfbd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 37,
+    "sourceTreeBytes": 203135,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/index.ts",
+      "src/storage.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/circular-reference-problem.spec.ts",
+      "test/functional/custom-transform.spec.ts",
+      "test/functional/es6-data-types.spec.ts",
+      "test/functional/ignore-decorators.spec.ts",
+      "test/functional/serialization-deserialization.spec.ts",
+      "test/functional/specify-maps.spec.ts",
+      "test/functional/transformation-option.spec.ts"
+    ],
+    "preflightSha256": "8b613fcb6e3bfaa82435a94a8683dbd5af996e5662996a0b2f5f1e00ad93710b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 20,
+    "baseCommit": "23f79c02d30fde17528ae7b7285f86ceb48c6bcf",
+    "targetCommit": "0c3bafe9e44a222ef09b67d7be8c2fc3181c420d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 12,
+    "sourceTreeBytes": 202841,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "gulpfile.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/specify-maps.spec.ts"
+    ],
+    "preflightSha256": "98c5c58982b16046ee008cb53ca42231367d691f06e5c5bed38f6cd3b7ff1938"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 21,
+    "baseCommit": "09d09eefa31d76a3afa2504be10e590ae4b7461e",
+    "targetCommit": "67aba85e84de093b1c9506f5976f648b494b9eb8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1714,
+    "sourceTreeBytes": 201489,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformOptions.ts",
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/specify-maps.spec.ts"
+    ],
+    "preflightSha256": "eda74b0c9316468f563ea8f9217027b24af86ef06ad8d51c760b24b2a65c0bf6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 22,
+    "baseCommit": "4e276e09af82e740af951021ee4fa03605af3212",
+    "targetCommit": "847fedcca095607582d3361ffd03b6d415dca3db",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 231,
+    "sourceTreeBytes": 148421,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/ClassTransformer.ts",
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/es6-data-types.spec.ts"
+    ],
+    "preflightSha256": "a207f8acd0b41470039454c72caa30ba6fa91fdb348c2f6ca9a61be51abb3bbc"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 23,
+    "baseCommit": "82b5275a284f72aa2773387cae7648f4b2700570",
+    "targetCommit": "4e276e09af82e740af951021ee4fa03605af3212",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 173,
+    "sourceTreeBytes": 142868,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "sample/sample5-custom-transformer/app.ts",
+      "src/TransformOperationExecutor.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/es6-data-types.spec.ts"
+    ],
+    "preflightSha256": "6f15eb808463cda7eaacb202ad0f35a39384f83fceac7fd5a77dddbe33a84f2a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 24,
+    "baseCommit": "4312ae6ba17fc2fc3b2fa58296ed9281ecc80b94",
+    "targetCommit": "82b5275a284f72aa2773387cae7648f4b2700570",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 348,
+    "sourceTreeBytes": 138371,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "sample/sample5-custom-transformer/User.ts",
+      "sample/sample5-custom-transformer/app.ts",
+      "src/ClassTransformer.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/index.ts",
+      "src/metadata/ExposeExcludeOptions.ts",
+      "src/metadata/MetadataStorage.ts",
+      "src/metadata/TransformMetadata.ts",
+      "src/metadata/TypeMetadata.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/custom-transform.spec.ts"
+    ],
+    "preflightSha256": "f98cda56c2961cbf0775b692468e04f950d1c9dfcb5f7f526c2a0884863069db"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "class-transformer",
+    "ordinal": 25,
+    "baseCommit": "b49082313d26b78778cd8420676fd78cfa55ffb9",
+    "targetCommit": "c738baf2b378ed15937bcc8837e065e939fbe082",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 3637,
+    "sourceTreeBytes": 126980,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "gulpfile.ts",
+      "sample/sample1-simple-usage/app.ts",
+      "sample/sample2-iheritance/app.ts",
+      "sample/sample3-custom-arrays/app.ts",
+      "sample/sample4-generics/app.ts",
+      "src/ClassTransformOptions.ts",
+      "src/ClassTransformer.ts",
+      "src/ConstructorUtils.ts",
+      "src/TransformOperationExecutor.ts",
+      "src/decorators.ts",
+      "src/error/TypeMissingError.ts",
+      "src/index.ts",
+      "src/metadata/ExcludeMetadata.ts",
+      "src/metadata/ExposeExcludeOptions.ts",
+      "src/metadata/ExposeMetadata.ts",
+      "src/metadata/MetadataStorage.ts",
+      "src/metadata/PropertyMetadata.ts",
+      "src/metadata/SkipMetadata.ts",
+      "src/metadata/TypeMetadata.ts"
+    ],
+    "changedTestPaths": [
+      "test/functional/basic-functionality.spec.ts",
+      "test/functional/circular-reference-problem.spec.ts",
+      "test/functional/ignore-decorators.spec.ts",
+      "test/functional/serialization-deserialization.spec.ts",
+      "test/functional/transformation-option.spec.ts"
+    ],
+    "preflightSha256": "deea9e59ff904a5c4337cef09bae9b2743e4c8f5b112e7c8f8bd77bd142e3da6"
+  }
+]

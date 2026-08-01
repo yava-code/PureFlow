@@ -2,6 +2,17 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-08-01 — R7 corpus frozen
+
+- Implemented the outcome-free Git scanner, isolated Docker provisioner, immutable resume evidence, deterministic candidate merge, and exact 30-patch freezer. RED tests preceded the scanner batching, evidence merge, global-slot cap, and registered-script precheck changes.
+- Registered replacements before their eligibility histories were inspected. The collector evaluated 457 records across 10 registrations and froze 30 eligible patches from six repositories: 12 development and 18 held-out.
+- Frozen manifest SHA-256: `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149`. The held-out set includes `ufo`, which is absent from development.
+- Collection left no `pureflow-r7-corpus-*` Docker container or volume. No compiler, probe, model, expert, or participant outcome was inspected during selection.
+- The complete extension suite passed 93/93, the explicitly enabled Docker backend suite passed 2/2, TypeScript/build/VSIX packaging passed, and a clean re-freeze reproduced the manifest byte-for-byte.
+- R7 remains open: automated compiler validity, replay/parity/adversarial evidence, and two independent human ratings are not yet measured. R5/R6 remain gated.
+
+Evidence: `docs/v0.3/r7/`, `docs/v0.3/results/R7_CORPUS_COLLECTION.md`, corpus tests, local Docker provisioning on 2026-08-01.
+
 ## 2026-08-01 — R7 Docker SandboxRunner local candidate
 
 - Wrote `SANDBOX_RUNNER_SPEC.md` first and passed the strict spec validator at 100/100 before implementation. The contract fixes command authority, trust/consent, opaque handles, image identity, isolation flags, mountpoints, oracle integrity, evidence bounds, single-use IDs, cancellation, cleanup, and fail-closed behavior.

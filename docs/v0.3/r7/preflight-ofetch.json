@@ -1,0 +1,942 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 1,
+    "baseCommit": "6a879d46bdf9f9d4e65b975b91ba3e005e132771",
+    "targetCommit": "5f17585adc357ba4626874d69e377d970ae4b276",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 29,
+    "sourceTreeBytes": 475437,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "426e1ede9219b8b3eabb88f33e85f7e5b1ffe687b7c8d73c9326c9c0814281d1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 2,
+    "baseCommit": "abc5a8ffeaae0c35f6c306c9bb23879d91da78a9",
+    "targetCommit": "3cf498be16a84453c7463232f9ad0909a564c7d7",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 31,
+    "sourceTreeBytes": 472868,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "8217edde8a1b5aa423639a17496889c4699379a8630a4bbd80cdd0df3e9d51f6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 3,
+    "baseCommit": "9fa0747438fe38b11aa6ceee5020b0374a62d113",
+    "targetCommit": "abc5a8ffeaae0c35f6c306c9bb23879d91da78a9",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 2130,
+    "sourceTreeBytes": 472746,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "build.config.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "430d9b1fc5ef37dab7347d064f72ddc40233556d01875179b548ffe2f7f5cd04"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 4,
+    "baseCommit": "413397a9c541b0a98e1b70277783c41b72c24bb8",
+    "targetCommit": "858d416204245cf57e66f53304eb8d6c3dc24c19",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 162,
+    "sourceTreeBytes": 489978,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "build.config.ts",
+      "src/fetch.ts",
+      "src/index.ts",
+      "src/node.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "6b88ed7ba827942c07e52d49825a4aa46c8ac8cb6b3a2b777f54c9c145499734"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 5,
+    "baseCommit": "16bf0b844e51416c5965b5abdaad921e67527232",
+    "targetCommit": "413397a9c541b0a98e1b70277783c41b72c24bb8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 96,
+    "sourceTreeBytes": 494960,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/base.ts",
+      "src/error.ts",
+      "src/fetch.ts",
+      "src/index.ts",
+      "src/node.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "0d761f87bd281a80348adf3f741e9bb5a50bd88b4934c5d4ab3720faa2f52073"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 6,
+    "baseCommit": "1c7c34d0317e4bac52fb8ca984ac09ddd12eda11",
+    "targetCommit": "f528da39d8530974ef606aeafb6a9c205b6da3ec",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 32,
+    "sourceTreeBytes": 500091,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "5742418b5c16eff4eb2b45d66bd9084399b291ec5c00e4c25cf09f1252a7ee02"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 7,
+    "baseCommit": "b4c99902fbaf9f4b24a6b902ddc6b59271b3d2c3",
+    "targetCommit": "80aa991210135ce0731de605f82b3bf3c6186112",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 36,
+    "sourceTreeBytes": 524592,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "867aea4f80b627b38babe425d8aac7ca33827454772feda9772d629f451eb4cb"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 8,
+    "baseCommit": "6aff08e529223d728b6fc49459aadf2bb9be7274",
+    "targetCommit": "0d84f7b37a73d1a5dfdde737956591e84528866f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 132,
+    "sourceTreeBytes": 523387,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "6562dcbd0aac2d032244b117f70bfb496ed60e1c148f059eed007a050afaf695"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 9,
+    "baseCommit": "7030ad93f597593ec5318cfcfc0bdade631ade8b",
+    "targetCommit": "3baf1cc076165bdb07ec9a5d918504efd6823074",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 190,
+    "sourceTreeBytes": 518861,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "928dc55abb2b007b5219c012b8a0905102a61ec3c932b62d45728f4c68a89eb0"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 10,
+    "baseCommit": "4faac04a519691215ac391b61c9e714bce23ae73",
+    "targetCommit": "f7f946395544f3ab39fd2e5c61110b5371d7e9dd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 25,
+    "sourceTreeBytes": 508609,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "fffbd1e3401bd14d74a09a3b854d3c9f1efab139265a1ab57e9a2d5e5ec0aa1a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 11,
+    "baseCommit": "c24c9a3bae5f3d8994d89030d969e8b65698d922",
+    "targetCommit": "9a5640ce150a29ce948fb28bf5968b31e1600706",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 22,
+    "sourceTreeBytes": 507989,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/types.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "21c96267c2f78c2ba0d46a0e8db4ba9371e7786f7b64addce5f079b549162194"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 12,
+    "baseCommit": "1258d51494656c9507a8bb82646c644c64f23e69",
+    "targetCommit": "905244a57d7b2e890634d7bcf9b314c8d1f7450e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 32,
+    "sourceTreeBytes": 491258,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/error.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "1aa26e101a2de3bc20d44a5c780b872a6bf27c64e8c25ad0463c318a400fee69"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 13,
+    "baseCommit": "cb05d8fae4c52e02f5869068f8fee2c4587d986f",
+    "targetCommit": "d58b96156800f35ec84bd6bb1ee9929378a33064",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 114,
+    "sourceTreeBytes": 488855,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "d35bb8e88fcc414ff9b54fe16a1d1ac0e742e57e1857dffcba64173079fe7a53"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 14,
+    "baseCommit": "b9ef395dff9cd6f5c1da5129c330b1fc441ab65a",
+    "targetCommit": "cb05d8fae4c52e02f5869068f8fee2c4587d986f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 13,
+    "sourceTreeBytes": 486866,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "e25e76678dc85a9dc1a6e5249590a32c65dc1c50175afe28826af3693b0dbec4"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 15,
+    "baseCommit": "64d3aed825e0e72dfb24f631fcfac60318924a42",
+    "targetCommit": "b9ef395dff9cd6f5c1da5129c330b1fc441ab65a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 55,
+    "sourceTreeBytes": 486520,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/error.ts",
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "a19177cd79d51d0e12ae70e7eef89f66d5075a7561eed5486ddd705bb577ce3b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 16,
+    "baseCommit": "458d161b256f58dca10ff8509915f0b5e02915e2",
+    "targetCommit": "9e204400c64917b8b5fe7214b4bf0730cb5f5f3e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 42,
+    "sourceTreeBytes": 485129,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "5ea94fb888d945831105175d7688fc8b4120a65e45ce9af8b9cb640b6e07928f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 17,
+    "baseCommit": "2be558caa564bc7740efdc3e1587d7144b26d758",
+    "targetCommit": "98396ecbf7a71ab57678e0b9e09d31190dee1881",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 66,
+    "sourceTreeBytes": 475036,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/index.ts",
+      "src/node.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "6d60562fb48e676d77c5a9096304d49c270fee8eda3247becc3646f8f1521c9b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 18,
+    "baseCommit": "5f95a88f32dfd85d74d2649f85dadec5e2785b21",
+    "targetCommit": "4cacd14498bbc781553ac3b09caa963ceb2bdc47",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 43,
+    "sourceTreeBytes": 479082,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "8c108d04c35b9e7fde2d19ced8a226e4df9ad0066278fcb818f183a7104f4753"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 19,
+    "baseCommit": "253707a7990c91df0dd57d018f480133bb6de540",
+    "targetCommit": "933e7541be3730cb44772cfdb5ab2e3270d3feba",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 92,
+    "sourceTreeBytes": 465301,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "e6d4ca45edfc2abdf647227c6cc421e6ce27c0b8081fdc38647afa968475ca6d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 20,
+    "baseCommit": "9f570b77737159a5ffd70da7a65ec75dac080dd3",
+    "targetCommit": "2bc8ed8b2c1a868f7be541b7fe4b25b03f3ddc0e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 31,
+    "sourceTreeBytes": 463097,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "03ff48bc55b33a88e7919c1b0e7d5d90f32a3b7c203cad4b2361527483428215"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 21,
+    "baseCommit": "4f0e298999e5e8b3139569b389b8164457c61592",
+    "targetCommit": "9f570b77737159a5ffd70da7a65ec75dac080dd3",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 37,
+    "sourceTreeBytes": 462525,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "80dbe80ca49f71e87c7ec94efddfb5392a73ea01d9fa915873cf71aa5284a260"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 22,
+    "baseCommit": "dfbcf77cbb3e5e49bcc828afc4cc798e84de21c9",
+    "targetCommit": "aabfb9a2bdcd29c49389c5644344617a0fc61a4e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1361,
+    "sourceTreeBytes": 464722,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "playground/index.ts",
+      "src/error.ts",
+      "src/fetch.ts",
+      "src/index.ts",
+      "src/node.ts",
+      "src/types.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "f64ec91f35d574815aa7ea08df7fa959e0f278debe9c711e2ada13faa43bf70f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 23,
+    "baseCommit": "f27660eae1c8bde65cad64670f15a891c804c3ea",
+    "targetCommit": "5be67f72840449dcef47105ce01ad5611c03aa3f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 231,
+    "sourceTreeBytes": 469285,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "src/index.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "ed3fcfec190a9756e5d9442b1e9bb9597d9bb27f4ded0ae2bf971a8400e10bc1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 24,
+    "baseCommit": "4cfe2e9b7d3c6c7fab52d29cf7b9b9ebc16a3b7c",
+    "targetCommit": "f27660eae1c8bde65cad64670f15a891c804c3ea",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1171,
+    "sourceTreeBytes": 469707,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "build.config.ts",
+      "playground/index.ts",
+      "playground/undici.ts",
+      "src/base.ts",
+      "src/error.ts",
+      "src/fetch.ts",
+      "src/index.ts",
+      "src/node.ts",
+      "src/undici.ts",
+      "src/utils.ts",
+      "vitest.config.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "6b75ff8bddd0ebb29232079c3c61904969d542134d74b9eb1276852275ffa3e8"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 25,
+    "baseCommit": "9fed5b45aafec9296ad30899438a22ddb84b3886",
+    "targetCommit": "b73fe67aaa7d5d5b1a283b653e7cd7fb30a4cc21",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 16,
+    "sourceTreeBytes": 457038,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "8f839050a4f1285afec6f7ec20f45ce7d44461dbbd8fa2d77a2380a646fa2a14"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 26,
+    "baseCommit": "47abab06208eec638e8c9a86835b8930b3f631bb",
+    "targetCommit": "dc237d489a68936996c9ab95dce35ca9e0d2b2e4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 17,
+    "sourceTreeBytes": 452689,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "e3ff2a05afbde1f143c36da0143a44ca7b3a1b940967058ae4fa293675090861"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 27,
+    "baseCommit": "2d59a8d72e2d596375a19df1bc004caaad50e2f6",
+    "targetCommit": "babb331c3c2dc52d682f87b3c2c660d23cf056b3",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 12,
+    "sourceTreeBytes": 488519,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/error.ts",
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.mjs"
+    ],
+    "preflightSha256": "8077c43e8781a80033bf1fb01fcb3e36047973a3bf50a273a01805360f6fd04e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 28,
+    "baseCommit": "eb12a079ccd79f69a31fb68d98ad8122aebfe4fe",
+    "targetCommit": "4b74e45f9989a993e725e7fe4d2e098442e457f1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 71,
+    "sourceTreeBytes": 483377,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/index.ts",
+      "src/node.ts",
+      "src/undici.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.mjs"
+    ],
+    "preflightSha256": "5c0a5125546393cfe72c808d5e3fd916d6ee23f7c0e6efa914db3e2f29b8d84c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 29,
+    "baseCommit": "def366dd5080856047631a1a33c7e01d2520ddd4",
+    "targetCommit": "1029b9e2c982991d21d77ea33036d7c20a4536bb",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 90,
+    "sourceTreeBytes": 483391,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.mjs"
+    ],
+    "preflightSha256": "efe2b60da8cf30a2d46a5277007d147a5dab4e3f9ae967bc736ca02df3ad7954"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 30,
+    "baseCommit": "baa3669d1d4dbeea763e9df88cc0083437edd5e4",
+    "targetCommit": "4adb3bc38d9423507ccdcd895b62a3a7d95f4144",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 1462,
+    "sourceTreeBytes": 480212,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts",
+      "src/utils.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.mjs"
+    ],
+    "preflightSha256": "d24386fa39b902ce973dea6727aae8a7ca151e6ad137dc857260f00f21e16b90"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 31,
+    "baseCommit": "375b825671f13cd842ea280e698180246ce857ec",
+    "targetCommit": "662145f8b74a18ba7d07e8eb6f3fd1af91941a22",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 4,
+    "sourceTreeBytes": 474394,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.mjs"
+    ],
+    "preflightSha256": "58c3b7c5d30e0495bfd1c0b4431819442fb9f83ed6ffe2809b5bdefe38925aa1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 32,
+    "baseCommit": "4ab7022ae96c7990d2488eacc04c06d094d4de31",
+    "targetCommit": "e794b1e4644f803e9c18c8813c432b29c7f9ef33",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 5,
+    "sourceTreeBytes": 473971,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.mjs"
+    ],
+    "preflightSha256": "31a29a38b77b0d38d3cbe95e63ab6290de729b482f41dfeaf995f141efa010b3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 33,
+    "baseCommit": "a183b02048c5323bcb79f2a03862008466771104",
+    "targetCommit": "7e1b54d1363ba3f5fe57fe8089babab921a8e9ea",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 9,
+    "sourceTreeBytes": 473215,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.mjs"
+    ],
+    "preflightSha256": "5bcb16600e7947e597b699694f2743db9ef2bdb50381dc135e51e1fe9466db6b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 34,
+    "baseCommit": "b5c0c3bb38289a83164570ffa7458c3f47c6d41b",
+    "targetCommit": "463ced66c4d12f8d380d0bca2c5ff2febf38af7e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 26,
+    "sourceTreeBytes": 520988,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "cd4c2072008af13c78b5919362cabdc85fe2cfffc3b083e844d9d8a86cf568f6"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 35,
+    "baseCommit": "4ab88c2725cfaeab9b52da7f7b71b945f9c661b8",
+    "targetCommit": "97d0987131e006e72aac6d1d4acb063f3e53953d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 58,
+    "sourceTreeBytes": 556716,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "8c04bc262a4a788e99d8d5a89e8735eff54d476ea3994b858e957bd7d09eaf59"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 36,
+    "baseCommit": "07e8509ea3e1f0d61b75a33762eddebce50fb508",
+    "targetCommit": "f93fd9054ab17846ee412a2266f4acfa3a8cc7a4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 825,
+    "sourceTreeBytes": 554551,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "d437ee55cb60786b93aa807cd5d59e231acbdbcfdad66f76d79d196188b3bde8"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 37,
+    "baseCommit": "52c582f9a65ff583fd6177ee1fa8e002a172114c",
+    "targetCommit": "52d84e75034c3c6fd7542b2829e06f6d87f069c2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 14,
+    "sourceTreeBytes": 552616,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "f611e887cdb445150e95b0784563d53aa385a0a18fd03052bc6c0a730c448b4b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 38,
+    "baseCommit": "08f3a1ee474514bf04a8f62053995f5170f9fd82",
+    "targetCommit": "e6a56ff083244fac918e29058aaf28bf87c98384",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 45,
+    "sourceTreeBytes": 551379,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "c502a5ce9db31d7268b54f20463e81b53c37e1f7864a5a41be30eadd2130ba0b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "ordinal": 39,
+    "baseCommit": "421dfe9933295027af6ac33ff1eacbdca77c2eac",
+    "targetCommit": "f9f70a59222bc0d0166cbe9a03eebf2a73682398",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": true,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": false,
+    "changedLines": 128,
+    "sourceTreeBytes": 275091,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "playground/index.ts",
+      "src/base.ts",
+      "src/error.ts",
+      "src/fetch.ts"
+    ],
+    "changedTestPaths": [
+      "test/index.test.ts"
+    ],
+    "preflightSha256": "11e80b83814728eae00040eeae8a34406f444714e36fa3ce483b43671bfb12ed"
+  }
+]

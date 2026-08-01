@@ -1,0 +1,1625 @@
+[
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 1,
+    "baseCommit": "142ce84b807c4fe66e619c22480a28d0e4bd50fa",
+    "targetCommit": "e8d2bdc501b3ba6f03922db5e595770d4763d9da",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 45,
+    "sourceTreeBytes": 3381521,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/core.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/format_prototype_pollution.spec.ts"
+    ],
+    "preflightSha256": "d26b0c78c2582fe0ce090918797147988e37c7f2af902dea693c3dd0f9e8c798"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 2,
+    "baseCommit": "82735a15826a30cc51e97a1bbfb59b3d388e4b98",
+    "targetCommit": "720a23fa453ffae8340e92c9b0fe886c54cfe0d5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 199,
+    "sourceTreeBytes": 3380357,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/vocabularies/validation/pattern.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/cve_2025_69873_redos_attack.spec.ts"
+    ],
+    "preflightSha256": "a645126f6df3a87dafdd7607192f84fa717590ff65c3d619e3f54ff40a1e4689"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 3,
+    "baseCommit": "f06766f33ed7291f84c19f22a1286a34475fbdaf",
+    "targetCommit": "69568d08564303e2c32a2de61feb833b41075f96",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 76,
+    "sourceTreeBytes": 3374938,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/jtd/serialize.ts",
+      "lib/core.ts"
+    ],
+    "changedTestPaths": [
+      "spec/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "e94ef60d8c84a18eaa1140b90df175627c5b630857f827508bdd34ea5150f164"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 4,
+    "baseCommit": "c8b37f448f77448656222a5a5e279432857f7e9f",
+    "targetCommit": "80c014fa537e9e32cd6aa493cea83ffe619e906e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 34,
+    "sourceTreeBytes": 3370954,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/index.ts",
+      "lib/compile/resolve.ts",
+      "lib/runtime/uri.ts",
+      "lib/types/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/resolve.spec.ts"
+    ],
+    "preflightSha256": "bc52411a1924aeff13d998bcd4a014944067f6be40fd46668f2c0d3b41c5afce"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 5,
+    "baseCommit": "accd9f3ee5e0e688244c1accf7bb13745b513177",
+    "targetCommit": "c8b37f448f77448656222a5a5e279432857f7e9f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 26,
+    "sourceTreeBytes": 3370957,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/index.ts",
+      "lib/compile/resolve.ts",
+      "lib/runtime/uri.ts",
+      "lib/types/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/resolve.spec.ts"
+    ],
+    "preflightSha256": "3f9de432cef87296543b92f5d7a4aedc714345568c0e7fb145c928d2337ef8c3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 6,
+    "baseCommit": "9e266399cac65e487d57ec0f50b9eb4005261622",
+    "targetCommit": "fa1b5d56711a038af9a5f059cb7d1203e65449f4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 24,
+    "sourceTreeBytes": 3370959,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/index.ts",
+      "lib/compile/resolve.ts",
+      "lib/runtime/uri.ts",
+      "lib/types/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/resolve.spec.ts"
+    ],
+    "preflightSha256": "cdc50652d524318955574b43df1ca12e26042c9a2b113dafccc309246708c875"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 7,
+    "baseCommit": "be38f349e3c82cd940ba254153290552256256d7",
+    "targetCommit": "5f20d5f90adc6ea58e512f5da72638c7a96d93d9",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 66,
+    "sourceTreeBytes": 3370957,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/vocabularies/discriminator/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/discriminator.spec.ts"
+    ],
+    "preflightSha256": "4ab66747060d3deac2751faaee5500d61ff9b22c4ab9f70aff6ae5d632af1f03"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 8,
+    "baseCommit": "527d43a1fa42305ed7ac0abcf64a98c487d45e83",
+    "targetCommit": "c5c195bd47503bc55ccd011c36b3de81867fe3a1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 80,
+    "sourceTreeBytes": 3367677,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/vocabularies/jtd/properties.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1971_jtd_discriminator.spec.ts"
+    ],
+    "preflightSha256": "fde3510e1d9f9a15f02881d8b2b951d3ca95fef77669352865757e9cb25549eb"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 9,
+    "baseCommit": "d2c57d96be9e445ab38496e2cf22494e68eeb44e",
+    "targetCommit": "dab8504c8e46f96adf31687a3216ac03d48b8d0d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 96,
+    "sourceTreeBytes": 3365923,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "58a7d31b964999e1818ad0e93552dfc5f5f0b27416988eab0f14d38f10674fdc"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 10,
+    "baseCommit": "a211e8dcf26a2c1f6722d1d44419287256a9a726",
+    "targetCommit": "a4892653055d1bccb58a739825caac466d86da3a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 122,
+    "sourceTreeBytes": 3363894,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/compile/validate/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1935_integer_narrowing_subschema.spec.ts"
+    ],
+    "preflightSha256": "8d356b6aa5c53ac1f25bc8c3cf78a9052f5b2d0d39feb9d39c8b2fe4e85eb35e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 11,
+    "baseCommit": "5c728645cc73c7bf2e07c01e8ecf32b50744f596",
+    "targetCommit": "a211e8dcf26a2c1f6722d1d44419287256a9a726",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 47,
+    "sourceTreeBytes": 3361527,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/vocabularies/jtd/values.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1949_jtd_empty_values.spec.ts",
+      "spec/issues/2001_jtd_only_optional_properties.spec.ts"
+    ],
+    "preflightSha256": "34b095dc8a35071567fbefc3c7eabc16581da9b031e1815d2693179612087deb"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 12,
+    "baseCommit": "35034b6b1bbaf144595713d50415501138db0036",
+    "targetCommit": "5c728645cc73c7bf2e07c01e8ecf32b50744f596",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 58,
+    "sourceTreeBytes": 3360388,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/jtd/serialize.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/2001_jtd_only_optional_properties.spec.ts"
+    ],
+    "preflightSha256": "0d4fc34859b4d3cd1396ef5fe6ecbf502ec5c09197831dd9ea27b11299ddd64b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 13,
+    "baseCommit": "69d78976328d1a0ec4a1c705e2dbc5c66b38761a",
+    "targetCommit": "00b3939ba545e87f585b5ee5e93d26f025454fc6",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 18,
+    "sourceTreeBytes": 3358605,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/json-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/json-schema.spec.ts"
+    ],
+    "preflightSha256": "ce61f9ad5c6460875b6f087e10564206cff10d566044420cbe7285bf2a1e37d8"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 14,
+    "baseCommit": "6e53e432fd7de29a94ba042af47cd161864fa907",
+    "targetCommit": "95b15b683dfb60f63c5129b0426629b968d53af8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 84,
+    "sourceTreeBytes": 3355955,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/vocabularies/discriminator/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/discriminator.spec.ts"
+    ],
+    "preflightSha256": "41759a572a2e7abb70e2e8512316194a1022fad0ac578d437bb3fd56ea7497b5"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 15,
+    "baseCommit": "8b993dcb5b151116275025ffa4c9aa87302076a3",
+    "targetCommit": "0e47ab4f0bc16a3ae48a227e917c7b08b7ecd597",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 816,
+    "sourceTreeBytes": 3353636,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/index.ts",
+      "lib/compile/jtd/parse.ts",
+      "lib/compile/jtd/serialize.ts",
+      "lib/compile/ref_error.ts",
+      "lib/compile/resolve.ts",
+      "lib/compile/validate/index.ts",
+      "lib/core.ts",
+      "lib/runtime/uri.ts",
+      "lib/types/index.ts",
+      "lib/vocabularies/core/ref.ts",
+      "lib/vocabularies/jtd/ref.ts"
+    ],
+    "changedTestPaths": [
+      "spec/keyword.spec.ts",
+      "spec/resolve.spec.ts"
+    ],
+    "preflightSha256": "487c17201d05f46c2ea1575df69bf28391863b2496ebb8ba282e38bdb6884f03"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 16,
+    "baseCommit": "ec96c87c5994b4e8af96a61d4634a39da1786c0a",
+    "targetCommit": "e7bc0098cbe8d8c742fd01115a16016defe3b06e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 96,
+    "sourceTreeBytes": 3350260,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/vocabularies/discriminator/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/discriminator.spec.ts"
+    ],
+    "preflightSha256": "15cb35daf0cd2e39b9dd757866742e6e9eb3b458639b177b735b94ff3e69c0e3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 17,
+    "baseCommit": "d21fa70ac0e6187b7089aaea3fe60247da613685",
+    "targetCommit": "418cd0f4308c07c627071b4d03544e7cc57f235c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 123,
+    "sourceTreeBytes": 3342634,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/codegen/code.ts",
+      "lib/core.ts",
+      "lib/standalone/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/standalone.spec.ts"
+    ],
+    "preflightSha256": "85b96481d99371da14e77eef363265f403388290ff75f3133476de74633cea99"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 18,
+    "baseCommit": "683de4edc4bd442897508b10dd0c95cf9b2ab96f",
+    "targetCommit": "1959de4ea6e1cdacfac215f2773b4d2cef2d2ccb",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 28,
+    "sourceTreeBytes": 3329405,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/vocabularies/applicator/contains.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1819_mincontains.spec.ts"
+    ],
+    "preflightSha256": "094b0d2fc494a6f5f141a92500ec165f4f67e1325e3034dc4b12626bb116c99d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 19,
+    "baseCommit": "f68ef8f723fd4488032a73c59103e830b928df2d",
+    "targetCommit": "8ed855b317ade9e13a21f219b72cf8a25b2d36d1",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 80,
+    "sourceTreeBytes": 3328846,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts",
+      "lib/runtime/re2.ts",
+      "lib/types/index.ts",
+      "lib/vocabularies/code.ts",
+      "spec/issues/re2.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1683_re2_engine.spec.ts"
+    ],
+    "preflightSha256": "2b812aee398de0485dab78c0978141e7ef829925045092ec63bd22470c4f447d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 20,
+    "baseCommit": "42945d68d5ccc259283913ba1341d38c09499cf0",
+    "targetCommit": "1b4583524edfc12f9a8bf8102df13553ae12ad40",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 253,
+    "sourceTreeBytes": 3324991,
+    "supportedTypescriptBoundary": false,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/vocabularies/applicator/contains.ts"
+    ],
+    "changedTestPaths": [
+      "spec/json-schema.spec.ts"
+    ],
+    "preflightSha256": "d232d2a5919ad8acb4dc079cb981b73881c22c3e9c2ebac6589c0b010b9d7db9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 21,
+    "baseCommit": "7419ec36291ce62b0327cde453261f53519cbae2",
+    "targetCommit": "9a9656fe117f1cf491f0a6ad9c31ae8755158425",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 29,
+    "sourceTreeBytes": 3293936,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/resolve.ts",
+      "lib/core.ts"
+    ],
+    "changedTestPaths": [
+      "spec/resolve.spec.ts"
+    ],
+    "preflightSha256": "77faac69c24aea91cc5660b52461c842e3777862be3465df80f703c525367fec"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 22,
+    "baseCommit": "e403421b5589ba5f83e2aac4724717a63bf33c51",
+    "targetCommit": "658e7a11c5551a0fbf6d3944bea0476105302bb4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 38,
+    "sourceTreeBytes": 3287882,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/runtime/parseJson.ts",
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/ajv.spec.ts",
+      "spec/resolve.spec.ts"
+    ],
+    "preflightSha256": "dbe5e38e9abc37aca03fc88a66179717bb4fb0cf3805e56f7aee474b50903068"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 23,
+    "baseCommit": "e055175aa5da2e0f1d811e94ad72044d39eb0836",
+    "targetCommit": "02e175ad6817674461b8109e6bf4ca180db2e4cf",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 111,
+    "sourceTreeBytes": 3287003,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/json-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/json-schema.spec.ts"
+    ],
+    "preflightSha256": "af88fd90a21b767b40ff71dd008a95f8ecdd1a72e10900b4d29b19f2eebdb504"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 24,
+    "baseCommit": "001f8290f15322ed4a8c3141470fa16da2a6c5ad",
+    "targetCommit": "71a29b822ea907afde1a7ba347a4dc41012db6d2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 14,
+    "sourceTreeBytes": 3285069,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/jtd/serialize.ts"
+    ],
+    "changedTestPaths": [
+      "spec/jtd-timestamps.spec.ts"
+    ],
+    "preflightSha256": "c483d2a3c1e46d2a6d52c08f65fa19f2adb9e964cfcd9eabb1e8018dc22de008"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 25,
+    "baseCommit": "4706efd1d34996d6e7694159ab233ed699f62195",
+    "targetCommit": "674688c08a62178ee5b6a452c672d20c7761c0f7",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 118,
+    "sourceTreeBytes": 3284661,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/validate/index.ts",
+      "lib/vocabularies/applicator/not.ts"
+    ],
+    "changedTestPaths": [
+      "spec/tests/issues/1668_not_with_other_keywords.json"
+    ],
+    "preflightSha256": "a6ff8cca56c4bb9cd2e855084ab95fc4d8cbd91032122e458a6018bdd7bbf7c8"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 26,
+    "baseCommit": "85ae9561723c1d24883d5756ca98a93f3c366950",
+    "targetCommit": "2f950e689145837d0e6c15258a6501cb3bcf3abd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 65,
+    "sourceTreeBytes": 3282569,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/vocabularies/applicator/patternProperties.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1625_evaluated_truthy_pattern_properties.spec.ts"
+    ],
+    "preflightSha256": "573975d85eb7dbc680dba1fe585f13db53cf218d164cf3a72b69359cdec9bce4"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 27,
+    "baseCommit": "5378ab968e3b442e131e939ae3eb277c47b6f9e5",
+    "targetCommit": "e73bc750634947f4270597136e203c27213aa565",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 132,
+    "sourceTreeBytes": 3281670,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/jtd/parse.ts",
+      "lib/core.ts",
+      "lib/vocabularies/jtd/type.ts"
+    ],
+    "changedTestPaths": [
+      "spec/options/int32range.spec.ts",
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "4a063629d96979d61e4de738f4e10862ebe5cb33e22eb79675b20c1d2d0b1b66"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 28,
+    "baseCommit": "dec89097def11e48d2de94e3e214405f18658986",
+    "targetCommit": "de021c4dbadc76e09a30ce145b03246ee533b414",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 219,
+    "sourceTreeBytes": 3275923,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/jtd/parse.ts",
+      "lib/core.ts",
+      "lib/runtime/quote.ts",
+      "lib/runtime/timestamp.ts",
+      "lib/vocabularies/jtd/type.ts"
+    ],
+    "changedTestPaths": [
+      "spec/jtd-timestamps.spec.ts",
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "399065bd9aa18e578cceca549600981f4437c81b015fb5557a4cb9717c01481b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 29,
+    "baseCommit": "a60eff7fc17f1884680ecc8e351b0ba18dff4e2e",
+    "targetCommit": "df964e43cbd10cf16c1ee07a71c0c6a2698f10d2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 64,
+    "sourceTreeBytes": 3273279,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts",
+      "lib/vocabularies/jtd/type.ts"
+    ],
+    "changedTestPaths": [
+      "spec/jtd-timestamps.spec.ts"
+    ],
+    "preflightSha256": "e6dd8cfbb947d24d4eec53c103819b3ea68956fd6c5f1b6bb8fae5f2c05bd8cb"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 30,
+    "baseCommit": "0404a50be13b9079b0a4669e9e2cf04d79011b0c",
+    "targetCommit": "a60eff7fc17f1884680ecc8e351b0ba18dff4e2e",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 9,
+    "sourceTreeBytes": 3271244,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "46eb674c60c645940f742f386e24edc9bcdd34afd956e28f7ab2fe318edc57a1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 31,
+    "baseCommit": "f45b963ae37725b1a8452aeae82b64a1e7ded27c",
+    "targetCommit": "2edc54c33c997cd7cde711bd616f7e0cba766e34",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 45,
+    "sourceTreeBytes": 3269289,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/json-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/json-schema.spec.ts"
+    ],
+    "preflightSha256": "42b1f65911ec84b39ab5d58242dea32557bc84d397b127237439b1f6eeaabbe5"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 32,
+    "baseCommit": "8762e6f8b17c4e61f3d47db502b19e99f4582724",
+    "targetCommit": "baf1475cede6d7606bb1009bbdd1a942f76cec6c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 90,
+    "sourceTreeBytes": 3266114,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts",
+      "lib/jtd.ts",
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "a5392b13de25a88a43fb7d8951cef76699be86923f2f1ee5a4353892639e24ac"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 33,
+    "baseCommit": "dba1aebcd359bedf8abab0bc96f4a1d8581becb9",
+    "targetCommit": "614454d51021285f0b3bab381f2399b15c81d1c2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 99,
+    "sourceTreeBytes": 3264098,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts",
+      "lib/vocabularies/applicator/additionalProperties.ts",
+      "lib/vocabularies/applicator/patternProperties.ts",
+      "lib/vocabularies/code.ts",
+      "lib/vocabularies/validation/pattern.ts"
+    ],
+    "changedTestPaths": [
+      "spec/options/unicodeRegExp.spec.ts"
+    ],
+    "preflightSha256": "30bc883a1cf93433bcea14edbef6a14dfe2a4145efcfe1c879cca58dbf8c098a"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 34,
+    "baseCommit": "0358315b7ce21c1680d6c3a9ae157587dc3ac657",
+    "targetCommit": "c6f5e3cf50dfb41a5ace1e78c19ba2a2ac409fd7",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 49,
+    "sourceTreeBytes": 3261572,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/validate/keyword.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1539_add_keyword_name_to_validation_error.spec.ts",
+      "spec/keyword.spec.ts"
+    ],
+    "preflightSha256": "e0c3774f10da744f9fc6e5208b0e6ee1f3aa8617f2d9e1332b52bcff90339668"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 35,
+    "baseCommit": "e62d034135b1c2c233ca29d63f1de573dedc2ab8",
+    "targetCommit": "ec1818bcbbfaa415f3581815babf524a4af3c29b",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 52,
+    "sourceTreeBytes": 3258660,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/codegen/code.ts",
+      "lib/compile/codegen/index.ts",
+      "lib/vocabularies/format/format.ts"
+    ],
+    "changedTestPaths": [
+      "spec/standalone.spec.ts"
+    ],
+    "preflightSha256": "16bf67cde1d0bf54ea3ba609f734fb2dabddbbe0c3969c332adb084318b0f130"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 36,
+    "baseCommit": "f3d29b4ee8ffdc3c7d440326db9867a921914cf1",
+    "targetCommit": "cf8d31f007f4bbb4f5a1d02ee4c636921caf6cd8",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 48,
+    "sourceTreeBytes": 3257443,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/vocabularies/applicator/items.ts"
+    ],
+    "changedTestPaths": [
+      "spec/options/strict.spec.ts"
+    ],
+    "preflightSha256": "d991521f721d4ba9f0913321ac0e41827654dd1f4a40375298dfa070ff3bbbb1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 37,
+    "baseCommit": "2d7b5c99d2323a77f14c39c0c72082e418d17c8c",
+    "targetCommit": "325ac9a6396baed3eaf588ee80aed3b1f23d12dd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 6059,
+    "sourceTreeBytes": 3214081,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/2019.ts",
+      "lib/2020.ts",
+      "lib/ajv.ts",
+      "lib/compile/context.ts",
+      "lib/compile/error_classes.ts",
+      "lib/compile/errors.ts",
+      "lib/compile/index.ts",
+      "lib/compile/jtd/parse.ts",
+      "lib/compile/jtd/serialize.ts",
+      "lib/compile/names.ts",
+      "lib/compile/ref_error.ts",
+      "lib/compile/util.ts",
+      "lib/compile/validate/boolSchema.ts",
+      "lib/compile/validate/dataType.ts",
+      "lib/compile/validate/defaults.ts",
+      "lib/compile/validate/index.ts",
+      "lib/compile/validate/iterate.ts",
+      "lib/compile/validate/keyword.ts",
+      "lib/compile/validate/subschema.ts",
+      "lib/core.ts",
+      "lib/jtd.ts",
+      "lib/refs/json-schema-2019-09/index.ts",
+      "lib/refs/json-schema-2020-12/index.ts",
+      "lib/runtime/equal.ts",
+      "lib/runtime/parseJson.ts",
+      "lib/runtime/quote.ts",
+      "lib/runtime/timestamp.ts",
+      "lib/runtime/ucs2length.ts",
+      "lib/runtime/validation_error.ts",
+      "lib/types/index.ts",
+      "lib/types/json-schema.ts",
+      "lib/vocabularies/applicator/additionalItems.ts",
+      "lib/vocabularies/applicator/additionalProperties.ts",
+      "lib/vocabularies/applicator/allOf.ts",
+      "lib/vocabularies/applicator/anyOf.ts",
+      "lib/vocabularies/applicator/contains.ts",
+      "lib/vocabularies/applicator/dependencies.ts",
+      "lib/vocabularies/applicator/if.ts",
+      "lib/vocabularies/applicator/index.ts",
+      "lib/vocabularies/applicator/items.ts",
+      "lib/vocabularies/applicator/items2020.ts",
+      "lib/vocabularies/applicator/not.ts",
+      "lib/vocabularies/applicator/oneOf.ts",
+      "lib/vocabularies/applicator/patternProperties.ts",
+      "lib/vocabularies/applicator/prefixItems.ts",
+      "lib/vocabularies/applicator/properties.ts",
+      "lib/vocabularies/applicator/propertyNames.ts",
+      "lib/vocabularies/applicator/thenElse.ts",
+      "lib/vocabularies/code.ts",
+      "lib/vocabularies/core/ref.ts",
+      "lib/vocabularies/discriminator/index.ts",
+      "lib/vocabularies/discriminator/types.ts",
+      "lib/vocabularies/draft2020.ts",
+      "lib/vocabularies/draft7.ts",
+      "lib/vocabularies/dynamic/dynamicAnchor.ts",
+      "lib/vocabularies/dynamic/dynamicRef.ts",
+      "lib/vocabularies/dynamic/recursiveAnchor.ts",
+      "lib/vocabularies/errors.ts",
+      "lib/vocabularies/format/format.ts",
+      "lib/vocabularies/jtd/discriminator.ts",
+      "lib/vocabularies/jtd/elements.ts",
+      "lib/vocabularies/jtd/enum.ts",
+      "lib/vocabularies/jtd/error.ts",
+      "lib/vocabularies/jtd/index.ts",
+      "lib/vocabularies/jtd/nullable.ts",
+      "lib/vocabularies/jtd/optionalProperties.ts",
+      "lib/vocabularies/jtd/properties.ts",
+      "lib/vocabularies/jtd/ref.ts",
+      "lib/vocabularies/jtd/type.ts",
+      "lib/vocabularies/jtd/union.ts",
+      "lib/vocabularies/jtd/values.ts",
+      "lib/vocabularies/unevaluated/unevaluatedItems.ts",
+      "lib/vocabularies/unevaluated/unevaluatedProperties.ts",
+      "lib/vocabularies/validation/const.ts",
+      "lib/vocabularies/validation/enum.ts",
+      "lib/vocabularies/validation/limitContains.ts",
+      "lib/vocabularies/validation/limitItems.ts",
+      "lib/vocabularies/validation/limitLength.ts",
+      "lib/vocabularies/validation/limitNumber.ts",
+      "lib/vocabularies/validation/limitProperties.ts",
+      "lib/vocabularies/validation/multipleOf.ts",
+      "lib/vocabularies/validation/pattern.ts",
+      "lib/vocabularies/validation/required.ts",
+      "lib/vocabularies/validation/uniqueItems.ts",
+      "spec/ajv.ts",
+      "spec/ajv2019.ts",
+      "spec/ajv2020.ts",
+      "spec/ajv_jtd.ts",
+      "spec/ajv_standalone.ts"
+    ],
+    "changedTestPaths": [
+      "spec/ajv.spec.ts",
+      "spec/boolean.spec.ts",
+      "spec/discriminator.spec.ts",
+      "spec/dynamic-ref.spec.ts",
+      "spec/errors.spec.ts",
+      "spec/issues/815_id_updates_ref_base.spec.ts",
+      "spec/json-schema.spec.ts",
+      "spec/jtd-schema.spec.ts",
+      "spec/keyword.spec.ts",
+      "spec/options/strict.spec.ts",
+      "spec/options/strictDefaults.spec.ts",
+      "spec/options/unknownFormats.spec.ts",
+      "spec/types/json-schema.spec.ts"
+    ],
+    "preflightSha256": "5a63750d446f8a3944e433780976d0ebe77f6137775c5b69bd13ca734cbce2c0"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 38,
+    "baseCommit": "46d91d7a5f4fa21938c9e9016c35d458dec2a228",
+    "targetCommit": "6014412979eef7a772db8d35b791803ad221cdf2",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 30,
+    "sourceTreeBytes": 1756069,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/compile/util.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1515_evaluated_properties_nested_anyof.spec.ts"
+    ],
+    "preflightSha256": "19bd9e8161235c8efd405979f16d8e875c27a30f6d9df50aa35dc5d1aa15799c"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 39,
+    "baseCommit": "3ae14a3bd4098470deee95e4f90a7cf9f99aaf3a",
+    "targetCommit": "4f83021071744bafa79faa2c9f551b07f97af4de",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 38,
+    "sourceTreeBytes": 1755463,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/vocabularies/code.ts"
+    ],
+    "changedTestPaths": [
+      "spec/errors.spec.ts"
+    ],
+    "preflightSha256": "fae024e21324fca9e876460bac4444eff5832e393c2656b0522d2b0a0ae42d6d"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 40,
+    "baseCommit": "2ada8d68131325f0f3dc5d1b247ac4cde6033236",
+    "targetCommit": "3ae14a3bd4098470deee95e4f90a7cf9f99aaf3a",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 31,
+    "sourceTreeBytes": 1754762,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/vocabularies/jtd/properties.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1501_jtd_many_properties.spec.ts"
+    ],
+    "preflightSha256": "d144f1e5c695f1088ac999c89d70507bab820e9b8fbe414ad60249b9f66ff42f"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 41,
+    "baseCommit": "6cd8eb8624333642a33a64b907b864ec9cfe78dc",
+    "targetCommit": "8e07f307e95261ceb6fa427ee4d10a98b136d08d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 100,
+    "sourceTreeBytes": 1748844,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/jtd/parse.ts",
+      "lib/runtime/parseJson.ts"
+    ],
+    "changedTestPaths": [
+      "spec/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "3f1a78b33f095e8359b3817dcb933c52fc7ff5abadf841c9d97b4f82f3390bcd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 42,
+    "baseCommit": "23293bea73df2eb5add6cf384cc06785e69cae2d",
+    "targetCommit": "db553ad00d8046ffc75b821c12a3e3ab5cea38d0",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 69,
+    "sourceTreeBytes": 1256819,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts",
+      "lib/jtd.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "5b65c67e4756b77fdc7fc981ff663d338893eb7e65cafd229fadc372933bb9b1"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 43,
+    "baseCommit": "937643ea98362c1d03e95e28b81f1098388e3c1f",
+    "targetCommit": "22aa6833a09277df85966aa7e4c176546521d18d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 203,
+    "sourceTreeBytes": 1253878,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/jtd.ts",
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "cc393282639a78c9176f51a94bd4f066b23fae3753bacab08414ed52d623d35b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 44,
+    "baseCommit": "80d09b3431ed34e44691e3018d14d0e8a4fdf5d5",
+    "targetCommit": "937643ea98362c1d03e95e28b81f1098388e3c1f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 22,
+    "sourceTreeBytes": 1247513,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "acf6911be289c31b7a4a906ce4187c40b57cbcd600c6bb0e190402af30abb5f9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 45,
+    "baseCommit": "67b57cab7297c724a69a9161e5b88b26738b51d2",
+    "targetCommit": "80d09b3431ed34e44691e3018d14d0e8a4fdf5d5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 62,
+    "sourceTreeBytes": 1247188,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "7ce98a689544a225b55ae5c7d3fb652b35cd0f500184b02a841e5043bc348b99"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 46,
+    "baseCommit": "cb721809cb3baba576e74bea9690a0d4c01ff824",
+    "targetCommit": "3a8c46115f341102170b47cb15340e45a7fe1945",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 246,
+    "sourceTreeBytes": 1098859,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/index.ts",
+      "lib/compile/subschema.ts",
+      "lib/core.ts",
+      "lib/vocabularies/applicator/properties.ts",
+      "lib/vocabularies/validation/required.ts"
+    ],
+    "changedTestPaths": [
+      "spec/options/strict.spec.ts"
+    ],
+    "preflightSha256": "da780c55ab77c5d8c6260d5c66f540792bba5e7a5eefe0a5b2b8bae4b28bb25e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 47,
+    "baseCommit": "d72cdef416cc13a5545eba71c67a2ca6dd51b93d",
+    "targetCommit": "0b70f5336e52fff26aa7a52b0d0ead63b2fb2ad4",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 1337,
+    "sourceTreeBytes": 1093668,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/codegen/index.ts",
+      "lib/compile/index.ts",
+      "lib/compile/jtd/parse.ts",
+      "lib/compile/jtd/serialize.ts",
+      "lib/compile/jtd/types.ts",
+      "lib/compile/names.ts",
+      "lib/compile/timestamp.ts",
+      "lib/compile/util.ts",
+      "lib/core.ts",
+      "lib/jtd.ts",
+      "lib/runtime/parseJson.ts",
+      "lib/runtime/quote.ts",
+      "lib/types/index.ts",
+      "lib/vocabularies/applicator/additionalProperties.ts",
+      "lib/vocabularies/applicator/dependencies.ts",
+      "lib/vocabularies/applicator/properties.ts",
+      "lib/vocabularies/code.ts",
+      "lib/vocabularies/jtd/properties.ts",
+      "lib/vocabularies/jtd/ref.ts",
+      "lib/vocabularies/jtd/type.ts",
+      "lib/vocabularies/validation/required.ts"
+    ],
+    "changedTestPaths": [
+      "spec/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "b99e7794a10daeffe43367f340ec23ea83f91bf8b393dfa7ff1c6e9b8b43f846"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 48,
+    "baseCommit": "ec68e7bf4de20de8727aab0394826fac980358fd",
+    "targetCommit": "19e52dad8ab35d6c6970fa88484159d30015bb88",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 55,
+    "sourceTreeBytes": 1053710,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "19370eaf2043a1ea415de30d30d64d7ba51cf720f7f9e1e6169a5f90ac003a60"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 49,
+    "baseCommit": "937d7207c4588dad9e437ea9c32a5cca0bb1f1cd",
+    "targetCommit": "ec68e7bf4de20de8727aab0394826fac980358fd",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 55,
+    "sourceTreeBytes": 1054460,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "571bb7461539e52c9d7980de6018dce9f22fbd1ac610408b53704b3addac992e"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 50,
+    "baseCommit": "fcbca58748bbfd9e75fb2aba8c21a621a1d7be2a",
+    "targetCommit": "82950e1a5154c36b8a3e4703ea58b0cb35cb8c70",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 36,
+    "sourceTreeBytes": 1053727,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "742bcf6b906459b34881e4fe4d3352172910b5da36360c63daf9a26d539ccb57"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 51,
+    "baseCommit": "77d788f5827669928e6d3b714585b47e5d70971f",
+    "targetCommit": "9376841f1dc963f59b02bdf94800b9fb7822cb24",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 453,
+    "sourceTreeBytes": 1052830,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/jtd.ts",
+      "lib/types/jtd-schema.ts"
+    ],
+    "changedTestPaths": [
+      "spec/types/jtd-schema.spec.ts"
+    ],
+    "preflightSha256": "a1e527dad9f7f7e6aade4469d1810de2c5c901370efbf19394f3331295286ddd"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 52,
+    "baseCommit": "5b715aaa54e3fb97c167507f3399efb802beaa3a",
+    "targetCommit": "6926312ee7322da9db329290022ba3ef9142d139",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 6,
+    "sourceTreeBytes": 1037270,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts"
+    ],
+    "changedTestPaths": [
+      "spec/keyword.spec.ts"
+    ],
+    "preflightSha256": "d6796e29e31bbf8b0c2659ee1ee8e4c627e3ce06652dc369b5aab3cc19ec0617"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 53,
+    "baseCommit": "33722772d89b428ff167730cd7955adff3cc8a0d",
+    "targetCommit": "1996f6b4d41294b5c8af098f63ef1f57f3ba6d0f",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 1703,
+    "sourceTreeBytes": 1037166,
+    "supportedTypescriptBoundary": false,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/ajv.ts",
+      "lib/compile/context.ts",
+      "lib/compile/error_classes.ts",
+      "lib/compile/errors.ts",
+      "lib/compile/index.ts",
+      "lib/compile/rules.ts",
+      "lib/compile/subschema.ts",
+      "lib/compile/timestamp.ts",
+      "lib/compile/validate/index.ts",
+      "lib/compile/validate/iterate.ts",
+      "lib/core.ts",
+      "lib/jtd.ts",
+      "lib/refs/jtd-schema.ts",
+      "lib/types/index.ts",
+      "lib/vocabularies/applicator/additionalProperties.ts",
+      "lib/vocabularies/applicator/anyOf.ts",
+      "lib/vocabularies/applicator/items.ts",
+      "lib/vocabularies/applicator/patternProperties.ts",
+      "lib/vocabularies/applicator/properties.ts",
+      "lib/vocabularies/applicator/propertyNames.ts",
+      "lib/vocabularies/code.ts",
+      "lib/vocabularies/core/index.ts",
+      "lib/vocabularies/core/ref.ts",
+      "lib/vocabularies/jtd/discriminator.ts",
+      "lib/vocabularies/jtd/elements.ts",
+      "lib/vocabularies/jtd/enum.ts",
+      "lib/vocabularies/jtd/index.ts",
+      "lib/vocabularies/jtd/metadata.ts",
+      "lib/vocabularies/jtd/nullable.ts",
+      "lib/vocabularies/jtd/optionalProperties.ts",
+      "lib/vocabularies/jtd/properties.ts",
+      "lib/vocabularies/jtd/ref.ts",
+      "lib/vocabularies/jtd/type.ts",
+      "lib/vocabularies/jtd/union.ts",
+      "lib/vocabularies/jtd/values.ts",
+      "lib/vocabularies/unevaluated/unevaluatedProperties.ts",
+      "lib/vocabularies/validation/index.ts",
+      "spec/ajv_jtd.ts"
+    ],
+    "changedTestPaths": [
+      "spec/jtd-schema.spec.ts",
+      "spec/keyword.spec.ts"
+    ],
+    "preflightSha256": "ec584802c6e3732cb711a406442573b98f352ceb2146ad8a7ab8436e4857605b"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 54,
+    "baseCommit": "63486ce5aa1f9b942775098ae7228cb2408d245f",
+    "targetCommit": "33722772d89b428ff167730cd7955adff3cc8a0d",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 6,
+    "sourceTreeBytes": 992270,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts"
+    ],
+    "changedTestPaths": [
+      "spec/keyword.spec.ts"
+    ],
+    "preflightSha256": "78be253f9bf4d1dd601871d9b1372eb31528ddada66984eda72f62f0610f66ad"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 55,
+    "baseCommit": "0b7567bea4de45aaadcb0530ab04521097ef81f5",
+    "targetCommit": "c91e8ba055eb7d79297f676d22957a9121a39726",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 43,
+    "sourceTreeBytes": 992185,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/compile/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/issues/1414_base_uri_change.spec.ts"
+    ],
+    "preflightSha256": "965025a833a241efae6ee6d9d97d54917128d26a8d1fe2b22b6a3bc221c2f2ba"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 56,
+    "baseCommit": "ca2ae61c489f45fa2ec3ff2ee78b10136cb1ed3c",
+    "targetCommit": "0b7567bea4de45aaadcb0530ab04521097ef81f5",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 193,
+    "sourceTreeBytes": 991367,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/codegen/scope.ts",
+      "lib/standalone/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/standalone.spec.ts"
+    ],
+    "preflightSha256": "f708be6cc09df8c0a7c3ae8074903241d36837da2f81191b0e4179f7be25b889"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 57,
+    "baseCommit": "5fe4bc04dda46ff289b58b6192cfecc0fece728c",
+    "targetCommit": "832fee18d39dd1e7c3db4766c029474b81530db9",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 90,
+    "sourceTreeBytes": 987135,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/codegen/index.ts",
+      "lib/compile/index.ts",
+      "lib/standalone/index.ts",
+      "lib/types/index.ts"
+    ],
+    "changedTestPaths": [
+      "spec/standalone.spec.ts"
+    ],
+    "preflightSha256": "600f716547e8c43a04fb741ac52742a85b908cdba9bf61cfc563b13e3fc7d2c3"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 58,
+    "baseCommit": "ce5eb3847fd02755eb40e26d5881646e7672045b",
+    "targetCommit": "8d6b35b77d434451ca4df2bf2e86cd691a959adf",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": true,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 125,
+    "sourceTreeBytes": 983807,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/core.ts",
+      "lib/standalone/index.ts",
+      "lib/standalone/instance.ts",
+      "spec/ajv.ts",
+      "spec/ajv2019.ts",
+      "spec/ajv_instances.ts",
+      "spec/ajv_standalone.ts",
+      "spec/chai.ts",
+      "spec/chai_type.ts"
+    ],
+    "changedTestPaths": [
+      "spec/ajv.spec.ts",
+      "spec/async_schemas.spec.ts",
+      "spec/extras.spec.ts",
+      "spec/issues/210_mutual_recur_frags.spec.ts",
+      "spec/issues/240_mutual_recur_frags_common_ref.spec.ts",
+      "spec/issues/50_refs_with_definitions.spec.ts",
+      "spec/issues/8_shared_refs.spec.ts",
+      "spec/json-schema.spec.ts",
+      "spec/keyword.spec.ts",
+      "spec/schema-tests.spec.ts",
+      "spec/security.spec.ts"
+    ],
+    "preflightSha256": "64b43c5b7237d181aa6eeff92570cd5c210292b8a4a2784b0d6301446fdde7c9"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 59,
+    "baseCommit": "bd8d86579386cb58854e9db74a5dc7b2d1894806",
+    "targetCommit": "25508f470f945512e037eaddc1120c390f51c17c",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 72,
+    "sourceTreeBytes": 983038,
+    "supportedTypescriptBoundary": true,
+    "hasAttributedTest": true,
+    "changedSourcePaths": [
+      "lib/compile/index.ts",
+      "lib/vocabularies/core/ref.ts",
+      "lib/vocabularies/dynamic/dynamicAnchor.ts",
+      "lib/vocabularies/dynamic/dynamicRef.ts",
+      "spec/ajv_all_instances.ts",
+      "spec/ajv_instances.ts"
+    ],
+    "changedTestPaths": [
+      "spec/json-schema.spec.ts"
+    ],
+    "preflightSha256": "1783d6ce3533df344e7b7334e2bbda3b8838d5e421bc1daf42ab90e675e0fa49"
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ajv",
+    "ordinal": 60,
+    "baseCommit": "f0e4920889f87ccd362069ff8b657108b4069552",
+    "targetCommit": "bd8d86579386cb58854e9db74a5dc7b2d1894806",
+    "adjacentFirstParent": true,
+    "licenseApproved": true,
+    "lockfilePresent": false,
+    "dependencyOrLockfileChanged": false,
+    "unsupportedArtifactPresent": true,
+    "changedLines": 23,
+    "sourceTreeBytes": 982217,
+    "supportedTypescriptBoundary": false,
+    "hasAttributedTest": false,
+    "changedSourcePaths": [
+      "lib/vocabularies/dynamic/dynamicRef.ts"
+    ],
+    "changedTestPaths": [
+      "spec/json-schema.spec.ts"
+    ],
+    "preflightSha256": "c872852c784ae62b0af0c2ba4cc2d6a1003144cdda2eda785170e643850c85b5"
+  }
+]

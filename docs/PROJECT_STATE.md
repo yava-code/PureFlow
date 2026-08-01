@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-01
 
-## Current branch milestone — R7 sandbox accepted; corpus protocol frozen
+## Current branch milestone — R7 corpus frozen; compiler audit pending
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -33,7 +33,8 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - Sixteen deterministic sandbox contract tests pass locally on Windows. A separate explicit Docker integration suite passed 2/2 against the selected digest on Docker Desktop: the active capability probe and a real frozen command in a path with spaces. The complete default extension suite passes 79/79 with the two provisioned-backend tests skipped; TypeScript, production build, and VSIX packaging pass.
 - Protected PR #17 run `30674334938` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`. The Linux extension job explicitly provisioned the exact digest and passed the real Docker backend suite; Windows independently passed the deterministic contract suite. The R7 sandbox implementation gate is complete.
 - `CONCEPT_LAB_CONTROLLABILITY.md` records a post-R7 category extension: compile an executable `observe → actuate → recover` human control surface, select takeover cut sets, and let a context-starved agent continue writing code from human-selected evidence and directives. Dissent cases and control dividends remain hypotheses with explicit falsifiers, not implemented features.
-- The 30-patch corpus is not assembled. The runner candidate and local probe are not permission to begin corpus or participant execution before protected checks and R7 eligibility infrastructure pass.
+- The preregistered R7 collector froze 30 eligible patches from six repositories after evaluating 457 bounded eligibility records. Manifest `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149` contains 12 development and 18 held-out patches; `docs/v0.3/results/R7_CORPUS_COLLECTION.md` reports repository and first-match exclusion counts. No compiler or human outcome influenced selection.
+- R7 has not passed. The recovery/probe compiler audit, three-run evidence, protected parity/adversarial runs, and two independent human ratings remain pending; R5/R6 stay gated.
 - The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
@@ -132,7 +133,7 @@ The repository contains no verified evidence that the owner submitted the final 
 | Input | Impact | Resolution |
 | --- | --- | --- |
 | The first live adapter is selected but no accessible Codex CLI is configured for this checkout | ADR-006 selects Codex App Server over local stdio, but the Microsoft Store packaged executable discovered here returns `Access denied` when launched from the repository shell | Keep replay R&D independent; the live spike must preflight a separately accessible, exact-version user-installed Codex CLI and fail closed when unavailable |
-| Technical patch corpus is not assembled | Automatic episode-generation rate cannot be measured | Collect at least 30 consented or open-source test-backed TypeScript patches for R7 |
+| R7 compiler and expert audit is not complete | Automatic episode/probe validity and causal relevance are not measured | Run the frozen development/held-out compiler audit, then obtain two independent experienced TypeScript ratings and adjudication |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
 | Default-branch Jules scheduler awaits explicit merge approval | Scheduled/manual continuation is not installed on `main`; draft PR #8 remains isolated and the enable variable stays off | Owner explicitly says `merge #8`; then merge through protected `main`, remove the temporary infrastructure branch, and run one guarded canary through the protected R&D branch |
 
@@ -151,7 +152,7 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 
 ## Next ordered actions
 
-1. Collect and freeze the preregistered 30 eligible patches, then run the recovery-plus-probe audit.
+1. Run the frozen 30-patch recovery-plus-probe audit without patch-specific rules; publish automated results and blind rater packets.
 2. Add the local readiness ledger and minimal cockpit only after the R7 corpus gate passes.
 3. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 

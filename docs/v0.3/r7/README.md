@@ -37,4 +37,6 @@ Provisioning then showed that all six structurally viable `class-transformer` ca
 
 `class-validator` exhausted 31 provisioned candidates with 8 eligible results, bringing the preregistered total to 27. Static inspection after `io-ts` registration showed its frozen `vitest` script exists for only the newest structurally viable historical candidate; the command is not changed after that observation. Before compiler execution, `ufo` was appended as the next MIT-licensed replacement with a lockfile-pinned pnpm toolchain and a direct Vitest/typecheck command that excludes lint, build, release, and documentation tasks.
 
+The final corpus contains 10 `ts-pattern`, 3 `ofetch`, 2 `defu`, 4 `hookable`, 8 `class-validator`, and 3 `ufo` patches. `corpus-manifest.json` freezes the 12/18 split as `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149`; collection details are reported in `../results/R7_CORPUS_COLLECTION.md`. This is a corpus milestone, not an R7 compiler result.
+
 Before provisioning, the selected digest was capability-probed as Node `22.17.0`, npm `10.9.2`, and Corepack `0.33.0`; the registration metadata was corrected from the planned Node/npm patch versions to those observed immutable-image versions. No repository tests or PureFlow compiler outcomes had been run.
