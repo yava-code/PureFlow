@@ -262,6 +262,7 @@
     "r7:audit": "node scripts/r7-audit.mjs",
     "r7:corpus": "node scripts/r7-corpus.mjs",
     "r7:rate": "node scripts/r7-rater.mjs",
+    "r7:kit": "node scripts/r7-rater-kit.mjs",
     "test": "npm run fixture:runtime && vitest run",
     "package": "npm run build && vsce package --no-dependencies"
   },
