@@ -11,7 +11,7 @@ From `extension/`:
 
 ```powershell
 npm run r7:corpus -- scan <repositories.json> <repository-id> <external-git-clone> <new-preflight.json>
-npm run r7:corpus -- provision <repositories.json> <repository-id> <preflight.json> <external-git-clone> <new-evidence.json>
+npm run r7:corpus -- provision <repositories.json> <repository-id> <preflight.json> <external-git-clone> <new-evidence.json> [prior-evidence.json]
 npm run r7:corpus -- complete <preflight.json> <provision-evidence.json> <new-candidates.json>
 npm run r7:corpus -- freeze <repositories.json> <candidates.json> <new-manifest.json>
 ```
@@ -21,6 +21,8 @@ Every output command refuses to overwrite an existing artifact. The scanner neve
 Provisioning uses at most three isolated native Docker-volume workspaces concurrently. Host bind-mounted dependency trees are forbidden because their Windows filesystem cost distorted setup time; the host provides only a read-only Git archive during seeding. This bound is a throughput setting, not a sampling rule; each container retains its own workspace, exact registered argv, resource limits, and network mode.
 
 For pnpm repositories, the controller installs the registered pnpm version into the candidate's Corepack cache, disables project-version substitution, creates `/work/.pureflow-bin` with an exact shell-free `mkdir` invocation, and enables a disposable shim there. This bootstrap is hashed separately from the unchanged registered install/test argv. Provision artifacts expose typed install/test booleans for diagnosis while retaining command output only as bounded hashes.
+
+Resume evidence is immutable input, never overwritten. The provisioner skips recorded targets, advances in ordinal order, and sizes each batch to the remaining eligible slots so it never executes a candidate after the tenth passing base/target pair.
 
 The first registration pass found no lockfile-backed coarse candidates in `p-queue` or `ajv`. Under the preregistered replacement rule, `ofetch`, `defu`, and `hookable` were appended before any compiler outcome was inspected. Registration array order is sampling order; the freezer stops once 30 eligible patches exist and never uses more than 10 from one repository.
 

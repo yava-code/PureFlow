@@ -36,7 +36,6 @@ export function selectProvisionCandidates(drafts: readonly CandidatePreflight[])
   const ordered = [...drafts].sort((left, right) => left.ordinal - right.ordinal);
   const selected: CandidatePreflight[] = [];
   for (const draft of ordered) {
-    if (selected.length === 10) break;
     if (
       draft.adjacentFirstParent &&
       draft.licenseApproved &&
@@ -96,16 +95,27 @@ export async function provisionRepository(
   repositoryPath: string,
   registration: RepositoryRegistration,
   drafts: readonly CandidatePreflight[],
+  prior: Readonly<Record<string, ProvisionEvidence>> = {},
 ): Promise<Record<string, ProvisionEvidence>> {
   const selected = selectProvisionCandidates(drafts);
-  const evidence: Record<string, ProvisionEvidence> = {};
-  for (let offset = 0; offset < selected.length; offset += 3) {
-    const batch = selected.slice(offset, offset + 3);
+  const evidence: Record<string, ProvisionEvidence> = structuredClone(prior);
+  let accepted = selected.filter(({ targetCommit }) => {
+    const item = evidence[targetCommit];
+    return item?.basePassed === true && item.targetPassed === true;
+  }).length;
+  const pending = selected.filter(({ targetCommit }) => evidence[targetCommit] === undefined);
+  for (let offset = 0; offset < pending.length && accepted < 10;) {
+    const batchSize = Math.min(3, 10 - accepted);
+    const batch = pending.slice(offset, offset + batchSize);
+    offset += batch.length;
     const results = await Promise.all(batch.map(async (draft) => ({
       targetCommit: draft.targetCommit,
       evidence: await provisionCandidate(resolve(repositoryPath), registration, draft),
     })));
-    for (const result of results) evidence[result.targetCommit] = result.evidence;
+    for (const result of results) {
+      evidence[result.targetCommit] = result.evidence;
+      if (result.evidence.basePassed && result.evidence.targetPassed) accepted += 1;
+    }
   }
   return evidence;
 }

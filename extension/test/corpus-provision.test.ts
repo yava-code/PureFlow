@@ -13,7 +13,7 @@ describe("R7 corpus provisioning", () => {
     drafts[1]!.dependencyOrLockfileChanged = true;
     drafts[2]!.hasAttributedTest = false;
 
-    expect(selectProvisionCandidates(drafts).map(({ ordinal }) => ordinal)).toEqual([4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
+    expect(selectProvisionCandidates(drafts).map(({ ordinal }) => ordinal)).toEqual([4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
   });
 
   it("uses network only for installation and preserves the exact registered argv", () => {

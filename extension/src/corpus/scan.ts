@@ -34,10 +34,10 @@ export interface ProvisionEvidence {
   sanitizedBytes: number;
   requiresProductionCapability: boolean;
   executionNeedsNetwork: boolean;
-  baseInstallPassed: boolean;
-  baseTestPassed: boolean;
-  targetInstallPassed: boolean;
-  targetTestPassed: boolean;
+  baseInstallPassed?: boolean;
+  baseTestPassed?: boolean;
+  targetInstallPassed?: boolean;
+  targetTestPassed?: boolean;
   basePassed: boolean;
   targetPassed: boolean;
   provisionEvidenceSha256: string;
@@ -48,13 +48,17 @@ const provisionKeys = [
   "sanitizedBytes",
   "requiresProductionCapability",
   "executionNeedsNetwork",
+  "basePassed",
+  "targetPassed",
+  "provisionEvidenceSha256",
+] as const;
+
+const diagnosticProvisionKeys = [
+  ...provisionKeys,
   "baseInstallPassed",
   "baseTestPassed",
   "targetInstallPassed",
   "targetTestPassed",
-  "basePassed",
-  "targetPassed",
-  "provisionEvidenceSha256",
 ] as const;
 
 export function isCoarseCandidate(paths: readonly string[]): boolean {
@@ -92,7 +96,9 @@ export async function scanRepository(
 }
 
 export function completeCandidate(draft: CandidatePreflight, evidence: ProvisionEvidence): CandidateFacts {
-  assertExactKeys(evidence, provisionKeys, "provision evidence");
+  if (!hasExactKeys(evidence, provisionKeys) && !hasExactKeys(evidence, diagnosticProvisionKeys)) {
+    throw new Error("provision evidence contains unknown or missing fields");
+  }
   if (evidence.schemaVersion !== 1) throw new Error("Unsupported provision evidence schema");
   if (!Number.isSafeInteger(evidence.sanitizedBytes) || evidence.sanitizedBytes < 0) throw new Error("Invalid sanitizedBytes");
   assertSha256(evidence.provisionEvidenceSha256, "provisionEvidenceSha256");
@@ -344,4 +350,10 @@ function assertExactKeys(value: object, allowed: readonly string[], label: strin
   if (actual.length !== expected.size || actual.some((key) => typeof key !== "string" || !expected.has(key))) {
     throw new Error(`${label} contains unknown or missing fields`);
   }
+}
+
+function hasExactKeys(value: object, allowed: readonly string[]): boolean {
+  const expected = new Set(allowed);
+  const actual = Reflect.ownKeys(value);
+  return actual.length === expected.size && actual.every((key) => typeof key === "string" && expected.has(key));
 }
