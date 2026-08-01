@@ -12,12 +12,13 @@ PureFlow lets an agent swarm build at full speed while compiling the same work i
 
 AI code generation is not the feature to remove. It is the production engine.
 
-The missing product is a second engine that maintains the human operator while the first engine maintains the software. Every meaningful agent run should be capable of producing two outputs:
+The missing product is a second engine that maintains the human operator while the first engine maintains the software. Every meaningful agent run should be capable of producing three outputs:
 
 1. a tested software change;
-2. evidence that its human owner can take over a critical part of that change.
+2. an executable `observe → actuate → recover` surface for a critical seam;
+3. evidence that its human owner can take over that seam.
 
-The second output is not a summary, a diff, a quiz score, or a quota of manually typed lines. It is an executable experience drawn from the real change: predict behavior, choose a control point, diagnose from evidence, intervene, observe the result, and recover.
+The control and readiness outputs are not summaries, diffs, quiz scores, or quotas of manually typed lines. They are drawn from the real change: predict behavior, choose a control point, diagnose from evidence, intervene, observe the result, and recover.
 
 ## The honest constraint
 
@@ -93,6 +94,8 @@ The Experience Compiler builds a semantic change graph and selects one high-info
 - weak or decayed readiness evidence;
 - expected future takeover value;
 - the user's current attention budget.
+
+The Controllability Compiler attempts to bind that seam to an executable observation, a bounded actuator, and a recovery judge. The Operator Model Compiler then compares the new checkpoint with causal claims the developer previously demonstrated. Prompts are selected from model divergence, contradiction, or uncovered recovery routes—not from arbitrary changed functions.
 
 ### 4. Drive
 
@@ -188,6 +191,16 @@ The Flight Recorder groups generated lines into supported semantic units. Each u
 
 Agent adapters cannot reliably infer an invariant or intent for every line from Git history alone. A build plane may emit structured claim IDs to improve attribution; otherwise PureFlow shows unattributed lines as a gap rather than inventing a causal story. This is **evidence-carrying generation**, not proof of correctness. The graph makes a large patch navigable and supplies raw material for the Experience Compiler; it does not pretend that a graph teaches the human by itself.
 
+## Executable Operator Model
+
+PureFlow maintains a second, local versioned view beside the program: the causal claims the developer has actually demonstrated for this project.
+
+It is not an AI-generated repository summary. A claim can become fresh only through a pre-reveal prediction, evidence choice, intervention, recovery, or delayed transfer bound to executable evidence. Claims become stale when their semantic unit or control surface changes and contradicted when observed behavior disproves the committed prediction. Unknown and unattributed areas remain visible gaps.
+
+This gives the IDE a concrete answer to “what should the developer think about while agents keep coding?” It chooses the smallest action that reduces divergence between the running software and the operator's demonstrated model. A successful action should create a control dividend such as a regression probe, observation recipe, rollback path, or reusable recovery handle.
+
+The Operator Model is specified in `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`. It remains a post-R7 hypothesis until the complete expert gate and human experiments pass.
+
 ## Autonomy Router
 
 The developer selects a cognitive budget such as `0`, `5`, or `15` minutes per work session. The router uses that budget to decide what becomes a human control episode while agents perform the remaining work.
@@ -275,7 +288,7 @@ The R&D architecture is:
 
 - VSCodium plus a bundled extension for the product surface;
 - adapters over existing coding-agent runtimes for the build plane;
-- PureFlow-owned Flight Recorder, Experience Compiler, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
+- PureFlow-owned Flight Recorder, Controllability and Experience Compilers, Executable Operator Model, Takeover Twin, Evidence Judge, Readiness Map, and Autonomy Router.
 
 This keeps the differentiating layer portable and avoids tying the thesis to a commercial editor fork. A deeper editor fork is justified only if a validated control experience requires unsupported workbench primitives.
 

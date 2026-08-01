@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-01
 
-## Current branch milestone — R7 corpus frozen; compiler audit pending
+## Current branch milestone — R7 automatic audit passed; expert gate pending
 
 Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Control Development**.
 
@@ -34,15 +34,17 @@ Branch `codex/shadow-cockpit-rnd` resets the product R&D thesis around **Dual-Co
 - Protected PR #17 run `30674334938` passed `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy`. The Linux extension job explicitly provisioned the exact digest and passed the real Docker backend suite; Windows independently passed the deterministic contract suite. The R7 sandbox implementation gate is complete.
 - `CONCEPT_LAB_CONTROLLABILITY.md` records a post-R7 category extension: compile an executable `observe → actuate → recover` human control surface, select takeover cut sets, and let a context-starved agent continue writing code from human-selected evidence and directives. Dissent cases and control dividends remain hypotheses with explicit falsifiers, not implemented features.
 - The preregistered R7 collector froze 30 eligible patches from six repositories after evaluating 457 bounded eligibility records. Manifest `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149` contains 12 development and 18 held-out patches; `docs/v0.3/results/R7_CORPUS_COLLECTION.md` reports repository and first-match exclusion counts. No compiler or human outcome influenced selection.
-- R7 has not passed. The recovery/probe compiler audit, three-run evidence, protected parity/adversarial runs, and two independent human ratings remain pending; R5/R6 stay gated.
+- The frozen R7 automatic audit passed its preregistered automatic threshold: 17/18 held-out identities compiled and 16/18 were valid end-to-end. The frozen blind expert packet set and deterministic rating join exist, but two independent ratings and adjudication remain pending. Full R7 has not passed; R5/R6 stay gated.
+- ADR-007 proposes an Executable Operator Model and shadow-control protocol. It treats demonstrated causal claims, contradictions, stale coverage, and reusable control artifacts as product state rather than asking more post-hoc questions. `OPERATOR_MODEL_SPEC.md` freezes the draft post-R7 requirements and ablations; neither document is implementation evidence.
+- `GOAL_COMPLETION_AUDIT.md` maps the original product goal to current evidence. It explicitly records that the live agent plane, v0.3 cockpit, cold relay, delayed-transfer study, and skill-preservation claim remain incomplete.
 - The readiness ledger and v0.3 cockpit do not exist yet. R0–R4.5 remain a closed reviewed-fixture mechanism and do not execute arbitrary participant or workspace code.
 - No skill-retention or speed metric has been measured. Values in the PRD are predeclared R&D targets.
 - A new implementation audit found five R0 ambiguities: candidate-diff identity, pre-store fixture blobs, runtime identity, check IDs, and Git object format. The normative contract closes them with structured diffs, catalog-owned blobs, standalone Node `v22.17.0`, declared test IDs, and SHA-1 Git initialization; R0a/R0b now implement and verify that complete substrate.
-- A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. Full scheduled continuation still requires the dispatcher workflow to be reviewed into the default branch.
-- The R&D branch is published at `origin/codex/shadow-cockpit-rnd`. Its first Jules workflow run was correctly skipped because `JULES_RND_LOOP_ENABLED` is not enabled; no Jules session was created.
+- A guarded Jules dispatcher and PR policy are defined as a finite R0→R4 queue. They create at most one session after a successful preflight, stop after merged R4, remain inert unless dispatch is explicitly enabled, and keep plan approval on by default. Merges remain manual because the current project tests are not an independent immutable verifier. The workflow source is now present in R&D, but GitHub schedules and manual dispatch require the workflow file on the default branch; no automatic Jules loop is active.
+- The R&D branch is published at `origin/codex/shadow-cockpit-rnd`. No Jules session was created by the guarded workflow.
 - `Protect main` is active: PR, conversation resolution, strict `extension`/`contract`/`web` checks, up-to-date base, deletion protection, and force-push protection are enforced with zero required approvals for the sole owner.
 - `Protect R&D integration` is active on exact branch `codex/shadow-cockpit-rnd`: PR-only updates, conversation resolution, strict `extension`, `extension-windows`, `contract`, `web`, and `jules-rnd-policy` GitHub Actions checks, up-to-date base, deletion protection, and force-push protection. Codex and Jules now integrate through short-lived heads.
-- Superseded `codex/v0.2-ownership-compiler` and the obsolete Jules vibe-gate branch were preserved as dated archive tags and deleted as branches. `codex/shadow-cockpit-rnd` is the only persistent coding branch; draft PR [#8](https://github.com/yava-code/PureFlow/pull/8) temporarily retains the default-branch scheduler until the owner explicitly authorizes its merge into `main`.
+- Superseded `codex/v0.2-ownership-compiler` and the obsolete Jules vibe-gate branch were preserved as dated archive tags and deleted as branches. `codex/shadow-cockpit-rnd` is the only persistent coding branch. PR [#8](https://github.com/yava-code/PureFlow/pull/8) was retargeted from `main` to R&D, merged, and its short-lived head was deleted; `main` remains untouched.
 
 The v0.1 runtime below remains released evidence and a reusable IDE shell. Its Mentor, Quiz, and Focus behavior is not the v0.3 product core.
 
@@ -135,7 +137,7 @@ The repository contains no verified evidence that the owner submitted the final 
 | The first live adapter is selected but no accessible Codex CLI is configured for this checkout | ADR-006 selects Codex App Server over local stdio, but the Microsoft Store packaged executable discovered here returns `Access denied` when launched from the repository shell | Keep replay R&D independent; the live spike must preflight a separately accessible, exact-version user-installed Codex CLI and fail closed when unavailable |
 | R7 expert audit is not complete | Frozen held-out automatic audit passed at 16/18 end-to-end, but independent causal-relevance ratings are not yet measured | Give `docs/v0.3/results/held-out-rater-packets/` to two experienced TypeScript raters using `docs/v0.3/R7_EXPERT_RATING.md`, then adjudicate and report agreement |
 | Human participants are not recruited | Takeover and delayed-transfer claims cannot be tested | Complete the technical gate, then recruit for the preregistered pilot |
-| Default-branch Jules scheduler awaits explicit merge approval | Scheduled/manual continuation is not installed on `main`; draft PR #8 remains isolated and the enable variable stays off | Owner explicitly says `merge #8`; then merge through protected `main`, remove the temporary infrastructure branch, and run one guarded canary through the protected R&D branch |
+| Default-branch Jules dispatcher awaits explicit authorization | The workflow exists on R&D, but GitHub will not schedule or manually dispatch it until a workflow file exists on `main`; the enable variable stays off | Create a new minimal workflow-only PR into protected `main` only after the owner explicitly authorizes that exact action, then run one guarded canary targeting R&D |
 
 No external input blocks the repository-owned fixture R0–R4.5 mechanism in `docs/v0.3/AGENT_EXECUTION.md`. It cannot execute or judge arbitrary human/agent code and must not be represented as a general-project takeover product.
 
@@ -153,8 +155,9 @@ No external input blocks the repository-owned fixture R0–R4.5 mechanism in `do
 ## Next ordered actions
 
 1. Obtain and adjudicate two independent blind expert ratings for packet index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`.
-2. Add the local readiness ledger and minimal cockpit only after the complete R7 expert gate passes.
-3. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
+2. If full R7 passes, review ADR-007 and freeze the Operator Model schemas, hash domains, projections, and selector ablations before implementation.
+3. Add the local readiness ledger and minimal cockpit only after the complete R7 expert gate passes.
+4. Run the preregistered delayed-transfer pilot before making any skill-retention claim.
 
 ## Recent milestone commits
 

@@ -19,16 +19,21 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 13. [`R7_PREREGISTRATION.md`](R7_PREREGISTRATION.md) — frozen 30-patch sampling, metrics, and analysis protocol.
 14. [`SANDBOX_RUNNER_SPEC.md`](SANDBOX_RUNNER_SPEC.md) — exact Phase-B runner acceptance and negative contract.
 15. [`CONCEPT_LAB_CONTROLLABILITY.md`](CONCEPT_LAB_CONTROLLABILITY.md) — post-R7 control-surface, cold-relay, and dissent hypotheses.
-16. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
-17. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
+16. [`ADR-007-EXECUTABLE-OPERATOR-MODEL.md`](ADR-007-EXECUTABLE-OPERATOR-MODEL.md) — proposed maintained model of demonstrated human control and shadow-control protocol.
+17. [`OPERATOR_MODEL_SPEC.md`](OPERATOR_MODEL_SPEC.md) — draft post-R7 vertical-slice requirements, contracts, and ablations.
+18. [`GOAL_COMPLETION_AUDIT.md`](GOAL_COMPLETION_AUDIT.md) — requirement-by-requirement evidence separating infrastructure from the requested final product.
+19. [`AGENT_EXECUTION.md`](AGENT_EXECUTION.md) — ordered implementation workstreams and acceptance gates.
+20. [`JULES_LOOP.md`](JULES_LOOP.md) — guarded server-side execution queue for the audited R0–R4 slice.
 
 ## Current truth
 
 - The released v0.1 VSCodium IDE exists and remains the runtime baseline.
-- The complete v0.3 Dual-Control product runtime is not implemented. R0–R4.5 implement and protect the reviewed-fixture path from canonical evidence through recovery judging and a precommitted Control Pulse. The digest-pinned Docker `SandboxRunner` has passed local Windows and protected Linux/Windows gates. The readiness ledger, cockpit, corpus audit, and human pilot remain gated.
+- The complete v0.3 Dual-Control product runtime is not implemented. R0–R4.5 implement and protect the reviewed-fixture path from canonical evidence through recovery judging and a precommitted Control Pulse. The digest-pinned Docker `SandboxRunner` has passed local Windows and protected Linux/Windows gates.
+- The frozen automatic R7 audit passed its preregistered automatic threshold at 16/18 end-to-end held-out episodes. Full R7 is still incomplete until two independent TypeScript raters submit the frozen blind ratings and disagreements are adjudicated. The readiness ledger, cockpit, live adapter, and human pilot remain gated.
 - No retention, takeover, productivity, or usability target has been measured.
 - The first valid build is one test-backed vertical slice, not a full Cursor clone.
-- R0–R4.5 remain the only completed product evidence path. ADR-003's sandbox implementation gate has passed, but arbitrary participant or corpus execution remains blocked until the preregistered collection, eligibility, and freeze artifacts exist.
+- R0–R4.5 remain the only completed product mechanism path. The R7 corpus infrastructure can execute the frozen supported patches, but that audit is technical evidence and not a usable general-project takeover product.
+- ADR-007 proposes an Executable Operator Model so episodes update a durable map of demonstrated control instead of remaining isolated exercises. It is architecture, not implemented evidence.
 
 ## Architecture shorthand
 
@@ -36,10 +41,11 @@ PureFlow v0.3 asks whether an AI IDE can keep autonomous coding fast while behav
 production agent run
 → observable Flight Recorder
 → high-value changed seam
-→ disposable Takeover Twin
-→ human prediction / diagnosis / intervention / recovery
+→ controllability surface + operator-model delta
+→ disposable Takeover Twin / context-starved relay
+→ human prediction / evidence choice / direction / recovery
 → executable judge
-→ local delayed readiness evidence
+→ reusable control artifact + local delayed readiness evidence
 → future attention and delegation policy
 ```
 

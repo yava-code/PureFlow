@@ -350,3 +350,15 @@ Evidence: `docs/v0.3/results/R7_DEVELOPMENT_AUDIT.md` and immutable JSON receipt
 - Generated all 18 blind rating packets before outcomes, with index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`, and verified zero remaining audit containers/volumes.
 
 Evidence: `docs/v0.3/results/R7_HELD_OUT_AUDIT.md`, immutable execution receipts, and blind packet bundle. Full R7 remains blocked on two independent experienced TypeScript ratings and adjudication; R5/R6 have not started.
+
+## 2026-08-01 — R&D integration and Executable Operator Model proposal
+
+- Merged protected PR #18 into `codex/shadow-cockpit-rnd` after all five GitHub checks passed, then deleted the short-lived R7 head locally and from origin.
+- Retargeted the stale Jules infrastructure PR #8 away from `main` and into R&D, updated it from the current base, passed all five checks, merged it, and deleted the short-lived remote head. `main` remained untouched; origin now has only `main` and the single persistent coding branch `codex/shadow-cockpit-rnd`.
+- Audited the original product goal against current runtime evidence. The live agent plane, v0.3 cockpit, cold relay, delayed-transfer study, and skill-preservation claim remain incomplete; the automatic compiler gate is not substituted for product completion.
+- Proposed ADR-007: every meaningful agent checkpoint can produce tested software, an executable `observe → actuate → recover` surface, and a local Executable Operator Model containing only behaviorally supported causal claims.
+- Added the draft post-R7 specification with deterministic invalidation, shadow-control, context-starved relay, control-dividend, privacy, isolation, and ablation requirements.
+- Ran the spec-driven strict validator after correcting its required heading and traceability format: 98/100, no errors. Its only warning expects an HTTP method/path; the spec explicitly keeps this boundary local and injected in the extension host instead of inventing a network API.
+- Updated the PRD and v0.3 index so attention is selected from operator-model divergence and uncovered recovery routes rather than random functions, timer prompts, or question counts.
+
+Evidence: merged PRs [#18](https://github.com/yava-code/PureFlow/pull/18) and [#8](https://github.com/yava-code/PureFlow/pull/8); `docs/v0.3/ADR-007-EXECUTABLE-OPERATOR-MODEL.md`; `docs/v0.3/OPERATOR_MODEL_SPEC.md`; `docs/v0.3/GOAL_COMPLETION_AUDIT.md`. ADR-007 remains proposed and implementation remains gated by two independent R7 expert ratings.
