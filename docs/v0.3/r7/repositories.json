@@ -37,5 +37,44 @@
     "installArgv": ["npm", "ci", "--ignore-scripts"],
     "testArgv": ["npm", "run", "test-spec", "--", "--forbid-only"],
     "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "f177fe323420ccb23e1a79445fd470cbf80aee7c"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "ofetch",
+    "url": "https://github.com/unjs/ofetch.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "1dbc37fd1ceab832fc7c90cad81b1091c95ba563",
+    "nodeVersion": "22.18.0",
+    "packageManager": "pnpm",
+    "packageManagerVersion": "10.20.0",
+    "installArgv": ["corepack", "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"],
+    "testArgv": ["corepack", "pnpm", "test"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "1dbc37fd1ceab832fc7c90cad81b1091c95ba563"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "defu",
+    "url": "https://github.com/unjs/defu.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "82632b66f5914e9946edce300e10633a3d5c0cb7",
+    "nodeVersion": "22.18.0",
+    "packageManager": "pnpm",
+    "packageManagerVersion": "10.33.4",
+    "installArgv": ["corepack", "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"],
+    "testArgv": ["corepack", "pnpm", "test"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "82632b66f5914e9946edce300e10633a3d5c0cb7"]
+  },
+  {
+    "schemaVersion": 1,
+    "repositoryId": "hookable",
+    "url": "https://github.com/unjs/hookable.git",
+    "licenseSpdx": "MIT",
+    "pinnedTip": "b77477c027039362ee0ec4f39b8998c4f1b21707",
+    "nodeVersion": "22.18.0",
+    "packageManager": "pnpm",
+    "packageManagerVersion": "10.33.0",
+    "installArgv": ["corepack", "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"],
+    "testArgv": ["corepack", "pnpm", "test"],
+    "candidateHistoryArgv": ["git", "rev-list", "--first-parent", "b77477c027039362ee0ec4f39b8998c4f1b21707"]
   }
 ]

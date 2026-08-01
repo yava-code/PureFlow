@@ -64,6 +64,23 @@ describe("R7 corpus freeze", () => {
     }
   });
 
+  it("uses replacement repositories in registration order and stops when 30 exist", () => {
+    const repositories = [repository("repo-a", "a"), repository("repo-b", "b"), repository("repo-c", "c"), repository("repo-d", "d")];
+    const candidates = repositories.flatMap((repo, repoIndex) =>
+      Array.from({ length: 10 }, (_, index) => {
+        const facts = candidate(repo.repositoryId, index + 1, repoIndex * 20 + index + 1);
+        if (repo.repositoryId === "repo-a") facts.lockfilePresent = false;
+        return facts;
+      }),
+    );
+
+    const manifest = freezeCorpus(repositories, candidates);
+
+    expect(manifest.patches.some(({ repositoryId }) => repositoryId === "repo-a")).toBe(false);
+    expect(manifest.patches.filter(({ repositoryId }) => repositoryId === "repo-d")).toHaveLength(10);
+    expect(manifest.exclusions).toHaveLength(10);
+  });
+
   it("refuses an incomplete, over-scanned, duplicate, or outcome-tainted corpus", () => {
     const repositories = [repository("repo-a", "a"), repository("repo-b", "b"), repository("repo-c", "c")];
     const incomplete = repositories.flatMap((repo, repoIndex) =>

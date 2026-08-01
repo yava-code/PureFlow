@@ -152,7 +152,6 @@ export function freezeCorpus(
 ): CorpusManifest {
   if (registrations.length < 3) throw new Error("R7 requires at least three registered repositories");
   const repositories = registrations.map(copyRepository);
-  repositories.sort((left, right) => compareUtf8(left.repositoryId, right.repositoryId));
   const repositoryById = new Map<string, RepositoryRegistration>();
   for (const repository of repositories) {
     validateRepositoryRegistration(repository);
@@ -176,11 +175,12 @@ export function freezeCorpus(
   const selected: Array<Omit<FrozenPatch, "splitKey" | "cohort">> = [];
   const exclusions: FrozenExclusion[] = [];
   for (const repository of repositories) {
+    if (selected.length === 30) break;
     const group = grouped.get(repository.repositoryId) ?? [];
     group.sort((left, right) => left.ordinal - right.ordinal);
     let accepted = 0;
     for (const candidate of group) {
-      if (accepted === 10) break;
+      if (accepted === 10 || selected.length === 30) break;
       const result = classifyCandidate(candidate);
       if (result.status === "excluded") {
         exclusions.push({
