@@ -3,11 +3,24 @@ import { describe, expect, it } from "vitest";
 import {
   classifyCandidate,
   freezeCorpus,
+  mergeCandidateSets,
   type CandidateFacts,
   type RepositoryRegistration,
 } from "../src/corpus/freeze";
 
 describe("R7 corpus freeze", () => {
+  it("merges completed candidate sets in input order and refuses duplicates", () => {
+    const first = [candidate("repo-a", 1), candidate("repo-a", 2)];
+    const second = [candidate("repo-b", 1, 20)];
+
+    expect(mergeCandidateSets([first, second]).map(({ repositoryId, ordinal }) => `${repositoryId}/${ordinal}`)).toEqual([
+      "repo-a/1",
+      "repo-a/2",
+      "repo-b/1",
+    ]);
+    expect(() => mergeCandidateSets([first, [structuredClone(first[0]!)]] )).toThrow("Duplicate candidate");
+  });
+
   it("assigns exactly one first-match exclusion code", () => {
     const facts = candidate("repo-a", 1);
     facts.adjacentFirstParent = false;

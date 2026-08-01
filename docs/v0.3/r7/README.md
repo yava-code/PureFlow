@@ -13,6 +13,7 @@ From `extension/`:
 npm run r7:corpus -- scan <repositories.json> <repository-id> <external-git-clone> <new-preflight.json>
 npm run r7:corpus -- provision <repositories.json> <repository-id> <preflight.json> <external-git-clone> <new-evidence.json> [prior-evidence.json]
 npm run r7:corpus -- complete <preflight.json> <provision-evidence.json> <new-candidates.json>
+npm run r7:corpus -- merge <candidates.json> <candidates.json> [...] <new-candidates.json>
 npm run r7:corpus -- freeze <repositories.json> <candidates.json> <new-manifest.json>
 ```
 

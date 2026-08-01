@@ -150,6 +150,21 @@ export function classifyCandidate(candidate: CandidateFacts): CandidateClassific
   return { status: "eligible" };
 }
 
+export function mergeCandidateSets(sets: readonly (readonly CandidateFacts[])[]): CandidateFacts[] {
+  const merged: CandidateFacts[] = [];
+  const seen = new Set<string>();
+  for (const set of sets) {
+    for (const candidate of set) {
+      validateCandidate(candidate);
+      const identity = `${candidate.repositoryId}\0${candidate.targetCommit}`;
+      if (seen.has(identity)) throw new Error(`Duplicate candidate: ${candidate.repositoryId}/${candidate.targetCommit}`);
+      seen.add(identity);
+      merged.push(structuredClone(candidate));
+    }
+  }
+  return merged;
+}
+
 export function freezeCorpus(
   registrations: readonly RepositoryRegistration[],
   candidates: readonly CandidateFacts[],

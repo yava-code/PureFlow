@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { completeCandidate, deferCandidate, scanRepository, type CandidatePreflight, type ProvisionEvidence } from "./scan";
-import { freezeCorpus, type CandidateFacts, type RepositoryRegistration } from "./freeze";
+import { freezeCorpus, mergeCandidateSets, type CandidateFacts, type RepositoryRegistration } from "./freeze";
 import { provisionRepository } from "./provision";
 
 void main();
@@ -34,6 +34,12 @@ async function main(): Promise<void> {
     });
     await writeNewJson(args[2]!, completed);
     process.stdout.write(`Completed ${completed.length} eligibility records.\n`);
+  } else if (command === "merge" && args.length >= 3) {
+    const output = args.at(-1)!;
+    const sets = await Promise.all(args.slice(0, -1).map((path) => readJson<CandidateFacts[]>(path)));
+    const merged = mergeCandidateSets(sets);
+    await writeNewJson(output, merged);
+    process.stdout.write(`Merged ${merged.length} eligibility records.\n`);
   } else if (command === "freeze" && args.length === 3) {
     const repositories = await readJson<RepositoryRegistration[]>(args[0]!);
     const candidates = await readJson<CandidateFacts[]>(args[1]!);
@@ -46,6 +52,7 @@ async function main(): Promise<void> {
       "  npm run r7:corpus -- scan <repositories.json> <repository-id> <git-repository> <preflight.json>",
       "  npm run r7:corpus -- provision <repositories.json> <repository-id> <preflight.json> <git-repository> <evidence.json> [prior-evidence.json]",
       "  npm run r7:corpus -- complete <preflight.json> <provision-evidence.json> <candidates.json>",
+      "  npm run r7:corpus -- merge <candidates.json> <candidates.json> [...] <new-candidates.json>",
       "  npm run r7:corpus -- freeze <repositories.json> <candidates.json> <manifest.json>",
       "",
     ].join("\n"));
