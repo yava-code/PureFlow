@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "development",
+  "patch": {
+    "repositoryId": "defu",
+    "ordinal": 2,
+    "baseCommit": "d3ef16dabe861713192ba8679c5db8e0ac143f9b",
+    "targetCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+    "evidenceSha256": "b7ed7de33279ecd37d0187634045519c8b9c11e15bbfc90f45346f6770b3eee8",
+    "splitKey": "3e5184388004cbb5923f9d891367c717f7d4b2a312ba742f846b852be9556896",
+    "cohort": "development"
+  },
+  "compileResult": {
+    "status": "compiled",
+    "participant": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "repositoryId": "defu",
+      "seam": {
+        "path": "src/defu.ts",
+        "symbol": "_defu",
+        "kind": "function"
+      },
+      "writablePaths": [
+        "src/defu.ts"
+      ],
+      "attributedTestPaths": [
+        "test/defu.test.ts"
+      ],
+      "attentionBudgetSeconds": 600,
+      "observationLabel": "registered-check-outcome",
+      "experienceId": "5fdcf1e7ba28258cccd688ab51adffada9b53bcc66a4fcfe3a5db74bb85b939b"
+    },
+    "internal": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+      "patchEvidenceSha256": "b7ed7de33279ecd37d0187634045519c8b9c11e15bbfc90f45346f6770b3eee8",
+      "repositoryId": "defu",
+      "ordinal": 2,
+      "baseCommit": "d3ef16dabe861713192ba8679c5db8e0ac143f9b",
+      "targetCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+      "nodeVersion": "22.17.0",
+      "packageManager": "pnpm",
+      "packageManagerVersion": "10.33.4",
+      "installArgv": [
+        "corepack",
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--ignore-scripts"
+      ],
+      "testArgv": [
+        "corepack",
+        "pnpm",
+        "test"
+      ],
+      "sources": [
+        {
+          "path": "src/defu.ts",
+          "baseBlobSha1": "168ddff1d40217d2ee658604581a5c86203c3f73",
+          "targetBlobSha1": "5eb3cc8cb2c3834be587b5d09aed35faf6e2a20d"
+        }
+      ],
+      "attributedTestPaths": [
+        "test/defu.test.ts"
+      ],
+      "semantic": {
+        "path": "src/defu.ts",
+        "symbol": "_defu",
+        "kind": "function",
+        "changedLineSha256": [
+          "44132d746a8e6f7b3b0a9ad93dbfe8fb74545cf998a24437cde469f6ba722b40",
+          "d09013c90c57e8482792fb858913fd044bc4ec8fc7d3e5873182c86306e846ec"
+        ]
+      },
+      "mutationOperator": "whole-file-base-rewind",
+      "participantProjectionSha256": "d0feb5a9da30cfc2b339c54424c6ecf6bedbc7de5d87d2212988032c9277fafe",
+      "internalPlanSha256": "a19cf46a17e4ef9e1ee5053e38bb978a578fdfe8ee9a81d72dd9a257ac60f25c"
+    }
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "compilerProtocol": "r7-rewind-v1",
+    "internalPlanSha256": "a19cf46a17e4ef9e1ee5053e38bb978a578fdfe8ee9a81d72dd9a257ac60f25c",
+    "status": "valid",
+    "recoveryValid": true,
+    "probeValid": true,
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 17414,
+      "stdoutBytes": 1330,
+      "stderrBytes": 0,
+      "stdoutSha256": "7c3d5caa36bb7a87e02bbc4b79ce9ab879a13771bbcf5d0802c3a84b504cb046",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "targetControl": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 6785,
+      "stdoutBytes": 1024,
+      "stderrBytes": 0,
+      "stdoutSha256": "4dde899017ca2ba07fca74c3c5bd1a1633e451cf86b24d47b2c404b47b112134",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mutation": [
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 6492,
+        "stdoutBytes": 2696,
+        "stderrBytes": 938,
+        "stdoutSha256": "2602b2c0cac997de6839636d7f56ea9efa43fe066cc31f681c8914e7ee75c8d9",
+        "stderrSha256": "1b6d5061b001929434adbdff1911ce99c6c84ea3cfe728a2afb13321a2fadfc6"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 7643,
+        "stdoutBytes": 2698,
+        "stderrBytes": 938,
+        "stdoutSha256": "04edac442843185820b279e812515ed3c7e85fc03434634953da4c1660ec1d38",
+        "stderrSha256": "1b6d5061b001929434adbdff1911ce99c6c84ea3cfe728a2afb13321a2fadfc6"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 6161,
+        "stdoutBytes": 2697,
+        "stderrBytes": 938,
+        "stdoutSha256": "132142c3b22fcebaa94b0d8db079d6daaa961a3d17f2b3f20aeaeb533aaf4c60",
+        "stderrSha256": "1b6d5061b001929434adbdff1911ce99c6c84ea3cfe728a2afb13321a2fadfc6"
+      }
+    ],
+    "repair": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 7367,
+        "stdoutBytes": 1025,
+        "stderrBytes": 0,
+        "stdoutSha256": "39295d49f7b49a630db476a97d72481cdc55b37c44ece69c4086069ea6050a9b",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 6940,
+        "stdoutBytes": 1025,
+        "stderrBytes": 0,
+        "stdoutSha256": "77b088b8290164c6ed5aaf21520f0579d6c4f50f86bdc0a87c31ceee718a192f",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 6598,
+        "stdoutBytes": 1025,
+        "stderrBytes": 0,
+        "stdoutSha256": "c794c8d6316ab8371c2c6047a50213942160170555e00dacc1fc053a6f47e168",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "setupMs": [
+      5524,
+      12726,
+      15171,
+      5595,
+      7939,
+      6332,
+      6654
+    ],
+    "targetArchiveSha256": "549d9a623cc8523d8f84a309938aea99dd3abab1790bbdc5289e4e7a1e7e6d00",
+    "rewindArchiveSha256": "e7cb1a7696be8ce04954346a3b5575aaf891c7e1e18e1260bded5fd58f5d6c29",
+    "repairArchiveSha256": "ed4000cdc7903e92d4c347693ea7b20410b627fe139cfc2ce846855401b2cb6c",
+    "targetArchiveBytes": 419840,
+    "rewindArchiveBytes": 10240,
+    "repairArchiveBytes": 10240,
+    "productionInvariantPassed": true,
+    "cleanupPassed": true,
+    "reportSha256": "65a4c9b7f6ef053de5cb45804343d0816524243a019f7ce86ba1ce288d9bb9d3"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "compilerProtocol": "r7-rewind-v1",
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "held-out",
+  "totalPatches": 18,
+  "compiledPatches": 17,
+  "compileAbstentions": 1,
+  "validEpisodes": 16,
+  "validProbes": 16,
+  "compileRate": {
+    "numerator": 17,
+    "denominator": 18,
+    "value": 0.9444444444444444
+  },
+  "executableValidityRate": {
+    "numerator": 16,
+    "denominator": 17,
+    "value": 0.9411764705882353
+  },
+  "endToEndEpisodeRate": {
+    "numerator": 16,
+    "denominator": 18,
+    "value": 0.8888888888888888
+  },
+  "endToEndProbeRate": {
+    "numerator": 16,
+    "denominator": 18,
+    "value": 0.8888888888888888
+  },
+  "statusCounts": {
+    "compiled": 17,
+    "mutation-did-not-fail": 1,
+    "unsupported-source-rewind": 1,
+    "valid": 16
+  },
+  "medianExecutionMs": 276759,
+  "totalExecutionMs": 5845818,
+  "developmentFloorPassed": null,
+  "resultReportSha256s": [
+    "19193cfd128624daea9f9f0e2dc7a0fdccddd4f5a075a6d178dbe40f0381f86b",
+    "2a296b95e098050829e7e9eaa6ac99f8f15f58bfb3205d25c0a47a7849e1fba9",
+    "36090d66e76e84a6281302627920dd6fce8fe966af78b7140290f411765ac5f5",
+    "4ac4085fe6601be116878a9eacc18ff473ffe6bb82fedcfec74c6f4b000e8686",
+    "4d2a8528ebc09ffd2560d2022f138b73fb5e36b735e2d139b74af540421c6d91",
+    "6192709216042f3e331b516726c4b2329a35ada638ede98b503ce976adb4cd7a",
+    "861deb1df514637958ebc307640ff6a002c57c80db0324eb35f734fce9821df2",
+    "8f081ad52131ee565b89f29f0967465cd33378c752d0615eda16658eff3b1aa8",
+    "c4acee729c9b25541c18705ba7170c89291f98243cef9cbcad68de31883d959c",
+    "c4d88c997a01dd15d485f74967651bd19486474c6c67c6a74c33c232ac85c976",
+    "cf24bd53661b1a5169c7e7f7e07a8327f20db0655518de7de04c0e4674448d15",
+    "cf50bad25a51c3408ac925b410d00f053a2703fa3d1580c910cf1569c7346492",
+    "d1aafa39a429d263437bae7de4497727ba08810253f3e2235d0e51046cbbaf3e",
+    "d76485df6a7941718b55faccec7b33b9c66376ec4be64ba04e522287b873c240",
+    "de08ef885acf80e8ab9deeb4d164ca0a3076cf79c759951bb11455bf649e9875",
+    "f1a9f63bfe52c5689cb7146da4db67b461f71165c1f231b11f144ea47d3ac570",
+    "fabf36a1d80f1ace84ccba14a6676bd979eb240315da3d2b1008556128b0e86b"
+  ],
+  "summarySha256": "fe561009447e187e8c085ac499d62496816f2714fc4dcabccdb064ca97708942"
+}

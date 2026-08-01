@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "held-out",
+  "patch": {
+    "repositoryId": "hookable",
+    "ordinal": 4,
+    "baseCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+    "targetCommit": "0bf8fdd8c091516720a971b7e9868376b569bc52",
+    "evidenceSha256": "9da9a8b0df6f3270f11939f22b1b84db620181f6063f60cd57f67aeb765c1d88",
+    "splitKey": "52af512c0295603610deab981538bf5b951a7e727157a36f38cab93fcf6ab864",
+    "cohort": "held-out"
+  },
+  "compileResult": {
+    "status": "compiled",
+    "participant": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "repositoryId": "hookable",
+      "seam": {
+        "path": "src/hookable.ts",
+        "symbol": "HookableCore.callHook",
+        "kind": "method"
+      },
+      "writablePaths": [
+        "src/hookable.ts",
+        "src/utils.ts"
+      ],
+      "attributedTestPaths": [
+        "test/bundle.test.ts",
+        "test/hookable.test.ts"
+      ],
+      "attentionBudgetSeconds": 600,
+      "observationLabel": "registered-check-outcome",
+      "experienceId": "495a81b0fc206a26a1bf0741a4d4188fd6970d91b10c9468e54422c46b997339"
+    },
+    "internal": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+      "patchEvidenceSha256": "9da9a8b0df6f3270f11939f22b1b84db620181f6063f60cd57f67aeb765c1d88",
+      "repositoryId": "hookable",
+      "ordinal": 4,
+      "baseCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+      "targetCommit": "0bf8fdd8c091516720a971b7e9868376b569bc52",
+      "nodeVersion": "22.17.0",
+      "packageManager": "pnpm",
+      "packageManagerVersion": "10.33.0",
+      "installArgv": [
+        "corepack",
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--ignore-scripts"
+      ],
+      "testArgv": [
+        "corepack",
+        "pnpm",
+        "test"
+      ],
+      "sources": [
+        {
+          "path": "src/hookable.ts",
+          "baseBlobSha1": "46a098c3bc2f873e25429db9fb7fff42deb78cd6",
+          "targetBlobSha1": "06388f8a6856b554dc4b07b8d8f52e416d3805f1"
+        },
+        {
+          "path": "src/utils.ts",
+          "baseBlobSha1": "1aea7c09d15fa4a6938633deb4e92008cf2393bd",
+          "targetBlobSha1": "6515f742f226c29060bf091742a50e842cc3f0fe"
+        }
+      ],
+      "attributedTestPaths": [
+        "test/bundle.test.ts",
+        "test/hookable.test.ts"
+      ],
+      "semantic": {
+        "path": "src/hookable.ts",
+        "symbol": "HookableCore.callHook",
+        "kind": "method",
+        "changedLineSha256": [
+          "18bf18df26a8cd0f1b69a0351b9ab6ab0794312f1c5d7e150041e7e068c73c5b",
+          "4878e03531071f15a5862a289c5cf56c430208969ddfb3a799b3b14192cb1348",
+          "4f55137cae0288430e1677cc2b523e19e44951298025f687dfe30a3e8dccaef5",
+          "5a0df30d5cbc4e9234632b106e1ba74cd6a3ae5c3e586df8f30a4b764872bfa5",
+          "67694c125cca8ca0a62725dfef58e8526eab4d227697d733f055295d901fc772",
+          "6c4e85bd9478e20211fe5bf9f88e1705ab9628196b39c630b68173db29457ae1",
+          "6cf23ec891c1d7aa1c0e82fa41a543cbab6ff8fc86b1be7f8a97684188810d0a",
+          "a911b0ecf121d34a0a51af64e4d4488bdb3199862565435b20f0344c20390f26",
+          "b150b5c975daee1bdf3a752127a04dd0a586717a7af6798f9926a3161717adde"
+        ]
+      },
+      "mutationOperator": "whole-file-base-rewind",
+      "participantProjectionSha256": "e1be76496cd2181776cbeb90423dee3c99db73fec9e900edfeeecd465ee17727",
+      "internalPlanSha256": "8b5ef8c4f410e8faa75f78a04e39e79b841de6df96a6e25ba8b935897fd0e2b3"
+    }
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "compilerProtocol": "r7-rewind-v1",
+    "internalPlanSha256": "8b5ef8c4f410e8faa75f78a04e39e79b841de6df96a6e25ba8b935897fd0e2b3",
+    "status": "valid",
+    "recoveryValid": true,
+    "probeValid": true,
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 20381,
+      "stdoutBytes": 1138,
+      "stderrBytes": 0,
+      "stdoutSha256": "423427372460cf307ef889219a51e88fd281667ac8d843449e0d093248f4cc50",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "targetControl": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 24567,
+      "stdoutBytes": 1152,
+      "stderrBytes": 168,
+      "stdoutSha256": "d766dbd19b97a24f293f9da98ca0082c89e359c20c43b72829495ddb09977b44",
+      "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+    },
+    "mutation": [
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 16838,
+        "stdoutBytes": 3350,
+        "stderrBytes": 2352,
+        "stdoutSha256": "70da57251af01bc61e4b3f293422f82336af77b6023988b11fc183a7e4782b16",
+        "stderrSha256": "2a2b15abd14fcb44a005e50104ac403924c5ca16a289d2b843cb276da882c86b"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 16366,
+        "stdoutBytes": 3350,
+        "stderrBytes": 2352,
+        "stdoutSha256": "c2da7cf77737fb79bce3703a55492f4b915830f58608814d574491b0d9e05e11",
+        "stderrSha256": "2a2b15abd14fcb44a005e50104ac403924c5ca16a289d2b843cb276da882c86b"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 13457,
+        "stdoutBytes": 3349,
+        "stderrBytes": 2352,
+        "stdoutSha256": "8ca98e978ff77ccd059dee69c74837dc1b134fc571dd2c3e6d4978a9cc20cb90",
+        "stderrSha256": "2a2b15abd14fcb44a005e50104ac403924c5ca16a289d2b843cb276da882c86b"
+      }
+    ],
+    "repair": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 15815,
+        "stdoutBytes": 1153,
+        "stderrBytes": 168,
+        "stdoutSha256": "905c829183acc75edc321f0eeda8c3aeac1b34eec3d96337fd44cc59bde940fd",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 29470,
+        "stdoutBytes": 1153,
+        "stderrBytes": 168,
+        "stdoutSha256": "93bba16193067bae252711df820b6e2a64eb113f895e37db0ecd97730cd5824a",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 17825,
+        "stdoutBytes": 1152,
+        "stderrBytes": 168,
+        "stdoutSha256": "4339a7b95a882716ea58eeecda9dda2ef454c941f3c15ecf3e0e1fc8aef09be7",
+        "stderrSha256": "4b26e86573abb5abbed064058ad9ba1b377a4eadbd38d84469a6bcecf2160deb"
+      }
+    ],
+    "setupMs": [
+      15903,
+      5967,
+      5563,
+      6436,
+      7683,
+      26257,
+      8903
+    ],
+    "targetArchiveSha256": "44e30127bb0c410f9b7eab752f02f4138afe87f4e9a7c2023dc6299dbf14616c",
+    "rewindArchiveSha256": "ee31c227bf6a0cb00c9377bec8a81c9f15cc5c450491f0c922c2221f5a514a00",
+    "repairArchiveSha256": "030cb6aae0530492c68e02c5ed512b03b93f91725610aea237c57337e654d671",
+    "targetArchiveBytes": 204800,
+    "rewindArchiveBytes": 20480,
+    "repairArchiveBytes": 20480,
+    "productionInvariantPassed": true,
+    "cleanupPassed": true,
+    "reportSha256": "861deb1df514637958ebc307640ff6a002c57c80db0324eb35f734fce9821df2"
+  }
+}

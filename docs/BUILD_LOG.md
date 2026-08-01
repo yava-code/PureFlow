@@ -2,6 +2,17 @@
 
 This is a concise chronological record of material implementation work and runtime evidence. It is not a substitute for Git history; it captures intent, verification, and blockers that a commit alone may not explain.
 
+## 2026-08-01 — R7 corpus frozen
+
+- Implemented the outcome-free Git scanner, isolated Docker provisioner, immutable resume evidence, deterministic candidate merge, and exact 30-patch freezer. RED tests preceded the scanner batching, evidence merge, global-slot cap, and registered-script precheck changes.
+- Registered replacements before their eligibility histories were inspected. The collector evaluated 457 records across 10 registrations and froze 30 eligible patches from six repositories: 12 development and 18 held-out.
+- Frozen manifest SHA-256: `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149`. The held-out set includes `ufo`, which is absent from development.
+- Collection left no `pureflow-r7-corpus-*` Docker container or volume. No compiler, probe, model, expert, or participant outcome was inspected during selection.
+- The complete extension suite passed 93/93, the explicitly enabled Docker backend suite passed 2/2, TypeScript/build/VSIX packaging passed, and a clean re-freeze reproduced the manifest byte-for-byte.
+- R7 remains open: automated compiler validity, replay/parity/adversarial evidence, and two independent human ratings are not yet measured. R5/R6 remain gated.
+
+Evidence: `docs/v0.3/r7/`, `docs/v0.3/results/R7_CORPUS_COLLECTION.md`, corpus tests, local Docker provisioning on 2026-08-01.
+
 ## 2026-08-01 — R7 Docker SandboxRunner local candidate
 
 - Wrote `SANDBOX_RUNNER_SPEC.md` first and passed the strict spec validator at 100/100 before implementation. The contract fixes command authority, trust/consent, opaque handles, image identity, isolation flags, mountpoints, oracle integrity, evidence bounds, single-use IDs, cancellation, cleanup, and fail-closed behavior.
@@ -318,3 +329,24 @@ Append an entry after each material milestone with:
 
 - Added `openDocsSideBySide` configuration using `vscode.ViewColumn.Beside`.
 - Created safety gate requiring developers to manually record recall context before loading external documentation during an active Focus Rep.
+
+## 2026-08-01 — R7 development compiler audit
+
+- Implemented the deterministic `r7-rewind-v1` plan compiler, Git-backed preparation, digest-pinned Docker executor, typed outcome classifier, immutable per-patch receipts, and cohort summarizer.
+- Froze and executed all 12 development identities from corpus `a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149`: 10 compiled, 2 abstained because a complete base source blob did not exist, 9 were executable-valid, and 1 correctly rejected because the rewind did not fail the registered observation.
+- Recorded 75% end-to-end recovery/probe yield and 90% validity among compiled cases. Summary hash: `d4457d21be7939eee4e205d0b559e7e7ef01973df5f0a072f8d2ae4adfcc070b`.
+- Verified unique plan/report hashes, unchanged external repository snapshots, source blob integrity around every test, and zero remaining audit containers or volumes.
+- Added 13 focused compiler/preparation/classification/summary tests and passed TypeScript checking. Disclosed the archive-hash placement deviation before the held-out freeze.
+- Frozen 16 compiler/config inputs in `docs/v0.3/r7/compiler-freeze-v1.json`; raw freeze-file SHA-256: `605b645e9cc27653515665ac002a4b1d9c1e6f36c6ddf3bffbf2be4d2081a81b`.
+
+Evidence: `docs/v0.3/results/R7_DEVELOPMENT_AUDIT.md` and immutable JSON receipts. R7 remains blocked on the frozen 18-patch held-out run and two independent blind expert ratings; no retention or product-effectiveness claim is made.
+
+## 2026-08-01 — R7 held-out automatic audit
+
+- Committed compiler freeze `ab1ea56`, verified all 16 freeze-manifest file hashes, and opened the 18 held-out identities only after that boundary.
+- Compiled 17/18 held-out patches, emitted one structural abstention, and executed every compiled patch with the frozen one-control/three-mutation/three-repair protocol.
+- Recorded 16/18 end-to-end valid recovery episodes and probes (88.9%, Wilson 95% CI 67.2–96.9%); one compiled mutation correctly emitted `mutation-did-not-fail`.
+- Passed the preregistered automatic thresholds without modifying compiler code/config. Summary hash: `fe561009447e187e8c085ac499d62496816f2714fc4dcabccdb064ca97708942`.
+- Generated all 18 blind rating packets before outcomes, with index `54d78382b3ddbe15cba1f8153275e8149d32ddaa5192163f99ca5f43d903e8fe`, and verified zero remaining audit containers/volumes.
+
+Evidence: `docs/v0.3/results/R7_HELD_OUT_AUDIT.md`, immutable execution receipts, and blind packet bundle. Full R7 remains blocked on two independent experienced TypeScript ratings and adjudication; R5/R6 have not started.

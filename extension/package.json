@@ -259,6 +259,8 @@
     "watch": "node esbuild.mjs --watch",
     "check": "tsc --noEmit",
     "fixture:runtime": "node scripts/provision-fixture-node.mjs",
+    "r7:audit": "node scripts/r7-audit.mjs",
+    "r7:corpus": "node scripts/r7-corpus.mjs",
     "test": "npm run fixture:runtime && vitest run",
     "package": "npm run build && vsce package --no-dependencies"
   },

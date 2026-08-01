@@ -1,0 +1,41 @@
+{
+  "5cd9e676711af3f4e4b5398ddf6ca8d52c1c7e1f": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 637344,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": true,
+    "targetInstallPassed": true,
+    "targetTestPassed": true,
+    "basePassed": true,
+    "targetPassed": true,
+    "provisionEvidenceSha256": "53f2e809f7c3a50d38396d63c42ad23b2609e3e1182903b1b5190d77d57fd7ad"
+  },
+  "eb29945470c8629309764f026a36e7f477a9a1ff": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 636014,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": true,
+    "targetInstallPassed": true,
+    "targetTestPassed": true,
+    "basePassed": true,
+    "targetPassed": true,
+    "provisionEvidenceSha256": "21b7f2044cc4005449f5b75b9e491927e112e81c3fe1c0c0456532fd5baf9151"
+  },
+  "3c4b43de1128f2c04c2131db9a7e9fe2c7daf0d5": {
+    "schemaVersion": 1,
+    "sanitizedBytes": 622325,
+    "requiresProductionCapability": false,
+    "executionNeedsNetwork": false,
+    "baseInstallPassed": true,
+    "baseTestPassed": true,
+    "targetInstallPassed": true,
+    "targetTestPassed": true,
+    "basePassed": true,
+    "targetPassed": true,
+    "provisionEvidenceSha256": "ffb01bf42fc611edc1fc5b02d2286fa175bf43ab8aa06725b1111f292c2931ed"
+  }
+}

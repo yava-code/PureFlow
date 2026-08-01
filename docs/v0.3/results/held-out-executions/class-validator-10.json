@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "held-out",
+  "patch": {
+    "repositoryId": "class-validator",
+    "ordinal": 10,
+    "baseCommit": "5f5ece884231e1c03947e738503f8bba8345c168",
+    "targetCommit": "8105b6781cf7fad8808f10b2a63a1de9fe082676",
+    "evidenceSha256": "cae646869cbb047951d5db2a11b3a56a1277034e59686d02f3b34238dbb9f220",
+    "splitKey": "70a76700bfbb3c98700f41201f9b11d56d5933a90c3a7d127034f113d64201d3",
+    "cohort": "held-out"
+  },
+  "compileResult": {
+    "status": "compiled",
+    "participant": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "repositoryId": "class-validator",
+      "seam": {
+        "path": "src/decorator/object/IsNotEmptyObject.ts",
+        "symbol": "isNotEmptyObject",
+        "kind": "function"
+      },
+      "writablePaths": [
+        "src/decorator/object/IsNotEmptyObject.ts"
+      ],
+      "attributedTestPaths": [
+        "test/functional/validation-functions-and-decorators.spec.ts"
+      ],
+      "attentionBudgetSeconds": 600,
+      "observationLabel": "registered-check-outcome",
+      "experienceId": "0fe685c55c049af2d14a3f71813feb980caf108d7f2cf47d338d3ebd06383769"
+    },
+    "internal": {
+      "schemaVersion": 1,
+      "compilerProtocol": "r7-rewind-v1",
+      "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+      "patchEvidenceSha256": "cae646869cbb047951d5db2a11b3a56a1277034e59686d02f3b34238dbb9f220",
+      "repositoryId": "class-validator",
+      "ordinal": 10,
+      "baseCommit": "5f5ece884231e1c03947e738503f8bba8345c168",
+      "targetCommit": "8105b6781cf7fad8808f10b2a63a1de9fe082676",
+      "nodeVersion": "22.17.0",
+      "packageManager": "npm",
+      "packageManagerVersion": "10.9.2",
+      "installArgv": [
+        "npm",
+        "ci",
+        "--ignore-scripts"
+      ],
+      "testArgv": [
+        "npm",
+        "run",
+        "test:ci",
+        "--",
+        "--coverage=false"
+      ],
+      "sources": [
+        {
+          "path": "src/decorator/object/IsNotEmptyObject.ts",
+          "baseBlobSha1": "7eada8548a25d179a2bc5afc8b6ccd0c67b23d27",
+          "targetBlobSha1": "64aada8014be75d678b7d402803dabbe9bc957f5"
+        }
+      ],
+      "attributedTestPaths": [
+        "test/functional/validation-functions-and-decorators.spec.ts"
+      ],
+      "semantic": {
+        "path": "src/decorator/object/IsNotEmptyObject.ts",
+        "symbol": "isNotEmptyObject",
+        "kind": "function",
+        "changedLineSha256": [
+          "4daf88c8ad2f2f451936b73548786386dea76640265b40bace5eb04518b440c8",
+          "83bb75df32e7a0a39554aba13f1d00c71999d12276019af9c1c2a2d2fc9938de"
+        ]
+      },
+      "mutationOperator": "whole-file-base-rewind",
+      "participantProjectionSha256": "f3db7a0412c85a1161e865ee9b88299384be1017aea93360db34f9acba27a05b",
+      "internalPlanSha256": "8874781b91bb09016085031b3eb9036e27f6844301e3d645f797c914353bedf1"
+    }
+  },
+  "execution": {
+    "schemaVersion": 1,
+    "compilerProtocol": "r7-rewind-v1",
+    "internalPlanSha256": "8874781b91bb09016085031b3eb9036e27f6844301e3d645f797c914353bedf1",
+    "status": "valid",
+    "recoveryValid": true,
+    "probeValid": true,
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 40203,
+      "stdoutBytes": 363,
+      "stderrBytes": 0,
+      "stdoutSha256": "ca43f1355d58a3ab44f79bc4d0886c1e3b9ec1fdd02bbe3f7cf1a5fcca6aa933",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "targetControl": {
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 29362,
+      "stdoutBytes": 103,
+      "stderrBytes": 54895,
+      "stdoutSha256": "694c052622c934c257ede489c44c24d94ad59da862d763b5dcc04a135d6c3cae",
+      "stderrSha256": "790a27b136ece53f4437d8a7c454cb0628cd415b143b72390e3cd5ce755bed8e"
+    },
+    "mutation": [
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 27313,
+        "stdoutBytes": 1587,
+        "stderrBytes": 56387,
+        "stdoutSha256": "3069ad456ee53dadd4faef7c055084bec5289c054e25ecd07813ee83ef5e655e",
+        "stderrSha256": "66e6e78877db8141cd10905e99670f5e41d6e0e6c729db351a7af9ea7ab38ba1"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 21200,
+        "stdoutBytes": 1587,
+        "stderrBytes": 56092,
+        "stdoutSha256": "3069ad456ee53dadd4faef7c055084bec5289c054e25ecd07813ee83ef5e655e",
+        "stderrSha256": "2fdcfd4ef4a7ca1f447255abc2323b0c21c23863efb3a443b45702f50508b9a2"
+      },
+      {
+        "exitCode": 1,
+        "timedOut": false,
+        "durationMs": 25299,
+        "stdoutBytes": 1587,
+        "stderrBytes": 56850,
+        "stdoutSha256": "3069ad456ee53dadd4faef7c055084bec5289c054e25ecd07813ee83ef5e655e",
+        "stderrSha256": "6a1dbafcfb45583ea6cdf7002611a9ca4b86f3d7a51823c4c019a5ca07eab6aa"
+      }
+    ],
+    "repair": [
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 26088,
+        "stdoutBytes": 103,
+        "stderrBytes": 54704,
+        "stdoutSha256": "694c052622c934c257ede489c44c24d94ad59da862d763b5dcc04a135d6c3cae",
+        "stderrSha256": "7572bcd80c6151fc6eaadfce0a0549956d035076f5b1c59dc0e0ad2df6f53310"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 20180,
+        "stdoutBytes": 103,
+        "stderrBytes": 53984,
+        "stdoutSha256": "694c052622c934c257ede489c44c24d94ad59da862d763b5dcc04a135d6c3cae",
+        "stderrSha256": "106aa6a0f078d9401297f9f5f0a95bcd533a17336971bd0a21abaff84e6b0d2b"
+      },
+      {
+        "exitCode": 0,
+        "timedOut": false,
+        "durationMs": 21104,
+        "stdoutBytes": 103,
+        "stderrBytes": 53877,
+        "stdoutSha256": "694c052622c934c257ede489c44c24d94ad59da862d763b5dcc04a135d6c3cae",
+        "stderrSha256": "34a576b3a47ff4ccd67118ec66a7f853368bc1454059aac89a8c8de447532810"
+      }
+    ],
+    "setupMs": [
+      6815,
+      7913,
+      6181,
+      6739,
+      19651,
+      9359,
+      9352
+    ],
+    "targetArchiveSha256": "0372e215a572b239d6fac68a012dcd1e1b67531dfa5f19f821e03b2924cf573d",
+    "rewindArchiveSha256": "5b8136fc45d37811e1a533cbe58314b6379374e14744d480ecd38be6c8c2b3a1",
+    "repairArchiveSha256": "269b293974ca292f830686f8abf9b4b57291c105bff503038f37a57c4254d232",
+    "targetArchiveBytes": 1136640,
+    "rewindArchiveBytes": 10240,
+    "repairArchiveBytes": 10240,
+    "productionInvariantPassed": true,
+    "cleanupPassed": true,
+    "reportSha256": "36090d66e76e84a6281302627920dd6fce8fe966af78b7140290f411765ac5f5"
+  }
+}

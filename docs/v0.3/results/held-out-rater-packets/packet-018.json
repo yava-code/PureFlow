@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "protocol": "r7-blind-expert-v1",
+  "packetId": "6554135f915abe975bc6ef6d",
+  "projectAlias": "project-254e2f3e",
+  "seam": {
+    "path": "src/decorator/common/IsIn.ts",
+    "symbol": "isIn",
+    "kind": "function"
+  },
+  "writablePaths": [
+    "src/decorator/common/IsIn.ts"
+  ],
+  "attributedTestPaths": [
+    "src/decorator/common/IsIn.spec.ts"
+  ],
+  "mutationRule": "Keep the target snapshot and target tests. Replace every listed source path with its complete adjacent-base version; if no base version exists, the replay removes that path.",
+  "observation": "Run the repository's preregistered check and classify only its process outcome.",
+  "sourceAndTestDiff": "diff --git a/src/decorator/common/IsIn.spec.ts b/src/decorator/common/IsIn.spec.ts\nnew file mode 100644\n--- /dev/null\n+++ b/src/decorator/common/IsIn.spec.ts\n@@ -0,0 +1,17 @@\n+import { isIn } from './IsIn';\n+\n+describe('@IsIn decorator implementation', () => {\n+  describe('isIn validator', () => {\n+    it('should accept valid values', () => {\n+      expect(isIn('A', ['A', 'B'])).toBe(true);\n+      expect(isIn('A', ['B', 'C'])).toBe(false);\n+      expect(isIn('A', [1, 2])).toBe(false);\n+    });\n+\n+    it('should not accept invalid values', () => {\n+      expect(isIn('A', 5 as any)).toBe(false);\n+      expect(isIn('A', 'ABC' as any)).toBe(false);\n+      expect(isIn('A', false as any)).toBe(false);\n+    });\n+  });\n+});\ndiff --git a/src/decorator/common/IsIn.ts b/src/decorator/common/IsIn.ts\n--- a/src/decorator/common/IsIn.ts\n+++ b/src/decorator/common/IsIn.ts\n@@ -1,31 +1,31 @@\n import { ValidationOptions } from '../ValidationOptions';\n import { buildMessage, ValidateBy } from '../common/ValidateBy';\n \n export const IS_IN = 'isIn';\n \n /**\n  * Checks if given value is in a array of allowed values.\n  */\n export function isIn(value: unknown, possibleValues: readonly unknown[]): boolean {\n-  return !Array.isArray(possibleValues) || possibleValues.some(possibleValue => possibleValue === value);\n+  return Array.isArray(possibleValues) && possibleValues.some(possibleValue => possibleValue === value);\n }\n \n /**\n  * Checks if given value is in a array of allowed values.\n  */\n export function IsIn(values: readonly any[], validationOptions?: ValidationOptions): PropertyDecorator {\n   return ValidateBy(\n     {\n       name: IS_IN,\n       constraints: [values],\n       validator: {\n         validate: (value, args): boolean => isIn(value, args?.constraints[0]),\n         defaultMessage: buildMessage(\n           eachPrefix => eachPrefix + '$property must be one of the following values: $constraint1',\n           validationOptions\n         ),\n       },\n     },\n     validationOptions\n   );\n }\n",
+  "questions": [
+    "Is the proposed rewind causally relevant to the changed behavior?",
+    "Should the preregistered check pass on the target snapshot?",
+    "Should the preregistered check fail after the proposed rewind?",
+    "Does this packet expose a protected repair, compiler status, or observed outcome?"
+  ],
+  "packetSha256": "525dfbb51dbaf47a08563503b241e7b1465474b7d15c7f06649630af158b1399"
+}

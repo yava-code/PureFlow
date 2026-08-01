@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+  "cohort": "development",
+  "records": [
+    {
+      "patch": {
+        "repositoryId": "hookable",
+        "ordinal": 5,
+        "baseCommit": "e58f2e7ff8b75eb51ef0bb4b7f938862bd88c428",
+        "targetCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+        "evidenceSha256": "3f13a081e34a4bfbf103a02873e01ec189257006a0bb4712ff01d3138abfe724",
+        "splitKey": "04a94168b863a6b7b3494efdfe5db7a005e34f7fcf375564f0f5b5968fcdd6f0",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "hookable",
+          "seam": {
+            "path": "src/hookable.ts",
+            "symbol": "HookableCore.callHook",
+            "kind": "method"
+          },
+          "writablePaths": [
+            "src/hookable.ts",
+            "src/index.ts",
+            "src/utils.ts"
+          ],
+          "attributedTestPaths": [
+            "test/bundle.test.ts",
+            "test/hookable.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "a5ab8d910c5d31766fe5d9955e3f050596ba87cb20b30cca8527cf031db1b35d"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "3f13a081e34a4bfbf103a02873e01ec189257006a0bb4712ff01d3138abfe724",
+          "repositoryId": "hookable",
+          "ordinal": 5,
+          "baseCommit": "e58f2e7ff8b75eb51ef0bb4b7f938862bd88c428",
+          "targetCommit": "60729dfd024f79b0e7a4dfb4cc00dd12cdfd8d6b",
+          "nodeVersion": "22.17.0",
+          "packageManager": "pnpm",
+          "packageManagerVersion": "10.33.0",
+          "installArgv": [
+            "corepack",
+            "pnpm",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "corepack",
+            "pnpm",
+            "test"
+          ],
+          "sources": [
+            {
+              "path": "src/hookable.ts",
+              "baseBlobSha1": "a5e592e98f6aa79479294676fc98b218a36a9350",
+              "targetBlobSha1": "46a098c3bc2f873e25429db9fb7fff42deb78cd6"
+            },
+            {
+              "path": "src/index.ts",
+              "baseBlobSha1": "1e74af2cc0e65fa87be67a5ed41a42bb04eab795",
+              "targetBlobSha1": "65d9479eb24e0b25d398236032244eea6a74f26f"
+            },
+            {
+              "path": "src/utils.ts",
+              "baseBlobSha1": "ad4fa31d1f35d7e3bac48469375b31d798e0f2c7",
+              "targetBlobSha1": "1aea7c09d15fa4a6938633deb4e92008cf2393bd"
+            }
+          ],
+          "attributedTestPaths": [
+            "test/bundle.test.ts",
+            "test/hookable.test.ts"
+          ],
+          "semantic": {
+            "path": "src/hookable.ts",
+            "symbol": "HookableCore.callHook",
+            "kind": "method",
+            "changedLineSha256": [
+              "0c1711cd691113273d0e0137c9d2a853ac9602da7daa61364b72b2e88524a250",
+              "18bf18df26a8cd0f1b69a0351b9ab6ab0794312f1c5d7e150041e7e068c73c5b",
+              "274e461fb61c889a459cfd503b4d3cd2d634fb3783983133e5b7bdfb82f9a670",
+              "28d86778615f6af47bb1bc4f40face756749768e5111f114cfa234a5060c25af",
+              "4878e03531071f15a5862a289c5cf56c430208969ddfb3a799b3b14192cb1348",
+              "5a0df30d5cbc4e9234632b106e1ba74cd6a3ae5c3e586df8f30a4b764872bfa5",
+              "67694c125cca8ca0a62725dfef58e8526eab4d227697d733f055295d901fc772",
+              "6c4e85bd9478e20211fe5bf9f88e1705ab9628196b39c630b68173db29457ae1",
+              "6cf23ec891c1d7aa1c0e82fa41a543cbab6ff8fc86b1be7f8a97684188810d0a",
+              "737db166c79ae98e44bbe5ad43e03bf3774f7b3696068842d56a72e863dfeb20",
+              "752be9ac672b41e045e784e68727ac0b5a152a7715dc79d247f91804e01f7e9d",
+              "89d6e2b2009953d7d3823f7d33c8da3f9579be963658b301e542ca67f31e77a3",
+              "a911b0ecf121d34a0a51af64e4d4488bdb3199862565435b20f0344c20390f26",
+              "b150b5c975daee1bdf3a752127a04dd0a586717a7af6798f9926a3161717adde",
+              "d79a597c979a0db753254ae2f2c0d78ae47a2f56bdb5eb97cfc54cdf7e770944",
+              "d9a0fbcc153ea4bfb0430a8de97bed38ca2cd3fa83866948f9194eb29bbd8a64",
+              "e0e5008e83f96cd2cae456581faec3b6f48709d26996ad24dfde16a36453fcc0"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "5210a30fce1f10866876bce29b6e81e336198c9226a97578ca471a40a170de6e",
+          "internalPlanSha256": "1885ea6150f07bf1f5fed5c2e195a779086b447b6a92a7e45fa201c4324b490f"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "class-validator",
+        "ordinal": 4,
+        "baseCommit": "794f148d0792661f88001bb850d475a9b181b443",
+        "targetCommit": "4fcad7b629b04f4ba343ffb91cbcb9f01a1e2f5a",
+        "evidenceSha256": "bfdee667dcf27696c83d7c25392137c71f7d9956f580d517838df76f6a76818c",
+        "splitKey": "054e694bc5fa41ed642eb6c6a7a9965bef2e7cd628666c4db4276e59c311c762",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "unsupported-source-rewind",
+        "unsupportedPaths": [
+          "src/decorator/string/IsISO31661Numeric.ts"
+        ]
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "ts-pattern",
+        "ordinal": 22,
+        "baseCommit": "30ba1f06fd9043948c928115664e954f675130f9",
+        "targetCommit": "c52af6a2fa75ac37d8b8e1a1b9832445e4c4f580",
+        "evidenceSha256": "704d11443cbf41aa10fc14c6d5158736f7c04a29ce17d9f8abca27c2c2c47d97",
+        "splitKey": "285f4fb95943a5fb111bcf30e60b03b9aa671c50665e1ff9cd6603dff664fc32",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "ts-pattern",
+          "seam": {
+            "path": "src/types/InvertPattern.ts",
+            "symbol": "<module>",
+            "kind": "module-boundary"
+          },
+          "writablePaths": [
+            "src/types/InvertPattern.ts",
+            "src/types/helpers.ts"
+          ],
+          "attributedTestPaths": [
+            "tests/infer.test.ts",
+            "tests/readonly.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "5a7316cedf432455b17154dea3d10fd201ea0932c6095fd03d4d42202c193092"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "704d11443cbf41aa10fc14c6d5158736f7c04a29ce17d9f8abca27c2c2c47d97",
+          "repositoryId": "ts-pattern",
+          "ordinal": 22,
+          "baseCommit": "30ba1f06fd9043948c928115664e954f675130f9",
+          "targetCommit": "c52af6a2fa75ac37d8b8e1a1b9832445e4c4f580",
+          "nodeVersion": "22.17.0",
+          "packageManager": "npm",
+          "packageManagerVersion": "10.9.2",
+          "installArgv": [
+            "npm",
+            "ci",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "npm",
+            "test",
+            "--",
+            "--runInBand"
+          ],
+          "sources": [
+            {
+              "path": "src/types/InvertPattern.ts",
+              "baseBlobSha1": "8bc27ae69fe618fbe3e9469bafa0b55b0fcf8bcc",
+              "targetBlobSha1": "ecc7498b3b5cfa8f8573f285840b09380106ba9a"
+            },
+            {
+              "path": "src/types/helpers.ts",
+              "baseBlobSha1": "db41be64d65429ec7f54b93a76364a45f0c35320",
+              "targetBlobSha1": "116f8b29c0b743716e03f3a5fcedf7eb0a0157f6"
+            }
+          ],
+          "attributedTestPaths": [
+            "tests/infer.test.ts",
+            "tests/readonly.test.ts"
+          ],
+          "semantic": {
+            "path": "src/types/InvertPattern.ts",
+            "symbol": "<module>",
+            "kind": "module-boundary",
+            "changedLineSha256": [
+              "2575ea47d6d26d73c537e215ca5926c1f39a18042b59c7eecb19aa97bd52675c",
+              "3cb44905da974e37fe8386083c7ec8d8c568d6ec46328552edb781144165201d",
+              "8bd393b593469cf60a4d0ed08b96ed4a9d7207b1e96b6f03ec64c90696f8a7a7",
+              "a34cfa0a44765fc767155dc45099698f5c698947cbe4329e6c4c82fa3b755cf8",
+              "b6746da7ea8a505e65d86aa4e0ebac1fa4b4fea2adf54affb03359e67a18148c",
+              "f8e262223da54dd12b0eddc2a7b2bdd3a253ca78c9857365811fdc0a7767ad2a"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "b92db198618766b22abf0cd21ef9cf9c5b7e76476c0ad1f816edc03e51bd3c18",
+          "internalPlanSha256": "635c998d5288a1c54d9cbdfdc39f0eb321d8a37bd8f975c659c5ee2706e49f85"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "ts-pattern",
+        "ordinal": 5,
+        "baseCommit": "4651f69aa339fa657ab4c5f982965f1f52a99fa3",
+        "targetCommit": "672b5efdb9d095b069055451a43c01e1f1082460",
+        "evidenceSha256": "ff12993b6c8408897930ca622f696d54f86b0a4f22a5e39e3fc453b57bc1deb2",
+        "splitKey": "2d929ebe05bba65ea1dc9dfd1b5235012ff1595776098e1ae01d512754c79c6a",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "ts-pattern",
+          "seam": {
+            "path": "src/is-matching.ts",
+            "symbol": "isMatching",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/is-matching.ts",
+            "src/patterns.ts"
+          ],
+          "attributedTestPaths": [
+            "tests/is-matching.test.ts",
+            "tests/objects.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "6613f4644e4506caea4664931f8920ff85b076a5c79b851915555164d884b36c"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "ff12993b6c8408897930ca622f696d54f86b0a4f22a5e39e3fc453b57bc1deb2",
+          "repositoryId": "ts-pattern",
+          "ordinal": 5,
+          "baseCommit": "4651f69aa339fa657ab4c5f982965f1f52a99fa3",
+          "targetCommit": "672b5efdb9d095b069055451a43c01e1f1082460",
+          "nodeVersion": "22.17.0",
+          "packageManager": "npm",
+          "packageManagerVersion": "10.9.2",
+          "installArgv": [
+            "npm",
+            "ci",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "npm",
+            "test",
+            "--",
+            "--runInBand"
+          ],
+          "sources": [
+            {
+              "path": "src/is-matching.ts",
+              "baseBlobSha1": "2ddbf62756ee6923a7c0e11b469ebd28a77accb8",
+              "targetBlobSha1": "fef3923b363d3a73186356facbc312dba0a52a48"
+            },
+            {
+              "path": "src/patterns.ts",
+              "baseBlobSha1": "3f9422f057a344569f30543460e6c3948b993eed",
+              "targetBlobSha1": "c0051a6796cc1eb5808f51cc6247187597941a41"
+            }
+          ],
+          "attributedTestPaths": [
+            "tests/is-matching.test.ts",
+            "tests/objects.test.ts"
+          ],
+          "semantic": {
+            "path": "src/is-matching.ts",
+            "symbol": "isMatching",
+            "kind": "function",
+            "changedLineSha256": [
+              "9e1e266a72a1cf3e55c6875ad7c15f6a627c06b564ba38a2b02ba9245b1e3140",
+              "a1e9e0c8bc683e135c1ff5b016907ca84a8854e78bf3eee59a9d90d7cbabf37c"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "812f00fdc2e785acb0b98b8b5ad41548cd40ce245306e50605359fe35cc5b46e",
+          "internalPlanSha256": "2a3db0cdb991e101b64a5331d57978bc467f4786f3b07d98c5e060f648fa75ff"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "defu",
+        "ordinal": 1,
+        "baseCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+        "targetCommit": "11ba02213d4b1c6b02dd686041f75edc479c98e9",
+        "evidenceSha256": "d163db8085e6dcfda33aed34bc91be2fc7b3e40aa53e3fac26d396be3a03098e",
+        "splitKey": "3758bf97a1a1b0dc12acc8b5e4659687ce6565992f31fb81fdbc7dc3f2b303dd",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "defu",
+          "seam": {
+            "path": "src/defu.ts",
+            "symbol": "_defu",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/defu.ts"
+          ],
+          "attributedTestPaths": [
+            "test/defu.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "5fdcf1e7ba28258cccd688ab51adffada9b53bcc66a4fcfe3a5db74bb85b939b"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "d163db8085e6dcfda33aed34bc91be2fc7b3e40aa53e3fac26d396be3a03098e",
+          "repositoryId": "defu",
+          "ordinal": 1,
+          "baseCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+          "targetCommit": "11ba02213d4b1c6b02dd686041f75edc479c98e9",
+          "nodeVersion": "22.17.0",
+          "packageManager": "pnpm",
+          "packageManagerVersion": "10.33.4",
+          "installArgv": [
+            "corepack",
+            "pnpm",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "corepack",
+            "pnpm",
+            "test"
+          ],
+          "sources": [
+            {
+              "path": "src/defu.ts",
+              "baseBlobSha1": "5eb3cc8cb2c3834be587b5d09aed35faf6e2a20d",
+              "targetBlobSha1": "3b438bbf04cf2c27f1840f020e10cb54a6953386"
+            }
+          ],
+          "attributedTestPaths": [
+            "test/defu.test.ts"
+          ],
+          "semantic": {
+            "path": "src/defu.ts",
+            "symbol": "_defu",
+            "kind": "function",
+            "changedLineSha256": [
+              "2d8190f17e4c723b86e90abdf13307986f8cfb30925d85a60cbb0558bbc6d570",
+              "4e0f80f2c51cb39f5df902ffb5fbbb0799fd03ae4f2bf829e40ae275a887a50d",
+              "544695836f8f1027cdf9eecc1183462ca45561e52b5ec1583a2555672b9c4a52",
+              "b4074e110a257b10145c15c032ce8384bedaf4fbe53423fabb7391635822ad36"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "d0feb5a9da30cfc2b339c54424c6ecf6bedbc7de5d87d2212988032c9277fafe",
+          "internalPlanSha256": "b62621b2967bd4cffdd53cb111b2e74422a0334f54098fba5ce4fca780b7310f"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "ts-pattern",
+        "ordinal": 12,
+        "baseCommit": "1c81e6eb0185c2a5931edb3075e1ed5377f48c1a",
+        "targetCommit": "b0ae86bbccb84e18411e39a35fa80f523cc2075f",
+        "evidenceSha256": "53e586ab142bc1fc3f1df5fa2a73ca07df8ad8df83c6104d571748132da9973d",
+        "splitKey": "3c1dc8b12d232ddeaa5abff59e69bf513498806e87ceff104c3e5f59e30b17ee",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "unsupported-source-rewind",
+        "unsupportedPaths": [
+          "src/errors.ts"
+        ]
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "defu",
+        "ordinal": 2,
+        "baseCommit": "d3ef16dabe861713192ba8679c5db8e0ac143f9b",
+        "targetCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+        "evidenceSha256": "b7ed7de33279ecd37d0187634045519c8b9c11e15bbfc90f45346f6770b3eee8",
+        "splitKey": "3e5184388004cbb5923f9d891367c717f7d4b2a312ba742f846b852be9556896",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "defu",
+          "seam": {
+            "path": "src/defu.ts",
+            "symbol": "_defu",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/defu.ts"
+          ],
+          "attributedTestPaths": [
+            "test/defu.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "5fdcf1e7ba28258cccd688ab51adffada9b53bcc66a4fcfe3a5db74bb85b939b"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "b7ed7de33279ecd37d0187634045519c8b9c11e15bbfc90f45346f6770b3eee8",
+          "repositoryId": "defu",
+          "ordinal": 2,
+          "baseCommit": "d3ef16dabe861713192ba8679c5db8e0ac143f9b",
+          "targetCommit": "3942bfbbcaa72084bd4284846c83bd61ed7c8b29",
+          "nodeVersion": "22.17.0",
+          "packageManager": "pnpm",
+          "packageManagerVersion": "10.33.4",
+          "installArgv": [
+            "corepack",
+            "pnpm",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "corepack",
+            "pnpm",
+            "test"
+          ],
+          "sources": [
+            {
+              "path": "src/defu.ts",
+              "baseBlobSha1": "168ddff1d40217d2ee658604581a5c86203c3f73",
+              "targetBlobSha1": "5eb3cc8cb2c3834be587b5d09aed35faf6e2a20d"
+            }
+          ],
+          "attributedTestPaths": [
+            "test/defu.test.ts"
+          ],
+          "semantic": {
+            "path": "src/defu.ts",
+            "symbol": "_defu",
+            "kind": "function",
+            "changedLineSha256": [
+              "44132d746a8e6f7b3b0a9ad93dbfe8fb74545cf998a24437cde469f6ba722b40",
+              "d09013c90c57e8482792fb858913fd044bc4ec8fc7d3e5873182c86306e846ec"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "d0feb5a9da30cfc2b339c54424c6ecf6bedbc7de5d87d2212988032c9277fafe",
+          "internalPlanSha256": "a19cf46a17e4ef9e1ee5053e38bb978a578fdfe8ee9a81d72dd9a257ac60f25c"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "ofetch",
+        "ordinal": 9,
+        "baseCommit": "7030ad93f597593ec5318cfcfc0bdade631ade8b",
+        "targetCommit": "3baf1cc076165bdb07ec9a5d918504efd6823074",
+        "evidenceSha256": "e15514da56213f0dd0f7c5ad6458b99e5b7e08ac95d6c4b282e54a61ba5fdaeb",
+        "splitKey": "487617c82bb572f88469df25f2c35bba708a166ebc12ecac2fb84b511641655f",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "ofetch",
+          "seam": {
+            "path": "src/fetch.ts",
+            "symbol": "createFetch",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/fetch.ts",
+            "src/types.ts",
+            "src/utils.ts"
+          ],
+          "attributedTestPaths": [
+            "test/index.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "35d4e0a0a5240d151e9ab758c9962f00829ad43089e24549cd72fcfa6a1b4787"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "e15514da56213f0dd0f7c5ad6458b99e5b7e08ac95d6c4b282e54a61ba5fdaeb",
+          "repositoryId": "ofetch",
+          "ordinal": 9,
+          "baseCommit": "7030ad93f597593ec5318cfcfc0bdade631ade8b",
+          "targetCommit": "3baf1cc076165bdb07ec9a5d918504efd6823074",
+          "nodeVersion": "22.17.0",
+          "packageManager": "pnpm",
+          "packageManagerVersion": "10.20.0",
+          "installArgv": [
+            "corepack",
+            "pnpm",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "corepack",
+            "pnpm",
+            "test"
+          ],
+          "sources": [
+            {
+              "path": "src/fetch.ts",
+              "baseBlobSha1": "9782dba2ac58f8ce3919088503a072c5462ee3e2",
+              "targetBlobSha1": "b4029feaecbf229ad355150bc8d71f9eb197419f"
+            },
+            {
+              "path": "src/types.ts",
+              "baseBlobSha1": "5d192804e7404e904140577c3c51b0f87575a9e3",
+              "targetBlobSha1": "e16566b991b6c467dafa4f7404628e9ccdff5999"
+            },
+            {
+              "path": "src/utils.ts",
+              "baseBlobSha1": "4147565157e28b10ce82b58a3d3531c73784d57f",
+              "targetBlobSha1": "f9760ab40b7d2a03f33efb7cb6599c08f68dce90"
+            }
+          ],
+          "attributedTestPaths": [
+            "test/index.test.ts"
+          ],
+          "semantic": {
+            "path": "src/fetch.ts",
+            "symbol": "createFetch",
+            "kind": "function",
+            "changedLineSha256": [
+              "0428c1eb59190dda76f7591d23b6f743078eded8f317a42acf7dc013719c0bc4",
+              "094d09639b85b65e25ce1ff596276750355fc4b436a5b5994b1b69a5268872f6",
+              "139550ba42147dbe0f107a7c13bdd7ef9eee03f2d8189a657c29129c820ba7b2",
+              "17b0e24436b750df3f95cc9d81827fc85986ab1bb4f8159f6c7139e9502f1229",
+              "6594c06bb563bf34d29c9d55d853c399b663b79abf21627035ce1d569584aef3",
+              "6e7c63aa754e09f3c8846dd1c388112cf00ab5ac68b6a22de7f41bf7a9f31dfa",
+              "6eaff87a20b8f2f16d5d702e151c249a7b4bf5cf09763db5c80f29d0f1efacf9",
+              "82aed33b730d378e7e6711c980d3c33383cf89007ec0b528f431a75e331e8728",
+              "9db77684dbd72164f583bf09504d71392fea3294eacc651a4f11bca7a5ea0dfa",
+              "bc1862b2638038866eb46562eac5f2dd162d79c825393fe716d5575eb76766ed",
+              "c298235888d6559b0303d4e6c5905f953696a27515b040d2fa7752052ba943c0",
+              "c95f31a446811b46a7fe342062c1dec4c28893ddef4fa6f0faaf2bc19479586e",
+              "ca84c1303b3321938e6131d8d06102abefd24877ae71b6c2ac423bb92da74250",
+              "d9a0dd70ea1cb94bed491fd907780b1d01d2bcd7f3484f5bf717b4ff74b4b314",
+              "e8843737c7ff5f1746557815ed6bdbcf92e79e84d17debd0996aadd803e1fb08"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "67c3b85c342aa4f948edeabca0634d8693d8ed8bec4402ea5f6de66fe6ea727d",
+          "internalPlanSha256": "6c5f28451ccf082e5aa069b715b50bc404c1eb74171484ff519684514b98be0a"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "ts-pattern",
+        "ordinal": 13,
+        "baseCommit": "7d0813115a8e8eb7743c6b53c983beb2378e90a0",
+        "targetCommit": "1a568a5fa2bb80637b5b768f852f949694d8aed5",
+        "evidenceSha256": "c3c74cfda28c264664af1d19125a6c8e679718806b8a86e591e69b59463b007a",
+        "splitKey": "48e87d6d89a2b5aebdca1b848eb8d517dbf23eff3af85564bcf647593a3da255",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "ts-pattern",
+          "seam": {
+            "path": "src/patterns.ts",
+            "symbol": "length",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/patterns.ts",
+            "src/types/Pattern.ts"
+          ],
+          "attributedTestPaths": [
+            "tests/strings.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "bb3b7f6a99a8bf54d7b8b28c4796f6fde29a8f3d52449a494de8f3c360e7d966"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "c3c74cfda28c264664af1d19125a6c8e679718806b8a86e591e69b59463b007a",
+          "repositoryId": "ts-pattern",
+          "ordinal": 13,
+          "baseCommit": "7d0813115a8e8eb7743c6b53c983beb2378e90a0",
+          "targetCommit": "1a568a5fa2bb80637b5b768f852f949694d8aed5",
+          "nodeVersion": "22.17.0",
+          "packageManager": "npm",
+          "packageManagerVersion": "10.9.2",
+          "installArgv": [
+            "npm",
+            "ci",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "npm",
+            "test",
+            "--",
+            "--runInBand"
+          ],
+          "sources": [
+            {
+              "path": "src/patterns.ts",
+              "baseBlobSha1": "4deeb1acfe1d78f21ecc4d51db5371403dab9b81",
+              "targetBlobSha1": "b08d8dfda6b38c999e208fa583d62a716a160fe0"
+            },
+            {
+              "path": "src/types/Pattern.ts",
+              "baseBlobSha1": "2d2e610ee1dedba42494e91d397571318fadfc31",
+              "targetBlobSha1": "47e124d3ed1a1db30a8d15c39ade56e19f74a9ab"
+            }
+          ],
+          "attributedTestPaths": [
+            "tests/strings.test.ts"
+          ],
+          "semantic": {
+            "path": "src/patterns.ts",
+            "symbol": "length",
+            "kind": "function",
+            "changedLineSha256": [
+              "24b9190a1b4b95d5337714d612bddab04da078e4ebb5dfc37525c8cf5a5e27e9",
+              "7dbca34744fcdac3ba2df4b9e688cdc202a58d07afb1175a2997a643d0d8eabd"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "39c1c5b3c704e9def4149f7ee3a5c53b846ca56b7c8f84a7466a3db73abc742e",
+          "internalPlanSha256": "1185b5e02f56e9ad3c457dd7fc46ef004446716463fd5100d3e5efa459e0612d"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "ts-pattern",
+        "ordinal": 26,
+        "baseCommit": "3a7fcbfbbf66b651648c6e7433b4a640f8543b88",
+        "targetCommit": "e6c9090172d86cfebbaeb7d5c7896b037909d90f",
+        "evidenceSha256": "a0f467ae9b369e8ae2c587d5b18c1364c7580176ecb70db99d901a91e4b60adc",
+        "splitKey": "4a57b51700d38173c9e465d22e5ce9de8e802e8377431f8cc986cb0e09b06fe9",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "ts-pattern",
+          "seam": {
+            "path": "src/match.ts",
+            "symbol": "match",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/match.ts"
+          ],
+          "attributedTestPaths": [
+            "tests/exhaustive-match.test.ts",
+            "tests/tuples.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "eb4e408605f3ab80510ac3d2fb4bd13a520f85710fe87160c8d7c6c8d207090c"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "a0f467ae9b369e8ae2c587d5b18c1364c7580176ecb70db99d901a91e4b60adc",
+          "repositoryId": "ts-pattern",
+          "ordinal": 26,
+          "baseCommit": "3a7fcbfbbf66b651648c6e7433b4a640f8543b88",
+          "targetCommit": "e6c9090172d86cfebbaeb7d5c7896b037909d90f",
+          "nodeVersion": "22.17.0",
+          "packageManager": "npm",
+          "packageManagerVersion": "10.9.2",
+          "installArgv": [
+            "npm",
+            "ci",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "npm",
+            "test",
+            "--",
+            "--runInBand"
+          ],
+          "sources": [
+            {
+              "path": "src/match.ts",
+              "baseBlobSha1": "3adc3aa0a7a2edc2cc3f410ce5e82db2c1d91225",
+              "targetBlobSha1": "8ebeefc0feed160e3bc0d16a760f00acfdf97950"
+            }
+          ],
+          "attributedTestPaths": [
+            "tests/exhaustive-match.test.ts",
+            "tests/tuples.test.ts"
+          ],
+          "semantic": {
+            "path": "src/match.ts",
+            "symbol": "match",
+            "kind": "function",
+            "changedLineSha256": [
+              "1ec8e42d878e667d61c2c0aca2ddd2a6de9c6ce74fe339a163d043a9a2f5d422",
+              "2bf5b7b85a0e55c343c96c36eeb745c52f2b42974806d0118bc809f663d91f1b",
+              "3aadf9ac79922088eb3f9956bad6a0f7e83d6e272cf7d963cfb3a16b39bd8fa6",
+              "69932d72b4574abb9399817c3723ee76335e1d8039df2a338c8c27f87a9f1fc2",
+              "7397e01cf7ed72cb465fc50be581430b3b25978b4577250686df91453378a2e2",
+              "85a68736d2383de8c75446bed1189fbab22419f109595b5f8a5724ac242b8acf",
+              "a3037457a39cdb68dffff43672fb25f193f14fa96c278d0ff702439a807fa182",
+              "d10b36aa74a59bcf4a88185837f658afaf3646eff2bb16c3928d0e9335e945d2",
+              "febcd671cca3b053510d9f4c057f0fe38c223f987448e5010509190ef38ec80a"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "50d2390a113e81eeea03a90c2e7a7ff4a3ea9505b81adb0ed29feb163aff5257",
+          "internalPlanSha256": "e51c10890fa5b182dd78dfba6184610eca79d4f976e16236af352b37691b4624"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "ts-pattern",
+        "ordinal": 11,
+        "baseCommit": "3f5978a0f36f6a602d3bb1dcc3c1974cb64077e7",
+        "targetCommit": "e74557d9aca8179ca11ecc9b71820c19c99d6602",
+        "evidenceSha256": "89f65bf614fe38d504afa26b63a2c316dd97f59fcb51fe79477de7e2da0bd2e6",
+        "splitKey": "4ef07b059f9e400d7367bf6fd03d4a5061d7c70f602762045b1aad605e620d11",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "ts-pattern",
+          "seam": {
+            "path": "src/internals/helpers.ts",
+            "symbol": "matchPattern",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/internals/helpers.ts"
+          ],
+          "attributedTestPaths": [
+            "tests/objects.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "7f37ad4be7ecccf86aecd2f7629dda200371d5aceced3ee6894c38870447395b"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "89f65bf614fe38d504afa26b63a2c316dd97f59fcb51fe79477de7e2da0bd2e6",
+          "repositoryId": "ts-pattern",
+          "ordinal": 11,
+          "baseCommit": "3f5978a0f36f6a602d3bb1dcc3c1974cb64077e7",
+          "targetCommit": "e74557d9aca8179ca11ecc9b71820c19c99d6602",
+          "nodeVersion": "22.17.0",
+          "packageManager": "npm",
+          "packageManagerVersion": "10.9.2",
+          "installArgv": [
+            "npm",
+            "ci",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "npm",
+            "test",
+            "--",
+            "--runInBand"
+          ],
+          "sources": [
+            {
+              "path": "src/internals/helpers.ts",
+              "baseBlobSha1": "3b36160b0f726f3d54b8a514ae670ab3671cd325",
+              "targetBlobSha1": "a06b7e67cabfa2202496e4291c96c23d709baa77"
+            }
+          ],
+          "attributedTestPaths": [
+            "tests/objects.test.ts"
+          ],
+          "semantic": {
+            "path": "src/internals/helpers.ts",
+            "symbol": "matchPattern",
+            "kind": "function",
+            "changedLineSha256": [
+              "10ff70c095a4dc57825304e9a8531f124f6db48a8a78686feab2bed80ee41034",
+              "1256c54ff588e25cf6058188387077665adcee31c94641e305ccf17031ce8261",
+              "145be52d3eee551941cfad6c6bd64f0fc2bbd6a6674ddd9ba4cdfcbf802d5499",
+              "275a923163c40021b18d55557a9627fd01a87b44bc2258b504d65c31f5e06a9d",
+              "27d84295815422563f2d718aac33d34717be82ec4a8dfa3900cbdcfe1ee4815c",
+              "2f456c3026eb0755b074236e1d77b27b2830c1efeab760c7ae1ee52e9bb98299",
+              "3d5d70a94824e4ee3031ecb7b0ed9de8bff1d61d294d79cb304744d200b64cc7",
+              "4bdbe8d0595f4434e6f38d243d40ea96894613af084da78e985b611ddce20e94",
+              "4e801a924233e3d9610ee8cb6e14200cd13dca735f2bea45d0eac3181725ca12",
+              "64860e8aebc14dba7cb242c67734f701bf2383d8f53649ef85c8ca9d6c6deb68",
+              "64ece21c8d8dc4cf94b8e559c589d74c831be3e6c77baebcf9d7e8c6fcc228f6",
+              "698cb7d8da2222b1dfd18c43291a06a4bf825720c0a32a16876d2ccdd8140624",
+              "6eaff87a20b8f2f16d5d702e151c249a7b4bf5cf09763db5c80f29d0f1efacf9",
+              "7498c7c8d4528a9ede055665cb68d10311a42d20ccecbac4c5a242f57e3f0d3e",
+              "7c5f6b39884065b7b79bf33e682ccfa57d8af4d592dd7e1894db5fbf4d22c0bb",
+              "8be8ccd7a3fd5b2133e925e82da5a814fd1ca0df5532ece1c9e902e00f963757",
+              "99eaa74a52be36b78b4a573cef7f5d9ee6b2fa481f1abde26ecc443c1b38f71f",
+              "9fd53c22df5dcb055472450fcced8b2e709e8822f33813aed6b2e4b3557ec225",
+              "9ffc851eaab8cb227c64f257830bffa6aa22c60eb21c5b9190d5a2734a307eca",
+              "a2715a779e465fbea1389b94214797b6751409db2d6d399673724d23fc864777",
+              "a49ce479d5fae28f4e982b826fab16b21ed2d810a88dc9d8ddc3876c48902d3a",
+              "ab38e8d6689d452b1150728fe140e960372d5a87a7688cf51b03f0996608b842",
+              "b96ad80fb7b8de1613789f334f6202b1fa6de065e058dd59cf989ee3ca8e6dca",
+              "ba7bb3b8944d1a77310a5ea60e9fc84212c962c0243be47180f8924b6f376b9c",
+              "c02618aaf9b5952481451ddda6dcaef21129e76e99cda2ff0b753858043baed1",
+              "c3e8d145f7c3e588a1068a0b433344b54d0f06cf11def56acd6f523bcfdb5582",
+              "c95f31a446811b46a7fe342062c1dec4c28893ddef4fa6f0faaf2bc19479586e",
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "eb764002e99c9b05eae0ed459e97513288809cc86a909c8174e286a463ad9baf"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "6fbc96d0f76e7bab6134b1958f7c664aece29735ff8ea6cccebc08ee5c5287b6",
+          "internalPlanSha256": "775f8f6cfaaf3d654c565487d4a86bc57ca6d4aeaef6100548680565358de5ec"
+        }
+      }
+    },
+    {
+      "patch": {
+        "repositoryId": "hookable",
+        "ordinal": 7,
+        "baseCommit": "93e5d41f8667bc092707a607093c60bcc678365c",
+        "targetCommit": "37568875dd05d688f60554faac4c30fec4952241",
+        "evidenceSha256": "ef1ba5b7c559fc7305e767112da2463422ba7301759b624fa5e0611f26077eb2",
+        "splitKey": "4f077df3ee0adea961014b94a5be0bc68fc9393f6e268e3c3a8980fd1ea8a792",
+        "cohort": "development"
+      },
+      "result": {
+        "status": "compiled",
+        "participant": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "repositoryId": "hookable",
+          "seam": {
+            "path": "src/debugger.ts",
+            "symbol": "createDebugger",
+            "kind": "function"
+          },
+          "writablePaths": [
+            "src/debugger.ts",
+            "src/hookable.ts",
+            "src/index.ts",
+            "src/utils.ts"
+          ],
+          "attributedTestPaths": [
+            "test/debuger.test.ts",
+            "test/hookable.test.ts",
+            "test/types.test.ts"
+          ],
+          "attentionBudgetSeconds": 600,
+          "observationLabel": "registered-check-outcome",
+          "experienceId": "46c9ed6193a3b792ea92cf9cf893ae3444bf30ddc2f3477beae5f7ba8a298c50"
+        },
+        "internal": {
+          "schemaVersion": 1,
+          "compilerProtocol": "r7-rewind-v1",
+          "corpusManifestSha256": "a4ef6cbfa48c66cb9d384bcc2834ecbfae8ff08810abfd1863b395b8aa47d149",
+          "patchEvidenceSha256": "ef1ba5b7c559fc7305e767112da2463422ba7301759b624fa5e0611f26077eb2",
+          "repositoryId": "hookable",
+          "ordinal": 7,
+          "baseCommit": "93e5d41f8667bc092707a607093c60bcc678365c",
+          "targetCommit": "37568875dd05d688f60554faac4c30fec4952241",
+          "nodeVersion": "22.17.0",
+          "packageManager": "pnpm",
+          "packageManagerVersion": "10.33.0",
+          "installArgv": [
+            "corepack",
+            "pnpm",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts"
+          ],
+          "testArgv": [
+            "corepack",
+            "pnpm",
+            "test"
+          ],
+          "sources": [
+            {
+              "path": "src/debugger.ts",
+              "baseBlobSha1": "1c2d7fd0d667df200e22f0a2537fc8beb47b6205",
+              "targetBlobSha1": "e889fba53ad07a29cf557ba9174bc30b4d8a801f"
+            },
+            {
+              "path": "src/hookable.ts",
+              "baseBlobSha1": "6ff6921895cebfcec60fe81e853f237aea0ad356",
+              "targetBlobSha1": "1bdeeeb7a15856d31f148605cc14a0309a22a0ee"
+            },
+            {
+              "path": "src/index.ts",
+              "baseBlobSha1": "d7d8c7516e7acc887f0974900cc7139525e15e73",
+              "targetBlobSha1": "1e74af2cc0e65fa87be67a5ed41a42bb04eab795"
+            },
+            {
+              "path": "src/utils.ts",
+              "baseBlobSha1": "442c3bc967e9be6f21767399d4fe5d4611c03baf",
+              "targetBlobSha1": "ea7d59f8d48ceffd2251e24a5d4ee18d534180a6"
+            }
+          ],
+          "attributedTestPaths": [
+            "test/debuger.test.ts",
+            "test/hookable.test.ts",
+            "test/types.test.ts"
+          ],
+          "semantic": {
+            "path": "src/debugger.ts",
+            "symbol": "createDebugger",
+            "kind": "function",
+            "changedLineSha256": [
+              "4e1a146e36c6b4cfa0d1161221ba082c4085e3fefb8a63714b608d87c685ca5f",
+              "5d1674014064106bb57ae03dcddaf939e965f5dcab619fbeeb2c4f824698d7b7",
+              "abfa59370983ca52fbab3823eb970ba6f336b6cdb702d15fb183e6cdcb5e4661",
+              "aee9a72ff62f25a5f1fcbb311888b8016d7722f2d54a719960d7469acd1873a3",
+              "c8b127458fa9b203775fce106497793a4b3e904bfc62c550abedea299233ec4f"
+            ]
+          },
+          "mutationOperator": "whole-file-base-rewind",
+          "participantProjectionSha256": "6a04fb4aa5c428e5868516aaee8e58c8441f4918f78b9059ca2b683b11610856",
+          "internalPlanSha256": "ab0518b0fc3978a5cb5d64e918886658f755cf37b485226d67ae772e96185078"
+        }
+      }
+    }
+  ]
+}
